@@ -6,7 +6,8 @@ namespace OxfordV2
     {
         static void Main(string[] args)
         {
-		API.APICalls();
+		// API.APICalls();
+		ConsoleUI.Start();
         }
     }
 }
