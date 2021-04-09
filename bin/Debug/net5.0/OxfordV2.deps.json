@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "OxfordV2/1.0.0": {
+        "runtime": {
+          "OxfordV2.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "OxfordV2/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
