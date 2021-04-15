@@ -1,0 +1,1 @@
+Pass the callWordsAPI the user object ?
