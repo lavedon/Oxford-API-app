@@ -119,25 +119,28 @@ namespace OxfordV2
 		};
 		// @TODO an action to set headers
 		// Make a new Task for each API call
-		var callAPI = new Task<string>( () => { Console.WriteLine("Task {0} (syncTask) executing on Thread {1}",
-									Task.CurrentId,
-									Thread.CurrentThread.ManagedThreadId);
-						// Reset headers before each call
-						resetHeaders(client);
-// THIS IS FUCKED
-
-						// FUCK
-						return cat;
-						});
-		callAPI.RunSynchronously();
 		
 
 		if (query.QueryMode == Modes.Word) 
 		{
+			Console.WriteLine("Found that QueryMode is set to words.");
+			Console.WriteLine("Press Enter.");
+			Console.ReadLine();
 			Console.WriteLine("Looking up the word {0}", query.WordID);
+			Console.WriteLine("Press Enter.");
+			Console.ReadLine();
 			Console.WriteLine("Now to call the words endpoint.");
-			string APIUrl = baseURL + "words/?lemma=" + query.UserEnteredWord + "&limit=1";
+			string APIUrl = baseURL + "words/?lemma=" + 
+				query.UserEnteredWord + "&limit=1";
 			Console.WriteLine("APIUrl is: {0}", APIUrl);
+			Console.WriteLine("Press Enter.");
+			Console.ReadLine();
+			resetHeaders(client);
+			Task getWords = new Task(callWordsAPI, "CallWords");
+			Console.WriteLine("Calling the API");
+			Console.WriteLine("Press Enter.");
+			Console.ReadLine();
+			getWords.RunSynchronously();
 
 
 		}
