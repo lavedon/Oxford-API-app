@@ -30,7 +30,7 @@ namespace OxfordV2
 			    query.UserEnteredWord = word;
 			    query.QueryMode = Modes.Word;
 
-			    API.GetWord(query);
+			    API.APICalls(query);
 			    break;
 			    case ("l" or "lammatize"):
 			    Console.WriteLine("Lammatize selected.");

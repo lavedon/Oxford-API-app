@@ -118,28 +118,45 @@ namespace OxfordV2
 			Console.WriteLine(client.GetStringAsync(requestURL));
 		};
 		// @TODO an action to set headers
+		// Make a new Task for each API call
 		var callAPI = new Task<string>( () => { Console.WriteLine("Task {0} (syncTask) executing on Thread {1}",
 									Task.CurrentId,
 									Thread.CurrentThread.ManagedThreadId);
 						// Reset headers before each call
 						resetHeaders(client);
-						string cat = "muffin";
-						Task apiCall = Task.Factory.StartNew(callLemmatizeAPI, "test");
-						apiCall.Wait();
-						Thread.Sleep(500);
-						Task apiCall2 = Task.Factory.StartNew(callWordsByIdAPI, "2nd test");
-						apiCall2.Wait();
+// THIS IS FUCKED
 
+						// FUCK
 						return cat;
 						});
 		callAPI.RunSynchronously();
-		Console.WriteLine("A crazy cat is named {0}", callAPI.Result);
+		
+
+		if (query.QueryMode == Modes.Word) 
+		{
+			Console.WriteLine("Looking up the word {0}", query.WordID);
+			Console.WriteLine("Now to call the words endpoint.");
+			string APIUrl = baseURL + "words/?lemma=" + query.UserEnteredWord + "&limit=1";
+			Console.WriteLine("APIUrl is: {0}", APIUrl);
+
+
+		}
+		else if (query.QueryMode == Modes.Root)
+		{
+			Console.WriteLine("Now to call the root endpoint.");
+		}
+		else if (query.QueryMode == Modes.Lammatize)
+		{
+			Console.WriteLine("Now to call the .");
+		}
+		else 
+		{
+			Console.WriteLine("Query mode not correctly set.");
+		}
+
+		client.Dispose();
+
 	}
 
-	public static void GetWord(CurrentQuery query)
-	{
-		// @TODO Allow user to limit the number of results
-		Console.WriteLine("Looking up the word {0}", query.WordID);
-	}
     }
 }
