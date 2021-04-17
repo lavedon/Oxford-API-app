@@ -1,0 +1,22 @@
+Leaving Main method.
+Starting Main Menu
+In MainMenu()
+The user's input was read as:
+n
+New word
+query.HasLookedUpWord
+False
+query.HasLookedUpWord
+False
+In MainMenu()
+The user's input was read as:
+n
+New word
+query.HasLookedUpWord
+False
+query.HasLookedUpWord
+False
+In MainMenu()
+The user's input was read as:
+x
+Exit selected.

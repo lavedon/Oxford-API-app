@@ -1,0 +1,63 @@
+Leaving Main method.
+Starting Main Menu
+In MainMenu()
+The user's input was read as:
+d
+Word look up selected
+Found that QueryMode is set to words.
+Looking up the word:
+england
+Now to call the words endpoint.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Calling the API
+Called callWordsAPI
+Making the request
+Got responses.
+Set JSONResponse to the response.
+Left getWords task with the JSONResponse.
+Parsing JSON
+We now have the data as a string.
+[{"id": "england_nn01", "band": 10, "meta": {"created": 1891, "revised": true, "updated": 2008}, "lemma": "England", "oed_url": "https://www.oed.com/view/Entry/62243#eid5414368", "daterange": {"end": null, "start": 1474, "obsolete": false, "rangestring": "a1475\u2014"}, "etymology": {"etymons": [{"word": "England", "language": "place"}], "etymology_type": "properName", "etymon_language": [["Other sources", "place name"]], "source_language": [["Other sources", "place name"]], "etymology_summary": "From a proper name."}, "first_use": "John Fortescue", "frequency": [[1750, 0.19], [1760, 0.19], [1770, 0.18], [1780, 0.18], [1790, 0.18], [1800, 0.18], [1810, 0.17], [1820, 0.17], [1830, 0.17], [1840, 0.17], [1850, 0.17], [1860, 0.18], [1870, 0.18], [1880, 0.18], [1890, 0.18], [1900, 0.17], [1910, 0.17], [1920, 0.17], [1930, 0.17], [1940, 0.18], [1950, 0.18], [1960, 0.17], [1970, 0.18], [1980, 0.17], [1990, 0.18], [2000, 0.18], [2010, 0.19]], "sense_ids": ["england_nn01-135916928", "england_nn01-5414605", "england_nn01-136357850", "england_nn01-5414639"], "definition": "The inhabitants of England (sometimes also Britain) regarded collectively. Also: England personified or regarded allusively, esp. as a political entity; (with modifying word) a section of the inhabitants of England (or Britain). Frequently with plural agreement.", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "England", "part_of_speech": "NN"}, {"form": "Englands", "part_of_speech": "NNS"}]}, {"region": "US", "inflections": [{"form": "England", "part_of_speech": "NN"}, {"form": "Englands", "part_of_speech": "NNS"}]}], "frequency_id": "england_nn01-fq", "oed_reference": "England, n.", "pronunciations": [{"ipa": ["\u02c8\u026a\u014b\u0261l\u0259nd"], "region": "British"}, {"ipa": ["\u02c8\u026a\u014b(\u0261)l\u0259nd"], "region": "US"}], "parts_of_speech": ["NN"], "primary_sense_id": "england_nn01-135916928"}]
+Extracted definition.
+Set definition to query object.
+Now to get and set the word ID.
+The wordID was grabbed as:
+england_nn01In MainMenu()
+The user's input was read as:
+r
+Root selected.
+Now to call the root endpoint.
+Going to look up roots
+API call URL is:
+https://oed-researcher-api.oxfordlanguages.com/oed/api/v0.2/
+Making the request:
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Calling the API to get ROOTS. Bloody Roots!!
+Called callRootsAPI
+Making the request
+System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[System.String,System.Net.Http.HttpClient+<GetStringAsyncCore>d__41]
+Ran roots synchronously.
+In MainMenu()
+The user's input was read as:
+x
+Exit selected.

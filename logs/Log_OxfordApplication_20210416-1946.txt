@@ -1,0 +1,50 @@
+Leaving Main method.
+Starting Main Menu
+In MainMenu()
+The user's input was read as:
+d
+Word look up selected
+Found that QueryMode is set to words.
+Looking up the word:
+r
+Now to call the words endpoint.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Calling the API
+Called callWordsAPI
+Making the request
+Got responses.
+Set JSONResponse to the response.
+Left getWords task with the JSONResponse.
+Parsing JSON
+We now have the data as a string.
+[{"id": "r_nn01", "band": 6, "meta": {"created": 1903, "revised": true, "updated": 2008}, "lemma": "R", "oed_url": "https://www.oed.com/view/Entry/156942#eid27203718", "daterange": {"end": null, "start": 1020, "obsolete": false, "rangestring": "OE\u2014"}, "etymology": {"etymons": [], "etymology_type": null, "etymon_language": [["undetermined"]], "source_language": [], "etymology_summary": null}, "first_use": "Aelfric of Eynsham", "frequency": null, "sense_ids": ["r_nn01-27203720", "r_nn01-27204005", "r_nn01-27207654", "r_nn01-115580114", "r_nn01-27207984", "r_nn01-117506103", "r_nn01-117506196", "r_nn01-27207921", "r_nn01-27207851", "r_nn01-27208092", "r_nn01-125184967", "r_nn01-27208161", "r_nn01-27208221", "r_nn01-1309258200", "r_nn01-125185015", "r_nn01-125184982", "r_nn01-125184972", "r_nn01-125184971", "r_nn01-125185011", "r_nn01-125185012", "r_nn01-125184990", "r_nn01-125185018", "r_nn01-125185024", "r_nn01-125185017", "r_nn01-125185025", "r_nn01-125185028", "r_nn01-125185029", "r_nn01-125184997", "r_nn01-125185016", "r_nn01-125184991", "r_nn01-125185014", "r_nn01-125185019", "r_nn01-27207772", "r_nn01-125185006", "r_nn01-125184992", "r_nn01-125185013"], "definition": "The letter, and the sound it represents.", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "R", "part_of_speech": "NN"}, {"form": "R", "part_of_speech": "NNS"}]}, {"region": "US", "inflections": [{"form": "R", "part_of_speech": "NN"}, {"form": "R", "part_of_speech": "NNS"}]}], "frequency_id": null, "oed_reference": "R, n.", "pronunciations": [{"ipa": ["\u0251\u02d0"], "region": "British"}, {"ipa": ["\u0251r"], "region": "US"}], "parts_of_speech": ["NN"], "primary_sense_id": "r_nn01-27203720"}]
+Extracted definition.
+Set definition to query object.
+Now to get and set the word ID.
+The wordID was grabbed as:
+r_nn01In MainMenu()
+The user's input was read as:
+n
+New word
+query.HasLookedUpWord
+False
+query.Definition
+
+In MainMenu()
+The user's input was read as:
+r
+Root selected.
+In MainMenu()
+The user's input was read as:
+x
+Exit selected.

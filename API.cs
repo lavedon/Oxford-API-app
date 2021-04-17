@@ -4,11 +4,17 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text.Json;
+using System.Text.RegularExpressions;
+using System.Diagnostics;
 
 namespace OxfordV2
 {
     class API
     {
+
+	public static JsonDocument JSONResponse { get; set; }
+
 	static void resetHeaders(HttpClient client)
 	{
 		try {
@@ -16,15 +22,15 @@ namespace OxfordV2
 		}
 		catch(Exception ex)
 		{
-			Console.WriteLine("Could not get the API key.");
-			Console.WriteLine($"{ex.GetType()} says {ex.Message}");
+			Trace.WriteLine("Could not get the API key.");
+			Trace.WriteLine($"{ex.GetType()} says {ex.Message}");
 			throw;
 		}
-		Console.WriteLine("resetHeaders called.");
-		Console.WriteLine("App Id is:");
-		Console.WriteLine(UserInfo.appId);
-		Console.WriteLine("Key is:");
-		Console.WriteLine(UserInfo.appKey);
+		Trace.WriteLine("resetHeaders called.");
+		Trace.WriteLine("App Id is:");
+		Trace.WriteLine(UserInfo.appId);
+		Trace.WriteLine("Key is:");
+		Trace.WriteLine(UserInfo.appKey);
 		// Use client.CancelPendingRequests? To make sure all is clear?
 		client.CancelPendingRequests();
 		client.DefaultRequestHeaders.Clear();
@@ -33,8 +39,8 @@ namespace OxfordV2
 		// Not using the Authorization headers i.e. client.DefaultRequestHeaders.Authorization
 		client.DefaultRequestHeaders.Add("app_id", UserInfo.appId);
 		client.DefaultRequestHeaders.Add("app_key", UserInfo.appKey);
-		Console.WriteLine("Here are the request Headers...");
-		Console.WriteLine(client.DefaultRequestHeaders);
+		Trace.WriteLine("Here are the request Headers...");
+		Trace.WriteLine(client.DefaultRequestHeaders);
 
 	}
 
@@ -48,74 +54,85 @@ namespace OxfordV2
 
 		Action<object> callWordsAPI = (Object obj) => 
 		{
-			Console.WriteLine("Called callWordsAPI");
+			Trace.WriteLine("Called callWordsAPI");
 			Uri requestURL = new Uri(baseURL + "words/?lemma=" + query.UserEnteredWord + "&limit=1");
-			Console.WriteLine("Making the request");
-			Console.WriteLine(client.GetStringAsync(requestURL));
+			Trace.WriteLine("Making the request");
+
+			var response = client.GetStreamAsync(requestURL).Result;
+			Trace.WriteLine("Got responses.");
+			JSONResponse = JsonDocument.Parse(response);
+			Trace.WriteLine("Set JSONResponse to the response.");
 		};
+
+			
 
 		Action<object> callWordsByIdAPI = (Object obj) => 
 		{
-			Console.WriteLine("Called callWordsByIdAPI");
+			Trace.WriteLine("Called callWordsByIdAPI");
 			Uri requestURL = new Uri(baseURL + @"word/orchestra\_nn01?include\_senses=false&include\_quotations=false");
-			Console.WriteLine("Making the request");
-			Console.WriteLine(client.GetStringAsync(requestURL));
+			Trace.WriteLine("Making the request");
+			Trace.WriteLine(client.GetStringAsync(requestURL));
 		};
 
 		Action<object> callSensesAPI = (Object obj) => 
 		{
-			Console.WriteLine("Called callSensesAPI");
+			Trace.WriteLine("Called callSensesAPI");
 			Uri requestURL = new Uri(baseURL + @"monitor_nn01/senses/");
-			Console.WriteLine("Making the request");
-			Console.WriteLine(client.GetStringAsync(requestURL));
+			Trace.WriteLine("Making the request");
+			Trace.WriteLine(client.GetStringAsync(requestURL));
 		};
 
 		Action<object> callQuotationsAPI = (Object obj) => 
 		{
-			Console.WriteLine("Called callQuotationsAPI");
+			Trace.WriteLine("Called callQuotationsAPI");
 			Uri requestURL = new Uri(baseURL + @"orchestra_nn01/quotations/");
-			Console.WriteLine("Making the request");
-			Console.WriteLine(client.GetStringAsync(requestURL));
+			Trace.WriteLine("Making the request");
+			Trace.WriteLine(client.GetStringAsync(requestURL));
 		};
 
 		Action<object> callRootsAPI = (Object obj) => 
 		{
-			Console.WriteLine("Called callRootsAPI");
-			Uri requestURL = new Uri(baseURL + @"mountainousness_nn01/roots/");
-			Console.WriteLine("Making the request");
-			Console.WriteLine(client.GetStringAsync(requestURL));
+			Trace.WriteLine("Called callRootsAPI");
+			Uri requestURL = new Uri(baseURL + query.WordID + "/roots/");
+			Trace.WriteLine("Making the request");
+			Trace.WriteLine(client.GetStringAsync(requestURL));
+
+			var response = client.GetStreamAsync(requestURL).Result;
+			Trace.WriteLine("Got responses from ROOTS.");
+			JSONResponse = JsonDocument.Parse(response);
+			Trace.WriteLine("Set JSONResponse to the response.");
 		};
 
 		Action<object> callDerivativesAPI = (Object obj) => 
 		{
-			Console.WriteLine("Called callDerivativesAPI");
+			Trace.WriteLine("Called callDerivativesAPI");
 			Uri requestURL = new Uri(baseURL + @"word/brain_nn01/derivatives/");
-			Console.WriteLine("Making the request");
-			Console.WriteLine(client.GetStringAsync(requestURL));
+			Trace.WriteLine("Making the request");
+			Trace.WriteLine(client.GetStringAsync(requestURL));
 		};
 
 		Action<object> callSurfaceformsAPI = (Object obj) => 
 		{
-			Console.WriteLine("Called callSurfaceformsAPI");
+			Trace.WriteLine("Called callSurfaceformsAPI");
 			Uri requestURL = new Uri(baseURL + @"word/musket_nn02/surfaceforms/");
-			Console.WriteLine("Making the request");
-			Console.WriteLine(client.GetStringAsync(requestURL));
+			Trace.WriteLine("Making the request");
+			Trace.WriteLine(client.GetStringAsync(requestURL));
 		};
 
 		Action<object> callFrequencyAPI = (Object obj) => 
 		{
-			Console.WriteLine("Called callFrequencyAPI");
+			Trace.WriteLine("Called callFrequencyAPI");
 			Uri requestURL = new Uri(baseURL + @"word/brain_nn01/frequency/");
-			Console.WriteLine("Making the request");
-			Console.WriteLine(client.GetStringAsync(requestURL));
+			Trace.WriteLine("Making the request");
+			Trace.WriteLine(client.GetStringAsync(requestURL));
 		};
 
 		Action<object> callLemmatizeAPI = (Object obj) => 
 		{
-			Console.WriteLine("Called callLemmatizeAPI");
+			Trace.WriteLine("Called callLemmatizeAPI");
 			Uri requestURL = new Uri(baseURL + @"lemmatize/?form=peas");
-			Console.WriteLine("Making the request");
-			Console.WriteLine(client.GetStringAsync(requestURL));
+			Trace.WriteLine("Making the request");
+			Trace.WriteLine(client.GetStringAsync(requestURL));
 		};
 		// @TODO an action to set headers
 		// Make a new Task for each API call
@@ -123,34 +140,68 @@ namespace OxfordV2
 
 		if (query.QueryMode == Modes.Word) 
 		{
-			Console.WriteLine("Found that QueryMode is set to words.");
-			Console.WriteLine("Press Enter.");
-			Console.ReadLine();
-			Console.WriteLine("Looking up the word {0}", query.WordID);
-			Console.WriteLine("Press Enter.");
-			Console.ReadLine();
-			Console.WriteLine("Now to call the words endpoint.");
-			string APIUrl = baseURL + "words/?lemma=" + 
-				query.UserEnteredWord + "&limit=1";
-			Console.WriteLine("APIUrl is: {0}", APIUrl);
-			Console.WriteLine("Press Enter.");
-			Console.ReadLine();
+			Trace.WriteLine("Found that QueryMode is set to words.");
+			Trace.WriteLine("Looking up the word:" );
+			Trace.WriteLine(query.UserEnteredWord);
+			Trace.WriteLine("Now to call the words endpoint.");
 			resetHeaders(client);
 			Task getWords = new Task(callWordsAPI, "CallWords");
-			Console.WriteLine("Calling the API");
-			Console.WriteLine("Press Enter.");
-			Console.ReadLine();
+			Trace.WriteLine("Calling the API");
 			getWords.RunSynchronously();
-
+			Trace.WriteLine("Left getWords task with the JSONResponse.");
+			Trace.WriteLine("Parsing JSON");
+			JsonElement apiData = JSONResponse.RootElement.GetProperty("data");
+			// Malformed JSON data is returned.  Only 1 element in "data" property
+			// Convert To String and RegEx the string
+			string apiDataString = apiData.ToString();
+			Trace.WriteLine("We now have the data as a string.");
+			Trace.WriteLine(apiDataString);
+			var definitionRegEx = new Regex("(?<=definition\":\\s)(.*?)(?=\",\\s\"main_entry\")");
+			query.Definition= definitionRegEx.Match(apiDataString).ToString();
+			Trace.WriteLine("Extracted definition.");
+			Console.WriteLine(query.Definition);
+			Trace.WriteLine("Set definition to query object.");
+			Trace.WriteLine("Now to get and set the word ID.");
+			var wordIdRegex = new Regex("(?<=\"id\":\\s\")(.*?)(?=\",)");
+			query.WordID = wordIdRegex.Match(apiDataString).ToString();
+			Trace.WriteLine("The wordID was grabbed as:");
+			Trace.Write(query.WordID);
+			query.HasLookedUpWord = true;
 
 		}
 		else if (query.QueryMode == Modes.Root)
 		{
-			Console.WriteLine("Now to call the root endpoint.");
+			Trace.WriteLine("Now to call the root endpoint.");
+			if (query.HasLookedUpWord == false) 
+			{
+				Console.WriteLine("You need to first ask for a definition, sorry..."); 
+			}
+			else 
+			{
+				Trace.WriteLine("Going to look up roots");
+				Trace.WriteLine("API call URL is:");
+				Trace.WriteLine(baseURL);
+				Trace.WriteLine("Making the request:");
+				resetHeaders(client);
+				Task getRoots = new Task(callRootsAPI, "CallRoots");
+				Trace.WriteLine("Calling the API to get ROOTS. Bloody Roots!!");
+				getRoots.RunSynchronously();
+				Trace.WriteLine("Ran roots synchronously.");
+				// JsonElement apiData = JSONResponse.RootElement.GetProperty("data");
+				string rootInfo = JSONResponse.RootElement.GetProperty("data").ToString();
+				Console.WriteLine();
+				// Etymology_summary
+				//
+				// first_use 
+				// 
+				// Source Language
+				// (?<="source_language":\s\[\["European languages",)(.*?)(?=\])
+
+			}
 		}
 		else if (query.QueryMode == Modes.Lammatize)
 		{
-			Console.WriteLine("Now to call the .");
+			Trace.WriteLine("Now to call the .");
 		}
 		else 
 		{
@@ -158,8 +209,6 @@ namespace OxfordV2
 		}
 
 		client.Dispose();
-
 	}
-
     }
 }

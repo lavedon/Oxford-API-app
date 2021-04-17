@@ -1,0 +1,40 @@
+Leaving Main method.
+Starting Main Menu
+In MainMenu()
+The user's input was read as:
+d
+Word look up selected
+Found that QueryMode is set to words.
+Looking up the word:
+
+Now to call the words endpoint.
+APIUrl is:
+https://oed-researcher-api.oxfordlanguages.com/oed/api/v0.2/words/?lemma=&limit=1
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Calling the API
+Called callWordsAPI
+Making the request
+Got responses.
+Set JSONResponse to the response.
+Left getWords task with the JSONResponse.
+Parsing JSON
+We now have the data as a string.
+[{"id": "a_pr01a", "band": 14, "meta": {"created": 1884, "revised": true, "updated": 2008}, "lemma": "a-", "oed_url": "https://www.oed.com/view/Entry/14#eid31549133", "daterange": {"end": null, "start": 700, "obsolete": false, "rangestring": "eOE\u2014"}, "etymology": {"etymons": [{"word": "or-", "language": "English", "target_id": "or_pr01", "part_of_speech": "PREFIX"}], "etymology_type": "variant", "etymon_language": [["English"]], "source_language": [["European languages", "Germanic"]], "etymology_summary": "A variant or alteration of another lexical item."}, "first_use": null, "frequency": null, "sense_ids": [], "definition": null, "main_entry": true, "inflections": [{"region": "British", "inflections": []}, {"region": "US", "inflections": []}], "frequency_id": null, "oed_reference": "a-, prefix1", "pronunciations": [], "parts_of_speech": ["PREFIX"], "primary_sense_id": null}]
+Extracted definition.
+Set definition to query object.
+Now to get and set the word ID.
+The wordID was grabbed as:
+a_pr01aIn MainMenu()
+The user's input was read as:
+x
+Exit selected.

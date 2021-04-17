@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 
 namespace OxfordV2
 {
@@ -8,12 +9,25 @@ namespace OxfordV2
 		Root,
 		Lammatize
 	}
-	class CurrentQuery
+	class CurrentQuery : IDisposable
 	{
+		public bool HasLookedUpWord { get; set; }
 		public string WordID { get; set; }
-		public string UserEnteredWord { get; set; }
+		// Create the object the same time the user looks up a word
+		public string UserEnteredWord { get; set; } 
+		public string Definition { get; set; }
+		public string[] SenseIDs { get; set; }
+		public string Lamma { get; set; }
 		public Modes QueryMode { get; set; }
 
-		public CurrentQuery() {} 
+		public CurrentQuery() {
+			this.HasLookedUpWord = false;
+		} 
+
+		public void Dispose ()
+		{
+			Trace.WriteLine("Called Dispose");
+			Trace.WriteLine("Dispose not yet implemented.");
+		}
 	}
 }

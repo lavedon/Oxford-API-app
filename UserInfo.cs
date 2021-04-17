@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.IO;
 
 namespace OxfordV2
@@ -15,7 +16,7 @@ namespace OxfordV2
 			try
 			{
 				{
-					Console.WriteLine("Getting request keys");
+					Trace.WriteLine("Getting request keys");
 					appId = reader.ReadLine();
 					appKey = reader.ReadLine();
 				}
