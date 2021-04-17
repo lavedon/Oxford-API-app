@@ -7,7 +7,9 @@ namespace OxfordV2
 	{
 		Word,
 		Root,
-		Lammatize
+		Lammatize,
+		Senses,
+		Quotations
 	}
 	class CurrentQuery : IDisposable
 	{

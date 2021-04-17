@@ -30,8 +30,8 @@ namespace OxfordV2
 		    Console.WriteLine("Definition            - D");
 		    Console.WriteLine("Lammatize             - L"); 
 		    Console.WriteLine("Root                  - R");
-		    Console.WriteLine("Get Senses            - S");
-		    Console.WriteLine("Get Quotations        - Q");
+		    Console.WriteLine("Senses                - S");
+		    Console.WriteLine("Quotations            - Q");
 		    Console.WriteLine("-------------------------");
 		    Console.WriteLine("New Word (start over) - N");
 		    Console.WriteLine("Export Results        - E");
@@ -60,8 +60,9 @@ namespace OxfordV2
 			    case ("l" or "lammatize"):
 			    Trace.WriteLine("Lammatize selected.");
 			    query.QueryMode = Modes.Lammatize;
+			    Console.WriteLine("Not yet implemented.");
 			    // Call WORD API
-			    API.APICalls(query);
+			    // API.APICalls(query);
 			    // Return the lammatization of the word 
 			    break;
 
@@ -75,13 +76,25 @@ namespace OxfordV2
 			    Trace.WriteLine("New word");
 			    // Dispose object.  Start over.
 			    // For now just reset object?
-			    
-			    query.HasLookedUpWord = false;
-			    Trace.WriteLine("query.HasLookedUpWord");
-			    Trace.WriteLine(query.HasLookedUpWord);
-			    query.Definition = "";
-			    Trace.WriteLine("query.Definition");
-			    Trace.WriteLine(query.Definition);
+			    	    // Wrap below in a Dispose method?
+				    query.HasLookedUpWord = false;
+				    Trace.WriteLine("query.HasLookedUpWord");
+				    Trace.WriteLine(query.HasLookedUpWord);
+				    query.Definition = "";
+				    Trace.WriteLine("query.Definition");
+				    Trace.WriteLine(query.Definition);
+			    break;
+
+			    case ("s" or "senses"):
+			    Trace.WriteLine("Get senses selected.");
+			    query.QueryMode = Modes.Senses;
+			    API.APICalls(query);
+			    break;
+
+			    case ("q" or "quotations"):
+			    Trace.WriteLine("Get quotaions based on word selected.");
+			    query.QueryMode = Modes.Quotations;
+			    API.APICalls(query);
 			    break;
 
 			    case ("x" or "exit"):

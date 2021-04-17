@@ -52,6 +52,7 @@ namespace OxfordV2
 		var client = new HttpClient();
 		string baseURL = "https://oed-researcher-api.oxfordlanguages.com/oed/api/v0.2/";
 
+		// @TODO make this one Action delegate - with a method that parses the query and responses
 		Action<object> callWordsAPI = (Object obj) => 
 		{
 			Trace.WriteLine("Called callWordsAPI");
@@ -77,7 +78,7 @@ namespace OxfordV2
 		Action<object> callSensesAPI = (Object obj) => 
 		{
 			Trace.WriteLine("Called callSensesAPI");
-			Uri requestURL = new Uri(baseURL + @"monitor_nn01/senses/");
+			Uri requestURL = new Uri(baseURL + query.WordID + "/senses/");
 			Trace.WriteLine("Making the request");
 			Trace.WriteLine(client.GetStringAsync(requestURL));
 		};
@@ -85,9 +86,15 @@ namespace OxfordV2
 		Action<object> callQuotationsAPI = (Object obj) => 
 		{
 			Trace.WriteLine("Called callQuotationsAPI");
-			Uri requestURL = new Uri(baseURL + @"orchestra_nn01/quotations/");
+			Uri requestURL = new Uri(baseURL + "/word/" + query.WordID + "/quotations/");
 			Trace.WriteLine("Making the request");
 			Trace.WriteLine(client.GetStringAsync(requestURL));
+			
+			var response = client.GetStreamAsync(requestURL).Result;
+			Trace.WriteLine("Got quotation responses.");
+			JSONResponse = JsonDocument.Parse(response);
+			Trace.WriteLine("Set JSONResponse to the response.");
+
 		};
 
 		Action<object> callRootsAPI = (Object obj) => 
@@ -140,6 +147,8 @@ namespace OxfordV2
 
 		if (query.QueryMode == Modes.Word) 
 		{
+			// @TODO put this repeated parsing in a method
+			// Use enums to select which option
 			Trace.WriteLine("Found that QueryMode is set to words.");
 			Trace.WriteLine("Looking up the word:" );
 			Trace.WriteLine(query.UserEnteredWord);
@@ -225,6 +234,41 @@ namespace OxfordV2
 		{
 			Trace.WriteLine("Now to call the .");
 		}
+		else if (query.QueryMode == Modes.Senses)
+		{
+			Trace.WriteLine("API.cs is starting senses mode.");
+			if (query.HasLookedUpWord == false)
+			{
+				// @TODO remove this. Have it auto-call up the first ID.
+				Console.WriteLine("You need to first ask for a definition.");
+			}
+			else 
+			{
+				resetHeaders(client);
+				Task getSenses = new Task(callSensesAPI, "CallSenses");
+				getSenses.RunSynchronously();
+				Trace.WriteLine("Ran senses synchronously.");
+			}
+		}
+		else if (query.QueryMode == Modes.Quotations)
+		{
+			Trace.WriteLine("API.cs is starting quotations mode.");
+			if (query.HasLookedUpWord == false)
+			{
+				Console.WriteLine("Quotations you need to ask for a definition.");
+				Console.WriteLine("first.");
+			}
+			else
+			{
+				resetHeaders(client);
+				Task getQuotes = new Task(callQuotationsAPI, "Call Quotations");
+				getQuotes.RunSynchronously();
+				Trace.WriteLine("Ran quotations synchronously.");
+				Trace.WriteLine("Parsing quotations JSON.");
+				JsonElement apiData = JSONResponse.RootElement.GetProperty("data");
+				Console.WriteLine(apiData.ToString());
+			}
+		}
 		else 
 		{
 			Console.WriteLine("Query mode not correctly set.");
@@ -234,3 +278,5 @@ namespace OxfordV2
 	}
     }
 }
+// @TODO If a word is not found return a message "word not found in dictionary."  
+// Instead of just a blank response.
