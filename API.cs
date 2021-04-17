@@ -188,14 +188,36 @@ namespace OxfordV2
 				getRoots.RunSynchronously();
 				Trace.WriteLine("Ran roots synchronously.");
 				// JsonElement apiData = JSONResponse.RootElement.GetProperty("data");
-				string rootInfo = JSONResponse.RootElement.GetProperty("data").ToString();
+				string rootDataString = JSONResponse.RootElement.GetProperty("data").ToString();
 				Console.WriteLine();
 				// Etymology_summary
-				//
+				// (?<="etymology_summary":\s")(.*?)(?="},)
+				var etymologySummaryRegEx = new Regex("(?<=\"etymology_summary\":\\s\")(.*?)(?=\"},)");
+				query.EtymologySummary = etymologySummaryRegEx.Match(rootDataString).ToString();
+				Console.WriteLine("Where the word \"{0}\" came from:", query.UserEnteredWord);
+				Console.WriteLine(query.EtymologySummary);
+				Console.WriteLine();
+
+
 				// first_use 
-				// 
+				// (?<="first_use":\s")(.*?)(?=",) 
+				var firstUseRegEx = new Regex("(?<=\"first_use\":\\s\")(.*?)(?=\",)");
+				query.FirstUse = firstUseRegEx.Match(rootDataString).ToString();
+				Console.WriteLine("First Recorded Use:");
+				Console.WriteLine(query.FirstUse);
+				Console.WriteLine();
+				
+
 				// Source Language
 				// (?<="source_language":\s\[\["European languages",)(.*?)(?=\])
+				var sourceLanguageRegEx = new Regex("(?<=\"source_language\":\\s\\[\\[\"European languages\",)(.*?)(?=\\])");
+				query.SourceLanguage = sourceLanguageRegEx.Match(rootDataString).ToString();
+				Console.WriteLine("The word \"{0}\" has origins in these European languages: ", query.UserEnteredWord);
+				Console.WriteLine(query.SourceLanguage);
+				Console.WriteLine("-----------");
+				Console.WriteLine("Please Press Enter...");
+				Console.ReadLine();
+
 
 			}
 		}
