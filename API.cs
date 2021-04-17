@@ -94,6 +94,7 @@ namespace OxfordV2
 			Trace.WriteLine("Got quotation responses.");
 			JSONResponse = JsonDocument.Parse(response);
 			Trace.WriteLine("Set JSONResponse to the response.");
+			
 
 		};
 
@@ -265,8 +266,8 @@ namespace OxfordV2
 				getQuotes.RunSynchronously();
 				Trace.WriteLine("Ran quotations synchronously.");
 				Trace.WriteLine("Parsing quotations JSON.");
-				JsonElement apiData = JSONResponse.RootElement.GetProperty("data");
-				Console.WriteLine(apiData.ToString());
+				string quotesDataString = JSONResponse.RootElement.GetProperty("data").ToString();
+				Console.WriteLine(quotesDataString);
 			}
 		}
 		else 
