@@ -86,16 +86,22 @@ namespace OxfordV2
 		Action<object> callQuotationsAPI = (Object obj) => 
 		{
 			Trace.WriteLine("Called callQuotationsAPI");
-			Uri requestURL = new Uri(baseURL + "/word/" + query.WordID + "/quotations/");
+			Uri requestURL = new Uri(baseURL + "word/" + query.WordID + "/quotations/");
 			Trace.WriteLine("Making the request");
-			Trace.WriteLine(client.GetStringAsync(requestURL));
+			Trace.WriteLine(client.GetStringAsync(requestURL).Result);
 			
+			try {
 			var response = client.GetStreamAsync(requestURL).Result;
 			Trace.WriteLine("Got quotation responses.");
 			JSONResponse = JsonDocument.Parse(response);
 			Trace.WriteLine("Set JSONResponse to the response.");
-			
-
+			}
+			catch(Exception ex)
+			{
+				Trace.WriteLine("Exception");
+				Trace.WriteLine(ex.GetType());
+				Trace.WriteLine(ex.Message);
+			}
 		};
 
 		Action<object> callRootsAPI = (Object obj) => 
@@ -167,7 +173,7 @@ namespace OxfordV2
 			Trace.WriteLine("We now have the data as a string.");
 			Trace.WriteLine(apiDataString);
 			var definitionRegEx = new Regex("(?<=definition\":\\s)(.*?)(?=\",\\s\"main_entry\")");
-			query.Definition= definitionRegEx.Match(apiDataString).ToString();
+			query.Definition = definitionRegEx.Match(apiDataString).ToString();
 			Trace.WriteLine("Extracted definition.");
 			Console.WriteLine(query.Definition);
 			Trace.WriteLine("Set definition to query object.");
@@ -266,8 +272,18 @@ namespace OxfordV2
 				getQuotes.RunSynchronously();
 				Trace.WriteLine("Ran quotations synchronously.");
 				Trace.WriteLine("Parsing quotations JSON.");
+				
 				string quotesDataString = JSONResponse.RootElement.GetProperty("data").ToString();
-				Console.WriteLine(quotesDataString);
+				// (?<="full_text":\s")(.*?)(?=",)
+				var quotesRegex = new Regex("(?<=\"full_text\":\\s\")(.*?)(?=\",)");
+				query.NumberOfQuotes = quotesRegex.Matches(quotesDataString).Count;
+				// query.Quotes = quotesRegex.Matches(quotesDataString);
+				query.Quote = quotesRegex.Match(quotesDataString).ToString();
+				Console.WriteLine("{0} quotes found.", query.NumberOfQuotes);
+				Trace.WriteLine("First quote grabbed as:");
+				Trace.WriteLine(query.Quote);
+
+				Console.WriteLine(query.Quote);
 			}
 		}
 		else 
