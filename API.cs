@@ -278,10 +278,22 @@ namespace OxfordV2
 				var quotesRegex = new Regex("(?<=\"full_text\":\\s\")(.*?)(?=\",)");
 				query.NumberOfQuotes = quotesRegex.Matches(quotesDataString).Count;
 				// query.Quotes = quotesRegex.Matches(quotesDataString);
-				query.Quote = quotesRegex.Match(quotesDataString).ToString();
 				Console.WriteLine("{0} quotes found.", query.NumberOfQuotes);
+				// query.Quote = quotesRegex.Match(quotesDataString).ToString();
+				foreach (Match match in Regex.Matches(quotesDataString, quotesRegex.ToString()))
+				{
+					string input = "";
+					Console.WriteLine("\"{0}\"", match.Value);
+					Console.WriteLine();
+					Console.WriteLine("----Enter for more - X to exit----");
+					input = Console.ReadLine().Trim().ToLower();
+					if (input == "x")
+					    break;
+				}
+
 				Trace.WriteLine("First quote grabbed as:");
 				Trace.WriteLine(query.Quote);
+
 
 				Console.WriteLine(query.Quote);
 			}

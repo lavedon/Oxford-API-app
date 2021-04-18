@@ -20,8 +20,9 @@ namespace OxfordV2
 		public string Definition { get; set; }
 		public string[] SenseIDs { get; set; }
 		public string Lamma { get; set; }
-		public int numberOfQuotes { get; set; }
+		public int NumberOfQuotes { get; set; }
 		public string Quote { get; set; }
+		public string[] Quotes { get; set; }
 
 		public string EtymologySummary { get; set; }
 		public string FirstUse { get; set; }
