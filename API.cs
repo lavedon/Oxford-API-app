@@ -273,8 +273,12 @@ namespace OxfordV2
 				getQuotes.RunSynchronously();
 				Trace.WriteLine("Ran quotations synchronously.");
 				Trace.WriteLine("Parsing quotations JSON.");
-				
-				
+			}
+			JsonElement root = JSONResponse.RootElement;
+			JsonElement data = root.GetProperty("data");
+
+			// Try getting JSON elements
+			/*	
 				string quotesDataString = JSONResponse.RootElement.GetProperty("data").ToString();
 				// (?<="full_text":\s")(.*?)(?=",)
 				Regex quotesRegex = new Regex("(?<=\"full_text\":\\s\")(.*?)(?=\",)");
@@ -292,7 +296,7 @@ namespace OxfordV2
 				{
 					Console.WriteLine("Exception {0}", ex);
 				}
-				
+			*/	
 				foreach (Match match in matches)
 				{
 					string input = "";
