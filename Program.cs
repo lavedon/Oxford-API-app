@@ -46,6 +46,5 @@ namespace OxfordV2
 		ConsoleUI.Start();
 		Trace.Flush();
         }
-
     }
 }

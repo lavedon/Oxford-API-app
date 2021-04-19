@@ -7,6 +7,7 @@ using System.Net.Http.Headers;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
+using System.Linq;
 
 namespace OxfordV2
 {
@@ -273,14 +274,26 @@ namespace OxfordV2
 				Trace.WriteLine("Ran quotations synchronously.");
 				Trace.WriteLine("Parsing quotations JSON.");
 				
+				
 				string quotesDataString = JSONResponse.RootElement.GetProperty("data").ToString();
 				// (?<="full_text":\s")(.*?)(?=",)
-				var quotesRegex = new Regex("(?<=\"full_text\":\\s\")(.*?)(?=\",)");
+				Regex quotesRegex = new Regex("(?<=\"full_text\":\\s\")(.*?)(?=\",)");
 				query.NumberOfQuotes = quotesRegex.Matches(quotesDataString).Count;
 				// query.Quotes = quotesRegex.Matches(quotesDataString);
 				Console.WriteLine("{0} quotes found.", query.NumberOfQuotes);
 				// query.Quote = quotesRegex.Match(quotesDataString).ToString();
-				foreach (Match match in Regex.Matches(quotesDataString, quotesRegex.ToString()))
+
+				MatchCollection matches = quotesRegex.Matches(quotesDataString);
+				try {
+				// matches.CopyTo(query.Quotes, 0);
+				query.Quotes = matches.Cast<Match>().Select(m => m.Value).ToArray();
+				}
+				catch (Exception ex)
+				{
+					Console.WriteLine("Exception {0}", ex);
+				}
+				
+				foreach (Match match in matches)
 				{
 					string input = "";
 					Console.WriteLine("\"{0}\"", match.Value);
