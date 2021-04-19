@@ -294,7 +294,15 @@ namespace OxfordV2
 					// Get what year the quote is from
 					JsonElement quoteYear = item.GetProperty("year");
 					Console.WriteLine("\"{0}\", Year: {1}, Source: {2} {3}", 
-						actualQuote.ToString(), quoteYear.ToString(), quoteAuthor.ToString(), quoteTitle.ToString());
+						actualQuote.ToString(), quoteYear.ToString(), quoteAuthor.ToString(), 
+						quoteTitle.ToString());
+				    Quote currentQuote = new();
+					currentQuote.Year = quoteYear.GetInt16();
+					currentQuote.Text = actualQuote.ToString();
+					currentQuote.Title = quoteTitle.ToString();
+					currentQuote.Author = quoteAuthor.ToString();
+
+					query.Quotes.Add(currentQuote);
 					Console.WriteLine();
 					Console.WriteLine("----Enter for more - X to exit----");
 					string input = Console.ReadLine().Trim().ToLower();

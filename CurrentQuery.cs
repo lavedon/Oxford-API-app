@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using System.Collections.Generic;
 
 namespace OxfordV2
 {
@@ -22,7 +23,7 @@ namespace OxfordV2
 		public string Lamma { get; set; }
 		public int NumberOfQuotes { get; set; }
 		public string Quote { get; set; }
-		public string[] Quotes { get; set; }
+		public List<Quote> Quotes { get; set; }
 
 		public string EtymologySummary { get; set; }
 		public string FirstUse { get; set; }
@@ -32,7 +33,9 @@ namespace OxfordV2
 
 		public CurrentQuery() {
 			this.HasLookedUpWord = false;
+			this.Quotes = new List<Quote>();
 		} 
+		public string? Source { get; set; }
 
 		public void Dispose ()
 		{
