@@ -272,7 +272,41 @@ namespace OxfordV2
 				getQuotes.RunSynchronously();
 				Trace.WriteLine("Ran quotations synchronously.");
 				Trace.WriteLine("Parsing quotations JSON.");
-				
+
+				JsonElement root = JSONResponse.RootElement;
+				JsonElement quoteData = root.GetProperty("data");
+				foreach (JsonElement item in quoteData.EnumerateArray())
+				{
+					try {
+					// Print the quote
+					JsonElement quoteInfoBlock = item.GetProperty("text");
+					JsonElement actualQuote = quoteInfoBlock.GetProperty("full_text");
+
+					// Get the source of the quote
+					JsonElement quoteSourceBlock = item.GetProperty("source");
+					JsonElement quoteTitle = quoteSourceBlock.GetProperty("title");
+					JsonElement quoteAuthor = quoteSourceBlock.GetProperty("author");
+
+					
+					// quoteSourceBlock.TryGetProperty("author", out JsonElement quoteAuthor);
+
+
+					// Get what year the quote is from
+					JsonElement quoteYear = item.GetProperty("year");
+					Console.WriteLine("\"{0}\", Year: {1}, Source: {2} {3}", 
+						actualQuote.ToString(), quoteYear.ToString(), quoteAuthor.ToString(), quoteTitle.ToString());
+					Console.WriteLine();
+					Console.WriteLine("----Enter for more - X to exit----");
+					string input = Console.ReadLine().Trim().ToLower();
+					if (input == "x")
+					    break;
+					}
+					catch (Exception ex) {
+						Console.WriteLine(ex);
+					}
+					
+				}	
+				/*
 				string quotesDataString = JSONResponse.RootElement.GetProperty("data").ToString();
 				// (?<="full_text":\s")(.*?)(?=",)
 				var quotesRegex = new Regex("(?<=\"full_text\":\\s\")(.*?)(?=\",)");
@@ -284,12 +318,8 @@ namespace OxfordV2
 				{
 					string input = "";
 					Console.WriteLine("\"{0}\"", match.Value);
-					Console.WriteLine();
-					Console.WriteLine("----Enter for more - X to exit----");
-					input = Console.ReadLine().Trim().ToLower();
-					if (input == "x")
-					    break;
 				}
+				*/
 
 				Trace.WriteLine("First quote grabbed as:");
 				Trace.WriteLine(query.Quote);
