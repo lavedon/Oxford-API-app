@@ -1,0 +1,13 @@
+Do you want roots
+derivatives 
+surfaceforms
+and frequency?
+-----
+Question about quotations: I have noted that the API, by default, returns the oldest quotes first.
+
+In the console app, do you want the quotes displayed most recent first? For example, a quotation from 700 AD is probably less likely to be helpful then a quotation from 1980.  Ideally, the most recent quotes are displayed first?
+
+2.) Do you want, by default, all quotations saved for supermemo export or only the displayed quotations?  Right now it is only saving the quotations you see in the actual app.
+
+-----
+
