@@ -23,6 +23,17 @@ namespace OxfordV2
 			    Console.WriteLine("Please Enter a word");
 			    string word = Console.ReadLine().ToLower().Trim();
 				query.UserEnteredWord = word;
+				try {
+					Trace.WriteLine("Automatically looking up user entered word:");
+					Trace.WriteLine(query.UserEnteredWord);
+					query.QueryMode = Modes.Word;
+					API.APICalls(query);
+				}
+				catch (Exception ex)
+				{
+					Trace.WriteLine("Exception on automatic word look up");
+					Trace.WriteLine(ex);
+				}
 		    }
 		    Console.WriteLine();
 		    Console.WriteLine("-------------------------");

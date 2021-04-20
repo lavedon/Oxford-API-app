@@ -9,8 +9,8 @@ namespace OxfordV2
         static void Main(string[] args)
         {
 		// Show Trace on console
-		// TextWriterTraceListener tr1 = new TextWriterTraceListener(System.Console.Out);
-		// Trace.Listeners.Add(tr1);
+		TextWriterTraceListener tr1 = new TextWriterTraceListener(System.Console.Out);
+		Trace.Listeners.Add(tr1);
 
 		// Try to create the logs directory
 

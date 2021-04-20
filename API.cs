@@ -80,7 +80,21 @@ namespace OxfordV2
 			Trace.WriteLine("Called callSensesAPI");
 			Uri requestURL = new Uri(baseURL + query.WordID + "/senses/");
 			Trace.WriteLine("Making the request");
-			Trace.WriteLine(client.GetStringAsync(requestURL));
+			Trace.WriteLine(client.GetStringAsync(requestURL).Result);
+
+			try {
+			var response = client.GetStreamAsync(requestURL).Result;
+			Trace.WriteLine("Got senses responses.");
+			JSONResponse = JsonDocument.Parse(response);
+			Trace.WriteLine("Set JSONResponse to the response.");
+			}
+			catch(Exception ex)
+			{
+				Trace.WriteLine("Exception");
+				Trace.WriteLine(ex.GetType());
+				Trace.WriteLine(ex.Message);
+			}
+
 		};
 
 		Action<object> callQuotationsAPI = (Object obj) => 
@@ -302,6 +316,7 @@ namespace OxfordV2
 					currentQuote.Title = quoteTitle.ToString();
 					currentQuote.Author = quoteAuthor.ToString();
 
+					// @TODO add all quotes whether you have seen them or not?
 					query.Quotes.Add(currentQuote);
 					Console.WriteLine();
 					Console.WriteLine("----Enter for more - X to exit----");
