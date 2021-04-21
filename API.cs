@@ -81,7 +81,31 @@ namespace OxfordV2
 			Trace.WriteLine("Called callSensesAPI");
 			Uri requestURL = new Uri(baseURL + query.WordID + "/senses/");
 			Trace.WriteLine("Making the request");
-			Trace.WriteLine(client.GetStringAsync(requestURL).Result);
+			try {
+				client.Timeout = TimeSpan.FromMinutes(10);
+
+				// HttpResponseMessage response = new HttpResponseMessage();
+				var response = client.GetStreamAsync(requestURL).Result;
+				Console.WriteLine(response);
+			}
+			catch (AggregateException ae)
+			{
+				Console.WriteLine("Caught aggregate exception-Task.Wait behavior");
+				var flatExs = ae.Flatten().InnerExceptions;
+				foreach (var ex in flatExs)
+				{
+					Console.WriteLine($"{ex}");
+				}
+				ae.Handle( (x) => 
+				{
+					if (x is UnauthorizedAccessException) // This we know how to handle.
+					{
+						Console.WriteLine("You do not have access.");
+						return true;
+					}
+					return false; // Let anything else stop the application.
+				});
+			}
 
 			try {
 			var response = client.GetStreamAsync(requestURL).Result;
@@ -268,8 +292,11 @@ namespace OxfordV2
 			{
 				resetHeaders(client);
 				Task getSenses = new Task(callSensesAPI, "CallSenses");
+				getSenses.ConfigureAwait(false);
 				getSenses.RunSynchronously();
-				Trace.WriteLine("Ran senses synchronously.");
+
+
+				Trace.WriteLine("Ran senses using start.");
 
 				JsonElement senseData = JSONResponse.RootElement.GetProperty("data");
 
