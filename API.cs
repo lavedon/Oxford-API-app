@@ -7,6 +7,7 @@ using System.Net.Http.Headers;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
+using System.Linq;
 
 namespace OxfordV2
 {
@@ -269,6 +270,73 @@ namespace OxfordV2
 				Task getSenses = new Task(callSensesAPI, "CallSenses");
 				getSenses.RunSynchronously();
 				Trace.WriteLine("Ran senses synchronously.");
+
+				JsonElement senseData = JSONResponse.RootElement.GetProperty("data");
+
+				Sense currentSense = new();
+				foreach (JsonElement item in senseData.EnumerateArray())
+				{
+				try {
+					// Print the quote
+					
+					currentSense.Definition = item.GetProperty("definition").ToString();
+					currentSense.Start = item.GetProperty("daterange").GetProperty("start").GetInt16(); 
+					currentSense.IsObsolete = item.GetProperty("daterange")
+						.GetProperty("obsolete").GetBoolean();
+					// currentSense.Usage = item.GetProperty("")
+					Console.WriteLine("Word first used: {0}", currentSense.Start);
+					var etyArray = item.GetProperty("etymology").GetProperty("etymons");
+					currentSense.PrimarySenseID = item.GetProperty("primary_sense_id").ToString();
+					currentSense.EtymologySummary = item.GetProperty("etymology").
+						GetProperty("etymology_summary").ToString();
+				    Console.WriteLine();
+					Console.WriteLine("Sense Etymology:");
+					foreach (var i in etyArray.EnumerateArray())
+					{
+
+						currentSense.Etymons.TryAdd(i.GetProperty("word").ToString(),
+							i.GetProperty("part_of_speech").ToString());
+						Console.WriteLine();
+						Console.WriteLine(i.GetProperty("word"));	
+						Console.WriteLine("Part of Speech:");
+						if (i.GetProperty("part_of_speech").ToString() == "VB")
+						{
+							Console.WriteLine("Verb");
+						}
+						else 
+						{
+							Console.WriteLine(i.GetProperty("part_of_speech"));
+						}
+					}
+
+
+					// Get Inflections
+					foreach (JsonElement i in item.GetProperty("inflections").EnumerateArray())
+					{
+						string region = i.GetProperty("region").ToString();
+						Console.WriteLine();
+						Console.WriteLine("Region: {0}", region); 
+						Console.WriteLine("Inflections:");
+
+						var forms = new System.Text.StringBuilder();
+						foreach (JsonElement inflections in i.GetProperty("inflections").EnumerateArray())
+						{
+							var form = inflections.GetProperty("form").ToString();
+							Console.Write(form + " ");
+							forms.Append(form);
+							forms.Append(" ");
+						}
+						currentSense.Inflections.TryAdd(region, forms.ToString());
+					}
+
+
+					}
+					catch (Exception ex)
+					{
+						Trace.WriteLine(ex);
+					}
+
+				}
 			}
 		}
 		else if (query.QueryMode == Modes.Quotations)
