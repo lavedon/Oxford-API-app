@@ -79,12 +79,11 @@ namespace OxfordV2
 		Action<object> callSensesAPI = (Object obj) => 
 		{
 			Trace.WriteLine("Called callSensesAPI");
-			Uri requestURL = new Uri(baseURL + query.WordID + "/senses/");
+			Uri requestURL = new Uri(baseURL + @"word/" + query.WordID + @"/senses/");
 			Trace.WriteLine("Making the request");
 			try {
 				client.Timeout = TimeSpan.FromMinutes(10);
 
-				// HttpResponseMessage response = new HttpResponseMessage();
 				var response = client.GetStreamAsync(requestURL).Result;
 				Console.WriteLine(response);
 			}
@@ -457,7 +456,7 @@ namespace OxfordV2
 			Console.WriteLine("Query mode not correctly set.");
 		}
 
-		client.Dispose();
+		// client.Dispose();
 	}
     }
 }
