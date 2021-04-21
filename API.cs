@@ -330,6 +330,12 @@ namespace OxfordV2
 					}
 
 
+					query.Senses.Add(currentSense);
+					Console.WriteLine();
+					Console.WriteLine("----Enter for more - X to exit----");
+					string input = Console.ReadLine().Trim().ToLower();
+					if (input == "x")
+					    break;
 					}
 					catch (Exception ex)
 					{
