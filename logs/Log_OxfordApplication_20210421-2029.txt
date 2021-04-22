@@ -1,0 +1,58 @@
+Leaving Main method.
+Starting Main Menu
+In MainMenu()
+Automatically looking up user entered word:
+software
+Found that QueryMode is set to words.
+Looking up the word:
+software
+Now to call the words endpoint.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Calling the API
+Called callWordsAPI
+Making the request
+Got responses.
+Set JSONResponse to the response.
+Left getWords task with the JSONResponse.
+Parsing JSON
+We now have the data as a string.
+[{"id": "software_nn01", "band": 10, "meta": {"created": 1986, "revised": true, "updated": 2016}, "lemma": "software", "oed_url": "https://www.oed.com/view/Entry/183938#eid21971543", "daterange": {"end": null, "start": 1782, "obsolete": false, "rangestring": "1782\u2014"}, "etymology": {"etymons": [{"word": "soft", "language": "English", "target_id": "soft_jj01", "part_of_speech": "JJ"}, {"word": "ware", "language": "English", "target_id": "ware_nn03", "part_of_speech": "NN"}], "etymology_type": "compound", "etymon_language": [["English"]], "source_language": [["European languages", "Germanic"]], "etymology_summary": "Formed within English, by compounding."}, "first_use": "D. Lowellin", "frequency": [[1750, 0], [1760, 0], [1770, 0], [1780, 0], [1790, 0], [1800, 0.00064], [1810, 0.00077], [1820, 0.00082], [1830, 0.00091], [1840, 0.00062], [1850, 0.0011], [1860, 0.0014], [1870, 0.0018], [1880, 0.0021], [1890, 0.003], [1900, 0.0037], [1910, 0.0044], [1920, 0.017], [1930, 0.024], [1940, 0.19], [1950, 0.3], [1960, 2.3], [1970, 13], [1980, 31], [1990, 49], [2000, 58], [2010, 60]], "sense_ids": ["software_nn01-1212457570", "software_nn01-1212457640", "software_nn01-21971554", "software_nn01-21971548", "software_nn01-21971677"], "definition": "Computing. Programs designed to enable a computer to perform a particular task or series of tasks; = applications software n. at  application n. compounds 2b.", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "software", "part_of_speech": "NN"}, {"form": "softwares", "part_of_speech": "NNS"}]}, {"region": "US", "inflections": [{"form": "software", "part_of_speech": "NN"}, {"form": "softwares", "part_of_speech": "NNS"}]}], "frequency_id": "software_nn01-fq", "oed_reference": "software, n.", "pronunciations": [{"ipa": ["\u02c8s\u0252f(t)w\u025b\u02d0"], "region": "British"}, {"ipa": ["\u02c8s\u0254f(t)\u02ccw\u025b(\u0259)r", "\u02c8s\u0251f(t)\u02ccw\u025b(\u0259)r"], "region": "US"}], "parts_of_speech": ["NN"], "primary_sense_id": "software_nn01-21971548"}]
+Extracted definition.
+Set definition to query object.
+Now to get and set the word ID.
+The wordID was grabbed as:
+software_nn01The user's input was read as:
+s
+Get senses selected.
+API.cs is starting senses mode.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Called callSensesAPI
+Making the request
+System.Net.Http.HttpConnection+ContentLengthReadStream
+Got senses responses.
+Set JSONResponse to the response.
+Ran senses using start.
+In MainMenu()
+The user's input was read as:
+x
+Exit selected.
