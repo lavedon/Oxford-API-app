@@ -1,0 +1,36 @@
+Leaving Main method.
+Starting Main Menu
+In MainMenu()
+Automatically looking up user entered word:
+coputer
+Found that QueryMode is set to words.
+Looking up the word:
+coputer
+Now to call the words endpoint.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Calling the API
+Called callWordsAPI
+Making the request
+Got responses.
+Set JSONResponse to the response.
+Left getWords task with the JSONResponse.
+Parsing JSON
+We now have the data as a string.
+[]
+Extracted definition.
+Set definition to query object.
+Now to get and set the word ID.
+The wordID was grabbed as:
+The user's input was read as:
+x
+Exit selected.

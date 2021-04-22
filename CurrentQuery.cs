@@ -37,6 +37,7 @@ namespace OxfordV2
 		public CurrentQuery() {
 			this.HasLookedUpWord = false;
 			this.Quotes = new List<Quote>();
+			this.Senses = new List<Sense>();
 		} 
 		public string Source { get; set; }
 

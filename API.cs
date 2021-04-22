@@ -16,6 +16,7 @@ namespace OxfordV2
 
 	public static JsonDocument JSONResponse { get; set; }
 
+
 	static void resetHeaders(HttpClient client)
 	{
 		try {
@@ -85,7 +86,7 @@ namespace OxfordV2
 				client.Timeout = TimeSpan.FromMinutes(10);
 
 				var response = client.GetStreamAsync(requestURL).Result;
-				Console.WriteLine(response);
+				Trace.WriteLine(response);
 			}
 			catch (AggregateException ae)
 			{
@@ -295,7 +296,7 @@ namespace OxfordV2
 				getSenses.RunSynchronously();
 
 
-				Trace.WriteLine("Ran senses using start.");
+			Trace.WriteLine("Ran senses using start.");
 
 				JsonElement senseData = JSONResponse.RootElement.GetProperty("data");
 
@@ -309,55 +310,32 @@ namespace OxfordV2
 					currentSense.Start = item.GetProperty("daterange").GetProperty("start").GetInt16(); 
 					currentSense.IsObsolete = item.GetProperty("daterange")
 						.GetProperty("obsolete").GetBoolean();
+				    currentSense.IsMainUsage = item.GetProperty("main_current_sense").GetBoolean();
+					currentSense.OedReference = item.GetPropertyExt("oed_reference")?.ToString();
 					// currentSense.Usage = item.GetProperty("")
-					Console.WriteLine("Word first used: {0}", currentSense.Start);
-					var etyArray = item.GetProperty("etymology").GetProperty("etymons");
-					currentSense.PrimarySenseID = item.GetProperty("primary_sense_id").ToString();
-					currentSense.EtymologySummary = item.GetProperty("etymology").
-						GetProperty("etymology_summary").ToString();
-				    Console.WriteLine();
-					Console.WriteLine("Sense Etymology:");
-					foreach (var i in etyArray.EnumerateArray())
+					Console.WriteLine(currentSense.Definition);
+					Console.WriteLine("Sense first used: {0}", currentSense.Start);
+					if (currentSense.IsObsolete)
 					{
-
-						currentSense.Etymons.TryAdd(i.GetProperty("word").ToString(),
-							i.GetProperty("part_of_speech").ToString());
-						Console.WriteLine();
-						Console.WriteLine(i.GetProperty("word"));	
-						Console.WriteLine("Part of Speech:");
-						if (i.GetProperty("part_of_speech").ToString() == "VB")
-						{
-							Console.WriteLine("Verb");
-						}
-						else 
-						{
-							Console.WriteLine(i.GetProperty("part_of_speech"));
-						}
+						Console.WriteLine("This usage is obsolete.");
 					}
-
-
-					// Get Inflections
-					foreach (JsonElement i in item.GetProperty("inflections").EnumerateArray())
+					else 
 					{
-						string region = i.GetProperty("region").ToString();
-						Console.WriteLine();
-						Console.WriteLine("Region: {0}", region); 
-						Console.WriteLine("Inflections:");
-
-						var forms = new System.Text.StringBuilder();
-						foreach (JsonElement inflections in i.GetProperty("inflections").EnumerateArray())
-						{
-							var form = inflections.GetProperty("form").ToString();
-							Console.Write(form + " ");
-							forms.Append(form);
-							forms.Append(" ");
-						}
-						currentSense.Inflections.TryAdd(region, forms.ToString());
+						Console.WriteLine("This sense is not obsolete.");
 					}
-
+					if (currentSense.IsMainUsage)
+					{
+						Console.WriteLine("This sense is the main sense for the word.");
+					}
+					else 
+					{
+						Console.WriteLine("Not the main sense for the word.");
+					}
+					Console.WriteLine(currentSense.OedReference);
 
 					query.Senses.Add(currentSense);
 					Console.WriteLine();
+
 					Console.WriteLine("----Enter for more - X to exit----");
 					string input = Console.ReadLine().Trim().ToLower();
 					if (input == "x")
