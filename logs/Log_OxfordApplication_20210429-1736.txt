@@ -1,0 +1,40 @@
+Leaving Main method.
+Starting Main Menu
+In MainMenu()
+Automatically looking up user entered word:
+baseball
+Found that QueryMode is set to words.
+Looking up the word:
+baseball
+Now to call the words endpoint.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Calling the API
+Called callWordsAPI
+Making the request
+Got responses.
+Set JSONResponse to the response.
+Left getWords task with the JSONResponse.
+Parsing JSON
+We now have the data as a string.
+[{"id": "baseball_nn01", "band": 9, "meta": {"created": 1885, "revised": true, "updated": 2011}, "lemma": "baseball", "oed_url": "https://www.oed.com/view/Entry/15858#eid26750619", "daterange": {"end": null, "start": 1748, "obsolete": false, "rangestring": "1748\u2014"}, "etymology": {"etymons": [{"word": "base", "language": "English", "target_id": "base_nn01", "part_of_speech": "NN"}, {"word": "ball", "language": "English", "target_id": "ball_nn01", "part_of_speech": "NN"}], "etymology_type": "compound", "etymon_language": [["English"]], "source_language": [["European languages", "Greek"]], "etymology_summary": "Formed within English, by compounding."}, "first_use": "Lady Hervey", "frequency": [[1750, 0], [1760, 0.002], [1770, 0.0017], [1780, 0.0022], [1790, 0.0027], [1800, 0.0018], [1810, 0.0019], [1820, 0.0022], [1830, 0.0036], [1840, 0.0062], [1850, 0.034], [1860, 0.1], [1870, 0.32], [1880, 0.9], [1890, 1.6], [1900, 2.2], [1910, 3.1], [1920, 4.1], [1930, 4.8], [1940, 4.9], [1950, 5.1], [1960, 5.0], [1970, 5.8], [1980, 8.0], [1990, 11], [2000, 12], [2010, 13]], "sense_ids": ["baseball_nn01-238442793", "baseball_nn01-238442796", "baseball_nn01-204203171"], "definition": "Chiefly North American (originally U.S.). A ball game played by two teams of nine players on a field marked by four bases in a diamond-shaped pattern, in which the pitcher of the fielding team throws the ball to batters on the batting team, who must complete a circuit of the bases in order to score runs. Cf. softball n. 1a.", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "baseball", "part_of_speech": "NN"}, {"form": "baseballs", "part_of_speech": "NNS"}]}, {"region": "US", "inflections": [{"form": "baseball", "part_of_speech": "NN"}, {"form": "baseballs", "part_of_speech": "NNS"}]}], "frequency_id": "baseball_nn01-fq", "oed_reference": "baseball, n.", "pronunciations": [{"ipa": ["\u02c8be\u026asb\u0254\u02d0l"], "region": "British"}, {"ipa": ["\u02c8be\u026as\u02ccb\u0254l", "\u02c8be\u026as\u02ccb\u0251l"], "region": "US"}], "parts_of_speech": ["NN"], "primary_sense_id": "baseball_nn01-238442796"}]
+Extracted definition.
+Set definition to query object.
+Now to get and set the word ID.
+The wordID was grabbed as:
+baseball_nn01The user's input was read as:
+o
+Options menu selected.
+In MainMenu()
+The user's input was read as:
+x
+Exit selected.

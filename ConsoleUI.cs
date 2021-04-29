@@ -45,6 +45,7 @@ namespace OxfordV2
 		    Console.WriteLine("Quotations            - Q");
 		    Console.WriteLine("-------------------------");
 		    Console.WriteLine("New Word (start over) - N");
+		    Console.WriteLine("Options               - O");
 		    Console.WriteLine("Export Results        - E");
 		    Console.WriteLine("Exit                  - X");
 		    Console.WriteLine("Please make a selection and press enter");
@@ -92,6 +93,11 @@ namespace OxfordV2
 				    query.Definition = "";
 				    Trace.WriteLine("query.Definition");
 				    Trace.WriteLine(query.Definition);
+			    break;
+
+			    case ("o" or "options" or "option"):
+			    Trace.WriteLine("Options menu selected.");
+			    OptionsMenu.StartOptionsMenu(query);
 			    break;
 
 			    case ("s" or "senses"):
