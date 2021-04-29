@@ -1,0 +1,59 @@
+Leaving Main method.
+Starting Main Menu
+In MainMenu()
+Automatically looking up user entered word:
+apple
+Found that QueryMode is set to words.
+Looking up the word:
+apple
+Now to call the words endpoint.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Calling the API
+Called callWordsAPI
+Making the request
+Got responses.
+Set JSONResponse to the response.
+Left getWords task with the JSONResponse.
+Parsing JSON
+We now have the data as a string.
+[{"id": "apple_nn01", "band": 6, "meta": {"created": 1885, "revised": true, "updated": 2008}, "lemma": "apple", "oed_url": "https://www.oed.com/view/Entry/9678#eid340737", "daterange": {"end": null, "start": 895, "obsolete": false, "rangestring": "eOE\u2014"}, "etymology": {"etymons": [], "etymology_type": "inherited", "etymon_language": [["European languages", "Germanic", "West Germanic"]], "source_language": [["European languages", "Germanic"]], "etymology_summary": "A word inherited from Germanic."}, "first_use": "King Alfred", "frequency": [[1750, 7.7], [1760, 8.2], [1770, 8.8], [1780, 9.0], [1790, 9.9], [1800, 10], [1810, 10], [1820, 11], [1830, 12], [1840, 12], [1850, 13], [1860, 14], [1870, 14], [1880, 16], [1890, 17], [1900, 19], [1910, 19], [1920, 20], [1930, 20], [1940, 18], [1950, 16], [1960, 13], [1970, 13], [1980, 14], [1990, 15], [2000, 15], [2010, 15]], "sense_ids": ["apple_nn01-340739", "apple_nn01-340946", "apple_nn01-341016", "apple_nn01-122260836", "apple_nn01-341164", "apple_nn01-340917", "apple_nn01-343079", "apple_nn01-119186380", "apple_nn01-343199", "apple_nn01-343158", "apple_nn01-119186432", "apple_nn01-343232", "apple_nn01-341316", "apple_nn01-341407", "apple_nn01-341467", "apple_nn01-119186414", "apple_nn01-343271", "apple_nn01-343518", "apple_nn01-343442", "apple_nn01-341507"], "definition": "The round firm fruit (a pome) of any of various wild and cultivated trees of the genus Malus (see sense 4a), occurring in a wide variety of forms, colours, and flavours; esp. any of numerous cultivated kinds produced throughout the temperate zones of both hemispheres, typically having crisp white flesh and green, yellow, or red skin.", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "apple", "part_of_speech": "NN"}, {"form": "apples", "part_of_speech": "NNS"}]}, {"region": "US", "inflections": [{"form": "apple", "part_of_speech": "NN"}, {"form": "apples", "part_of_speech": "NNS"}]}], "frequency_id": "apple_nn01-fq", "oed_reference": "apple, n.", "pronunciations": [{"ipa": ["\u02c8apl"], "region": "British"}, {"ipa": ["\u02c8aep(\u0259)l"], "region": "US"}], "parts_of_speech": ["NN"], "primary_sense_id": "apple_nn01-340739"}]
+Extracted definition.
+Set definition to query object.
+Now to get and set the word ID.
+The wordID was grabbed as:
+apple_nn01The user's input was read as:
+l
+Lammatize selected.
+Now to call the Lammatize API
+Figure out of one word or multiple words have been entered.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Called callLemmatizeAPI
+Making the request
+{"meta": {"total": 2, "count": 2, "offset": 0, "limit": 100, "provider": "Oxford University Press", "cite": "Oxford English Dictionary API, Oxford University Press, 0.0.0.0/oed/api/v0.2/lemmatize/?form=apple&offset=0&limit=100 . Accessed 29 April 2021"}, "links": {"self": "/oed/api/v0.2/lemmatize/?form=apple&offset=0&limit=100", "prev": null, "next": null, "first": "/oed/api/v0.2/lemmatize/?form=apple&offset=0&limit=100", "last": "/oed/api/v0.2/lemmatize/?form=apple&offset=0&limit=100"}, "data": [{"word": {"id": "apple_nn01", "band": 6, "meta": {"created": 1885, "revised": true, "updated": 2008}, "lemma": "apple", "oed_url": "https://www.oed.com/view/Entry/9678#eid340737", "daterange": {"end": null, "start": 895, "obsolete": false, "rangestring": "eOE\u2014"}, "etymology": {"etymons": [], "etymology_type": "inherited", "etymon_language": [["European languages", "Germanic", "West Germanic"]], "source_language": [["European languages", "Germanic"]], "etymology_summary": "A word inherited from Germanic."}, "first_use": "King Alfred", "frequency": [[1750, 7.7], [1760, 8.2], [1770, 8.8], [1780, 9.0], [1790, 9.9], [1800, 10], [1810, 10], [1820, 11], [1830, 12], [1840, 12], [1850, 13], [1860, 14], [1870, 14], [1880, 16], [1890, 17], [1900, 19], [1910, 19], [1920, 20], [1930, 20], [1940, 18], [1950, 16], [1960, 13], [1970, 13], [1980, 14], [1990, 15], [2000, 15], [2010, 15]], "sense_ids": ["apple_nn01-340739", "apple_nn01-340946", "apple_nn01-341016", "apple_nn01-122260836", "apple_nn01-341164", "apple_nn01-340917", "apple_nn01-343079", "apple_nn01-119186380", "apple_nn01-343199", "apple_nn01-343158", "apple_nn01-119186432", "apple_nn01-343232", "apple_nn01-341316", "apple_nn01-341407", "apple_nn01-341467", "apple_nn01-119186414", "apple_nn01-343271", "apple_nn01-343518", "apple_nn01-343442", "apple_nn01-341507"], "definition": "The round firm fruit (a pome) of any of various wild and cultivated trees of the genus Malus (see sense 4a), occurring in a wide variety of forms, colours, and flavours; esp. any of numerous cultivated kinds produced throughout the temperate zones of both hemispheres, typically having crisp white flesh and green, yellow, or red skin.", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "apple", "part_of_speech": "NN"}, {"form": "apples", "part_of_speech": "NNS"}]}, {"region": "US", "inflections": [{"form": "apple", "part_of_speech": "NN"}, {"form": "apples", "part_of_speech": "NNS"}]}], "frequency_id": "apple_nn01-fq", "oed_reference": "apple, n.", "pronunciations": [{"ipa": ["\u02c8apl"], "region": "British"}, {"ipa": ["\u02c8aep(\u0259)l"], "region": "US"}], "parts_of_speech": ["NN"], "primary_sense_id": "apple_nn01-340739"}, "surface_forms": [{"id": "apple_nn01-s001", "band": 6, "form": "apple", "lemma": "apple", "region": null, "word_id": "apple_nn01", "computed": false, "daterange": {"end": null, "start": 1150, "obsolete": false, "rangestring": "1150\u2014"}, "irregular": false, "normalized": "apple", "part_of_speech": "NN", "standard_us_form": true, "standard_british_form": true}]}, {"word": {"id": "apple_vb01", "band": 11, "meta": {"created": 1885, "revised": true, "updated": 2008}, "lemma": "apple", "oed_url": "https://www.oed.com/view/Entry/9679#eid345077", "daterange": {"end": null, "start": 1601, "obsolete": false, "rangestring": "1601\u2014"}, "etymology": {"etymons": [{"word": "apple", "language": "English", "target_id": "apple_nn01", "part_of_speech": "NN"}], "etymology_type": "conversion", "etymon_language": [["English"]], "source_language": [["European languages", "Germanic"]], "etymology_summary": "Formed within English, by conversion."}, "first_use": "Philemon Holland", "frequency": [[1750, 0.031], [1760, 0.028], [1770, 0.027], [1780, 0.025], [1790, 0.023], [1800, 0.022], [1810, 0.019], [1820, 0.016], [1830, 0.016], [1840, 0.015], [1850, 0.015], [1860, 0.015], [1870, 0.016], [1880, 0.017], [1890, 0.018], [1900, 0.019], [1910, 0.02], [1920, 0.021], [1930, 0.021], [1940, 0.02], [1950, 0.019], [1960, 0.018], [1970, 0.018], [1980, 0.019], [1990, 0.019], [2000, 0.018], [2010, 0.017]], "sense_ids": ["apple_vb01-345079", "apple_vb01-345134"], "definition": "intransitive. Of vegetables, flower buds, and esp. (in later use) root crops: to swell into a globular shape; to become shaped like an apple.", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "apple", "part_of_speech": "VB"}, {"form": "apples", "part_of_speech": "VBZ"}, {"form": "appling", "part_of_speech": "VBG"}, {"form": "appled", "part_of_speech": "VBD"}, {"form": "appled", "part_of_speech": "VBN"}]}, {"region": "US", "inflections": [{"form": "apple", "part_of_speech": "VB"}, {"form": "apples", "part_of_speech": "VBZ"}, {"form": "appling", "part_of_speech": "VBG"}, {"form": "appled", "part_of_speech": "VBD"}, {"form": "appled", "part_of_speech": "VBN"}]}], "frequency_id": "apple_vb01-fq", "oed_reference": "apple, v.", "pronunciations": [{"ipa": ["\u02c8apl"], "region": "British"}, {"ipa": ["\u02c8aep(\u0259)l"], "region": "US"}], "parts_of_speech": ["VB"], "primary_sense_id": "apple_vb01-345079"}, "surface_forms": [{"id": "apple_vb01-s001", "band": 11, "form": "apple", "lemma": "apple", "region": null, "word_id": "apple_vb01", "computed": false, "daterange": {"end": null, "start": 1601, "obsolete": false, "rangestring": "1601\u2014"}, "irregular": false, "normalized": "apple", "part_of_speech": "VB", "standard_us_form": true, "standard_british_form": true}]}]}
+
+Got Lamma response.
+Set JSONResponse to the response.
+In MainMenu()
+The user's input was read as:
+x
+Exit selected.

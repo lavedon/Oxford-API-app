@@ -1,0 +1,342 @@
+Leaving Main method.
+Starting Main Menu
+In MainMenu()
+Automatically looking up user entered word:
+apple
+Found that QueryMode is set to words.
+Looking up the word:
+apple
+Now to call the words endpoint.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Calling the API
+Called callWordsAPI
+Making the request
+Got responses.
+Set JSONResponse to the response.
+Left getWords task with the JSONResponse.
+Parsing JSON
+We now have the data as a string.
+[{"id": "apple_nn01", "band": 6, "meta": {"created": 1885, "revised": true, "updated": 2008}, "lemma": "apple", "oed_url": "https://www.oed.com/view/Entry/9678#eid340737", "daterange": {"end": null, "start": 895, "obsolete": false, "rangestring": "eOE\u2014"}, "etymology": {"etymons": [], "etymology_type": "inherited", "etymon_language": [["European languages", "Germanic", "West Germanic"]], "source_language": [["European languages", "Germanic"]], "etymology_summary": "A word inherited from Germanic."}, "first_use": "King Alfred", "frequency": [[1750, 7.7], [1760, 8.2], [1770, 8.8], [1780, 9.0], [1790, 9.9], [1800, 10], [1810, 10], [1820, 11], [1830, 12], [1840, 12], [1850, 13], [1860, 14], [1870, 14], [1880, 16], [1890, 17], [1900, 19], [1910, 19], [1920, 20], [1930, 20], [1940, 18], [1950, 16], [1960, 13], [1970, 13], [1980, 14], [1990, 15], [2000, 15], [2010, 15]], "sense_ids": ["apple_nn01-340739", "apple_nn01-340946", "apple_nn01-341016", "apple_nn01-122260836", "apple_nn01-341164", "apple_nn01-340917", "apple_nn01-343079", "apple_nn01-119186380", "apple_nn01-343199", "apple_nn01-343158", "apple_nn01-119186432", "apple_nn01-343232", "apple_nn01-341316", "apple_nn01-341407", "apple_nn01-341467", "apple_nn01-119186414", "apple_nn01-343271", "apple_nn01-343518", "apple_nn01-343442", "apple_nn01-341507"], "definition": "The round firm fruit (a pome) of any of various wild and cultivated trees of the genus Malus (see sense 4a), occurring in a wide variety of forms, colours, and flavours; esp. any of numerous cultivated kinds produced throughout the temperate zones of both hemispheres, typically having crisp white flesh and green, yellow, or red skin.", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "apple", "part_of_speech": "NN"}, {"form": "apples", "part_of_speech": "NNS"}]}, {"region": "US", "inflections": [{"form": "apple", "part_of_speech": "NN"}, {"form": "apples", "part_of_speech": "NNS"}]}], "frequency_id": "apple_nn01-fq", "oed_reference": "apple, n.", "pronunciations": [{"ipa": ["\u02c8apl"], "region": "British"}, {"ipa": ["\u02c8aep(\u0259)l"], "region": "US"}], "parts_of_speech": ["NN"], "primary_sense_id": "apple_nn01-340739"}]
+Extracted definition.
+Set definition to query object.
+Now to get and set the word ID.
+The wordID was grabbed as:
+apple_nn01The user's input was read as:
+l
+Lammatize selected.
+Now to call the Lammatize API
+Figure out of one word or multiple words have been entered.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Called callLemmatizeAPI
+Making the request
+{"meta": {"total": 2, "count": 2, "offset": 0, "limit": 100, "provider": "Oxford University Press", "cite": "Oxford English Dictionary API, Oxford University Press, 0.0.0.0/oed/api/v0.2/lemmatize/?form=apple&offset=0&limit=100 . Accessed 29 April 2021"}, "links": {"self": "/oed/api/v0.2/lemmatize/?form=apple&offset=0&limit=100", "prev": null, "next": null, "first": "/oed/api/v0.2/lemmatize/?form=apple&offset=0&limit=100", "last": "/oed/api/v0.2/lemmatize/?form=apple&offset=0&limit=100"}, "data": [{"word": {"id": "apple_nn01", "band": 6, "meta": {"created": 1885, "revised": true, "updated": 2008}, "lemma": "apple", "oed_url": "https://www.oed.com/view/Entry/9678#eid340737", "daterange": {"end": null, "start": 895, "obsolete": false, "rangestring": "eOE\u2014"}, "etymology": {"etymons": [], "etymology_type": "inherited", "etymon_language": [["European languages", "Germanic", "West Germanic"]], "source_language": [["European languages", "Germanic"]], "etymology_summary": "A word inherited from Germanic."}, "first_use": "King Alfred", "frequency": [[1750, 7.7], [1760, 8.2], [1770, 8.8], [1780, 9.0], [1790, 9.9], [1800, 10], [1810, 10], [1820, 11], [1830, 12], [1840, 12], [1850, 13], [1860, 14], [1870, 14], [1880, 16], [1890, 17], [1900, 19], [1910, 19], [1920, 20], [1930, 20], [1940, 18], [1950, 16], [1960, 13], [1970, 13], [1980, 14], [1990, 15], [2000, 15], [2010, 15]], "sense_ids": ["apple_nn01-340739", "apple_nn01-340946", "apple_nn01-341016", "apple_nn01-122260836", "apple_nn01-341164", "apple_nn01-340917", "apple_nn01-343079", "apple_nn01-119186380", "apple_nn01-343199", "apple_nn01-343158", "apple_nn01-119186432", "apple_nn01-343232", "apple_nn01-341316", "apple_nn01-341407", "apple_nn01-341467", "apple_nn01-119186414", "apple_nn01-343271", "apple_nn01-343518", "apple_nn01-343442", "apple_nn01-341507"], "definition": "The round firm fruit (a pome) of any of various wild and cultivated trees of the genus Malus (see sense 4a), occurring in a wide variety of forms, colours, and flavours; esp. any of numerous cultivated kinds produced throughout the temperate zones of both hemispheres, typically having crisp white flesh and green, yellow, or red skin.", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "apple", "part_of_speech": "NN"}, {"form": "apples", "part_of_speech": "NNS"}]}, {"region": "US", "inflections": [{"form": "apple", "part_of_speech": "NN"}, {"form": "apples", "part_of_speech": "NNS"}]}], "frequency_id": "apple_nn01-fq", "oed_reference": "apple, n.", "pronunciations": [{"ipa": ["\u02c8apl"], "region": "British"}, {"ipa": ["\u02c8aep(\u0259)l"], "region": "US"}], "parts_of_speech": ["NN"], "primary_sense_id": "apple_nn01-340739"}, "surface_forms": [{"id": "apple_nn01-s001", "band": 6, "form": "apple", "lemma": "apple", "region": null, "word_id": "apple_nn01", "computed": false, "daterange": {"end": null, "start": 1150, "obsolete": false, "rangestring": "1150\u2014"}, "irregular": false, "normalized": "apple", "part_of_speech": "NN", "standard_us_form": true, "standard_british_form": true}]}, {"word": {"id": "apple_vb01", "band": 11, "meta": {"created": 1885, "revised": true, "updated": 2008}, "lemma": "apple", "oed_url": "https://www.oed.com/view/Entry/9679#eid345077", "daterange": {"end": null, "start": 1601, "obsolete": false, "rangestring": "1601\u2014"}, "etymology": {"etymons": [{"word": "apple", "language": "English", "target_id": "apple_nn01", "part_of_speech": "NN"}], "etymology_type": "conversion", "etymon_language": [["English"]], "source_language": [["European languages", "Germanic"]], "etymology_summary": "Formed within English, by conversion."}, "first_use": "Philemon Holland", "frequency": [[1750, 0.031], [1760, 0.028], [1770, 0.027], [1780, 0.025], [1790, 0.023], [1800, 0.022], [1810, 0.019], [1820, 0.016], [1830, 0.016], [1840, 0.015], [1850, 0.015], [1860, 0.015], [1870, 0.016], [1880, 0.017], [1890, 0.018], [1900, 0.019], [1910, 0.02], [1920, 0.021], [1930, 0.021], [1940, 0.02], [1950, 0.019], [1960, 0.018], [1970, 0.018], [1980, 0.019], [1990, 0.019], [2000, 0.018], [2010, 0.017]], "sense_ids": ["apple_vb01-345079", "apple_vb01-345134"], "definition": "intransitive. Of vegetables, flower buds, and esp. (in later use) root crops: to swell into a globular shape; to become shaped like an apple.", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "apple", "part_of_speech": "VB"}, {"form": "apples", "part_of_speech": "VBZ"}, {"form": "appling", "part_of_speech": "VBG"}, {"form": "appled", "part_of_speech": "VBD"}, {"form": "appled", "part_of_speech": "VBN"}]}, {"region": "US", "inflections": [{"form": "apple", "part_of_speech": "VB"}, {"form": "apples", "part_of_speech": "VBZ"}, {"form": "appling", "part_of_speech": "VBG"}, {"form": "appled", "part_of_speech": "VBD"}, {"form": "appled", "part_of_speech": "VBN"}]}], "frequency_id": "apple_vb01-fq", "oed_reference": "apple, v.", "pronunciations": [{"ipa": ["\u02c8apl"], "region": "British"}, {"ipa": ["\u02c8aep(\u0259)l"], "region": "US"}], "parts_of_speech": ["VB"], "primary_sense_id": "apple_vb01-345079"}, "surface_forms": [{"id": "apple_vb01-s001", "band": 11, "form": "apple", "lemma": "apple", "region": null, "word_id": "apple_vb01", "computed": false, "daterange": {"end": null, "start": 1601, "obsolete": false, "rangestring": "1601\u2014"}, "irregular": false, "normalized": "apple", "part_of_speech": "VB", "standard_us_form": true, "standard_british_form": true}]}]}
+
+Got Lamma response.
+Set JSONResponse to the response.
+In MainMenu()
+The user's input was read as:
+n
+New word
+query.HasLookedUpWord
+False
+query.Definition
+
+In MainMenu()
+Automatically looking up user entered word:
+apricot
+Found that QueryMode is set to words.
+Looking up the word:
+apricot
+Now to call the words endpoint.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Calling the API
+Called callWordsAPI
+Making the request
+Got responses.
+Set JSONResponse to the response.
+Left getWords task with the JSONResponse.
+Parsing JSON
+We now have the data as a string.
+[{"id": "apricot_nn01", "band": 10, "meta": {"created": 1885, "revised": false, "updated": null}, "lemma": "apricot", "oed_url": "https://www.oed.com/view/Entry/9938#eid36720", "daterange": {"end": null, "start": 1562, "obsolete": false, "rangestring": "1562\u2014"}, "etymology": {"etymons": [{"word": "albricoque", "language": "Portuguese"}, {"word": "albaricoque", "language": "Spanish"}], "etymology_type": "borrowing", "etymon_language": [["European languages", "Italic", "Romance", "Italo-Western", "Ibero-Romance", "Spanish"], ["European languages", "Italic", "Romance", "Italo-Western", "Ibero-Romance", "Portuguese"]], "source_language": [["European languages", "Italic", "Romance", "Italo-Western", "Ibero-Romance", "Spanish"], ["European languages", "Italic", "Romance", "Italo-Western", "Ibero-Romance", "Portuguese"]], "etymology_summary": "A borrowing from Portuguese."}, "first_use": "William Turner", "frequency": [[1750, 0.93], [1760, 1.0], [1770, 1.0], [1780, 1.0], [1790, 1.1], [1800, 1.1], [1810, 1.0], [1820, 1.1], [1830, 1.0], [1840, 1.0], [1850, 1.0], [1860, 1.0], [1870, 0.99], [1880, 1.0], [1890, 1.1], [1900, 1.1], [1910, 1.3], [1920, 1.4], [1930, 1.5], [1940, 1.5], [1950, 1.4], [1960, 1.2], [1970, 1.2], [1980, 1.3], [1990, 1.4], [2000, 1.3], [2010, 1.3]], "sense_ids": ["apricot_nn01-36723", "apricot_nn01-36792", "apricot_nn01-36841"], "definition": "A stone-fruit allied to the plum, of an orange colour, roundish-oval shape, and delicious flavour.", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "apricot", "part_of_speech": "NN"}, {"form": "apricots", "part_of_speech": "NNS"}]}, {"region": "US", "inflections": [{"form": "apricot", "part_of_speech": "NN"}, {"form": "apricots", "part_of_speech": "NNS"}]}], "frequency_id": "apricot_nn01-fq", "oed_reference": "apricot, n.", "pronunciations": [{"ipa": ["\u02c8e\u026apr\u026ak\u0252t"], "region": "British"}], "parts_of_speech": ["NN"], "primary_sense_id": "apricot_nn01-36723"}]
+Extracted definition.
+Set definition to query object.
+Now to get and set the word ID.
+The wordID was grabbed as:
+apricot_nn01The user's input was read as:
+l
+Lammatize selected.
+Now to call the Lammatize API
+Figure out of one word or multiple words have been entered.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Called callLemmatizeAPI
+Making the request
+{"meta": {"total": 1, "count": 1, "offset": 0, "limit": 100, "provider": "Oxford University Press", "cite": "Oxford English Dictionary API, Oxford University Press, 0.0.0.0/oed/api/v0.2/lemmatize/?form=apricot&offset=0&limit=100 . Accessed 29 April 2021"}, "links": {"self": "/oed/api/v0.2/lemmatize/?form=apricot&offset=0&limit=100", "prev": null, "next": null, "first": "/oed/api/v0.2/lemmatize/?form=apricot&offset=0&limit=100", "last": "/oed/api/v0.2/lemmatize/?form=apricot&offset=0&limit=100"}, "data": [{"word": {"id": "apricot_nn01", "band": 10, "meta": {"created": 1885, "revised": false, "updated": null}, "lemma": "apricot", "oed_url": "https://www.oed.com/view/Entry/9938#eid36720", "daterange": {"end": null, "start": 1562, "obsolete": false, "rangestring": "1562\u2014"}, "etymology": {"etymons": [{"word": "albricoque", "language": "Portuguese"}, {"word": "albaricoque", "language": "Spanish"}], "etymology_type": "borrowing", "etymon_language": [["European languages", "Italic", "Romance", "Italo-Western", "Ibero-Romance", "Spanish"], ["European languages", "Italic", "Romance", "Italo-Western", "Ibero-Romance", "Portuguese"]], "source_language": [["European languages", "Italic", "Romance", "Italo-Western", "Ibero-Romance", "Spanish"], ["European languages", "Italic", "Romance", "Italo-Western", "Ibero-Romance", "Portuguese"]], "etymology_summary": "A borrowing from Portuguese."}, "first_use": "William Turner", "frequency": [[1750, 0.93], [1760, 1.0], [1770, 1.0], [1780, 1.0], [1790, 1.1], [1800, 1.1], [1810, 1.0], [1820, 1.1], [1830, 1.0], [1840, 1.0], [1850, 1.0], [1860, 1.0], [1870, 0.99], [1880, 1.0], [1890, 1.1], [1900, 1.1], [1910, 1.3], [1920, 1.4], [1930, 1.5], [1940, 1.5], [1950, 1.4], [1960, 1.2], [1970, 1.2], [1980, 1.3], [1990, 1.4], [2000, 1.3], [2010, 1.3]], "sense_ids": ["apricot_nn01-36723", "apricot_nn01-36792", "apricot_nn01-36841"], "definition": "A stone-fruit allied to the plum, of an orange colour, roundish-oval shape, and delicious flavour.", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "apricot", "part_of_speech": "NN"}, {"form": "apricots", "part_of_speech": "NNS"}]}, {"region": "US", "inflections": [{"form": "apricot", "part_of_speech": "NN"}, {"form": "apricots", "part_of_speech": "NNS"}]}], "frequency_id": "apricot_nn01-fq", "oed_reference": "apricot, n.", "pronunciations": [{"ipa": ["\u02c8e\u026apr\u026ak\u0252t"], "region": "British"}], "parts_of_speech": ["NN"], "primary_sense_id": "apricot_nn01-36723"}, "surface_forms": [{"id": "apricot_nn01-s001", "band": 10, "form": "apricot", "lemma": "apricot", "region": null, "word_id": "apricot_nn01", "computed": false, "daterange": {"end": null, "start": 1562, "obsolete": false, "rangestring": "1562\u2014"}, "irregular": false, "normalized": "apricot", "part_of_speech": "NN", "standard_us_form": true, "standard_british_form": true}]}]}
+
+Got Lamma response.
+Set JSONResponse to the response.
+In MainMenu()
+The user's input was read as:
+l
+Lammatize selected.
+Now to call the Lammatize API
+Figure out of one word or multiple words have been entered.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Called callLemmatizeAPI
+Making the request
+{"meta": {"total": 1, "count": 1, "offset": 0, "limit": 100, "provider": "Oxford University Press", "cite": "Oxford English Dictionary API, Oxford University Press, 0.0.0.0/oed/api/v0.2/lemmatize/?form=apricot&offset=0&limit=100 . Accessed 29 April 2021"}, "links": {"self": "/oed/api/v0.2/lemmatize/?form=apricot&offset=0&limit=100", "prev": null, "next": null, "first": "/oed/api/v0.2/lemmatize/?form=apricot&offset=0&limit=100", "last": "/oed/api/v0.2/lemmatize/?form=apricot&offset=0&limit=100"}, "data": [{"word": {"id": "apricot_nn01", "band": 10, "meta": {"created": 1885, "revised": false, "updated": null}, "lemma": "apricot", "oed_url": "https://www.oed.com/view/Entry/9938#eid36720", "daterange": {"end": null, "start": 1562, "obsolete": false, "rangestring": "1562\u2014"}, "etymology": {"etymons": [{"word": "albricoque", "language": "Portuguese"}, {"word": "albaricoque", "language": "Spanish"}], "etymology_type": "borrowing", "etymon_language": [["European languages", "Italic", "Romance", "Italo-Western", "Ibero-Romance", "Spanish"], ["European languages", "Italic", "Romance", "Italo-Western", "Ibero-Romance", "Portuguese"]], "source_language": [["European languages", "Italic", "Romance", "Italo-Western", "Ibero-Romance", "Spanish"], ["European languages", "Italic", "Romance", "Italo-Western", "Ibero-Romance", "Portuguese"]], "etymology_summary": "A borrowing from Portuguese."}, "first_use": "William Turner", "frequency": [[1750, 0.93], [1760, 1.0], [1770, 1.0], [1780, 1.0], [1790, 1.1], [1800, 1.1], [1810, 1.0], [1820, 1.1], [1830, 1.0], [1840, 1.0], [1850, 1.0], [1860, 1.0], [1870, 0.99], [1880, 1.0], [1890, 1.1], [1900, 1.1], [1910, 1.3], [1920, 1.4], [1930, 1.5], [1940, 1.5], [1950, 1.4], [1960, 1.2], [1970, 1.2], [1980, 1.3], [1990, 1.4], [2000, 1.3], [2010, 1.3]], "sense_ids": ["apricot_nn01-36723", "apricot_nn01-36792", "apricot_nn01-36841"], "definition": "A stone-fruit allied to the plum, of an orange colour, roundish-oval shape, and delicious flavour.", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "apricot", "part_of_speech": "NN"}, {"form": "apricots", "part_of_speech": "NNS"}]}, {"region": "US", "inflections": [{"form": "apricot", "part_of_speech": "NN"}, {"form": "apricots", "part_of_speech": "NNS"}]}], "frequency_id": "apricot_nn01-fq", "oed_reference": "apricot, n.", "pronunciations": [{"ipa": ["\u02c8e\u026apr\u026ak\u0252t"], "region": "British"}], "parts_of_speech": ["NN"], "primary_sense_id": "apricot_nn01-36723"}, "surface_forms": [{"id": "apricot_nn01-s001", "band": 10, "form": "apricot", "lemma": "apricot", "region": null, "word_id": "apricot_nn01", "computed": false, "daterange": {"end": null, "start": 1562, "obsolete": false, "rangestring": "1562\u2014"}, "irregular": false, "normalized": "apricot", "part_of_speech": "NN", "standard_us_form": true, "standard_british_form": true}]}]}
+
+Got Lamma response.
+Set JSONResponse to the response.
+In MainMenu()
+The user's input was read as:
+axel
+In MainMenu()
+The user's input was read as:
+l
+Lammatize selected.
+Now to call the Lammatize API
+Figure out of one word or multiple words have been entered.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Called callLemmatizeAPI
+Making the request
+{"meta": {"total": 1, "count": 1, "offset": 0, "limit": 100, "provider": "Oxford University Press", "cite": "Oxford English Dictionary API, Oxford University Press, 0.0.0.0/oed/api/v0.2/lemmatize/?form=apricot&offset=0&limit=100 . Accessed 29 April 2021"}, "links": {"self": "/oed/api/v0.2/lemmatize/?form=apricot&offset=0&limit=100", "prev": null, "next": null, "first": "/oed/api/v0.2/lemmatize/?form=apricot&offset=0&limit=100", "last": "/oed/api/v0.2/lemmatize/?form=apricot&offset=0&limit=100"}, "data": [{"word": {"id": "apricot_nn01", "band": 10, "meta": {"created": 1885, "revised": false, "updated": null}, "lemma": "apricot", "oed_url": "https://www.oed.com/view/Entry/9938#eid36720", "daterange": {"end": null, "start": 1562, "obsolete": false, "rangestring": "1562\u2014"}, "etymology": {"etymons": [{"word": "albricoque", "language": "Portuguese"}, {"word": "albaricoque", "language": "Spanish"}], "etymology_type": "borrowing", "etymon_language": [["European languages", "Italic", "Romance", "Italo-Western", "Ibero-Romance", "Spanish"], ["European languages", "Italic", "Romance", "Italo-Western", "Ibero-Romance", "Portuguese"]], "source_language": [["European languages", "Italic", "Romance", "Italo-Western", "Ibero-Romance", "Spanish"], ["European languages", "Italic", "Romance", "Italo-Western", "Ibero-Romance", "Portuguese"]], "etymology_summary": "A borrowing from Portuguese."}, "first_use": "William Turner", "frequency": [[1750, 0.93], [1760, 1.0], [1770, 1.0], [1780, 1.0], [1790, 1.1], [1800, 1.1], [1810, 1.0], [1820, 1.1], [1830, 1.0], [1840, 1.0], [1850, 1.0], [1860, 1.0], [1870, 0.99], [1880, 1.0], [1890, 1.1], [1900, 1.1], [1910, 1.3], [1920, 1.4], [1930, 1.5], [1940, 1.5], [1950, 1.4], [1960, 1.2], [1970, 1.2], [1980, 1.3], [1990, 1.4], [2000, 1.3], [2010, 1.3]], "sense_ids": ["apricot_nn01-36723", "apricot_nn01-36792", "apricot_nn01-36841"], "definition": "A stone-fruit allied to the plum, of an orange colour, roundish-oval shape, and delicious flavour.", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "apricot", "part_of_speech": "NN"}, {"form": "apricots", "part_of_speech": "NNS"}]}, {"region": "US", "inflections": [{"form": "apricot", "part_of_speech": "NN"}, {"form": "apricots", "part_of_speech": "NNS"}]}], "frequency_id": "apricot_nn01-fq", "oed_reference": "apricot, n.", "pronunciations": [{"ipa": ["\u02c8e\u026apr\u026ak\u0252t"], "region": "British"}], "parts_of_speech": ["NN"], "primary_sense_id": "apricot_nn01-36723"}, "surface_forms": [{"id": "apricot_nn01-s001", "band": 10, "form": "apricot", "lemma": "apricot", "region": null, "word_id": "apricot_nn01", "computed": false, "daterange": {"end": null, "start": 1562, "obsolete": false, "rangestring": "1562\u2014"}, "irregular": false, "normalized": "apricot", "part_of_speech": "NN", "standard_us_form": true, "standard_british_form": true}]}]}
+
+Got Lamma response.
+Set JSONResponse to the response.
+In MainMenu()
+The user's input was read as:
+n
+New word
+query.HasLookedUpWord
+False
+query.Definition
+
+In MainMenu()
+Automatically looking up user entered word:
+car
+Found that QueryMode is set to words.
+Looking up the word:
+car
+Now to call the words endpoint.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Calling the API
+Called callWordsAPI
+Making the request
+Got responses.
+Set JSONResponse to the response.
+Left getWords task with the JSONResponse.
+Parsing JSON
+We now have the data as a string.
+[{"id": "car_jj01", "band": 11, "meta": {"created": 1888, "revised": true, "updated": 2012}, "lemma": "car", "oed_url": "https://www.oed.com/view/Entry/27676#eid10162934", "daterange": {"end": null, "start": 1279, "obsolete": false, "rangestring": "1279\u2014"}, "etymology": {"etymons": [{"word": "cearr", "language": "Gaelic"}], "etymology_type": "borrowing", "etymon_language": [["European languages", "Celtic", "Goidelic", "Gaelic"]], "source_language": [["European languages", "Celtic", "Goidelic", "Gaelic"]], "etymology_summary": "A borrowing from Gaelic."}, "first_use": "W. Page", "frequency": [[1750, 0.037], [1760, 0.038], [1770, 0.038], [1780, 0.037], [1790, 0.037], [1800, 0.036], [1810, 0.034], [1820, 0.033], [1830, 0.033], [1840, 0.035], [1850, 0.04], [1860, 0.048], [1870, 0.064], [1880, 0.094], [1890, 0.13], [1900, 0.16], [1910, 0.2], [1920, 0.24], [1930, 0.26], [1940, 0.26], [1950, 0.26], [1960, 0.25], [1970, 0.27], [1980, 0.32], [1990, 0.38], [2000, 0.42], [2010, 0.44]], "sense_ids": ["car_jj01-10162936"], "definition": "Left, esp. in car-hand, car-handed; (also) left-handed. Sometimes with implication of awkwardness or wrongness (cf. sinister adj.). Also occasionally (e.g. in quot. 1440) as n.: \u2020the left hand (obsolete).", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "car", "part_of_speech": "JJ"}]}, {"region": "US", "inflections": [{"form": "car", "part_of_speech": "JJ"}]}], "frequency_id": "car_jj01-fq", "oed_reference": "car, adj.", "pronunciations": [{"ipa": ["k\u0251\u02d0"], "region": "British"}, {"ipa": ["kar", "k\u025br"], "region": "Scottish English "}, {"ipa": ["k\u0251r"], "region": "US"}], "parts_of_speech": ["JJ"], "primary_sense_id": "car_jj01-10162936"}]
+Extracted definition.
+Set definition to query object.
+Now to get and set the word ID.
+The wordID was grabbed as:
+car_jj01The user's input was read as:
+l
+Lammatize selected.
+Now to call the Lammatize API
+Figure out of one word or multiple words have been entered.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Called callLemmatizeAPI
+Making the request
+{"meta": {"total": 7, "count": 7, "offset": 0, "limit": 100, "provider": "Oxford University Press", "cite": "Oxford English Dictionary API, Oxford University Press, 0.0.0.0/oed/api/v0.2/lemmatize/?form=car&offset=0&limit=100 . Accessed 29 April 2021"}, "links": {"self": "/oed/api/v0.2/lemmatize/?form=car&offset=0&limit=100", "prev": null, "next": null, "first": "/oed/api/v0.2/lemmatize/?form=car&offset=0&limit=100", "last": "/oed/api/v0.2/lemmatize/?form=car&offset=0&limit=100"}, "data": [{"word": {"id": "car_nn01", "band": 8, "meta": {"created": 1888, "revised": true, "updated": 2012}, "lemma": "car", "oed_url": "https://www.oed.com/view/Entry/27674#eid10161398", "daterange": {"end": null, "start": 1320, "obsolete": false, "rangestring": "c1320\u2014"}, "etymology": {"etymons": [{"word": "carr", "language": "French"}, {"word": "carre", "language": "French"}], "etymology_type": "borrowing", "etymon_language": [["European languages", "Italic", "Romance", "Italo-Western", "Gallo-Romance", "French"]], "source_language": [["European languages", "Celtic", "Goidelic", "Irish"], ["European languages", "Celtic", "Brittonic", "Welsh"], ["European languages", "Celtic", "Gaulish"]], "etymology_summary": "A borrowing from French."}, "first_use": "Joseph Fowler", "frequency": [[1750, 9.8], [1760, 9.8], [1770, 9.8], [1780, 9.7], [1790, 9.8], [1800, 9.6], [1810, 9.3], [1820, 9.6], [1830, 11], [1840, 12], [1850, 15], [1860, 18], [1870, 25], [1880, 36], [1890, 48], [1900, 59], [1910, 72], [1920, 85], [1930, 92], [1940, 89], [1950, 88], [1960, 83], [1970, 87], [1980, 99], [1990, 110], [2000, 120], [2010, 130]], "sense_ids": ["car_nn01-10161402", "car_nn01-10161471", "car_nn01-10161815", "car_nn01-10161836", "car_nn01-10161867", "car_nn01-10161670", "car_nn01-10161784", "car_nn01-10161614"], "definition": "Chiefly literary and poetic. A chariot, esp. of war, triumph, splendour, or pageantry; spec. the chariot of Phaethon or the sun, or that in which the moon, stars, day, night, or time are said to ride.", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "car", "part_of_speech": "NN"}, {"form": "cars", "part_of_speech": "NNS"}]}, {"region": "US", "inflections": [{"form": "car", "part_of_speech": "NN"}, {"form": "cars", "part_of_speech": "NNS"}]}], "frequency_id": "car_nn01-fq", "oed_reference": "car, n.1", "pronunciations": [{"ipa": ["k\u0251\u02d0"], "region": "British"}, {"ipa": ["k\u0251r"], "region": "US"}], "parts_of_speech": ["NN"], "primary_sense_id": "car_nn01-10161471"}, "surface_forms": [{"id": "car_nn01-s001", "band": 8, "form": "car", "lemma": "car", "region": null, "word_id": "car_nn01", "computed": false, "daterange": {"end": null, "start": 1320, "obsolete": false, "rangestring": "1320\u2014"}, "irregular": false, "normalized": "car", "part_of_speech": "NN", "standard_us_form": true, "standard_british_form": true}]}, {"word": {"id": "car_jj01", "band": 11, "meta": {"created": 1888, "revised": true, "updated": 2012}, "lemma": "car", "oed_url": "https://www.oed.com/view/Entry/27676#eid10162934", "daterange": {"end": null, "start": 1279, "obsolete": false, "rangestring": "1279\u2014"}, "etymology": {"etymons": [{"word": "cearr", "language": "Gaelic"}], "etymology_type": "borrowing", "etymon_language": [["European languages", "Celtic", "Goidelic", "Gaelic"]], "source_language": [["European languages", "Celtic", "Goidelic", "Gaelic"]], "etymology_summary": "A borrowing from Gaelic."}, "first_use": "W. Page", "frequency": [[1750, 0.037], [1760, 0.038], [1770, 0.038], [1780, 0.037], [1790, 0.037], [1800, 0.036], [1810, 0.034], [1820, 0.033], [1830, 0.033], [1840, 0.035], [1850, 0.04], [1860, 0.048], [1870, 0.064], [1880, 0.094], [1890, 0.13], [1900, 0.16], [1910, 0.2], [1920, 0.24], [1930, 0.26], [1940, 0.26], [1950, 0.26], [1960, 0.25], [1970, 0.27], [1980, 0.32], [1990, 0.38], [2000, 0.42], [2010, 0.44]], "sense_ids": ["car_jj01-10162936"], "definition": "Left, esp. in car-hand, car-handed; (also) left-handed. Sometimes with implication of awkwardness or wrongness (cf. sinister adj.). Also occasionally (e.g. in quot. 1440) as n.: \u2020the left hand (obsolete).", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "car", "part_of_speech": "JJ"}]}, {"region": "US", "inflections": [{"form": "car", "part_of_speech": "JJ"}]}], "frequency_id": "car_jj01-fq", "oed_reference": "car, adj.", "pronunciations": [{"ipa": ["k\u0251\u02d0"], "region": "British"}, {"ipa": ["kar", "k\u025br"], "region": "Scottish English "}, {"ipa": ["k\u0251r"], "region": "US"}], "parts_of_speech": ["JJ"], "primary_sense_id": "car_jj01-10162936"}, "surface_forms": [{"id": "car_jj01-s001", "band": 11, "form": "car", "lemma": "car", "region": null, "word_id": "car_jj01", "computed": false, "daterange": {"end": null, "start": 1400, "obsolete": false, "rangestring": "1400\u2014"}, "irregular": false, "normalized": "car", "part_of_speech": "JJ", "standard_us_form": true, "standard_british_form": true}]}, {"word": {"id": "car_vb01", "band": 13, "meta": {"created": 1888, "revised": true, "updated": 2012}, "lemma": "car", "oed_url": "https://www.oed.com/view/Entry/27677#eid10163003", "daterange": {"end": null, "start": 1791, "obsolete": false, "rangestring": "1791\u2014"}, "etymology": {"etymons": [{"word": "car", "language": "English", "target_id": "car_nn01", "part_of_speech": "NN"}], "etymology_type": "conversion", "etymon_language": [["English"]], "source_language": [["European languages", "Celtic", "Goidelic", "Irish"], ["European languages", "Celtic", "Brittonic", "Welsh"], ["European languages", "Celtic", "Gaulish"]], "etymology_summary": "Formed within English, by conversion."}, "first_use": "Erasmus Darwin", "frequency": [[1750, 0], [1760, 0], [1770, 0], [1780, 0], [1790, 0.018], [1800, 0.021], [1810, 0.024], [1820, 0.027], [1830, 0.026], [1840, 0.026], [1850, 0.027], [1860, 0.031], [1870, 0.038], [1880, 0.051], [1890, 0.063], [1900, 0.076], [1910, 0.09], [1920, 0.1], [1930, 0.11], [1940, 0.11], [1950, 0.1], [1960, 0.097], [1970, 0.1], [1980, 0.11], [1990, 0.11], [2000, 0.12], [2010, 0.12]], "sense_ids": ["car_vb01-10163005", "car_vb01-240352731"], "definition": "transitive. To place or carry in a car; (also) to transport in to a marketplace, etc.", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "car", "part_of_speech": "VB"}, {"form": "cars", "part_of_speech": "VBZ"}, {"form": "carring", "part_of_speech": "VBG"}, {"form": "carred", "part_of_speech": "VBD"}, {"form": "carred", "part_of_speech": "VBN"}]}, {"region": "US", "inflections": [{"form": "car", "part_of_speech": "VB"}, {"form": "cars", "part_of_speech": "VBZ"}, {"form": "carring", "part_of_speech": "VBG"}, {"form": "carred", "part_of_speech": "VBD"}, {"form": "carred", "part_of_speech": "VBN"}]}], "frequency_id": "car_vb01-fq", "oed_reference": "car, v.", "pronunciations": [{"ipa": ["k\u0251\u02d0"], "region": "British"}, {"ipa": ["k\u0251r"], "region": "US"}], "parts_of_speech": ["VB"], "primary_sense_id": "car_vb01-10163005"}, "surface_forms": [{"id": "car_vb01-s001", "band": 13, "form": "car", "lemma": "car", "region": null, "word_id": "car_vb01", "computed": false, "daterange": {"end": null, "start": 1791, "obsolete": false, "rangestring": "1791\u2014"}, "irregular": false, "normalized": "car", "part_of_speech": "VB", "standard_us_form": true, "standard_british_form": true}]}, {"word": {"id": "care_vb01", "band": 7, "meta": {"created": 1888, "revised": false, "updated": null}, "lemma": "care", "oed_url": "https://www.oed.com/view/Entry/27902#eid10191441", "daterange": {"end": null, "start": 975, "obsolete": false, "rangestring": "OE\u2014"}, "etymology": {"etymons": [], "etymology_type": "inherited", "etymon_language": [["European languages", "Germanic"]], "source_language": [["European languages", "Germanic"]], "etymology_summary": "A word inherited from Germanic."}, "first_use": "Crist I", "frequency": [[1750, 21], [1760, 21], [1770, 21], [1780, 21], [1790, 20], [1800, 21], [1810, 22], [1820, 25], [1830, 28], [1840, 33], [1850, 38], [1860, 42], [1870, 47], [1880, 51], [1890, 54], [1900, 56], [1910, 55], [1920, 52], [1930, 47], [1940, 42], [1950, 36], [1960, 34], [1970, 36], [1980, 41], [1990, 48], [2000, 53], [2010, 56]], "sense_ids": ["care_vb01-10191444", "care_vb01-10191494", "care_vb01-10191514", "care_vb01-10191517", "care_vb01-10191645", "care_vb01-10191676", "care_vb01-139301899", "care_vb01-10191861", "care_vb01-10191952", "care_vb01-10191974", "care_vb01-10192030", "care_vb01-10192062", "care_vb01-10192137", "care_vb01-10192208", "care_vb01-10192260", "care_vb01-10192263", "care_vb01-10192266"], "definition": "To feel concern (great or little), be concerned, trouble oneself, feel interest. Also in colloquial phrases expressing or implying lack of interest or concern: for all I care, see if I care, who cares?", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "care", "part_of_speech": "VB"}, {"form": "cares", "part_of_speech": "VBZ"}, {"form": "caring", "part_of_speech": "VBG"}, {"form": "cared", "part_of_speech": "VBD"}, {"form": "cared", "part_of_speech": "VBN"}]}, {"region": "US", "inflections": [{"form": "care", "part_of_speech": "VB"}, {"form": "cares", "part_of_speech": "VBZ"}, {"form": "caring", "part_of_speech": "VBG"}, {"form": "cared", "part_of_speech": "VBD"}, {"form": "cared", "part_of_speech": "VBN"}]}], "frequency_id": "care_vb01-fq", "oed_reference": "care, v.", "pronunciations": [{"ipa": ["k\u025b\u02d0"], "region": "British"}, {"ipa": ["k\u025b(\u0259)r"], "region": "US"}], "parts_of_speech": ["VB"], "primary_sense_id": "care_vb01-10191517"}, "surface_forms": [{"id": "care_vb01-s003", "band": 7, "form": "car", "lemma": "care", "region": null, "word_id": "care_vb01", "computed": false, "daterange": {"end": 1499, "start": 1150, "obsolete": true, "rangestring": "1150\u20141500"}, "irregular": false, "normalized": "care", "part_of_speech": "VB", "standard_us_form": false, "standard_british_form": false}]}, {"word": {"id": "care_nn01", "band": 7, "meta": {"created": 1888, "revised": false, "updated": null}, "lemma": "care", "oed_url": "https://www.oed.com/view/Entry/27899#eid10189200", "daterange": {"end": null, "start": 999, "obsolete": false, "rangestring": "OE\u2014"}, "etymology": {"etymons": [], "etymology_type": "inherited", "etymon_language": [["European languages", "Germanic"]], "source_language": [["European languages", "Germanic"]], "etymology_summary": "A word inherited from Germanic."}, "first_use": "Paris Psalter", "frequency": [[1750, 160], [1760, 160], [1770, 160], [1780, 160], [1790, 160], [1800, 150], [1810, 150], [1820, 140], [1830, 140], [1840, 130], [1850, 130], [1860, 120], [1870, 120], [1880, 120], [1890, 110], [1900, 110], [1910, 100], [1920, 99], [1930, 94], [1940, 90], [1950, 87], [1960, 92], [1970, 110], [1980, 130], [1990, 150], [2000, 160], [2010, 160]], "sense_ids": ["care_nn01-10189203", "care_nn01-10189305", "care_nn01-10189333", "care_nn01-10189451", "care_nn01-10189541", "care_nn01-10189613", "care_nn01-10189698", "care_nn01-10189801", "care_nn01-10189988", "care_nn01-10190056", "care_nn01-10190123", "care_nn01-10190539"], "definition": "Burdened state of mind arising from fear, doubt, or concern about anything; solicitude, anxiety, mental perturbation; also in plural anxieties, solicitudes. \u2020withouten care: without doubt. \u2020to be in care: to be troubled, anxious, concerned.", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "care", "part_of_speech": "NN"}, {"form": "cares", "part_of_speech": "NNS"}]}, {"region": "US", "inflections": [{"form": "care", "part_of_speech": "NN"}, {"form": "cares", "part_of_speech": "NNS"}]}], "frequency_id": "care_nn01-fq", "oed_reference": "care, n.1", "pronunciations": [{"ipa": ["k\u025b\u02d0"], "region": "British"}, {"ipa": ["k\u025b(\u0259)r"], "region": "US"}], "parts_of_speech": ["NN"], "primary_sense_id": "care_nn01-10189333"}, "surface_forms": [{"id": "care_nn01-s004", "band": 7, "form": "car", "lemma": "care", "region": null, "word_id": "care_nn01", "computed": false, "daterange": {"end": 1499, "start": 1150, "obsolete": true, "rangestring": "1150\u20141500"}, "irregular": false, "normalized": "care", "part_of_speech": "NN", "standard_us_form": false, "standard_british_form": false}]}, {"word": {"id": "carr_nn02", "band": 10, "meta": {"created": 1888, "revised": false, "updated": null}, "lemma": "carr", "oed_url": "https://www.oed.com/view/Entry/28211#eid9981817", "daterange": {"end": null, "start": 1330, "obsolete": false, "rangestring": "c1330\u2014"}, "etymology": {"etymons": [], "etymology_type": "borrowing", "etymon_language": [["European languages", "Germanic", "North Germanic", "Old Norse"]], "source_language": [["European languages", "Germanic", "North Germanic", "Old Norse"]], "etymology_summary": "A borrowing from early Scandinavian."}, "first_use": "Robert Mannyng", "frequency": [[1750, 0.29], [1760, 0.27], [1770, 0.25], [1780, 0.24], [1790, 0.21], [1800, 0.16], [1810, 0.13], [1820, 0.11], [1830, 0.095], [1840, 0.081], [1850, 0.063], [1860, 0.055], [1870, 0.054], [1880, 0.05], [1890, 0.049], [1900, 0.047], [1910, 0.049], [1920, 0.053], [1930, 0.056], [1940, 0.067], [1950, 0.079], [1960, 0.081], [1970, 0.09], [1980, 0.078], [1990, 0.064], [2000, 0.053], [2010, 0.054]], "sense_ids": ["carr_nn02-9981819", "carr_nn02-9981911"], "definition": "A pond or pool; a bog or fen; now, usually, wet boggy ground; a meadow recovered by draining from the bog.", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "carr", "part_of_speech": "NN"}, {"form": "carrs", "part_of_speech": "NNS"}]}, {"region": "US", "inflections": [{"form": "carr", "part_of_speech": "NN"}, {"form": "carrs", "part_of_speech": "NNS"}]}], "frequency_id": "carr_nn02-fq", "oed_reference": "carr, n.2", "pronunciations": [{"ipa": ["k\u0251\u02d0"], "region": "British"}], "parts_of_speech": ["NN"], "primary_sense_id": "carr_nn02-9981819"}, "surface_forms": [{"id": "carr_nn02-s002", "band": 10, "form": "car", "lemma": "carr", "region": null, "word_id": "carr_nn02", "computed": false, "daterange": {"end": null, "start": 1330, "obsolete": false, "rangestring": "1330\u2014"}, "irregular": false, "normalized": "carr", "part_of_speech": "NN", "standard_us_form": false, "standard_british_form": false}]}, {"word": {"id": "carr_nn03", "band": 14, "meta": {"created": 1888, "revised": false, "updated": null}, "lemma": "carr", "oed_url": "https://www.oed.com/view/Entry/28212#eid9982030", "daterange": {"end": null, "start": 1686, "obsolete": false, "rangestring": "1686\u2014"}, "etymology": {"etymons": [], "etymology_type": null, "etymon_language": [["undetermined"]], "source_language": [], "etymology_summary": null}, "first_use": "Robert Plot", "frequency": [[1750, 0.0059], [1760, 0.0055], [1770, 0.0049], [1780, 0.0047], [1790, 0.0045], [1800, 0.0032], [1810, 0.0029], [1820, 0.0025], [1830, 0.0021], [1840, 0.002], [1850, 0.0016], [1860, 0.0012], [1870, 0.0012], [1880, 0.0011], [1890, 0.0011], [1900, 0.001], [1910, 0.001], [1920, 0.001], [1930, 0.0011], [1940, 0.0013], [1950, 0.0016], [1960, 0.0016], [1970, 0.0017], [1980, 0.0014], [1990, 0.0012], [2000, 0.00099], [2010, 0.001]], "sense_ids": ["carr_nn03-9982032"], "definition": "(See quot.)", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "carr", "part_of_speech": "NN"}, {"form": "carrs", "part_of_speech": "NNS"}]}, {"region": "US", "inflections": [{"form": "carr", "part_of_speech": "NN"}, {"form": "carrs", "part_of_speech": "NNS"}]}], "frequency_id": "carr_nn03-fq", "oed_reference": "carr, n.3", "pronunciations": [{"ipa": ["k\u0251\u02d0"], "region": "British"}], "parts_of_speech": ["NN"], "primary_sense_id": "carr_nn03-9982032"}, "surface_forms": [{"id": "carr_nn03-s002", "band": 14, "form": "car", "lemma": "carr", "region": null, "word_id": "carr_nn03", "computed": false, "daterange": {"end": null, "start": 1686, "obsolete": false, "rangestring": "1686\u2014"}, "irregular": false, "normalized": "carr", "part_of_speech": "NN", "standard_us_form": false, "standard_british_form": false}]}]}
+
+Got Lamma response.
+Set JSONResponse to the response.
+In MainMenu()
+The user's input was read as:
+q
+Get quotaions based on word selected.
+API.cs is starting quotations mode.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Called callQuotationsAPI
+Making the request
+{"meta": {"total": 15, "count": 15, "offset": 0, "limit": 10000, "provider": "Oxford University Press", "cite": "Oxford English Dictionary API, Oxford University Press, 0.0.0.0/oed/api/v0.2/word/car_jj01/quotations/?offset=0&limit=10000 . Accessed 29 April 2021"}, "links": {"self": "/oed/api/v0.2/word/car_jj01/quotations/?offset=0&limit=10000", "prev": null, "next": null, "first": "/oed/api/v0.2/word/car_jj01/quotations/?offset=0&limit=10000", "last": "/oed/api/v0.2/word/car_jj01/quotations/?offset=0&limit=10000"}, "data": [{"id": "car_jj01-238051936", "text": {"keyword": null, "full_text": "Thom. Kerhand.", "keyword_offset": null}, "year": 1279, "lemma": "car", "source": {"title": "Three Early Assize Rolls Northumberland", "author": "W. Page", "gender": null}, "oed_url": "https://www.oed.com/view/Entry/27676#eid238051936", "word_id": "car_jj01", "sense_id": "car_jj01-10162936", "datestring": "1279", "first_in_word": true, "oed_reference": "car, adj.", "first_in_sense": true}, {"id": "car_jj01-234598506", "text": {"keyword": null, "full_text": "Henrico dicto kerhand.", "keyword_offset": null}, "year": 1327, "lemma": "car", "source": {"title": "Exchequer Rolls Scotl.", "author": "J. Stuart", "gender": null}, "oed_url": "https://www.oed.com/view/Entry/27676#eid234598506", "word_id": "car_jj01", "sense_id": "car_jj01-10162936", "datestring": "1327", "first_in_word": false, "oed_reference": "car, adj.", "first_in_sense": false}, {"id": "car_jj01-234598519", "text": {"keyword": "care", "full_text": "With a caste of \u00fee care, in kautelle he strykes.", "keyword_offset": 19}, "year": 1440, "lemma": "car", "source": {"title": "Awntyrs Arthure", "author": null, "gender": null}, "oed_url": "https://www.oed.com/view/Entry/27676#eid234598519", "word_id": "car_jj01", "sense_id": "car_jj01-10162936", "datestring": "c1440", "first_in_word": false, "oed_reference": "car, adj.", "first_in_sense": false}, {"id": "car_jj01-10162951", "text": {"keyword": "kere", "full_text": "The visdome of the wisman is in his rycht hand and the foly of the ful in his kere hand.", "keyword_offset": 78}, "year": 1499, "lemma": "car", "source": {"title": "Wisdom of Solomon", "author": null, "gender": null}, "oed_url": "https://www.oed.com/view/Entry/27676#eid10162951", "word_id": "car_jj01", "sense_id": "car_jj01-10162936", "datestring": "a1500", "first_in_word": false, "oed_reference": "car, adj.", "first_in_sense": false}, {"id": "car_jj01-10162960", "text": {"keyword": "kar", "full_text": "He resauit the vryting in his kar hand.", "keyword_offset": 30}, "year": 1550, "lemma": "car", "source": {"title": "Complaynt Scotl.", "author": null, "gender": null}, "oed_url": "https://www.oed.com/view/Entry/27676#eid10162960", "word_id": "car_jj01", "sense_id": "car_jj01-10162936", "datestring": "c1550", "first_in_word": false, "oed_reference": "car, adj.", "first_in_sense": false}, {"id": "car_jj01-10162968", "text": {"keyword": "ker", "full_text": "Vpon the ker and wrang side, was placed the thrid Idole, Frigga.", "keyword_offset": 9}, "year": 1597, "lemma": "car", "source": {"title": "De Verborum Significatione", "author": "J. Skene", "gender": "male"}, "oed_url": "https://www.oed.com/view/Entry/27676#eid10162968", "word_id": "car_jj01", "sense_id": "car_jj01-10162936", "datestring": "1597", "first_in_word": false, "oed_reference": "car, adj.", "first_in_sense": false}, {"id": "car_jj01-234598529", "text": {"keyword": "ker", "full_text": "mutilat him in the ker hand of tua fingeris.", "keyword_offset": 19}, "year": 1600, "lemma": "car", "source": {"title": "Reg. Privy Council Scotl.", "author": "D. Masson", "gender": "male"}, "oed_url": "https://www.oed.com/view/Entry/27676#eid234598529", "word_id": "car_jj01", "sense_id": "car_jj01-10162936", "datestring": "1600", "first_in_word": false, "oed_reference": "car, adj.", "first_in_sense": false}, {"id": "car_jj01-283213191", "text": {"keyword": "Car", "full_text": "You'll go the Car Gate yet.", "keyword_offset": 14}, "year": 1721, "lemma": "car", "source": {"title": "Compl. Coll. Scotish Prov.", "author": "J. Kelly", "gender": "male"}, "oed_url": "https://www.oed.com/view/Entry/27676#eid283213191", "word_id": "car_jj01", "sense_id": "car_jj01-10162936", "datestring": "1721", "first_in_word": false, "oed_reference": "car, adj.", "first_in_sense": false}, {"id": "car_jj01-283213199", "text": {"keyword": "carr", "full_text": "It has a meikle maun blue pouch hingin' at the carr side o'd, fou o' mullens and chucky-stanes.", "keyword_offset": 47}, "year": 1743, "lemma": "car", "source": {"title": "Scots Mag.", "author": null, "gender": null}, "oed_url": "https://www.oed.com/view/Entry/27676#eid283213199", "word_id": "car_jj01", "sense_id": "car_jj01-10162936", "datestring": "1743", "first_in_word": false, "oed_reference": "car, adj.", "first_in_sense": false}, {"id": "car_jj01-240635034", "text": {"keyword": "Car-hand", "full_text": "Car-hand, the left hand.", "keyword_offset": 0}, "year": 1787, "lemma": "car", "source": {"title": "Provinc. Gloss.", "author": "F. Grose", "gender": "male"}, "oed_url": "https://www.oed.com/view/Entry/27676#eid240635034", "word_id": "car_jj01", "sense_id": "car_jj01-10162936", "datestring": "1787", "first_in_word": false, "oed_reference": "car, adj.", "first_in_sense": false}, {"id": "car_jj01-10162977", "text": {"keyword": "car", "full_text": "If you meet a car-handit, i.e. a left-handed person, or one who has flat soles.", "keyword_offset": 14}, "year": 1825, "lemma": "car", "source": {"title": "Etymol. Dict. Sc. Lang.", "author": "J. Jamieson", "gender": "male"}, "oed_url": "https://www.oed.com/view/Entry/27676#eid10162977", "word_id": "car_jj01", "sense_id": "car_jj01-10162936", "datestring": "1825", "first_in_word": false, "oed_reference": "car, adj.", "first_in_sense": false}, {"id": "car_jj01-283213207", "text": {"keyword": "car", "full_text": "Pillan's compliments..is a' car-pawed.", "keyword_offset": 28}, "year": 1895, "lemma": "car", "source": {"title": "Sunshine & Haar", "author": "\u2018G. Setoun\u2019", "gender": "male"}, "oed_url": "https://www.oed.com/view/Entry/27676#eid283213207", "word_id": "car_jj01", "sense_id": "car_jj01-10162936", "datestring": "1895", "first_in_word": false, "oed_reference": "car, adj.", "first_in_sense": false}, {"id": "car_jj01-283213215", "text": {"keyword": "coo", "full_text": "He's aye glaikin' wi' weemen, but naebody can say he's ker-handit wi' a coo.", "keyword_offset": 72}, "year": 1928, "lemma": "car", "source": {"title": "Man Beset", "author": "J. Carruthers", "gender": null}, "oed_url": "https://www.oed.com/view/Entry/27676#eid283213215", "word_id": "car_jj01", "sense_id": "car_jj01-10162936", "datestring": "1928", "first_in_word": false, "oed_reference": "car, adj.", "first_in_sense": false}, {"id": "car_jj01-236975775", "text": {"keyword": "Car", "full_text": "Car, left-handed.", "keyword_offset": 0}, "year": 1988, "lemma": "car", "source": {"title": "Galloway Gloss.", "author": "W. A. D. Riach", "gender": null}, "oed_url": "https://www.oed.com/view/Entry/27676#eid236975775", "word_id": "car_jj01", "sense_id": "car_jj01-10162936", "datestring": "1988", "first_in_word": false, "oed_reference": "car, adj.", "first_in_sense": false}, {"id": "car_jj01-283213223", "text": {"keyword": "ker", "full_text": "On yer ker haund, is ee gan doon the hill end yonner, is ae wheen auld treis up on the brae face.", "keyword_offset": 7}, "year": 2005, "lemma": "car", "source": {"title": "Borth'ick Waitter", "author": "M. Rodger", "gender": null}, "oed_url": "https://www.oed.com/view/Entry/27676#eid283213223", "word_id": "car_jj01", "sense_id": "car_jj01-10162936", "datestring": "2005", "first_in_word": false, "oed_reference": "car, adj.", "first_in_sense": false}]}
+
+Got quotation responses.
+Set JSONResponse to the response.
+Ran quotations synchronously.
+Parsing quotations JSON.
+First quote grabbed as:
+
+In MainMenu()
+The user's input was read as:
+s
+Get senses selected.
+API.cs is starting senses mode.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Called callSensesAPI
+Making the request
+System.Net.Http.HttpConnection+ContentLengthReadStream
+Got senses responses.
+Set JSONResponse to the response.
+Ran senses using start.
+In MainMenu()
+The user's input was read as:
+n
+New word
+query.HasLookedUpWord
+False
+query.Definition
+
+In MainMenu()
+Automatically looking up user entered word:
+car
+Found that QueryMode is set to words.
+Looking up the word:
+car
+Now to call the words endpoint.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Calling the API
+Called callWordsAPI
+Making the request
+Got responses.
+Set JSONResponse to the response.
+Left getWords task with the JSONResponse.
+Parsing JSON
+We now have the data as a string.
+[{"id": "car_jj01", "band": 11, "meta": {"created": 1888, "revised": true, "updated": 2012}, "lemma": "car", "oed_url": "https://www.oed.com/view/Entry/27676#eid10162934", "daterange": {"end": null, "start": 1279, "obsolete": false, "rangestring": "1279\u2014"}, "etymology": {"etymons": [{"word": "cearr", "language": "Gaelic"}], "etymology_type": "borrowing", "etymon_language": [["European languages", "Celtic", "Goidelic", "Gaelic"]], "source_language": [["European languages", "Celtic", "Goidelic", "Gaelic"]], "etymology_summary": "A borrowing from Gaelic."}, "first_use": "W. Page", "frequency": [[1750, 0.037], [1760, 0.038], [1770, 0.038], [1780, 0.037], [1790, 0.037], [1800, 0.036], [1810, 0.034], [1820, 0.033], [1830, 0.033], [1840, 0.035], [1850, 0.04], [1860, 0.048], [1870, 0.064], [1880, 0.094], [1890, 0.13], [1900, 0.16], [1910, 0.2], [1920, 0.24], [1930, 0.26], [1940, 0.26], [1950, 0.26], [1960, 0.25], [1970, 0.27], [1980, 0.32], [1990, 0.38], [2000, 0.42], [2010, 0.44]], "sense_ids": ["car_jj01-10162936"], "definition": "Left, esp. in car-hand, car-handed; (also) left-handed. Sometimes with implication of awkwardness or wrongness (cf. sinister adj.). Also occasionally (e.g. in quot. 1440) as n.: \u2020the left hand (obsolete).", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "car", "part_of_speech": "JJ"}]}, {"region": "US", "inflections": [{"form": "car", "part_of_speech": "JJ"}]}], "frequency_id": "car_jj01-fq", "oed_reference": "car, adj.", "pronunciations": [{"ipa": ["k\u0251\u02d0"], "region": "British"}, {"ipa": ["kar", "k\u025br"], "region": "Scottish English "}, {"ipa": ["k\u0251r"], "region": "US"}], "parts_of_speech": ["JJ"], "primary_sense_id": "car_jj01-10162936"}]
+Extracted definition.
+Set definition to query object.
+Now to get and set the word ID.
+The wordID was grabbed as:
+car_jj01The user's input was read as:
+q
+Get quotaions based on word selected.
+API.cs is starting quotations mode.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Called callQuotationsAPI
+Making the request
+{"meta": {"total": 15, "count": 15, "offset": 0, "limit": 10000, "provider": "Oxford University Press", "cite": "Oxford English Dictionary API, Oxford University Press, 0.0.0.0/oed/api/v0.2/word/car_jj01/quotations/?offset=0&limit=10000 . Accessed 29 April 2021"}, "links": {"self": "/oed/api/v0.2/word/car_jj01/quotations/?offset=0&limit=10000", "prev": null, "next": null, "first": "/oed/api/v0.2/word/car_jj01/quotations/?offset=0&limit=10000", "last": "/oed/api/v0.2/word/car_jj01/quotations/?offset=0&limit=10000"}, "data": [{"id": "car_jj01-238051936", "text": {"keyword": null, "full_text": "Thom. Kerhand.", "keyword_offset": null}, "year": 1279, "lemma": "car", "source": {"title": "Three Early Assize Rolls Northumberland", "author": "W. Page", "gender": null}, "oed_url": "https://www.oed.com/view/Entry/27676#eid238051936", "word_id": "car_jj01", "sense_id": "car_jj01-10162936", "datestring": "1279", "first_in_word": true, "oed_reference": "car, adj.", "first_in_sense": true}, {"id": "car_jj01-234598506", "text": {"keyword": null, "full_text": "Henrico dicto kerhand.", "keyword_offset": null}, "year": 1327, "lemma": "car", "source": {"title": "Exchequer Rolls Scotl.", "author": "J. Stuart", "gender": null}, "oed_url": "https://www.oed.com/view/Entry/27676#eid234598506", "word_id": "car_jj01", "sense_id": "car_jj01-10162936", "datestring": "1327", "first_in_word": false, "oed_reference": "car, adj.", "first_in_sense": false}, {"id": "car_jj01-234598519", "text": {"keyword": "care", "full_text": "With a caste of \u00fee care, in kautelle he strykes.", "keyword_offset": 19}, "year": 1440, "lemma": "car", "source": {"title": "Awntyrs Arthure", "author": null, "gender": null}, "oed_url": "https://www.oed.com/view/Entry/27676#eid234598519", "word_id": "car_jj01", "sense_id": "car_jj01-10162936", "datestring": "c1440", "first_in_word": false, "oed_reference": "car, adj.", "first_in_sense": false}, {"id": "car_jj01-10162951", "text": {"keyword": "kere", "full_text": "The visdome of the wisman is in his rycht hand and the foly of the ful in his kere hand.", "keyword_offset": 78}, "year": 1499, "lemma": "car", "source": {"title": "Wisdom of Solomon", "author": null, "gender": null}, "oed_url": "https://www.oed.com/view/Entry/27676#eid10162951", "word_id": "car_jj01", "sense_id": "car_jj01-10162936", "datestring": "a1500", "first_in_word": false, "oed_reference": "car, adj.", "first_in_sense": false}, {"id": "car_jj01-10162960", "text": {"keyword": "kar", "full_text": "He resauit the vryting in his kar hand.", "keyword_offset": 30}, "year": 1550, "lemma": "car", "source": {"title": "Complaynt Scotl.", "author": null, "gender": null}, "oed_url": "https://www.oed.com/view/Entry/27676#eid10162960", "word_id": "car_jj01", "sense_id": "car_jj01-10162936", "datestring": "c1550", "first_in_word": false, "oed_reference": "car, adj.", "first_in_sense": false}, {"id": "car_jj01-10162968", "text": {"keyword": "ker", "full_text": "Vpon the ker and wrang side, was placed the thrid Idole, Frigga.", "keyword_offset": 9}, "year": 1597, "lemma": "car", "source": {"title": "De Verborum Significatione", "author": "J. Skene", "gender": "male"}, "oed_url": "https://www.oed.com/view/Entry/27676#eid10162968", "word_id": "car_jj01", "sense_id": "car_jj01-10162936", "datestring": "1597", "first_in_word": false, "oed_reference": "car, adj.", "first_in_sense": false}, {"id": "car_jj01-234598529", "text": {"keyword": "ker", "full_text": "mutilat him in the ker hand of tua fingeris.", "keyword_offset": 19}, "year": 1600, "lemma": "car", "source": {"title": "Reg. Privy Council Scotl.", "author": "D. Masson", "gender": "male"}, "oed_url": "https://www.oed.com/view/Entry/27676#eid234598529", "word_id": "car_jj01", "sense_id": "car_jj01-10162936", "datestring": "1600", "first_in_word": false, "oed_reference": "car, adj.", "first_in_sense": false}, {"id": "car_jj01-283213191", "text": {"keyword": "Car", "full_text": "You'll go the Car Gate yet.", "keyword_offset": 14}, "year": 1721, "lemma": "car", "source": {"title": "Compl. Coll. Scotish Prov.", "author": "J. Kelly", "gender": "male"}, "oed_url": "https://www.oed.com/view/Entry/27676#eid283213191", "word_id": "car_jj01", "sense_id": "car_jj01-10162936", "datestring": "1721", "first_in_word": false, "oed_reference": "car, adj.", "first_in_sense": false}, {"id": "car_jj01-283213199", "text": {"keyword": "carr", "full_text": "It has a meikle maun blue pouch hingin' at the carr side o'd, fou o' mullens and chucky-stanes.", "keyword_offset": 47}, "year": 1743, "lemma": "car", "source": {"title": "Scots Mag.", "author": null, "gender": null}, "oed_url": "https://www.oed.com/view/Entry/27676#eid283213199", "word_id": "car_jj01", "sense_id": "car_jj01-10162936", "datestring": "1743", "first_in_word": false, "oed_reference": "car, adj.", "first_in_sense": false}, {"id": "car_jj01-240635034", "text": {"keyword": "Car-hand", "full_text": "Car-hand, the left hand.", "keyword_offset": 0}, "year": 1787, "lemma": "car", "source": {"title": "Provinc. Gloss.", "author": "F. Grose", "gender": "male"}, "oed_url": "https://www.oed.com/view/Entry/27676#eid240635034", "word_id": "car_jj01", "sense_id": "car_jj01-10162936", "datestring": "1787", "first_in_word": false, "oed_reference": "car, adj.", "first_in_sense": false}, {"id": "car_jj01-10162977", "text": {"keyword": "car", "full_text": "If you meet a car-handit, i.e. a left-handed person, or one who has flat soles.", "keyword_offset": 14}, "year": 1825, "lemma": "car", "source": {"title": "Etymol. Dict. Sc. Lang.", "author": "J. Jamieson", "gender": "male"}, "oed_url": "https://www.oed.com/view/Entry/27676#eid10162977", "word_id": "car_jj01", "sense_id": "car_jj01-10162936", "datestring": "1825", "first_in_word": false, "oed_reference": "car, adj.", "first_in_sense": false}, {"id": "car_jj01-283213207", "text": {"keyword": "car", "full_text": "Pillan's compliments..is a' car-pawed.", "keyword_offset": 28}, "year": 1895, "lemma": "car", "source": {"title": "Sunshine & Haar", "author": "\u2018G. Setoun\u2019", "gender": "male"}, "oed_url": "https://www.oed.com/view/Entry/27676#eid283213207", "word_id": "car_jj01", "sense_id": "car_jj01-10162936", "datestring": "1895", "first_in_word": false, "oed_reference": "car, adj.", "first_in_sense": false}, {"id": "car_jj01-283213215", "text": {"keyword": "coo", "full_text": "He's aye glaikin' wi' weemen, but naebody can say he's ker-handit wi' a coo.", "keyword_offset": 72}, "year": 1928, "lemma": "car", "source": {"title": "Man Beset", "author": "J. Carruthers", "gender": null}, "oed_url": "https://www.oed.com/view/Entry/27676#eid283213215", "word_id": "car_jj01", "sense_id": "car_jj01-10162936", "datestring": "1928", "first_in_word": false, "oed_reference": "car, adj.", "first_in_sense": false}, {"id": "car_jj01-236975775", "text": {"keyword": "Car", "full_text": "Car, left-handed.", "keyword_offset": 0}, "year": 1988, "lemma": "car", "source": {"title": "Galloway Gloss.", "author": "W. A. D. Riach", "gender": null}, "oed_url": "https://www.oed.com/view/Entry/27676#eid236975775", "word_id": "car_jj01", "sense_id": "car_jj01-10162936", "datestring": "1988", "first_in_word": false, "oed_reference": "car, adj.", "first_in_sense": false}, {"id": "car_jj01-283213223", "text": {"keyword": "ker", "full_text": "On yer ker haund, is ee gan doon the hill end yonner, is ae wheen auld treis up on the brae face.", "keyword_offset": 7}, "year": 2005, "lemma": "car", "source": {"title": "Borth'ick Waitter", "author": "M. Rodger", "gender": null}, "oed_url": "https://www.oed.com/view/Entry/27676#eid283213223", "word_id": "car_jj01", "sense_id": "car_jj01-10162936", "datestring": "2005", "first_in_word": false, "oed_reference": "car, adj.", "first_in_sense": false}]}
+
+Got quotation responses.
+Set JSONResponse to the response.
+Ran quotations synchronously.
+Parsing quotations JSON.
+First quote grabbed as:
+
+In MainMenu()
+The user's input was read as:
+x
+Exit selected.

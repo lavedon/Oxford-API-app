@@ -8,6 +8,8 @@ using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
 using System.Linq;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace OxfordV2
 {
@@ -183,9 +185,22 @@ namespace OxfordV2
 		Action<object> callLemmatizeAPI = (Object obj) => 
 		{
 			Trace.WriteLine("Called callLemmatizeAPI");
-			Uri requestURL = new Uri(baseURL + @"lemmatize/?form=peas");
+			Uri requestURL = new Uri(baseURL + @"lemmatize/?form=" + query.UserEnteredWord);
 			Trace.WriteLine("Making the request");
-			Trace.WriteLine(client.GetStringAsync(requestURL));
+			Trace.WriteLine(client.GetStringAsync(requestURL).Result);
+
+			try {
+			var response = client.GetStreamAsync(requestURL).Result;
+			Trace.WriteLine("Got Lamma response.");
+			JSONResponse = JsonDocument.Parse(response);
+			Trace.WriteLine("Set JSONResponse to the response.");
+			}
+			catch(Exception ex)
+			{
+				Trace.WriteLine("Exception hit during Lamma call");
+				Trace.WriteLine(ex.GetType());
+				Trace.WriteLine(ex.Message);
+			}
 		};
 		// @TODO an action to set headers
 		// Make a new Task for each API call
@@ -278,7 +293,36 @@ namespace OxfordV2
 		}
 		else if (query.QueryMode == Modes.Lammatize)
 		{
-			Trace.WriteLine("Now to call the .");
+			Trace.WriteLine("Now to call the Lammatize API");
+			Trace.WriteLine("Figure out of one word or multiple words have been entered.");
+			if (query.HasLookedUpWord == false)
+			{
+				// @TODO remove this. Have it auto-call up the first ID.
+				Console.WriteLine("You need to first ask for a definition.");
+			}
+			else 
+			{
+				resetHeaders(client);
+				Task getLemmas = new Task(callLemmatizeAPI, "CallSenses");
+				getLemmas.ConfigureAwait(false);
+				getLemmas.RunSynchronously();
+				Console.WriteLine("Getting Lammas");
+
+				JsonElement root = JSONResponse.RootElement;
+				JsonElement lemmaData = root.GetProperty("data");
+				JsonElement firstWord = lemmaData[0].GetProperty("word");
+				/*
+				foreach (object item in firstWord.EnumerateObject())
+				{
+					Console.WriteLine(item);
+					Console.ReadLine();
+				}
+				*/
+				string lemma = firstWord.GetProperty("lemma").GetString();
+				Console.WriteLine($"The lemma of {query.UserEnteredWord} is {lemma}");
+//				Console.WriteLine(lamma.ToString());
+				
+			}
 		}
 		else if (query.QueryMode == Modes.Senses)
 		{

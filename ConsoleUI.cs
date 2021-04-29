@@ -71,9 +71,7 @@ namespace OxfordV2
 			    case ("l" or "lammatize"):
 			    Trace.WriteLine("Lammatize selected.");
 			    query.QueryMode = Modes.Lammatize;
-			    Console.WriteLine("Not yet implemented.");
-			    // Call WORD API
-			    // API.APICalls(query);
+			    API.APICalls(query);
 			    // Return the lammatization of the word 
 			    break;
 
