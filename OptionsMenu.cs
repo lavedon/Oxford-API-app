@@ -32,16 +32,16 @@ namespace OxfordV2
 			yesNo = "No";
 		}
 		Console.WriteLine($"Include obsolete usage?: {yesNo}");
-		if (query.StartYear == 0 || query.EndYear == 0) 
+		if (query.DateRangeSet)
 		{
-			yesNo = "No";
+			yesNo = "Yes";
 		}
 		else {
-			yesNo = "Yes";
+			yesNo = "No";
 		}
 
 		Console.WriteLine($"Is a date range set?: {yesNo}");
-		if (yesNo == "Yes")
+		if (query.DateRangeSet)
 		{
 		   Console.WriteLine($"Year Range: {query.StartYear} - {query.EndYear}");
 		}
@@ -59,7 +59,7 @@ namespace OxfordV2
 				break;
 			case ("d" or "date" or "date range"):
 				Console.WriteLine("Enter Date Range");
-				SetYears();
+				(query.StartYear, query.EndYear) = SetYears(query);
 				break;
 			case ("x" or "e" or "exit"):
 				Console.WriteLine("Exiting back to main menu.");
@@ -71,7 +71,7 @@ namespace OxfordV2
 			break;
 		}
 
-	static (int startYear, int endYear) SetYears()
+	static (int startYear, int endYear) SetYears(CurrentQuery query)
 	{
 		int startYearInt = 0;
 		int endYearInt = 0;
@@ -80,18 +80,41 @@ namespace OxfordV2
 		while (setYearsRunning)
 		{
 			Console.WriteLine("Only get results within this date range:");
-			Console.WriteLine("Starting Year:");
+			Console.WriteLine("Starting Year: ");
+			Console.WriteLine("(or Press Enter for open ended start)");
 		 	string startYear = Console.ReadLine().Trim().ToLower();
-			if (validate(startYear)) {
+
+			if (string.IsNullOrWhiteSpace(startYear)) {
+				query.OpenStart = true;
+				startYearInt = 0;
+				Console.WriteLine("Set to open ended start year.");
+			} 
+			else if (validate(startYear)) {
 				startYearInt = Int16.Parse(startYear);
 			} else {
 			    break;
 			}
 			Console.WriteLine("Ending Year:");
-			
+			Console.WriteLine("(or Press Enter for open ended end)");
 			string endYear = Console.ReadLine().Trim().ToLower();
-			if (validate(endYear)) {
+			if (string.IsNullOrWhiteSpace(endYear)) {
+				if (query.OpenStart) {
+					Console.WriteLine("You can not have both an open start and an open end date.");
+					query.DateRangeSet = false;
+					Console.WriteLine("Please start over.");
+					break;
+				}
+				query.OpenEnd = true;
+				endYearInt = 0;
+				Console.WriteLine("Set to open ended end year.");
+				setYearsRunning = false;
+				break;
+			} 
+			else if (validate(endYear)) {
 				endYearInt = Int16.Parse(endYear);
+				query.DateRangeSet = true;
+				setYearsRunning = false;
+				break;
 			} else {
 			    break;
 			}

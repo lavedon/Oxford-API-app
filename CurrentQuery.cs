@@ -34,18 +34,25 @@ namespace OxfordV2
 
 		public bool HasLookedUpWord { get; set; }
 		public bool IncludeObsolete { get; set; }
+		public bool DateRangeSet { get; set; }
 
 		public int NumberOfQuotes { get; set; }
 		public int StartYear { get; set; }
+		public bool OpenStart { get; set;}
 		public int EndYear { get; set; }
+		public bool OpenEnd { get; set;}
 
 		public CurrentQuery() {
 			this.HasLookedUpWord = false;
+			this.DateRangeSet = false;
 			this.IncludeObsolete = true;
 			this.Quotes = new List<Quote>();
 			this.Senses = new List<Sense>();
 			this.StartYear = 0;
+			this.OpenStart = false;
 			this.EndYear = 0;
+			this.OpenEnd = false;
+			
 		} 
 		public string Source { get; set; }
 

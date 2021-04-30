@@ -127,9 +127,30 @@ namespace OxfordV2
 		Action<object> callQuotationsAPI = (Object obj) => 
 		{
 			Trace.WriteLine("Called callQuotationsAPI");
-			Uri requestURL = new Uri(baseURL + "word/" + query.WordID + "/quotations/");
-			Trace.WriteLine("Making the request");
-			Trace.WriteLine(client.GetStringAsync(requestURL).Result);
+
+			Uri requestURL; 
+			string startYear; 
+			string endYear;
+			if (query.DateRangeSet) {
+				if (query.OpenStart)
+				{
+					startYear = "";
+					endYear = Convert.ToString(query.EndYear);
+				}
+				else if (query.OpenEnd)
+				{
+					startYear = Convert.ToString(query.StartYear);
+					endYear = "";
+				}
+				else {
+					startYear = Convert.ToString(query.StartYear);
+					endYear = Convert.ToString(query.EndYear);
+				}
+				requestURL = new Uri(baseURL + "word/" + query.WordID + "/quotations/" + "?year=" + startYear + "-" + endYear);
+			}
+			else {
+				requestURL = new Uri(baseURL + "word/" + query.WordID + "/quotations/");
+			}
 			
 			try {
 			var response = client.GetStreamAsync(requestURL).Result;
