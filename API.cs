@@ -82,7 +82,14 @@ namespace OxfordV2
 		Action<object> callSensesAPI = (Object obj) => 
 		{
 			Trace.WriteLine("Called callSensesAPI");
-			Uri requestURL = new Uri(baseURL + @"word/" + query.WordID + @"/senses/");
+			string queryURL;
+			if (! query.IncludeObsolete) {
+				queryURL = @"word/" + query.WordID + @"/senses/?obsolete=false";
+			}
+			else {
+				queryURL = @"word/" + query.WordID + @"/senses/";
+			}
+			Uri requestURL = new Uri(baseURL + queryURL);
 			Trace.WriteLine("Making the request");
 			try {
 				client.Timeout = TimeSpan.FromMinutes(10);

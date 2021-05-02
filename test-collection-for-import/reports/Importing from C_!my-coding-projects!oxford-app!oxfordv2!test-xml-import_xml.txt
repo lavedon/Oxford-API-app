@@ -1,0 +1,12 @@
+SuperMemo Report
+   Activity: Importing from C:\my-coding-projects\oxford-app\oxfordv2\test-xml-import.xml
+   Collection: c:\my-coding-projects\oxford-app\oxfordv2\test-collection-for-import
+   Date: Saturday, May 1, 2021, 5:48:48 PM
+   SuperMemo 18 (Build 18.04, Mar 6, 2020)
+
+
+Process completed at 5:48:48 PM in 00:00:00 sec (Saturday, May 1, 2021)
+
+NO ERRORS (Importing from C:\my-coding-projects\oxford-app\oxfordv2\test-xml-import.xml)
+
+____________________________________________________________
