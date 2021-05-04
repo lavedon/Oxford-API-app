@@ -1,0 +1,104 @@
+Leaving Main method.
+Starting Main Menu
+In MainMenu()
+Automatically looking up user entered word:
+education
+Found that QueryMode is set to words.
+Looking up the word:
+education
+Now to call the words endpoint.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Calling the API
+Called callWordsAPI
+Making the request
+Got responses.
+Set JSONResponse to the response.
+Left getWords task with the JSONResponse.
+Parsing JSON
+We now have the data as a string.
+[{"id": "education_nn01", "band": 8, "meta": {"created": 1891, "revised": true, "updated": 2012}, "lemma": "education", "oed_url": "https://www.oed.com/view/Entry/59584#eid5743733", "daterange": {"end": null, "start": 1527, "obsolete": false, "rangestring": "1527\u2014"}, "etymology": {"etymons": [{"word": "education", "language": "French"}, {"word": "\u0113duc\u0101ti\u014dn-", "language": "Latin"}, {"word": "\u0113duc\u0101ti\u014d", "language": "Latin"}], "etymology_type": "borrowing", "etymon_language": [["European languages", "Italic", "Romance", "Italo-Western", "Gallo-Romance", "French"], ["European languages", "Italic", "Latin"]], "source_language": [["European languages", "Italic", "Latin"]], "etymology_summary": "A borrowing from French."}, "first_use": "Inventory Goods Henry Fitzroy", "frequency": [[1750, 46], [1760, 49], [1770, 53], [1780, 55], [1790, 60], [1800, 65], [1810, 69], [1820, 72], [1830, 73], [1840, 74], [1850, 76], [1860, 80], [1870, 82], [1880, 89], [1890, 100], [1900, 110], [1910, 130], [1920, 140], [1930, 150], [1940, 160], [1950, 170], [1960, 180], [1970, 180], [1980, 180], [1990, 170], [2000, 160], [2010, 160]], "sense_ids": ["education_nn01-5743795", "education_nn01-5743736", "education_nn01-5743780", "education_nn01-5743982", "education_nn01-5743856", "education_nn01-5743940", "education_nn01-5743961"], "definition": "The systematic instruction, teaching, or training in various academic and non-academic subjects given to or received by a child, typically at a school; the course of scholastic instruction a person receives in his or her lifetime. Also: instruction or training given to or received by an adult; see adult education n. at  adult adj. n.compounds 3, further education at  further adj. 2. Also: an instance of this.", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "education", "part_of_speech": "NN"}, {"form": "educations", "part_of_speech": "NNS"}]}, {"region": "US", "inflections": [{"form": "education", "part_of_speech": "NN"}, {"form": "educations", "part_of_speech": "NNS"}]}], "frequency_id": "education_nn01-fq", "oed_reference": "education, n.", "pronunciations": [{"ipa": ["\u02cc\u025bdj\u1d7f\u02c8ke\u026a\u0283n", "\u02cc\u025bd\u0292\u1d7f\u02c8ke\u026a\u0283n"], "region": "British"}, {"ipa": ["\u02cc\u025bd\u0292\u0259\u02c8ke\u026a\u0283(\u0259)n"], "region": "US"}], "parts_of_speech": ["NN"], "primary_sense_id": "education_nn01-5743856"}]
+Extracted definition.
+Set definition to query object.
+Now to get and set the word ID.
+The wordID was grabbed as:
+education_nn01The user's input was read as:
+q
+Get quotaions based on word selected.
+API.cs is starting quotations mode.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Called callQuotationsAPI
+Got quotation responses.
+Set JSONResponse to the response.
+Ran quotations synchronously.
+Parsing quotations JSON.
+First quote grabbed as:
+
+In MainMenu()
+The user's input was read as:
+e
+Export quotations.
+The contents of the exported XML file are:
+<?xml version="1.0" encoding="utf-8"?>
+<SuperMemoCollection>
+  <Count>4</Count>
+  <SuperMemoElement>
+    <ID>1</ID>
+    <Title> - 1527</Title>
+    <Type>Topic</Type>
+    <Content>
+      <Question>By example of good education, as well in noryture as good lernyng. --, 1527</Question>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>2</ID>
+    <Title>R. Morison - 1536</Title>
+    <Type>Topic</Type>
+    <Content>
+      <Question>The weake and feble man, vnto whom god and good education, had gyuen wyt in strengthes place. --R. Morison, 1536</Question>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>3</ID>
+    <Title>R. Mulcaster - 1581</Title>
+    <Type>Topic</Type>
+    <Content>
+      <Question>To consider of education, and learning, what is good and quickneth. --R. Mulcaster, 1581</Question>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>4</ID>
+    <Title>R. Hooker - 1593</Title>
+    <Type>Topic</Type>
+    <Content>
+      <Question>Education and instruction are the meanes..to make our naturall faculty of reason..better. --R. Hooker, 1593</Question>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+</SuperMemoCollection>
+In MainMenu()
+The user's input was read as:
+x
+Exit selected.

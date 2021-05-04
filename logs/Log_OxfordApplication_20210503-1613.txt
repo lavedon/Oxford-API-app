@@ -1,0 +1,221 @@
+Leaving Main method.
+Starting Main Menu
+In MainMenu()
+Automatically looking up user entered word:
+computer
+Found that QueryMode is set to words.
+Looking up the word:
+computer
+Now to call the words endpoint.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Calling the API
+Called callWordsAPI
+Making the request
+Got responses.
+Set JSONResponse to the response.
+Left getWords task with the JSONResponse.
+Parsing JSON
+We now have the data as a string.
+[{"id": "computer_nn01", "band": 9, "meta": {"created": 1891, "revised": true, "updated": 2008}, "lemma": "computer", "oed_url": "https://www.oed.com/view/Entry/37975#eid8618136", "daterange": {"end": null, "start": 1613, "obsolete": false, "rangestring": "1613\u2014"}, "etymology": {"etymons": [{"word": "compute", "language": "English", "target_id": "compute_vb01", "part_of_speech": "VB"}, {"word": "-er", "language": "English", "target_id": "er_su01", "part_of_speech": "SUFFIX"}], "etymology_type": "derivative", "etymon_language": [["English"]], "source_language": [["European languages", "Italic", "Latin"]], "etymology_summary": "Formed within English, by derivation."}, "first_use": "\u2018R. B.\u2019", "frequency": [[1750, 0.21], [1760, 0.18], [1770, 0.17], [1780, 0.16], [1790, 0.15], [1800, 0.14], [1810, 0.083], [1820, 0.077], [1830, 0.086], [1840, 0.086], [1850, 0.093], [1860, 0.11], [1870, 0.13], [1880, 0.16], [1890, 0.18], [1900, 0.21], [1910, 0.24], [1920, 0.45], [1930, 2.1], [1940, 10], [1950, 17], [1960, 40], [1970, 77], [1980, 110], [1990, 120], [2000, 120], [2010, 120]], "sense_ids": ["computer_nn01-8618138", "computer_nn01-8618177", "computer_nn01-130514973", "computer_nn01-130514976"], "definition": "An electronic device (or system of devices) which is used to store, manipulate, and communicate information, perform complex calculations, or control or regulate other devices or machines, and is capable of receiving information (data) and of processing it in accordance with variable procedural instructions (programs or software); esp. a small, self-contained one for individual use in the home or workplace, used esp. for handling text, images, music, and video, accessing and using the internet\u2026", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "computer", "part_of_speech": "NN"}, {"form": "computers", "part_of_speech": "NNS"}]}, {"region": "US", "inflections": [{"form": "computer", "part_of_speech": "NN"}, {"form": "computers", "part_of_speech": "NNS"}]}], "frequency_id": "computer_nn01-fq", "oed_reference": "computer, n.", "pronunciations": [{"ipa": ["k\u0259m\u02c8pju\u02d0t\u0259"], "region": "British"}, {"ipa": ["k\u0259m\u02c8pjud\u0259r"], "region": "US"}], "parts_of_speech": ["NN"], "primary_sense_id": "computer_nn01-130514973"}]
+Extracted definition.
+Set definition to query object.
+Now to get and set the word ID.
+The wordID was grabbed as:
+computer_nn01The user's input was read as:
+q
+Get quotaions based on word selected.
+API.cs is starting quotations mode.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Called callQuotationsAPI
+Got quotation responses.
+Set JSONResponse to the response.
+Ran quotations synchronously.
+Parsing quotations JSON.
+First quote grabbed as:
+
+In MainMenu()
+The user's input was read as:
+n
+New word
+query.HasLookedUpWord
+False
+query.Definition
+
+In MainMenu()
+Automatically looking up user entered word:
+lotion
+Found that QueryMode is set to words.
+Looking up the word:
+lotion
+Now to call the words endpoint.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Calling the API
+Called callWordsAPI
+Making the request
+Got responses.
+Set JSONResponse to the response.
+Left getWords task with the JSONResponse.
+Parsing JSON
+We now have the data as a string.
+[{"id": "lotion_nn01", "band": 9, "meta": {"created": 1903, "revised": true, "updated": 2015}, "lemma": "lotion", "oed_url": "https://www.oed.com/view/Entry/110443#eid38885426", "daterange": {"end": null, "start": 1424, "obsolete": false, "rangestring": "?a1425\u2014"}, "etymology": {"etymons": [{"word": "l\u014dti\u014dn-", "language": "Latin"}, {"word": "l\u014dti\u014d", "language": "Latin"}], "etymology_type": "borrowing", "etymon_language": [["European languages", "Italic", "Latin"]], "source_language": [["European languages", "Italic", "Latin"]], "etymology_summary": "A borrowing from Latin."}, "first_use": "MS Hunterian 95", "frequency": [[1750, 0.61], [1760, 0.62], [1770, 0.63], [1780, 0.68], [1790, 0.83], [1800, 0.98], [1810, 1.1], [1820, 1.2], [1830, 1.4], [1840, 1.7], [1850, 2.0], [1860, 2.1], [1870, 2.1], [1880, 2.2], [1890, 2.1], [1900, 1.9], [1910, 1.5], [1920, 1.3], [1930, 1.1], [1940, 0.99], [1950, 1.1], [1960, 1.0], [1970, 1.1], [1980, 1.2], [1990, 1.3], [2000, 1.4], [2010, 1.4]], "sense_ids": ["lotion_nn01-38885572", "lotion_nn01-38885650", "lotion_nn01-38885429", "lotion_nn01-38885490", "lotion_nn01-38885526"], "definition": "A liquid preparation (in later use spec. an aqueous emulsion or suspension) applied to the skin or other surface of the body for medicinal or cosmetic purposes; (gen.) a cream used to treat or protect the skin.", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "lotion", "part_of_speech": "NN"}, {"form": "lotions", "part_of_speech": "NNS"}]}, {"region": "US", "inflections": [{"form": "lotion", "part_of_speech": "NN"}, {"form": "lotions", "part_of_speech": "NNS"}]}], "frequency_id": "lotion_nn01-fq", "oed_reference": "lotion, n.", "pronunciations": [{"ipa": ["\u02c8l\u0259\u028a\u0283n"], "region": "British"}, {"ipa": ["\u02c8lo\u028a\u0283(\u0259)n"], "region": "US"}], "parts_of_speech": ["NN"], "primary_sense_id": "lotion_nn01-38885572"}]
+Extracted definition.
+Set definition to query object.
+Now to get and set the word ID.
+The wordID was grabbed as:
+lotion_nn01The user's input was read as:
+q
+Get quotaions based on word selected.
+API.cs is starting quotations mode.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Called callQuotationsAPI
+Got quotation responses.
+Set JSONResponse to the response.
+Ran quotations synchronously.
+Parsing quotations JSON.
+First quote grabbed as:
+
+In MainMenu()
+The user's input was read as:
+n
+New word
+query.HasLookedUpWord
+False
+query.Definition
+
+In MainMenu()
+Automatically looking up user entered word:
+car
+Found that QueryMode is set to words.
+Looking up the word:
+car
+Now to call the words endpoint.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Calling the API
+Called callWordsAPI
+Making the request
+Got responses.
+Set JSONResponse to the response.
+Left getWords task with the JSONResponse.
+Parsing JSON
+We now have the data as a string.
+[{"id": "car_jj01", "band": 11, "meta": {"created": 1888, "revised": true, "updated": 2012}, "lemma": "car", "oed_url": "https://www.oed.com/view/Entry/27676#eid10162934", "daterange": {"end": null, "start": 1279, "obsolete": false, "rangestring": "1279\u2014"}, "etymology": {"etymons": [{"word": "cearr", "language": "Gaelic"}], "etymology_type": "borrowing", "etymon_language": [["European languages", "Celtic", "Goidelic", "Gaelic"]], "source_language": [["European languages", "Celtic", "Goidelic", "Gaelic"]], "etymology_summary": "A borrowing from Gaelic."}, "first_use": "W. Page", "frequency": [[1750, 0.037], [1760, 0.038], [1770, 0.038], [1780, 0.037], [1790, 0.037], [1800, 0.036], [1810, 0.034], [1820, 0.033], [1830, 0.033], [1840, 0.035], [1850, 0.04], [1860, 0.048], [1870, 0.064], [1880, 0.094], [1890, 0.13], [1900, 0.16], [1910, 0.2], [1920, 0.24], [1930, 0.26], [1940, 0.26], [1950, 0.26], [1960, 0.25], [1970, 0.27], [1980, 0.32], [1990, 0.38], [2000, 0.42], [2010, 0.44]], "sense_ids": ["car_jj01-10162936"], "definition": "Left, esp. in car-hand, car-handed; (also) left-handed. Sometimes with implication of awkwardness or wrongness (cf. sinister adj.). Also occasionally (e.g. in quot. 1440) as n.: \u2020the left hand (obsolete).", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "car", "part_of_speech": "JJ"}]}, {"region": "US", "inflections": [{"form": "car", "part_of_speech": "JJ"}]}], "frequency_id": "car_jj01-fq", "oed_reference": "car, adj.", "pronunciations": [{"ipa": ["k\u0251\u02d0"], "region": "British"}, {"ipa": ["kar", "k\u025br"], "region": "Scottish English "}, {"ipa": ["k\u0251r"], "region": "US"}], "parts_of_speech": ["JJ"], "primary_sense_id": "car_jj01-10162936"}]
+Extracted definition.
+Set definition to query object.
+Now to get and set the word ID.
+The wordID was grabbed as:
+car_jj01The user's input was read as:
+o
+Options menu selected.
+In MainMenu()
+The user's input was read as:
+q
+Get quotaions based on word selected.
+API.cs is starting quotations mode.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Called callQuotationsAPI
+Got quotation responses.
+Set JSONResponse to the response.
+Ran quotations synchronously.
+Parsing quotations JSON.
+First quote grabbed as:
+
+In MainMenu()
+The user's input was read as:
+e
+Export quotations.
+The contents of the exported XML file are:
+<?xml version="1.0" encoding="utf-8"?>
+<SuperMemoCollection>
+  <Count>3</Count>
+  <SuperMemoElement>
+    <ID>1</ID>
+    <Title> - 1962</Title>
+    <Type>Topic</Type>
+    <Content>
+      <Question>The value..was calculated by computer at 5° intervals around the circle. --, 1962</Question>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>2</ID>
+    <Title>E. Sandys - 1605</Title>
+    <Type>Topic</Type>
+    <Content>
+      <Question>The Gallicane..in many ceremonies differs much from the Romane Church, as (to omit sundrie other) in the priests Lotions at the Masse. --E. Sandys, 1605</Question>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>3</ID>
+    <Title>W. A. D. Riach - 1988</Title>
+    <Type>Topic</Type>
+    <Content>
+      <Question>Car, left-handed. --W. A. D. Riach, 1988</Question>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+</SuperMemoCollection>
+In MainMenu()
+The user's input was read as:
+x
+Exit selected.

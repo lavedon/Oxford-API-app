@@ -1,0 +1,186 @@
+Leaving Main method.
+Starting Main Menu
+In MainMenu()
+Automatically looking up user entered word:
+carrot
+Found that QueryMode is set to words.
+Looking up the word:
+carrot
+Now to call the words endpoint.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Calling the API
+Called callWordsAPI
+Making the request
+Got responses.
+Set JSONResponse to the response.
+Left getWords task with the JSONResponse.
+Parsing JSON
+We now have the data as a string.
+[{"id": "carrot_nn01", "band": 9, "meta": {"created": 1888, "revised": false, "updated": null}, "lemma": "carrot", "oed_url": "https://www.oed.com/view/Entry/28245#eid9990095", "daterange": {"end": null, "start": 1538, "obsolete": false, "rangestring": "1538\u2014"}, "etymology": {"etymons": [{"word": "carotte", "language": "French"}], "etymology_type": "borrowing", "etymon_language": [["European languages", "Italic", "Romance", "Italo-Western", "Gallo-Romance", "French"]], "source_language": [["European languages", "Greek"]], "etymology_summary": "A borrowing from French."}, "first_use": "William Turner", "frequency": [[1750, 3.2], [1760, 3.0], [1770, 3.0], [1780, 2.8], [1790, 2.7], [1800, 2.7], [1810, 1.9], [1820, 1.8], [1830, 1.7], [1840, 1.5], [1850, 1.4], [1860, 1.4], [1870, 1.4], [1880, 1.5], [1890, 1.6], [1900, 1.6], [1910, 1.9], [1920, 2.3], [1930, 2.6], [1940, 2.6], [1950, 2.7], [1960, 2.6], [1970, 3.3], [1980, 4.2], [1990, 4.6], [2000, 4.6], [2010, 4.5]], "sense_ids": ["carrot_nn01-9990097", "carrot_nn01-9990145", "carrot_nn01-9990235", "carrot_nn01-9990274"], "definition": "An umbelliferous plant (Daucus carota) having a large, tapering root, which in cultivation is bright red, fleshy, sweet, and edible.", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "carrot", "part_of_speech": "NN"}, {"form": "carrots", "part_of_speech": "NNS"}]}, {"region": "US", "inflections": [{"form": "carrot", "part_of_speech": "NN"}, {"form": "carrots", "part_of_speech": "NNS"}]}], "frequency_id": "carrot_nn01-fq", "oed_reference": "carrot, n.", "pronunciations": [{"ipa": ["\u02c8kar\u0259t"], "region": "British"}, {"ipa": ["\u02c8k\u025br\u0259t"], "region": "US"}], "parts_of_speech": ["NN"], "primary_sense_id": "carrot_nn01-9990097"}]
+Extracted definition.
+Set definition to query object.
+Now to get and set the word ID.
+The wordID was grabbed as:
+carrot_nn01The user's input was read as:
+o
+Options menu selected.
+In MainMenu()
+The user's input was read as:
+q
+Get quotaions based on word selected.
+API.cs is starting quotations mode.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Called callQuotationsAPI
+Got quotation responses.
+Set JSONResponse to the response.
+Ran quotations synchronously.
+Parsing quotations JSON.
+First quote grabbed as:
+
+In MainMenu()
+The user's input was read as:
+n
+New word
+query.HasLookedUpWord
+False
+query.Definition
+
+In MainMenu()
+Automatically looking up user entered word:
+calculator
+Found that QueryMode is set to words.
+Looking up the word:
+calculator
+Now to call the words endpoint.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Calling the API
+Called callWordsAPI
+Making the request
+Got responses.
+Set JSONResponse to the response.
+Left getWords task with the JSONResponse.
+Parsing JSON
+We now have the data as a string.
+[{"id": "calculator_nn01", "band": 10, "meta": {"created": 1888, "revised": false, "updated": null}, "lemma": "calculator", "oed_url": "https://www.oed.com/view/Entry/26269#eid10637868", "daterange": {"end": null, "start": 1380, "obsolete": false, "rangestring": "c1380\u2014"}, "etymology": {"etymons": [{"word": "calcul\u0101tor", "language": "Latin"}], "etymology_type": "borrowing", "etymon_language": [["European languages", "Italic", "Latin"]], "source_language": [["European languages", "Italic", "Latin"]], "etymology_summary": "A borrowing from Latin."}, "first_use": "John Wyclif", "frequency": [[1750, 0.36], [1760, 0.43], [1770, 0.44], [1780, 0.47], [1790, 0.52], [1800, 0.58], [1810, 0.57], [1820, 0.55], [1830, 0.5], [1840, 0.48], [1850, 0.43], [1860, 0.39], [1870, 0.34], [1880, 0.32], [1890, 0.31], [1900, 0.29], [1910, 0.3], [1920, 0.34], [1930, 0.46], [1940, 0.6], [1950, 0.79], [1960, 1.4], [1970, 2.3], [1980, 3.3], [1990, 3.8], [2000, 3.9], [2010, 3.8]], "sense_ids": ["calculator_nn01-10637870", "calculator_nn01-10637917", "calculator_nn01-10637919", "calculator_nn01-10637947"], "definition": "An electronic device for performing calculations, now esp. one that is preprogrammed; spec. (more fully pocket calculator) a flat hand-held calculator with a keyboard and visual display.", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "calculator", "part_of_speech": "NN"}, {"form": "calculators", "part_of_speech": "NNS"}]}, {"region": "US", "inflections": [{"form": "calculator", "part_of_speech": "NN"}, {"form": "calculators", "part_of_speech": "NNS"}]}], "frequency_id": "calculator_nn01-fq", "oed_reference": "calculator, n.", "pronunciations": [{"ipa": ["\u02c8kalkj\u028a\u02ccle\u026at\u0259"], "region": "British"}], "parts_of_speech": ["NN"], "primary_sense_id": "calculator_nn01-10637947"}]
+Extracted definition.
+Set definition to query object.
+Now to get and set the word ID.
+The wordID was grabbed as:
+calculator_nn01The user's input was read as:
+o
+Options menu selected.
+In MainMenu()
+The user's input was read as:
+q
+Get quotaions based on word selected.
+API.cs is starting quotations mode.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Called callQuotationsAPI
+Got quotation responses.
+Set JSONResponse to the response.
+Ran quotations synchronously.
+Parsing quotations JSON.
+First quote grabbed as:
+
+In MainMenu()
+The user's input was read as:
+e
+Export quotations.
+The contents of the exported XML file are:
+<?xml version="1.0" encoding="utf-8"?>
+<SuperMemoCollection>
+  <Count>5</Count>
+  <SuperMemoElement>
+    <ID>1</ID>
+    <Title>W. Turner - 1548</Title>
+    <Type>Topic</Type>
+    <Content>
+      <Question>Carettes growe in al countreis in plentie. --W. Turner, 1548</Question>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>2</ID>
+    <Title>T. Cooper - 1565</Title>
+    <Type>Topic</Type>
+    <Content>
+      <Question>Carota..the wilde caret. --T. Cooper, 1565</Question>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>3</ID>
+    <Title> - 1634</Title>
+    <Type>Topic</Type>
+    <Content>
+      <Question>Parsenipps and carrootes. --, 1634</Question>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>4</ID>
+    <Title>R. Cotgrave - 1611</Title>
+    <Type>Topic</Type>
+    <Content>
+      <Question>Calculateur, a reckoner, calculator. --R. Cotgrave, 1611</Question>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>5</ID>
+    <Title>D. Defoe - 1722</Title>
+    <Type>Topic</Type>
+    <Content>
+      <Question>Calculators of Nativities. --D. Defoe, 1722</Question>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+</SuperMemoCollection>
+In MainMenu()
+The user's input was read as:
+o
+Options menu selected.
+In MainMenu()
+The user's input was read as:
+x
+Exit selected.

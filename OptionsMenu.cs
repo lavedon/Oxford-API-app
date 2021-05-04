@@ -23,6 +23,14 @@ namespace OxfordV2
 		Console.WriteLine("-------------------------");
 		Console.WriteLine("Options Menu:");
 		Console.WriteLine("-------------------------");
+		if (SavedQueries.DeleteOnExport)
+		{
+			yesNo = "Yes";
+		}
+		else {
+			yesNo = "No";
+		}
+		Console.WriteLine($"Delete old XML file and saved quotations on export?: {yesNo}");
 		
 		if (query.IncludeObsolete == true)
 		{
@@ -46,10 +54,11 @@ namespace OxfordV2
 		   Console.WriteLine($"Year Range: {query.StartYear} - {query.EndYear}");
 		}
 	
-		Console.WriteLine("-------------------------");
-		Console.WriteLine("Toggle obsolete usage - O");
-		Console.WriteLine("Set date range:       - D");
-		Console.WriteLine("Exit to main menu     - X");
+		Console.WriteLine("----------------------------");
+		Console.WriteLine("Toggle obsolete usage    - O");
+		Console.WriteLine("Delete old XML on Export - E");
+		Console.WriteLine("Set date range:          - D");
+		Console.WriteLine("Exit to main menu        - X");
 		var input = Console.ReadLine().Trim().ToLower();
 		switch (input)
 		{
@@ -57,6 +66,10 @@ namespace OxfordV2
 				Console.WriteLine("Toggle Obsolete");
 				query.IncludeObsolete = false;
 				break;
+			case ("e" or "export" or "delete"):
+				SavedQueries.DeleteOnExport = true;
+				break;
+
 			case ("d" or "date" or "date range"):
 				Console.WriteLine("Enter Date Range");
 				(query.StartYear, query.EndYear) = SetYears(query);
@@ -130,8 +143,7 @@ namespace OxfordV2
 			}
 		}
 		return (startYearInt, endYearInt);
-
+		}
 	}
-     }
- }
+	}
 }

@@ -1,12 +1,12 @@
 SuperMemo Report
    Activity: Collecting retention data
    Collection: c:\my-coding-projects\oxford-app\oxfordv2\test-collection-for-import
-   Date: Saturday, May 1, 2021, 5:47:16 PM
+   Date: Monday, May 3, 2021, 4:37:33 PM
    SuperMemo 18 (Build 18.04, Mar 6, 2020)
 
 Retention data errors can be ignored
 
-Process completed at 5:47:16 PM in 00:00:00 sec (Saturday, May 1, 2021)
+Process completed at 4:37:33 PM in 00:00:00 sec (Monday, May 3, 2021)
 
 NO ERRORS (Collecting retention data)
 

@@ -469,9 +469,14 @@ namespace OxfordV2
 					// @TODO add all quotes whether you have seen them or not?
 					query.Quotes.Add(currentQuote);
 					Console.WriteLine();
-					Console.WriteLine("----Enter for more - X to exit----");
+					Console.WriteLine("---- S to Save - X to exit - Enter for more----");
 					string input = Console.ReadLine().Trim().ToLower();
-					if (input == "x")
+					if (input == "s")
+					{
+					    Console.WriteLine("Quote saved.");
+						SavedQueries.AddQuote(currentQuote);
+					}
+					else if (input == "x")
 					    break;
 					}
 					catch (Exception ex) {

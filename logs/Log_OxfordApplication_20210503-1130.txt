@@ -1,0 +1,77 @@
+Leaving Main method.
+Starting Main Menu
+In MainMenu()
+Automatically looking up user entered word:
+oxford
+Found that QueryMode is set to words.
+Looking up the word:
+oxford
+Now to call the words endpoint.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Calling the API
+Called callWordsAPI
+Making the request
+Got responses.
+Set JSONResponse to the response.
+Left getWords task with the JSONResponse.
+Parsing JSON
+We now have the data as a string.
+[{"id": "oxford_nn01", "band": 9, "meta": {"created": 1904, "revised": true, "updated": 2005}, "lemma": "Oxford", "oed_url": "https://www.oed.com/view/Entry/135568#eid32305527", "daterange": {"end": null, "start": 1455, "obsolete": false, "rangestring": "1455\u2014"}, "etymology": {"etymons": [{"word": "Oxford", "language": "place"}], "etymology_type": "properName", "etymon_language": [["Other sources", "place name"]], "source_language": [["Other sources", "place name"]], "etymology_summary": "From a proper name."}, "first_use": "Andrew Clark", "frequency": [[1750, 0.94], [1760, 0.93], [1770, 0.92], [1780, 0.93], [1790, 0.93], [1800, 0.92], [1810, 0.92], [1820, 0.92], [1830, 0.92], [1840, 0.92], [1850, 0.91], [1860, 0.9], [1870, 0.92], [1880, 0.92], [1890, 0.93], [1900, 0.94], [1910, 0.93], [1920, 0.94], [1930, 0.95], [1940, 0.92], [1950, 0.93], [1960, 0.94], [1970, 0.91], [1980, 0.94], [1990, 0.92], [2000, 0.93], [2010, 0.92]], "sense_ids": ["oxford_nn01-32305530", "oxford_nn01-32305689", "oxford_nn01-32305713", "oxford_nn01-32305787", "oxford_nn01-32305919", "oxford_nn01-32305983", "oxford_nn01-32306027", "oxford_nn01-32306075", "oxford_nn01-32306096", "oxford_nn01-32306157", "oxford_nn01-32306176"], "definition": "The University of Oxford; the members of the University collectively, or the cultured or privileged lifestyle popularly associated with them.", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "Oxford", "part_of_speech": "NN"}, {"form": "Oxfords", "part_of_speech": "NNS"}]}, {"region": "US", "inflections": [{"form": "Oxford", "part_of_speech": "NN"}, {"form": "Oxfords", "part_of_speech": "NNS"}]}], "frequency_id": "oxford_nn01-fq", "oed_reference": "Oxford, n.", "pronunciations": [{"ipa": ["\u02c8\u0252ksf\u0259d"], "region": "British"}, {"ipa": ["\u02c8\u0251ksf\u0259rd"], "region": "US"}], "parts_of_speech": ["NN"], "primary_sense_id": "oxford_nn01-32305530"}]
+Extracted definition.
+Set definition to query object.
+Now to get and set the word ID.
+The wordID was grabbed as:
+oxford_nn01The user's input was read as:
+q
+Get quotaions based on word selected.
+API.cs is starting quotations mode.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Called callQuotationsAPI
+Got quotation responses.
+Set JSONResponse to the response.
+Ran quotations synchronously.
+Parsing quotations JSON.
+First quote grabbed as:
+
+In MainMenu()
+The user's input was read as:
+e
+Export quotations.
+The contents of the exported XML file are:
+<?xml version="1.0" encoding="utf-8"?>
+<SuperMemoCollection>
+  <Count>1</Count>
+  <SuperMemoElement>
+    <ID>1</ID>
+    <Title>Test Quote</Title>
+    <Type>Topic</Type>
+    <Content>
+      <Question>The Chaunceler of Oxford or his commissary.</Question>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+</SuperMemoCollection>
+In MainMenu()
+The user's input was read as:
+x
+Exit selected.

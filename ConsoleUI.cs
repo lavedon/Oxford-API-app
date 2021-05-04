@@ -112,6 +112,15 @@ namespace OxfordV2
 			    API.APICalls(query);
 			    break;
 
+			    case ("e" or "export" or "export results"):
+			    Trace.WriteLine("Export quotations.");
+				if (SavedQueries.Quotes.Count != 0)
+			    	SavedQueries.RenderXML();	
+				else {
+					Console.WriteLine("You have not yet saved anything for export.");
+				}
+			    break;
+
 			    case ("x" or "exit"):
 			    Trace.WriteLine("Exit selected.");
 			    running = false;
