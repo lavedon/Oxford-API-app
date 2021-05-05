@@ -1,0 +1,63 @@
+Leaving Main method.
+Starting Main Menu
+In MainMenu()
+Automatically looking up user entered word:
+cucumber
+Found that QueryMode is set to words.
+Looking up the word:
+cucumber
+Now to call the words endpoint.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Calling the API
+Called callWordsAPI
+Making the request
+Got responses.
+Set JSONResponse to the response.
+Left getWords task with the JSONResponse.
+Parsing JSON
+We now have the data as a string.
+[{"id": "cucumber_nn01", "band": 9, "meta": {"created": 1893, "revised": false, "updated": null}, "lemma": "cucumber", "oed_url": "https://www.oed.com/view/Entry/45535#eid7717248", "daterange": {"end": null, "start": 1382, "obsolete": false, "rangestring": "1382\u2014"}, "etymology": {"etymons": [], "etymology_type": null, "etymon_language": [["undetermined"]], "source_language": [["European languages", "Italic", "Latin"], ["English"]], "etymology_summary": null}, "first_use": "Bible (Wycliffite, E.V.)", "frequency": [[1750, 1.3], [1760, 1.4], [1770, 1.4], [1780, 1.4], [1790, 1.5], [1800, 1.5], [1810, 1.4], [1820, 1.5], [1830, 1.4], [1840, 1.4], [1850, 1.4], [1860, 1.4], [1870, 1.4], [1880, 1.5], [1890, 1.5], [1900, 1.6], [1910, 1.7], [1920, 1.9], [1930, 2.0], [1940, 1.8], [1950, 1.8], [1960, 1.7], [1970, 2.0], [1980, 2.2], [1990, 2.3], [2000, 2.1], [2010, 2.1]], "sense_ids": ["cucumber_nn01-7717250", "cucumber_nn01-7717333", "cucumber_nn01-7717405", "cucumber_nn01-7717461", "cucumber_nn01-7717506", "cucumber_nn01-7717592"], "definition": "The long fleshy fruit of this plant, commonly eaten (cut into thin slices) as a cooling salad, and when young used for pickling (see gherkin n.).", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "cucumber", "part_of_speech": "NN"}, {"form": "cucumbers", "part_of_speech": "NNS"}]}, {"region": "US", "inflections": [{"form": "cucumber", "part_of_speech": "NN"}, {"form": "cucumbers", "part_of_speech": "NNS"}]}], "frequency_id": "cucumber_nn01-fq", "oed_reference": "cucumber, n.", "pronunciations": [{"ipa": ["\u02c8kju\u02d0k\u028cmb\u0259"], "region": "British"}, {"ipa": ["\u02c8kju\u02cck\u0259mb\u0259r"], "region": "US"}], "parts_of_speech": ["NN"], "primary_sense_id": "cucumber_nn01-7717333"}]
+Extracted definition.
+Set definition to query object.
+Now to get and set the word ID.
+The wordID was grabbed as:
+cucumber_nn01The user's input was read as:
+o
+Options menu selected.
+In MainMenu()
+The user's input was read as:
+q
+Get quotaions based on word selected.
+API.cs is starting quotations mode.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Called callQuotationsAPI
+Got quotation responses.
+Set JSONResponse to the response.
+Ran quotations synchronously.
+Parsing quotations JSON.
+First quote grabbed as:
+
+In MainMenu()
+The user's input was read as:
+x
+Exit selected.

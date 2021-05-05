@@ -1,0 +1,90 @@
+Leaving Main method.
+Starting Main Menu
+In MainMenu()
+Automatically looking up user entered word:
+cereal
+Found that QueryMode is set to words.
+Looking up the word:
+cereal
+Now to call the words endpoint.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Calling the API
+Called callWordsAPI
+Making the request
+Got responses.
+Set JSONResponse to the response.
+Left getWords task with the JSONResponse.
+Parsing JSON
+We now have the data as a string.
+[{"id": "cereal_nn01", "band": 11, "meta": {"created": 1889, "revised": false, "updated": null}, "lemma": "cereal", "oed_url": "https://www.oed.com/view/Entry/29861#eid9723471", "daterange": {"end": null, "start": 1600, "obsolete": false, "rangestring": "1600\u2014"}, "etymology": {"etymons": [{"word": "cereal", "language": "English", "target_id": "cereal_jj01", "part_of_speech": "JJ"}], "etymology_type": "conversion", "etymon_language": [["English"]], "source_language": [["European languages", "Italic", "Latin"]], "etymology_summary": "Formed within English, by conversion."}, "first_use": "Philemon Holland", "frequency": [[1750, 0], [1760, 0.023], [1770, 0.031], [1780, 0.038], [1790, 0.045], [1800, 0.072], [1810, 0.13], [1820, 0.26], [1830, 0.5], [1840, 0.78], [1850, 1.1], [1860, 1.5], [1870, 1.9], [1880, 2.7], [1890, 3.5], [1900, 4.1], [1910, 4.9], [1920, 5.9], [1930, 6.3], [1940, 6.3], [1950, 6.2], [1960, 5.9], [1970, 6.3], [1980, 6.6], [1990, 6.2], [2000, 5.6], [2010, 5.3]], "sense_ids": ["cereal_nn01-9723474", "cereal_nn01-9723507", "cereal_nn01-9723561"], "definition": "(usually in plural; also in Latin form cerealia.) A name given to those plants of the family Graminaceae or grasses which are cultivated for their seed as human food; commonly comprised under the name corn or grain. (Sometimes extended to cultivated leguminous plants.)", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "cereal", "part_of_speech": "NN"}, {"form": "cereals", "part_of_speech": "NNS"}]}, {"region": "US", "inflections": [{"form": "cereal", "part_of_speech": "NN"}, {"form": "cereals", "part_of_speech": "NNS"}]}], "frequency_id": "cereal_nn01-fq", "oed_reference": "cereal, n.", "pronunciations": [{"ipa": ["\u02c8s\u026a\u0259r\u026a\u0259l"], "region": "British"}, {"ipa": ["\u02c8s\u026ari\u0259l"], "region": "US"}], "parts_of_speech": ["NN"], "primary_sense_id": "cereal_nn01-9723474"}]
+Extracted definition.
+Set definition to query object.
+Now to get and set the word ID.
+The wordID was grabbed as:
+cereal_nn01The user's input was read as:
+q
+Get quotaions based on word selected.
+API.cs is starting quotations mode.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Called callQuotationsAPI
+Got quotation responses.
+Set JSONResponse to the response.
+Ran quotations synchronously.
+Parsing quotations JSON.
+First quote grabbed as:
+
+In MainMenu()
+The user's input was read as:
+o
+Options menu selected.
+In MainMenu()
+The user's input was read as:
+e
+Export quotations.
+The contents of the exported XML file are:
+<?xml version="1.0" encoding="utf-8"?>
+<SuperMemoCollection>
+  <Count>2</Count>
+  <SuperMemoElement>
+    <ID>1</ID>
+    <Title>P. Holland - 1600</Title>
+    <Type>Topic</Type>
+    <Content>
+      <Question>The Dictatour and Generall..exhibited the games called Cereales..to the honour of Ceres. --P. Holland, 1600</Question>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>2</ID>
+    <Title>C. Darwin - 1868</Title>
+    <Type>Topic</Type>
+    <Content>
+      <Question>The slow and gradual improvement of our cereals. --C. Darwin, 1868</Question>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+</SuperMemoCollection>
+In MainMenu()
+The user's input was read as:
+x
+Exit selected.
