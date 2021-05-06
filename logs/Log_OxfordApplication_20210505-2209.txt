@@ -1,0 +1,91 @@
+Leaving Main method.
+Starting Main Menu
+In MainMenu()
+Automatically looking up user entered word:
+landslide
+Found that QueryMode is set to words.
+Looking up the word:
+landslide
+Now to call the words endpoint.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Calling the API
+Called callWordsAPI
+Making the request
+Got responses.
+Set JSONResponse to the response.
+Left getWords task with the JSONResponse.
+Parsing JSON
+We now have the data as a string.
+[{"id": "landslide_nn01", "band": 11, "meta": {"created": 1901, "revised": true, "updated": 2021}, "lemma": "landslide", "oed_url": "https://www.oed.com/view/Entry/89825596#eid1314874160", "daterange": {"end": null, "start": 1822, "obsolete": false, "rangestring": "1822\u2014"}, "etymology": {"etymons": [{"word": "land", "language": "English", "target_id": "land_nn01", "part_of_speech": "NN"}, {"word": "slide", "language": "English", "target_id": "slide_nn01", "part_of_speech": "NN"}], "etymology_type": "compound", "etymon_language": [["English"]], "source_language": [["European languages", "Germanic"]], "etymology_summary": "Formed within English, by compounding."}, "first_use": "Boston Daily Advertiser", "frequency": [[1750, 0], [1760, 0], [1770, 0], [1780, 0], [1790, 0], [1800, 0], [1810, 0], [1820, 0], [1830, 0.015], [1840, 0.025], [1850, 0.041], [1860, 0.071], [1870, 0.13], [1880, 0.2], [1890, 0.28], [1900, 0.37], [1910, 0.53], [1920, 0.68], [1930, 0.8], [1940, 0.93], [1950, 1.0], [1960, 1.2], [1970, 1.5], [1980, 1.7], [1990, 1.8], [2000, 1.9], [2010, 2.0]], "sense_ids": ["landslide_nn01-1314874180", "landslide_nn01-1315566450"], "definition": "The sliding down or subsidence of a large mass of earth, rock, etc.; a landslip; esp. a collapse of earth or rock from a mountain or cliff. Also figurative.", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "landslide", "part_of_speech": "NN"}, {"form": "landslides", "part_of_speech": "NNS"}]}, {"region": "US", "inflections": [{"form": "landslide", "part_of_speech": "NN"}, {"form": "landslides", "part_of_speech": "NNS"}]}], "frequency_id": "landslide_nn01-fq", "oed_reference": "landslide, n.", "pronunciations": [{"ipa": ["\u02c8lan(d)sl\u028c\u026ad"], "region": "British"}, {"ipa": ["\u02c8laen(d)\u02ccsla\u026ad"], "region": "US"}], "parts_of_speech": ["NN"], "primary_sense_id": "landslide_nn01-1314874180"}]
+Extracted definition.
+Set definition to query object.
+Now to get and set the word ID.
+The wordID was grabbed as:
+landslide_nn01The user's input was read as:
+s
+Get senses selected.
+API.cs is starting senses mode.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Called callSensesAPI
+Making the request
+System.Net.Http.HttpConnection+ContentLengthReadStream
+Got senses responses.
+Set JSONResponse to the response.
+Ran senses using start.
+In MainMenu()
+The user's input was read as:
+q
+Get quotaions based on word selected.
+API.cs is starting quotations mode.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Called callQuotationsAPI
+Got quotation responses.
+Set JSONResponse to the response.
+Ran quotations synchronously.
+Parsing quotations JSON.
+First quote grabbed as:
+
+In MainMenu()
+The user's input was read as:
+e
+Export quotations.
+The contents of the exported XML file are:
+<?xml version="1.0" encoding="utf-8"?>
+<SuperMemoCollection>
+  <Count>4</Count>
+  <SuperMemoElement>
+    <ID>1</ID>
+    <Title> - 1856</Title>
+    <Type>Topic</Type>
+    <Content>
+      <Question>If this is an index of what is going on in Ohio
