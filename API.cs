@@ -408,9 +408,13 @@ namespace OxfordV2
 					query.Senses.Add(currentSense);
 					Console.WriteLine();
 
-					Console.WriteLine("----Enter for more - X to exit----");
+					Console.WriteLine("---- S to Save - X to exit - Enter for more----");
 					string input = Console.ReadLine().Trim().ToLower();
-					if (input == "x")
+					if (input == "S")
+					{
+					    SavedQueries.AddMember(currentSense);
+					}
+					else if (input == "x")
 					    break;
 					}
 					catch (Exception ex)
@@ -474,7 +478,7 @@ namespace OxfordV2
 					if (input == "s")
 					{
 					    Console.WriteLine("Quote saved.");
-						SavedQueries.AddQuote(currentQuote);
+						SavedQueries.AddMember(currentQuote);
 					}
 					else if (input == "x")
 					    break;

@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RUmr5PxIhqX6UOTTHCNOH+XaGj6mdukp3EhKokVe/np9xIKf95/5JoavuIP1zrPvn+QX6BIFk0gYfy28P0C2hQ==",
+  "dgSpecHash": "Byo8DJydZLLETiW7Bk69YRuc7ZeD9SyEgSbFJZaq8VyK6tl0lpPMNSSonoLJi5ERcIYvOzZQuyemvvijj6Xr1w==",
   "success": true,
-  "projectFilePath": "C:\\my-coding-projects\\Oxford-App\\OxfordV2\\OxfordV2.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Luke\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\5.0.4\\microsoft.netcore.app.runtime.win-x64.5.0.4.nupkg.sha512",
-    "C:\\Users\\Luke\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\5.0.4\\microsoft.windowsdesktop.app.runtime.win-x64.5.0.4.nupkg.sha512",
-    "C:\\Users\\Luke\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\5.0.4\\microsoft.aspnetcore.app.runtime.win-x64.5.0.4.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\my-coding-projects\\oxford\\OxfordV2.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

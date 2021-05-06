@@ -15,6 +15,7 @@ namespace OxfordV2
 
 	    public static string WordID { get; set; }
 	    public static List<Quote> Quotes { get; set; }
+	    public static List<Sense> Senses { get; set; }
 
 	    public static string ExportFileName { get; set; } = "OED-export.xml";
 
@@ -22,9 +23,21 @@ namespace OxfordV2
 	    {
 		    Instance=true;
 		    Quotes = new();
+		    Senses = new();
 	    }
 
-		public static void AddQuote(Quote quote) {
+		public static void AddMember(Sense sense) {
+			Senses.Add(sense);
+			if (Senses.Count == 1) {
+				Console.WriteLine($"{Senses.Count} sense saved for export.");
+			}
+			else {
+				Console.WriteLine($"{Senses.Count} senses saved for export.");
+			}
+			
+		}
+
+		public static void AddMember(Quote quote) {
 			Quotes.Add(quote);
 			if (Quotes.Count == 1) {
 				Console.WriteLine($"{Quotes.Count} quote saved for export.");
@@ -44,9 +57,11 @@ namespace OxfordV2
 
 		    xml.WriteStartDocument();
 		    xml.WriteStartElement("SuperMemoCollection");
-		    int count = Quotes.Count;
+		    int count = Quotes.Count + Senses.Count;
 		    xml.WriteElementString("Count", $"{count}");
 		    // @TODO Add count number and ID number
+		    if (Quotes.Count > 0) {
+		    Console.WriteLine("Exporting Quotes...");
 		    for (int i = 0; i < Quotes.Count; i++) {
 			try {
 			    xml.WriteStartElement("SuperMemoElement");
@@ -73,6 +88,55 @@ namespace OxfordV2
 						Console.WriteLine($"{ex.ToString()}");
 					}
 				}
+		    }
+		    }
+		    if (Senses.Count > 0) {
+		    Console.WriteLine("Exporting Senses...");
+			    string obsoleteText = "";
+			    string mainUsageText = "";
+		    for (int i = 0; i < Senses.Count; i++) {
+
+			    if (Senses[i].IsObsolete) {
+			    	obsoleteText = "This usage is obsolete.";
+			    }
+			    else {
+				obsoleteText = "This usage is NOT obsolete.";
+			    }
+
+			    if (Senses[i].IsMainUsage) {
+				mainUsageText = "This sense is the main sense for this word.";
+			    }
+			    else {
+				mainUsageText = "This sense is NOT the main sense for this word.";
+			    }
+
+
+			try {
+			    xml.WriteStartElement("SuperMemoElement");
+			    int ID = i + 1;
+			    xml.WriteElementString("ID", $"{ID}");
+			    xml.WriteElementString("Title", $"{Senses[i].Definition}");
+			    xml.WriteElementString("Type", "Topic");
+			    xml.WriteStartElement("Content");
+			    xml.WriteElementString("Question", $"{Senses[i].Definition} --This sense was first used in the year {Senses[i].Start},  {obsoleteText}, {mainUsageText}, {Senses[i].OedReference}");
+
+			    string encoded = WebUtility.HtmlEncode("<H5 dir=ltr align=left><Font size=\"1\" style=\"color: transparent\"> SuperMemo Reference:</font><br><FONT class=reference>Title:\"My Test Quote\" <br>Source: Oxford English Dictionary");
+			    xml.WriteElementString("SuperMemoReference", encoded);
+
+				xml.WriteEndElement();
+				xml.WriteEndElement();
+
+				}
+				catch (AggregateException ae)
+				{
+					var ex = ae.Flatten().InnerExceptions;
+					Console.WriteLine("Error writing XML document:");
+					foreach (var exception in ex)
+					{
+						Console.WriteLine($"{ex.ToString()}");
+					}
+				}
+		    }
 		    }
 
 		try {

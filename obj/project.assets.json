@@ -1,8 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {},
-    "net5.0/win10-x64": {}
+    "net5.0": {}
   },
   "libraries": {},
   "projectFileDependencyGroups": {
@@ -15,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\my-coding-projects\\Oxford-App\\OxfordV2\\OxfordV2.csproj",
+      "projectUniqueName": "C:\\my-coding-projects\\oxford\\OxfordV2.csproj",
       "projectName": "OxfordV2",
-      "projectPath": "C:\\my-coding-projects\\Oxford-App\\OxfordV2\\OxfordV2.csproj",
+      "projectPath": "C:\\my-coding-projects\\oxford\\OxfordV2.csproj",
       "packagesPath": "C:\\Users\\Luke\\.nuget\\packages\\",
-      "outputPath": "C:\\my-coding-projects\\Oxford-App\\OxfordV2\\obj\\",
+      "outputPath": "C:\\my-coding-projects\\oxford\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -60,31 +59,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-            "version": "[5.0.4, 5.0.4]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Runtime.win-x64",
-            "version": "[5.0.4, 5.0.4]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-            "version": "[5.0.4, 5.0.4]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
-      }
-    },
-    "runtimes": {
-      "win10-x64": {
-        "#import": []
       }
     }
   }
