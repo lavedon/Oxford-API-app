@@ -70,7 +70,7 @@ namespace OxfordV2
 			    xml.WriteElementString("Title", $"{Quotes[i].Author} - {Quotes[i].Year}");
 			    xml.WriteElementString("Type", "Topic");
 			    xml.WriteStartElement("Content");
-			    xml.WriteElementString("Question", $"{Quotes[i].Text} --{Quotes[i].Author}, {Quotes[i].Year}");
+			    xml.WriteElementString("Question", $"\"{Quotes[i].Text}\" --{Quotes[i].Author}, {Quotes[i].Year}");
 
 			    string encoded = WebUtility.HtmlEncode("<H5 dir=ltr align=left><Font size=\"1\" style=\"color: transparent\"> SuperMemo Reference:</font><br><FONT class=reference>Title:\"My Test Quote\" <br>Source: Oxford English Dictionary");
 			    xml.WriteElementString("SuperMemoReference", encoded);
@@ -118,7 +118,7 @@ namespace OxfordV2
 			    xml.WriteElementString("Title", $"{Senses[i].Definition}");
 			    xml.WriteElementString("Type", "Topic");
 			    xml.WriteStartElement("Content");
-			    xml.WriteElementString("Question", $"{Senses[i].Definition} --This sense was first used in the year {Senses[i].Start},  {obsoleteText}, {mainUsageText}, {Senses[i].OedReference}");
+			    xml.WriteElementString("Question", $"Sense: \"{Senses[i].Definition}\" --This sense was first used in the year {Senses[i].Start},  {obsoleteText}, {mainUsageText}, {Senses[i].OedReference}");
 
 			    string encoded = WebUtility.HtmlEncode("<H5 dir=ltr align=left><Font size=\"1\" style=\"color: transparent\"> SuperMemo Reference:</font><br><FONT class=reference>Title:\"My Test Quote\" <br>Source: Oxford English Dictionary");
 			    xml.WriteElementString("SuperMemoReference", encoded);

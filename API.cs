@@ -410,7 +410,7 @@ namespace OxfordV2
 
 					Console.WriteLine("---- S to Save - X to exit - Enter for more----");
 					string input = Console.ReadLine().Trim().ToLower();
-					if (input == "S")
+					if (input == "s")
 					{
 					    SavedQueries.AddMember(currentSense);
 					}
