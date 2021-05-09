@@ -88,4 +88,39 @@ The contents of the exported XML file are:
     <Title> - 1856</Title>
     <Type>Topic</Type>
     <Content>
-      <Question>If this is an index of what is going on in Ohio
+      <Question>If this is an index of what is going on in Ohio, look out for a landslide here on the 6th of November, for we are all going one way. --, 1856</Question>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>2</ID>
+    <Title>H. B. Stowe - 1868</Title>
+    <Type>Topic</Type>
+    <Content>
+      <Question>His first great speech..was a perfect land-slide of history of argument; an avalanche under which the opposing party were logically buried. --H. B. Stowe, 1868</Question>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>1</ID>
+    <Title>An overwhelming majority of votes for one party or candidate in an election; a victory achieved with such a majority.</Title>
+    <Type>Topic</Type>
+    <Content>
+      <Question>An overwhelming majority of votes for one party or candidate in an election; a victory achieved with such a majority. --This sense was first used in the year 1856,  This usage is NOT obsolete., This sense is NOT the main sense for this word., landslide, n., sense 2</Question>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>2</ID>
+    <Title>An overwhelming majority of votes for one party or candidate in an election; a victory achieved with such a majority.</Title>
+    <Type>Topic</Type>
+    <Content>
+      <Question>An overwhelming majority of votes for one party or candidate in an election; a victory achieved with such a majority. --This sense was first used in the year 1856,  This usage is NOT obsolete., This sense is NOT the main sense for this word., landslide, n., sense 2</Question>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+</SuperMemoCollection>
+In MainMenu()
+The user's input was read as:
+x
+Exit selected.

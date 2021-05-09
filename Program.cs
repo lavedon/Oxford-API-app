@@ -29,11 +29,11 @@ namespace OxfordV2
 		// Try to create the directory
 		DirectoryInfo di = Directory.CreateDirectory(directoryPath);
 		}
-		string fullPath = string.Concat(Environment.CurrentDirectory, $"\\logs\\Log_OxfordApplication_{DateTime.Now.ToString("yyyyMMdd-HHmm")}.txt");
-		Trace.WriteLine("Path is {0}", fullPath);
-		TextWriterTraceListener tr2 = new TextWriterTraceListener(System.IO.File.CreateText(fullPath));
+			string fullPath = string.Concat(Environment.CurrentDirectory, $"\\logs\\Log_OxfordApplication_{DateTime.Now.ToString("yyyyMMdd-HHmm")}.txt");
+			Trace.WriteLine("Path is {0}", fullPath);
+			TextWriterTraceListener tr2 = new TextWriterTraceListener(System.IO.File.CreateText(fullPath));
 
-		Trace.Listeners.Add(tr2);
+			Trace.Listeners.Add(tr2);
 		}
 
 		catch (Exception e)
@@ -42,9 +42,9 @@ namespace OxfordV2
 		}
 		finally {}
 
-		Trace.WriteLine("Leaving Main method.");
-		ConsoleUI.Start();
-		Trace.Flush();
+			Trace.WriteLine("Leaving Main method.");
+			ConsoleUI.Start();
+			Trace.Flush();
         }
 
     }

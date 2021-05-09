@@ -1,11 +1,11 @@
 SuperMemo Report
    Activity: Importing from C:\my-coding-projects\oxford\OED-export.xml
    Collection: c:\my-coding-projects\oxford\test-collection-for-import
-   Date: Wednesday, May 5, 2021, 10:11:08 PM
+   Date: Wednesday, May 5, 2021, 10:19:14 PM
    SuperMemo 18 (Build 18.04, Mar 6, 2020)
 
 
-Process completed at 10:11:08 PM in 00:00:00 sec (Wednesday, May 5, 2021)
+Process completed at 10:19:14 PM in 00:00:00 sec (Wednesday, May 5, 2021)
 
 NO ERRORS (Importing from C:\my-coding-projects\oxford\OED-export.xml)
 

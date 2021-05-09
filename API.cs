@@ -408,15 +408,22 @@ namespace OxfordV2
 					query.Senses.Add(currentSense);
 					Console.WriteLine();
 
-					Console.WriteLine("---- S to Save - X to exit - Enter for more----");
+					Console.WriteLine("---- S to Save - X to exit - Q - to get Quotes for this sense");
+					Console.WriteLine("Or just press Enter for more senses----");
 					string input = Console.ReadLine().Trim().ToLower();
 					if (input == "s")
 					{
-					    SavedQueries.AddMember(currentSense);
+						SavedQueries.AddMember(currentSense);
 					}
 					else if (input == "x")
-					    break;
+					{
+						break;
 					}
+				    else if (input == "q")
+					{
+						break;
+					}
+				}
 					catch (Exception ex)
 					{
 						Trace.WriteLine(ex);
