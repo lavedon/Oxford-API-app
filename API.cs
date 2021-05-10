@@ -513,7 +513,6 @@ namespace OxfordV2
 				Trace.WriteLine("First quote grabbed as:");
 				Trace.WriteLine(query.Quote);
 
-
 				Console.WriteLine(query.Quote);
 			}
 		}
