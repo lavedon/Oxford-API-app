@@ -13,8 +13,149 @@ using System.Collections.Generic;
 
 namespace OxfordV2
 {
-    class API
+    public static class API
     {
+	  	public static string baseURL { get; set; } = "https://oed-researcher-api.oxfordlanguages.com/oed/api/v0.2/";
+
+		public static void GetSynonyms(CurrentQuery query, HttpClient client, Sense currentSense) {
+		}
+ 
+		public static void GetQuotations(CurrentQuery query, HttpClient client, Sense currentSense = null) {
+		Action<object> callQuotationsAPI = (Object obj) => 
+		{
+			Trace.WriteLine("Called callQuotationsAPI");
+
+			Uri requestURL; 
+			string startYear; 
+			string endYear;
+			if (query.DateRangeSet) {
+				if (query.OpenStart)
+				{
+					startYear = "";
+					endYear = Convert.ToString(query.EndYear);
+				}
+				else if (query.OpenEnd)
+				{
+					startYear = Convert.ToString(query.StartYear);
+					endYear = "";
+				}
+				else {
+					startYear = Convert.ToString(query.StartYear);
+					endYear = Convert.ToString(query.EndYear);
+				}
+				if (currentSense != null)
+				{
+					requestURL = new Uri(baseURL + "sense/" + currentSense.SenseID + "/quotations/" + "?year=" + startYear + "-" + endYear);
+				}
+				else {
+					requestURL = new Uri(baseURL + "word/" + query.WordID + "/quotations/" + "?year=" + startYear + "-" + endYear);
+				}
+			}
+			else {
+				if (currentSense != null)
+				{
+					requestURL = new Uri(baseURL + "sense/" + currentSense.SenseID + "/quotations/");
+				}
+				else {
+					requestURL = new Uri(baseURL + "word/" + query.WordID + "/quotations/");
+				}
+			}
+			
+			try {
+			var response = client.GetStreamAsync(requestURL).Result;
+			Trace.WriteLine("Got quotation responses.");
+			JSONResponse = JsonDocument.Parse(response);
+			Trace.WriteLine("Set JSONResponse to the response.");
+			}
+			catch(Exception ex)
+			{
+				Trace.WriteLine("Exception");
+				Trace.WriteLine(ex.GetType());
+				Trace.WriteLine(ex.Message);
+			}
+		};
+		Trace.WriteLine("API.cs is starting quotations mode.");
+		if (query.HasLookedUpWord == false)
+		{
+			Console.WriteLine("Quotations you need to ask for a definition.");
+			Console.WriteLine("first.");
+		}
+		else
+		{
+		resetHeaders(client);
+		Task getQuotes = new Task(callQuotationsAPI, "Call Quotations");
+		getQuotes.RunSynchronously();
+		Trace.WriteLine("Ran quotations synchronously.");
+		Trace.WriteLine("Parsing quotations JSON.");
+
+		JsonElement root = JSONResponse.RootElement;
+		JsonElement quoteData = root.GetProperty("data");
+		foreach (JsonElement item in quoteData.EnumerateArray())
+		{
+			try {
+			// Print the quote
+			JsonElement quoteInfoBlock = item.GetProperty("text");
+			JsonElement actualQuote = quoteInfoBlock.GetProperty("full_text");
+
+			// Get the source of the quote
+			JsonElement quoteSourceBlock = item.GetProperty("source");
+			JsonElement quoteTitle = quoteSourceBlock.GetProperty("title");
+			JsonElement quoteAuthor = quoteSourceBlock.GetProperty("author");
+
+			
+			// quoteSourceBlock.TryGetProperty("author", out JsonElement quoteAuthor);
+
+
+			// Get what year the quote is from
+			JsonElement quoteYear = item.GetProperty("year");
+			Console.WriteLine("\"{0}\", Year: {1}, Source: {2} {3}", 
+				actualQuote.ToString(), quoteYear.ToString(), quoteAuthor.ToString(), 
+				quoteTitle.ToString());
+		    Quote currentQuote = new();
+			currentQuote.Year = quoteYear.GetInt16();
+			currentQuote.Text = actualQuote.ToString();
+			currentQuote.Title = quoteTitle.ToString();
+			currentQuote.Author = quoteAuthor.ToString();
+
+			// @TODO add all quotes whether you have seen them or not?
+			query.Quotes.Add(currentQuote);
+			Console.WriteLine();
+			Console.WriteLine("---- S to Save - X to exit - Enter for more----");
+			string input = Console.ReadLine().Trim().ToLower();
+			if (input == "s")
+			{
+			    Console.WriteLine("Quote saved.");
+				SavedQueries.AddMember(currentQuote);
+			}
+			else if (input == "x")
+			    break;
+			}
+			catch (Exception ex) {
+				Console.WriteLine(ex);
+			}
+			
+		}	
+		/*
+		string quotesDataString = JSONResponse.RootElement.GetProperty("data").ToString();
+		// (?<="full_text":\s")(.*?)(?=",)
+		var quotesRegex = new Regex("(?<=\"full_text\":\\s\")(.*?)(?=\",)");
+		query.NumberOfQuotes = quotesRegex.Matches(quotesDataString).Count;
+		// query.Quotes = quotesRegex.Matches(quotesDataString);
+		Console.WriteLine("{0} quotes found.", query.NumberOfQuotes);
+		// query.Quote = quotesRegex.Match(quotesDataString).ToString();
+		foreach (Match match in Regex.Matches(quotesDataString, quotesRegex.ToString()))
+		{
+			string input = "";
+			Console.WriteLine("\"{0}\"", match.Value);
+		}
+		*/
+
+		Trace.WriteLine("First quote grabbed as:");
+		Trace.WriteLine(query.Quote);
+
+		Console.WriteLine(query.Quote);
+		}
+	}
 
 	public static JsonDocument JSONResponse { get; set; }
 
@@ -54,7 +195,6 @@ namespace OxfordV2
 		// Which API to call next 
 		ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 		var client = new HttpClient();
-		string baseURL = "https://oed-researcher-api.oxfordlanguages.com/oed/api/v0.2/";
 
 		// @TODO make this one Action delegate - with a method that parses the query and responses
 		Action<object> callWordsAPI = (Object obj) => 
@@ -131,47 +271,6 @@ namespace OxfordV2
 
 		};
 
-		Action<object> callQuotationsAPI = (Object obj) => 
-		{
-			Trace.WriteLine("Called callQuotationsAPI");
-
-			Uri requestURL; 
-			string startYear; 
-			string endYear;
-			if (query.DateRangeSet) {
-				if (query.OpenStart)
-				{
-					startYear = "";
-					endYear = Convert.ToString(query.EndYear);
-				}
-				else if (query.OpenEnd)
-				{
-					startYear = Convert.ToString(query.StartYear);
-					endYear = "";
-				}
-				else {
-					startYear = Convert.ToString(query.StartYear);
-					endYear = Convert.ToString(query.EndYear);
-				}
-				requestURL = new Uri(baseURL + "word/" + query.WordID + "/quotations/" + "?year=" + startYear + "-" + endYear);
-			}
-			else {
-				requestURL = new Uri(baseURL + "word/" + query.WordID + "/quotations/");
-			}
-			
-			try {
-			var response = client.GetStreamAsync(requestURL).Result;
-			Trace.WriteLine("Got quotation responses.");
-			JSONResponse = JsonDocument.Parse(response);
-			Trace.WriteLine("Set JSONResponse to the response.");
-			}
-			catch(Exception ex)
-			{
-				Trace.WriteLine("Exception");
-				Trace.WriteLine(ex.GetType());
-				Trace.WriteLine(ex.Message);
-			}
-		};
 
 		Action<object> callRootsAPI = (Object obj) => 
 		{
@@ -385,6 +484,8 @@ namespace OxfordV2
 				    currentSense.IsMainUsage = item.GetProperty("main_current_sense").GetBoolean();
 					currentSense.OedReference = item.GetPropertyExt("oed_reference")?.ToString();
 					// currentSense.Usage = item.GetProperty("")
+					// Get the sense ID 
+					currentSense.SenseID = item.GetPropertyExt("id")?.ToString();
 					Console.WriteLine(currentSense.Definition);
 					Console.WriteLine("Sense first used: {0}", currentSense.Start);
 					if (currentSense.IsObsolete)
@@ -408,7 +509,7 @@ namespace OxfordV2
 					query.Senses.Add(currentSense);
 					Console.WriteLine();
 
-					Console.WriteLine("---- S to Save - X to exit - Q - to get Quotes for this sense");
+					Console.WriteLine("---- S to Save - X to exit - O for other options");
 					Console.WriteLine("Or just press Enter for more senses----");
 					string input = Console.ReadLine().Trim().ToLower();
 					if (input == "s")
@@ -419,9 +520,55 @@ namespace OxfordV2
 					{
 						break;
 					}
-				    else if (input == "q")
+				    else if (input == "o")
 					{
-						break;
+						bool otherOptionsMenu = true;
+						while (otherOptionsMenu)
+						{
+							Console.WriteLine("Q - Get Quotations using this sense.");
+							Console.WriteLine("S - Get Synonyms for this sense.");
+							Console.WriteLine("B - Get Siblings for this sense.");
+							Console.WriteLine("X - Exit this menu.");
+							Console.WriteLine("-----------------------------------");
+							var response = Console.ReadLine().Trim().ToLower();
+							switch (response)
+							{
+								case ("q" or "quotation" or "quotations"):
+								{
+									Console.WriteLine("First, save the above definition for export? Y/N");
+									var saveResponse = Console.ReadLine().Trim().ToLower();
+									if (saveResponse == "y") {
+										SavedQueries.AddMember(currentSense);
+									} 
+									query.CurrentSenseID = currentSense.SenseID;
+									GetQuotations(query, client, currentSense);
+									otherOptionsMenu = false;
+									break;
+								}
+
+								case ("s" or "synonyms" or "syn"):
+									Console.WriteLine("Get Synonyms");
+									GetSynonyms(query, client, currentSense);
+									otherOptionsMenu = false;
+
+								break;
+
+								case ("b" or "siblings" or "sibling" or "sib"):
+									// GetSiblings(query, client, currentSense);
+									Console.WriteLine("Get Siblings");
+									otherOptionsMenu = false;
+								break;
+
+								case ("x" or "e" or "exit"):
+									otherOptionsMenu = false;
+									break;
+
+								default:
+									Console.WriteLine("No selection made.");
+									break;
+							}
+
+						}
 					}
 				}
 					catch (Exception ex)
@@ -434,87 +581,7 @@ namespace OxfordV2
 		}
 		else if (query.QueryMode == Modes.Quotations)
 		{
-			Trace.WriteLine("API.cs is starting quotations mode.");
-			if (query.HasLookedUpWord == false)
-			{
-				Console.WriteLine("Quotations you need to ask for a definition.");
-				Console.WriteLine("first.");
-			}
-			else
-			{
-				resetHeaders(client);
-				Task getQuotes = new Task(callQuotationsAPI, "Call Quotations");
-				getQuotes.RunSynchronously();
-				Trace.WriteLine("Ran quotations synchronously.");
-				Trace.WriteLine("Parsing quotations JSON.");
-
-				JsonElement root = JSONResponse.RootElement;
-				JsonElement quoteData = root.GetProperty("data");
-				foreach (JsonElement item in quoteData.EnumerateArray())
-				{
-					try {
-					// Print the quote
-					JsonElement quoteInfoBlock = item.GetProperty("text");
-					JsonElement actualQuote = quoteInfoBlock.GetProperty("full_text");
-
-					// Get the source of the quote
-					JsonElement quoteSourceBlock = item.GetProperty("source");
-					JsonElement quoteTitle = quoteSourceBlock.GetProperty("title");
-					JsonElement quoteAuthor = quoteSourceBlock.GetProperty("author");
-
-					
-					// quoteSourceBlock.TryGetProperty("author", out JsonElement quoteAuthor);
-
-
-					// Get what year the quote is from
-					JsonElement quoteYear = item.GetProperty("year");
-					Console.WriteLine("\"{0}\", Year: {1}, Source: {2} {3}", 
-						actualQuote.ToString(), quoteYear.ToString(), quoteAuthor.ToString(), 
-						quoteTitle.ToString());
-				    Quote currentQuote = new();
-					currentQuote.Year = quoteYear.GetInt16();
-					currentQuote.Text = actualQuote.ToString();
-					currentQuote.Title = quoteTitle.ToString();
-					currentQuote.Author = quoteAuthor.ToString();
-
-					// @TODO add all quotes whether you have seen them or not?
-					query.Quotes.Add(currentQuote);
-					Console.WriteLine();
-					Console.WriteLine("---- S to Save - X to exit - Enter for more----");
-					string input = Console.ReadLine().Trim().ToLower();
-					if (input == "s")
-					{
-					    Console.WriteLine("Quote saved.");
-						SavedQueries.AddMember(currentQuote);
-					}
-					else if (input == "x")
-					    break;
-					}
-					catch (Exception ex) {
-						Console.WriteLine(ex);
-					}
-					
-				}	
-				/*
-				string quotesDataString = JSONResponse.RootElement.GetProperty("data").ToString();
-				// (?<="full_text":\s")(.*?)(?=",)
-				var quotesRegex = new Regex("(?<=\"full_text\":\\s\")(.*?)(?=\",)");
-				query.NumberOfQuotes = quotesRegex.Matches(quotesDataString).Count;
-				// query.Quotes = quotesRegex.Matches(quotesDataString);
-				Console.WriteLine("{0} quotes found.", query.NumberOfQuotes);
-				// query.Quote = quotesRegex.Match(quotesDataString).ToString();
-				foreach (Match match in Regex.Matches(quotesDataString, quotesRegex.ToString()))
-				{
-					string input = "";
-					Console.WriteLine("\"{0}\"", match.Value);
-				}
-				*/
-
-				Trace.WriteLine("First quote grabbed as:");
-				Trace.WriteLine(query.Quote);
-
-				Console.WriteLine(query.Quote);
-			}
+			GetQuotations(query, client);
 		}
 		else 
 		{

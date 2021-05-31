@@ -18,7 +18,7 @@ namespace OxfordV2
 		// Create the object the same time the user looks up a word
 		public string UserEnteredWord { get; set; } 
 		public string Definition { get; set; }
-		public string[] SenseIDs { get; set; }
+		public string CurrentSenseID { get; set; }
 		public string Lamma { get; set; }
 		public string Quote { get; set; }
 
