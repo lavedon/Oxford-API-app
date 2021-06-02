@@ -350,25 +350,35 @@ namespace OxfordV2
 			getWords.RunSynchronously();
 			Trace.WriteLine("Left getWords task with the JSONResponse.");
 			Trace.WriteLine("Parsing JSON");
-			JsonElement apiData = JSONResponse.RootElement.GetProperty("data");
-			// Malformed JSON data is returned.  Only 1 element in "data" property
-			// Convert To String and RegEx the string
-			string apiDataString = apiData.ToString();
-			Trace.WriteLine("We now have the data as a string.");
-			Trace.WriteLine(apiDataString);
-			var definitionRegEx = new Regex("(?<=definition\":\\s)(.*?)(?=\",\\s\"main_entry\")");
-			query.Definition = definitionRegEx.Match(apiDataString).ToString();
-			Trace.WriteLine("Extracted definition.");
-			Console.WriteLine(query.Definition);
-			Trace.WriteLine("Set definition to query object.");
-			Trace.WriteLine("Now to get and set the word ID.");
-			var wordIdRegex = new Regex("(?<=\"id\":\\s\")(.*?)(?=\",)");
-			query.WordID = wordIdRegex.Match(apiDataString).ToString();
-			Trace.WriteLine("The wordID was grabbed as:");
-			Trace.Write(query.WordID);
+			JsonElement apiData = JSONResponse.RootElement;
+			JsonElement data = apiData.GetProperty("data");
+			query.Definition = data[0].GetProperty("definition").ToString();
+			query.WordID = data[0].GetProperty("id").ToString();
+
 			query.HasLookedUpWord = true;
 
-		}
+
+				// Malformed JSON data is returned.  Only 1 element in "data" property
+				// Convert To String and RegEx the string
+				/*
+				string apiDataString = apiData.ToString();
+				Trace.WriteLine("We now have the data as a string.");
+				Trace.WriteLine(apiDataString);
+				var definitionRegEx = new Regex("(?<=definition\":\\s)(.*?)(?=\",\\s\"main_entry\")");
+				query.Definition = definitionRegEx.Match(apiDataString).ToString();
+				Trace.WriteLine("Extracted definition.");
+				Console.WriteLine(query.Definition);
+				Trace.WriteLine("Set definition to query object.");
+				Trace.WriteLine("Now to get and set the word ID.");
+				var wordIdRegex = new Regex("(?<=\"id\":\\s\")(.*?)(?=\",)");
+
+				query.WordID = wordIdRegex.Match(apiDataString).ToString();
+				Trace.WriteLine("The wordID was grabbed as:");
+				Trace.Write(query.WordID);
+				*/
+
+
+			}
 		else if (query.QueryMode == Modes.Root)
 		{
 			Trace.WriteLine("Now to call the root endpoint.");
