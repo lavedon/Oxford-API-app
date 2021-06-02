@@ -37,7 +37,6 @@ C:\my-coding-projects\oxford\bin\Debug\net5.0\OxfordV2.runtimeconfig.dev.json
 C:\my-coding-projects\oxford\bin\Debug\net5.0\OxfordV2.dll
 C:\my-coding-projects\oxford\bin\Debug\net5.0\ref\OxfordV2.dll
 C:\my-coding-projects\oxford\bin\Debug\net5.0\OxfordV2.pdb
-C:\my-coding-projects\oxford\obj\Debug\net5.0\OxfordV2.csprojAssemblyReference.cache
 C:\my-coding-projects\oxford\obj\Debug\net5.0\OxfordV2.GeneratedMSBuildEditorConfig.editorconfig
 C:\my-coding-projects\oxford\obj\Debug\net5.0\OxfordV2.AssemblyInfoInputs.cache
 C:\my-coding-projects\oxford\obj\Debug\net5.0\OxfordV2.AssemblyInfo.cs
@@ -46,3 +45,4 @@ C:\my-coding-projects\oxford\obj\Debug\net5.0\OxfordV2.dll
 C:\my-coding-projects\oxford\obj\Debug\net5.0\ref\OxfordV2.dll
 C:\my-coding-projects\oxford\obj\Debug\net5.0\OxfordV2.pdb
 C:\my-coding-projects\oxford\obj\Debug\net5.0\OxfordV2.genruntimeconfig.cache
+C:\my-coding-projects\oxford\obj\Debug\net5.0\OxfordV2.csproj.AssemblyReference.cache

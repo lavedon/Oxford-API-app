@@ -163,8 +163,11 @@ namespace OxfordV2
 	static void resetHeaders(HttpClient client)
 	{
 		try {
-		   UserInfo.GetKeys();
-		}
+			if (string.IsNullOrEmpty(UserInfo.appId) || string.IsNullOrEmpty(UserInfo.appKey))
+				{ 
+					UserInfo.GetKeys();
+				}
+			}
 		catch(Exception ex)
 		{
 			Trace.WriteLine("Could not get the API key.");

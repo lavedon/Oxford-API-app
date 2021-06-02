@@ -9,9 +9,21 @@ namespace OxfordV2
 		public static string appId { get; set; }
 		public static string appKey { get; set; }
 
+		public static void GetKeys(string userID, string key)
+        {
+			try
+            {
+				Trace.WriteLine("GUI passed user entered userID and user entered key.");
+				appId = userID;
+				appKey = key;
+            }
+			catch
+            {
+				Trace.WriteLine("Error setting user id and key from GUI.");
+            }
+        }
 		public static void GetKeys()
 		{
-
 			StreamReader reader = new StreamReader(".\\keys.txt");
 			try
 			{

@@ -1,0 +1,58 @@
+Leaving Main method.
+Starting Main Menu
+In MainMenu()
+Automatically looking up user entered word:
+nut
+Found that QueryMode is set to words.
+Looking up the word:
+nut
+Now to call the words endpoint.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Calling the API
+Called callWordsAPI
+Making the request
+Got responses.
+Set JSONResponse to the response.
+Left getWords task with the JSONResponse.
+Parsing JSON
+We now have the data as a string.
+[{"id": "nut_nn01a", "band": 5, "meta": {"created": 1907, "revised": true, "updated": 2004}, "lemma": "nut", "oed_url": "https://www.oed.com/view/Entry/129285#eid33974431", "daterange": {"end": null, "start": 820, "obsolete": false, "rangestring": "eOE\u2014"}, "etymology": {"etymons": [], "etymology_type": "inherited", "etymon_language": [["European languages", "Germanic", "West Germanic"]], "source_language": [["European languages", "Germanic"]], "etymology_summary": "A word inherited from Germanic."}, "first_use": "Erfurt Glossary", "frequency": [[1750, 8.1], [1760, 8.3], [1770, 8.9], [1780, 9.3], [1790, 10], [1800, 11], [1810, 10], [1820, 10], [1830, 11], [1840, 11], [1850, 11], [1860, 11], [1870, 11], [1880, 12], [1890, 12], [1900, 13], [1910, 13], [1920, 13], [1930, 12], [1940, 11], [1950, 10], [1960, 8.7], [1970, 8.6], [1980, 9.0], [1990, 9.4], [2000, 9.4], [2010, 9.6]], "sense_ids": ["nut_nn01a-33974436", "nut_nn01a-33974915", "nut_nn01a-33975018", "nut_nn01a-33975052", "nut_nn01a-33975087", "nut_nn01a-33975255", "nut_nn01a-33975328", "nut_nn01a-33975396", "nut_nn01a-33975553", "nut_nn01a-33975754", "nut_nn01a-33975839", "nut_nn01a-33975950", "nut_nn01a-33976018", "nut_nn01a-33976073", "nut_nn01a-33976153", "nut_nn01a-33976253", "nut_nn01a-33976342", "nut_nn01a-33976480", "nut_nn01a-33976520", "nut_nn01a-33976574", "nut_nn01a-33976601", "nut_nn01a-33976643", "nut_nn01a-33976700", "nut_nn01a-33976747", "nut_nn01a-33976825", "nut_nn01a-33976909", "nut_nn01a-33977005", "nut_nn01a-33977063", "nut_nn01a-33977123", "nut_nn01a-33977275", "nut_nn01a-33977349", "nut_nn01a-33977450", "nut_nn01a-33977484", "nut_nn01a-33977575", "nut_nn01a-33977677", "nut_nn01a-33977720", "nut_nn01a-33977822", "nut_nn01a-33977885", "nut_nn01a-33977977", "nut_nn01a-33978052", "nut_nn01a-33978102", "nut_nn01a-33978173", "nut_nn01a-33978225"], "definition": "A fruit or seed with a hard or leathery shell enclosing a relatively hard edible or oil-yielding kernel; the kernel itself; (Botany) a hard, indehiscent, usually one-seeded fruit, often surrounded by a cupule.", "main_entry": true, "inflections": [{"region": "British", "inflections": [{"form": "nut", "part_of_speech": "NN"}, {"form": "nuts", "part_of_speech": "NNS"}]}, {"region": "US", "inflections": [{"form": "nut", "part_of_speech": "NN"}, {"form": "nuts", "part_of_speech": "NNS"}]}], "frequency_id": "nut_nn01a-fq", "oed_reference": "nut, n.1", "pronunciations": [{"ipa": ["n\u028ct"], "region": "British"}, {"ipa": ["n\u0259t"], "region": "US"}], "parts_of_speech": ["NN"], "primary_sense_id": "nut_nn01a-33974436"}]
+Extracted definition.
+Set definition to query object.
+Now to get and set the word ID.
+The wordID was grabbed as:
+nut_nn01aThe user's input was read as:
+s
+Get senses selected.
+API.cs is starting senses mode.
+Getting request keys
+resetHeaders called.
+App Id is:
+4ebc819b
+Key is:
+b6b1ca0e4e766b222d56c20f43c2396f
+Here are the request Headers...
+Accept: application/json
+app_id: 4ebc819b
+app_key: b6b1ca0e4e766b222d56c20f43c2396f
+
+Called callSensesAPI
+Making the request
+System.Net.Http.HttpConnection+ContentLengthReadStream
+Got senses responses.
+Set JSONResponse to the response.
+Ran senses using start.
+In MainMenu()
+The user's input was read as:
+x
+Exit selected.
