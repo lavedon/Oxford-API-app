@@ -60,12 +60,12 @@ namespace OxfordV2
 			    Trace.WriteLine("Word look up selected");
 			    query.QueryMode = Modes.Word;
 			    // Only call API if definition not already set  
-			    if (string.IsNullOrWhiteSpace(query.Definition)) {
+			    if (string.IsNullOrWhiteSpace(query.Definitions[0].WordDefinition)) {
 				    API.APICalls(query);
 			    }
 			    else 
 			    {
-				    Console.WriteLine(query.Definition);
+				    Console.WriteLine(query.Definitions[0].WordDefinition);
 			    }
 			    break;
 
@@ -90,9 +90,8 @@ namespace OxfordV2
 				    query.HasLookedUpWord = false;
 				    Trace.WriteLine("query.HasLookedUpWord");
 				    Trace.WriteLine(query.HasLookedUpWord);
-				    query.Definition = "";
-				    Trace.WriteLine("query.Definition");
-				    Trace.WriteLine(query.Definition);
+					query.Definitions.Clear();
+				    
 			    break;
 
 			    case ("o" or "options" or "option"):

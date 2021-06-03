@@ -48,7 +48,7 @@ namespace OxfordV2
 					requestURL = new Uri(baseURL + "sense/" + currentSense.SenseID + "/quotations/" + "?year=" + startYear + "-" + endYear);
 				}
 				else {
-					requestURL = new Uri(baseURL + "word/" + query.WordID + "/quotations/" + "?year=" + startYear + "-" + endYear);
+					requestURL = new Uri(baseURL + "word/" + query.Definitions[0].WordID + "/quotations/" + "?year=" + startYear + "-" + endYear);
 				}
 			}
 			else {
@@ -57,7 +57,7 @@ namespace OxfordV2
 					requestURL = new Uri(baseURL + "sense/" + currentSense.SenseID + "/quotations/");
 				}
 				else {
-					requestURL = new Uri(baseURL + "word/" + query.WordID + "/quotations/");
+					requestURL = new Uri(baseURL + "word/" + query.Definitions[0].WordID + "/quotations/");
 				}
 			}
 			
@@ -203,7 +203,9 @@ namespace OxfordV2
 		Action<object> callWordsAPI = (Object obj) => 
 		{
 			Trace.WriteLine("Called callWordsAPI");
-			Uri requestURL = new Uri(baseURL + "words/?lemma=" + query.UserEnteredWord + "&limit=1");
+			// I am removing the limit of 1 definition -- going to return all at once
+			// Uri requestURL = new Uri(baseURL + "words/?lemma=" + query.UserEnteredWord + "&limit=1");
+			Uri requestURL = new Uri(baseURL + "words/?lemma=" + query.UserEnteredWord);
 			Trace.WriteLine("Making the request");
 
 			var response = client.GetStreamAsync(requestURL).Result;
@@ -227,10 +229,10 @@ namespace OxfordV2
 			Trace.WriteLine("Called callSensesAPI");
 			string queryURL;
 			if (! query.IncludeObsolete) {
-				queryURL = @"word/" + query.WordID + @"/senses/?obsolete=false";
+				queryURL = @"word/" + query.Definitions[0].WordID + @"/senses/?obsolete=false";
 			}
 			else {
-				queryURL = @"word/" + query.WordID + @"/senses/";
+				queryURL = @"word/" + query.Definitions[0].WordID + @"/senses/";
 			}
 			Uri requestURL = new Uri(baseURL + queryURL);
 			Trace.WriteLine("Making the request");
@@ -278,7 +280,7 @@ namespace OxfordV2
 		Action<object> callRootsAPI = (Object obj) => 
 		{
 			Trace.WriteLine("Called callRootsAPI");
-			Uri requestURL = new Uri(baseURL + query.WordID + "/roots/");
+			Uri requestURL = new Uri(baseURL + query.Definitions[0].WordID + "/roots/");
 			Trace.WriteLine("Making the request");
 			Trace.WriteLine(client.GetStringAsync(requestURL));
 
@@ -352,9 +354,14 @@ namespace OxfordV2
 			Trace.WriteLine("Parsing JSON");
 			JsonElement apiData = JSONResponse.RootElement;
 			JsonElement data = apiData.GetProperty("data");
-			query.Definition = data[0].GetProperty("definition").ToString();
-			query.WordID = data[0].GetProperty("id").ToString();
-
+			for (int i = 0; i < data.GetArrayLength(); i++)
+                {
+					Definition tempDefinition = new Definition();
+					tempDefinition.WordDefinition = data[i].GetProperty("definition").ToString();
+					tempDefinition.WordID = data[i].GetProperty("id").ToString();
+					query.Definitions.Add(tempDefinition);
+				}
+	
 			query.HasLookedUpWord = true;
 
 
@@ -372,9 +379,9 @@ namespace OxfordV2
 				Trace.WriteLine("Now to get and set the word ID.");
 				var wordIdRegex = new Regex("(?<=\"id\":\\s\")(.*?)(?=\",)");
 
-				query.WordID = wordIdRegex.Match(apiDataString).ToString();
+				query.Definitions[0].WordID = wordIdRegex.Match(apiDataString).ToString();
 				Trace.WriteLine("The wordID was grabbed as:");
-				Trace.Write(query.WordID);
+				Trace.Write(query.Definitions[0].WordID);
 				*/
 
 

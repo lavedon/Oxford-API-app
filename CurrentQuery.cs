@@ -14,15 +14,14 @@ namespace OxfordV2
 	}
 	public class CurrentQuery : IDisposable
 	{
-		public string WordID { get; set; }
-		// Create the object the same time the user looks up a word
+				// Create the object the same time the user looks up a word
 		public string UserEnteredWord { get; set; } 
-		public string Definition { get; set; }
+		
 		public string CurrentSenseID { get; set; }
 		public string Lamma { get; set; }
 		public string Quote { get; set; }
 
-
+		public List<Definition> Definitions { get; set; }
 		public List<Quote> Quotes { get; set; }
 		public List<Sense> Senses { get; set; }
 
@@ -46,6 +45,7 @@ namespace OxfordV2
 			this.HasLookedUpWord = false;
 			this.DateRangeSet = false;
 			this.IncludeObsolete = true;
+			this.Definitions = new List<Definition>();
 			this.Quotes = new List<Quote>();
 			this.Senses = new List<Sense>();
 			this.StartYear = 0;
