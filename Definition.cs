@@ -10,5 +10,6 @@ namespace OxfordV2
     {
         public string WordDefinition { get; set; }
         public string WordID { get; set; }
+        public bool IsWordMainDefinition { get; set; }
     }
 }

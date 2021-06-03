@@ -16,19 +16,45 @@ namespace OxfordV2
 		    }
 	    }
 
+		private static string processInput(CurrentQuery query, string userInput)
+        {
+			userInput = userInput.ToLower().Trim();
+			if (userInput.Contains("-o")) {
+				query.IncludeObsolete = false;
+			} 
+			var inputTokens = userInput.Split(" ");
+			return inputTokens[0];
+        }
+
 	    static void MainMenu(CurrentQuery query)
 	    {
 		    Trace.WriteLine("In MainMenu()");
 		    if (! query.HasLookedUpWord) { 
 			    Console.WriteLine("Please Enter a word");
-			    string word = Console.ReadLine().ToLower().Trim();
-				query.UserEnteredWord = word;
+			    string userInput = Console.ReadLine().ToLower().Trim();
+				query.UserEnteredWord = processInput(query, userInput);
 				try {
 					Trace.WriteLine("Automatically looking up user entered word:");
 					Trace.WriteLine(query.UserEnteredWord);
 					query.QueryMode = Modes.Word;
 					API.APICalls(query);
-				}
+					for (int i = 0; i < query.Definitions.Count; i++)
+					{
+						int dNum = i + 1;
+						Console.WriteLine("Definition #{0}", dNum);
+						Console.WriteLine("");
+						Console.WriteLine(query.Definitions[i].WordDefinition.ToString());
+						Console.WriteLine("");
+						if (query.Definitions[i].IsWordMainDefinition)
+						{
+							Console.WriteLine("This definition is listed as a main definition.");
+						} else
+                        {
+							Console.WriteLine("This definition is NOT listed as a main definition.");
+                        }
+						Console.WriteLine("");
+						
+					}				}
 				catch (Exception ex)
 				{
 					Trace.WriteLine("Exception on automatic word look up");

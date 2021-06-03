@@ -359,6 +359,13 @@ namespace OxfordV2
 					Definition tempDefinition = new Definition();
 					tempDefinition.WordDefinition = data[i].GetProperty("definition").ToString();
 					tempDefinition.WordID = data[i].GetProperty("id").ToString();
+					if (data[i].GetProperty("main_entry").ToString().ToLower() == "true")
+					{
+						tempDefinition.IsWordMainDefinition = true;
+					} else
+                    {
+						tempDefinition.IsWordMainDefinition = false;
+                    }
 					query.Definitions.Add(tempDefinition);
 				}
 	
