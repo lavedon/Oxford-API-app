@@ -121,6 +121,7 @@ namespace OxfordV2
 		    Console.WriteLine("-------------------------");
 		    Console.WriteLine("Options:");
 		    Console.WriteLine("Definition            - D");
+		    Console.WriteLine("Etymology             - E");
 		    Console.WriteLine("Lammatize             - L"); 
 		    Console.WriteLine("Root                  - R");
 		    Console.WriteLine("Senses                - S");
@@ -150,6 +151,10 @@ namespace OxfordV2
 				    showDefinitions(query); 
 			    }
 			    break;
+
+				case ("e" or "etymology" or "etymons"):
+				Trace.WriteLine("Show etymology selected");
+				break;
 
 			    case ("l" or "lammatize"):
 			    Trace.WriteLine("Lammatize selected.");

@@ -17,6 +17,8 @@ namespace OxfordV2
         public List<string> PartsOfSpeech { get; set;}
         public List<string> FormattedPartsOfSpeech { get; set; }
 
+        public Etymology DefinitionEtymology { get; set; }
+
     public Definition() {
         this.PartsOfSpeech = new List<string>();
         this.FormattedPartsOfSpeech = new List<string>();

@@ -425,6 +425,7 @@ namespace OxfordV2
 				Console.WriteLine();
 				// Etymology_summary
 				// (?<="etymology_summary":\s")(.*?)(?="},)
+				// Should this still be REGEX?
 				var etymologySummaryRegEx = new Regex("(?<=\"etymology_summary\":\\s\")(.*?)(?=\"},)");
 				query.EtymologySummary = etymologySummaryRegEx.Match(rootDataString).ToString();
 				Console.WriteLine("Where the word \"{0}\" came from:", query.UserEnteredWord);
