@@ -63,7 +63,7 @@ namespace OxfordV2
 
 					if (query.Definitions[i].PartsOfSpeech.Count != 0)
 					{
-						
+						query.Definitions[i].FormattedPartsOfSpeech.Clear();	
 						query.Definitions[i].FormatPartsOfSpeech();
 						foreach (var p in query.Definitions[i].FormattedPartsOfSpeech)
 						{
