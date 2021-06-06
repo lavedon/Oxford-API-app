@@ -191,7 +191,7 @@ namespace OxfordV2
 		Trace.WriteLine(client.DefaultRequestHeaders);
 
 	}
-
+// @TODO refactor this whole insane mess.
 	public static void APICalls(CurrentQuery query)
 	{
 		// Have CurrentQuery - QueryMode - tell 
@@ -205,6 +205,14 @@ namespace OxfordV2
 			Trace.WriteLine("Called callWordsAPI");
 			// I am removing the limit of 1 definition -- going to return all at once
 			// Uri requestURL = new Uri(baseURL + "words/?lemma=" + query.UserEnteredWord + "&limit=1");
+			string queryURL;
+		if ((! query.IncludeObsolete) || (! query.OptionsMenuIncludeObsolete)) {
+				queryURL = @"words/?lemma=" + query.UserEnteredWord + @"?obsolete=false";
+			}
+			else {
+				queryURL = @"words/?lemma=" + query.UserEnteredWord;
+			}
+
 			Uri requestURL = new Uri(baseURL + "words/?lemma=" + query.UserEnteredWord);
 			Trace.WriteLine("Making the request");
 
@@ -216,19 +224,11 @@ namespace OxfordV2
 
 			
 
-		Action<object> callWordsByIdAPI = (Object obj) => 
-		{
-			Trace.WriteLine("Called callWordsByIdAPI");
-			Uri requestURL = new Uri(baseURL + @"word/orchestra\_nn01?include\_senses=false&include\_quotations=false");
-			Trace.WriteLine("Making the request");
-			Trace.WriteLine(client.GetStringAsync(requestURL));
-		};
-
 		Action<object> callSensesAPI = (Object obj) => 
 		{
 			Trace.WriteLine("Called callSensesAPI");
 			string queryURL;
-			if (! query.IncludeObsolete) {
+			if ((! query.IncludeObsolete) || (! query.OptionsMenuIncludeObsolete)) {
 				queryURL = @"word/" + query.Definitions[0].WordID + @"/senses/?obsolete=false";
 			}
 			else {
@@ -359,6 +359,15 @@ namespace OxfordV2
 					Definition tempDefinition = new Definition();
 					tempDefinition.WordDefinition = data[i].GetProperty("definition").ToString();
 					tempDefinition.WordID = data[i].GetProperty("id").ToString();
+					tempDefinition.RecordedFirstUseSource = data[i].GetProperty("first_use").ToString();
+					tempDefinition.RecordedFirstUseYear = int.Parse(data[i].GetProperty("daterange").GetProperty("start").ToString());
+					var parts = data[i].GetProperty("parts_of_speech").EnumerateArray();
+					while (parts.MoveNext())
+					{
+						var part = parts.Current;
+						tempDefinition.PartsOfSpeech.Add(part.GetString());
+					}
+
 					if (data[i].GetProperty("main_entry").ToString().ToLower() == "true")
 					{
 						tempDefinition.IsWordMainDefinition = true;

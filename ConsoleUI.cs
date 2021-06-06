@@ -1,5 +1,7 @@
 using System;
 using System.Diagnostics;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace OxfordV2
 {
@@ -22,9 +24,78 @@ namespace OxfordV2
 			if (userInput.Contains("-o")) {
 				query.IncludeObsolete = false;
 			} 
-			var inputTokens = userInput.Split(" ");
+			string[] inputTokens = userInput.Split(" ");
+			
+			List<string> result = inputTokens.Where(t => t.All(char.IsDigit)).ToList();
+			// @TODO improve this so queries like "robot - 1900" work
+			// @TODO improve so queries with no space between dates works.	
+			if (result.Count() == 1) {
+				query.StartYear = int.Parse(result[0]);
+				query.OpenStart = true;
+
+			}
+			else if (result.Count() == 2) {
+				query.StartYear = int.Parse(result[0]);
+				query.EndYear = int.Parse(result[1]);
+				query.OpenStart = false;
+			}
+
 			return inputTokens[0];
         }
+
+		static void showDefinitions(CurrentQuery query)
+		{
+			
+			for (int i = 0; i < query.Definitions.Count; i++)
+			{
+				int dNum = i + 1;
+				Console.WriteLine("Definition #{0}:", dNum);
+				Console.WriteLine();
+				Console.WriteLine(query.Definitions[i].WordDefinition.ToString());
+				Console.WriteLine();
+
+				if (query.OptionsMenuVerboseMode) {
+					string outputPartsOfSpeech = "";
+					string mainDefinition = "";
+					string firstUseSource = "";
+					string firstUseYear = "";
+					string isObsolete = "";
+
+					if (query.Definitions[i].PartsOfSpeech.Count != 0)
+					{
+						
+						query.Definitions[i].FormatPartsOfSpeech();
+						foreach (var p in query.Definitions[i].FormattedPartsOfSpeech)
+						{
+							outputPartsOfSpeech += p.ToString() + ". ";
+						}
+					}
+					if (query.Definitions[i].IsWordMainDefinition)
+					{
+						mainDefinition = "Listed as a main definition.";
+					} else
+					{
+						mainDefinition = "NOT listed as a main definition.";
+					}
+
+					if (query.Definitions[i].IsWordObsolete)
+					{
+						isObsolete = "This usage is now obsolete.";
+					} else {
+						isObsolete = "";
+					}
+
+					firstUseSource = query.Definitions[i].RecordedFirstUseSource;
+					firstUseYear = query.Definitions[i].RecordedFirstUseYear.ToString();
+					Console.WriteLine(outputPartsOfSpeech +  isObsolete + " " + mainDefinition + 
+						" The original source of this word is the {0}. This word was first recored in {1}", 
+						firstUseSource, firstUseYear);
+					Console.WriteLine();
+				}
+				
+
+			}				
+		}
 
 	    static void MainMenu(CurrentQuery query)
 	    {
@@ -38,28 +109,13 @@ namespace OxfordV2
 					Trace.WriteLine(query.UserEnteredWord);
 					query.QueryMode = Modes.Word;
 					API.APICalls(query);
-					for (int i = 0; i < query.Definitions.Count; i++)
-					{
-						int dNum = i + 1;
-						Console.WriteLine("Definition #{0}", dNum);
-						Console.WriteLine("");
-						Console.WriteLine(query.Definitions[i].WordDefinition.ToString());
-						Console.WriteLine("");
-						if (query.Definitions[i].IsWordMainDefinition)
-						{
-							Console.WriteLine("This definition is listed as a main definition.");
-						} else
-                        {
-							Console.WriteLine("This definition is NOT listed as a main definition.");
-                        }
-						Console.WriteLine("");
-						
-					}				}
+				}
 				catch (Exception ex)
 				{
 					Trace.WriteLine("Exception on automatic word look up");
 					Trace.WriteLine(ex);
 				}
+				showDefinitions(query);
 		    }
 		    Console.WriteLine();
 		    Console.WriteLine("-------------------------");
@@ -91,7 +147,7 @@ namespace OxfordV2
 			    }
 			    else 
 			    {
-				    Console.WriteLine(query.Definitions[0].WordDefinition);
+				    showDefinitions(query); 
 			    }
 			    break;
 

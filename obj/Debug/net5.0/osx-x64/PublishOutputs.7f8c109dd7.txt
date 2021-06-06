@@ -1,0 +1,2 @@
+C:\my-coding-projects\oxford\bin\Debug\net5.0\osx-x64\publish\OxfordV2.pdb
+C:\my-coding-projects\oxford\bin\Debug\net5.0\osx-x64\publish\OxfordV2

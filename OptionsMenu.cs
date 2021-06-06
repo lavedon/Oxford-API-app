@@ -32,7 +32,7 @@ namespace OxfordV2
 		}
 		Console.WriteLine($"Delete old XML file and saved quotations on export?: {yesNo}");
 		
-		if (query.IncludeObsolete == true)
+		if (query.OptionsMenuIncludeObsolete == true)
 		{
 			yesNo = "Yes";
 		}
@@ -49,6 +49,16 @@ namespace OxfordV2
 		}
 
 		Console.WriteLine($"Is a date range set?: {yesNo}");
+		if (query.OptionsMenuVerboseMode)
+		{
+			yesNo = "On";
+		}
+		else {
+			yesNo = "Off";
+		}
+		Console.WriteLine($"Verbose mode: {yesNo}");
+
+
 		if (query.DateRangeSet)
 		{
            string printStart = "";
@@ -68,6 +78,7 @@ namespace OxfordV2
 	
 		Console.WriteLine("----------------------------");
 		Console.WriteLine("Toggle obsolete usage    - O");
+		Console.WriteLine("Toggle verbose mode      - V");
 		Console.WriteLine("Delete old XML on Export - E");
 		Console.WriteLine("Set date range:          - D");
 		Console.WriteLine("Exit to main menu        - X");
@@ -76,8 +87,14 @@ namespace OxfordV2
 		{
 			case ("o" or "obsolete" or "ob"):
 				Console.WriteLine("Toggle Obsolete");
-				query.IncludeObsolete = !query.IncludeObsolete;
+				query.OptionsMenuIncludeObsolete = !query.OptionsMenuIncludeObsolete;
 				break;
+
+			case ("v" or "verbose"):
+				Console.WriteLine("Toggle Verbose Mode");
+				query.OptionsMenuVerboseMode = !query.OptionsMenuVerboseMode;
+				break;
+
 			case ("e" or "export" or "delete"):
 				SavedQueries.DeleteOnExport = !SavedQueries.DeleteOnExport;
 				break;
