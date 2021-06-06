@@ -362,6 +362,7 @@ namespace OxfordV2
 					tempDefinition.RecordedFirstUseSource = data[i].GetProperty("first_use").ToString();
 					tempDefinition.RecordedFirstUseYear = int.Parse(data[i].GetProperty("daterange").GetProperty("start").ToString());
 					var parts = data[i].GetProperty("parts_of_speech").EnumerateArray();
+					
 					while (parts.MoveNext())
 					{
 						var part = parts.Current;
@@ -375,7 +376,33 @@ namespace OxfordV2
                     {
 						tempDefinition.IsWordMainDefinition = false;
                     }
+					JsonElement etymologyObject = data[i].GetProperty("etymology");
+					var etymons = etymologyObject.GetProperty("etymons").EnumerateArray();
+					while (etymons.MoveNext())
+					{
+						var etymon = etymons.Current;
+						tempDefinition.DefinitionEtymology.Etymons.Add(etymon.GetString());
+					}
+					tempDefinition.DefinitionEtymology.EtymologyType = 
+						etymologyObject.GetProperty("etymology_type").ToString();
+
+					var eLanguage = etymologyObject.GetProperty("etymon_language").EnumerateArray();
+					while (eLanguage.MoveNext())
+					{
+						var eLangCurrent = eLanguage.Current;
+						tempDefinition.DefinitionEtymology.EtymonLanguage.Add(eLangCurrent.ToString());		
+					}
+					
+					var sourceLanguage = etymologyObject.GetProperty("source_language").EnumerateArray();
+					while (sourceLanguage.MoveNext())
+					{
+						var sourceLangCurrent = sourceLanguage.Current;
+						tempDefinition.DefinitionEtymology.EtymonLanguage.Add(sourceLangCurrent.ToString());
+					}
+
+					tempDefinition.DefinitionEtymology.EtymologySummary = etymologyObject.GetProperty("etymology_summary").ToString();
 					query.Definitions.Add(tempDefinition);
+					Console.WriteLine(query.Definitions.ToString());
 				}
 	
 			query.HasLookedUpWord = true;
