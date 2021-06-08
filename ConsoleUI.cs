@@ -48,7 +48,35 @@ namespace OxfordV2
 		{
 			for (int i = 0; i < query.Definitions.Count; i++)
 			{
-				
+				int dNum = i + 1;
+				Console.WriteLine($"Etymology for Definition #{dNum}: {query.Definitions[i].WordDefinition}");
+				Console.WriteLine();
+				Console.WriteLine(query.Definitions[i].DefinitionEtymology.EtymologySummary);
+				  Console.WriteLine($"Etymology type: {query.Definitions[i].DefinitionEtymology.EtymologyType}.");
+				  Console.WriteLine($"Etymology language: ");
+				 foreach (var eLang in query.Definitions[i].DefinitionEtymology.EtymonLanguage)
+				 {
+				   Console.Write(eLang +" ");
+				 }
+				 Console.WriteLine();
+
+				  if (query.Definitions[i].DefinitionEtymology.Etymons.Count == 0)  
+				  {
+					 Console.WriteLine("No etymons are listed."); 
+				  } else {
+					  Console.WriteLine("Etymons: ");
+					  foreach (var etymon in query.Definitions[i].DefinitionEtymology.Etymons)
+					     Console.Write(etymon + " ");
+				  }
+				  Console.WriteLine();
+				  Console.WriteLine("Source languages:");
+				  foreach (var s in query.Definitions[i].DefinitionEtymology.SourceLanguage)
+				  {
+					  Console.Write(s + " ");
+				  }
+				  Console.WriteLine();
+				  Console.WriteLine();
+
 			}
 		}
 
@@ -163,6 +191,7 @@ namespace OxfordV2
 
 				case ("e" or "etymology" or "etymons"):
 				Trace.WriteLine("Show etymology selected");
+				showEtymology(query);
 				break;
 
 			    case ("l" or "lammatize"):

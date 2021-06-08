@@ -397,14 +397,21 @@ namespace OxfordV2
 					while (eLanguage.MoveNext())
 					{
 						var eLangCurrent = eLanguage.Current;
-						tempDefinition.DefinitionEtymology.EtymonLanguage.Add(eLangCurrent.ToString());		
+						for (int ei = 0; ei < eLangCurrent.GetArrayLength(); ei++)
+						{
+							tempDefinition.DefinitionEtymology.EtymonLanguage.Add(eLangCurrent[ei].ToString());		
+						}
 					}
 					
 					var sourceLanguage = etymologyObject.GetProperty("source_language").EnumerateArray();
 					while (sourceLanguage.MoveNext())
 					{
 						var sourceLangCurrent = sourceLanguage.Current;
-						tempDefinition.DefinitionEtymology.EtymonLanguage.Add(sourceLangCurrent.ToString());
+						for (int ei = 0; ei < sourceLangCurrent.GetArrayLength(); ei++)
+						{
+							tempDefinition.DefinitionEtymology.SourceLanguage.Add(sourceLangCurrent[ei].ToString());
+
+						}
 					}
 
 					tempDefinition.DefinitionEtymology.EtymologySummary = etymologyObject.GetProperty("etymology_summary").ToString();
