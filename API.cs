@@ -207,13 +207,13 @@ namespace OxfordV2
 			// Uri requestURL = new Uri(baseURL + "words/?lemma=" + query.UserEnteredWord + "&limit=1");
 			string queryURL;
 		if ((! query.IncludeObsolete) || (! query.OptionsMenuIncludeObsolete)) {
-				queryURL = @"words/?lemma=" + query.UserEnteredWord + @"?obsolete=false";
+				queryURL = @"words/?lemma=" + query.UserEnteredWord + @"&obsolete=false";
 			}
 			else {
 				queryURL = @"words/?lemma=" + query.UserEnteredWord;
 			}
 
-			Uri requestURL = new Uri(baseURL + "words/?lemma=" + query.UserEnteredWord);
+			Uri requestURL = new Uri(baseURL + queryURL);
 			Trace.WriteLine("Making the request");
 
 			var response = client.GetStreamAsync(requestURL).Result;
@@ -378,10 +378,17 @@ namespace OxfordV2
                     }
 					JsonElement etymologyObject = data[i].GetProperty("etymology");
 					var etymons = etymologyObject.GetProperty("etymons").EnumerateArray();
+
 					while (etymons.MoveNext())
 					{
 						var etymon = etymons.Current;
-						tempDefinition.DefinitionEtymology.Etymons.Add(etymon.GetString());
+						try {
+							tempDefinition.DefinitionEtymology.Etymons.Add(etymon.GetProperty("word").GetString());
+						} catch(Exception ex) 
+						{
+							Trace.WriteLine("Failed when trying to get etymons of word.");
+							Trace.WriteLine($"{ex.GetType()} says {ex.Message}");
+						}
 					}
 					tempDefinition.DefinitionEtymology.EtymologyType = 
 						etymologyObject.GetProperty("etymology_type").ToString();
@@ -402,7 +409,6 @@ namespace OxfordV2
 
 					tempDefinition.DefinitionEtymology.EtymologySummary = etymologyObject.GetProperty("etymology_summary").ToString();
 					query.Definitions.Add(tempDefinition);
-					Console.WriteLine(query.Definitions.ToString());
 				}
 	
 			query.HasLookedUpWord = true;

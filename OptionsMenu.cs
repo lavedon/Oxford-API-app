@@ -87,7 +87,10 @@ namespace OxfordV2
 		{
 			case ("o" or "obsolete" or "ob"):
 				Console.WriteLine("Toggle Obsolete");
+				query.HasLookedUpWord = false;
+				query.Definitions.Clear();
 				query.OptionsMenuIncludeObsolete = !query.OptionsMenuIncludeObsolete;
+				ConsoleUI.MainMenu(query);
 				break;
 
 			case ("v" or "verbose"):

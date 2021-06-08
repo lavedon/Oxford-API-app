@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace OxfordV2
 {
-	class ConsoleUI
+	public class ConsoleUI
 	{
 	    private static bool running { get; set; }
 	    public static void Start()
@@ -22,6 +22,7 @@ namespace OxfordV2
         {
 			userInput = userInput.ToLower().Trim();
 			if (userInput.Contains("-o")) {
+				query.HasLookedUpWord = false;
 				query.IncludeObsolete = false;
 			} 
 			string[] inputTokens = userInput.Split(" ");
@@ -43,7 +44,15 @@ namespace OxfordV2
 			return inputTokens[0];
         }
 
-		static void showDefinitions(CurrentQuery query)
+		static void showEtymology(CurrentQuery query)
+		{
+			for (int i = 0; i < query.Definitions.Count; i++)
+			{
+				
+			}
+		}
+
+		public static void showDefinitions(CurrentQuery query)
 		{
 			
 			for (int i = 0; i < query.Definitions.Count; i++)
@@ -88,7 +97,7 @@ namespace OxfordV2
 					firstUseSource = query.Definitions[i].RecordedFirstUseSource;
 					firstUseYear = query.Definitions[i].RecordedFirstUseYear.ToString();
 					Console.WriteLine(outputPartsOfSpeech +  isObsolete + " " + mainDefinition + 
-						" The original source of this word is the {0}. This word was first recored in {1}", 
+						" The original source of this word is listed as {0}. This word was first recored in {1}", 
 						firstUseSource, firstUseYear);
 					Console.WriteLine();
 				}
@@ -97,7 +106,7 @@ namespace OxfordV2
 			}				
 		}
 
-	    static void MainMenu(CurrentQuery query)
+	    public static void MainMenu(CurrentQuery query)
 	    {
 		    Trace.WriteLine("In MainMenu()");
 		    if (! query.HasLookedUpWord) { 

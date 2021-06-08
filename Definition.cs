@@ -22,6 +22,7 @@ namespace OxfordV2
     public Definition() {
         this.PartsOfSpeech = new List<string>();
         this.FormattedPartsOfSpeech = new List<string>();
+        this.DefinitionEtymology = new();
 
     }
 
