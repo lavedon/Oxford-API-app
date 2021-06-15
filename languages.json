@@ -1,0 +1,3789 @@
+{
+  "meta": {
+    "total": 299,
+    "count": 299,
+    "offset": 0,
+    "limit": 1000,
+    "provider": "Oxford University Press",
+    "cite": "Oxford English Dictionary API, Oxford University Press, 0.0.0.0/oed/api/v0.2/languages/?offset=0&limit=1000 . Accessed 13 June 2021"
+  },
+  "links": {
+    "self": "/oed/api/v0.2/languages/?offset=0&limit=1000",
+    "prev": null,
+    "next": null,
+    "first": "/oed/api/v0.2/languages/?offset=0&limit=1000",
+    "last": "/oed/api/v0.2/languages/?offset=0&limit=1000"
+  },
+  "data": [
+    {
+      "path": [
+        "African languages"
+      ],
+      "type": "language",
+      "value": "African languages",
+      "parent": null,
+      "breadcrumb": "African languages",
+      "description": "Words derived from etymons in African languages"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo"
+      ],
+      "type": "language",
+      "value": "Niger-Congo",
+      "parent": "African languages",
+      "breadcrumb": "African languages » Niger-Congo",
+      "description": "Words derived from etymons in Niger-Congo"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic-Congo"
+      ],
+      "type": "language",
+      "value": "Atlantic-Congo",
+      "parent": "Niger-Congo",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic-Congo",
+      "description": "Words derived from etymons in Atlantic-Congo"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic-Congo",
+        "Benue-Congo"
+      ],
+      "type": "language",
+      "value": "Benue-Congo",
+      "parent": "Atlantic-Congo",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic-Congo » Benue-Congo",
+      "description": "Words derived from etymons in Benue-Congo"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic-Congo",
+        "Benue-Congo",
+        "Bantu"
+      ],
+      "type": "language",
+      "value": "Bantu",
+      "parent": "Benue-Congo",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic-Congo » Benue-Congo » Bantu",
+      "description": "Words derived from etymons in Bantu"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic-Congo",
+        "Benue-Congo",
+        "Bantu",
+        "Kimbundu"
+      ],
+      "type": "language",
+      "value": "Kimbundu",
+      "parent": "Bantu",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic-Congo » Benue-Congo » Bantu » Kimbundu",
+      "description": "Words derived from etymons in Kimbundu"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic-Congo",
+        "Benue-Congo",
+        "Bantu",
+        "Kongo"
+      ],
+      "type": "language",
+      "value": "Kongo",
+      "parent": "Bantu",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic-Congo » Benue-Congo » Bantu » Kongo",
+      "description": "Words derived from etymons in Kongo"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic-Congo",
+        "Benue-Congo",
+        "Bantu",
+        "Luganda"
+      ],
+      "type": "language",
+      "value": "Luganda",
+      "parent": "Bantu",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic-Congo » Benue-Congo » Bantu » Luganda",
+      "description": "Words derived from etymons in Luganda"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic-Congo",
+        "Benue-Congo",
+        "Bantu",
+        "Nguni"
+      ],
+      "type": "language",
+      "value": "Nguni",
+      "parent": "Bantu",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic-Congo » Benue-Congo » Bantu » Nguni",
+      "description": "Words derived from etymons in Nguni"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic-Congo",
+        "Benue-Congo",
+        "Bantu",
+        "Nguni",
+        "Zulu"
+      ],
+      "type": "language",
+      "value": "Zulu",
+      "parent": "Nguni",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic-Congo » Benue-Congo » Bantu » Nguni » Zulu",
+      "description": "Words derived from etymons in Zulu"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic-Congo",
+        "Benue-Congo",
+        "Bantu",
+        "Nguni",
+        "Xhosa"
+      ],
+      "type": "language",
+      "value": "Xhosa",
+      "parent": "Nguni",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic-Congo » Benue-Congo » Bantu » Nguni » Xhosa",
+      "description": "Words derived from etymons in Xhosa"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic-Congo",
+        "Benue-Congo",
+        "Bantu",
+        "Nguni",
+        "Ndebele"
+      ],
+      "type": "language",
+      "value": "Ndebele",
+      "parent": "Nguni",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic-Congo » Benue-Congo » Bantu » Nguni » Ndebele",
+      "description": "Words derived from etymons in Ndebele"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic-Congo",
+        "Benue-Congo",
+        "Bantu",
+        "Nyamwezi"
+      ],
+      "type": "language",
+      "value": "Nyamwezi",
+      "parent": "Bantu",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic-Congo » Benue-Congo » Bantu » Nyamwezi",
+      "description": "Words derived from etymons in Nyamwezi"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic-Congo",
+        "Benue-Congo",
+        "Bantu",
+        "Nyanja"
+      ],
+      "type": "language",
+      "value": "Nyanja",
+      "parent": "Bantu",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic-Congo » Benue-Congo » Bantu » Nyanja",
+      "description": "Words derived from etymons in Nyanja"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic-Congo",
+        "Benue-Congo",
+        "Bantu",
+        "Nyanja",
+        "Chichewa"
+      ],
+      "type": "language",
+      "value": "Chichewa",
+      "parent": "Nyanja",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic-Congo » Benue-Congo » Bantu » Nyanja » Chichewa",
+      "description": "Words derived from etymons in Chichewa"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic-Congo",
+        "Benue-Congo",
+        "Bantu",
+        "Shona"
+      ],
+      "type": "language",
+      "value": "Shona",
+      "parent": "Bantu",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic-Congo » Benue-Congo » Bantu » Shona",
+      "description": "Words derived from etymons in Shona"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic-Congo",
+        "Benue-Congo",
+        "Bantu",
+        "Sotho"
+      ],
+      "type": "language",
+      "value": "Sotho",
+      "parent": "Bantu",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic-Congo » Benue-Congo » Bantu » Sotho",
+      "description": "Words derived from etymons in Sotho"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic-Congo",
+        "Benue-Congo",
+        "Bantu",
+        "Sotho",
+        "Setswana"
+      ],
+      "type": "language",
+      "value": "Setswana",
+      "parent": "Sotho",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic-Congo » Benue-Congo » Bantu » Sotho » Setswana",
+      "description": "Words derived from etymons in Setswana"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic-Congo",
+        "Benue-Congo",
+        "Bantu",
+        "Sotho",
+        "Sotho-Tswana"
+      ],
+      "type": "language",
+      "value": "Sotho-Tswana",
+      "parent": "Sotho",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic-Congo » Benue-Congo » Bantu » Sotho » Sotho-Tswana",
+      "description": "Words derived from etymons in Sotho-Tswana"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic-Congo",
+        "Benue-Congo",
+        "Bantu",
+        "Swahili"
+      ],
+      "type": "language",
+      "value": "Swahili",
+      "parent": "Bantu",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic-Congo » Benue-Congo » Bantu » Swahili",
+      "description": "Words derived from etymons in Swahili"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic-Congo",
+        "Benue-Congo",
+        "Bantu",
+        "Venda"
+      ],
+      "type": "language",
+      "value": "Venda",
+      "parent": "Bantu",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic-Congo » Benue-Congo » Bantu » Venda",
+      "description": "Words derived from etymons in Venda"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic-Congo",
+        "Benue-Congo",
+        "Igbo"
+      ],
+      "type": "language",
+      "value": "Igbo",
+      "parent": "Benue-Congo",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic-Congo » Benue-Congo » Igbo",
+      "description": "Words derived from etymons in Igbo"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic-Congo",
+        "Benue-Congo",
+        "Kwa"
+      ],
+      "type": "language",
+      "value": "Kwa",
+      "parent": "Benue-Congo",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic-Congo » Benue-Congo » Kwa",
+      "description": "Words derived from etymons in Kwa"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic-Congo",
+        "Benue-Congo",
+        "Kwa",
+        "Akan"
+      ],
+      "type": "language",
+      "value": "Akan",
+      "parent": "Kwa",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic-Congo » Benue-Congo » Kwa » Akan",
+      "description": "Words derived from etymons in Akan"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic-Congo",
+        "Benue-Congo",
+        "Kwa",
+        "Akan",
+        "Ashanti"
+      ],
+      "type": "language",
+      "value": "Ashanti",
+      "parent": "Akan",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic-Congo » Benue-Congo » Kwa » Akan » Ashanti",
+      "description": "Words derived from etymons in Ashanti"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic-Congo",
+        "Benue-Congo",
+        "Kwa",
+        "Akan",
+        "Fante"
+      ],
+      "type": "language",
+      "value": "Fante",
+      "parent": "Akan",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic-Congo » Benue-Congo » Kwa » Akan » Fante",
+      "description": "Words derived from etymons in Fante"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic-Congo",
+        "Benue-Congo",
+        "Kwa",
+        "Akan",
+        "Twi"
+      ],
+      "type": "language",
+      "value": "Twi",
+      "parent": "Akan",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic-Congo » Benue-Congo » Kwa » Akan » Twi",
+      "description": "Words derived from etymons in Twi"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic-Congo",
+        "Benue-Congo",
+        "Kwa",
+        "Gbe"
+      ],
+      "type": "language",
+      "value": "Gbe",
+      "parent": "Kwa",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic-Congo » Benue-Congo » Kwa » Gbe",
+      "description": "Words derived from etymons in Gbe"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic-Congo",
+        "Benue-Congo",
+        "Yoruba"
+      ],
+      "type": "language",
+      "value": "Yoruba",
+      "parent": "Benue-Congo",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic-Congo » Benue-Congo » Yoruba",
+      "description": "Words derived from etymons in Yoruba"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic"
+      ],
+      "type": "language",
+      "value": "Atlantic",
+      "parent": "Niger-Congo",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic",
+      "description": "Words derived from etymons in Atlantic"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic",
+        "Senegambian"
+      ],
+      "type": "language",
+      "value": "Senegambian",
+      "parent": "Atlantic",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic » Senegambian",
+      "description": "Words derived from etymons in Senegambian"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic",
+        "Senegambian",
+        "Fula"
+      ],
+      "type": "language",
+      "value": "Fula",
+      "parent": "Senegambian",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic » Senegambian » Fula",
+      "description": "Words derived from etymons in Fula"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic",
+        "Senegambian",
+        "Mooré"
+      ],
+      "type": "language",
+      "value": "Mooré",
+      "parent": "Senegambian",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic » Senegambian » Mooré",
+      "description": "Words derived from etymons in Mooré"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Atlantic",
+        "Senegambian",
+        "Wolof"
+      ],
+      "type": "language",
+      "value": "Wolof",
+      "parent": "Senegambian",
+      "breadcrumb": "African languages » Niger-Congo » Atlantic » Senegambian » Wolof",
+      "description": "Words derived from etymons in Wolof"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Mande"
+      ],
+      "type": "language",
+      "value": "Mande",
+      "parent": "Niger-Congo",
+      "breadcrumb": "African languages » Niger-Congo » Mande",
+      "description": "Words derived from etymons in Mande"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Mande",
+        "Manding"
+      ],
+      "type": "language",
+      "value": "Manding",
+      "parent": "Mande",
+      "breadcrumb": "African languages » Niger-Congo » Mande » Manding",
+      "description": "Words derived from etymons in Manding"
+    },
+    {
+      "path": [
+        "African languages",
+        "Niger-Congo",
+        "Mande",
+        "Mende"
+      ],
+      "type": "language",
+      "value": "Mende",
+      "parent": "Mande",
+      "breadcrumb": "African languages » Niger-Congo » Mande » Mende",
+      "description": "Words derived from etymons in Mende"
+    },
+    {
+      "path": [
+        "African languages",
+        "Nilo-Saharan"
+      ],
+      "type": "language",
+      "value": "Nilo-Saharan",
+      "parent": "African languages",
+      "breadcrumb": "African languages » Nilo-Saharan",
+      "description": "Words derived from etymons in Nilo-Saharan"
+    },
+    {
+      "path": [
+        "African languages",
+        "Nilo-Saharan",
+        "Nilotic"
+      ],
+      "type": "language",
+      "value": "Nilotic",
+      "parent": "Nilo-Saharan",
+      "breadcrumb": "African languages » Nilo-Saharan » Nilotic",
+      "description": "Words derived from etymons in Nilotic"
+    },
+    {
+      "path": [
+        "African languages",
+        "Nilo-Saharan",
+        "Nilotic",
+        "Dinka"
+      ],
+      "type": "language",
+      "value": "Dinka",
+      "parent": "Nilotic",
+      "breadcrumb": "African languages » Nilo-Saharan » Nilotic » Dinka",
+      "description": "Words derived from etymons in Dinka"
+    },
+    {
+      "path": [
+        "African languages",
+        "Nilo-Saharan",
+        "Nilotic",
+        "Masai"
+      ],
+      "type": "language",
+      "value": "Masai",
+      "parent": "Nilotic",
+      "breadcrumb": "African languages » Nilo-Saharan » Nilotic » Masai",
+      "description": "Words derived from etymons in Masai"
+    },
+    {
+      "path": [
+        "African languages",
+        "Khoisan"
+      ],
+      "type": "language",
+      "value": "Khoisan",
+      "parent": "African languages",
+      "breadcrumb": "African languages » Khoisan",
+      "description": "Words derived from etymons in Khoisan"
+    },
+    {
+      "path": [
+        "African languages",
+        "Khoisan",
+        "Khoekhoe"
+      ],
+      "type": "language",
+      "value": "Khoekhoe",
+      "parent": "Khoisan",
+      "breadcrumb": "African languages » Khoisan » Khoekhoe",
+      "description": "Words derived from etymons in Khoekhoe"
+    },
+    {
+      "path": [
+        "African languages",
+        "Khoisan",
+        "Nama"
+      ],
+      "type": "language",
+      "value": "Nama",
+      "parent": "Khoisan",
+      "breadcrumb": "African languages » Khoisan » Nama",
+      "description": "Words derived from etymons in Nama"
+    },
+    {
+      "path": [
+        "Australian Aboriginal"
+      ],
+      "type": "language",
+      "value": "Australian Aboriginal",
+      "parent": null,
+      "breadcrumb": "Australian Aboriginal",
+      "description": "Words derived from etymons in Australian Aboriginal"
+    },
+    {
+      "path": [
+        "Australian Aboriginal",
+        "Dharuk"
+      ],
+      "type": "language",
+      "value": "Dharuk",
+      "parent": "Australian Aboriginal",
+      "breadcrumb": "Australian Aboriginal » Dharuk",
+      "description": "Words derived from etymons in Dharuk"
+    },
+    {
+      "path": [
+        "Australian Aboriginal",
+        "Diyari"
+      ],
+      "type": "language",
+      "value": "Diyari",
+      "parent": "Australian Aboriginal",
+      "breadcrumb": "Australian Aboriginal » Diyari",
+      "description": "Words derived from etymons in Diyari"
+    },
+    {
+      "path": [
+        "Australian Aboriginal",
+        "Nyungar"
+      ],
+      "type": "language",
+      "value": "Nyungar",
+      "parent": "Australian Aboriginal",
+      "breadcrumb": "Australian Aboriginal » Nyungar",
+      "description": "Words derived from etymons in Nyungar"
+    },
+    {
+      "path": [
+        "Australian Aboriginal",
+        "Wiradhuric"
+      ],
+      "type": "language",
+      "value": "Wiradhuric",
+      "parent": "Australian Aboriginal",
+      "breadcrumb": "Australian Aboriginal » Wiradhuric",
+      "description": "Words derived from etymons in Wiradhuric"
+    },
+    {
+      "path": [
+        "Australian Aboriginal",
+        "Wiradhuric",
+        "Kamilaroi"
+      ],
+      "type": "language",
+      "value": "Kamilaroi",
+      "parent": "Wiradhuric",
+      "breadcrumb": "Australian Aboriginal » Wiradhuric » Kamilaroi",
+      "description": "Words derived from etymons in Kamilaroi"
+    },
+    {
+      "path": [
+        "Australian Aboriginal",
+        "Wiradhuric",
+        "Wiradhuri"
+      ],
+      "type": "language",
+      "value": "Wiradhuri",
+      "parent": "Wiradhuric",
+      "breadcrumb": "Australian Aboriginal » Wiradhuric » Wiradhuri",
+      "description": "Words derived from etymons in Wiradhuri"
+    },
+    {
+      "path": [
+        "Austronesian"
+      ],
+      "type": "language",
+      "value": "Austronesian",
+      "parent": null,
+      "breadcrumb": "Austronesian",
+      "description": "Words derived from etymons in Austronesian"
+    },
+    {
+      "path": [
+        "Austronesian",
+        "Balinese"
+      ],
+      "type": "language",
+      "value": "Balinese",
+      "parent": "Austronesian",
+      "breadcrumb": "Austronesian » Balinese",
+      "description": "Words derived from etymons in Balinese"
+    },
+    {
+      "path": [
+        "Austronesian",
+        "Fijian"
+      ],
+      "type": "language",
+      "value": "Fijian",
+      "parent": "Austronesian",
+      "breadcrumb": "Austronesian » Fijian",
+      "description": "Words derived from etymons in Fijian"
+    },
+    {
+      "path": [
+        "Austronesian",
+        "Iban"
+      ],
+      "type": "language",
+      "value": "Iban",
+      "parent": "Austronesian",
+      "breadcrumb": "Austronesian » Iban",
+      "description": "Words derived from etymons in Iban"
+    },
+    {
+      "path": [
+        "Austronesian",
+        "Javanese"
+      ],
+      "type": "language",
+      "value": "Javanese",
+      "parent": "Austronesian",
+      "breadcrumb": "Austronesian » Javanese",
+      "description": "Words derived from etymons in Javanese"
+    },
+    {
+      "path": [
+        "Austronesian",
+        "Malagasy"
+      ],
+      "type": "language",
+      "value": "Malagasy",
+      "parent": "Austronesian",
+      "breadcrumb": "Austronesian » Malagasy",
+      "description": "Words derived from etymons in Malagasy"
+    },
+    {
+      "path": [
+        "Austronesian",
+        "Malay"
+      ],
+      "type": "language",
+      "value": "Malay",
+      "parent": "Austronesian",
+      "breadcrumb": "Austronesian » Malay",
+      "description": "Words derived from etymons in Malay"
+    },
+    {
+      "path": [
+        "Austronesian",
+        "Malay",
+        "Indonesian"
+      ],
+      "type": "language",
+      "value": "Indonesian",
+      "parent": "Malay",
+      "breadcrumb": "Austronesian » Malay » Indonesian",
+      "description": "Words derived from etymons in Indonesian"
+    },
+    {
+      "path": [
+        "Austronesian",
+        "Polynesian"
+      ],
+      "type": "language",
+      "value": "Polynesian",
+      "parent": "Austronesian",
+      "breadcrumb": "Austronesian » Polynesian",
+      "description": "Words derived from etymons in Polynesian"
+    },
+    {
+      "path": [
+        "Austronesian",
+        "Polynesian",
+        "Hawaiian"
+      ],
+      "type": "language",
+      "value": "Hawaiian",
+      "parent": "Polynesian",
+      "breadcrumb": "Austronesian » Polynesian » Hawaiian",
+      "description": "Words derived from etymons in Hawaiian"
+    },
+    {
+      "path": [
+        "Austronesian",
+        "Polynesian",
+        "Maori"
+      ],
+      "type": "language",
+      "value": "Maori",
+      "parent": "Polynesian",
+      "breadcrumb": "Austronesian » Polynesian » Maori",
+      "description": "Words derived from etymons in Maori"
+    },
+    {
+      "path": [
+        "Austronesian",
+        "Polynesian",
+        "Marquesan"
+      ],
+      "type": "language",
+      "value": "Marquesan",
+      "parent": "Polynesian",
+      "breadcrumb": "Austronesian » Polynesian » Marquesan",
+      "description": "Words derived from etymons in Marquesan"
+    },
+    {
+      "path": [
+        "Austronesian",
+        "Polynesian",
+        "Samoan"
+      ],
+      "type": "language",
+      "value": "Samoan",
+      "parent": "Polynesian",
+      "breadcrumb": "Austronesian » Polynesian » Samoan",
+      "description": "Words derived from etymons in Samoan"
+    },
+    {
+      "path": [
+        "Austronesian",
+        "Polynesian",
+        "Tahitian"
+      ],
+      "type": "language",
+      "value": "Tahitian",
+      "parent": "Polynesian",
+      "breadcrumb": "Austronesian » Polynesian » Tahitian",
+      "description": "Words derived from etymons in Tahitian"
+    },
+    {
+      "path": [
+        "Austronesian",
+        "Polynesian",
+        "Tongan"
+      ],
+      "type": "language",
+      "value": "Tongan",
+      "parent": "Polynesian",
+      "breadcrumb": "Austronesian » Polynesian » Tongan",
+      "description": "Words derived from etymons in Tongan"
+    },
+    {
+      "path": [
+        "Austronesian",
+        "Tagalog"
+      ],
+      "type": "language",
+      "value": "Tagalog",
+      "parent": "Austronesian",
+      "breadcrumb": "Austronesian » Tagalog",
+      "description": "Words derived from etymons in Tagalog"
+    },
+    {
+      "path": [
+        "Central and Eastern Asian languages"
+      ],
+      "type": "language",
+      "value": "Central and Eastern Asian languages",
+      "parent": null,
+      "breadcrumb": "Central and Eastern Asian languages",
+      "description": "Words derived from etymons in Central and Eastern Asian languages"
+    },
+    {
+      "path": [
+        "Central and Eastern Asian languages",
+        "Altaic"
+      ],
+      "type": "language",
+      "value": "Altaic",
+      "parent": "Central and Eastern Asian languages",
+      "breadcrumb": "Central and Eastern Asian languages » Altaic",
+      "description": "Words derived from etymons in Altaic"
+    },
+    {
+      "path": [
+        "Central and Eastern Asian languages",
+        "Altaic",
+        "Mongolian"
+      ],
+      "type": "language",
+      "value": "Mongolian",
+      "parent": "Altaic",
+      "breadcrumb": "Central and Eastern Asian languages » Altaic » Mongolian",
+      "description": "Words derived from etymons in Mongolian"
+    },
+    {
+      "path": [
+        "Central and Eastern Asian languages",
+        "Altaic",
+        "Tungusic"
+      ],
+      "type": "language",
+      "value": "Tungusic",
+      "parent": "Altaic",
+      "breadcrumb": "Central and Eastern Asian languages » Altaic » Tungusic",
+      "description": "Words derived from etymons in Tungusic"
+    },
+    {
+      "path": [
+        "Central and Eastern Asian languages",
+        "Altaic",
+        "Turkic"
+      ],
+      "type": "language",
+      "value": "Turkic",
+      "parent": "Altaic",
+      "breadcrumb": "Central and Eastern Asian languages » Altaic » Turkic",
+      "description": "Words derived from etymons in Turkic"
+    },
+    {
+      "path": [
+        "Central and Eastern Asian languages",
+        "Altaic",
+        "Turkic",
+        "Turki"
+      ],
+      "type": "language",
+      "value": "Turki",
+      "parent": "Turkic",
+      "breadcrumb": "Central and Eastern Asian languages » Altaic » Turkic » Turki",
+      "description": "Words derived from etymons in Turki"
+    },
+    {
+      "path": [
+        "Central and Eastern Asian languages",
+        "Altaic",
+        "Turkic",
+        "Turkish"
+      ],
+      "type": "language",
+      "value": "Turkish",
+      "parent": "Turkic",
+      "breadcrumb": "Central and Eastern Asian languages » Altaic » Turkic » Turkish",
+      "description": "Words derived from etymons in Turkish"
+    },
+    {
+      "path": [
+        "Central and Eastern Asian languages",
+        "Austroasiatic"
+      ],
+      "type": "language",
+      "value": "Austroasiatic",
+      "parent": "Central and Eastern Asian languages",
+      "breadcrumb": "Central and Eastern Asian languages » Austroasiatic",
+      "description": "Words derived from etymons in Austroasiatic"
+    },
+    {
+      "path": [
+        "Central and Eastern Asian languages",
+        "Austroasiatic",
+        "Mon-Khmer"
+      ],
+      "type": "language",
+      "value": "Mon-Khmer",
+      "parent": "Austroasiatic",
+      "breadcrumb": "Central and Eastern Asian languages » Austroasiatic » Mon-Khmer",
+      "description": "Words derived from etymons in Mon-Khmer"
+    },
+    {
+      "path": [
+        "Central and Eastern Asian languages",
+        "Austroasiatic",
+        "Mon-Khmer",
+        "Mon"
+      ],
+      "type": "language",
+      "value": "Mon",
+      "parent": "Mon-Khmer",
+      "breadcrumb": "Central and Eastern Asian languages » Austroasiatic » Mon-Khmer » Mon",
+      "description": "Words derived from etymons in Mon"
+    },
+    {
+      "path": [
+        "Central and Eastern Asian languages",
+        "Austroasiatic",
+        "Mon-Khmer",
+        "Khmer"
+      ],
+      "type": "language",
+      "value": "Khmer",
+      "parent": "Mon-Khmer",
+      "breadcrumb": "Central and Eastern Asian languages » Austroasiatic » Mon-Khmer » Khmer",
+      "description": "Words derived from etymons in Khmer"
+    },
+    {
+      "path": [
+        "Central and Eastern Asian languages",
+        "Austroasiatic",
+        "Mon-Khmer",
+        "Vietnamese"
+      ],
+      "type": "language",
+      "value": "Vietnamese",
+      "parent": "Mon-Khmer",
+      "breadcrumb": "Central and Eastern Asian languages » Austroasiatic » Mon-Khmer » Vietnamese",
+      "description": "Words derived from etymons in Vietnamese"
+    },
+    {
+      "path": [
+        "Central and Eastern Asian languages",
+        "Austroasiatic",
+        "Munda"
+      ],
+      "type": "language",
+      "value": "Munda",
+      "parent": "Austroasiatic",
+      "breadcrumb": "Central and Eastern Asian languages » Austroasiatic » Munda",
+      "description": "Words derived from etymons in Munda"
+    },
+    {
+      "path": [
+        "Central and Eastern Asian languages",
+        "Japanese"
+      ],
+      "type": "language",
+      "value": "Japanese",
+      "parent": "Central and Eastern Asian languages",
+      "breadcrumb": "Central and Eastern Asian languages » Japanese",
+      "description": "Words derived from etymons in Japanese"
+    },
+    {
+      "path": [
+        "Central and Eastern Asian languages",
+        "Korean"
+      ],
+      "type": "language",
+      "value": "Korean",
+      "parent": "Central and Eastern Asian languages",
+      "breadcrumb": "Central and Eastern Asian languages » Korean",
+      "description": "Words derived from etymons in Korean"
+    },
+    {
+      "path": [
+        "Central and Eastern Asian languages",
+        "Sino-Tibetan"
+      ],
+      "type": "language",
+      "value": "Sino-Tibetan",
+      "parent": "Central and Eastern Asian languages",
+      "breadcrumb": "Central and Eastern Asian languages » Sino-Tibetan",
+      "description": "Words derived from etymons in Sino-Tibetan"
+    },
+    {
+      "path": [
+        "Central and Eastern Asian languages",
+        "Sino-Tibetan",
+        "Chinese"
+      ],
+      "type": "language",
+      "value": "Chinese",
+      "parent": "Sino-Tibetan",
+      "breadcrumb": "Central and Eastern Asian languages » Sino-Tibetan » Chinese",
+      "description": "Words derived from etymons in Chinese"
+    },
+    {
+      "path": [
+        "Central and Eastern Asian languages",
+        "Sino-Tibetan",
+        "Tibeto-Burman"
+      ],
+      "type": "language",
+      "value": "Tibeto-Burman",
+      "parent": "Sino-Tibetan",
+      "breadcrumb": "Central and Eastern Asian languages » Sino-Tibetan » Tibeto-Burman",
+      "description": "Words derived from etymons in Tibeto-Burman"
+    },
+    {
+      "path": [
+        "Central and Eastern Asian languages",
+        "Sino-Tibetan",
+        "Tibeto-Burman",
+        "Burmese"
+      ],
+      "type": "language",
+      "value": "Burmese",
+      "parent": "Tibeto-Burman",
+      "breadcrumb": "Central and Eastern Asian languages » Sino-Tibetan » Tibeto-Burman » Burmese",
+      "description": "Words derived from etymons in Burmese"
+    },
+    {
+      "path": [
+        "Central and Eastern Asian languages",
+        "Sino-Tibetan",
+        "Tibeto-Burman",
+        "Tibetan"
+      ],
+      "type": "language",
+      "value": "Tibetan",
+      "parent": "Tibeto-Burman",
+      "breadcrumb": "Central and Eastern Asian languages » Sino-Tibetan » Tibeto-Burman » Tibetan",
+      "description": "Words derived from etymons in Tibetan"
+    },
+    {
+      "path": [
+        "Central and Eastern Asian languages",
+        "Thai"
+      ],
+      "type": "language",
+      "value": "Thai",
+      "parent": "Central and Eastern Asian languages",
+      "breadcrumb": "Central and Eastern Asian languages » Thai",
+      "description": "Words derived from etymons in Thai"
+    },
+    {
+      "path": [
+        "Eskimo-Aleut"
+      ],
+      "type": "language",
+      "value": "Eskimo-Aleut",
+      "parent": null,
+      "breadcrumb": "Eskimo-Aleut",
+      "description": "Words derived from etymons in Eskimo-Aleut"
+    },
+    {
+      "path": [
+        "Eskimo-Aleut",
+        "Inuit"
+      ],
+      "type": "language",
+      "value": "Inuit",
+      "parent": "Eskimo-Aleut",
+      "breadcrumb": "Eskimo-Aleut » Inuit",
+      "description": "Words derived from etymons in Inuit"
+    },
+    {
+      "path": [
+        "Eskimo-Aleut",
+        "Inuit",
+        "Greenlandic"
+      ],
+      "type": "language",
+      "value": "Greenlandic",
+      "parent": "Inuit",
+      "breadcrumb": "Eskimo-Aleut » Inuit » Greenlandic",
+      "description": "Words derived from etymons in Greenlandic"
+    },
+    {
+      "path": [
+        "Eskimo-Aleut",
+        "Inuit",
+        "Inupiaq"
+      ],
+      "type": "language",
+      "value": "Inupiaq",
+      "parent": "Inuit",
+      "breadcrumb": "Eskimo-Aleut » Inuit » Inupiaq",
+      "description": "Words derived from etymons in Inupiaq"
+    },
+    {
+      "path": [
+        "Eskimo-Aleut",
+        "Yupik"
+      ],
+      "type": "language",
+      "value": "Yupik",
+      "parent": "Eskimo-Aleut",
+      "breadcrumb": "Eskimo-Aleut » Yupik",
+      "description": "Words derived from etymons in Yupik"
+    },
+    {
+      "path": [
+        "European languages"
+      ],
+      "type": "language",
+      "value": "European languages",
+      "parent": null,
+      "breadcrumb": "European languages",
+      "description": "Words derived from etymons in European languages"
+    },
+    {
+      "path": [
+        "European languages",
+        "Albanian"
+      ],
+      "type": "language",
+      "value": "Albanian",
+      "parent": "European languages",
+      "breadcrumb": "European languages » Albanian",
+      "description": "Words derived from etymons in Albanian"
+    },
+    {
+      "path": [
+        "European languages",
+        "Armenian"
+      ],
+      "type": "language",
+      "value": "Armenian",
+      "parent": "European languages",
+      "breadcrumb": "European languages » Armenian",
+      "description": "Words derived from etymons in Armenian"
+    },
+    {
+      "path": [
+        "European languages",
+        "Basque"
+      ],
+      "type": "language",
+      "value": "Basque",
+      "parent": "European languages",
+      "breadcrumb": "European languages » Basque",
+      "description": "Words derived from etymons in Basque"
+    },
+    {
+      "path": [
+        "European languages",
+        "Celtic"
+      ],
+      "type": "language",
+      "value": "Celtic",
+      "parent": "European languages",
+      "breadcrumb": "European languages » Celtic",
+      "description": "Words derived from etymons in Celtic"
+    },
+    {
+      "path": [
+        "European languages",
+        "Celtic",
+        "Brittonic"
+      ],
+      "type": "language",
+      "value": "Brittonic",
+      "parent": "Celtic",
+      "breadcrumb": "European languages » Celtic » Brittonic",
+      "description": "Words derived from etymons in Brittonic"
+    },
+    {
+      "path": [
+        "European languages",
+        "Celtic",
+        "Brittonic",
+        "Breton"
+      ],
+      "type": "language",
+      "value": "Breton",
+      "parent": "Brittonic",
+      "breadcrumb": "European languages » Celtic » Brittonic » Breton",
+      "description": "Words derived from etymons in Breton"
+    },
+    {
+      "path": [
+        "European languages",
+        "Celtic",
+        "Brittonic",
+        "Cornish"
+      ],
+      "type": "language",
+      "value": "Cornish",
+      "parent": "Brittonic",
+      "breadcrumb": "European languages » Celtic » Brittonic » Cornish",
+      "description": "Words derived from etymons in Cornish"
+    },
+    {
+      "path": [
+        "European languages",
+        "Celtic",
+        "Brittonic",
+        "Welsh"
+      ],
+      "type": "language",
+      "value": "Welsh",
+      "parent": "Brittonic",
+      "breadcrumb": "European languages » Celtic » Brittonic » Welsh",
+      "description": "Words derived from etymons in Welsh"
+    },
+    {
+      "path": [
+        "European languages",
+        "Celtic",
+        "Gaulish"
+      ],
+      "type": "language",
+      "value": "Gaulish",
+      "parent": "Celtic",
+      "breadcrumb": "European languages » Celtic » Gaulish",
+      "description": "Words derived from etymons in Gaulish"
+    },
+    {
+      "path": [
+        "European languages",
+        "Celtic",
+        "Goidelic"
+      ],
+      "type": "language",
+      "value": "Goidelic",
+      "parent": "Celtic",
+      "breadcrumb": "European languages » Celtic » Goidelic",
+      "description": "Words derived from etymons in Goidelic"
+    },
+    {
+      "path": [
+        "European languages",
+        "Celtic",
+        "Goidelic",
+        "Gaelic"
+      ],
+      "type": "language",
+      "value": "Gaelic",
+      "parent": "Goidelic",
+      "breadcrumb": "European languages » Celtic » Goidelic » Gaelic",
+      "description": "Words derived from etymons in Gaelic"
+    },
+    {
+      "path": [
+        "European languages",
+        "Celtic",
+        "Goidelic",
+        "Irish"
+      ],
+      "type": "language",
+      "value": "Irish",
+      "parent": "Goidelic",
+      "breadcrumb": "European languages » Celtic » Goidelic » Irish",
+      "description": "Words derived from etymons in Irish"
+    },
+    {
+      "path": [
+        "European languages",
+        "Celtic",
+        "Goidelic",
+        "Manx"
+      ],
+      "type": "language",
+      "value": "Manx",
+      "parent": "Goidelic",
+      "breadcrumb": "European languages » Celtic » Goidelic » Manx",
+      "description": "Words derived from etymons in Manx"
+    },
+    {
+      "path": [
+        "European languages",
+        "Celtic",
+        "Goidelic",
+        "Scottish Gaelic"
+      ],
+      "type": "language",
+      "value": "Scottish Gaelic",
+      "parent": "Goidelic",
+      "breadcrumb": "European languages » Celtic » Goidelic » Scottish Gaelic",
+      "description": "Words derived from etymons in Scottish Gaelic"
+    },
+    {
+      "path": [
+        "European languages",
+        "Germanic"
+      ],
+      "type": "language",
+      "value": "Germanic",
+      "parent": "European languages",
+      "breadcrumb": "European languages » Germanic",
+      "description": "Words derived from etymons in Germanic"
+    },
+    {
+      "path": [
+        "European languages",
+        "Germanic",
+        "East Germanic"
+      ],
+      "type": "language",
+      "value": "East Germanic",
+      "parent": "Germanic",
+      "breadcrumb": "European languages » Germanic » East Germanic",
+      "description": "Words derived from etymons in East Germanic"
+    },
+    {
+      "path": [
+        "European languages",
+        "Germanic",
+        "East Germanic",
+        "Gothic"
+      ],
+      "type": "language",
+      "value": "Gothic",
+      "parent": "East Germanic",
+      "breadcrumb": "European languages » Germanic » East Germanic » Gothic",
+      "description": "Words derived from etymons in Gothic"
+    },
+    {
+      "path": [
+        "European languages",
+        "Germanic",
+        "North Germanic"
+      ],
+      "type": "language",
+      "value": "North Germanic",
+      "parent": "Germanic",
+      "breadcrumb": "European languages » Germanic » North Germanic",
+      "description": "Words derived from etymons in North Germanic"
+    },
+    {
+      "path": [
+        "European languages",
+        "Germanic",
+        "North Germanic",
+        "Danish"
+      ],
+      "type": "language",
+      "value": "Danish",
+      "parent": "North Germanic",
+      "breadcrumb": "European languages » Germanic » North Germanic » Danish",
+      "description": "Words derived from etymons in Danish"
+    },
+    {
+      "path": [
+        "European languages",
+        "Germanic",
+        "North Germanic",
+        "Faroese"
+      ],
+      "type": "language",
+      "value": "Faroese",
+      "parent": "North Germanic",
+      "breadcrumb": "European languages » Germanic » North Germanic » Faroese",
+      "description": "Words derived from etymons in Faroese"
+    },
+    {
+      "path": [
+        "European languages",
+        "Germanic",
+        "North Germanic",
+        "Norn"
+      ],
+      "type": "language",
+      "value": "Norn",
+      "parent": "North Germanic",
+      "breadcrumb": "European languages » Germanic » North Germanic » Norn",
+      "description": "Words derived from etymons in Norn"
+    },
+    {
+      "path": [
+        "European languages",
+        "Germanic",
+        "North Germanic",
+        "Norwegian"
+      ],
+      "type": "language",
+      "value": "Norwegian",
+      "parent": "North Germanic",
+      "breadcrumb": "European languages » Germanic » North Germanic » Norwegian",
+      "description": "Words derived from etymons in Norwegian"
+    },
+    {
+      "path": [
+        "European languages",
+        "Germanic",
+        "North Germanic",
+        "Old Norse"
+      ],
+      "type": "language",
+      "value": "Old Norse",
+      "parent": "North Germanic",
+      "breadcrumb": "European languages » Germanic » North Germanic » Old Norse",
+      "description": "Words derived from etymons in Old Norse"
+    },
+    {
+      "path": [
+        "European languages",
+        "Germanic",
+        "North Germanic",
+        "Old Norse",
+        "Icelandic"
+      ],
+      "type": "language",
+      "value": "Icelandic",
+      "parent": "Old Norse",
+      "breadcrumb": "European languages » Germanic » North Germanic » Old Norse » Icelandic",
+      "description": "Words derived from etymons in Icelandic"
+    },
+    {
+      "path": [
+        "European languages",
+        "Germanic",
+        "North Germanic",
+        "Scandinavian"
+      ],
+      "type": "language",
+      "value": "Scandinavian",
+      "parent": "North Germanic",
+      "breadcrumb": "European languages » Germanic » North Germanic » Scandinavian",
+      "description": "Words derived from etymons in Scandinavian"
+    },
+    {
+      "path": [
+        "European languages",
+        "Germanic",
+        "North Germanic",
+        "Swedish"
+      ],
+      "type": "language",
+      "value": "Swedish",
+      "parent": "North Germanic",
+      "breadcrumb": "European languages » Germanic » North Germanic » Swedish",
+      "description": "Words derived from etymons in Swedish"
+    },
+    {
+      "path": [
+        "European languages",
+        "Germanic",
+        "West Germanic"
+      ],
+      "type": "language",
+      "value": "West Germanic",
+      "parent": "Germanic",
+      "breadcrumb": "European languages » Germanic » West Germanic",
+      "description": "Words derived from etymons in West Germanic"
+    },
+    {
+      "path": [
+        "European languages",
+        "Germanic",
+        "West Germanic",
+        "Dutch"
+      ],
+      "type": "language",
+      "value": "Dutch",
+      "parent": "West Germanic",
+      "breadcrumb": "European languages » Germanic » West Germanic » Dutch",
+      "description": "Words derived from etymons in Dutch"
+    },
+    {
+      "path": [
+        "European languages",
+        "Germanic",
+        "West Germanic",
+        "Dutch",
+        "Flemish"
+      ],
+      "type": "language",
+      "value": "Flemish",
+      "parent": "Dutch",
+      "breadcrumb": "European languages » Germanic » West Germanic » Dutch » Flemish",
+      "description": "Words derived from etymons in Flemish"
+    },
+    {
+      "path": [
+        "European languages",
+        "Germanic",
+        "West Germanic",
+        "Dutch",
+        "Afrikaans"
+      ],
+      "type": "language",
+      "value": "Afrikaans",
+      "parent": "Dutch",
+      "breadcrumb": "European languages » Germanic » West Germanic » Dutch » Afrikaans",
+      "description": "Words derived from etymons in Afrikaans"
+    },
+    {
+      "path": [
+        "European languages",
+        "Germanic",
+        "West Germanic",
+        "Frankish"
+      ],
+      "type": "language",
+      "value": "Frankish",
+      "parent": "West Germanic",
+      "breadcrumb": "European languages » Germanic » West Germanic » Frankish",
+      "description": "Words derived from etymons in Frankish"
+    },
+    {
+      "path": [
+        "European languages",
+        "Germanic",
+        "West Germanic",
+        "Frisian"
+      ],
+      "type": "language",
+      "value": "Frisian",
+      "parent": "West Germanic",
+      "breadcrumb": "European languages » Germanic » West Germanic » Frisian",
+      "description": "Words derived from etymons in Frisian"
+    },
+    {
+      "path": [
+        "European languages",
+        "Germanic",
+        "West Germanic",
+        "German"
+      ],
+      "type": "language",
+      "value": "German",
+      "parent": "West Germanic",
+      "breadcrumb": "European languages » Germanic » West Germanic » German",
+      "description": "Words derived from etymons in German"
+    },
+    {
+      "path": [
+        "European languages",
+        "Germanic",
+        "West Germanic",
+        "German",
+        "Yiddish"
+      ],
+      "type": "language",
+      "value": "Yiddish",
+      "parent": "German",
+      "breadcrumb": "European languages » Germanic » West Germanic » German » Yiddish",
+      "description": "Words derived from etymons in Yiddish"
+    },
+    {
+      "path": [
+        "European languages",
+        "Germanic",
+        "West Germanic",
+        "Old Saxon"
+      ],
+      "type": "language",
+      "value": "Old Saxon",
+      "parent": "West Germanic",
+      "breadcrumb": "European languages » Germanic » West Germanic » Old Saxon",
+      "description": "Words derived from etymons in Old Saxon"
+    },
+    {
+      "path": [
+        "European languages",
+        "Germanic",
+        "West Germanic",
+        "Old Saxon",
+        "Low German"
+      ],
+      "type": "language",
+      "value": "Low German",
+      "parent": "Old Saxon",
+      "breadcrumb": "European languages » Germanic » West Germanic » Old Saxon » Low German",
+      "description": "Words derived from etymons in Low German"
+    },
+    {
+      "path": [
+        "European languages",
+        "Greek"
+      ],
+      "type": "language",
+      "value": "Greek",
+      "parent": "European languages",
+      "breadcrumb": "European languages » Greek",
+      "description": "Words derived from etymons in Greek"
+    },
+    {
+      "path": [
+        "European languages",
+        "Italic"
+      ],
+      "type": "language",
+      "value": "Italic",
+      "parent": "European languages",
+      "breadcrumb": "European languages » Italic",
+      "description": "Words derived from etymons in Italic"
+    },
+    {
+      "path": [
+        "European languages",
+        "Italic",
+        "Latin"
+      ],
+      "type": "language",
+      "value": "Latin",
+      "parent": "Italic",
+      "breadcrumb": "European languages » Italic » Latin",
+      "description": "Words derived from etymons in Latin"
+    },
+    {
+      "path": [
+        "European languages",
+        "Italic",
+        "Osco-Umbrian"
+      ],
+      "type": "language",
+      "value": "Osco-Umbrian",
+      "parent": "Italic",
+      "breadcrumb": "European languages » Italic » Osco-Umbrian",
+      "description": "Words derived from etymons in Osco-Umbrian"
+    },
+    {
+      "path": [
+        "European languages",
+        "Italic",
+        "Romance"
+      ],
+      "type": "language",
+      "value": "Romance",
+      "parent": "Italic",
+      "breadcrumb": "European languages » Italic » Romance",
+      "description": "Words derived from etymons in Romance"
+    },
+    {
+      "path": [
+        "European languages",
+        "Italic",
+        "Romance",
+        "Italo-Western"
+      ],
+      "type": "language",
+      "value": "Italo-Western",
+      "parent": "Romance",
+      "breadcrumb": "European languages » Italic » Romance » Italo-Western",
+      "description": "Words derived from etymons in Italo-Western"
+    },
+    {
+      "path": [
+        "European languages",
+        "Italic",
+        "Romance",
+        "Italo-Western",
+        "Italian"
+      ],
+      "type": "language",
+      "value": "Italian",
+      "parent": "Italo-Western",
+      "breadcrumb": "European languages » Italic » Romance » Italo-Western » Italian",
+      "description": "Words derived from etymons in Italian"
+    },
+    {
+      "path": [
+        "European languages",
+        "Italic",
+        "Romance",
+        "Italo-Western",
+        "Gallo-Romance"
+      ],
+      "type": "language",
+      "value": "Gallo-Romance",
+      "parent": "Italo-Western",
+      "breadcrumb": "European languages » Italic » Romance » Italo-Western » Gallo-Romance",
+      "description": "Words derived from etymons in Gallo-Romance"
+    },
+    {
+      "path": [
+        "European languages",
+        "Italic",
+        "Romance",
+        "Italo-Western",
+        "Gallo-Romance",
+        "Catalan"
+      ],
+      "type": "language",
+      "value": "Catalan",
+      "parent": "Gallo-Romance",
+      "breadcrumb": "European languages » Italic » Romance » Italo-Western » Gallo-Romance » Catalan",
+      "description": "Words derived from etymons in Catalan"
+    },
+    {
+      "path": [
+        "European languages",
+        "Italic",
+        "Romance",
+        "Italo-Western",
+        "Gallo-Romance",
+        "Franco-Provençal"
+      ],
+      "type": "language",
+      "value": "Franco-Provençal",
+      "parent": "Gallo-Romance",
+      "breadcrumb": "European languages » Italic » Romance » Italo-Western » Gallo-Romance » Franco-Provençal",
+      "description": "Words derived from etymons in Franco-Provençal"
+    },
+    {
+      "path": [
+        "European languages",
+        "Italic",
+        "Romance",
+        "Italo-Western",
+        "Gallo-Romance",
+        "French"
+      ],
+      "type": "language",
+      "value": "French",
+      "parent": "Gallo-Romance",
+      "breadcrumb": "European languages » Italic » Romance » Italo-Western » Gallo-Romance » French",
+      "description": "Words derived from etymons in French"
+    },
+    {
+      "path": [
+        "European languages",
+        "Italic",
+        "Romance",
+        "Italo-Western",
+        "Gallo-Romance",
+        "French",
+        "Canadian French"
+      ],
+      "type": "language",
+      "value": "Canadian French",
+      "parent": "French",
+      "breadcrumb": "European languages » Italic » Romance » Italo-Western » Gallo-Romance » French » Canadian French",
+      "description": "Words derived from etymons in Canadian French"
+    },
+    {
+      "path": [
+        "European languages",
+        "Italic",
+        "Romance",
+        "Italo-Western",
+        "Gallo-Romance",
+        "French",
+        "Law French"
+      ],
+      "type": "language",
+      "value": "Law French",
+      "parent": "French",
+      "breadcrumb": "European languages » Italic » Romance » Italo-Western » Gallo-Romance » French » Law French",
+      "description": "Words derived from etymons in Law French"
+    },
+    {
+      "path": [
+        "European languages",
+        "Italic",
+        "Romance",
+        "Italo-Western",
+        "Gallo-Romance",
+        "French",
+        "Norman"
+      ],
+      "type": "language",
+      "value": "Norman",
+      "parent": "French",
+      "breadcrumb": "European languages » Italic » Romance » Italo-Western » Gallo-Romance » French » Norman",
+      "description": "Words derived from etymons in Norman"
+    },
+    {
+      "path": [
+        "European languages",
+        "Italic",
+        "Romance",
+        "Italo-Western",
+        "Gallo-Romance",
+        "French",
+        "Picard"
+      ],
+      "type": "language",
+      "value": "Picard",
+      "parent": "French",
+      "breadcrumb": "European languages » Italic » Romance » Italo-Western » Gallo-Romance » French » Picard",
+      "description": "Words derived from etymons in Picard"
+    },
+    {
+      "path": [
+        "European languages",
+        "Italic",
+        "Romance",
+        "Italo-Western",
+        "Gallo-Romance",
+        "French",
+        "Walloon"
+      ],
+      "type": "language",
+      "value": "Walloon",
+      "parent": "French",
+      "breadcrumb": "European languages » Italic » Romance » Italo-Western » Gallo-Romance » French » Walloon",
+      "description": "Words derived from etymons in Walloon"
+    },
+    {
+      "path": [
+        "European languages",
+        "Italic",
+        "Romance",
+        "Italo-Western",
+        "Gallo-Romance",
+        "Occitan"
+      ],
+      "type": "language",
+      "value": "Occitan",
+      "parent": "Gallo-Romance",
+      "breadcrumb": "European languages » Italic » Romance » Italo-Western » Gallo-Romance » Occitan",
+      "description": "Words derived from etymons in Occitan"
+    },
+    {
+      "path": [
+        "European languages",
+        "Italic",
+        "Romance",
+        "Italo-Western",
+        "Gallo-Romance",
+        "Gallo-Italic"
+      ],
+      "type": "language",
+      "value": "Gallo-Italic",
+      "parent": "Gallo-Romance",
+      "breadcrumb": "European languages » Italic » Romance » Italo-Western » Gallo-Romance » Gallo-Italic",
+      "description": "Words derived from etymons in Gallo-Italic"
+    },
+    {
+      "path": [
+        "European languages",
+        "Italic",
+        "Romance",
+        "Italo-Western",
+        "Ibero-Romance"
+      ],
+      "type": "language",
+      "value": "Ibero-Romance",
+      "parent": "Italo-Western",
+      "breadcrumb": "European languages » Italic » Romance » Italo-Western » Ibero-Romance",
+      "description": "Words derived from etymons in Ibero-Romance"
+    },
+    {
+      "path": [
+        "European languages",
+        "Italic",
+        "Romance",
+        "Italo-Western",
+        "Ibero-Romance",
+        "Portuguese"
+      ],
+      "type": "language",
+      "value": "Portuguese",
+      "parent": "Ibero-Romance",
+      "breadcrumb": "European languages » Italic » Romance » Italo-Western » Ibero-Romance » Portuguese",
+      "description": "Words derived from etymons in Portuguese"
+    },
+    {
+      "path": [
+        "European languages",
+        "Italic",
+        "Romance",
+        "Italo-Western",
+        "Ibero-Romance",
+        "Spanish"
+      ],
+      "type": "language",
+      "value": "Spanish",
+      "parent": "Ibero-Romance",
+      "breadcrumb": "European languages » Italic » Romance » Italo-Western » Ibero-Romance » Spanish",
+      "description": "Words derived from etymons in Spanish"
+    },
+    {
+      "path": [
+        "European languages",
+        "Italic",
+        "Romance",
+        "Southern Romance"
+      ],
+      "type": "language",
+      "value": "Southern Romance",
+      "parent": "Romance",
+      "breadcrumb": "European languages » Italic » Romance » Southern Romance",
+      "description": "Words derived from etymons in Southern Romance"
+    },
+    {
+      "path": [
+        "European languages",
+        "Italic",
+        "Romance",
+        "Southern Romance",
+        "Corsican"
+      ],
+      "type": "language",
+      "value": "Corsican",
+      "parent": "Southern Romance",
+      "breadcrumb": "European languages » Italic » Romance » Southern Romance » Corsican",
+      "description": "Words derived from etymons in Corsican"
+    },
+    {
+      "path": [
+        "European languages",
+        "Italic",
+        "Romance",
+        "Southern Romance",
+        "Sardinian"
+      ],
+      "type": "language",
+      "value": "Sardinian",
+      "parent": "Southern Romance",
+      "breadcrumb": "European languages » Italic » Romance » Southern Romance » Sardinian",
+      "description": "Words derived from etymons in Sardinian"
+    },
+    {
+      "path": [
+        "European languages",
+        "Italic",
+        "Romance",
+        "Eastern Romance"
+      ],
+      "type": "language",
+      "value": "Eastern Romance",
+      "parent": "Romance",
+      "breadcrumb": "European languages » Italic » Romance » Eastern Romance",
+      "description": "Words derived from etymons in Eastern Romance"
+    },
+    {
+      "path": [
+        "European languages",
+        "Italic",
+        "Romance",
+        "Eastern Romance",
+        "Romanian"
+      ],
+      "type": "language",
+      "value": "Romanian",
+      "parent": "Eastern Romance",
+      "breadcrumb": "European languages » Italic » Romance » Eastern Romance » Romanian",
+      "description": "Words derived from etymons in Romanian"
+    },
+    {
+      "path": [
+        "European languages",
+        "Shelta"
+      ],
+      "type": "language",
+      "value": "Shelta",
+      "parent": "European languages",
+      "breadcrumb": "European languages » Shelta",
+      "description": "Words derived from etymons in Shelta"
+    },
+    {
+      "path": [
+        "European languages",
+        "Slavonic"
+      ],
+      "type": "language",
+      "value": "Slavonic",
+      "parent": "European languages",
+      "breadcrumb": "European languages » Slavonic",
+      "description": "Words derived from etymons in Slavonic"
+    },
+    {
+      "path": [
+        "European languages",
+        "Slavonic",
+        "East Slavonic"
+      ],
+      "type": "language",
+      "value": "East Slavonic",
+      "parent": "Slavonic",
+      "breadcrumb": "European languages » Slavonic » East Slavonic",
+      "description": "Words derived from etymons in East Slavonic"
+    },
+    {
+      "path": [
+        "European languages",
+        "Slavonic",
+        "East Slavonic",
+        "Russian"
+      ],
+      "type": "language",
+      "value": "Russian",
+      "parent": "East Slavonic",
+      "breadcrumb": "European languages » Slavonic » East Slavonic » Russian",
+      "description": "Words derived from etymons in Russian"
+    },
+    {
+      "path": [
+        "European languages",
+        "Slavonic",
+        "East Slavonic",
+        "Ukrainian"
+      ],
+      "type": "language",
+      "value": "Ukrainian",
+      "parent": "East Slavonic",
+      "breadcrumb": "European languages » Slavonic » East Slavonic » Ukrainian",
+      "description": "Words derived from etymons in Ukrainian"
+    },
+    {
+      "path": [
+        "European languages",
+        "Slavonic",
+        "South Slavonic"
+      ],
+      "type": "language",
+      "value": "South Slavonic",
+      "parent": "Slavonic",
+      "breadcrumb": "European languages » Slavonic » South Slavonic",
+      "description": "Words derived from etymons in South Slavonic"
+    },
+    {
+      "path": [
+        "European languages",
+        "Slavonic",
+        "South Slavonic",
+        "Bulgarian"
+      ],
+      "type": "language",
+      "value": "Bulgarian",
+      "parent": "South Slavonic",
+      "breadcrumb": "European languages » Slavonic » South Slavonic » Bulgarian",
+      "description": "Words derived from etymons in Bulgarian"
+    },
+    {
+      "path": [
+        "European languages",
+        "Slavonic",
+        "South Slavonic",
+        "Church Slavonic"
+      ],
+      "type": "language",
+      "value": "Church Slavonic",
+      "parent": "South Slavonic",
+      "breadcrumb": "European languages » Slavonic » South Slavonic » Church Slavonic",
+      "description": "Words derived from etymons in Church Slavonic"
+    },
+    {
+      "path": [
+        "European languages",
+        "Slavonic",
+        "South Slavonic",
+        "Croatian"
+      ],
+      "type": "language",
+      "value": "Croatian",
+      "parent": "South Slavonic",
+      "breadcrumb": "European languages » Slavonic » South Slavonic » Croatian",
+      "description": "Words derived from etymons in Croatian"
+    },
+    {
+      "path": [
+        "European languages",
+        "Slavonic",
+        "South Slavonic",
+        "Serbian"
+      ],
+      "type": "language",
+      "value": "Serbian",
+      "parent": "South Slavonic",
+      "breadcrumb": "European languages » Slavonic » South Slavonic » Serbian",
+      "description": "Words derived from etymons in Serbian"
+    },
+    {
+      "path": [
+        "European languages",
+        "Slavonic",
+        "South Slavonic",
+        "Serbian and Croatian"
+      ],
+      "type": "language",
+      "value": "Serbian and Croatian",
+      "parent": "South Slavonic",
+      "breadcrumb": "European languages » Slavonic » South Slavonic » Serbian and Croatian",
+      "description": "Words derived from etymons in Serbian and Croatian"
+    },
+    {
+      "path": [
+        "European languages",
+        "Slavonic",
+        "South Slavonic",
+        "Slovene"
+      ],
+      "type": "language",
+      "value": "Slovene",
+      "parent": "South Slavonic",
+      "breadcrumb": "European languages » Slavonic » South Slavonic » Slovene",
+      "description": "Words derived from etymons in Slovene"
+    },
+    {
+      "path": [
+        "European languages",
+        "Slavonic",
+        "West Slavonic"
+      ],
+      "type": "language",
+      "value": "West Slavonic",
+      "parent": "Slavonic",
+      "breadcrumb": "European languages » Slavonic » West Slavonic",
+      "description": "Words derived from etymons in West Slavonic"
+    },
+    {
+      "path": [
+        "European languages",
+        "Slavonic",
+        "West Slavonic",
+        "Czech"
+      ],
+      "type": "language",
+      "value": "Czech",
+      "parent": "West Slavonic",
+      "breadcrumb": "European languages » Slavonic » West Slavonic » Czech",
+      "description": "Words derived from etymons in Czech"
+    },
+    {
+      "path": [
+        "European languages",
+        "Slavonic",
+        "West Slavonic",
+        "Polish"
+      ],
+      "type": "language",
+      "value": "Polish",
+      "parent": "West Slavonic",
+      "breadcrumb": "European languages » Slavonic » West Slavonic » Polish",
+      "description": "Words derived from etymons in Polish"
+    },
+    {
+      "path": [
+        "European languages",
+        "Baltic languages"
+      ],
+      "type": "language",
+      "value": "Baltic languages",
+      "parent": "European languages",
+      "breadcrumb": "European languages » Baltic languages",
+      "description": "Words derived from etymons in Baltic languages"
+    },
+    {
+      "path": [
+        "European languages",
+        "South Caucasian"
+      ],
+      "type": "language",
+      "value": "South Caucasian",
+      "parent": "European languages",
+      "breadcrumb": "European languages » South Caucasian",
+      "description": "Words derived from etymons in South Caucasian"
+    },
+    {
+      "path": [
+        "European languages",
+        "South Caucasian",
+        "Georgian"
+      ],
+      "type": "language",
+      "value": "Georgian",
+      "parent": "South Caucasian",
+      "breadcrumb": "European languages » South Caucasian » Georgian",
+      "description": "Words derived from etymons in Georgian"
+    },
+    {
+      "path": [
+        "European languages",
+        "Uralic"
+      ],
+      "type": "language",
+      "value": "Uralic",
+      "parent": "European languages",
+      "breadcrumb": "European languages » Uralic",
+      "description": "Words derived from etymons in Uralic"
+    },
+    {
+      "path": [
+        "European languages",
+        "Uralic",
+        "Finnish"
+      ],
+      "type": "language",
+      "value": "Finnish",
+      "parent": "Uralic",
+      "breadcrumb": "European languages » Uralic » Finnish",
+      "description": "Words derived from etymons in Finnish"
+    },
+    {
+      "path": [
+        "European languages",
+        "Uralic",
+        "Hungarian"
+      ],
+      "type": "language",
+      "value": "Hungarian",
+      "parent": "Uralic",
+      "breadcrumb": "European languages » Uralic » Hungarian",
+      "description": "Words derived from etymons in Hungarian"
+    },
+    {
+      "path": [
+        "Indian subcontinent languages"
+      ],
+      "type": "language",
+      "value": "Indian subcontinent languages",
+      "parent": null,
+      "breadcrumb": "Indian subcontinent languages",
+      "description": "Words derived from etymons in Indian subcontinent languages"
+    },
+    {
+      "path": [
+        "Indian subcontinent languages",
+        "Indo-Aryan"
+      ],
+      "type": "language",
+      "value": "Indo-Aryan",
+      "parent": "Indian subcontinent languages",
+      "breadcrumb": "Indian subcontinent languages » Indo-Aryan",
+      "description": "Words derived from etymons in Indo-Aryan"
+    },
+    {
+      "path": [
+        "Indian subcontinent languages",
+        "Indo-Aryan",
+        "Assamese"
+      ],
+      "type": "language",
+      "value": "Assamese",
+      "parent": "Indo-Aryan",
+      "breadcrumb": "Indian subcontinent languages » Indo-Aryan » Assamese",
+      "description": "Words derived from etymons in Assamese"
+    },
+    {
+      "path": [
+        "Indian subcontinent languages",
+        "Indo-Aryan",
+        "Bengali"
+      ],
+      "type": "language",
+      "value": "Bengali",
+      "parent": "Indo-Aryan",
+      "breadcrumb": "Indian subcontinent languages » Indo-Aryan » Bengali",
+      "description": "Words derived from etymons in Bengali"
+    },
+    {
+      "path": [
+        "Indian subcontinent languages",
+        "Indo-Aryan",
+        "Gujarati"
+      ],
+      "type": "language",
+      "value": "Gujarati",
+      "parent": "Indo-Aryan",
+      "breadcrumb": "Indian subcontinent languages » Indo-Aryan » Gujarati",
+      "description": "Words derived from etymons in Gujarati"
+    },
+    {
+      "path": [
+        "Indian subcontinent languages",
+        "Indo-Aryan",
+        "Hindi"
+      ],
+      "type": "language",
+      "value": "Hindi",
+      "parent": "Indo-Aryan",
+      "breadcrumb": "Indian subcontinent languages » Indo-Aryan » Hindi",
+      "description": "Words derived from etymons in Hindi"
+    },
+    {
+      "path": [
+        "Indian subcontinent languages",
+        "Indo-Aryan",
+        "Kashmiri"
+      ],
+      "type": "language",
+      "value": "Kashmiri",
+      "parent": "Indo-Aryan",
+      "breadcrumb": "Indian subcontinent languages » Indo-Aryan » Kashmiri",
+      "description": "Words derived from etymons in Kashmiri"
+    },
+    {
+      "path": [
+        "Indian subcontinent languages",
+        "Indo-Aryan",
+        "Marathi"
+      ],
+      "type": "language",
+      "value": "Marathi",
+      "parent": "Indo-Aryan",
+      "breadcrumb": "Indian subcontinent languages » Indo-Aryan » Marathi",
+      "description": "Words derived from etymons in Marathi"
+    },
+    {
+      "path": [
+        "Indian subcontinent languages",
+        "Indo-Aryan",
+        "Nepali"
+      ],
+      "type": "language",
+      "value": "Nepali",
+      "parent": "Indo-Aryan",
+      "breadcrumb": "Indian subcontinent languages » Indo-Aryan » Nepali",
+      "description": "Words derived from etymons in Nepali"
+    },
+    {
+      "path": [
+        "Indian subcontinent languages",
+        "Indo-Aryan",
+        "Pali"
+      ],
+      "type": "language",
+      "value": "Pali",
+      "parent": "Indo-Aryan",
+      "breadcrumb": "Indian subcontinent languages » Indo-Aryan » Pali",
+      "description": "Words derived from etymons in Pali"
+    },
+    {
+      "path": [
+        "Indian subcontinent languages",
+        "Indo-Aryan",
+        "Panjabi"
+      ],
+      "type": "language",
+      "value": "Panjabi",
+      "parent": "Indo-Aryan",
+      "breadcrumb": "Indian subcontinent languages » Indo-Aryan » Panjabi",
+      "description": "Words derived from etymons in Panjabi"
+    },
+    {
+      "path": [
+        "Indian subcontinent languages",
+        "Indo-Aryan",
+        "Rajasthani"
+      ],
+      "type": "language",
+      "value": "Rajasthani",
+      "parent": "Indo-Aryan",
+      "breadcrumb": "Indian subcontinent languages » Indo-Aryan » Rajasthani",
+      "description": "Words derived from etymons in Rajasthani"
+    },
+    {
+      "path": [
+        "Indian subcontinent languages",
+        "Indo-Aryan",
+        "Romani"
+      ],
+      "type": "language",
+      "value": "Romani",
+      "parent": "Indo-Aryan",
+      "breadcrumb": "Indian subcontinent languages » Indo-Aryan » Romani",
+      "description": "Words derived from etymons in Romani"
+    },
+    {
+      "path": [
+        "Indian subcontinent languages",
+        "Indo-Aryan",
+        "Sanskrit"
+      ],
+      "type": "language",
+      "value": "Sanskrit",
+      "parent": "Indo-Aryan",
+      "breadcrumb": "Indian subcontinent languages » Indo-Aryan » Sanskrit",
+      "description": "Words derived from etymons in Sanskrit"
+    },
+    {
+      "path": [
+        "Indian subcontinent languages",
+        "Indo-Aryan",
+        "Sinhala"
+      ],
+      "type": "language",
+      "value": "Sinhala",
+      "parent": "Indo-Aryan",
+      "breadcrumb": "Indian subcontinent languages » Indo-Aryan » Sinhala",
+      "description": "Words derived from etymons in Sinhala"
+    },
+    {
+      "path": [
+        "Indian subcontinent languages",
+        "Indo-Aryan",
+        "Urdu"
+      ],
+      "type": "language",
+      "value": "Urdu",
+      "parent": "Indo-Aryan",
+      "breadcrumb": "Indian subcontinent languages » Indo-Aryan » Urdu",
+      "description": "Words derived from etymons in Urdu"
+    },
+    {
+      "path": [
+        "Indian subcontinent languages",
+        "Dravidian"
+      ],
+      "type": "language",
+      "value": "Dravidian",
+      "parent": "Indian subcontinent languages",
+      "breadcrumb": "Indian subcontinent languages » Dravidian",
+      "description": "Words derived from etymons in Dravidian"
+    },
+    {
+      "path": [
+        "Indian subcontinent languages",
+        "Dravidian",
+        "Kannada"
+      ],
+      "type": "language",
+      "value": "Kannada",
+      "parent": "Dravidian",
+      "breadcrumb": "Indian subcontinent languages » Dravidian » Kannada",
+      "description": "Words derived from etymons in Kannada"
+    },
+    {
+      "path": [
+        "Indian subcontinent languages",
+        "Dravidian",
+        "Malayalam"
+      ],
+      "type": "language",
+      "value": "Malayalam",
+      "parent": "Dravidian",
+      "breadcrumb": "Indian subcontinent languages » Dravidian » Malayalam",
+      "description": "Words derived from etymons in Malayalam"
+    },
+    {
+      "path": [
+        "Indian subcontinent languages",
+        "Dravidian",
+        "Malto"
+      ],
+      "type": "language",
+      "value": "Malto",
+      "parent": "Dravidian",
+      "breadcrumb": "Indian subcontinent languages » Dravidian » Malto",
+      "description": "Words derived from etymons in Malto"
+    },
+    {
+      "path": [
+        "Indian subcontinent languages",
+        "Dravidian",
+        "Tamil"
+      ],
+      "type": "language",
+      "value": "Tamil",
+      "parent": "Dravidian",
+      "breadcrumb": "Indian subcontinent languages » Dravidian » Tamil",
+      "description": "Words derived from etymons in Tamil"
+    },
+    {
+      "path": [
+        "Indian subcontinent languages",
+        "Dravidian",
+        "Telugu"
+      ],
+      "type": "language",
+      "value": "Telugu",
+      "parent": "Dravidian",
+      "breadcrumb": "Indian subcontinent languages » Dravidian » Telugu",
+      "description": "Words derived from etymons in Telugu"
+    },
+    {
+      "path": [
+        "Middle Eastern and Afro-Asiatic languages"
+      ],
+      "type": "language",
+      "value": "Middle Eastern and Afro-Asiatic languages",
+      "parent": null,
+      "breadcrumb": "Middle Eastern and Afro-Asiatic languages",
+      "description": "Words derived from etymons in Middle Eastern and Afro-Asiatic languages"
+    },
+    {
+      "path": [
+        "Middle Eastern and Afro-Asiatic languages",
+        "Afro-Asiatic"
+      ],
+      "type": "language",
+      "value": "Afro-Asiatic",
+      "parent": "Middle Eastern and Afro-Asiatic languages",
+      "breadcrumb": "Middle Eastern and Afro-Asiatic languages » Afro-Asiatic",
+      "description": "Words derived from etymons in Afro-Asiatic"
+    },
+    {
+      "path": [
+        "Middle Eastern and Afro-Asiatic languages",
+        "Afro-Asiatic",
+        "Berber"
+      ],
+      "type": "language",
+      "value": "Berber",
+      "parent": "Afro-Asiatic",
+      "breadcrumb": "Middle Eastern and Afro-Asiatic languages » Afro-Asiatic » Berber",
+      "description": "Words derived from etymons in Berber"
+    },
+    {
+      "path": [
+        "Middle Eastern and Afro-Asiatic languages",
+        "Afro-Asiatic",
+        "Chadic"
+      ],
+      "type": "language",
+      "value": "Chadic",
+      "parent": "Afro-Asiatic",
+      "breadcrumb": "Middle Eastern and Afro-Asiatic languages » Afro-Asiatic » Chadic",
+      "description": "Words derived from etymons in Chadic"
+    },
+    {
+      "path": [
+        "Middle Eastern and Afro-Asiatic languages",
+        "Afro-Asiatic",
+        "Chadic",
+        "Hausa"
+      ],
+      "type": "language",
+      "value": "Hausa",
+      "parent": "Chadic",
+      "breadcrumb": "Middle Eastern and Afro-Asiatic languages » Afro-Asiatic » Chadic » Hausa",
+      "description": "Words derived from etymons in Hausa"
+    },
+    {
+      "path": [
+        "Middle Eastern and Afro-Asiatic languages",
+        "Afro-Asiatic",
+        "Cushitic"
+      ],
+      "type": "language",
+      "value": "Cushitic",
+      "parent": "Afro-Asiatic",
+      "breadcrumb": "Middle Eastern and Afro-Asiatic languages » Afro-Asiatic » Cushitic",
+      "description": "Words derived from etymons in Cushitic"
+    },
+    {
+      "path": [
+        "Middle Eastern and Afro-Asiatic languages",
+        "Afro-Asiatic",
+        "Egyptian"
+      ],
+      "type": "language",
+      "value": "Egyptian",
+      "parent": "Afro-Asiatic",
+      "breadcrumb": "Middle Eastern and Afro-Asiatic languages » Afro-Asiatic » Egyptian",
+      "description": "Words derived from etymons in Egyptian"
+    },
+    {
+      "path": [
+        "Middle Eastern and Afro-Asiatic languages",
+        "Afro-Asiatic",
+        "Egyptian",
+        "Coptic"
+      ],
+      "type": "language",
+      "value": "Coptic",
+      "parent": "Egyptian",
+      "breadcrumb": "Middle Eastern and Afro-Asiatic languages » Afro-Asiatic » Egyptian » Coptic",
+      "description": "Words derived from etymons in Coptic"
+    },
+    {
+      "path": [
+        "Middle Eastern and Afro-Asiatic languages",
+        "Afro-Asiatic",
+        "Semitic"
+      ],
+      "type": "language",
+      "value": "Semitic",
+      "parent": "Afro-Asiatic",
+      "breadcrumb": "Middle Eastern and Afro-Asiatic languages » Afro-Asiatic » Semitic",
+      "description": "Words derived from etymons in Semitic"
+    },
+    {
+      "path": [
+        "Middle Eastern and Afro-Asiatic languages",
+        "Afro-Asiatic",
+        "Semitic",
+        "Akkadian"
+      ],
+      "type": "language",
+      "value": "Akkadian",
+      "parent": "Semitic",
+      "breadcrumb": "Middle Eastern and Afro-Asiatic languages » Afro-Asiatic » Semitic » Akkadian",
+      "description": "Words derived from etymons in Akkadian"
+    },
+    {
+      "path": [
+        "Middle Eastern and Afro-Asiatic languages",
+        "Afro-Asiatic",
+        "Semitic",
+        "Akkadian",
+        "Assyrian"
+      ],
+      "type": "language",
+      "value": "Assyrian",
+      "parent": "Akkadian",
+      "breadcrumb": "Middle Eastern and Afro-Asiatic languages » Afro-Asiatic » Semitic » Akkadian » Assyrian",
+      "description": "Words derived from etymons in Assyrian"
+    },
+    {
+      "path": [
+        "Middle Eastern and Afro-Asiatic languages",
+        "Afro-Asiatic",
+        "Semitic",
+        "Arabic"
+      ],
+      "type": "language",
+      "value": "Arabic",
+      "parent": "Semitic",
+      "breadcrumb": "Middle Eastern and Afro-Asiatic languages » Afro-Asiatic » Semitic » Arabic",
+      "description": "Words derived from etymons in Arabic"
+    },
+    {
+      "path": [
+        "Middle Eastern and Afro-Asiatic languages",
+        "Afro-Asiatic",
+        "Semitic",
+        "Arabic",
+        "Maltese"
+      ],
+      "type": "language",
+      "value": "Maltese",
+      "parent": "Arabic",
+      "breadcrumb": "Middle Eastern and Afro-Asiatic languages » Afro-Asiatic » Semitic » Arabic » Maltese",
+      "description": "Words derived from etymons in Maltese"
+    },
+    {
+      "path": [
+        "Middle Eastern and Afro-Asiatic languages",
+        "Afro-Asiatic",
+        "Semitic",
+        "Aramaic"
+      ],
+      "type": "language",
+      "value": "Aramaic",
+      "parent": "Semitic",
+      "breadcrumb": "Middle Eastern and Afro-Asiatic languages » Afro-Asiatic » Semitic » Aramaic",
+      "description": "Words derived from etymons in Aramaic"
+    },
+    {
+      "path": [
+        "Middle Eastern and Afro-Asiatic languages",
+        "Afro-Asiatic",
+        "Semitic",
+        "Aramaic",
+        "Syriac"
+      ],
+      "type": "language",
+      "value": "Syriac",
+      "parent": "Aramaic",
+      "breadcrumb": "Middle Eastern and Afro-Asiatic languages » Afro-Asiatic » Semitic » Aramaic » Syriac",
+      "description": "Words derived from etymons in Syriac"
+    },
+    {
+      "path": [
+        "Middle Eastern and Afro-Asiatic languages",
+        "Afro-Asiatic",
+        "Semitic",
+        "Ethiopic"
+      ],
+      "type": "language",
+      "value": "Ethiopic",
+      "parent": "Semitic",
+      "breadcrumb": "Middle Eastern and Afro-Asiatic languages » Afro-Asiatic » Semitic » Ethiopic",
+      "description": "Words derived from etymons in Ethiopic"
+    },
+    {
+      "path": [
+        "Middle Eastern and Afro-Asiatic languages",
+        "Afro-Asiatic",
+        "Semitic",
+        "Ethiopic",
+        "Amharic"
+      ],
+      "type": "language",
+      "value": "Amharic",
+      "parent": "Ethiopic",
+      "breadcrumb": "Middle Eastern and Afro-Asiatic languages » Afro-Asiatic » Semitic » Ethiopic » Amharic",
+      "description": "Words derived from etymons in Amharic"
+    },
+    {
+      "path": [
+        "Middle Eastern and Afro-Asiatic languages",
+        "Afro-Asiatic",
+        "Semitic",
+        "Hebrew"
+      ],
+      "type": "language",
+      "value": "Hebrew",
+      "parent": "Semitic",
+      "breadcrumb": "Middle Eastern and Afro-Asiatic languages » Afro-Asiatic » Semitic » Hebrew",
+      "description": "Words derived from etymons in Hebrew"
+    },
+    {
+      "path": [
+        "Middle Eastern and Afro-Asiatic languages",
+        "Afro-Asiatic",
+        "Somali"
+      ],
+      "type": "language",
+      "value": "Somali",
+      "parent": "Afro-Asiatic",
+      "breadcrumb": "Middle Eastern and Afro-Asiatic languages » Afro-Asiatic » Somali",
+      "description": "Words derived from etymons in Somali"
+    },
+    {
+      "path": [
+        "Middle Eastern and Afro-Asiatic languages",
+        "Hittite"
+      ],
+      "type": "language",
+      "value": "Hittite",
+      "parent": "Middle Eastern and Afro-Asiatic languages",
+      "breadcrumb": "Middle Eastern and Afro-Asiatic languages » Hittite",
+      "description": "Words derived from etymons in Hittite"
+    },
+    {
+      "path": [
+        "Middle Eastern and Afro-Asiatic languages",
+        "Iranian"
+      ],
+      "type": "language",
+      "value": "Iranian",
+      "parent": "Middle Eastern and Afro-Asiatic languages",
+      "breadcrumb": "Middle Eastern and Afro-Asiatic languages » Iranian",
+      "description": "Words derived from etymons in Iranian"
+    },
+    {
+      "path": [
+        "Middle Eastern and Afro-Asiatic languages",
+        "Iranian",
+        "Avestan"
+      ],
+      "type": "language",
+      "value": "Avestan",
+      "parent": "Iranian",
+      "breadcrumb": "Middle Eastern and Afro-Asiatic languages » Iranian » Avestan",
+      "description": "Words derived from etymons in Avestan"
+    },
+    {
+      "path": [
+        "Middle Eastern and Afro-Asiatic languages",
+        "Iranian",
+        "Kurdish"
+      ],
+      "type": "language",
+      "value": "Kurdish",
+      "parent": "Iranian",
+      "breadcrumb": "Middle Eastern and Afro-Asiatic languages » Iranian » Kurdish",
+      "description": "Words derived from etymons in Kurdish"
+    },
+    {
+      "path": [
+        "Middle Eastern and Afro-Asiatic languages",
+        "Iranian",
+        "Pashto"
+      ],
+      "type": "language",
+      "value": "Pashto",
+      "parent": "Iranian",
+      "breadcrumb": "Middle Eastern and Afro-Asiatic languages » Iranian » Pashto",
+      "description": "Words derived from etymons in Pashto"
+    },
+    {
+      "path": [
+        "Middle Eastern and Afro-Asiatic languages",
+        "Iranian",
+        "Persian"
+      ],
+      "type": "language",
+      "value": "Persian",
+      "parent": "Iranian",
+      "breadcrumb": "Middle Eastern and Afro-Asiatic languages » Iranian » Persian",
+      "description": "Words derived from etymons in Persian"
+    },
+    {
+      "path": [
+        "Middle Eastern and Afro-Asiatic languages",
+        "Sumerian"
+      ],
+      "type": "language",
+      "value": "Sumerian",
+      "parent": "Middle Eastern and Afro-Asiatic languages",
+      "breadcrumb": "Middle Eastern and Afro-Asiatic languages » Sumerian",
+      "description": "Words derived from etymons in Sumerian"
+    },
+    {
+      "path": [
+        "Native American languages"
+      ],
+      "type": "language",
+      "value": "Native American languages",
+      "parent": null,
+      "breadcrumb": "Native American languages",
+      "description": "Words derived from etymons in Native American languages"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages"
+      ],
+      "type": "language",
+      "value": "North American languages",
+      "parent": "Native American languages",
+      "breadcrumb": "Native American languages » North American languages",
+      "description": "Words derived from etymons in North American languages"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Algic"
+      ],
+      "type": "language",
+      "value": "Algic",
+      "parent": "North American languages",
+      "breadcrumb": "Native American languages » North American languages » Algic",
+      "description": "Words derived from etymons in Algic"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Algic",
+        "Algonquian"
+      ],
+      "type": "language",
+      "value": "Algonquian",
+      "parent": "Algic",
+      "breadcrumb": "Native American languages » North American languages » Algic » Algonquian",
+      "description": "Words derived from etymons in Algonquian"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Algic",
+        "Algonquian",
+        "Abenaki"
+      ],
+      "type": "language",
+      "value": "Abenaki",
+      "parent": "Algonquian",
+      "breadcrumb": "Native American languages » North American languages » Algic » Algonquian » Abenaki",
+      "description": "Words derived from etymons in Abenaki"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Algic",
+        "Algonquian",
+        "Algonquin"
+      ],
+      "type": "language",
+      "value": "Algonquin",
+      "parent": "Algonquian",
+      "breadcrumb": "Native American languages » North American languages » Algic » Algonquian » Algonquin",
+      "description": "Words derived from etymons in Algonquin"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Algic",
+        "Algonquian",
+        "Blackfoot"
+      ],
+      "type": "language",
+      "value": "Blackfoot",
+      "parent": "Algonquian",
+      "breadcrumb": "Native American languages » North American languages » Algic » Algonquian » Blackfoot",
+      "description": "Words derived from etymons in Blackfoot"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Algic",
+        "Algonquian",
+        "Cree"
+      ],
+      "type": "language",
+      "value": "Cree",
+      "parent": "Algonquian",
+      "breadcrumb": "Native American languages » North American languages » Algic » Algonquian » Cree",
+      "description": "Words derived from etymons in Cree"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Algic",
+        "Algonquian",
+        "Lenape"
+      ],
+      "type": "language",
+      "value": "Lenape",
+      "parent": "Algonquian",
+      "breadcrumb": "Native American languages » North American languages » Algic » Algonquian » Lenape",
+      "description": "Words derived from etymons in Lenape"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Algic",
+        "Algonquian",
+        "Lenape",
+        "Munsee"
+      ],
+      "type": "language",
+      "value": "Munsee",
+      "parent": "Lenape",
+      "breadcrumb": "Native American languages » North American languages » Algic » Algonquian » Lenape » Munsee",
+      "description": "Words derived from etymons in Munsee"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Algic",
+        "Algonquian",
+        "Lenape",
+        "Unami Delaware"
+      ],
+      "type": "language",
+      "value": "Unami Delaware",
+      "parent": "Lenape",
+      "breadcrumb": "Native American languages » North American languages » Algic » Algonquian » Lenape » Unami Delaware",
+      "description": "Words derived from etymons in Unami Delaware"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Algic",
+        "Algonquian",
+        "Maliseet-Passamaquoddy"
+      ],
+      "type": "language",
+      "value": "Maliseet-Passamaquoddy",
+      "parent": "Algonquian",
+      "breadcrumb": "Native American languages » North American languages » Algic » Algonquian » Maliseet-Passamaquoddy",
+      "description": "Words derived from etymons in Maliseet-Passamaquoddy"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Algic",
+        "Algonquian",
+        "Massachusett"
+      ],
+      "type": "language",
+      "value": "Massachusett",
+      "parent": "Algonquian",
+      "breadcrumb": "Native American languages » North American languages » Algic » Algonquian » Massachusett",
+      "description": "Words derived from etymons in Massachusett"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Algic",
+        "Algonquian",
+        "Narragansett"
+      ],
+      "type": "language",
+      "value": "Narragansett",
+      "parent": "Algonquian",
+      "breadcrumb": "Native American languages » North American languages » Algic » Algonquian » Narragansett",
+      "description": "Words derived from etymons in Narragansett"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Algic",
+        "Algonquian",
+        "Ojibwa"
+      ],
+      "type": "language",
+      "value": "Ojibwa",
+      "parent": "Algonquian",
+      "breadcrumb": "Native American languages » North American languages » Algic » Algonquian » Ojibwa",
+      "description": "Words derived from etymons in Ojibwa"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Algic",
+        "Algonquian",
+        "Powhatan"
+      ],
+      "type": "language",
+      "value": "Powhatan",
+      "parent": "Algonquian",
+      "breadcrumb": "Native American languages » North American languages » Algic » Algonquian » Powhatan",
+      "description": "Words derived from etymons in Powhatan"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Algic",
+        "Beothuk"
+      ],
+      "type": "language",
+      "value": "Beothuk",
+      "parent": "Algic",
+      "breadcrumb": "Native American languages » North American languages » Algic » Beothuk",
+      "description": "Words derived from etymons in Beothuk"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Algic",
+        "Wiyot"
+      ],
+      "type": "language",
+      "value": "Wiyot",
+      "parent": "Algic",
+      "breadcrumb": "Native American languages » North American languages » Algic » Wiyot",
+      "description": "Words derived from etymons in Wiyot"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Caddoan"
+      ],
+      "type": "language",
+      "value": "Caddoan",
+      "parent": "North American languages",
+      "breadcrumb": "Native American languages » North American languages » Caddoan",
+      "description": "Words derived from etymons in Caddoan"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Hokan"
+      ],
+      "type": "language",
+      "value": "Hokan",
+      "parent": "North American languages",
+      "breadcrumb": "Native American languages » North American languages » Hokan",
+      "description": "Words derived from etymons in Hokan"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Hokan",
+        "Karok"
+      ],
+      "type": "language",
+      "value": "Karok",
+      "parent": "Hokan",
+      "breadcrumb": "Native American languages » North American languages » Hokan » Karok",
+      "description": "Words derived from etymons in Karok"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Hokan",
+        "Washo"
+      ],
+      "type": "language",
+      "value": "Washo",
+      "parent": "Hokan",
+      "breadcrumb": "Native American languages » North American languages » Hokan » Washo",
+      "description": "Words derived from etymons in Washo"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Iroquoian"
+      ],
+      "type": "language",
+      "value": "Iroquoian",
+      "parent": "North American languages",
+      "breadcrumb": "Native American languages » North American languages » Iroquoian",
+      "description": "Words derived from etymons in Iroquoian"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Muskogean"
+      ],
+      "type": "language",
+      "value": "Muskogean",
+      "parent": "North American languages",
+      "breadcrumb": "Native American languages » North American languages » Muskogean",
+      "description": "Words derived from etymons in Muskogean"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Muskogean",
+        "Choctaw"
+      ],
+      "type": "language",
+      "value": "Choctaw",
+      "parent": "Muskogean",
+      "breadcrumb": "Native American languages » North American languages » Muskogean » Choctaw",
+      "description": "Words derived from etymons in Choctaw"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Muskogean",
+        "Creek"
+      ],
+      "type": "language",
+      "value": "Creek",
+      "parent": "Muskogean",
+      "breadcrumb": "Native American languages » North American languages » Muskogean » Creek",
+      "description": "Words derived from etymons in Creek"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Na-Dene"
+      ],
+      "type": "language",
+      "value": "Na-Dene",
+      "parent": "North American languages",
+      "breadcrumb": "Native American languages » North American languages » Na-Dene",
+      "description": "Words derived from etymons in Na-Dene"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Na-Dene",
+        "Nuclear Na-Dene"
+      ],
+      "type": "language",
+      "value": "Nuclear Na-Dene",
+      "parent": "Na-Dene",
+      "breadcrumb": "Native American languages » North American languages » Na-Dene » Nuclear Na-Dene",
+      "description": "Words derived from etymons in Nuclear Na-Dene"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Na-Dene",
+        "Nuclear Na-Dene",
+        "Athapaskan"
+      ],
+      "type": "language",
+      "value": "Athapaskan",
+      "parent": "Nuclear Na-Dene",
+      "breadcrumb": "Native American languages » North American languages » Na-Dene » Nuclear Na-Dene » Athapaskan",
+      "description": "Words derived from etymons in Athapaskan"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Na-Dene",
+        "Nuclear Na-Dene",
+        "Athapaskan",
+        "Navajo"
+      ],
+      "type": "language",
+      "value": "Navajo",
+      "parent": "Athapaskan",
+      "breadcrumb": "Native American languages » North American languages » Na-Dene » Nuclear Na-Dene » Athapaskan » Navajo",
+      "description": "Words derived from etymons in Navajo"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "South American languages",
+        "Jivaro"
+      ],
+      "type": "language",
+      "value": "Jivaro",
+      "parent": "South American languages",
+      "breadcrumb": "Native American languages » South American languages » Jivaro",
+      "description": "Words derived from etymons in Jivaro"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Na-Dene",
+        "Nuclear Na-Dene",
+        "Tlingit"
+      ],
+      "type": "language",
+      "value": "Tlingit",
+      "parent": "Nuclear Na-Dene",
+      "breadcrumb": "Native American languages » North American languages » Na-Dene » Nuclear Na-Dene » Tlingit",
+      "description": "Words derived from etymons in Tlingit"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Na-Dene",
+        "Haida"
+      ],
+      "type": "language",
+      "value": "Haida",
+      "parent": "Na-Dene",
+      "breadcrumb": "Native American languages » North American languages » Na-Dene » Haida",
+      "description": "Words derived from etymons in Haida"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Penutian"
+      ],
+      "type": "language",
+      "value": "Penutian",
+      "parent": "North American languages",
+      "breadcrumb": "Native American languages » North American languages » Penutian",
+      "description": "Words derived from etymons in Penutian"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Penutian",
+        "Chinookan"
+      ],
+      "type": "language",
+      "value": "Chinookan",
+      "parent": "Penutian",
+      "breadcrumb": "Native American languages » North American languages » Penutian » Chinookan",
+      "description": "Words derived from etymons in Chinookan"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Penutian",
+        "Chinook Jargon"
+      ],
+      "type": "language",
+      "value": "Chinook Jargon",
+      "parent": "Penutian",
+      "breadcrumb": "Native American languages » North American languages » Penutian » Chinook Jargon",
+      "description": "Words derived from etymons in Chinook Jargon"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Penutian",
+        "Plateau Penutian"
+      ],
+      "type": "language",
+      "value": "Plateau Penutian",
+      "parent": "Penutian",
+      "breadcrumb": "Native American languages » North American languages » Penutian » Plateau Penutian",
+      "description": "Words derived from etymons in Plateau Penutian"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Penutian",
+        "Yokuts"
+      ],
+      "type": "language",
+      "value": "Yokuts",
+      "parent": "Penutian",
+      "breadcrumb": "Native American languages » North American languages » Penutian » Yokuts",
+      "description": "Words derived from etymons in Yokuts"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Salishan"
+      ],
+      "type": "language",
+      "value": "Salishan",
+      "parent": "North American languages",
+      "breadcrumb": "Native American languages » North American languages » Salishan",
+      "description": "Words derived from etymons in Salishan"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Siouan"
+      ],
+      "type": "language",
+      "value": "Siouan",
+      "parent": "North American languages",
+      "breadcrumb": "Native American languages » North American languages » Siouan",
+      "description": "Words derived from etymons in Siouan"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Siouan",
+        "Sioux"
+      ],
+      "type": "language",
+      "value": "Sioux",
+      "parent": "Siouan",
+      "breadcrumb": "Native American languages » North American languages » Siouan » Sioux",
+      "description": "Words derived from etymons in Sioux"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Wakashan"
+      ],
+      "type": "language",
+      "value": "Wakashan",
+      "parent": "North American languages",
+      "breadcrumb": "Native American languages » North American languages » Wakashan",
+      "description": "Words derived from etymons in Wakashan"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Wakashan",
+        "Nootka"
+      ],
+      "type": "language",
+      "value": "Nootka",
+      "parent": "Wakashan",
+      "breadcrumb": "Native American languages » North American languages » Wakashan » Nootka",
+      "description": "Words derived from etymons in Nootka"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Uto-Aztecan"
+      ],
+      "type": "language",
+      "value": "Uto-Aztecan",
+      "parent": "North American languages",
+      "breadcrumb": "Native American languages » North American languages » Uto-Aztecan",
+      "description": "Words derived from etymons in Uto-Aztecan"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Uto-Aztecan",
+        "Hopi"
+      ],
+      "type": "language",
+      "value": "Hopi",
+      "parent": "Uto-Aztecan",
+      "breadcrumb": "Native American languages » North American languages » Uto-Aztecan » Hopi",
+      "description": "Words derived from etymons in Hopi"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Uto-Aztecan",
+        "Nahuatl"
+      ],
+      "type": "language",
+      "value": "Nahuatl",
+      "parent": "Uto-Aztecan",
+      "breadcrumb": "Native American languages » North American languages » Uto-Aztecan » Nahuatl",
+      "description": "Words derived from etymons in Nahuatl"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "North American languages",
+        "Uto-Aztecan",
+        "Pima-Papago"
+      ],
+      "type": "language",
+      "value": "Pima-Papago",
+      "parent": "Uto-Aztecan",
+      "breadcrumb": "Native American languages » North American languages » Uto-Aztecan » Pima-Papago",
+      "description": "Words derived from etymons in Pima-Papago"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "South American languages"
+      ],
+      "type": "language",
+      "value": "South American languages",
+      "parent": "Native American languages",
+      "breadcrumb": "Native American languages » South American languages",
+      "description": "Words derived from etymons in South American languages"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "South American languages",
+        "Arawakan"
+      ],
+      "type": "language",
+      "value": "Arawakan",
+      "parent": "South American languages",
+      "breadcrumb": "Native American languages » South American languages » Arawakan",
+      "description": "Words derived from etymons in Arawakan"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "South American languages",
+        "Cariban"
+      ],
+      "type": "language",
+      "value": "Cariban",
+      "parent": "South American languages",
+      "breadcrumb": "Native American languages » South American languages » Cariban",
+      "description": "Words derived from etymons in Cariban"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "South American languages",
+        "Cariban",
+        "Galibi"
+      ],
+      "type": "language",
+      "value": "Galibi",
+      "parent": "Cariban",
+      "breadcrumb": "Native American languages » South American languages » Cariban » Galibi",
+      "description": "Words derived from etymons in Galibi"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "South American languages",
+        "Cariban",
+        "Macusi"
+      ],
+      "type": "language",
+      "value": "Macusi",
+      "parent": "Cariban",
+      "breadcrumb": "Native American languages » South American languages » Cariban » Macusi",
+      "description": "Words derived from etymons in Macusi"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "South American languages",
+        "Mapuche"
+      ],
+      "type": "language",
+      "value": "Mapuche",
+      "parent": "South American languages",
+      "breadcrumb": "Native American languages » South American languages » Mapuche",
+      "description": "Words derived from etymons in Mapuche"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "South American languages",
+        "Mayan"
+      ],
+      "type": "language",
+      "value": "Mayan",
+      "parent": "South American languages",
+      "breadcrumb": "Native American languages » South American languages » Mayan",
+      "description": "Words derived from etymons in Mayan"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "South American languages",
+        "Quechua"
+      ],
+      "type": "language",
+      "value": "Quechua",
+      "parent": "South American languages",
+      "breadcrumb": "Native American languages » South American languages » Quechua",
+      "description": "Words derived from etymons in Quechua"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "South American languages",
+        "Tupi-Guarani"
+      ],
+      "type": "language",
+      "value": "Tupi-Guarani",
+      "parent": "South American languages",
+      "breadcrumb": "Native American languages » South American languages » Tupi-Guarani",
+      "description": "Words derived from etymons in Tupi-Guarani"
+    },
+    {
+      "path": [
+        "Native American languages",
+        "South American languages",
+        "Yanomamo"
+      ],
+      "type": "language",
+      "value": "Yanomamo",
+      "parent": "South American languages",
+      "breadcrumb": "Native American languages » South American languages » Yanomamo",
+      "description": "Words derived from etymons in Yanomamo"
+    },
+    {
+      "path": [
+        "Creoles and pidgins"
+      ],
+      "type": "language",
+      "value": "Creoles and pidgins",
+      "parent": null,
+      "breadcrumb": "Creoles and pidgins",
+      "description": "Words derived from etymons in Creoles and pidgins"
+    },
+    {
+      "path": [
+        "Creoles and pidgins",
+        "French Creole"
+      ],
+      "type": "language",
+      "value": "French Creole",
+      "parent": "Creoles and pidgins",
+      "breadcrumb": "Creoles and pidgins » French Creole",
+      "description": "Words derived from etymons in French Creole"
+    },
+    {
+      "path": [
+        "Creoles and pidgins",
+        "Haitian Creole"
+      ],
+      "type": "language",
+      "value": "Haitian Creole",
+      "parent": "Creoles and pidgins",
+      "breadcrumb": "Creoles and pidgins » Haitian Creole",
+      "description": "Words derived from etymons in Haitian Creole"
+    },
+    {
+      "path": [
+        "Creoles and pidgins",
+        "Jamaican Creole"
+      ],
+      "type": "language",
+      "value": "Jamaican Creole",
+      "parent": "Creoles and pidgins",
+      "breadcrumb": "Creoles and pidgins » Jamaican Creole",
+      "description": "Words derived from etymons in Jamaican Creole"
+    },
+    {
+      "path": [
+        "Creoles and pidgins",
+        "Isicamtho"
+      ],
+      "type": "language",
+      "value": "Isicamtho",
+      "parent": "Creoles and pidgins",
+      "breadcrumb": "Creoles and pidgins » Isicamtho",
+      "description": "Words derived from etymons in Isicamtho"
+    },
+    {
+      "path": [
+        "Creoles and pidgins",
+        "Sranan"
+      ],
+      "type": "language",
+      "value": "Sranan",
+      "parent": "Creoles and pidgins",
+      "breadcrumb": "Creoles and pidgins » Sranan",
+      "description": "Words derived from etymons in Sranan"
+    },
+    {
+      "path": [
+        "Creoles and pidgins",
+        "Melanesian pidgins"
+      ],
+      "type": "language",
+      "value": "Melanesian pidgins",
+      "parent": "Creoles and pidgins",
+      "breadcrumb": "Creoles and pidgins » Melanesian pidgins",
+      "description": "Words derived from etymons in Melanesian pidgins"
+    },
+    {
+      "path": [
+        "Other sources"
+      ],
+      "type": "language",
+      "value": "Other sources",
+      "parent": null,
+      "breadcrumb": "Other sources",
+      "description": "Words derived from etymons in Other sources"
+    },
+    {
+      "path": [
+        "Other sources",
+        "personal name"
+      ],
+      "type": "language",
+      "value": "personal name",
+      "parent": "Other sources",
+      "breadcrumb": "Other sources » personal name",
+      "description": "Words derived from etymons in personal name"
+    },
+    {
+      "path": [
+        "Other sources",
+        "place name"
+      ],
+      "type": "language",
+      "value": "place name",
+      "parent": "Other sources",
+      "breadcrumb": "Other sources » place name",
+      "description": "Words derived from etymons in place name"
+    },
+    {
+      "path": [
+        "Other sources",
+        "imitative"
+      ],
+      "type": "language",
+      "value": "imitative",
+      "parent": "Other sources",
+      "breadcrumb": "Other sources » imitative",
+      "description": "Words derived from etymons in imitative"
+    },
+    {
+      "path": [
+        "Other sources",
+        "acronym"
+      ],
+      "type": "language",
+      "value": "acronym",
+      "parent": "Other sources",
+      "breadcrumb": "Other sources » acronym",
+      "description": "Words derived from etymons in acronym"
+    },
+    {
+      "path": [
+        "Other sources",
+        "initialism"
+      ],
+      "type": "language",
+      "value": "initialism",
+      "parent": "Other sources",
+      "breadcrumb": "Other sources » initialism",
+      "description": "Words derived from etymons in initialism"
+    },
+    {
+      "path": [
+        "Other sources",
+        "invented"
+      ],
+      "type": "language",
+      "value": "invented",
+      "parent": "Other sources",
+      "breadcrumb": "Other sources » invented",
+      "description": "Words derived from etymons in invented"
+    },
+    {
+      "path": [
+        "Other sources",
+        "origin uncertain"
+      ],
+      "type": "language",
+      "value": "origin uncertain",
+      "parent": "Other sources",
+      "breadcrumb": "Other sources » origin uncertain",
+      "description": "Words derived from etymons in origin uncertain"
+    },
+    {
+      "path": [
+        "Other sources",
+        "error"
+      ],
+      "type": "language",
+      "value": "error",
+      "parent": "Other sources",
+      "breadcrumb": "Other sources » error",
+      "description": "Words derived from etymons in error"
+    },
+    {
+      "path": [
+        "English"
+      ],
+      "type": "language",
+      "value": "English",
+      "parent": null,
+      "breadcrumb": "English",
+      "description": "Words derived from etymons in English"
+    }
+  ]
+}
