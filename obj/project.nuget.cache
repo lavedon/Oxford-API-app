@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "PLfCbiNW9ofwLVyrA7bgYU/fyxQ4fg05wWikC0Qf0nh4BNZ3AHP0O3OycwWMHQdD8mN2OVmAhbeikgQFJNBewg==",
+  "dgSpecHash": "9016Q3T/snzEtpfRCZwnV4xo3yaHQManyKGrVvMcwME5wY47Q6nGQcb3id3lrZzOs+fv4mp7o0zOqmD0+8uXSA==",
   "success": true,
   "projectFilePath": "C:\\my-coding-projects\\oxford\\OxfordV2.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Luke\\.nuget\\packages\\microsoft.csharp\\4.4.1\\microsoft.csharp.4.4.1.nupkg.sha512",
+    "C:\\Users\\Luke\\.nuget\\packages\\system.commandline\\2.0.0-beta1.21216.1\\system.commandline.2.0.0-beta1.21216.1.nupkg.sha512",
+    "C:\\Users\\Luke\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512"
+  ],
   "logs": []
 }

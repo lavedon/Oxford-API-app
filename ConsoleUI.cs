@@ -8,11 +8,23 @@ namespace OxfordV2
 	public class ConsoleUI
 	{
 	    private static bool running { get; set; }
-	    public static void Start()
+
+		public static void Start(string word, CurrentQuery query)
+		{
+			Trace.WriteLine("Starting Main Menu with passed in word.");
+			running = true;
+			// Call the definition method before main menu
+			getDefinition(query, word);
+			while (running) {
+				MainMenu(query);
+			}
+			
+
+		}
+	    public static void Start(CurrentQuery query)
 	    {
 		    Trace.WriteLine("Starting Main Menu");
 		    running = true;
-		    CurrentQuery query = new();
 		    while (running) {
 			MainMenu(query);
 		    }
@@ -137,24 +149,13 @@ namespace OxfordV2
 	    public static void MainMenu(CurrentQuery query)
 	    {
 		    Trace.WriteLine("In MainMenu()");
-		    if (! query.HasLookedUpWord) { 
-			    Console.WriteLine("Please Enter a word");
-			    string userInput = Console.ReadLine().ToLower().Trim();
-				query.UserEnteredWord = processInput(query, userInput);
-				try {
-					Trace.WriteLine("Automatically looking up user entered word:");
-					Trace.WriteLine(query.UserEnteredWord);
-					query.QueryMode = Modes.Word;
-					API.APICalls(query);
-				}
-				catch (Exception ex)
-				{
-					Trace.WriteLine("Exception on automatic word look up");
-					Trace.WriteLine(ex);
-				}
-				showDefinitions(query);
-		    }
-		    Console.WriteLine();
+		    if (! query.HasLookedUpWord)
+            {
+                Console.WriteLine("Please Enter a word");
+                string userInput = Console.ReadLine().ToLower().Trim();
+                getDefinition(query, userInput);
+            }
+            Console.WriteLine();
 		    Console.WriteLine("-------------------------");
 		    Console.WriteLine("Options:");
 		    Console.WriteLine("Definition            - D");
@@ -256,5 +257,22 @@ namespace OxfordV2
 		    }
 	    }
 
-	}
+        private static void getDefinition(CurrentQuery query, string userInput)
+        {
+            query.UserEnteredWord = processInput(query, userInput);
+            try
+            {
+                Trace.WriteLine("Automatically looking up user entered word:");
+                Trace.WriteLine(query.UserEnteredWord);
+                query.QueryMode = Modes.Word;
+                API.APICalls(query);
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine("Exception on automatic word look up");
+                Trace.WriteLine(ex);
+            }
+            showDefinitions(query);
+        }
+    }
 }
