@@ -206,14 +206,20 @@ namespace OxfordV2
 			// I am removing the limit of 1 definition -- going to return all at once
 			// Uri requestURL = new Uri(baseURL + "words/?lemma=" + query.UserEnteredWord + "&limit=1");
 			string queryURL;
-		if ((! query.IncludeObsolete) || (! query.OptionsMenuIncludeObsolete)) {
+
+		if (query.IncludeObsolete.HasValue) {
+			if (!query.IncludeObsolete.Value) {
 				queryURL = @"words/?lemma=" + query.UserEnteredWord + @"&obsolete=false";
+			} else {
+				queryURL = @"words/?lemma=" + query.UserEnteredWord + @"&obsolete=true";
+				}
 			}
 			else {
 				queryURL = @"words/?lemma=" + query.UserEnteredWord;
 			}
 
 			Uri requestURL = new Uri(baseURL + queryURL);
+			Console.WriteLine($"requestURL: {requestURL.ToString()}");
 			Trace.WriteLine("Making the request");
 
 			var response = client.GetStreamAsync(requestURL).Result;
@@ -228,12 +234,18 @@ namespace OxfordV2
 		{
 			Trace.WriteLine("Called callSensesAPI");
 			string queryURL;
-			if ((! query.IncludeObsolete) || (! query.OptionsMenuIncludeObsolete)) {
-				queryURL = @"word/" + query.Definitions[0].WordID + @"/senses/?obsolete=false";
+			if (query.IncludeObsolete.HasValue) {
+				if (!query.IncludeObsolete.Value) {
+					queryURL = @"word/" + query.Definitions[0].WordID + @"/senses/?obsolete=false";
+				}
+				else {
+					queryURL = @"word/" + query.Definitions[0].WordID + @"/senses/?obsolete=true";
+				}
 			}
 			else {
 				queryURL = @"word/" + query.Definitions[0].WordID + @"/senses/";
 			}
+
 			Uri requestURL = new Uri(baseURL + queryURL);
 			Trace.WriteLine("Making the request");
 			try {

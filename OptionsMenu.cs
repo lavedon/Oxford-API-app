@@ -32,7 +32,7 @@ namespace OxfordV2
 		}
 		Console.WriteLine($"Delete old XML file and saved quotations on export?: {yesNo}");
 		
-		if (query.OptionsMenuIncludeObsolete == true)
+		if (query.IncludeObsolete == true)
 		{
 			yesNo = "Yes";
 		}
@@ -89,7 +89,7 @@ namespace OxfordV2
 				Console.WriteLine("Toggle Obsolete");
 				query.HasLookedUpWord = false;
 				query.Definitions.Clear();
-				query.OptionsMenuIncludeObsolete = !query.OptionsMenuIncludeObsolete;
+				query.IncludeObsolete = !query.IncludeObsolete;
 				ConsoleUI.MainMenu(query);
 				break;
 

@@ -1,0 +1,26 @@
+Root Command Options (6):
+System.IO Export (File path
+bool Quotations
+bool obsolete
+export word id
+export sense id
+display ids
+
+Sub-Command Word: (7)
+
+Enum part_of_speech
+String years-recorded-in (examples 100-500 100- -1999)
+String current_in (examples: same as above)
+Bool revised
+Bool Obsolete
+Enum etymon_language
+Enum etymon_type
+
+Sub-Command Sense (4)
+
+Sub-Command Surface form()
+
+sub-command semantic class
+
+Subcommand lemma
+

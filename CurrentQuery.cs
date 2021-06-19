@@ -32,9 +32,8 @@ namespace OxfordV2
 		public Modes QueryMode { get; set; }
 
 		public bool HasLookedUpWord { get; set; }
-		public bool OptionsMenuIncludeObsolete { get; set; }
 		public bool OptionsMenuVerboseMode { get; set;}
-		public bool IncludeObsolete { get; set; }
+		public bool? IncludeObsolete { get; set; }
 		public bool DateRangeSet { get; set; }
 
 		public int NumberOfQuotes { get; set; }
@@ -46,8 +45,7 @@ namespace OxfordV2
 		public CurrentQuery() {
 			this.HasLookedUpWord = false;
 			this.DateRangeSet = false;
-			this.IncludeObsolete = true;
-			this.OptionsMenuIncludeObsolete = true;
+			this.IncludeObsolete = null;
 			this.OptionsMenuVerboseMode = true;
 			this.Definitions = new List<Definition>();
 			this.Quotes = new List<Quote>();
