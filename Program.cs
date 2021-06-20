@@ -1,8 +1,8 @@
-﻿using System;
+﻿#nullable enable
+using System;
 using System.Diagnostics;
 using System.CommandLine;
 using System.CommandLine.Invocation;
-using System.Reflection;
 using System.IO;
 
 namespace OxfordV2
@@ -10,15 +10,8 @@ namespace OxfordV2
     class Program
     {
 
-        static int Main(string[] args)
+        static void Main(string[] args)
         {
-            // Show Trace on console
-            // TextWriterTraceListener tr1 = new TextWriterTraceListener(System.Console.Out);
-            // Trace.Listeners.Add(tr1);
-
-            // Try to create the logs directory
-            /*
-            */
 			Console.WriteLine($"args are: {args.ToString()}");
 			foreach (var a in args){
 				Console.WriteLine(a);
@@ -36,13 +29,17 @@ namespace OxfordV2
 
             var rootCommand = new RootCommand
         {
-            new Argument<string>("Word"),
-			new Option<bool>("-o" , description: "Only return obsolete usages.")
+            new Argument<string>(name: "word", getDefaultValue: () => "mail", description: "The word to look up."),
+			new Option<bool>(new[] {"--obsolete-only", "-o"} , description: "Only return obsolete usages."),
+			new Option<bool>(new[] {"--obsolete-exclude", "-oe"} , description: "Only return NON-obsolete usages."),
+            new Option<string?>(new[] {"--part-of-speech", "-ps"}, description: "Only return results to words specific parts of speech"),
+            new Option<string?>(new[] {"--years", "-y"}, description: "Years.  Use format 900-1999 or -1999 or 900-.  Used for first recorded, last recorded, and current in."),
+			new Option<bool>(new[] {"--current-in", "-c"} , description: "Flag which sets the 'Years' option to work with current in year - as opposed to recorded in year - Restrict results to words current in this year or period. Works with the Years flag.  i.e. -y 280-1900 -c  another example: -y 500 -c will return the words current in the year 500 AD."),
+
         };
 
             rootCommand.Description = "An app which processes the Oxford English Dictionary Researcher API, and exports to SuperMemo.";
-            rootCommand.Handler = CommandHandler.Create<string, bool, IConsole>(
-    HandleArgs);
+            rootCommand.Handler = CommandHandler.Create<string, bool, bool, string?, string?, bool>(HandleArgs);
 
 
             string directoryPath = string.Concat(Environment.CurrentDirectory, "\\logs");
@@ -77,27 +74,29 @@ namespace OxfordV2
             Trace.Flush();
             // ConsoleUI.Start();
             // @TODO Make an overload of ConsoleUI.Start(which passes a word from the command line)
-            return rootCommand.Invoke(args);
+            rootCommand.Invoke(args);
 
         }
 
-        public static void HandleArgs(string word, bool obsoleteOnlyOption, IConsole console)
+        public static void HandleArgs(string word, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn)
         {
                 Console.WriteLine($"CLI word entered was {word}");
-                Console.WriteLine($"obsoleteOnlyOption: {obsoleteOnlyOption}");
+                Console.WriteLine($"obsoleteOnlyOption: {obsoleteOnly}");
+                Console.WriteLine($"excludeObsoleteOption: {obsoleteExclude}.");
+                Console.WriteLine($"partOfSpeech: {partOfSpeech ?? "null"}");
+                Console.WriteLine($"years: {years ?? "null"}");
+                Console.WriteLine($"Current In: {currentIn}");
+
 				Console.ReadLine();
-           //     Console.WriteLine($"excludeObsoleteOption: {excludeObsoleteOption}.");
                 CurrentQuery query = new();
-                if (obsoleteOnlyOption)
+                if (obsoleteOnly)
                 {
                     query.IncludeObsolete = true;
                 }
-				/*
-                if (excludeObsoleteOption)
+                if (obsoleteExclude)
                 {
                     query.IncludeObsolete = false;
                 }
-				*/
                 if (string.IsNullOrWhiteSpace(word))
                 {
                     Console.WriteLine("No CLI word entered.");
@@ -106,7 +105,8 @@ namespace OxfordV2
                 else
                 {
                     Console.WriteLine($"Entered CLI word is {word}");
-                    Console.WriteLine($"query.IncludeObsolete: {query.IncludeObsolete}");
+                    var includeObsoleteProp = query.IncludeObsolete is null ? "null" : query.IncludeObsolete.Value.ToString();
+                    Console.WriteLine($"query.IncludeObsolete: {includeObsoleteProp}"); 
                     ConsoleUI.Start(word, query);
                 }
         }
