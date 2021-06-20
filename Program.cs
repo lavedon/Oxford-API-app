@@ -26,6 +26,9 @@ namespace OxfordV2
             );
 			*/
 
+            // @Todo implement Lemma sub-command
+            var lemmaCommand = new Command("Lemma");
+            var senseCommand = new Command("Sense");
 
             var rootCommand = new RootCommand
         {
