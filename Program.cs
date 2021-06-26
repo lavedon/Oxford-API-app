@@ -174,18 +174,17 @@ namespace OxfordV2
 
         public static void HandleArgs(string word, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType)
         {
-                Console.WriteLine($"CLI word entered was {word}");
-                Console.WriteLine($"obsoleteOnlyOption: {obsoleteOnly}");
-                Console.WriteLine($"excludeObsoleteOption: {obsoleteExclude}.");
-                Console.WriteLine($"partOfSpeech: {partOfSpeech ?? "null"}");
-                Console.WriteLine($"years: {years ?? "null"}");
-                Console.WriteLine($"Current In: {currentIn}");
-                Console.WriteLine($"Revised:? {revised}");
-                Console.WriteLine($"Revised: Old editions only? {revisedNot}");
-                Console.WriteLine($"etymologyLanguage: {etymologyLanguage}");
-                Console.WriteLine($"etymologyType: {etymologyType}");
+                Trace.WriteLine($"CLI word entered was {word}");
+                Trace.WriteLine($"obsoleteOnlyOption: {obsoleteOnly}");
+                Trace.WriteLine($"excludeObsoleteOption: {obsoleteExclude}.");
+                Trace.WriteLine($"partOfSpeech: {partOfSpeech ?? "null"}");
+                Trace.WriteLine($"years: {years ?? "null"}");
+                Trace.WriteLine($"Current In: {currentIn}");
+                Trace.WriteLine($"Revised:? {revised}");
+                Trace.WriteLine($"Revised: Old editions only? {revisedNot}");
+                Trace.WriteLine($"etymologyLanguage: {etymologyLanguage}");
+                Trace.WriteLine($"etymologyType: {etymologyType}");
 
-				Console.ReadLine();
                 CurrentQuery query = new();
                 if (obsoleteOnly)
                 {
