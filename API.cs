@@ -269,18 +269,19 @@ namespace OxfordV2
 			string queryURL;
 			if (query.IncludeObsolete.HasValue) {
 				if (!query.IncludeObsolete.Value) {
-					queryURL = @"word/" + query.Definitions[0].WordID + @"/senses/?obsolete=false";
+					queryURL = @"word/" + query.CurrentWordID + @"/senses/?obsolete=false";
 				}
 				else {
-					queryURL = @"word/" + query.Definitions[0].WordID + @"/senses/?obsolete=true";
+					queryURL = @"word/" + query.CurrentWordID + @"/senses/?obsolete=true";
 				}
 			}
 			else {
-				queryURL = @"word/" + query.Definitions[0].WordID + @"/senses/";
+				queryURL = @"word/" + query.CurrentWordID + @"/senses/";
 			}
 
 			Uri requestURL = new Uri(baseURL + queryURL);
 			Trace.WriteLine("Making the request");
+			Console.WriteLine(requestURL.ToString());
 			try {
 				client.Timeout = TimeSpan.FromMinutes(10);
 
@@ -583,13 +584,16 @@ namespace OxfordV2
 			}
 			else 
 			{
-				resetHeaders(client);
+			resetHeaders(client);
+			foreach (Definition d in query.Definitions)
+			{
+				query.CurrentWordID = d.WordID;
 				Task getSenses = new Task(callSensesAPI, "CallSenses");
 				getSenses.ConfigureAwait(false);
 				getSenses.RunSynchronously();
 
 
-			Trace.WriteLine("Ran senses using start.");
+				Trace.WriteLine("Ran senses using start.");
 
 				JsonElement senseData = JSONResponse.RootElement.GetProperty("data");
 
@@ -631,6 +635,7 @@ namespace OxfordV2
 					query.Senses.Add(currentSense);
 					Console.WriteLine();
 
+                    if (query.InteractiveMode == true) {
 					Console.WriteLine("---- S to Save - X to exit - O for other options");
 					Console.WriteLine("Or just press Enter for more senses----");
 					string input = Console.ReadLine().Trim().ToLower();
@@ -692,7 +697,11 @@ namespace OxfordV2
 
 						}
 					}
-				}
+					} else {
+						SavedQueries.AddMember(currentSense);
+
+						}
+					}
 					catch (Exception ex)
 					{
 						Trace.WriteLine(ex);
@@ -700,6 +709,7 @@ namespace OxfordV2
 
 				}
 			}
+		}
 		}
 		else if (query.QueryMode == Modes.Quotations)
 		{

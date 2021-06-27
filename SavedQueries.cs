@@ -66,6 +66,7 @@ namespace OxfordV2
 				blankDefinitionWithId.WordID = line;
 				query.Definitions.Add(blankDefinitionWithId);
 			}
+			query.HasLookedUpWord = true;
 			return query;
 		}
 

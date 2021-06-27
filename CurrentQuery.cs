@@ -50,6 +50,7 @@ namespace OxfordV2
 		public bool OpenEnd { get; set;}
 		public bool InteractiveMode { get; set; }
 		public bool ExportAfterSearch { get; set; }
+		public string? CurrentWordID { get; set; }
 
 		public CurrentQuery() {
 			this.HasLookedUpWord = false;
@@ -64,6 +65,7 @@ namespace OxfordV2
 			this.Quotes = new List<Quote>();
 			this.Senses = new List<Sense>();
 			this.CurrentIn = false;
+			this.CurrentWordID = null;
 			this.StartYear = 0;
 			this.OpenStart = false;
 			this.EndYear = 0;

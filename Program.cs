@@ -30,7 +30,9 @@ namespace OxfordV2
 
             // @Todo implement Lemma sub-command
             var senseCommand = new Command("Sense");
-            var senseLemmaArgument = new Argument<string?>(name: "lemma", description: "the word to find senses for. If not specified use the word id from the last query.");
+            var senseLemmaArgument = new Option<string>(
+                new[] {"--lemma", "-l"}, description: "the word to find senses for. If not specified use the word id from the last query."
+            );
             /*
             var senseSynonymArgument = new Option<string?>(name: "synonyms", description: "Find synonyms for the specified sense.  Note. Requires a sense ID");
             var senseSiblingsArgument = new Option<string?>(name: "siblings", description: "Get senses that are the 'siblings' or the specified sense. Note: Requires a sense id.");
@@ -47,14 +49,14 @@ namespace OxfordV2
             var senseMainOption = new Option<bool>(
                 new[] {"--restrict-main", "-rm"}, description: "Return only the main sense only. Note: The OED does not currently list a main sense for every word."
             );
-//            senseCommand.AddArgument(senseLemmaArgument);
+            senseCommand.AddOption(senseLemmaArgument);
             // senseCommand.AddArgument(senseSynonymArgument);
             // senseCommand.AddArgument(senseSiblingsArgument);
             senseCommand.AddOption(senseRegionOption);
             senseCommand.AddOption(senseUsageOption);
             senseCommand.AddOption(senseMainOption);
 
-            senseCommand.Handler = CommandHandler.Create<string?, string?, bool>(HandleSenseArgs);
+            senseCommand.Handler = CommandHandler.Create<string, string?, string?, bool>(HandleSenseArgs);
 
             
 
@@ -178,12 +180,10 @@ namespace OxfordV2
 
         }
 
-        public static void HandleSenseArgs(string? restrictRegion, string? restrictUsage, bool restrictMain)
+        public static void HandleSenseArgs(string lemma, string? restrictRegion, string? restrictUsage, bool restrictMain)
         {
             Console.WriteLine($"Sense sub command entered.");
-            Console.ReadLine();
-            // Console.WriteLine($"lemma: {lemma}");
-            Console.ReadLine();
+            Console.WriteLine($"lemma: {lemma}");
 //            Console.WriteLine($"synonyms: {synonyms}");
 //            Console.WriteLine($"siblings: {siblings}");
             Console.WriteLine($"restrictRegion: {restrictRegion}");
@@ -191,15 +191,11 @@ namespace OxfordV2
             Console.WriteLine($"restrictMain: {restrictMain}");
 
             CurrentQuery query = new();
-            Console.ReadLine();
-            /*
-            if (!string.IsNullOrWhiteSpace(word))
+            if (string.IsNullOrWhiteSpace(lemma))
             {
                 Console.WriteLine("Looking up word IDs from file");
-                Console.ReadLine();
                 ConsoleUI.GetSenses(SavedQueries.LoadWordIds(query));
             }
-            */
 
         }
         public static void HandleArgs(string word, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, bool interactive, string? export)
