@@ -31,8 +31,10 @@ namespace OxfordV2
             // @Todo implement Lemma sub-command
             var senseCommand = new Command("Sense");
             var senseLemmaArgument = new Argument<string?>(name: "lemma", description: "the word to find senses for. If not specified use the word id from the last query.");
-            var senseSynonymArgument = new Argument<string?>(name: "Find synonyms of a sense", description: "Find synonyms for the specified sense.  Note. Requires a sense ID");
-            var senseSiblingsArgument = new Argument<string?>(name: "Get senses that are the 'siblings' or the specified sense. Note: Requires a sense id.");
+            /*
+            var senseSynonymArgument = new Option<string?>(name: "synonyms", description: "Find synonyms for the specified sense.  Note. Requires a sense ID");
+            var senseSiblingsArgument = new Option<string?>(name: "siblings", description: "Get senses that are the 'siblings' or the specified sense. Note: Requires a sense id.");
+            */
 
             var senseRegionOption = new Option<string?>(
                 new[] {"--restrict-region", "-rr"}, description: "Restrict results to a particular region or dialect. i.e. 'Ireland', 'Northern England'"
@@ -45,13 +47,15 @@ namespace OxfordV2
             var senseMainOption = new Option<bool>(
                 new[] {"--restrict-main", "-rm"}, description: "Return only the main sense only. Note: The OED does not currently list a main sense for every word."
             );
-            senseCommand.AddArgument(senseLemmaArgument);
-            senseCommand.AddArgument(senseSynonymArgument);
-            senseCommand.AddArgument(senseSiblingsArgument);
-
+//            senseCommand.AddArgument(senseLemmaArgument);
+            // senseCommand.AddArgument(senseSynonymArgument);
+            // senseCommand.AddArgument(senseSiblingsArgument);
             senseCommand.AddOption(senseRegionOption);
             senseCommand.AddOption(senseUsageOption);
             senseCommand.AddOption(senseMainOption);
+
+            senseCommand.Handler = CommandHandler.Create<string?, string?, bool>(HandleSenseArgs);
+
             
 
 
@@ -122,7 +126,9 @@ namespace OxfordV2
             new Option<bool>(new[] {"--revised", "-r"}, description: "Restrict words taken from new and revised OED entries (OED-3rd edition content)"),
             new Option<bool>(new[] {"--revised-not", "-rn"}, description: "Restrict to non revised sources only. (OED 2nd and 1rst edition)"),
             new Option<string?>(new[] {"--etymology-language", "-el"}, description: "Restrict results to words derived from a certain language.  Languages are grouped by continent and hierarchical.  i.e. European will automatically include German."),
-            new Option<string?>(new[] {"--etymology-type", "-et"}, description: "Restrict results only certain etymological types.  compound, derivative, conversion, blend, shortening, backformation, initialism, acronym, variant, arbitrary, imitative, borrowing, properName, unknown")
+            new Option<string?>(new[] {"--etymology-type", "-et"}, description: "Restrict results only certain etymological types.  compound, derivative, conversion, blend, shortening, backformation, initialism, acronym, variant, arbitrary, imitative, borrowing, properName, unknown"),
+            new Option<bool>(new[] {"--interactive", "-i"}, description: "Open the interactive text menu features, where you can run follow-up queries, change options, and export queries. Has reduced features when compared to the command line."),
+            new Option<string?>(new[] {"--export", "-e"}, description: "Export the results of this query.  Saved as XML for SuperMemo import. Specify a filename after switch, otherwise will be saved as OED-export.xml")
             // @TODO: add a switch which will prevent the interactive console mode from starting up.
         };
 
@@ -133,7 +139,7 @@ namespace OxfordV2
             rootCommand.AddCommand(lemmaCommand);
 
             rootCommand.Description = "An app which processes the Oxford English Dictionary Researcher API, and exports to SuperMemo.";
-            rootCommand.Handler = CommandHandler.Create<string, bool, bool, string?, string?, bool, bool, bool, string?, string?>(HandleArgs);
+            rootCommand.Handler = CommandHandler.Create<string, bool, bool, string?, string?, bool, bool, bool, string?, string?, bool, string?>(HandleArgs);
 
 
             string directoryPath = string.Concat(Environment.CurrentDirectory, "\\logs");
@@ -172,7 +178,31 @@ namespace OxfordV2
 
         }
 
-        public static void HandleArgs(string word, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType)
+        public static void HandleSenseArgs(string? restrictRegion, string? restrictUsage, bool restrictMain)
+        {
+            Console.WriteLine($"Sense sub command entered.");
+            Console.ReadLine();
+            // Console.WriteLine($"lemma: {lemma}");
+            Console.ReadLine();
+//            Console.WriteLine($"synonyms: {synonyms}");
+//            Console.WriteLine($"siblings: {siblings}");
+            Console.WriteLine($"restrictRegion: {restrictRegion}");
+            Console.WriteLine($"restrictUsage: {restrictUsage}");
+            Console.WriteLine($"restrictMain: {restrictMain}");
+
+            CurrentQuery query = new();
+            Console.ReadLine();
+            /*
+            if (!string.IsNullOrWhiteSpace(word))
+            {
+                Console.WriteLine("Looking up word IDs from file");
+                Console.ReadLine();
+                ConsoleUI.GetSenses(SavedQueries.LoadWordIds(query));
+            }
+            */
+
+        }
+        public static void HandleArgs(string word, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, bool interactive, string? export)
         {
                 Trace.WriteLine($"CLI word entered was {word}");
                 Trace.WriteLine($"obsoleteOnlyOption: {obsoleteOnly}");
@@ -184,8 +214,38 @@ namespace OxfordV2
                 Trace.WriteLine($"Revised: Old editions only? {revisedNot}");
                 Trace.WriteLine($"etymologyLanguage: {etymologyLanguage}");
                 Trace.WriteLine($"etymologyType: {etymologyType}");
+                Trace.WriteLine($"interactive: {interactive}");
+                Trace.WriteLine($"export: {export}");
 
                 CurrentQuery query = new();
+                if (currentIn) {                        
+                    query.CurrentIn = true;
+                }
+                if (!string.IsNullOrWhiteSpace(years))
+                {
+                    string[] yearDates = years.Split('-');
+                    try {
+                        
+                    query.StartYear = int.Parse(yearDates[0].Trim());
+                    Console.WriteLine($"query.StartYear: {query.StartYear}");
+                    Console.ReadLine();
+                    } catch {
+                        Console.WriteLine("Problem parsing start year.");
+                        Console.ReadLine();
+                    }
+                    try {
+                    query.EndYear = int.Parse(yearDates[1].Trim());
+                    Console.WriteLine($"query.EndYear: {query.EndYear}");
+                    Console.ReadLine();
+                    } catch {
+                        Console.WriteLine("Problem parsing end year.");
+                        Console.ReadLine();
+                    }
+                }
+                if (!string.IsNullOrWhiteSpace(partOfSpeech))
+                {
+                    query.PartsOfSpeech = partOfSpeech;
+                } 
                 if (obsoleteOnly)
                 {
                     query.IncludeObsolete = true;
@@ -194,6 +254,36 @@ namespace OxfordV2
                 {
                     query.IncludeObsolete = false;
                 }
+                if (revised)
+                {
+                    query.IncludeRevised = true;
+                }
+                if (revisedNot)
+                {
+                    query.IncludeRevised = false;
+                }
+
+                if (!string.IsNullOrWhiteSpace(etymologyLanguage))
+                {
+                    query.EtymologyLanguage = etymologyLanguage;
+                }
+
+                if (!string.IsNullOrWhiteSpace(etymologyType))
+                {
+                    query.EtymologyType = etymologyType;
+                }
+
+                if (interactive)
+                {
+                    query.InteractiveMode = true;
+                }
+                if (!string.IsNullOrWhiteSpace(export))
+                {
+                    SavedQueries.ExportFileName = export;
+                    query.ExportAfterSearch = true;
+
+                }
+
                 if (string.IsNullOrWhiteSpace(word))
                 {
                     Console.WriteLine("No CLI word entered.");
@@ -203,7 +293,7 @@ namespace OxfordV2
                 {
                     Console.WriteLine($"Entered CLI word is {word}");
                     var includeObsoleteProp = query.IncludeObsolete is null ? "null" : query.IncludeObsolete.Value.ToString();
-                    Console.WriteLine($"query.IncludeObsolete: {includeObsoleteProp}"); 
+                    Trace.WriteLine($"query.IncludeObsolete: {includeObsoleteProp}"); 
                     ConsoleUI.Start(word, query);
                 }
         }

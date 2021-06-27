@@ -16,6 +16,7 @@ namespace OxfordV2
 	    public static string WordID { get; set; }
 	    public static List<Quote> Quotes { get; set; }
 	    public static List<Sense> Senses { get; set; }
+		public static List<Definition> Definitions { get; set; }
 
 	    public static string ExportFileName { get; set; } = "OED-export.xml";
 
@@ -34,7 +35,6 @@ namespace OxfordV2
 			else {
 				Console.WriteLine($"{Senses.Count} senses saved for export.");
 			}
-			
 		}
 
 		public static void AddMember(Quote quote) {
@@ -45,6 +45,28 @@ namespace OxfordV2
 			else {
 				Console.WriteLine($"{Quotes.Count} quotes saved for export.");
 			}
+		}
+
+		public static void SaveWordId(CurrentQuery query) {
+			string wordIDFile = Path.Combine(Environment.CurrentDirectory, "word-id.txt");
+			File.Delete(wordIDFile);
+			using StreamWriter file = new(wordIDFile);
+
+			foreach (Definition d in query.Definitions)
+			{
+				file.WriteLine(d.WordID);
+			}
+		}
+
+		public static CurrentQuery LoadWordIds(CurrentQuery query) {
+			string wordIDFile = Path.Combine(Environment.CurrentDirectory, "word-id.txt");
+			string[] lines = System.IO.File.ReadAllLines(wordIDFile);
+			foreach (string line in lines) {
+				var blankDefinitionWithId = new Definition();
+				blankDefinitionWithId.WordID = line;
+				query.Definitions.Add(blankDefinitionWithId);
+			}
+			return query;
 		}
 
 	    public static void RenderXML() {

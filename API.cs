@@ -205,18 +205,51 @@ namespace OxfordV2
 			Trace.WriteLine("Called callWordsAPI");
 			// I am removing the limit of 1 definition -- going to return all at once
 			// Uri requestURL = new Uri(baseURL + "words/?lemma=" + query.UserEnteredWord + "&limit=1");
-			string queryURL;
+			string queryURL = @"words/?lemma=" + query.UserEnteredWord;
+		if (!string.IsNullOrWhiteSpace(query.PartsOfSpeech)) {
+			queryURL = queryURL + @"&part_of_speech=" + query.PartsOfSpeech.ToUpper();
+		}
+		if (!query.CurrentIn) {
+			if (query.StartYear != 0) {
+				queryURL = queryURL + @"&start_year=" + query.StartYear.ToString();
+			}
+			if (query.EndYear != 0) {
+				queryURL = queryURL + @"&end_year=" + query.EndYear.ToString();
+			}
+		} else {
+			if (query.StartYear != 0 && query.EndYear != 0) {
+				queryURL = queryURL + @"&current_in=" + query.StartYear.ToString() + "-" + query.EndYear.ToString();
+			} else if (query.StartYear != 0 && query.EndYear == 0) {
+				queryURL = queryURL + @"&current_in=" + query.StartYear.ToString() + "-";
+			} else {
+				queryURL = queryURL + @"&current_in=" + "-" + query.EndYear.ToString();
+			}
+		}
+		if (query.IncludeRevised.HasValue)
+		{
+			if (!query.IncludeRevised.Value) {
+				queryURL = queryURL + @"&revised=false";
+			} else {
+				queryURL = queryURL + @"&revised=true";
+			}
+		}
 
 		if (query.IncludeObsolete.HasValue) {
 			if (!query.IncludeObsolete.Value) {
-				queryURL = @"words/?lemma=" + query.UserEnteredWord + @"&obsolete=false";
+				queryURL = queryURL + @"&obsolete=false";
 			} else {
-				queryURL = @"words/?lemma=" + query.UserEnteredWord + @"&obsolete=true";
+				queryURL = queryURL + @"&obsolete=true";
 				}
 			}
-			else {
-				queryURL = @"words/?lemma=" + query.UserEnteredWord;
-			}
+
+		if (!string.IsNullOrWhiteSpace(query.EtymologyLanguage)) {
+			queryURL = queryURL + @"&etymology_language=" + query.EtymologyLanguage;
+		}
+
+		if (!string.IsNullOrWhiteSpace(query.EtymologyType)) {
+			queryURL = queryURL + @"&etymology_type=" + query.EtymologyType.ToLower();
+		}
+
 
 			Uri requestURL = new Uri(baseURL + queryURL);
 			Console.WriteLine($"requestURL: {requestURL.ToString()}");

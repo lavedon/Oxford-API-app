@@ -15,8 +15,10 @@ namespace OxfordV2
 			running = true;
 			// Call the definition method before main menu
 			getDefinition(query, word);
-			while (running) {
-				MainMenu(query);
+			if (query.InteractiveMode) {
+				while (running) {
+					MainMenu(query);
+				}
 			}
 			
 
@@ -30,6 +32,8 @@ namespace OxfordV2
 		    }
 	    }
 
+		// Process the interactive ConsoleApp stuff and look for -o flag
+		// Or open and start dates to process years
 		private static string processInput(CurrentQuery query, string userInput)
         {
 			userInput = userInput.ToLower().Trim();
@@ -225,28 +229,21 @@ namespace OxfordV2
 			    OptionsMenu.StartOptionsMenu(query);
 			    break;
 
-			    case ("s" or "senses"):
-			    Trace.WriteLine("Get senses selected.");
-			    query.QueryMode = Modes.Senses;
-			    API.APICalls(query);
-			    break;
+                case ("s" or "senses"):
+                    GetSenses(query);
+                    break;
 
-			    case ("q" or "quotations"):
+                case ("q" or "quotations"):
 			    Trace.WriteLine("Get quotaions based on word selected.");
 			    query.QueryMode = Modes.Quotations;
 			    API.APICalls(query);
 			    break;
 
-			    case ("e" or "export" or "export results"):
-			    Trace.WriteLine("Export quotations.");
-				if (SavedQueries.Quotes.Count != 0 || SavedQueries.Senses.Count != 0)
-			    	SavedQueries.RenderXML();	
-				else {
-					Console.WriteLine("You have not yet saved anything for export.");
-				}
-			    break;
+                case ("e" or "export" or "export results"):
+                    exportQuery();
+                    break;
 
-			    case ("x" or "exit"):
+                case ("x" or "exit"):
 			    Trace.WriteLine("Exit selected.");
 			    running = false;
 			    break;
@@ -257,9 +254,30 @@ namespace OxfordV2
 		    }
 	    }
 
+        public static void GetSenses(CurrentQuery query)
+        {
+            Trace.WriteLine("Get senses selected.");
+            query.QueryMode = Modes.Senses;
+            API.APICalls(query);
+        }
+
+        private static void exportQuery()
+        {
+            Trace.WriteLine("Export quotations.");
+			// @TODO add Definitions 
+            if (SavedQueries.Quotes.Count != 0 || SavedQueries.Senses.Count != 0)
+                SavedQueries.RenderXML();
+            else
+            {
+                Console.WriteLine("You have not yet saved anything for export.");
+            }
+        }
+
         private static void getDefinition(CurrentQuery query, string userInput)
         {
-            query.UserEnteredWord = processInput(query, userInput);
+			// Remove this?
+            // query.UserEnteredWord = processInput(query, userInput);
+			query.UserEnteredWord = userInput.Trim().ToLower();
             try
             {
                 Trace.WriteLine("Automatically looking up user entered word:");
@@ -272,7 +290,11 @@ namespace OxfordV2
                 Trace.WriteLine("Exception on automatic word look up");
                 Trace.WriteLine(ex);
             }
+			SavedQueries.SaveWordId(query);
             showDefinitions(query);
+			if (query.ExportAfterSearch) {
+				exportQuery();
+			}
         }
     }
 }
