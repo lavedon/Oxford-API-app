@@ -113,7 +113,7 @@ namespace OxfordV2
             quoteCommand.Description = "Get quotations from the OED.  Get quotations based on a word or sense id (uses the last searched sense or word for the id).  Alternatively, you can search all quotations based on some parameters.";
             surfaceCommand.Description = "Get surface-form records based on a word or passed word id.  A surface-form record temize each of the specific orthographic forms that a word may take when it occurs in real-world text";
             semanticClassCommand.Description = "Search semantic classes.  Get related semantic classes based on sense id, branch, parent, ancestorys, children, siblings, descendants, etc.";
-            lemmaCommand.Description = "Lemmatize test.  Enter a word or a string of words and return lemmas for each word or words.";
+            lemmaCommand.Description = "Lemmatize text.  Enter a word or a string of words and return lemmas for each word or words.";
 
 
 

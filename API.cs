@@ -283,9 +283,11 @@ namespace OxfordV2
 			Trace.WriteLine("Making the request");
 			Console.WriteLine(requestURL.ToString());
 			try {
-				client.Timeout = TimeSpan.FromMinutes(10);
+				// Below was causing errors on some repeated requests.
+//				client.Timeout = TimeSpan.FromMinutes(10);
 
-				var response = client.GetStreamAsync(requestURL).Result;
+				CancellationTokenSource timeoutSource = new CancellationTokenSource(2000);
+				var response = client.GetStreamAsync(requestURL, timeoutSource.Token).Result;
 				Trace.WriteLine(response);
 			}
 			catch (AggregateException ae)
@@ -309,15 +311,15 @@ namespace OxfordV2
 
 			try {
 			var response = client.GetStreamAsync(requestURL).Result;
-			Trace.WriteLine("Got senses responses.");
+			Console.WriteLine("Got senses responses.");
 			JSONResponse = JsonDocument.Parse(response);
-			Trace.WriteLine("Set JSONResponse to the response.");
+			Console.WriteLine("Set JSONResponse to the response.");
 			}
 			catch(Exception ex)
 			{
-				Trace.WriteLine("Exception");
-				Trace.WriteLine(ex.GetType());
-				Trace.WriteLine(ex.Message);
+				Console.WriteLine("Exception");
+				Console.WriteLine(ex.GetType());
+				Console.WriteLine(ex.Message);
 			}
 
 		};
@@ -584,9 +586,9 @@ namespace OxfordV2
 			}
 			else 
 			{
-			resetHeaders(client);
 			foreach (Definition d in query.Definitions)
 			{
+				resetHeaders(client);
 				query.CurrentWordID = d.WordID;
 				Task getSenses = new Task(callSensesAPI, "CallSenses");
 				getSenses.ConfigureAwait(false);
@@ -595,7 +597,7 @@ namespace OxfordV2
 
 				Trace.WriteLine("Ran senses using start.");
 
-				JsonElement senseData = JSONResponse.RootElement.GetProperty("data");
+				JsonElement senseData = JSONResponse.RootElement.GetProperty("data").Clone();
 
 				Sense currentSense = new();
 				foreach (JsonElement item in senseData.EnumerateArray())
@@ -699,9 +701,9 @@ namespace OxfordV2
 					}
 					} else {
 						SavedQueries.AddMember(currentSense);
-
-						}
+						currentSense.Dispose();
 					}
+				}
 					catch (Exception ex)
 					{
 						Trace.WriteLine(ex);
