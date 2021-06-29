@@ -267,16 +267,36 @@ namespace OxfordV2
 		{
 			Trace.WriteLine("Called callSensesAPI");
 			string queryURL;
-			if (query.IncludeObsolete.HasValue) {
-				if (!query.IncludeObsolete.Value) {
-					queryURL = @"word/" + query.CurrentWordID + @"/senses/?obsolete=false";
-				}
-				else {
-					queryURL = @"word/" + query.CurrentWordID + @"/senses/?obsolete=true";
-				}
+			if (query.CurrentSenseOptions.Lemma is not null)
+			{
+				queryURL = @"senses/?lemma=" + query.CurrentSenseOptions.Lemma;
 			}
 			else {
 				queryURL = @"word/" + query.CurrentWordID + @"/senses/";
+			}
+			if (query.IncludeObsolete.HasValue) {
+				if (!query.IncludeObsolete.Value) {
+					queryURL = @"/senses/?obsolete=false";
+				}
+				else {
+					queryURL = @"/senses/?obsolete=true";
+				}
+			}
+			if (!string.IsNullOrWhiteSpace(query.CurrentSenseOptions.RestrictRegion))
+			{
+				queryURL = queryURL + @"&region=" + query.CurrentSenseOptions.RestrictRegion;
+			}
+			if (!string.IsNullOrWhiteSpace(query.CurrentSenseOptions.RestrictUsage))
+			{
+				queryURL = queryURL + @"&usage=" + query.CurrentSenseOptions.RestrictUsage;
+			}
+			if (!string.IsNullOrWhiteSpace(query.CurrentSenseOptions.Topic))
+			{
+				queryURL = queryURL + @"&topic=";
+			}
+			if (query.CurrentSenseOptions.RestrictMain)
+			{
+				queryURL = queryURL + @"&main_current_sense=true";
 			}
 
 			Uri requestURL = new Uri(baseURL + queryURL);
@@ -311,9 +331,9 @@ namespace OxfordV2
 
 			try {
 			var response = client.GetStreamAsync(requestURL).Result;
-			Console.WriteLine("Got senses responses.");
+			Trace.WriteLine("Got senses responses.");
 			JSONResponse = JsonDocument.Parse(response);
-			Console.WriteLine("Set JSONResponse to the response.");
+			Trace.WriteLine("Set JSONResponse to the response.");
 			}
 			catch(Exception ex)
 			{
@@ -572,146 +592,30 @@ namespace OxfordV2
 				*/
 				string lemma = firstWord.GetProperty("lemma").GetString();
 				Console.WriteLine($"The lemma of {query.UserEnteredWord} is {lemma}");
-//				Console.WriteLine(lamma.ToString());
+//				Console.WriteLine(lemma.ToString());
 				
 			}
 		}
 		else if (query.QueryMode == Modes.Senses)
 		{
 			Trace.WriteLine("API.cs is starting senses mode.");
-			if (query.HasLookedUpWord == false)
+			if (query.HasLookedUpWord == false && string.IsNullOrWhiteSpace(query.CurrentSenseOptions.Lemma))
 			{
 				// @TODO remove this. Have it auto-call up the first ID.
 				Console.WriteLine("You need to first ask for a definition.");
 			}
+			else if (!string.IsNullOrWhiteSpace(query.CurrentSenseOptions.Lemma))
+			{
+				makeSenseRequest(query, client, callSensesAPI);
+			}
 			else 
 			{
-			foreach (Definition d in query.Definitions)
-			{
-				resetHeaders(client);
-				query.CurrentWordID = d.WordID;
-				Task getSenses = new Task(callSensesAPI, "CallSenses");
-				getSenses.ConfigureAwait(false);
-				getSenses.RunSynchronously();
-
-
-				Trace.WriteLine("Ran senses using start.");
-
-				JsonElement senseData = JSONResponse.RootElement.GetProperty("data").Clone();
-
-				Sense currentSense = new();
-				foreach (JsonElement item in senseData.EnumerateArray())
+				foreach (Definition d in query.Definitions)
 				{
-				try {
-					// Print the quote
-					
-					currentSense.Definition = item.GetProperty("definition").ToString();
-					currentSense.Start = item.GetProperty("daterange").GetProperty("start").GetInt16(); 
-					currentSense.IsObsolete = item.GetProperty("daterange")
-						.GetProperty("obsolete").GetBoolean();
-				    currentSense.IsMainUsage = item.GetProperty("main_current_sense").GetBoolean();
-					currentSense.OedReference = item.GetPropertyExt("oed_reference")?.ToString();
-					// currentSense.Usage = item.GetProperty("")
-					// Get the sense ID 
-					currentSense.SenseID = item.GetPropertyExt("id")?.ToString();
-					Console.WriteLine(currentSense.Definition);
-					Console.WriteLine("Sense first used: {0}", currentSense.Start);
-					if (currentSense.IsObsolete)
-					{
-						Console.WriteLine("This usage is obsolete.");
-					}
-					else 
-					{
-						Console.WriteLine("This sense is not obsolete.");
-					}
-					if (currentSense.IsMainUsage)
-					{
-						Console.WriteLine("This sense is the main sense for the word.");
-					}
-					else 
-					{
-						Console.WriteLine("Not the main sense for the word.");
-					}
-					Console.WriteLine(currentSense.OedReference);
-
-					query.Senses.Add(currentSense);
-					Console.WriteLine();
-
-                    if (query.InteractiveMode == true) {
-					Console.WriteLine("---- S to Save - X to exit - O for other options");
-					Console.WriteLine("Or just press Enter for more senses----");
-					string input = Console.ReadLine().Trim().ToLower();
-					if (input == "s")
-					{
-						SavedQueries.AddMember(currentSense);
-					}
-					else if (input == "x")
-					{
-						break;
-					}
-				    else if (input == "o")
-					{
-						bool otherOptionsMenu = true;
-						while (otherOptionsMenu)
-						{
-							Console.WriteLine("Q - Get Quotations using this sense.");
-							Console.WriteLine("S - Get Synonyms for this sense.");
-							Console.WriteLine("B - Get Siblings for this sense.");
-							Console.WriteLine("X - Exit this menu.");
-							Console.WriteLine("-----------------------------------");
-							var response = Console.ReadLine().Trim().ToLower();
-							switch (response)
-							{
-								case ("q" or "quotation" or "quotations"):
-								{
-									Console.WriteLine("First, save the above definition for export? Y/N");
-									var saveResponse = Console.ReadLine().Trim().ToLower();
-									if (saveResponse == "y") {
-										SavedQueries.AddMember(currentSense);
-									} 
-									query.CurrentSenseID = currentSense.SenseID;
-									GetQuotations(query, client, currentSense);
-									otherOptionsMenu = false;
-									break;
-								}
-
-								case ("s" or "synonyms" or "syn"):
-									Console.WriteLine("Get Synonyms");
-									GetSynonyms(query, client, currentSense);
-									otherOptionsMenu = false;
-
-								break;
-
-								case ("b" or "siblings" or "sibling" or "sib"):
-									// GetSiblings(query, client, currentSense);
-									Console.WriteLine("Get Siblings");
-									otherOptionsMenu = false;
-								break;
-
-								case ("x" or "e" or "exit"):
-									otherOptionsMenu = false;
-									break;
-
-								default:
-									Console.WriteLine("No selection made.");
-									break;
-							}
-
-						}
-					}
-					} else {
-						SavedQueries.AddMember(currentSense);
-						currentSense.Dispose();
-					}
-				}
-					catch (Exception ex)
-					{
-						Trace.WriteLine(ex);
-					}
-
+					query.CurrentWordID = d.WordID;
+					makeSenseRequest(query, client, callSensesAPI);
 				}
 			}
-		}
 		}
 		else if (query.QueryMode == Modes.Quotations)
 		{
@@ -724,6 +628,136 @@ namespace OxfordV2
 
 		// client.Dispose();
 	}
+
+        private static void makeSenseRequest(CurrentQuery query, HttpClient client, Action<object> callSensesAPI)
+        {
+            resetHeaders(client);
+            Task getSenses = new Task(callSensesAPI, "CallSenses");
+            getSenses.ConfigureAwait(false);
+            getSenses.RunSynchronously();
+
+
+            Trace.WriteLine("Ran senses using start.");
+
+            JsonElement senseData = JSONResponse.RootElement.GetProperty("data").Clone();
+
+            Sense currentSense = new();
+            foreach (JsonElement item in senseData.EnumerateArray())
+            {
+                try
+                {
+                    // Print the quote
+
+                    currentSense.Definition = item.GetProperty("definition").ToString();
+                    currentSense.Start = item.GetProperty("daterange").GetProperty("start").GetInt16();
+                    currentSense.IsObsolete = item.GetProperty("daterange")
+                        .GetProperty("obsolete").GetBoolean();
+                    currentSense.IsMainUsage = item.GetProperty("main_current_sense").GetBoolean();
+                    currentSense.OedReference = item.GetPropertyExt("oed_reference")?.ToString();
+                    // currentSense.Usage = item.GetProperty("")
+                    // Get the sense ID 
+                    currentSense.SenseID = item.GetPropertyExt("id")?.ToString();
+                    Console.WriteLine(currentSense.Definition);
+                    Console.WriteLine("Sense first used: {0}", currentSense.Start);
+                    if (currentSense.IsObsolete)
+                    {
+                        Console.WriteLine("This usage is obsolete.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("This sense is not obsolete.");
+                    }
+                    if (currentSense.IsMainUsage)
+                    {
+                        Console.WriteLine("This sense is the main sense for the word.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Not the main sense for the word.");
+                    }
+                    Console.WriteLine(currentSense.OedReference);
+
+                    query.Senses.Add(currentSense);
+                    Console.WriteLine();
+
+                    if (query.InteractiveMode == true)
+                    {
+                        Console.WriteLine("---- S to Save - X to exit - O for other options");
+                        Console.WriteLine("Or just press Enter for more senses----");
+                        string input = Console.ReadLine().Trim().ToLower();
+                        if (input == "s")
+                        {
+                            SavedQueries.AddMember(currentSense);
+                        }
+                        else if (input == "x")
+                        {
+                            break;
+                        }
+                        else if (input == "o")
+                        {
+                            bool otherOptionsMenu = true;
+                            while (otherOptionsMenu)
+                            {
+                                Console.WriteLine("Q - Get Quotations using this sense.");
+                                Console.WriteLine("S - Get Synonyms for this sense.");
+                                Console.WriteLine("B - Get Siblings for this sense.");
+                                Console.WriteLine("X - Exit this menu.");
+                                Console.WriteLine("-----------------------------------");
+                                var response = Console.ReadLine().Trim().ToLower();
+                                switch (response)
+                                {
+                                    case ("q" or "quotation" or "quotations"):
+                                        {
+                                            Console.WriteLine("First, save the above definition for export? Y/N");
+                                            var saveResponse = Console.ReadLine().Trim().ToLower();
+                                            if (saveResponse == "y")
+                                            {
+                                                SavedQueries.AddMember(currentSense);
+                                            }
+                                            query.CurrentSenseID = currentSense.SenseID;
+                                            GetQuotations(query, client, currentSense);
+                                            otherOptionsMenu = false;
+                                            break;
+                                        }
+
+                                    case ("s" or "synonyms" or "syn"):
+                                        Console.WriteLine("Get Synonyms");
+                                        GetSynonyms(query, client, currentSense);
+                                        otherOptionsMenu = false;
+
+                                        break;
+
+                                    case ("b" or "siblings" or "sibling" or "sib"):
+                                        // GetSiblings(query, client, currentSense);
+                                        Console.WriteLine("Get Siblings");
+                                        otherOptionsMenu = false;
+                                        break;
+
+                                    case ("x" or "e" or "exit"):
+                                        otherOptionsMenu = false;
+                                        break;
+
+                                    default:
+                                        Console.WriteLine("No selection made.");
+                                        break;
+                                }
+
+                            }
+                        }
+                    }
+                    else
+                    {
+                        SavedQueries.AddMember(currentSense);
+                        currentSense.Dispose();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Trace.WriteLine(ex);
+                }
+
+            }
+        }
     }
 }
 // @TODO If a word is not found return a message "word not found in dictionary."  

@@ -1,2 +1,0 @@
-mail_nn01
-mail_nn03

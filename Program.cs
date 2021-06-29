@@ -38,25 +38,33 @@ namespace OxfordV2
             var senseSiblingsArgument = new Option<string?>(name: "siblings", description: "Get senses that are the 'siblings' or the specified sense. Note: Requires a sense id.");
             */
 
-            var senseRegionOption = new Option<string?>(
+            var senseRegionOption = new Option<string>(
                 new[] {"--restrict-region", "-rr"}, description: "Restrict results to a particular region or dialect. i.e. 'Ireland', 'Northern England'"
-            );
+            ){ IsRequired = false };
             // @TODO make this option an enum of possible values
-            var senseUsageOption = new Option<string?>(
+            var senseUsageOption = new Option<string>(
                 new[] {"--restrict-usage", "-ru"}, description: "Restrict returned sense to a partiular register.  Available values:" + 
                 "allusive, archaic, colloquial and slang, derogatory, disused, euphemistic, historical, humorous, ironic, irregular, poetic and literary, rare, regional"
-            );
+            ){ IsRequired = false };
             var senseMainOption = new Option<bool>(
                 new[] {"--restrict-main", "-rm"}, description: "Return only the main sense only. Note: The OED does not currently list a main sense for every word."
-            );
+            ){ IsRequired = false };
+
+            var senseTopicOption = new Option<string>(
+                new[] {"--topic", "-t"}, 
+                description: "Restrict results to senses relating to a particular topic or domain, e.g. 'Heraldry', 'Physics', 'Basketball'. (For the full set of available values, see the 'Subject' section at http://www.oed.com/browsecategory (paywalled)."
+            ){
+                IsRequired = false
+            };
             senseCommand.AddOption(senseLemmaArgument);
             // senseCommand.AddArgument(senseSynonymArgument);
             // senseCommand.AddArgument(senseSiblingsArgument);
             senseCommand.AddOption(senseRegionOption);
             senseCommand.AddOption(senseUsageOption);
             senseCommand.AddOption(senseMainOption);
+            senseCommand.AddOption(senseTopicOption);
 
-            senseCommand.Handler = CommandHandler.Create<string, string?, string?, bool>(HandleSenseArgs);
+            senseCommand.Handler = CommandHandler.Create<string, string?, string?, bool, string?>(HandleSenseArgs);
 
             
 
@@ -180,22 +188,30 @@ namespace OxfordV2
 
         }
 
-        public static void HandleSenseArgs(string lemma, string? restrictRegion, string? restrictUsage, bool restrictMain)
+        public static void HandleSenseArgs(string? lemma, string? restrictRegion, string? restrictUsage, bool restrictMain, string? topic)
         {
-            Console.WriteLine($"Sense sub command entered.");
-            Console.WriteLine($"lemma: {lemma}");
-//            Console.WriteLine($"synonyms: {synonyms}");
-//            Console.WriteLine($"siblings: {siblings}");
-            Console.WriteLine($"restrictRegion: {restrictRegion}");
-            Console.WriteLine($"restrictUsage: {restrictUsage}");
-            Console.WriteLine($"restrictMain: {restrictMain}");
+            Trace.WriteLine($"Sense sub command entered.");
+            Trace.WriteLine($"lemma: {lemma}");
+      //    Trace.WriteLine($"synonyms: {synonyms}");
+      //    Trace.WriteLine($"siblings: {siblings}");
+            Trace.WriteLine($"restrictRegion: {restrictRegion}");
+            Trace.WriteLine($"restrictUsage: {restrictUsage}");
+            Trace.WriteLine($"restrictMain: {restrictMain}");
+            Trace.WriteLine($"topic: {topic}");
 
             CurrentQuery query = new();
+            query.CurrentSenseOptions = new(lemma, restrictRegion, restrictUsage, restrictMain, topic);
             if (string.IsNullOrWhiteSpace(lemma))
             {
                 Console.WriteLine("Looking up word IDs from file");
                 ConsoleUI.GetSenses(SavedQueries.LoadWordIds(query));
             }
+            else
+            { 
+                query.HasLookedUpWord = true;
+                ConsoleUI.GetSenses(query);
+            }
+
 
         }
         public static void HandleArgs(string word, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, bool interactive, string? export)

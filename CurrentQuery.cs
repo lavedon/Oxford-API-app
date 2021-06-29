@@ -1,3 +1,4 @@
+#nullable enable
 #nullable disable warnings
 using System;
 using System.Diagnostics;
@@ -16,6 +17,7 @@ namespace OxfordV2
 	public class CurrentQuery : IDisposable
 	{
 		// Create the object the same time the user looks up a word
+		public SenseOptions? CurrentSenseOptions { get; set; }
 		public string UserEnteredWord { get; set; } 
 		
 		public string CurrentSenseID { get; set; }
@@ -72,6 +74,7 @@ namespace OxfordV2
 			this.OpenEnd = false;
 			this.InteractiveMode = false;
 			this.ExportAfterSearch = false;
+			this.CurrentSenseOptions = null;
 			
 		} 
 		public string Source { get; set; }
