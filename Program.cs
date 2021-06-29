@@ -12,21 +12,12 @@ namespace OxfordV2
 
         static void Main(string[] args)
         {
-            /*
-			Console.WriteLine($"args are: {args.ToString()}");
+			Trace.WriteLine($"args are: {args.ToString()}");
 			foreach (var a in args){
 				Console.WriteLine(a);
 			}
-			Console.WriteLine($"args.Length: {args.Length}");
-			Console.ReadLine();
-            */
+			Trace.WriteLine($"args.Length: {args.Length}");
 
-/*
-            var excludeObsoleteOption = new Option(new[] {
-            "--obsolete-exclude","-eo"},
-                description: "Exclude obsolete usages."
-            );
-			*/
 
             // @Todo implement Lemma sub-command
             var senseCommand = new Command("Sense");
@@ -73,18 +64,18 @@ namespace OxfordV2
 
             var quoteCommand = new Command("Quote");
             // @TODO make this an enum with male and female
-            var quoteAuthorGender = new Option<string?>(
+            var quoteAuthorGender = new Option<string>(
                 new[] {"--author-gender", "-ag"}, description: "Specificy the author's gender. Accepts male and female. For example, -ag male, will return only quotes by men."
-            );
-            var quoteSourceTitle = new Option<string?>(
+            ){ IsRequired = false };
+            var quoteSourceTitle = new Option<string>(
                 new[] {"--source-title", "-st"}, description: "Find quotations from a particular source, such as a book or periodical.  Example, -st Bleak House"
-            );
+            ){ IsRequired = false };
             var quoteFirstInWord = new Option<bool>(
                 new[] {"--first-word", "-fw"}, description: "Restrict results to quotations which are the earliest evidence for a word."
-            );
+            ){ IsRequired = false };
             var quoteFirstInSense = new Option<bool>(
                 new[] {"--first-sense", "-fs"}, description: "Restrict results to quotations which are the earliest evidence for a sense."
-            );
+            ){ IsRequired = false };
             quoteCommand.AddOption(quoteAuthorGender);
             quoteCommand.AddOption(quoteSourceTitle);
             quoteCommand.AddOption(quoteFirstInWord);
@@ -169,8 +160,11 @@ namespace OxfordV2
                 }
                 string fullPath = string.Concat(Environment.CurrentDirectory, $"\\logs\\Log_OxfordApplication_{DateTime.Now.ToString("yyyyMMdd-HHmm")}.txt");
                 Trace.WriteLine("Path is {0}", fullPath);
-                TextWriterTraceListener tr2 = new TextWriterTraceListener(System.IO.File.CreateText(fullPath));
+                
+                TextWriterTraceListener tr1 = new TextWriterTraceListener(System.Console.Out);
+                Trace.Listeners.Add(tr1);
 
+                TextWriterTraceListener tr2 = new TextWriterTraceListener(System.IO.File.CreateText(fullPath));
                 Trace.Listeners.Add(tr2);
             }
 

@@ -18,6 +18,7 @@ namespace OxfordV2
 	{
 		// Create the object the same time the user looks up a word
 		public SenseOptions? CurrentSenseOptions { get; set; }
+		public QuoteOptions? CurrentQuoteOptions { get; set; }
 		public string UserEnteredWord { get; set; } 
 		
 		public string CurrentSenseID { get; set; }
@@ -75,6 +76,7 @@ namespace OxfordV2
 			this.InteractiveMode = false;
 			this.ExportAfterSearch = false;
 			this.CurrentSenseOptions = null;
+			this.CurrentQuoteOptions = null;
 			
 		} 
 		public string Source { get; set; }

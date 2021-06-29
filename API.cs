@@ -200,66 +200,34 @@ namespace OxfordV2
 		var client = new HttpClient();
 
 		// @TODO make this one Action delegate - with a method that parses the query and responses
-		Action<object> callWordsAPI = (Object obj) => 
-		{
-			Trace.WriteLine("Called callWordsAPI");
-			// I am removing the limit of 1 definition -- going to return all at once
-			// Uri requestURL = new Uri(baseURL + "words/?lemma=" + query.UserEnteredWord + "&limit=1");
-			string queryURL = @"words/?lemma=" + query.UserEnteredWord;
-		if (!string.IsNullOrWhiteSpace(query.PartsOfSpeech)) {
-			queryURL = queryURL + @"&part_of_speech=" + query.PartsOfSpeech.ToUpper();
-		}
-		if (!query.CurrentIn) {
-			if (query.StartYear != 0) {
-				queryURL = queryURL + @"&start_year=" + query.StartYear.ToString();
-			}
-			if (query.EndYear != 0) {
-				queryURL = queryURL + @"&end_year=" + query.EndYear.ToString();
-			}
-		} else {
-			if (query.StartYear != 0 && query.EndYear != 0) {
-				queryURL = queryURL + @"&current_in=" + query.StartYear.ToString() + "-" + query.EndYear.ToString();
-			} else if (query.StartYear != 0 && query.EndYear == 0) {
-				queryURL = queryURL + @"&current_in=" + query.StartYear.ToString() + "-";
-			} else {
-				queryURL = queryURL + @"&current_in=" + "-" + query.EndYear.ToString();
-			}
-		}
-		if (query.IncludeRevised.HasValue)
-		{
-			if (!query.IncludeRevised.Value) {
-				queryURL = queryURL + @"&revised=false";
-			} else {
-				queryURL = queryURL + @"&revised=true";
-			}
-		}
+		Action<object> callWordsAPI = (Object obj) =>
+        {
+            Trace.WriteLine("Called callWordsAPI");
+            // I am removing the limit of 1 definition -- going to return all at once
+            // Uri requestURL = new Uri(baseURL + "words/?lemma=" + query.UserEnteredWord + "&limit=1");
+            string queryURL = @"words/?lemma=" + query.UserEnteredWord;
+            queryURL = coreQueryFeatures(query, queryURL);
 
-		if (query.IncludeObsolete.HasValue) {
-			if (!query.IncludeObsolete.Value) {
-				queryURL = queryURL + @"&obsolete=false";
-			} else {
-				queryURL = queryURL + @"&obsolete=true";
-				}
-			}
+            if (!string.IsNullOrWhiteSpace(query.EtymologyLanguage))
+            {
+                queryURL = queryURL + @"&etymology_language=" + query.EtymologyLanguage;
+            }
 
-		if (!string.IsNullOrWhiteSpace(query.EtymologyLanguage)) {
-			queryURL = queryURL + @"&etymology_language=" + query.EtymologyLanguage;
-		}
-
-		if (!string.IsNullOrWhiteSpace(query.EtymologyType)) {
-			queryURL = queryURL + @"&etymology_type=" + query.EtymologyType.ToLower();
-		}
+            if (!string.IsNullOrWhiteSpace(query.EtymologyType))
+            {
+                queryURL = queryURL + @"&etymology_type=" + query.EtymologyType.ToLower();
+            }
 
 
-			Uri requestURL = new Uri(baseURL + queryURL);
-			Console.WriteLine($"requestURL: {requestURL.ToString()}");
-			Trace.WriteLine("Making the request");
+            Uri requestURL = new Uri(baseURL + queryURL);
+            Console.WriteLine($"requestURL: {requestURL.ToString()}");
+            Trace.WriteLine("Making the request");
 
-			var response = client.GetStreamAsync(requestURL).Result;
-			Trace.WriteLine("Got responses.");
-			JSONResponse = JsonDocument.Parse(response);
-			Trace.WriteLine("Set JSONResponse to the response.");
-		};
+            var response = client.GetStreamAsync(requestURL).Result;
+            Trace.WriteLine("Got responses.");
+            JSONResponse = JsonDocument.Parse(response);
+            Trace.WriteLine("Set JSONResponse to the response.");
+        };
 
 			
 
@@ -274,14 +242,8 @@ namespace OxfordV2
 			else {
 				queryURL = @"word/" + query.CurrentWordID + @"/senses/";
 			}
-			if (query.IncludeObsolete.HasValue) {
-				if (!query.IncludeObsolete.Value) {
-					queryURL = @"/senses/?obsolete=false";
-				}
-				else {
-					queryURL = @"/senses/?obsolete=true";
-				}
-			}
+			queryURL = coreQueryFeatures(query, queryURL);
+
 			if (!string.IsNullOrWhiteSpace(query.CurrentSenseOptions.RestrictRegion))
 			{
 				queryURL = queryURL + @"&region=" + query.CurrentSenseOptions.RestrictRegion;
@@ -628,6 +590,65 @@ namespace OxfordV2
 
 		// client.Dispose();
 	}
+
+        private static string coreQueryFeatures(CurrentQuery query, string queryURL)
+        {
+            if (!string.IsNullOrWhiteSpace(query.PartsOfSpeech))
+            {
+                queryURL = queryURL + @"&part_of_speech=" + query.PartsOfSpeech.ToUpper();
+            }
+            if (!query.CurrentIn)
+            {
+                if (query.StartYear != 0)
+                {
+                    queryURL = queryURL + @"&start_year=" + query.StartYear.ToString();
+                }
+                if (query.EndYear != 0)
+                {
+                    queryURL = queryURL + @"&end_year=" + query.EndYear.ToString();
+                }
+            }
+            else
+            {
+                if (query.StartYear != 0 && query.EndYear != 0)
+                {
+                    queryURL = queryURL + @"&current_in=" + query.StartYear.ToString() + "-" + query.EndYear.ToString();
+                }
+                else if (query.StartYear != 0 && query.EndYear == 0)
+                {
+                    queryURL = queryURL + @"&current_in=" + query.StartYear.ToString() + "-";
+                }
+                else
+                {
+                    queryURL = queryURL + @"&current_in=" + "-" + query.EndYear.ToString();
+                }
+            }
+            if (query.IncludeRevised.HasValue)
+            {
+                if (!query.IncludeRevised.Value)
+                {
+                    queryURL = queryURL + @"&revised=false";
+                }
+                else
+                {
+                    queryURL = queryURL + @"&revised=true";
+                }
+            }
+
+            if (query.IncludeObsolete.HasValue)
+            {
+                if (!query.IncludeObsolete.Value)
+                {
+                    queryURL = queryURL + @"&obsolete=false";
+                }
+                else
+                {
+                    queryURL = queryURL + @"&obsolete=true";
+                }
+            }
+
+            return queryURL;
+        }
 
         private static void makeSenseRequest(CurrentQuery query, HttpClient client, Action<object> callSensesAPI)
         {
