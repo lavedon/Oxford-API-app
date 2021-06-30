@@ -15,11 +15,61 @@ namespace OxfordV2
 {
     public static class API
     {
+        public static JsonDocument JSONResponse { get; set; }
 	  	public static string baseURL { get; set; } = "https://oed-researcher-api.oxfordlanguages.com/oed/api/v0.2/";
 
 		public static void GetSynonyms(CurrentQuery query, HttpClient client, Sense currentSense) {
 		}
  
+		private static void makeCLIQuoteRequest (CurrentQuery query, HttpClient client, string queryURL)
+		{
+
+			Action<object> callQuotationsAPI = (Object obj) => 
+			{
+				Uri requestURL = new Uri(baseURL + queryURL);
+			try {
+				var response = client.GetStreamAsync(requestURL).Result;
+				JSONResponse = JsonDocument.Parse(response);
+			}
+			catch(Exception ex)
+			{
+				Trace.WriteLine("Exception");
+				Trace.WriteLine(ex.GetType());
+				Trace.WriteLine(ex.Message);
+			}
+			};
+			resetHeaders(client);
+			Task getQuotes = new Task(callQuotationsAPI, "Call Quotations");
+			getQuotes.RunSynchronously();
+			JsonElement root = JSONResponse.RootElement;
+			displayQuotes(query, root);
+		}
+
+		public static void GetQuotations(CurrentQuery query, HttpClient client)
+		{
+			Trace.WriteLine("Called GetQuotations. Did not pass a sense.");
+			string queryURL;
+			if (query.CurrentQuoteOptions.UseWords)
+			{
+				// @TODO test whether or not coreQuery options such as obsolete, etc, year 
+				// will work on this endpoint.
+				foreach (Definition d in query.Definitions)
+				{
+					queryURL = "word/";
+					query.CurrentWordID = d.WordID;
+					queryURL = queryURL + d.WordID + "/quotations/";
+					makeCLIQuoteRequest(query, client, queryURL);
+
+				}
+			}
+			if (query.CurrentQuoteOptions.UseSenses)
+			{
+				queryURL = "sense/";
+			}
+
+
+
+		}
 		public static void GetQuotations(CurrentQuery query, HttpClient client, Sense currentSense = null) {
 		Action<object> callQuotationsAPI = (Object obj) => 
 		{
@@ -81,83 +131,91 @@ namespace OxfordV2
 			Console.WriteLine("first.");
 		}
 		else
-		{
-		resetHeaders(client);
-		Task getQuotes = new Task(callQuotationsAPI, "Call Quotations");
-		getQuotes.RunSynchronously();
-		Trace.WriteLine("Ran quotations synchronously.");
-		Trace.WriteLine("Parsing quotations JSON.");
+            {
+                resetHeaders(client);
+                Task getQuotes = new Task(callQuotationsAPI, "Call Quotations");
+                getQuotes.RunSynchronously();
+                Trace.WriteLine("Ran quotations synchronously.");
+                Trace.WriteLine("Parsing quotations JSON.");
 
-		JsonElement root = JSONResponse.RootElement;
-		JsonElement quoteData = root.GetProperty("data");
-		foreach (JsonElement item in quoteData.EnumerateArray())
-		{
-			try {
-			// Print the quote
-			JsonElement quoteInfoBlock = item.GetProperty("text");
-			JsonElement actualQuote = quoteInfoBlock.GetProperty("full_text");
+                JsonElement root = JSONResponse.RootElement;
+                displayQuotes(query, root);
+                /*
+                string quotesDataString = JSONResponse.RootElement.GetProperty("data").ToString();
+                // (?<="full_text":\s")(.*?)(?=",)
+                var quotesRegex = new Regex("(?<=\"full_text\":\\s\")(.*?)(?=\",)");
+                query.NumberOfQuotes = quotesRegex.Matches(quotesDataString).Count;
+                // query.Quotes = quotesRegex.Matches(quotesDataString);
+                Console.WriteLine("{0} quotes found.", query.NumberOfQuotes);
+                // query.Quote = quotesRegex.Match(quotesDataString).ToString();
+                foreach (Match match in Regex.Matches(quotesDataString, quotesRegex.ToString()))
+                {
+                    string input = "";
+                    Console.WriteLine("\"{0}\"", match.Value);
+                }
+                */
 
-			// Get the source of the quote
-			JsonElement quoteSourceBlock = item.GetProperty("source");
-			JsonElement quoteTitle = quoteSourceBlock.GetProperty("title");
-			JsonElement quoteAuthor = quoteSourceBlock.GetProperty("author");
+                Trace.WriteLine("First quote grabbed as:");
+                Trace.WriteLine(query.Quote);
 
-			
-			// quoteSourceBlock.TryGetProperty("author", out JsonElement quoteAuthor);
+                Console.WriteLine(query.Quote);
+            }
+        }
+
+        private static void displayQuotes(CurrentQuery query, JsonElement root)
+        {
+            JsonElement quoteData = root.GetProperty("data");
+            foreach (JsonElement item in quoteData.EnumerateArray())
+            {
+                try
+                {
+                    // Print the quote
+                    JsonElement quoteInfoBlock = item.GetProperty("text");
+                    JsonElement actualQuote = quoteInfoBlock.GetProperty("full_text");
+
+                    // Get the source of the quote
+                    JsonElement quoteSourceBlock = item.GetProperty("source");
+                    JsonElement quoteTitle = quoteSourceBlock.GetProperty("title");
+                    JsonElement quoteAuthor = quoteSourceBlock.GetProperty("author");
 
 
-			// Get what year the quote is from
-			JsonElement quoteYear = item.GetProperty("year");
-			Console.WriteLine("\"{0}\", Year: {1}, Source: {2} {3}", 
-				actualQuote.ToString(), quoteYear.ToString(), quoteAuthor.ToString(), 
-				quoteTitle.ToString());
-		    Quote currentQuote = new();
-			currentQuote.Year = quoteYear.GetInt16();
-			currentQuote.Text = actualQuote.ToString();
-			currentQuote.Title = quoteTitle.ToString();
-			currentQuote.Author = quoteAuthor.ToString();
+                    // quoteSourceBlock.TryGetProperty("author", out JsonElement quoteAuthor);
 
-			// @TODO add all quotes whether you have seen them or not?
-			query.Quotes.Add(currentQuote);
-			Console.WriteLine();
-			Console.WriteLine("---- S to Save - X to exit - Enter for more----");
-			string input = Console.ReadLine().Trim().ToLower();
-			if (input == "s")
-			{
-			    Console.WriteLine("Quote saved.");
-				SavedQueries.AddMember(currentQuote);
-			}
-			else if (input == "x")
-			    break;
-			}
-			catch (Exception ex) {
-				Console.WriteLine(ex);
-			}
-			
-		}	
-		/*
-		string quotesDataString = JSONResponse.RootElement.GetProperty("data").ToString();
-		// (?<="full_text":\s")(.*?)(?=",)
-		var quotesRegex = new Regex("(?<=\"full_text\":\\s\")(.*?)(?=\",)");
-		query.NumberOfQuotes = quotesRegex.Matches(quotesDataString).Count;
-		// query.Quotes = quotesRegex.Matches(quotesDataString);
-		Console.WriteLine("{0} quotes found.", query.NumberOfQuotes);
-		// query.Quote = quotesRegex.Match(quotesDataString).ToString();
-		foreach (Match match in Regex.Matches(quotesDataString, quotesRegex.ToString()))
-		{
-			string input = "";
-			Console.WriteLine("\"{0}\"", match.Value);
-		}
-		*/
 
-		Trace.WriteLine("First quote grabbed as:");
-		Trace.WriteLine(query.Quote);
+                    // Get what year the quote is from
+                    JsonElement quoteYear = item.GetProperty("year");
+                    Console.WriteLine("\"{0}\", Year: {1}, Source: {2} {3}",
+                        actualQuote.ToString(), quoteYear.ToString(), quoteAuthor.ToString(),
+                        quoteTitle.ToString());
+                    Quote currentQuote = new();
+                    currentQuote.Year = quoteYear.GetInt16();
+                    currentQuote.Text = actualQuote.ToString();
+                    currentQuote.Title = quoteTitle.ToString();
+                    currentQuote.Author = quoteAuthor.ToString();
 
-		Console.WriteLine(query.Quote);
-		}
-	}
+					if (query.InteractiveMode) {
+                    // @TODO add all quotes whether you have seen them or not?
+                    query.Quotes.Add(currentQuote);
+                    Console.WriteLine();
+                    Console.WriteLine("---- S to Save - X to exit - Enter for more----");
+                    string input = Console.ReadLine().Trim().ToLower();
+                    if (input == "s")
+                    {
+                        Console.WriteLine("Quote saved.");
+                        SavedQueries.AddMember(currentQuote);
+                    }
+                    else if (input == "x")
+                        break;
+					}
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
 
-	public static JsonDocument JSONResponse { get; set; }
+            }
+        }
+
 
 
 	static void resetHeaders(HttpClient client)

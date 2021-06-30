@@ -76,11 +76,21 @@ namespace OxfordV2
             var quoteFirstInSense = new Option<bool>(
                 new[] {"--first-sense", "-fs"}, description: "Restrict results to quotations which are the earliest evidence for a sense."
             ){ IsRequired = false };
+            var quoteUseWords = new Option<bool>(
+                new[] {"--use-words", "-uw"}, description: "Use the saved list of looked up words.  Required first using the main root command to look up a word.  Finds quotes for all words with wordIDs saved in word-id.txt.  This is also how Sense works if you do not supply it a word.  This option is not default with Quote (unlike Sense) to allow you to look up quotes by source."
+            ){ IsRequired = false };
+            var quoteUseSenses = new Option<bool>(
+                new[] {"--use-senses", "-us"}, description: "Use the saved list of looked up senses. Requires first using the Sense sub-command/verb.  Similar to --use-words."
+            ){ IsRequired = false };
+
             quoteCommand.AddOption(quoteAuthorGender);
             quoteCommand.AddOption(quoteSourceTitle);
             quoteCommand.AddOption(quoteFirstInWord);
             quoteCommand.AddOption(quoteFirstInSense);
+            quoteCommand.AddOption(quoteUseWords);
+            quoteCommand.AddOption(quoteUseSenses);
 
+            quoteCommand.Handler = CommandHandler.Create<string, string, bool, bool, bool, bool>(HandleQuoteArgs);
 
             var surfaceCommand = new Command("Surfaces");
 
@@ -207,6 +217,50 @@ namespace OxfordV2
             }
 
 
+        }
+        public static void HandleQuoteArgs(string authorGender, string sourceTitle, bool firstWord, bool firstSense, bool useWords, bool useSenses)
+        {
+            Trace.WriteLine($"Quote sub command entered.");
+            Trace.WriteLine($"authorGender: {authorGender}");
+            Trace.WriteLine($"sourceTitle: {sourceTitle}");
+            Trace.WriteLine($"firstWord: {firstWord}");
+            Trace.WriteLine($"firstSense: {firstSense}");
+            Trace.WriteLine($"useWords: {useWords}");
+            Trace.WriteLine($"useSenses: {useSenses}");
+
+            CurrentQuery query = new();
+            query.CurrentQuoteOptions = new(authorGender, sourceTitle, firstWord, firstSense, useWords, useSenses);
+            if (!string.IsNullOrWhiteSpace(authorGender))
+            {
+                query.CurrentQuoteOptions.AuthorGender = authorGender;
+            }
+            if (!string.IsNullOrWhiteSpace(sourceTitle))
+            {
+                query.CurrentQuoteOptions.SourceTitle = sourceTitle;
+            }
+            if (firstWord)
+            {
+                query.CurrentQuoteOptions.FirstWord = true;
+            }
+
+            if (firstSense)
+            {
+                query.CurrentQuoteOptions.FirstSense = true;
+            }
+            
+            if (useWords)
+            {
+                // Cycle through word-id.txt
+                // Run /word/{id}/quotations/ endpoint
+                ConsoleUI.GetQuotes(SavedQueries.LoadWordIds(query));
+
+            }
+            if (useSenses)
+            {
+                // @TODO save senses to sense-id.txt file
+                // Run /sense/{id}/quotations/ endpoint
+
+            }
         }
         public static void HandleArgs(string word, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, bool interactive, string? export)
         {

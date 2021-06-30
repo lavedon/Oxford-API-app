@@ -254,6 +254,12 @@ namespace OxfordV2
 		    }
 	    }
 
+        public static void GetQuotes(CurrentQuery query)
+        {
+            Trace.WriteLine("Get senses selected.");
+            query.QueryMode = Modes.Quotations;
+   		         API.APICalls(query);
+        }
         public static void GetSenses(CurrentQuery query)
         {
             Trace.WriteLine("Get senses selected.");
