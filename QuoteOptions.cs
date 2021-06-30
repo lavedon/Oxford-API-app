@@ -55,7 +55,7 @@ namespace OxfordV2
                     this.FirstWord = firstWord;
                     this.FirstSense = firstSense;
                     this.UseWords = useWords;
-                    this.UseSenses = UseSenses;
+                    this.UseSenses = useSenses;
                 }
         }
 }

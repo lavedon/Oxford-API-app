@@ -265,6 +265,7 @@ namespace OxfordV2
             Trace.WriteLine("Get senses selected.");
             query.QueryMode = Modes.Senses;
    		         API.APICalls(query);
+			SavedQueries.SaveSenseId(query);
         }
 
         private static void exportQuery()

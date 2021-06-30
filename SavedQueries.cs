@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Xml;
 using System.Net;
+using System.Linq;
 
 
 namespace OxfordV2
@@ -57,7 +58,35 @@ namespace OxfordV2
 				file.WriteLine(d.WordID);
 			}
 		}
+		public static void SaveSenseId(CurrentQuery query) {
+			string senseIDFile = Path.Combine(Environment.CurrentDirectory, "sense-id.txt");
+			File.Delete(senseIDFile);
+			using StreamWriter file = new(senseIDFile);
 
+			List<string> senseIds = new();
+			foreach (Sense s in query.Senses)
+			{
+				senseIds.Add(s.SenseID);
+			}
+
+			IEnumerable<string> uniqueSenseIds = senseIds.Distinct();
+			foreach (var id in uniqueSenseIds)
+			{
+				file.WriteLine(id);
+			}
+		}
+
+		public static CurrentQuery LoadSenseIds(CurrentQuery query) {
+			string senseIDFile = Path.Combine(Environment.CurrentDirectory, "sense-id.txt");
+			string[] lines = System.IO.File.ReadAllLines(senseIDFile);
+			foreach (string line in lines) {
+				var blankSenseWithId = new Sense();
+				blankSenseWithId.SenseID = line;
+				query.Senses.Add(blankSenseWithId);
+			}
+			query.HasLookedUpWord = true;
+			return query;
+		}
 		public static CurrentQuery LoadWordIds(CurrentQuery query) {
 			string wordIDFile = Path.Combine(Environment.CurrentDirectory, "word-id.txt");
 			string[] lines = System.IO.File.ReadAllLines(wordIDFile);

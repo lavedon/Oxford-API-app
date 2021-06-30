@@ -171,8 +171,10 @@ namespace OxfordV2
                 string fullPath = string.Concat(Environment.CurrentDirectory, $"\\logs\\Log_OxfordApplication_{DateTime.Now.ToString("yyyyMMdd-HHmm")}.txt");
                 Trace.WriteLine("Path is {0}", fullPath);
                 
+                /*
                 TextWriterTraceListener tr1 = new TextWriterTraceListener(System.Console.Out);
                 Trace.Listeners.Add(tr1);
+                */
 
                 TextWriterTraceListener tr2 = new TextWriterTraceListener(System.IO.File.CreateText(fullPath));
                 Trace.Listeners.Add(tr2);
@@ -207,7 +209,7 @@ namespace OxfordV2
             query.CurrentSenseOptions = new(lemma, restrictRegion, restrictUsage, restrictMain, topic);
             if (string.IsNullOrWhiteSpace(lemma))
             {
-                Console.WriteLine("Looking up word IDs from file");
+                Trace.WriteLine("Looking up word IDs from file");
                 ConsoleUI.GetSenses(SavedQueries.LoadWordIds(query));
             }
             else
@@ -259,6 +261,7 @@ namespace OxfordV2
             {
                 // @TODO save senses to sense-id.txt file
                 // Run /sense/{id}/quotations/ endpoint
+                ConsoleUI.GetQuotes(SavedQueries.LoadSenseIds(query));
 
             }
         }

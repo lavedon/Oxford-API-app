@@ -28,6 +28,7 @@ namespace OxfordV2
 			{
 				Uri requestURL = new Uri(baseURL + queryURL);
 			try {
+				Console.WriteLine(requestURL.ToString());
 				var response = client.GetStreamAsync(requestURL).Result;
 				JSONResponse = JsonDocument.Parse(response);
 			}
@@ -56,6 +57,8 @@ namespace OxfordV2
 				foreach (Definition d in query.Definitions)
 				{
 					queryURL = "word/";
+					// QuoteOptions does not work for /word/{id}/quotations
+                    // queryURL = addQuoteOptions(query, queryURL);
 					query.CurrentWordID = d.WordID;
 					queryURL = queryURL + d.WordID + "/quotations/";
 					makeCLIQuoteRequest(query, client, queryURL);
@@ -64,12 +67,42 @@ namespace OxfordV2
 			}
 			if (query.CurrentQuoteOptions.UseSenses)
 			{
-				queryURL = "sense/";
-			}
+				foreach (Sense s in query.Senses)
+                {
+                    queryURL = "sense/";
+					// QuoteOptions does not work for /word/{id}/quotations
+                    // queryURL = addQuoteOptions(query, queryURL);
+                    query.CurrentWordID = s.SenseID;
+                    queryURL = queryURL + s.SenseID + "/quotations/";
+                    makeCLIQuoteRequest(query, client, queryURL);
+
+                }
+            }
+
+            static string addQuoteOptions(CurrentQuery query, string queryURL)
+            {
+                if (!string.IsNullOrWhiteSpace(query.CurrentQuoteOptions.AuthorGender))
+                {
+                    queryURL = queryURL + @"?author_gender=" + query.CurrentQuoteOptions.AuthorGender;
+                }
+                if (!string.IsNullOrWhiteSpace(query.CurrentQuoteOptions.SourceTitle))
+                {
+                    queryURL = queryURL + @"?source_title=" + query.CurrentQuoteOptions.SourceTitle;
+                }
+                if (query.CurrentQuoteOptions.FirstWord)
+                {
+                    queryURL = queryURL + @"?first_in_word=true";
+                }
+                if (query.CurrentQuoteOptions.FirstSense)
+                {
+                    queryURL = queryURL + @"?first_in_sense=true";
+                }
+
+                return queryURL;
+            }
 
 
-
-		}
+        }
 		public static void GetQuotations(CurrentQuery query, HttpClient client, Sense currentSense = null) {
 		Action<object> callQuotationsAPI = (Object obj) => 
 		{
@@ -293,7 +326,7 @@ namespace OxfordV2
 		{
 			Trace.WriteLine("Called callSensesAPI");
 			string queryURL;
-			if (query.CurrentSenseOptions.Lemma is not null)
+			if (!string.IsNullOrWhiteSpace(query.CurrentSenseOptions.Lemma))
 			{
 				queryURL = @"senses/?lemma=" + query.CurrentSenseOptions.Lemma;
 			}
