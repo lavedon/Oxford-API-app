@@ -438,15 +438,17 @@ namespace OxfordV2
 		Action<object> callLemmatizeAPI = (Object obj) => 
 		{
 			Trace.WriteLine("Called callLemmatizeAPI");
-			Uri requestURL = new Uri(baseURL + @"lemmatize/?form=" + query.UserEnteredWord);
+			string queryURL = "/lemmatizetext/?text=" + query.LemmaText;
+			// @TODO add YEAR  as in &year=from query current year
+			Uri requestURL = new Uri(baseURL + @"lemmatize/?form=" + queryURL);
 			Trace.WriteLine("Making the request");
 			Trace.WriteLine(client.GetStringAsync(requestURL).Result);
 
 			try {
-			var response = client.GetStreamAsync(requestURL).Result;
-			Trace.WriteLine("Got Lamma response.");
-			JSONResponse = JsonDocument.Parse(response);
-			Trace.WriteLine("Set JSONResponse to the response.");
+				var response = client.GetStreamAsync(requestURL).Result;
+				Trace.WriteLine("Got Lamma response.");
+				JSONResponse = JsonDocument.Parse(response);
+				Trace.WriteLine("Set JSONResponse to the response.");
 			}
 			catch(Exception ex)
 			{
@@ -620,34 +622,27 @@ namespace OxfordV2
 		{
 			Trace.WriteLine("Now to call the Lammatize API");
 			Trace.WriteLine("Figure out of one word or multiple words have been entered.");
-			if (query.HasLookedUpWord == false)
-			{
-				// @TODO remove this. Have it auto-call up the first ID.
-				Console.WriteLine("You need to first ask for a definition.");
-			}
-			else 
-			{
-				resetHeaders(client);
-				Task getLemmas = new Task(callLemmatizeAPI, "CallSenses");
-				getLemmas.ConfigureAwait(false);
-				getLemmas.RunSynchronously();
-				Console.WriteLine("Getting Lammas");
 
-				JsonElement root = JSONResponse.RootElement;
-				JsonElement lemmaData = root.GetProperty("data");
-				JsonElement firstWord = lemmaData[0].GetProperty("word");
-				/*
-				foreach (object item in firstWord.EnumerateObject())
-				{
-					Console.WriteLine(item);
-					Console.ReadLine();
-				}
-				*/
-				string lemma = firstWord.GetProperty("lemma").GetString();
-				Console.WriteLine($"The lemma of {query.UserEnteredWord} is {lemma}");
+			resetHeaders(client);
+			Task getLemmas = new Task(callLemmatizeAPI, "CallSenses");
+			getLemmas.ConfigureAwait(false);
+			getLemmas.RunSynchronously();
+			Console.WriteLine("Getting Lammas");
+
+			JsonElement root = JSONResponse.RootElement;
+			JsonElement lemmaData = root.GetProperty("data");
+			JsonElement firstWord = lemmaData[0].GetProperty("word");
+		/*
+		foreach (object item in firstWord.EnumerateObject())
+		{
+			Console.WriteLine(item);
+			Console.ReadLine();
+		}
+		*/
+		string lemma = firstWord.GetProperty("lemma").GetString();
+		Console.WriteLine($"The lemma of {query.UserEnteredWord} is {lemma}");
 //				Console.WriteLine(lemma.ToString());
-				
-			}
+		
 		}
 		else if (query.QueryMode == Modes.Senses)
 		{

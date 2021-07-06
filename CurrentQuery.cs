@@ -21,8 +21,13 @@ namespace OxfordV2
 		public QuoteOptions? CurrentQuoteOptions { get; set; }
 		public string UserEnteredWord { get; set; } 
 		
+		private string _lemmaText;
+		public string LemmaText { 
+			get { return _lemmaText; } 
+			set { 
+				_lemmaText = value.Replace(" ", "%20");
+			}}
 		public string CurrentSenseID { get; set; }
-		public string Lamma { get; set; }
 		public string Quote { get; set; }
 
 		public List<Definition> Definitions { get; set; }
@@ -77,6 +82,7 @@ namespace OxfordV2
 			this.ExportAfterSearch = false;
 			this.CurrentSenseOptions = null;
 			this.CurrentQuoteOptions = null;
+			this.LemmaText = "";
 			
 		} 
 		public string Source { get; set; }

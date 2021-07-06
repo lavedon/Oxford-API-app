@@ -1,5 +1,6 @@
 ﻿#nullable enable
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.CommandLine;
 using System.CommandLine.Invocation;
@@ -116,6 +117,8 @@ namespace OxfordV2
             lemmaCommand.AddOption(lemmaTextPretokenized);
             lemmaCommand.AddOption(lemmaTextTokenizeSeparator);
 
+            lemmaCommand.Handler = CommandHandler.Create<string, bool, bool>(HandleLemmaArgs);
+
 
 
             senseCommand.Description = "Get senses for a word.  Takes a word id created by the last word search or simply enter a lemma after this command.";
@@ -171,10 +174,8 @@ namespace OxfordV2
                 string fullPath = string.Concat(Environment.CurrentDirectory, $"\\logs\\Log_OxfordApplication_{DateTime.Now.ToString("yyyyMMdd-HHmm")}.txt");
                 Trace.WriteLine("Path is {0}", fullPath);
                 
-                /*
                 TextWriterTraceListener tr1 = new TextWriterTraceListener(System.Console.Out);
                 Trace.Listeners.Add(tr1);
-                */
 
                 TextWriterTraceListener tr2 = new TextWriterTraceListener(System.IO.File.CreateText(fullPath));
                 Trace.Listeners.Add(tr2);
@@ -219,6 +220,22 @@ namespace OxfordV2
             }
 
 
+        }
+
+        public static void HandleLemmaArgs(string text, bool tokenizeOff, bool tokenizeCharacter)
+        {
+            Trace.WriteLine($"Lemma sub command entered.");
+            Trace.WriteLine($"Text to lemmatize was: {text}");
+            Trace.WriteLine($"tokenizeOff: {tokenizeOff}");
+            Trace.WriteLine($"tokenizeCharacter: {tokenizeCharacter}");
+            CurrentQuery query = new();
+            try {
+            query.LemmaText = text;
+            } catch (Exception ex) {
+                Trace.WriteLine($"{ex}");
+            }
+            query.QueryMode = Modes.Lammatize;
+   		         API.APICalls(query);
         }
         public static void HandleQuoteArgs(string authorGender, string sourceTitle, bool firstWord, bool firstSense, bool useWords, bool useSenses)
         {
