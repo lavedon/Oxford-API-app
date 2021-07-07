@@ -230,7 +230,7 @@ namespace OxfordV2
             Trace.WriteLine($"tokenizeCharacter: {tokenizeCharacter}");
             CurrentQuery query = new();
             try {
-            query.LemmaText = text;
+            query.LemmaText = text.Trim('\'');
             } catch (Exception ex) {
                 Trace.WriteLine($"{ex}");
             }

@@ -438,10 +438,12 @@ namespace OxfordV2
 		Action<object> callLemmatizeAPI = (Object obj) => 
 		{
 			Trace.WriteLine("Called callLemmatizeAPI");
-			string queryURL = "/lemmatizetext/?text=" + query.LemmaText;
+			string queryURL = "lemmatizetext/?text=" + query.LemmaText;
 			// @TODO add YEAR  as in &year=from query current year
-			Uri requestURL = new Uri(baseURL + @"lemmatize/?form=" + queryURL);
+			// Uri requestURL = new Uri(baseURL + @"lemmatize/?form=" + queryURL);
+			Uri requestURL = new Uri(baseURL + queryURL);
 			Trace.WriteLine("Making the request");
+			Console.WriteLine(requestURL);
 			Trace.WriteLine(client.GetStringAsync(requestURL).Result);
 
 			try {
@@ -630,18 +632,67 @@ namespace OxfordV2
 			Console.WriteLine("Getting Lammas");
 
 			JsonElement root = JSONResponse.RootElement;
+			JsonElement data = root.GetProperty("data");
+			var dataElems = data.EnumerateArray();
+			SortedList<string, string> tokensLemmas = new();
+			string lemmaWord = "";
+			while (dataElems.MoveNext())
+			{
+				var node = dataElems.Current;
+				if(!node.GetProperty("skipped").GetBoolean())
+				{
+						var token = node.GetProperty("token").GetString();
+						
+						if(node.GetProperty("lemmatizations").GetArrayLength() > 0)
+						{
+							lemmaWord = token;
+							var lemmaArray = node.GetProperty("lemmatizations").EnumerateArray();
+							while (lemmaArray.MoveNext())
+							{
+								var lemmaNode = lemmaArray.Current;
+								if (lemmaNode.TryGetProperty("lemma", out JsonElement lemma))
+								{
+									lemmaWord = lemma.GetString();	
+								}
+							} 
+						}
+						else {
+							lemmaWord = token;
+						}
+						Console.WriteLine($"token: {token} lemma: {lemmaWord}");
+			}
+			else {
+				var token = node.GetProperty("token").GetString();
+				lemmaWord = token;
+				Console.WriteLine($"token: {token} lemma: {lemmaWord}");
+			}
+		}
+
+
+			Console.ReadLine();
+			/*
+			foreach (var t in tokens)
+			{
+				Console.ReadLine();
+				Console.WriteLine(t);
+			}
+			*/
+
+			/*
 			JsonElement lemmaData = root.GetProperty("data");
+			// Actually cycle through each response here:
 			JsonElement firstWord = lemmaData[0].GetProperty("word");
+			*/
 		/*
 		foreach (object item in firstWord.EnumerateObject())
 		{
 			Console.WriteLine(item);
 			Console.ReadLine();
 		}
-		*/
 		string lemma = firstWord.GetProperty("lemma").GetString();
 		Console.WriteLine($"The lemma of {query.UserEnteredWord} is {lemma}");
 //				Console.WriteLine(lemma.ToString());
+		*/
 		
 		}
 		else if (query.QueryMode == Modes.Senses)
