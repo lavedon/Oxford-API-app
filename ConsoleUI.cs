@@ -306,11 +306,10 @@ namespace OxfordV2
 
 		public static void DisplayLemmas(CurrentQuery query)
 		{
-			Console.WriteLine("Token: | Lemma: ");
+			Console.WriteLine("{0,-20} {1,5}\n", "Token", "Lemma");
 			foreach(KeyValuePair<string, string> tokenLemma in query.Lemmas.ZippedLemmas)
 			{
-				Console.WriteLine($"{tokenLemma.Key} | {tokenLemma.Value}");
-
+				Console.WriteLine("{0,-20} {1,5:N1}", tokenLemma.Key, tokenLemma.Value);
 			}
 		}
     }
