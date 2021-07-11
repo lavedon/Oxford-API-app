@@ -3,6 +3,7 @@ using System.Linq;
 using System.IO;
 using System.Text.Json;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace OxfordV2
 {
@@ -19,7 +20,7 @@ namespace OxfordV2
 
         //@TODO return a tuple of JsonDocument and CurrentQuery?
         //Or just return CurrentQuery?
-        public static CurrentQuery GetLemmas(JsonDocument data, CurrentQuery query)
+        public static CurrentQuery GetLemmas(JsonDocument json, CurrentQuery query)
         {
             /*
             var path = Environment.CurrentDirectory + ".\\lemma-response.json";
@@ -30,8 +31,8 @@ namespace OxfordV2
             List<string> tokenList = new();
             List<string> lemmaWords = new();
 
-            using (JsonDocument json = JsonDocument.Parse(data))
-            {
+//            using (JsonDocument json = JsonDocument.Parse(data))
+//            {
                 JsonElement root = json.RootElement;
                 // works;
                 var tokens = root.EnumerateObject()
@@ -86,13 +87,14 @@ namespace OxfordV2
                         Console.WriteLine(ex);
                     }
                 }
-            }
             var result = zipLemmas(tokenList, lemmaWords);
             Console.WriteLine("Show Results");
+            /*
             foreach(var r in result)
             {
                 Console.WriteLine(r);
             }
+            */
             query.Lemmas.ZippedLemmas = result;
             return query;
         }

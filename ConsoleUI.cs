@@ -303,5 +303,15 @@ namespace OxfordV2
 				exportQuery();
 			}
         }
+
+		public static void DisplayLemmas(CurrentQuery query)
+		{
+			Console.WriteLine("Token: | Lemma: ");
+			foreach(KeyValuePair<string, string> tokenLemma in query.Lemmas.ZippedLemmas)
+			{
+				Console.WriteLine($"{tokenLemma.Key} | {tokenLemma.Value}");
+
+			}
+		}
     }
 }

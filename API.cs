@@ -626,11 +626,14 @@ namespace OxfordV2
 			Trace.WriteLine("Figure out of one word or multiple words have been entered.");
 
 			resetHeaders(client);
-			Task getLemmas = new Task(callLemmatizeAPI, "CallSenses");
+			Task getLemmas = new Task(callLemmatizeAPI, "CallLemmatize");
 			getLemmas.ConfigureAwait(false);
 			getLemmas.RunSynchronously();
-			Console.WriteLine("Getting Lammas");
+			Trace.WriteLine("Getting Lemmas");
 
+			ConsoleUI.DisplayLemmas(LemmaProcessor.GetLemmas(JSONResponse, query));
+
+/*
 			JsonElement root = JSONResponse.RootElement;
 			JsonElement data = root.GetProperty("data");
 			var dataElems = data.EnumerateArray();
