@@ -74,7 +74,7 @@ namespace OxfordV2
 			this.Quotes = new List<Quote>();
 			this.Senses = new List<Sense>();
 			this.Lemmas = new Lemmas();
-			this.EtymologySummary = 
+			this.EtymologySummary = null;
 			this.CurrentIn = false;
 			this.CurrentWordID = null;
 			this.StartYear = 0;

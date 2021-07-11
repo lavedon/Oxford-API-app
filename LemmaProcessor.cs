@@ -27,7 +27,7 @@ namespace OxfordV2
             */
 
             Dictionary<string, string> wordWithLemmaDict = new();
-            List<String> tokenList = new();
+            List<string> tokenList = new();
             List<string> lemmaWords = new();
 
             using (JsonDocument json = JsonDocument.Parse(data))
@@ -93,7 +93,7 @@ namespace OxfordV2
             {
                 Console.WriteLine(r);
             }
-            query.Lemmas.ZippedLemmas = zipLemmas;
+            query.Lemmas.ZippedLemmas = result;
             return query;
         }
 
