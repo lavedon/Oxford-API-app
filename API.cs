@@ -10,6 +10,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace OxfordV2
 {
@@ -52,8 +53,8 @@ namespace OxfordV2
 			string queryURL;
 			if (query.CurrentQuoteOptions.UseWords)
 			{
-				// @TODO test whether or not coreQuery options such as obsolete, etc, year 
 				// will work on this endpoint.
+				// @TODO test whether or not coreQuery options such as obsolete, etc, year 
 				foreach (Definition d in query.Definitions)
 				{
 					queryURL = "word/";
@@ -442,6 +443,11 @@ namespace OxfordV2
 			// @TODO add YEAR  as in &year=from query current year
 			// Uri requestURL = new Uri(baseURL + @"lemmatize/?form=" + queryURL);
 			Uri requestURL = new Uri(baseURL + queryURL);
+			Console.WriteLine("Analyzing root options...");
+			Console.WriteLine(typeof(Program).GetMethod("HandleArgs"));
+			var flags = BindingFlags.NonPublic | BindingFlags.Static;
+
+			Console.ReadLine();
 			Trace.WriteLine("Making the request");
 			Console.WriteLine(requestURL);
 			Trace.WriteLine(client.GetStringAsync(requestURL).Result);
