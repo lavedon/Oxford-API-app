@@ -174,8 +174,10 @@ namespace OxfordV2
                 string fullPath = string.Concat(Environment.CurrentDirectory, $"\\logs\\Log_OxfordApplication_{DateTime.Now.ToString("yyyyMMdd-HHmm")}.txt");
                 Trace.WriteLine("Path is {0}", fullPath);
                 
+                /*
                 TextWriterTraceListener tr1 = new TextWriterTraceListener(System.Console.Out);
                 Trace.Listeners.Add(tr1);
+                */
 
                 TextWriterTraceListener tr2 = new TextWriterTraceListener(System.IO.File.CreateText(fullPath));
                 Trace.Listeners.Add(tr2);

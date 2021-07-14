@@ -1,2 +1,0 @@
-guitar_nn01
-guitar_vb01

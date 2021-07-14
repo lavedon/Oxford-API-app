@@ -43,6 +43,7 @@ namespace OxfordV2
 
 
 		public Modes QueryMode { get; set; }
+		public Lemmas Lemmas { get; set; }
 
 		public bool HasLookedUpWord { get; set; }
 		public bool OptionsMenuVerboseMode { get; set;}
@@ -72,6 +73,8 @@ namespace OxfordV2
 			this.Definitions = new List<Definition>();
 			this.Quotes = new List<Quote>();
 			this.Senses = new List<Sense>();
+			this.Lemmas = new Lemmas();
+			this.EtymologySummary = null;
 			this.CurrentIn = false;
 			this.CurrentWordID = null;
 			this.StartYear = 0;
