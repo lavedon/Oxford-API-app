@@ -131,20 +131,22 @@ namespace OxfordV2
 
             var rootCommand = new RootCommand
         {
+            // Non-Global Options
             new Argument<string>(name: "word", getDefaultValue: () => "mail", description: "The word to look up."),
-			new Option<bool>(new[] {"--obsolete-only", "-o"}, description: "Only return obsolete usages."),
-			new Option<bool>(new[] {"--obsolete-exclude", "-oe"}, description: "Only return NON-obsolete usages."),
             new Option<string?>(new[] {"--part-of-speech", "-ps"}, description: "Only return results to words specific parts of speech"),
-            new Option<string?>(new[] {"--years", "-y"}, description: "Years.  Use format 900-1999 or -1999 or 900-.  Used for first recorded, last recorded, and current in."),
-			new Option<bool>(new[] {"--current-in", "-c"} , description: "Flag which sets the 'Years' option to work with current in year - as opposed to recorded in year - Restrict results to words current in this year or period. Works with the Years flag.  i.e. -y 280-1900 -c  another example: -y 500 -c will return the words current in the year 500 AD."),
-            new Option<bool>(new[] {"--revised", "-r"}, description: "Restrict words taken from new and revised OED entries (OED-3rd edition content)"),
-            new Option<bool>(new[] {"--revised-not", "-rn"}, description: "Restrict to non revised sources only. (OED 2nd and 1rst edition)"),
             new Option<string?>(new[] {"--etymology-language", "-el"}, description: "Restrict results to words derived from a certain language.  Languages are grouped by continent and hierarchical.  i.e. European will automatically include German."),
             new Option<string?>(new[] {"--etymology-type", "-et"}, description: "Restrict results only certain etymological types.  compound, derivative, conversion, blend, shortening, backformation, initialism, acronym, variant, arbitrary, imitative, borrowing, properName, unknown"),
             new Option<bool>(new[] {"--interactive", "-i"}, description: "Open the interactive text menu features, where you can run follow-up queries, change options, and export queries. Has reduced features when compared to the command line."),
-            new Option<string?>(new[] {"--export", "-e"}, description: "Export the results of this query.  Saved as XML for SuperMemo import. Specify a filename after switch, otherwise will be saved as OED-export.xml")
             // @TODO: add a switch which will prevent the interactive console mode from starting up.
         };
+            // Global Options
+			rootCommand.AddGlobalOption(new Option<bool>(new[] {"--obsolete-only", "-o"}, description: "Only return obsolete usages."));
+			rootCommand.AddGlobalOption(new Option<bool>(new[] {"--obsolete-exclude", "-oe"}, description: "Only return NON-obsolete usages."));
+            rootCommand.AddGlobalOption(new Option<string?>(new[] {"--export", "-e"}, description: "Export the results of this query.  Saved as XML for SuperMemo import. Specify a filename after switch, otherwise will be saved as OED-export.xml"));
+            rootCommand.AddGlobalOption(new Option<string?>(new[] {"--years", "-y"}, description: "Years.  Use format 900-1999 or -1999 or 900-.  Used for first recorded, last recorded, and current in."));
+			rootCommand.AddGlobalOption(new Option<bool>(new[] {"--current-in", "-c"} , description: "Flag which sets the 'Years' option to work with current in year - as opposed to recorded in year - Restrict results to words current in this year or period. Works with the Years flag.  i.e. -y 280-1900 -c  another example: -y 500 -c will return the words current in the year 500 AD."));
+            rootCommand.AddGlobalOption(new Option<bool>(new[] {"--revised", "-r"}, description: "Restrict words taken from new and revised OED entries (OED-3rd edition content)"));
+            rootCommand.AddGlobalOption(new Option<bool>(new[] {"--revised-not", "-rn"}, description: "Restrict to non revised sources only. (OED 2nd and 1rst edition)"));
 
             rootCommand.AddCommand(senseCommand);
             rootCommand.AddCommand(quoteCommand);
