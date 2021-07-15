@@ -443,9 +443,11 @@ namespace OxfordV2
 			// @TODO add YEAR  as in &year=from query current year
 			// Uri requestURL = new Uri(baseURL + @"lemmatize/?form=" + queryURL);
 			Uri requestURL = new Uri(baseURL + queryURL);
+			/*
 			Console.WriteLine("Analyzing root options...");
 			Console.WriteLine(typeof(Program).GetMethod("HandleArgs"));
 			var flags = BindingFlags.NonPublic | BindingFlags.Static;
+			*/
 
 			Console.ReadLine();
 			Trace.WriteLine("Making the request");
