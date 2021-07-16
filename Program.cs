@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.CommandLine;
 using System.CommandLine.Invocation;
 using System.IO;
+using System.Linq;
 
 namespace OxfordV2
 {
@@ -142,15 +143,18 @@ namespace OxfordV2
             // Global Options
 			rootCommand.AddGlobalOption(new Option<bool>(new[] {"--obsolete-only", "-o"}, description: "Only return obsolete usages."));
 			rootCommand.AddGlobalOption(new Option<bool>(new[] {"--obsolete-exclude", "-oe"}, description: "Only return NON-obsolete usages."));
-            rootCommand.AddGlobalOption(new Option<string?>("--export", 
+            
+            var exportOption = new Option<string?>("--export", 
                     description: "Export the results of this query.  Saved as XML for SuperMemo import. Specify a filename after switch, otherwise will be saved as OED-export.xml",
                     ArgumentArity.ZeroOrOne
                     )
                     {
                         IsRequired = false,
-                        ArgumentHelpName = "What numbers to export.",
+                        ArgumentHelpName = "What to export by number",
                         
-                    });
+                    };
+            exportOption.AddAlias("-e");
+            rootCommand.AddGlobalOption(exportOption);
             rootCommand.AddGlobalOption(new Option<string?>(new[] {"--years", "-y"}, description: "Years.  Use format 900-1999 or -1999 or 900-.  Used for first recorded, last recorded, and current in."));
 			rootCommand.AddGlobalOption(new Option<bool>(new[] {"--current-in", "-c"} , description: "Flag which sets the 'Years' option to work with current in year - as opposed to recorded in year - Restrict results to words current in this year or period. Works with the Years flag.  i.e. -y 280-1900 -c  another example: -y 500 -c will return the words current in the year 500 AD."));
             rootCommand.AddGlobalOption(new Option<bool>(new[] {"--revised", "-r"}, description: "Restrict words taken from new and revised OED entries (OED-3rd edition content)"));
@@ -380,8 +384,9 @@ namespace OxfordV2
                 }
                 if (!string.IsNullOrWhiteSpace(export))
                 {
-                    SavedQueries.ExportFileName = export;
+                    // SavedQueries.ExportFileName = export;
                     query.ExportAfterSearch = true;
+                    parseExport(query, export);
 
                 }
 
@@ -397,6 +402,42 @@ namespace OxfordV2
                     Trace.WriteLine($"query.IncludeObsolete: {includeObsoleteProp}"); 
                     ConsoleUI.Start(word, query);
                 }
+        }
+    private static CurrentQuery parseExport(CurrentQuery query, string export)
+    {
+        Console.WriteLine("Parsing export argument...");
+        Console.WriteLine("...");
+        Console.ReadLine();
+
+        if (export.Length == 0)
+        {
+            query.ExportAll = true;
+            Console.WriteLine("query.ExportAll is set to true.");
+        } 
+        if (export.Contains("-"))
+        {
+            Console.WriteLine("The export argument contains a '-'");
+        }
+        if (export.Contains(","))
+        {
+            Console.WriteLine("The export argument contains a ','");
+            parseComma(export);
+        }
+
+        static List<int> parseComma(string export){                
+            List<int> num = new();
+            export = export.Replace(" ",",");
+            string[] numbers = export.Trim().Split(',');
+            foreach (string s in numbers)
+            {
+                num.Add(int.Parse(s));
+            }
+            return num;
+        }
+
+        query.WhatToExport = parseComma(export);
+
+        return null;
         }
     }
 }

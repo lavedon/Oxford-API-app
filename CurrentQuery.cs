@@ -59,6 +59,8 @@ namespace OxfordV2
 		public bool OpenEnd { get; set;}
 		public bool InteractiveMode { get; set; }
 		public bool ExportAfterSearch { get; set; }
+		public List<int> WhatToExport { get; set; }
+		public bool ExportAll { get; set;}
 		public string? CurrentWordID { get; set; }
 
 		public CurrentQuery() {
@@ -83,6 +85,7 @@ namespace OxfordV2
 			this.OpenEnd = false;
 			this.InteractiveMode = false;
 			this.ExportAfterSearch = false;
+			this.WhatToExport = new List<int>();
 			this.CurrentSenseOptions = null;
 			this.CurrentQuoteOptions = null;
 			this.LemmaText = "";
