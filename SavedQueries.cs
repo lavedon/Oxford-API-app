@@ -19,6 +19,8 @@ namespace OxfordV2
 	    public static List<Sense> Senses { get; set; }
 		public static List<Definition> Definitions { get; set; }
 
+		public static List<Lemmas> Lemmas { get; set; }
+
 	    public static string ExportFileName { get; set; } = "OED-export.xml";
 
 	    static SavedQueries()
@@ -26,6 +28,8 @@ namespace OxfordV2
 		    Instance=true;
 		    Quotes = new();
 		    Senses = new();
+			Definitions = new();
+			Lemmas = new();
 	    }
 
 		public static void AddMember(Sense sense) {
@@ -46,6 +50,14 @@ namespace OxfordV2
 			else {
 				Console.WriteLine($"{Quotes.Count} quotes saved for export.");
 			}
+		}
+
+		public static void AddMember(Lemmas lemma)
+		{
+			Lemmas.Add(lemma!);
+			Console.WriteLine("Lemmas saved for export.");
+			Console.WriteLine("Creating XML file of all saved material...");
+			RenderXML();
 		}
 
 		public static void SaveWordId(CurrentQuery query) {
@@ -109,7 +121,7 @@ namespace OxfordV2
 
 		    xml.WriteStartDocument();
 		    xml.WriteStartElement("SuperMemoCollection");
-		    int count = Quotes.Count + Senses.Count;
+		    int count = Quotes.Count + Senses.Count + Lemmas.Count;
 		    xml.WriteElementString("Count", $"{count}");
 		    // @TODO Add count number and ID number
 		    if (Quotes.Count > 0) {
@@ -162,6 +174,7 @@ namespace OxfordV2
 				mainUsageText = "This sense is NOT the main sense for this word.";
 			    }
 
+			
 
 			try {
 			    xml.WriteStartElement("SuperMemoElement");
@@ -190,9 +203,50 @@ namespace OxfordV2
 				}
 		    }
 		    }
+			if (Lemmas.Count > 0) {
+				Console.WriteLine("Exporting Lemmas...");
+				if (Lemmas[0].ZippedLemmas.Count > 0)
+				{
+					try {
+						xml.WriteStartElement("SuperMemoElement");
+						xml.WriteElementString("ID", $"{01}");
+						xml.WriteElementString("Title", $"Exported Lemmas");
+						xml.WriteElementString("Type", "Topic");
+						xml.WriteStartElement("Content");
+						xml.WriteStartElement("Question");
+						xml.WriteString("<table>");
+						xml.WriteString("<tr><th>Token:</th><th>Lemma:</th>");
+						foreach (KeyValuePair<string, string> item in Lemmas[0].ZippedLemmas)
+						{
+							xml.WriteString($"<tr><td style='text-align:center'>{item.Key}</td><td style='text-align:center'>{item.Value}</td></tr>");
+						}
+						xml.WriteString("</table>");
+						xml.WriteEndElement();
+
+						string encoded = WebUtility.HtmlEncode("<H5 dir=ltr align=left><Font size=\"1\" style=\"color: transparent\"> SuperMemo Reference:</font><br><FONT class=reference>Title:\"My Test Quote\" <br>Source: Oxford English Dictionary");
+						xml.WriteElementString("SuperMemoReference", encoded);
+
+						xml.WriteEndElement();
+						xml.WriteEndElement();
+
+						}
+						catch (AggregateException ae)
+						{
+							var ex = ae.Flatten().InnerExceptions;
+							Console.WriteLine("Error writing XML document:");
+							foreach (var exception in ex)
+							{
+								Console.WriteLine($"{ex.ToString()}");
+							}
+						}
+
+				}
+
+
+			}
 
 		try {
-	            xml.WriteEndElement();
+	  		xml.WriteEndElement();
 		    xml.WriteEndDocument();
 		    xml.Flush();
 

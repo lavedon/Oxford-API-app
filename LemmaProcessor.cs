@@ -88,7 +88,7 @@ namespace OxfordV2
                     }
                 }
             var result = zipLemmas(tokenList, lemmaWords);
-            Console.WriteLine("Show Results");
+            Trace.WriteLine("Show Results");
             /*
             foreach(var r in result)
             {

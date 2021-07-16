@@ -449,7 +449,6 @@ namespace OxfordV2
 			var flags = BindingFlags.NonPublic | BindingFlags.Static;
 			*/
 
-			Console.ReadLine();
 			Trace.WriteLine("Making the request");
 			Console.WriteLine(requestURL);
 			Trace.WriteLine(client.GetStringAsync(requestURL).Result);

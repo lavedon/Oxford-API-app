@@ -33,6 +33,7 @@ namespace OxfordV2
 		public List<Definition> Definitions { get; set; }
 		public List<Quote> Quotes { get; set; }
 		public List<Sense> Senses { get; set; }
+		public Lemmas Lemmas { get; set; }
 
 		public string EtymologySummary { get; set; }
 		public string? EtymologyType { get; set; }
@@ -43,7 +44,6 @@ namespace OxfordV2
 
 
 		public Modes QueryMode { get; set; }
-		public Lemmas Lemmas { get; set; }
 
 		public bool HasLookedUpWord { get; set; }
 		public bool OptionsMenuVerboseMode { get; set;}

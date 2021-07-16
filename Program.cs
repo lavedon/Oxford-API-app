@@ -117,7 +117,7 @@ namespace OxfordV2
             lemmaCommand.AddOption(lemmaTextPretokenized);
             lemmaCommand.AddOption(lemmaTextTokenizeSeparator);
 
-            lemmaCommand.Handler = CommandHandler.Create<string, bool, bool>(HandleLemmaArgs);
+            lemmaCommand.Handler = CommandHandler.Create<string, bool, bool, string?>(HandleLemmaArgs);
 
 
 
@@ -197,6 +197,7 @@ namespace OxfordV2
             // @TODO Make an overload of ConsoleUI.Start(which passes a word from the command line)
             rootCommand.Invoke(args);
 
+        Console.ReadLine();
         }
 
         public static void HandleSenseArgs(string? lemma, string? restrictRegion, string? restrictUsage, bool restrictMain, string? topic)
@@ -226,7 +227,8 @@ namespace OxfordV2
 
         }
 
-        public static void HandleLemmaArgs(string text, bool tokenizeOff, bool tokenizeCharacter)
+        // Also handling some global options
+        public static void HandleLemmaArgs(string text, bool tokenizeOff, bool tokenizeCharacter, string? export)
         {
             Trace.WriteLine($"Lemma sub command entered.");
             Trace.WriteLine($"Text to lemmatize was: {text}");
@@ -240,6 +242,13 @@ namespace OxfordV2
             }
             query.QueryMode = Modes.Lammatize;
    		         API.APICalls(query);
+
+            if (export is not null)
+            {
+                // export Lemmas
+                Console.WriteLine("Starting export process");
+                SavedQueries.AddMember(query.Lemmas);
+            }
         }
         public static void HandleQuoteArgs(string authorGender, string sourceTitle, bool firstWord, bool firstSense, bool useWords, bool useSenses)
         {
