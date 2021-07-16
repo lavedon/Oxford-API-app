@@ -142,7 +142,15 @@ namespace OxfordV2
             // Global Options
 			rootCommand.AddGlobalOption(new Option<bool>(new[] {"--obsolete-only", "-o"}, description: "Only return obsolete usages."));
 			rootCommand.AddGlobalOption(new Option<bool>(new[] {"--obsolete-exclude", "-oe"}, description: "Only return NON-obsolete usages."));
-            rootCommand.AddGlobalOption(new Option<string?>(new[] {"--export", "-e"}, description: "Export the results of this query.  Saved as XML for SuperMemo import. Specify a filename after switch, otherwise will be saved as OED-export.xml"));
+            rootCommand.AddGlobalOption(new Option<string?>("--export", 
+                    description: "Export the results of this query.  Saved as XML for SuperMemo import. Specify a filename after switch, otherwise will be saved as OED-export.xml",
+                    ArgumentArity.ZeroOrOne
+                    )
+                    {
+                        IsRequired = false,
+                        ArgumentHelpName = "What numbers to export.",
+                        
+                    });
             rootCommand.AddGlobalOption(new Option<string?>(new[] {"--years", "-y"}, description: "Years.  Use format 900-1999 or -1999 or 900-.  Used for first recorded, last recorded, and current in."));
 			rootCommand.AddGlobalOption(new Option<bool>(new[] {"--current-in", "-c"} , description: "Flag which sets the 'Years' option to work with current in year - as opposed to recorded in year - Restrict results to words current in this year or period. Works with the Years flag.  i.e. -y 280-1900 -c  another example: -y 500 -c will return the words current in the year 500 AD."));
             rootCommand.AddGlobalOption(new Option<bool>(new[] {"--revised", "-r"}, description: "Restrict words taken from new and revised OED entries (OED-3rd edition content)"));
@@ -228,7 +236,7 @@ namespace OxfordV2
         }
 
         // Also handling some global options
-        public static void HandleLemmaArgs(string text, bool tokenizeOff, bool tokenizeCharacter, string? export)
+        public static void HandleLemmaArgs(string text, bool tokenizeOff, bool tokenizeCharacter, string? export = "all")
         {
             Trace.WriteLine($"Lemma sub command entered.");
             Trace.WriteLine($"Text to lemmatize was: {text}");
