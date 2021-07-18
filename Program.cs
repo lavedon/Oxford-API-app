@@ -144,8 +144,8 @@ namespace OxfordV2
 			rootCommand.AddGlobalOption(new Option<bool>(new[] {"--obsolete-only", "-o"}, description: "Only return obsolete usages."));
 			rootCommand.AddGlobalOption(new Option<bool>(new[] {"--obsolete-exclude", "-oe"}, description: "Only return NON-obsolete usages."));
             
-            var exportOption = new Option<string?>("--export", 
-                    description: "Export the results of this query.  Saved as XML for SuperMemo import. Specify a filename after switch, otherwise will be saved as OED-export.xml",
+            var exportOption = new Option<bool>("--export", 
+                    description: "Export the results of this query.  Saved as XML for SuperMemo import. File will be saved as OED-export.xml",
                     ArgumentArity.ZeroOrOne
                     )
                     {
@@ -167,7 +167,7 @@ namespace OxfordV2
             rootCommand.AddCommand(lemmaCommand);
 
             rootCommand.Description = "An app which processes the Oxford English Dictionary Researcher API, and exports to SuperMemo.";
-            rootCommand.Handler = CommandHandler.Create<string, bool, bool, string?, string?, bool, bool, bool, string?, string?, bool, string?>(HandleArgs);
+            rootCommand.Handler = CommandHandler.Create<string, bool, bool, string?, string?, bool, bool, bool, string?, string?, bool, bool>(HandleArgs);
 
 
             string directoryPath = string.Concat(Environment.CurrentDirectory, "\\logs");
@@ -307,7 +307,7 @@ namespace OxfordV2
 
             }
         }
-        public static void HandleArgs(string word, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, bool interactive, string? export)
+        public static void HandleArgs(string word, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, bool interactive, bool export)
         {
                 Trace.WriteLine($"CLI word entered was {word}");
                 Trace.WriteLine($"obsoleteOnlyOption: {obsoleteOnly}");
@@ -382,11 +382,10 @@ namespace OxfordV2
                 {
                     query.InteractiveMode = true;
                 }
-                if (!string.IsNullOrWhiteSpace(export))
+                if (export)
                 {
                     // SavedQueries.ExportFileName = export;
                     query.ExportAfterSearch = true;
-                    parseExport(query, export);
 
                 }
 
@@ -403,7 +402,7 @@ namespace OxfordV2
                     ConsoleUI.Start(word, query);
                 }
         }
-    private static CurrentQuery parseExport(CurrentQuery query, string export)
+    public static CurrentQuery ParseExport(CurrentQuery query, string export)
     {
         Trace.WriteLine("Parsing export argument...");
         Trace.WriteLine("...");

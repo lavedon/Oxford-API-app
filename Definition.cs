@@ -16,12 +16,14 @@ namespace OxfordV2
         public int RecordedFirstUseYear { get; set; }
         public List<string> PartsOfSpeech { get; set;}
         public List<string> FormattedPartsOfSpeech { get; set; }
+    	public string FormattedVerboseOutput { get; set; }
 
         public Etymology DefinitionEtymology { get; set; }
 
     public Definition() {
         this.PartsOfSpeech = new List<string>();
         this.FormattedPartsOfSpeech = new List<string>();
+        this.FormattedVerboseOutput = "";
         this.DefinitionEtymology = new();
 
     }

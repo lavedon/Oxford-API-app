@@ -482,5 +482,5 @@ C:\my-coding-projects\oxford\bin\Release\net5.0\win10-x64\ru\System.CommandLine.
 C:\my-coding-projects\oxford\bin\Release\net5.0\win10-x64\tr\System.CommandLine.resources.dll
 C:\my-coding-projects\oxford\bin\Release\net5.0\win10-x64\zh-Hans\System.CommandLine.resources.dll
 C:\my-coding-projects\oxford\bin\Release\net5.0\win10-x64\zh-Hant\System.CommandLine.resources.dll
-C:\my-coding-projects\oxford\bin\Release\net5.0\win10-x64\mscordaccore_amd64_amd64_5.0.721.25508.dll
 C:\my-coding-projects\oxford\obj\Release\net5.0\win10-x64\OxfordV2.csproj.AssemblyReference.cache
+C:\my-coding-projects\oxford\bin\Release\net5.0\win10-x64\mscordaccore_amd64_amd64_5.0.821.31504.dll

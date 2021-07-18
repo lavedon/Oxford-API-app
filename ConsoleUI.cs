@@ -15,6 +15,12 @@ namespace OxfordV2
 			running = true;
 			// Call the definition method before main menu
 			getDefinition(query, word);
+			if (query.ExportAfterSearch) {
+				Console.WriteLine("Select which returned definitions to export:");
+				string export = Console.ReadLine().Trim().ToLower();
+				Program.ParseExport(query, export);
+				exportQuery(query);
+			}
 			if (query.InteractiveMode) {
 				while (running) {
 					MainMenu(query);
@@ -96,6 +102,7 @@ namespace OxfordV2
 			}
 		}
 
+		// @TODO have this return a string which is then saved and exported?
 		public static void showDefinitions(CurrentQuery query)
 		{
 			
@@ -140,10 +147,13 @@ namespace OxfordV2
 
 					firstUseSource = query.Definitions[i].RecordedFirstUseSource;
 					firstUseYear = query.Definitions[i].RecordedFirstUseYear.ToString();
-					Console.WriteLine(outputPartsOfSpeech +  isObsolete + " " + mainDefinition + 
-						" The original source of this word is listed as {0}. This word was first recored in {1}", 
-						firstUseSource, firstUseYear);
+
+					string output = string.Concat(outputPartsOfSpeech +  isObsolete + " " + mainDefinition + 
+						string.Format(" The original source of this word is listed as {0}. This word was first recored in {1}", 
+						firstUseSource, firstUseYear));
+					Console.WriteLine(output);
 					Console.WriteLine();
+					query.Definitions[i].FormattedVerboseOutput = string.Concat(query.UserEnteredWord + ": " + query.Definitions[i].WordDefinition.ToString() + output);
 				}
 				
 
@@ -269,7 +279,7 @@ namespace OxfordV2
         }
 
         private static void exportQuery()
-        {
+		{
             Trace.WriteLine("Export quotations.");
 			// @TODO add Definitions 
             if (SavedQueries.Quotes.Count != 0 || SavedQueries.Senses.Count != 0)
@@ -278,6 +288,16 @@ namespace OxfordV2
             {
                 Console.WriteLine("You have not yet saved anything for export.");
             }
+		}
+        private static void exportQuery(CurrentQuery query)
+        {
+			for(int i = 0;i < query.WhatToExport.Count; i++)
+			{
+				Trace.WriteLine($"Trying to export #{i}");
+				SavedQueries.DefinitionsForExport.Add(query.Definitions[i]);
+			}
+			SavedQueries.RenderXML();
+			
         }
 
         private static void getDefinition(CurrentQuery query, string userInput)
@@ -297,11 +317,10 @@ namespace OxfordV2
                 Trace.WriteLine("Exception on automatic word look up");
                 Trace.WriteLine(ex);
             }
+
 			SavedQueries.SaveWordId(query);
             showDefinitions(query);
-			if (query.ExportAfterSearch) {
-				exportQuery();
-			}
+
         }
 
 		public static void DisplayLemmas(CurrentQuery query)

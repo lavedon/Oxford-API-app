@@ -18,6 +18,7 @@ namespace OxfordV2
 	    public static List<Quote> Quotes { get; set; }
 	    public static List<Sense> Senses { get; set; }
 		public static List<Definition> Definitions { get; set; }
+		public static List<Definition> DefinitionsForExport { get; set; }
 
 		public static List<Lemmas> Lemmas { get; set; }
 
@@ -29,6 +30,7 @@ namespace OxfordV2
 		    Quotes = new();
 		    Senses = new();
 			Definitions = new();
+			DefinitionsForExport = new();
 			Lemmas = new();
 	    }
 
@@ -121,9 +123,11 @@ namespace OxfordV2
 
 		    xml.WriteStartDocument();
 		    xml.WriteStartElement("SuperMemoCollection");
-		    int count = Quotes.Count + Senses.Count + Lemmas.Count;
+		    int count = Quotes.Count + Senses.Count + Lemmas.Count + DefinitionsForExport.Count;
 		    xml.WriteElementString("Count", $"{count}");
 		    // @TODO Add count number and ID number
+
+			// Export each category of saved stuff - one by one
 		    if (Quotes.Count > 0) {
 		    Console.WriteLine("Exporting Quotes...");
 		    for (int i = 0; i < Quotes.Count; i++) {
@@ -154,6 +158,37 @@ namespace OxfordV2
 				}
 		    }
 		    }
+
+			if (DefinitionsForExport.Count > 0)
+			{
+				Console.WriteLine("Exporting Definitions..");
+				for (int i = 0; i < DefinitionsForExport.Count; i++) {
+			    int ID = i + 1;
+			try {
+			    xml.WriteStartElement("SuperMemoElement");
+			    xml.WriteElementString("ID", $"{ID}");
+			    xml.WriteElementString("Title", $"{DefinitionsForExport[i].WordID}");
+			    xml.WriteElementString("Type", "Topic");
+			    xml.WriteStartElement("Content");
+			    xml.WriteElementString("Question", $"{DefinitionsForExport[i].FormattedVerboseOutput}");
+			    string encoded = WebUtility.HtmlEncode("<H5 dir=ltr align=left><Font size=\"1\" style=\"color: transparent\"> SuperMemo Reference:</font><br><FONT class=reference>Title:\"My Test Quote\" <br>Source: Oxford English Dictionary");
+			    xml.WriteElementString("SuperMemoReference", encoded);
+
+				xml.WriteEndElement();
+				xml.WriteEndElement();
+
+				}
+				catch (AggregateException ae)
+				{
+					var ex = ae.Flatten().InnerExceptions;
+					Console.WriteLine("Error writing XML document:");
+					foreach (var exception in ex)
+					{
+						Console.WriteLine($"{ex.ToString()}");
+					}
+				}
+		    }
+			}
 		    if (Senses.Count > 0) {
 		    Console.WriteLine("Exporting Senses...");
 			    string obsoleteText = "";
@@ -258,8 +293,6 @@ namespace OxfordV2
 
 		    Trace.WriteLine("The contents of the exported XML file are:");
 		    Trace.WriteLine(File.ReadAllText(xmlFile));
-		    Console.WriteLine("Please press enter:..........");
-		    Console.ReadLine();
 		}
 			catch (AggregateException ae)
 			{

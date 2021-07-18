@@ -80,6 +80,7 @@ namespace OxfordV2
                 }
             }
 
+			/* Use this function
             static string addQuoteOptions(CurrentQuery query, string queryURL)
             {
                 if (!string.IsNullOrWhiteSpace(query.CurrentQuoteOptions.AuthorGender))
@@ -101,6 +102,7 @@ namespace OxfordV2
 
                 return queryURL;
             }
+			*/
 
 
         }
