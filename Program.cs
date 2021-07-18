@@ -309,18 +309,18 @@ namespace OxfordV2
         }
         public static void HandleArgs(string word, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, bool interactive, string? export)
         {
-                Console.WriteLine($"CLI word entered was {word}");
-                Console.WriteLine($"obsoleteOnlyOption: {obsoleteOnly}");
-                Console.WriteLine($"excludeObsoleteOption: {obsoleteExclude}.");
-                Console.WriteLine($"partOfSpeech: {partOfSpeech ?? "null"}");
-                Console.WriteLine($"years: {years ?? "null"}");
-                Console.WriteLine($"Current In: {currentIn}");
-                Console.WriteLine($"Revised:? {revised}");
-                Console.WriteLine($"Revised: Old editions only? {revisedNot}");
-                Console.WriteLine($"etymologyLanguage: {etymologyLanguage}");
-                Console.WriteLine($"etymologyType: {etymologyType}");
-                Console.WriteLine($"interactive: {interactive}");
-                Console.WriteLine($"export: {export}");
+                Trace.WriteLine($"CLI word entered was {word}");
+                Trace.WriteLine($"obsoleteOnlyOption: {obsoleteOnly}");
+                Trace.WriteLine($"excludeObsoleteOption: {obsoleteExclude}.");
+                Trace.WriteLine($"partOfSpeech: {partOfSpeech ?? "null"}");
+                Trace.WriteLine($"years: {years ?? "null"}");
+                Trace.WriteLine($"Current In: {currentIn}");
+                Trace.WriteLine($"Revised:? {revised}");
+                Trace.WriteLine($"Revised: Old editions only? {revisedNot}");
+                Trace.WriteLine($"etymologyLanguage: {etymologyLanguage}");
+                Trace.WriteLine($"etymologyType: {etymologyType}");
+                Trace.WriteLine($"interactive: {interactive}");
+                Trace.WriteLine($"export: {export}");
 
                 CurrentQuery query = new();
                 if (currentIn) {                        
@@ -405,39 +405,47 @@ namespace OxfordV2
         }
     private static CurrentQuery parseExport(CurrentQuery query, string export)
     {
-        Console.WriteLine("Parsing export argument...");
-        Console.WriteLine("...");
-        Console.ReadLine();
+        Trace.WriteLine("Parsing export argument...");
+        Trace.WriteLine("...");
 
         if (export.Length == 0)
         {
             query.ExportAll = true;
-            Console.WriteLine("query.ExportAll is set to true.");
+            Console.WriteLine("Will export all results");
         } 
-        if (export.Contains("-"))
-        {
-            Console.WriteLine("The export argument contains a '-'");
-        }
-        if (export.Contains(","))
-        {
-            Console.WriteLine("The export argument contains a ','");
-            parseComma(export);
-        }
 
-        static List<int> parseComma(string export){                
-            List<int> num = new();
-            export = export.Replace(" ",",");
-            string[] numbers = export.Trim().Split(',');
-            foreach (string s in numbers)
+        List<int> parseNumbers(string export)
+        {
+            List<int> nums = new();
+            try {
+            export = export.Trim().ToLower();
+            export = export.Replace(" ", string.Empty);
+            Trace.WriteLine("Linq splitting the ',' and '-'");
+            IEnumerable<int> result = export.Split(',')
+                    .SelectMany(x => x.Contains('-') ? 
+                    Enumerable.Range(int.Parse(x.Split('-')[0]), 
+                    int.Parse(x.Split('-')[1]) - int.Parse(x.Split('-')[0]) + 1) : new int[] { int.Parse(x) });
+
+            Trace.WriteLine("These are the numbers I am going to export.");
+            foreach (var r in result)
             {
-                num.Add(int.Parse(s));
+                Trace.WriteLine(r);
+                nums.Add(r);
             }
-            return num;
+            } catch(Exception ex)
+            {
+                Console.WriteLine("Number selection entered in incorrect format.");
+                Console.WriteLine("Did you use a space to seperate values instead of a comma?");
+                Trace.WriteLine($"error parsing export numbers. {ex}");
+            }
+            return nums;
+
+
         }
 
-        query.WhatToExport = parseComma(export);
+        query.WhatToExport = parseNumbers(export);
 
-        return null;
+        return query;
         }
     }
 }

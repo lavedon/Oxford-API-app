@@ -1,2 +1,4 @@
-apple_nn01
-apple_vb01
+boy_nn01
+boy_nn02
+boy_vb01
+boy_uh01
