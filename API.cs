@@ -856,7 +856,9 @@ namespace OxfordV2
                     }
                     Console.WriteLine(currentSense.OedReference);
 
-                    query.Senses.Add(currentSense);
+					Sense savedSense = new();
+					savedSense = currentSense;
+                    query.Senses.Add(savedSense);
                     Console.WriteLine();
 
                     if (query.InteractiveMode == true)
