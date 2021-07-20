@@ -16,8 +16,24 @@ namespace OxfordV2
 			// Call the definition method before main menu
 			getDefinition(query, word);
 			if (query.ExportAfterSearch) {
+				string mode = "";
+				switch (query.QueryMode)
+				{
+					case Modes.Word:
+						mode = "definitions";
+					break;
+
+					case Modes.Lammatize:
+						mode = "lemma";
+					break;
+
+					default:
+						mode = query.QueryMode.ToString();
+					break;
+				}
+
 				Console.WriteLine("Select which returned definitions to export:");
-				string export = Console.ReadLine().Trim().ToLower();
+				string export = Console.ReadLine();
 				Program.ParseExport(query, export);
 				exportQuery(query);
 			}
@@ -276,6 +292,10 @@ namespace OxfordV2
             query.QueryMode = Modes.Senses;
    		         API.APICalls(query);
 			SavedQueries.SaveSenseId(query);
+			if (query.ExportAfterSearch)
+			{
+				exportQuery(query);
+			}
         }
 
         private static void exportQuery()
@@ -291,10 +311,23 @@ namespace OxfordV2
 		}
         private static void exportQuery(CurrentQuery query)
         {
-			for(int i = 0;i < query.WhatToExport.Count; i++)
+			if (query.QueryMode == Modes.Word)
 			{
-				Trace.WriteLine($"Trying to export #{i}");
-				SavedQueries.DefinitionsForExport.Add(query.Definitions[i]);
+				SavedQueries.DefinitionsForExport.Clear();
+				for(int i = 0;i < query.WhatToExport.Count; i++)
+				{
+					Trace.WriteLine($"Trying to export #{i}");
+					SavedQueries.DefinitionsForExport.Add(query.Definitions[query.WhatToExport[i] - 1]);
+				}
+			}
+			else if (query.QueryMode == Modes.Senses)
+			{
+				SavedQueries.SensesForExport.Clear();
+				for(int i = 0;i < query.WhatToExport.Count; i++)
+				{
+					Trace.WriteLine($"Trying to export #{i}");
+					SavedQueries.SensesForExport.Add(query.Senses[query.WhatToExport[i] - 1]);
+				}
 			}
 			SavedQueries.RenderXML();
 			

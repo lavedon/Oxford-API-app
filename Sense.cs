@@ -3,7 +3,7 @@ using System;
 
 namespace OxfordV2
 {
-	public class Sense : IDisposable
+	public class Sense 
 	{
 		public string Definition { get; set; }
 		public int Start { get; set; } 
@@ -12,27 +12,9 @@ namespace OxfordV2
 		public string SenseID { get; set; }
 		public string OedReference { get; set; }
 		
-		bool disposed;
 
-		protected virtual void Dispose(bool disposing)
-		{
-			if (!disposed)
-			{
-				if (disposing)
-				{
-					GC.ReRegisterForFinalize(this);
-				}
-			}
-			//dispose unmanaged resources
-			disposed = true;
-		}
 		public Sense() {
 			this.IsObsolete = false;
-		}
-		public void Dispose()
-		{
-			Dispose(true);
-			// GC.SuppressFinalize(this);
 		}
 
 	}

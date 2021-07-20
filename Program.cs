@@ -57,7 +57,7 @@ namespace OxfordV2
             senseCommand.AddOption(senseMainOption);
             senseCommand.AddOption(senseTopicOption);
 
-            senseCommand.Handler = CommandHandler.Create<string, string?, string?, bool, string?>(HandleSenseArgs);
+            senseCommand.Handler = CommandHandler.Create<string, string?, string?, bool, string?, bool>(HandleSenseArgs);
 
             
 
@@ -212,7 +212,7 @@ namespace OxfordV2
         Console.ReadLine();
         }
 
-        public static void HandleSenseArgs(string? lemma, string? restrictRegion, string? restrictUsage, bool restrictMain, string? topic)
+        public static void HandleSenseArgs(string? lemma, string? restrictRegion, string? restrictUsage, bool restrictMain, string? topic, bool export)
         {
             Trace.WriteLine($"Sense sub command entered.");
             Trace.WriteLine($"lemma: {lemma}");
@@ -222,9 +222,13 @@ namespace OxfordV2
             Trace.WriteLine($"restrictUsage: {restrictUsage}");
             Trace.WriteLine($"restrictMain: {restrictMain}");
             Trace.WriteLine($"topic: {topic}");
+            Trace.WriteLine($"export: {export}");
 
             CurrentQuery query = new();
             query.CurrentSenseOptions = new(lemma, restrictRegion, restrictUsage, restrictMain, topic);
+            if (export) {
+                query.ExportAfterSearch = true;
+            }
             if (string.IsNullOrWhiteSpace(lemma))
             {
                 Trace.WriteLine("Looking up word IDs from file");

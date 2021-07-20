@@ -80,7 +80,7 @@ namespace OxfordV2
                 }
             }
 
-			/* Use this function
+			/* @TODO use this function
             static string addQuoteOptions(CurrentQuery query, string queryURL)
             {
                 if (!string.IsNullOrWhiteSpace(query.CurrentQuoteOptions.AuthorGender))
@@ -727,6 +727,13 @@ namespace OxfordV2
 					makeSenseRequest(query, client, callSensesAPI);
 				}
 			}
+			if (query.ExportAfterSearch)
+			{
+				Console.WriteLine("Select which returned senses to export:");
+				string export = Console.ReadLine();
+				Program.ParseExport(query, export);
+				
+			}
 		}
 		else if (query.QueryMode == Modes.Quotations)
 		{
@@ -827,6 +834,8 @@ namespace OxfordV2
                     // currentSense.Usage = item.GetProperty("")
                     // Get the sense ID 
                     currentSense.SenseID = item.GetPropertyExt("id")?.ToString();
+					// Display which Sense #
+					Console.WriteLine($"Sense #{query.Senses.Count + 1}:");
                     Console.WriteLine(currentSense.Definition);
                     Console.WriteLine("Sense first used: {0}", currentSense.Start);
                     if (currentSense.IsObsolete)
@@ -917,8 +926,8 @@ namespace OxfordV2
                     }
                     else
                     {
-                        SavedQueries.AddMember(currentSense);
-                        currentSense.Dispose();
+                        // SavedQueries.AddMember(currentSense); // This would save all senses for export when not in 
+						// interactive mode
                     }
                 }
                 catch (Exception ex)

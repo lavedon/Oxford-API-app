@@ -17,6 +17,7 @@ namespace OxfordV2
 	    public static string WordID { get; set; }
 	    public static List<Quote> Quotes { get; set; }
 	    public static List<Sense> Senses { get; set; }
+	    public static List<Sense> SensesForExport { get; set; }
 		public static List<Definition> Definitions { get; set; }
 		public static List<Definition> DefinitionsForExport { get; set; }
 
@@ -29,6 +30,7 @@ namespace OxfordV2
 		    Instance=true;
 		    Quotes = new();
 		    Senses = new();
+            SensesForExport = new();
 			Definitions = new();
 			DefinitionsForExport = new();
 			Lemmas = new();
@@ -37,10 +39,10 @@ namespace OxfordV2
 		public static void AddMember(Sense sense) {
 			Senses.Add(sense);
 			if (Senses.Count == 1) {
-				Console.WriteLine($"{Senses.Count} sense saved for export.");
+				Trace.WriteLine($"{Senses.Count} sense saved for export.");
 			}
 			else {
-				Console.WriteLine($"{Senses.Count} senses saved for export.");
+				Trace.WriteLine($"{Senses.Count} senses saved for export.");
 			}
 		}
 
@@ -123,7 +125,7 @@ namespace OxfordV2
 
 		    xml.WriteStartDocument();
 		    xml.WriteStartElement("SuperMemoCollection");
-		    int count = Quotes.Count + Senses.Count + Lemmas.Count + DefinitionsForExport.Count;
+		    int count = Quotes.Count + SensesForExport.Count + Lemmas.Count + DefinitionsForExport.Count;
 		    xml.WriteElementString("Count", $"{count}");
 		    // @TODO Add count number and ID number
 
@@ -189,20 +191,20 @@ namespace OxfordV2
 				}
 		    }
 			}
-		    if (Senses.Count > 0) {
+		    if (SensesForExport.Count > 0) {
 		    Console.WriteLine("Exporting Senses...");
 			    string obsoleteText = "";
 			    string mainUsageText = "";
-		    for (int i = 0; i < Senses.Count; i++) {
+		    for (int i = 0; i < SensesForExport.Count; i++) {
 
-			    if (Senses[i].IsObsolete) {
+			    if (SensesForExport[i].IsObsolete) {
 			    	obsoleteText = "This usage is obsolete.";
 			    }
 			    else {
 				obsoleteText = "This usage is NOT obsolete.";
 			    }
 
-			    if (Senses[i].IsMainUsage) {
+			    if (SensesForExport[i].IsMainUsage) {
 				mainUsageText = "This sense is the main sense for this word.";
 			    }
 			    else {
@@ -215,10 +217,10 @@ namespace OxfordV2
 			    xml.WriteStartElement("SuperMemoElement");
 			    int ID = i + 1;
 			    xml.WriteElementString("ID", $"{ID}");
-			    xml.WriteElementString("Title", $"{Senses[i].Definition}");
+			    xml.WriteElementString("Title", $"{SensesForExport[i].OedReference}");
 			    xml.WriteElementString("Type", "Topic");
 			    xml.WriteStartElement("Content");
-			    xml.WriteElementString("Question", $"Sense: \"{Senses[i].Definition}\" --This sense was first used in the year {Senses[i].Start},  {obsoleteText}, {mainUsageText}, {Senses[i].OedReference}");
+			    xml.WriteElementString("Question", $"Sense: \"{SensesForExport[i].Definition}\" --This sense was first used in the year {SensesForExport[i].Start},  {obsoleteText}, {mainUsageText}, {SensesForExport[i].OedReference}");
 
 			    string encoded = WebUtility.HtmlEncode("<H5 dir=ltr align=left><Font size=\"1\" style=\"color: transparent\"> SuperMemo Reference:</font><br><FONT class=reference>Title:\"My Test Quote\" <br>Source: Oxford English Dictionary");
 			    xml.WriteElementString("SuperMemoReference", encoded);

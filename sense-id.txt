@@ -1,2 +1,4 @@
-apple_nn01-343518
-apple_vb01-345134
+orange_nn01-33240820
+orange_jj01-33241573
+orange_nn02-33246306
+orange_jj02-33246650
