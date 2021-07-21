@@ -21,7 +21,6 @@ namespace OxfordV2
 			Trace.WriteLine($"args.Length: {args.Length}");
 
 
-            // @Todo implement Lemma sub-command
             var senseCommand = new Command("Sense");
             var senseLemmaArgument = new Option<string>(
                 new[] {"--lemma", "-l"}, description: "the word to find senses for. If not specified use the word id from the last query."
@@ -92,7 +91,7 @@ namespace OxfordV2
             quoteCommand.AddOption(quoteUseWords);
             quoteCommand.AddOption(quoteUseSenses);
 
-            quoteCommand.Handler = CommandHandler.Create<string, string, bool, bool, bool, bool>(HandleQuoteArgs);
+            quoteCommand.Handler = CommandHandler.Create<string, string, bool, bool, bool, bool, bool>(HandleQuoteArgs);
 
             var surfaceCommand = new Command("Surfaces");
 
@@ -138,7 +137,6 @@ namespace OxfordV2
             new Option<string?>(new[] {"--etymology-language", "-el"}, description: "Restrict results to words derived from a certain language.  Languages are grouped by continent and hierarchical.  i.e. European will automatically include German."),
             new Option<string?>(new[] {"--etymology-type", "-et"}, description: "Restrict results only certain etymological types.  compound, derivative, conversion, blend, shortening, backformation, initialism, acronym, variant, arbitrary, imitative, borrowing, properName, unknown"),
             new Option<bool>(new[] {"--interactive", "-i"}, description: "Open the interactive text menu features, where you can run follow-up queries, change options, and export queries. Has reduced features when compared to the command line."),
-            // @TODO: add a switch which will prevent the interactive console mode from starting up.
         };
             // Global Options
 			rootCommand.AddGlobalOption(new Option<bool>(new[] {"--obsolete-only", "-o"}, description: "Only return obsolete usages."));
@@ -209,7 +207,7 @@ namespace OxfordV2
             // @TODO Make an overload of ConsoleUI.Start(which passes a word from the command line)
             rootCommand.Invoke(args);
 
-        Console.ReadLine();
+        Console.ReadKey();
         }
 
         public static void HandleSenseArgs(string? lemma, string? restrictRegion, string? restrictUsage, bool restrictMain, string? topic, bool export)
@@ -266,7 +264,7 @@ namespace OxfordV2
                 SavedQueries.AddMember(query.Lemmas);
             }
         }
-        public static void HandleQuoteArgs(string authorGender, string sourceTitle, bool firstWord, bool firstSense, bool useWords, bool useSenses)
+        public static void HandleQuoteArgs(string authorGender, string sourceTitle, bool firstWord, bool firstSense, bool useWords, bool useSenses, bool export)
         {
             Trace.WriteLine($"Quote sub command entered.");
             Trace.WriteLine($"authorGender: {authorGender}");
@@ -275,8 +273,14 @@ namespace OxfordV2
             Trace.WriteLine($"firstSense: {firstSense}");
             Trace.WriteLine($"useWords: {useWords}");
             Trace.WriteLine($"useSenses: {useSenses}");
+            Trace.WriteLine($"export: {export}");
 
             CurrentQuery query = new();
+            if (export)
+            {
+                query.ExportAfterSearch = true;
+            }
+
             query.CurrentQuoteOptions = new(authorGender, sourceTitle, firstWord, firstSense, useWords, useSenses);
             if (!string.IsNullOrWhiteSpace(authorGender))
             {
@@ -303,13 +307,17 @@ namespace OxfordV2
                 ConsoleUI.GetQuotes(SavedQueries.LoadWordIds(query));
 
             }
-            if (useSenses)
+            else if (useSenses)
             {
-                // @TODO save senses to sense-id.txt file
                 // Run /sense/{id}/quotations/ endpoint
                 ConsoleUI.GetQuotes(SavedQueries.LoadSenseIds(query));
 
             }
+            else {
+                Console.WriteLine("Please re-run the Quote command, and specify if you want quotes based on the previous word search or sense search.");
+                Console.WriteLine("-uw flag or -us flag");
+            }
+
         }
         public static void HandleArgs(string word, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, bool interactive, bool export)
         {

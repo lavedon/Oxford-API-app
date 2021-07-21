@@ -118,7 +118,6 @@ namespace OxfordV2
 			}
 		}
 
-		// @TODO have this return a string which is then saved and exported?
 		public static void showDefinitions(CurrentQuery query)
 		{
 			
@@ -285,6 +284,10 @@ namespace OxfordV2
             Trace.WriteLine("Get senses selected.");
             query.QueryMode = Modes.Quotations;
    		         API.APICalls(query);
+			if (query.ExportAfterSearch)
+			{
+				exportQuery(query);
+			}
         }
         public static void GetSenses(CurrentQuery query)
         {
@@ -316,7 +319,7 @@ namespace OxfordV2
 				SavedQueries.DefinitionsForExport.Clear();
 				for(int i = 0;i < query.WhatToExport.Count; i++)
 				{
-					Trace.WriteLine($"Trying to export #{i}");
+					Trace.WriteLine($"Trying to export word definition #{i}");
 					SavedQueries.DefinitionsForExport.Add(query.Definitions[query.WhatToExport[i] - 1]);
 				}
 			}
@@ -325,8 +328,17 @@ namespace OxfordV2
 				SavedQueries.SensesForExport.Clear();
 				for(int i = 0;i < query.WhatToExport.Count; i++)
 				{
-					Trace.WriteLine($"Trying to export #{i}");
-					SavedQueries.SensesForExport.Add(query.Senses[query.WhatToExport[i] - 1]);
+					Trace.WriteLine($"Trying to export sense #{i}");
+					SavedQueries.SensesForExport.Add(new Sense(query.Senses[query.WhatToExport[i] - 1]));
+				}
+			}
+			else if (query.QueryMode == Modes.Quotations)
+			{
+				SavedQueries.QuotesForExport.Clear();
+				for(int i = 0;i < query.WhatToExport.Count; i++)
+				{
+					Trace.WriteLine($"Trying to export quote #{i}");
+					SavedQueries.QuotesForExport.Add(new Quote(query.Quotes[query.WhatToExport[i] - 1]));
 				}
 			}
 			SavedQueries.RenderXML();

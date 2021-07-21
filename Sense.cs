@@ -14,7 +14,21 @@ namespace OxfordV2
 		
 
 		public Sense() {
+			this.Definition = "";
+			this.Start = 0;
 			this.IsObsolete = false;
+			this.IsMainUsage = false;
+			this.SenseID = "";
+			this.OedReference = "";
+		}
+		public Sense(Sense other) 
+		{
+			Definition = other.Definition;
+			OedReference = other.OedReference;
+			SenseID = other.SenseID;
+			Start = other.Start;
+			IsMainUsage = other.IsMainUsage;
+			IsObsolete = other.IsObsolete;
 		}
 
 	}

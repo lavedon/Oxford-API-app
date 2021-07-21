@@ -16,6 +16,7 @@ namespace OxfordV2
 
 	    public static string WordID { get; set; }
 	    public static List<Quote> Quotes { get; set; }
+	    public static List<Quote> QuotesForExport { get; set; }
 	    public static List<Sense> Senses { get; set; }
 	    public static List<Sense> SensesForExport { get; set; }
 		public static List<Definition> Definitions { get; set; }
@@ -29,12 +30,14 @@ namespace OxfordV2
 	    {
 		    Instance=true;
 		    Quotes = new();
+            QuotesForExport = new();
 		    Senses = new();
             SensesForExport = new();
 			Definitions = new();
 			DefinitionsForExport = new();
 			Lemmas = new();
 	    }
+
 
 		public static void AddMember(Sense sense) {
 			Senses.Add(sense);
@@ -130,17 +133,17 @@ namespace OxfordV2
 		    // @TODO Add count number and ID number
 
 			// Export each category of saved stuff - one by one
-		    if (Quotes.Count > 0) {
+		    if (QuotesForExport.Count > 0) {
 		    Console.WriteLine("Exporting Quotes...");
-		    for (int i = 0; i < Quotes.Count; i++) {
+		    for (int i = 0; i < QuotesForExport.Count; i++) {
 			try {
 			    xml.WriteStartElement("SuperMemoElement");
 			    int ID = i + 1;
 			    xml.WriteElementString("ID", $"{ID}");
-			    xml.WriteElementString("Title", $"{Quotes[i].Author} - {Quotes[i].Year}");
+			    xml.WriteElementString("Title", $"{QuotesForExport[i].Author} - {QuotesForExport[i].Year}");
 			    xml.WriteElementString("Type", "Topic");
 			    xml.WriteStartElement("Content");
-			    xml.WriteElementString("Question", $"\"{Quotes[i].Text}\" --{Quotes[i].Author}, {Quotes[i].Year}");
+			    xml.WriteElementString("Question", $"\"{QuotesForExport[i].Text}\" --{QuotesForExport[i].Author}, {QuotesForExport[i].Year}");
 
 			    string encoded = WebUtility.HtmlEncode("<H5 dir=ltr align=left><Font size=\"1\" style=\"color: transparent\"> SuperMemo Reference:</font><br><FONT class=reference>Title:\"My Test Quote\" <br>Source: Oxford English Dictionary");
 			    xml.WriteElementString("SuperMemoReference", encoded);

@@ -54,7 +54,6 @@ namespace OxfordV2
 			if (query.CurrentQuoteOptions.UseWords)
 			{
 				// will work on this endpoint.
-				// @TODO test whether or not coreQuery options such as obsolete, etc, year 
 				foreach (Definition d in query.Definitions)
 				{
 					queryURL = "word/";
@@ -62,6 +61,7 @@ namespace OxfordV2
                     // queryURL = addQuoteOptions(query, queryURL);
 					query.CurrentWordID = d.WordID;
 					queryURL = queryURL + d.WordID + "/quotations/";
+					queryURL = addQuoteOptions(query, queryURL);
 					makeCLIQuoteRequest(query, client, queryURL);
 
 				}
@@ -80,7 +80,6 @@ namespace OxfordV2
                 }
             }
 
-			/* @TODO use this function
             static string addQuoteOptions(CurrentQuery query, string queryURL)
             {
                 if (!string.IsNullOrWhiteSpace(query.CurrentQuoteOptions.AuthorGender))
@@ -102,7 +101,6 @@ namespace OxfordV2
 
                 return queryURL;
             }
-			*/
 
 
         }
@@ -220,6 +218,8 @@ namespace OxfordV2
 
                     // Get what year the quote is from
                     JsonElement quoteYear = item.GetProperty("year");
+					Console.WriteLine();
+					Console.WriteLine($"Quote #{query.Quotes.Count + 1}");
                     Console.WriteLine("\"{0}\", Year: {1}, Source: {2} {3}",
                         actualQuote.ToString(), quoteYear.ToString(), quoteAuthor.ToString(),
                         quoteTitle.ToString());
@@ -228,9 +228,10 @@ namespace OxfordV2
                     currentQuote.Text = actualQuote.ToString();
                     currentQuote.Title = quoteTitle.ToString();
                     currentQuote.Author = quoteAuthor.ToString();
+					Quote copyOfQuote = new Quote(currentQuote);
+					query.Quotes.Add(copyOfQuote);
 
 					if (query.InteractiveMode) {
-                    // @TODO add all quotes whether you have seen them or not?
                     query.Quotes.Add(currentQuote);
                     Console.WriteLine();
                     Console.WriteLine("---- S to Save - X to exit - Enter for more----");
@@ -238,7 +239,8 @@ namespace OxfordV2
                     if (input == "s")
                     {
                         Console.WriteLine("Quote saved.");
-                        SavedQueries.AddMember(currentQuote);
+						Quote intCopyOfQuote = new Quote(currentQuote);
+                        SavedQueries.AddMember(intCopyOfQuote);
                     }
                     else if (input == "x")
                         break;
@@ -468,8 +470,6 @@ namespace OxfordV2
 				Trace.WriteLine(ex.Message);
 			}
 		};
-		// @TODO an action to set headers
-		// Make a new Task for each API call
 		
 
 		if (query.QueryMode == Modes.Word) 
@@ -738,13 +738,18 @@ namespace OxfordV2
 		else if (query.QueryMode == Modes.Quotations)
 		{
 			GetQuotations(query, client);
+			if (query.ExportAfterSearch)
+			{
+				Console.WriteLine("Select which returned quotes to export:");
+				string export = Console.ReadLine();
+				Program.ParseExport(query, export);
+			}
 		}
 		else 
 		{
 			Console.WriteLine("Query mode not correctly set.");
 		}
 
-		// client.Dispose();
 	}
 
         private static string coreQueryFeatures(CurrentQuery query, string queryURL)
@@ -856,8 +861,7 @@ namespace OxfordV2
                     }
                     Console.WriteLine(currentSense.OedReference);
 
-					Sense savedSense = new();
-					savedSense = currentSense;
+					Sense savedSense = new Sense(currentSense);
                     query.Senses.Add(savedSense);
                     Console.WriteLine();
 
