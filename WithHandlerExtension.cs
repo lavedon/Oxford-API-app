@@ -3,7 +3,7 @@ using System.Reflection;
 using System.CommandLine;
 using System.CommandLine.Invocation;
 
-namespace OxfordV2
+namespace oed
 {
         public static class WithHandlerExtension
         {

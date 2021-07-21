@@ -7,12 +7,12 @@
   "targets": {
     ".NETCoreApp,Version=v5.0": {},
     ".NETCoreApp,Version=v5.0/win-x64": {
-      "OxfordV2/1.0.0": {
+      "oed/1.0.0": {
         "dependencies": {
           "runtimepack.Microsoft.NETCore.App.Runtime.win-x64": "5.0.6"
         },
         "runtime": {
-          "OxfordV2.dll": {}
+          "oed.dll": {}
         }
       },
       "runtimepack.Microsoft.NETCore.App.Runtime.win-x64/5.0.6": {
@@ -845,7 +845,7 @@
     }
   },
   "libraries": {
-    "OxfordV2/1.0.0": {
+    "oed/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

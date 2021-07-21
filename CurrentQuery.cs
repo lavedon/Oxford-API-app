@@ -4,7 +4,7 @@ using System;
 using System.Diagnostics;
 using System.Collections.Generic;
 
-namespace OxfordV2
+namespace oed
 {
 	public enum Modes
 	{

@@ -5,7 +5,7 @@ using System.Text.Json;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace OxfordV2
+namespace oed
 {
     class LemmaProcessor
     {

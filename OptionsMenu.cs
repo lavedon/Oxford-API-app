@@ -2,7 +2,7 @@ using System;
 using System.Diagnostics;
 using System.Linq;
 
-namespace OxfordV2
+namespace oed
 {
 	public static class OptionsMenu
 	{

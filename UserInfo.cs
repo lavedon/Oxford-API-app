@@ -2,7 +2,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 
-namespace OxfordV2
+namespace oed
 {
 	public static class UserInfo
 	{

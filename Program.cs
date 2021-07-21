@@ -7,7 +7,7 @@ using System.CommandLine.Invocation;
 using System.IO;
 using System.Linq;
 
-namespace OxfordV2
+namespace oed
 {
     class Program
     {

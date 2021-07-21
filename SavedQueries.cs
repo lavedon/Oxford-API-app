@@ -7,7 +7,7 @@ using System.Net;
 using System.Linq;
 
 
-namespace OxfordV2
+namespace oed
 {
 	public static class SavedQueries
 	{

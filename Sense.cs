@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System;
 
-namespace OxfordV2
+namespace oed
 {
 	public class Sense 
 	{

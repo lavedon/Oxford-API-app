@@ -1,7 +1,7 @@
 #nullable enable
 using System;
 
-namespace OxfordV2
+namespace oed
 {
 	public class SenseOptions
 	{

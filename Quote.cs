@@ -1,4 +1,4 @@
-namespace OxfordV2
+namespace oed
 {
 	public class Quote
 	{

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace OxfordV2
+namespace oed
 {
     public class Etymology
     {

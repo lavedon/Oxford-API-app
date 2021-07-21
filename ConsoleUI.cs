@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Collections.Generic;
 
-namespace OxfordV2
+namespace oed
 {
 	public class ConsoleUI
 	{
