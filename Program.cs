@@ -15,9 +15,6 @@ namespace oed
         static void Main(string[] args)
         {
 			Trace.WriteLine($"args are: {args.ToString()}");
-			foreach (var a in args){
-				Console.WriteLine(a);
-			}
 			Trace.WriteLine($"args.Length: {args.Length}");
 
 
@@ -344,19 +341,15 @@ namespace oed
                     try {
                         
                     query.StartYear = int.Parse(yearDates[0].Trim());
-                    Console.WriteLine($"query.StartYear: {query.StartYear}");
-                    Console.ReadLine();
+                    Trace.WriteLine($"query.StartYear: {query.StartYear}");
                     } catch {
-                        Console.WriteLine("Problem parsing start year.");
-                        Console.ReadLine();
+                        Trace.WriteLine("No start year.");
                     }
                     try {
                     query.EndYear = int.Parse(yearDates[1].Trim());
-                    Console.WriteLine($"query.EndYear: {query.EndYear}");
-                    Console.ReadLine();
+                    Trace.WriteLine($"query.EndYear: {query.EndYear}");
                     } catch {
-                        Console.WriteLine("Problem parsing end year.");
-                        Console.ReadLine();
+                        Trace.WriteLine("No end year.");
                     }
                 }
                 if (!string.IsNullOrWhiteSpace(partOfSpeech))
