@@ -350,11 +350,15 @@ namespace oed
 			}
 			if (!string.IsNullOrWhiteSpace(query.CurrentSenseOptions.Topic))
 			{
-				queryURL = queryURL + @"&topic=";
+				queryURL = queryURL + @"&topic=" + query.CurrentSenseOptions.Topic;
 			}
 			if (query.CurrentSenseOptions.RestrictMain)
 			{
 				queryURL = queryURL + @"&main_current_sense=true";
+			}
+			// Only add this option if it is not in Lemma mode
+			if (!string.IsNullOrWhiteSpace(query.PartsOfSpeech))
+			{
 			}
 
 			Uri requestURL = new Uri(baseURL + queryURL);
@@ -756,7 +760,9 @@ namespace oed
         {
             if (!string.IsNullOrWhiteSpace(query.PartsOfSpeech))
             {
-                queryURL = queryURL + @"&part_of_speech=" + query.PartsOfSpeech.ToUpper();
+				if(!string.IsNullOrWhiteSpace(query.CurrentSenseOptions.Lemma)) {
+					queryURL = queryURL + @"&part_of_speech=" + query.PartsOfSpeech.ToUpper();
+				}
             }
             if (!query.CurrentIn)
             {

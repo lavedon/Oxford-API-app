@@ -53,7 +53,7 @@ namespace oed
             senseCommand.AddOption(senseMainOption);
             senseCommand.AddOption(senseTopicOption);
 
-            senseCommand.Handler = CommandHandler.Create<string, string?, string?, bool, string?, bool>(HandleSenseArgs);
+            senseCommand.Handler = CommandHandler.Create<string?, bool, bool, string?, string?, bool, bool, bool, string?, bool, string?, string?, bool, bool>(HandleSenseArgs);
 
             
 
@@ -130,12 +130,14 @@ namespace oed
         {
             // Non-Global Options
             new Argument<string>(name: "word", getDefaultValue: () => "mail", description: "The word to look up."),
-            new Option<string?>(new[] {"--part-of-speech", "-ps"}, description: "Only return results to words specific parts of speech"),
             new Option<string?>(new[] {"--etymology-language", "-el"}, description: "Restrict results to words derived from a certain language.  Languages are grouped by continent and hierarchical.  i.e. European will automatically include German."),
             new Option<string?>(new[] {"--etymology-type", "-et"}, description: "Restrict results only certain etymological types.  compound, derivative, conversion, blend, shortening, backformation, initialism, acronym, variant, arbitrary, imitative, borrowing, properName, unknown"),
             new Option<bool>(new[] {"--interactive", "-i"}, description: "Open the interactive text menu features, where you can run follow-up queries, change options, and export queries. Has reduced features when compared to the command line."),
         };
             // Global Options
+            // new Option<string?>(new[] {"--part-of-speech", "-ps"}, description: "Only return results to words specific parts of speech"),
+
+            rootCommand.AddGlobalOption(new Option<string?>(new[] {"--part-of-speech", "-ps"}, description: "Only return results where the result relates to a specific part of speech (i.e. only nouns, only verbs)"));
 			rootCommand.AddGlobalOption(new Option<bool>(new[] {"--obsolete-only", "-o"}, description: "Only return obsolete usages."));
 			rootCommand.AddGlobalOption(new Option<bool>(new[] {"--obsolete-exclude", "-oe"}, description: "Only return NON-obsolete usages."));
             
@@ -207,7 +209,8 @@ namespace oed
         Console.ReadKey();
         }
 
-        public static void HandleSenseArgs(string? lemma, string? restrictRegion, string? restrictUsage, bool restrictMain, string? topic, bool export)
+        // public static void HandleArgs(string word, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, bool interactive, bool export)
+        public static void HandleSenseArgs(string? lemma, bool obsoleteOnly, bool obsoleteExclude, string? restrictRegion, string? years, bool currentIn, bool revised, bool revisedNot, string? restrictUsage, bool restrictMain, string? topic, string? partOfSpeech, bool interactive, bool export)
         {
             Trace.WriteLine($"Sense sub command entered.");
             Trace.WriteLine($"lemma: {lemma}");
@@ -216,13 +219,35 @@ namespace oed
             Trace.WriteLine($"restrictRegion: {restrictRegion}");
             Trace.WriteLine($"restrictUsage: {restrictUsage}");
             Trace.WriteLine($"restrictMain: {restrictMain}");
+            Trace.WriteLine($"obsoleteOnlyOption: {obsoleteOnly}");
+            Trace.WriteLine($"excludeObsoleteOption: {obsoleteExclude}.");
+            Trace.WriteLine($"partOfSpeech: {partOfSpeech ?? "null"}");
+            Trace.WriteLine($"years: {years ?? "null"}");
             Trace.WriteLine($"topic: {topic}");
+            Trace.WriteLine($"Current In: {currentIn}");
+            Trace.WriteLine($"interactive: {interactive}");
             Trace.WriteLine($"export: {export}");
 
             CurrentQuery query = new();
             query.CurrentSenseOptions = new(lemma, restrictRegion, restrictUsage, restrictMain, topic);
-            if (export) {
-                query.ExportAfterSearch = true;
+            proccessCommonOptions(obsoleteOnly, obsoleteExclude, partOfSpeech, years, currentIn, revised, revisedNot, interactive, export, query);
+            // Implement the non common options (i.e. the options not in available in the Word endpoint)
+            // region, main_current_sense, usage, topic
+            if(!string.IsNullOrWhiteSpace(topic))
+            {
+                query.CurrentSenseOptions.Topic = topic;
+            }
+           if(!string.IsNullOrWhiteSpace(restrictRegion))
+            {
+               query.CurrentSenseOptions.RestrictRegion = restrictRegion; 
+            } 
+            if(restrictMain)
+            {
+                query.CurrentSenseOptions.RestrictMain = true;
+            }
+            if(!string.IsNullOrWhiteSpace(restrictUsage))
+            {
+                query.CurrentSenseOptions.RestrictUsage = restrictUsage;
             }
             if (string.IsNullOrWhiteSpace(lemma))
             {
@@ -234,8 +259,6 @@ namespace oed
                 query.HasLookedUpWord = true;
                 ConsoleUI.GetSenses(query);
             }
-
-
         }
 
         // Also handling some global options
@@ -318,96 +341,110 @@ namespace oed
         }
         public static void HandleArgs(string word, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, bool interactive, bool export)
         {
-                Trace.WriteLine($"CLI word entered was {word}");
-                Trace.WriteLine($"obsoleteOnlyOption: {obsoleteOnly}");
-                Trace.WriteLine($"excludeObsoleteOption: {obsoleteExclude}.");
-                Trace.WriteLine($"partOfSpeech: {partOfSpeech ?? "null"}");
-                Trace.WriteLine($"years: {years ?? "null"}");
-                Trace.WriteLine($"Current In: {currentIn}");
-                Trace.WriteLine($"Revised:? {revised}");
-                Trace.WriteLine($"Revised: Old editions only? {revisedNot}");
-                Trace.WriteLine($"etymologyLanguage: {etymologyLanguage}");
-                Trace.WriteLine($"etymologyType: {etymologyType}");
-                Trace.WriteLine($"interactive: {interactive}");
-                Trace.WriteLine($"export: {export}");
+            Trace.WriteLine($"CLI word entered was {word}");
+            Trace.WriteLine($"obsoleteOnlyOption: {obsoleteOnly}");
+            Trace.WriteLine($"excludeObsoleteOption: {obsoleteExclude}.");
+            Trace.WriteLine($"partOfSpeech: {partOfSpeech ?? "null"}");
+            Trace.WriteLine($"years: {years ?? "null"}");
+            Trace.WriteLine($"Current In: {currentIn}");
+            Trace.WriteLine($"Revised:? {revised}");
+            Trace.WriteLine($"Revised: Old editions only? {revisedNot}");
+            Trace.WriteLine($"etymologyLanguage: {etymologyLanguage}");
+            Trace.WriteLine($"etymologyType: {etymologyType}");
+            Trace.WriteLine($"interactive: {interactive}");
+            Trace.WriteLine($"export: {export}");
 
-                CurrentQuery query = new();
-                if (currentIn) {                        
-                    query.CurrentIn = true;
-                }
-                if (!string.IsNullOrWhiteSpace(years))
+            CurrentQuery query = new();
+            proccessCommonOptions(obsoleteOnly, obsoleteExclude, partOfSpeech, years, currentIn, revised, revisedNot, interactive, export, query);
+
+            if (!string.IsNullOrWhiteSpace(etymologyLanguage))
+            {
+                query.EtymologyLanguage = etymologyLanguage;
+            }
+
+            if (!string.IsNullOrWhiteSpace(etymologyType))
+            {
+                query.EtymologyType = etymologyType;
+            }
+
+            if (string.IsNullOrWhiteSpace(word))
+            {
+                Console.WriteLine("No CLI word entered.");
+                ConsoleUI.Start(query);
+            }
+            else
+            {
+                Console.WriteLine($"Entered CLI word is {word}");
+                var includeObsoleteProp = query.IncludeObsolete is null ? "null" : query.IncludeObsolete.Value.ToString();
+                Trace.WriteLine($"query.IncludeObsolete: {includeObsoleteProp}");
+                ConsoleUI.Start(word, query);
+            }
+        }
+
+        private static void proccessCommonOptions(bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, bool interactive, bool export, CurrentQuery query)
+        {
+            if (!string.IsNullOrWhiteSpace(years))
+            {
+                string[] yearDates = years.Split('-');
+                try
                 {
-                    string[] yearDates = years.Split('-');
-                    try {
-                        
+
                     query.StartYear = int.Parse(yearDates[0].Trim());
                     Trace.WriteLine($"query.StartYear: {query.StartYear}");
-                    } catch {
-                        Trace.WriteLine("No start year.");
-                    }
-                    try {
+                }
+                catch
+                {
+                    Trace.WriteLine("No start year.");
+                }
+                try
+                {
                     query.EndYear = int.Parse(yearDates[1].Trim());
                     Trace.WriteLine($"query.EndYear: {query.EndYear}");
-                    } catch {
-                        Trace.WriteLine("No end year.");
-                    }
                 }
-                if (!string.IsNullOrWhiteSpace(partOfSpeech))
+                catch
                 {
-                    query.PartsOfSpeech = partOfSpeech;
-                } 
-                if (obsoleteOnly)
-                {
-                    query.IncludeObsolete = true;
+                    Trace.WriteLine("No end year.");
                 }
-                if (obsoleteExclude)
+                if (currentIn)
                 {
-                    query.IncludeObsolete = false;
+                    query.CurrentIn = true;
                 }
-                if (revised)
-                {
-                    query.IncludeRevised = true;
-                }
-                if (revisedNot)
-                {
-                    query.IncludeRevised = false;
-                }
+            }
+            if (!string.IsNullOrWhiteSpace(partOfSpeech))
+            {
+                query.PartsOfSpeech = partOfSpeech;
+            }
+            if (obsoleteOnly)
+            {
+                query.IncludeObsolete = true;
+            }
+            if (obsoleteExclude)
+            {
+                query.IncludeObsolete = false;
+            }
+            if (revised)
+            {
+                query.IncludeRevised = true;
+            }
+            if (revisedNot)
+            {
+                query.IncludeRevised = false;
+            }
 
-                if (!string.IsNullOrWhiteSpace(etymologyLanguage))
-                {
-                    query.EtymologyLanguage = etymologyLanguage;
-                }
 
-                if (!string.IsNullOrWhiteSpace(etymologyType))
-                {
-                    query.EtymologyType = etymologyType;
-                }
+            if (interactive)
+            {
+                query.InteractiveMode = true;
+            }
+            if (export)
+            {
+                // SavedQueries.ExportFileName = export;
+                query.ExportAfterSearch = true;
 
-                if (interactive)
-                {
-                    query.InteractiveMode = true;
-                }
-                if (export)
-                {
-                    // SavedQueries.ExportFileName = export;
-                    query.ExportAfterSearch = true;
-
-                }
-
-                if (string.IsNullOrWhiteSpace(word))
-                {
-                    Console.WriteLine("No CLI word entered.");
-                    ConsoleUI.Start(query);
-                }
-                else
-                {
-                    Console.WriteLine($"Entered CLI word is {word}");
-                    var includeObsoleteProp = query.IncludeObsolete is null ? "null" : query.IncludeObsolete.Value.ToString();
-                    Trace.WriteLine($"query.IncludeObsolete: {includeObsoleteProp}"); 
-                    ConsoleUI.Start(word, query);
-                }
+            }
         }
-    public static CurrentQuery ParseExport(CurrentQuery query, string export)
+
+        public static CurrentQuery ParseExport(CurrentQuery query, string export)
     {
         Trace.WriteLine("Parsing export argument...");
         Trace.WriteLine("...");

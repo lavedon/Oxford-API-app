@@ -6,6 +6,7 @@ namespace oed
 	public class SenseOptions
 	{
 		private string? _restrictRegion;
+		private string? _restrictUsage;
 		private string? _lemma;
 
 		public string? Lemma {
@@ -16,7 +17,17 @@ namespace oed
 			get => _restrictRegion; 
 			set => _restrictRegion = value!.Trim().Replace(" ","%20");
 		} 
-		public string? RestrictUsage { get; set; }
+		public string? RestrictUsage { 
+			get => _restrictUsage; 
+			set {
+			if(value!.Contains("slang")) 
+			{
+				_restrictUsage = "colloquial%20and%20slang";
+			} else {
+				_restrictUsage = value!.Trim().Replace(" ","%20");
+				}
+			}
+		}
 
 		public string? Topic { get; set; }
 		public bool RestrictMain { get; set; }
