@@ -286,14 +286,14 @@ namespace oed
         }
         public static void HandleQuoteArgs(string authorGender, string sourceTitle, bool firstWord, bool firstSense, bool useWords, bool useSenses, bool export)
         {
-            Trace.WriteLine($"Quote sub command entered.");
-            Trace.WriteLine($"authorGender: {authorGender}");
-            Trace.WriteLine($"sourceTitle: {sourceTitle}");
-            Trace.WriteLine($"firstWord: {firstWord}");
-            Trace.WriteLine($"firstSense: {firstSense}");
-            Trace.WriteLine($"useWords: {useWords}");
-            Trace.WriteLine($"useSenses: {useSenses}");
-            Trace.WriteLine($"export: {export}");
+            Console.WriteLine($"Quote sub command entered.");
+            Console.WriteLine($"authorGender: {authorGender}");
+            Console.WriteLine($"sourceTitle: {sourceTitle}");
+            Console.WriteLine($"firstWord: {firstWord}");
+            Console.WriteLine($"firstSense: {firstSense}");
+            Console.WriteLine($"useWords: {useWords}");
+            Console.WriteLine($"useSenses: {useSenses}");
+            Console.WriteLine($"export: {export}");
 
             CurrentQuery query = new();
             if (export)
@@ -337,6 +337,7 @@ namespace oed
                 Console.WriteLine("Please re-run the Quote command, and specify if you want quotes based on the previous word search or sense search.");
                 Console.WriteLine("-uw flag or -us flag");
             }
+            proccessCommonOptions(obsoleteOnly, obsoleteExclude, partOfSpeech, years, currentIn, revised, revisedNot, interactive, export, query);)
 
         }
         public static void HandleArgs(string word, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, bool interactive, bool export)
@@ -445,7 +446,7 @@ namespace oed
         }
 
         public static CurrentQuery ParseExport(CurrentQuery query, string export)
-    {
+        {
         Trace.WriteLine("Parsing export argument...");
         Trace.WriteLine("...");
 
@@ -484,9 +485,9 @@ namespace oed
 
         }
 
-        query.WhatToExport = parseNumbers(export);
+            query.WhatToExport = parseNumbers(export);
 
-        return query;
+            return query;
         }
     }
 }
