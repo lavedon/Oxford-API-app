@@ -75,17 +75,26 @@ namespace oed
                     // queryURL = addQuoteOptions(query, queryURL);
                     query.CurrentWordID = s.SenseID;
                     queryURL = queryURL + s.SenseID + "/quotations/";
+					queryURL = addQuoteOptions(query, queryURL);
                     makeCLIQuoteRequest(query, client, queryURL);
 
                 }
             }
+			if (query.CurrentQuoteOptions.UseNonIdEndpoint)
+			{
+				queryURL = "quotations/";
+				queryURL = addQuoteOptions(query, queryURL);
+				makeCLIQuoteRequest(query, client, queryURL);
+			}
 
             static string addQuoteOptions(CurrentQuery query, string queryURL)
             {
+				/*
                 if (!string.IsNullOrWhiteSpace(query.CurrentQuoteOptions.AuthorGender))
                 {
                     queryURL = queryURL + @"?author_gender=" + query.CurrentQuoteOptions.AuthorGender;
                 }
+				*/
                 if (!string.IsNullOrWhiteSpace(query.CurrentQuoteOptions.SourceTitle))
                 {
                     queryURL = queryURL + @"?source_title=" + query.CurrentQuoteOptions.SourceTitle;
@@ -98,7 +107,25 @@ namespace oed
                 {
                     queryURL = queryURL + @"?first_in_sense=true";
                 }
-
+				if (query.DateRangeSet) {
+					queryURL = queryURL + @"?year="	+ query.StartYear + "-" + query.EndYear;
+				}
+				if (query.CurrentQuoteOptions.Male)
+				{
+					queryURL = queryURL + @"?author_gender=male";
+				}
+				if (query.CurrentQuoteOptions.Female)
+				{
+					if (query.CurrentQuoteOptions.Male)
+					{
+						Console.WriteLine($"Error: only male or female -- but not both - may be specified.");
+					}
+					else {
+						queryURL = queryURL + @"?author_gender=female";
+					}
+				}
+				// @TODO if queryURL contains more than 1 ? then replace the ? after 
+				// the first ? with &
                 return queryURL;
             }
 

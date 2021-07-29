@@ -61,9 +61,17 @@ namespace oed
 
 
             var quoteCommand = new Command("Quote");
+            /*
             // @TODO make this an enum with male and female
             var quoteAuthorGender = new Option<string>(
                 new[] {"--author-gender", "-ag"}, description: "Specificy the author's gender. Accepts male and female. For example, -ag male, will return only quotes by men."
+            ){ IsRequired = false };
+            */
+            var quoteMale = new Option<bool>(
+                new[] {"--male", "-m"}, description: "Only retrieve quotes from male authors."
+            ){ IsRequired = false };
+            var quoteFemale = new Option<bool>(
+                new[] {"--female", "-f"}, description: "Only retrieve quotes from female authors."
             ){ IsRequired = false };
             var quoteSourceTitle = new Option<string>(
                 new[] {"--source-title", "-st"}, description: "Find quotations from a particular source, such as a book or periodical.  Example, -st Bleak House"
@@ -81,14 +89,16 @@ namespace oed
                 new[] {"--use-senses", "-us"}, description: "Use the saved list of looked up senses. Requires first using the Sense sub-command/verb.  Similar to --use-words."
             ){ IsRequired = false };
 
-            quoteCommand.AddOption(quoteAuthorGender);
+            // quoteCommand.AddOption(quoteAuthorGender);
+            quoteCommand.AddOption(quoteMale);
+            quoteCommand.AddOption(quoteFemale);
             quoteCommand.AddOption(quoteSourceTitle);
             quoteCommand.AddOption(quoteFirstInWord);
             quoteCommand.AddOption(quoteFirstInSense);
             quoteCommand.AddOption(quoteUseWords);
             quoteCommand.AddOption(quoteUseSenses);
 
-            quoteCommand.Handler = CommandHandler.Create<string, string, bool, bool, bool, bool, bool>(HandleQuoteArgs);
+            quoteCommand.Handler = CommandHandler.Create<bool, bool, string, bool, bool, bool, bool, string?, bool, bool>(HandleQuoteArgs);
 
             var surfaceCommand = new Command("Surfaces");
 
@@ -185,10 +195,8 @@ namespace oed
                 string fullPath = string.Concat(Environment.CurrentDirectory, $"\\logs\\Log_OxfordApplication_{DateTime.Now.ToString("yyyyMMdd-HHmm")}.txt");
                 Trace.WriteLine("Path is {0}", fullPath);
                 
-                /*
                 TextWriterTraceListener tr1 = new TextWriterTraceListener(System.Console.Out);
                 Trace.Listeners.Add(tr1);
-                */
 
                 TextWriterTraceListener tr2 = new TextWriterTraceListener(System.IO.File.CreateText(fullPath));
                 Trace.Listeners.Add(tr2);
@@ -284,27 +292,38 @@ namespace oed
                 SavedQueries.AddMember(query.Lemmas);
             }
         }
-        public static void HandleQuoteArgs(string authorGender, string sourceTitle, bool firstWord, bool firstSense, bool useWords, bool useSenses, bool export)
+        public static void HandleQuoteArgs(bool male, bool female, string sourceTitle, bool firstWord, bool firstSense, bool useWords, bool useSenses, string? years, bool interactive, bool export)
         {
-            Console.WriteLine($"Quote sub command entered.");
-            Console.WriteLine($"authorGender: {authorGender}");
-            Console.WriteLine($"sourceTitle: {sourceTitle}");
-            Console.WriteLine($"firstWord: {firstWord}");
-            Console.WriteLine($"firstSense: {firstSense}");
-            Console.WriteLine($"useWords: {useWords}");
-            Console.WriteLine($"useSenses: {useSenses}");
-            Console.WriteLine($"export: {export}");
+            Trace.WriteLine($"Quote sub command entered.");
+            Trace.WriteLine($"male: {male}");
+            Trace.WriteLine($"female: {female}");
+            // Trace.WriteLine($"authorGender: {authorGender}");
+            Trace.WriteLine($"sourceTitle: {sourceTitle}");
+            Trace.WriteLine($"firstWord: {firstWord}");
+            Trace.WriteLine($"firstSense: {firstSense}");
+            Trace.WriteLine($"useWords: {useWords}");
+            Trace.WriteLine($"useSenses: {useSenses}");
+            Trace.WriteLine($"export: {export}");
+            Trace.WriteLine($"interactive: {interactive}");
+            Trace.WriteLine($"years: {years ?? "null"}");
 
             CurrentQuery query = new();
-            if (export)
-            {
-                query.ExportAfterSearch = true;
-            }
+            proccessCommonOptions(years, interactive, export, query);
 
-            query.CurrentQuoteOptions = new(authorGender, sourceTitle, firstWord, firstSense, useWords, useSenses);
+            query.CurrentQuoteOptions = new(male, female, sourceTitle, firstWord, firstSense, useWords, useSenses);
+            /*
             if (!string.IsNullOrWhiteSpace(authorGender))
             {
                 query.CurrentQuoteOptions.AuthorGender = authorGender;
+            }
+            */
+            if (male)
+            {
+                query.CurrentQuoteOptions.Male = true;
+            }
+            if (female)
+            {
+                query.CurrentQuoteOptions.Female = true;
             }
             if (!string.IsNullOrWhiteSpace(sourceTitle))
             {
@@ -334,10 +353,12 @@ namespace oed
 
             }
             else {
+                query.CurrentQuoteOptions.UseNonIdEndpoint = true;
+                Console.WriteLine("Returning all quotes based on parameters.  If you want quotes for the past sense or word search...");
                 Console.WriteLine("Please re-run the Quote command, and specify if you want quotes based on the previous word search or sense search.");
                 Console.WriteLine("-uw flag or -us flag");
+                ConsoleUI.GetQuotes(query);
             }
-            proccessCommonOptions(obsoleteOnly, obsoleteExclude, partOfSpeech, years, currentIn, revised, revisedNot, interactive, export, query);)
 
         }
         public static void HandleArgs(string word, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, bool interactive, bool export)
@@ -382,34 +403,27 @@ namespace oed
             }
         }
 
+        private static void proccessCommonOptions(string? years, bool interactive, bool export, CurrentQuery query)
+        {
+            processYears(years, query);
+            if (interactive)
+            {
+                query.InteractiveMode = true;
+            }
+            if (export)
+            {
+                // SavedQueries.ExportFileName = export;
+                query.ExportAfterSearch = true;
+
+            }
+
+        }
         private static void proccessCommonOptions(bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, bool interactive, bool export, CurrentQuery query)
         {
-            if (!string.IsNullOrWhiteSpace(years))
+            processYears(years, query);
+            if (currentIn)
             {
-                string[] yearDates = years.Split('-');
-                try
-                {
-
-                    query.StartYear = int.Parse(yearDates[0].Trim());
-                    Trace.WriteLine($"query.StartYear: {query.StartYear}");
-                }
-                catch
-                {
-                    Trace.WriteLine("No start year.");
-                }
-                try
-                {
-                    query.EndYear = int.Parse(yearDates[1].Trim());
-                    Trace.WriteLine($"query.EndYear: {query.EndYear}");
-                }
-                catch
-                {
-                    Trace.WriteLine("No end year.");
-                }
-                if (currentIn)
-                {
-                    query.CurrentIn = true;
-                }
+                query.CurrentIn = true;
             }
             if (!string.IsNullOrWhiteSpace(partOfSpeech))
             {
@@ -441,6 +455,36 @@ namespace oed
             {
                 // SavedQueries.ExportFileName = export;
                 query.ExportAfterSearch = true;
+
+            }
+        }
+
+        private static void processYears(string? years, CurrentQuery query)
+        {
+            if (!string.IsNullOrWhiteSpace(years))
+            {
+                string[] yearDates = years.Split('-');
+                try
+                {
+
+                    query.StartYear = int.Parse(yearDates[0].Trim());
+                    Trace.WriteLine($"query.StartYear: {query.StartYear}");
+                    query.DateRangeSet = true;
+                }
+                catch
+                {
+                    Trace.WriteLine("No start year.");
+                }
+                try
+                {
+                    query.EndYear = int.Parse(yearDates[1].Trim());
+                    Trace.WriteLine($"query.EndYear: {query.EndYear}");
+                    query.DateRangeSet = true;
+                }
+                catch
+                {
+                    Trace.WriteLine("No end year.");
+                }
 
             }
         }
