@@ -6,6 +6,7 @@ namespace oed
         public class QuoteOptions
         {
                 private string? _sourceTitle;
+                private string? _author;
                 // private string? _authorGender;
                 /*
                 public string? AuthorGender { 
@@ -27,6 +28,12 @@ namespace oed
                     get => _sourceTitle;
                     set => _sourceTitle = _sourceTitle = value!.Trim().Replace(" ","%20");
                 }
+                public string? Author {
+                    get => _author;
+                    set {
+                     _author = _author = value!.Trim().Replace(" ","%20").Replace("'","");
+                    }
+                }
                 public bool Male { get; set; } = false;
                 public bool Female { get; set; } = false;
                 public bool FirstWord { get; set; } = false;
@@ -34,7 +41,7 @@ namespace oed
 
                 public bool UseWords { get; set; } = false;
                 public bool UseSenses { get; set; } = false;
-		public bool UseNonIdEndpoint { get; set; } = false;
+                public bool UseNonIdEndpoint { get; set; } = false;
 
 /*
                 private (bool, string) validateGender(string input)
@@ -55,12 +62,13 @@ namespace oed
                     }
                 }
                 */
-                public QuoteOptions(bool male, bool female, string? sourceTitle, bool firstWord, bool firstSense, bool useWords, bool useSenses)
+                public QuoteOptions(bool male, bool female, string? sourceTitle, string? author, bool firstWord, bool firstSense, bool useWords, bool useSenses)
                 {
                     // this.AuthorGender = authorGender;
                     this.Male = male;
                     this.Female = female;
                     this.SourceTitle = sourceTitle;
+                    this.Author = author;
                     this.FirstWord = firstWord;
                     this.FirstSense = firstSense;
                     this.UseWords = useWords;

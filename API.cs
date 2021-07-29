@@ -29,7 +29,7 @@ namespace oed
 			{
 				Uri requestURL = new Uri(baseURL + queryURL);
 			try {
-				Console.WriteLine(requestURL.ToString());
+				Console.WriteLine(requestURL.AbsoluteUri);
 				var response = client.GetStreamAsync(requestURL).Result;
 				JSONResponse = JsonDocument.Parse(response);
 			}
@@ -99,6 +99,10 @@ namespace oed
                 {
                     queryURL = queryURL + @"?source_title=" + query.CurrentQuoteOptions.SourceTitle;
                 }
+                if (!string.IsNullOrWhiteSpace(query.CurrentQuoteOptions.Author))
+                {
+                    queryURL = queryURL + @"?author=" + query.CurrentQuoteOptions.Author;
+                }
                 if (query.CurrentQuoteOptions.FirstWord)
                 {
                     queryURL = queryURL + @"?first_in_word=true";
@@ -126,11 +130,30 @@ namespace oed
 				}
 				// @TODO if queryURL contains more than 1 ? then replace the ? after 
 				// the first ? with &
-                return queryURL;
+
+
+                return processURLDelimiters(queryURL);
             }
 
-
         }
+		private static string processURLDelimiters(string queryURL)
+		{
+
+		string tempString = queryURL.Replace("?", "&");
+		List<char> myList = new List<char>();
+		bool first = false;
+		foreach(Char s in tempString)
+		{
+			if (!first && s == '&') {
+				myList.Add('?');
+				first = true;   
+			} else {
+				myList.Add(s);
+			}
+		}
+
+			return new string(myList.ToArray());
+		}
 		public static void GetQuotations(CurrentQuery query, HttpClient client, Sense currentSense = null) {
 		Action<object> callQuotationsAPI = (Object obj) => 
 		{
@@ -247,7 +270,7 @@ namespace oed
                     JsonElement quoteYear = item.GetProperty("year");
 					Console.WriteLine();
 					Console.WriteLine($"Quote #{query.Quotes.Count + 1}");
-                    Console.WriteLine("\"{0}\", Year: {1}, Source: {2} {3}",
+                    Console.WriteLine("\"{0}\", Year: {1}, Author: {2}, Source: {3}",
                         actualQuote.ToString(), quoteYear.ToString(), quoteAuthor.ToString(),
                         quoteTitle.ToString());
                     Quote currentQuote = new();

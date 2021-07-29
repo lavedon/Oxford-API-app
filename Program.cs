@@ -76,6 +76,9 @@ namespace oed
             var quoteSourceTitle = new Option<string>(
                 new[] {"--source-title", "-st"}, description: "Find quotations from a particular source, such as a book or periodical.  Example, -st Bleak House"
             ){ IsRequired = false };
+            var quoteAuthor = new Option<string>(
+                new[] {"--author", "-a"}, description: "Find quotations from a particular author.  Authors listed by first initial and last name (usually)."
+            ){ IsRequired = false };
             var quoteFirstInWord = new Option<bool>(
                 new[] {"--first-word", "-fw"}, description: "Restrict results to quotations which are the earliest evidence for a word."
             ){ IsRequired = false };
@@ -93,12 +96,13 @@ namespace oed
             quoteCommand.AddOption(quoteMale);
             quoteCommand.AddOption(quoteFemale);
             quoteCommand.AddOption(quoteSourceTitle);
+            quoteCommand.AddOption(quoteAuthor);
             quoteCommand.AddOption(quoteFirstInWord);
             quoteCommand.AddOption(quoteFirstInSense);
             quoteCommand.AddOption(quoteUseWords);
             quoteCommand.AddOption(quoteUseSenses);
 
-            quoteCommand.Handler = CommandHandler.Create<bool, bool, string, bool, bool, bool, bool, string?, bool, bool>(HandleQuoteArgs);
+            quoteCommand.Handler = CommandHandler.Create<bool, bool, string, string, bool, bool, bool, bool, string?, bool, bool>(HandleQuoteArgs);
 
             var surfaceCommand = new Command("Surfaces");
 
@@ -195,8 +199,10 @@ namespace oed
                 string fullPath = string.Concat(Environment.CurrentDirectory, $"\\logs\\Log_OxfordApplication_{DateTime.Now.ToString("yyyyMMdd-HHmm")}.txt");
                 Trace.WriteLine("Path is {0}", fullPath);
                 
+                /*
                 TextWriterTraceListener tr1 = new TextWriterTraceListener(System.Console.Out);
                 Trace.Listeners.Add(tr1);
+                */
 
                 TextWriterTraceListener tr2 = new TextWriterTraceListener(System.IO.File.CreateText(fullPath));
                 Trace.Listeners.Add(tr2);
@@ -292,11 +298,12 @@ namespace oed
                 SavedQueries.AddMember(query.Lemmas);
             }
         }
-        public static void HandleQuoteArgs(bool male, bool female, string sourceTitle, bool firstWord, bool firstSense, bool useWords, bool useSenses, string? years, bool interactive, bool export)
+        public static void HandleQuoteArgs(bool male, bool female, string sourceTitle, string author, bool firstWord, bool firstSense, bool useWords, bool useSenses, string? years, bool interactive, bool export)
         {
             Trace.WriteLine($"Quote sub command entered.");
             Trace.WriteLine($"male: {male}");
             Trace.WriteLine($"female: {female}");
+            Trace.WriteLine($"author: {author}");
             // Trace.WriteLine($"authorGender: {authorGender}");
             Trace.WriteLine($"sourceTitle: {sourceTitle}");
             Trace.WriteLine($"firstWord: {firstWord}");
@@ -310,7 +317,7 @@ namespace oed
             CurrentQuery query = new();
             proccessCommonOptions(years, interactive, export, query);
 
-            query.CurrentQuoteOptions = new(male, female, sourceTitle, firstWord, firstSense, useWords, useSenses);
+            query.CurrentQuoteOptions = new(male, female, sourceTitle, author, firstWord, firstSense, useWords, useSenses);
             /*
             if (!string.IsNullOrWhiteSpace(authorGender))
             {
@@ -328,6 +335,10 @@ namespace oed
             if (!string.IsNullOrWhiteSpace(sourceTitle))
             {
                 query.CurrentQuoteOptions.SourceTitle = sourceTitle;
+            }
+            if (!string.IsNullOrWhiteSpace(author))
+            {
+                query.CurrentQuoteOptions.Author = author;
             }
             if (firstWord)
             {
@@ -355,7 +366,7 @@ namespace oed
             else {
                 query.CurrentQuoteOptions.UseNonIdEndpoint = true;
                 Console.WriteLine("Returning all quotes based on parameters.  If you want quotes for the past sense or word search...");
-                Console.WriteLine("Please re-run the Quote command, and specify if you want quotes based on the previous word search or sense search.");
+                Console.WriteLine("...then please re-run the Quote command, and specify if you want quotes based on the previous word search or sense search.");
                 Console.WriteLine("-uw flag or -us flag");
                 ConsoleUI.GetQuotes(query);
             }
