@@ -55,11 +55,6 @@ namespace oed
 
             senseCommand.Handler = CommandHandler.Create<string?, bool, bool, string?, string?, bool, bool, bool, string?, bool, string?, string?, bool, bool>(HandleSenseArgs);
 
-            
-
-
-
-
             var quoteCommand = new Command("Quote");
             /*
             // @TODO make this an enum with male and female

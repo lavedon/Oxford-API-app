@@ -204,14 +204,16 @@ namespace oed
 			    	obsoleteText = "This usage is obsolete.";
 			    }
 			    else {
-				obsoleteText = "This usage is NOT obsolete.";
+				// obsoleteText = "This usage is NOT obsolete.";
+				obsoleteText = "";
 			    }
 
 			    if (SensesForExport[i].IsMainUsage) {
 				mainUsageText = "This sense is the main sense for this word.";
 			    }
 			    else {
-				mainUsageText = "This sense is NOT the main sense for this word.";
+				// mainUsageText = "This sense is NOT the main sense for this word.";
+				mainUsageText = "";
 			    }
 
 			

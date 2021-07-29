@@ -905,7 +905,7 @@ namespace oed
                     }
                     else
                     {
-                        Console.WriteLine("This sense is not obsolete.");
+                        // Console.WriteLine("This sense is not obsolete.");
                     }
                     if (currentSense.IsMainUsage)
                     {
@@ -913,7 +913,7 @@ namespace oed
                     }
                     else
                     {
-                        Console.WriteLine("Not the main sense for the word.");
+                        // Console.WriteLine("Not the main sense for the word.");
                     }
                     Console.WriteLine(currentSense.OedReference);
 

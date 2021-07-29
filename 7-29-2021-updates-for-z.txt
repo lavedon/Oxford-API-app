@@ -1,0 +1,10 @@
+Updates 7/29:
+
+1.) Removed dashes from all option aliases.  i.e. Mail o works now to get the obsolete definitions of the word 'mail' instead of -o.
+
+2.) Changed Sense output: (per item #11 in your notes)
+	a.) Removed "this is NOT the main sense of the word."
+	b.) Removed "this sense is NOT obsolete." 
+
+3.) Implemented Surfaceforms endpoint. 
+	a.) 
