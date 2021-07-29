@@ -74,7 +74,7 @@ namespace oed
                 new[] {"--female", "-f"}, description: "Only retrieve quotes from female authors."
             ){ IsRequired = false };
             var quoteSourceTitle = new Option<string>(
-                new[] {"--source-title", "-st"}, description: "Find quotations from a particular source, such as a book or periodical.  Example, -st Bleak House"
+                new[] {"--source-title", "-s"}, description: "Find quotations from a particular source, such as a book or periodical.  Example, -st Bleak House"
             ){ IsRequired = false };
             var quoteAuthor = new Option<string>(
                 new[] {"--author", "-a"}, description: "Find quotations from a particular author.  Authors listed by first initial and last name (usually)."
