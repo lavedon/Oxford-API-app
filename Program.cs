@@ -20,7 +20,7 @@ namespace oed
 
             var senseCommand = new Command("Sense");
             var senseLemmaArgument = new Option<string>(
-                new[] {"--lemma", "-l"}, description: "the word to find senses for. If not specified use the word id from the last query."
+                new[] {"--lemma", "l"}, description: "the word to find senses for. If not specified use the word id from the last query."
             );
             /*
             var senseSynonymArgument = new Option<string?>(name: "synonyms", description: "Find synonyms for the specified sense.  Note. Requires a sense ID");
@@ -28,19 +28,19 @@ namespace oed
             */
 
             var senseRegionOption = new Option<string>(
-                new[] {"--restrict-region", "-rr"}, description: "Restrict results to a particular region or dialect. i.e. 'Ireland', 'Northern England'"
+                new[] {"--restrict-region", "rr"}, description: "Restrict results to a particular region or dialect. i.e. 'Ireland', 'Northern England'"
             ){ IsRequired = false };
             // @TODO make this option an enum of possible values
             var senseUsageOption = new Option<string>(
-                new[] {"--restrict-usage", "-ru"}, description: "Restrict returned sense to a partiular register.  Available values:" + 
+                new[] {"--restrict-usage", "ru"}, description: "Restrict returned sense to a partiular register.  Available values:" + 
                 "allusive, archaic, colloquial and slang, derogatory, disused, euphemistic, historical, humorous, ironic, irregular, poetic and literary, rare, regional"
             ){ IsRequired = false };
             var senseMainOption = new Option<bool>(
-                new[] {"--restrict-main", "-rm"}, description: "Return only the main sense only. Note: The OED does not currently list a main sense for every word."
+                new[] {"--restrict-main", "rm"}, description: "Return only the main sense only. Note: The OED does not currently list a main sense for every word."
             ){ IsRequired = false };
 
             var senseTopicOption = new Option<string>(
-                new[] {"--topic", "-t"}, 
+                new[] {"--topic", "t"}, 
                 description: "Restrict results to senses relating to a particular topic or domain, e.g. 'Heraldry', 'Physics', 'Basketball'. (For the full set of available values, see the 'Subject' section at http://www.oed.com/browsecategory (paywalled)."
             ){
                 IsRequired = false
@@ -68,28 +68,28 @@ namespace oed
             ){ IsRequired = false };
             */
             var quoteMale = new Option<bool>(
-                new[] {"--male", "-m"}, description: "Only retrieve quotes from male authors."
+                new[] {"--male", "m"}, description: "Only retrieve quotes from male authors."
             ){ IsRequired = false };
             var quoteFemale = new Option<bool>(
-                new[] {"--female", "-f"}, description: "Only retrieve quotes from female authors."
+                new[] {"--female", "f"}, description: "Only retrieve quotes from female authors."
             ){ IsRequired = false };
             var quoteSourceTitle = new Option<string>(
-                new[] {"--source-title", "-s"}, description: "Find quotations from a particular source, such as a book or periodical.  Example, -st Bleak House"
+                new[] {"--source-title", "s"}, description: "Find quotations from a particular source, such as a book or periodical.  Example, -st Bleak House"
             ){ IsRequired = false };
             var quoteAuthor = new Option<string>(
-                new[] {"--author", "-a"}, description: "Find quotations from a particular author.  Authors listed by first initial and last name (usually)."
+                new[] {"--author", "a"}, description: "Find quotations from a particular author.  Authors listed by first initial and last name (usually)."
             ){ IsRequired = false };
             var quoteFirstInWord = new Option<bool>(
-                new[] {"--first-word", "-fw"}, description: "Restrict results to quotations which are the earliest evidence for a word."
+                new[] {"--first-word", "fw"}, description: "Restrict results to quotations which are the earliest evidence for a word."
             ){ IsRequired = false };
             var quoteFirstInSense = new Option<bool>(
-                new[] {"--first-sense", "-fs"}, description: "Restrict results to quotations which are the earliest evidence for a sense."
+                new[] {"--first-sense", "fs"}, description: "Restrict results to quotations which are the earliest evidence for a sense."
             ){ IsRequired = false };
             var quoteUseWords = new Option<bool>(
-                new[] {"--use-words", "-uw"}, description: "Use the saved list of looked up words.  Required first using the main root command to look up a word.  Finds quotes for all words with wordIDs saved in word-id.txt.  This is also how Sense works if you do not supply it a word.  This option is not default with Quote (unlike Sense) to allow you to look up quotes by source."
+                new[] {"--use-words", "uw"}, description: "Use the saved list of looked up words.  Required first using the main root command to look up a word.  Finds quotes for all words with wordIDs saved in word-id.txt.  This is also how Sense works if you do not supply it a word.  This option is not default with Quote (unlike Sense) to allow you to look up quotes by source."
             ){ IsRequired = false };
             var quoteUseSenses = new Option<bool>(
-                new[] {"--use-senses", "-us"}, description: "Use the saved list of looked up senses. Requires first using the Sense sub-command/verb.  Similar to --use-words."
+                new[] {"--use-senses", "us"}, description: "Use the saved list of looked up senses. Requires first using the Sense sub-command/verb.  Similar to --use-words."
             ){ IsRequired = false };
 
             // quoteCommand.AddOption(quoteAuthorGender);
@@ -108,10 +108,10 @@ namespace oed
 
             var semanticClassCommand = new Command("Semantic");
             var semanticIncludeRegion = new Option<bool>(
-                new[] {"--include-region", "-ir"}, description: "If 'false', irregular and regionally-specific variant form are filtered out. Defaults to 'true' if omitted."
+                new[] {"--include-region", "ir"}, description: "If 'false', irregular and regionally-specific variant form are filtered out. Defaults to 'true' if omitted."
             );
             var semanticIncludeInflections = new Option<bool>(
-                new[] {"--include-inflections", "-ii"}, description: "If 'false' , inflected forms (of the lemma and of variant spellings) are filtered out, so the results will only include the lemma and its variant spellings. Defaults to 'true' if omitted."
+                new[] {"--include-inflections", "ii"}, description: "If 'false' , inflected forms (of the lemma and of variant spellings) are filtered out, so the results will only include the lemma and its variant spellings. Defaults to 'true' if omitted."
             );
             surfaceCommand.AddOption(semanticIncludeRegion);
             surfaceCommand.AddOption(semanticIncludeInflections);
@@ -119,10 +119,10 @@ namespace oed
             var lemmaCommand = new Command("Lemma");
             var lemmaTextArgument = new Argument<string>(name: "text", description: "The text to lemmatize");
             var lemmaTextPretokenized = new Option<bool>(
-                new[] {"--tokenize-off", "-to"}, description: "Do not split the entered string into further tokens."
+                new[] {"--tokenize-off", "to"}, description: "Do not split the entered string into further tokens."
             );
             var lemmaTextTokenizeSeparator = new Option<bool>(
-                new[] {"--tokenize-character", "-tc"}, description: "Tokenize the string by this specific character.  i.e. split-up-this-string by '-' character."
+                new[] {"--tokenize-character", "tc"}, description: "Tokenize the string by this specific character.  i.e. split-up-this-string by '-' character."
             );
             lemmaCommand.AddArgument(lemmaTextArgument);
             lemmaCommand.AddOption(lemmaTextPretokenized);
@@ -144,16 +144,16 @@ namespace oed
         {
             // Non-Global Options
             new Argument<string>(name: "word", getDefaultValue: () => "mail", description: "The word to look up."),
-            new Option<string?>(new[] {"--etymology-language", "-el"}, description: "Restrict results to words derived from a certain language.  Languages are grouped by continent and hierarchical.  i.e. European will automatically include German."),
-            new Option<string?>(new[] {"--etymology-type", "-et"}, description: "Restrict results only certain etymological types.  compound, derivative, conversion, blend, shortening, backformation, initialism, acronym, variant, arbitrary, imitative, borrowing, properName, unknown"),
-            new Option<bool>(new[] {"--interactive", "-i"}, description: "Open the interactive text menu features, where you can run follow-up queries, change options, and export queries. Has reduced features when compared to the command line."),
+            new Option<string?>(new[] {"--etymology-language", "el"}, description: "Restrict results to words derived from a certain language.  Languages are grouped by continent and hierarchical.  i.e. European will automatically include German."),
+            new Option<string?>(new[] {"--etymology-type", "et"}, description: "Restrict results only certain etymological types.  compound, derivative, conversion, blend, shortening, backformation, initialism, acronym, variant, arbitrary, imitative, borrowing, properName, unknown"),
+            new Option<bool>(new[] {"--interactive", "i"}, description: "Open the interactive text menu features, where you can run follow-up queries, change options, and export queries. Has reduced features when compared to the command line."),
         };
             // Global Options
             // new Option<string?>(new[] {"--part-of-speech", "-ps"}, description: "Only return results to words specific parts of speech"),
 
-            rootCommand.AddGlobalOption(new Option<string?>(new[] {"--part-of-speech", "-ps"}, description: "Only return results where the result relates to a specific part of speech (i.e. only nouns, only verbs)"));
-			rootCommand.AddGlobalOption(new Option<bool>(new[] {"--obsolete-only", "-o"}, description: "Only return obsolete usages."));
-			rootCommand.AddGlobalOption(new Option<bool>(new[] {"--obsolete-exclude", "-oe"}, description: "Only return NON-obsolete usages."));
+            rootCommand.AddGlobalOption(new Option<string?>(new[] {"--part-of-speech", "ps"}, description: "Only return results where the result relates to a specific part of speech (i.e. only nouns, only verbs)"));
+			rootCommand.AddGlobalOption(new Option<bool>(new[] {"--obsolete-only", "o"}, description: "Only return obsolete usages."));
+			rootCommand.AddGlobalOption(new Option<bool>(new[] {"--obsolete-exclude", "oe"}, description: "Only return NON-obsolete usages."));
             
             var exportOption = new Option<bool>("--export", 
                     description: "Export the results of this query.  Saved as XML for SuperMemo import. File will be saved as OED-export.xml",
@@ -164,12 +164,12 @@ namespace oed
                         ArgumentHelpName = "What to export by number",
                         
                     };
-            exportOption.AddAlias("-e");
+            exportOption.AddAlias("e");
             rootCommand.AddGlobalOption(exportOption);
-            rootCommand.AddGlobalOption(new Option<string?>(new[] {"--years", "-y"}, description: "Years.  Use format 900-1999 or -1999 or 900-.  Used for first recorded, last recorded, and current in."));
-			rootCommand.AddGlobalOption(new Option<bool>(new[] {"--current-in", "-c"} , description: "Flag which sets the 'Years' option to work with current in year - as opposed to recorded in year - Restrict results to words current in this year or period. Works with the Years flag.  i.e. -y 280-1900 -c  another example: -y 500 -c will return the words current in the year 500 AD."));
-            rootCommand.AddGlobalOption(new Option<bool>(new[] {"--revised", "-r"}, description: "Restrict words taken from new and revised OED entries (OED-3rd edition content)"));
-            rootCommand.AddGlobalOption(new Option<bool>(new[] {"--revised-not", "-rn"}, description: "Restrict to non revised sources only. (OED 2nd and 1rst edition)"));
+            rootCommand.AddGlobalOption(new Option<string?>(new[] {"--years", "y"}, description: "Years.  Use format 900-1999 or -1999 or 900-.  Used for first recorded, last recorded, and current in."));
+			rootCommand.AddGlobalOption(new Option<bool>(new[] {"--current-in", "c"} , description: "Flag which sets the 'Years' option to work with current in year - as opposed to recorded in year - Restrict results to words current in this year or period. Works with the Years flag.  i.e. -y 280-1900 -c  another example: -y 500 -c will return the words current in the year 500 AD."));
+            rootCommand.AddGlobalOption(new Option<bool>(new[] {"--revised", "r"}, description: "Restrict words taken from new and revised OED entries (OED-3rd edition content)"));
+            rootCommand.AddGlobalOption(new Option<bool>(new[] {"--revised-not", "rn"}, description: "Restrict to non revised sources only. (OED 2nd and 1rst edition)"));
 
             rootCommand.AddCommand(senseCommand);
             rootCommand.AddCommand(quoteCommand);
