@@ -35,7 +35,7 @@ namespace oed
 		public List<Definition> Definitions { get; set; }
 		public List<Quote> Quotes { get; set; }
 		public List<Sense> Senses { get; set; }
-		public List<Surfaces> Surfaces { get; set; }
+		public List<Surface> Surfaces { get; set; }
 		public Lemmas Lemmas { get; set; }
 
 		public string EtymologySummary { get; set; }
