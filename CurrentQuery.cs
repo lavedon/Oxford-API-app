@@ -12,13 +12,15 @@ namespace oed
 		Root,
 		Lammatize,
 		Senses,
-		Quotations
+		Quotations,
+		Surfaces
 	}
 	public class CurrentQuery : IDisposable
 	{
 		// Create the object the same time the user looks up a word
 		public SenseOptions? CurrentSenseOptions { get; set; }
 		public QuoteOptions? CurrentQuoteOptions { get; set; }
+		public SurfaceOptions? CurrentSurfaceOptions { get; set; }
 		public string UserEnteredWord { get; set; } 
 		
 		private string _lemmaText;
@@ -33,6 +35,7 @@ namespace oed
 		public List<Definition> Definitions { get; set; }
 		public List<Quote> Quotes { get; set; }
 		public List<Sense> Senses { get; set; }
+		public List<Surfaces> Surfaces { get; set; }
 		public Lemmas Lemmas { get; set; }
 
 		public string EtymologySummary { get; set; }
@@ -88,6 +91,7 @@ namespace oed
 			this.WhatToExport = new List<int>();
 			this.CurrentSenseOptions = null;
 			this.CurrentQuoteOptions = null;
+			this.CurrentSurfaceOptions = null;
 			this.LemmaText = "";
 			
 		} 

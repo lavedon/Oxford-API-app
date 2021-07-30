@@ -99,7 +99,7 @@ namespace oed
 
             quoteCommand.Handler = CommandHandler.Create<bool, bool, string, string, bool, bool, bool, bool, string?, bool, bool>(HandleQuoteArgs);
 
-            var surfaceCommand = new Command("Surfaces");
+            var surfaceCommand = new Command("Form");
 
             var semanticClassCommand = new Command("Semantic");
             var semanticIncludeRegion = new Option<bool>(
@@ -133,7 +133,7 @@ namespace oed
 
             senseCommand.Description = "Get senses for a word.  Takes a word id created by the last word search or simply enter a lemma after this command.";
             quoteCommand.Description = "Get quotations from the OED.  Get quotations based on a word or sense id (uses the last searched sense or word for the id).  Alternatively, you can search all quotations based on some parameters.";
-            surfaceCommand.Description = "Get surface-form records based on a word or passed word id.  A surface-form record temize each of the specific orthographic forms that a word may take when it occurs in real-world text";
+            surfaceCommand.Description = "Get surfaceform records based on a word or passed word id.  A surfaceform record itemizes each of the specific orthographic forms that a word may take when it occurs in real-world text";
             semanticClassCommand.Description = "Search semantic classes.  Get related semantic classes based on sense id, branch, parent, ancestorys, children, siblings, descendants, etc.";
             lemmaCommand.Description = "Lemmatize text.  Enter a word or a string of words and return lemmas for each word or words.";
 
@@ -285,9 +285,10 @@ namespace oed
             CurrentQuery query = new();
             // As SurfaceForms only has a "current in" style years mode
             // When first set "current in" to true, then pass the years
+            query.QueryMode = Modes.Surfaces;
+            query.CurrentSurfaceOptions = new SurfaceOptions(includeRegion, includeInflections);
             bool currentIn = true;
 
-            proccessCommonOptions(obsoleteOnly: false, obsoleteExclude: false, partOfSpeech, years, currentIn, revised: false, revisedNot: false, interactive, export, query);
             if (string.IsNullOrWhiteSpace(form))
             {
                 Console.WriteLine("No form word entered.");
@@ -296,6 +297,8 @@ namespace oed
             {
                 Trace.WriteLine($"Getting surfaceforms for {form}");
             }
+            proccessCommonOptions(obsoleteOnly: false, obsoleteExclude: false, partOfSpeech, years, currentIn, revised: false, revisedNot: false, interactive, export, query);
+            
 
         }
         // Also handling some global options
