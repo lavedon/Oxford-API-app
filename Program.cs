@@ -103,13 +103,17 @@ namespace oed
 
             var semanticClassCommand = new Command("Semantic");
             var semanticIncludeRegion = new Option<bool>(
-                new[] {"--include-region", "ir"}, description: "If 'false', irregular and regionally-specific variant form are filtered out. Defaults to 'true' if omitted."
+                new[] {"--include-region", "r"}, description: "If 'false', irregular and regionally-specific variant form are filtered out. Defaults to 'true' if omitted."
             );
             var semanticIncludeInflections = new Option<bool>(
-                new[] {"--include-inflections", "ii"}, description: "If 'false' , inflected forms (of the lemma and of variant spellings) are filtered out, so the results will only include the lemma and its variant spellings. Defaults to 'true' if omitted."
+                new[] {"--include-inflections", "i"}, description: "If 'false' , inflected forms (of the lemma and of variant spellings) are filtered out, so the results will only include the lemma and its variant spellings. Defaults to 'true' if omitted."
             );
+            var formArgument = new Argument<string>(name: "form", getDefaultValue: () => "peas", description: "The surface form itself, e.g. 'muskettes', 'peas' (case-, space-, and diacritic-insensitive).");
+            surfaceCommand.AddArgument(formArgument);
             surfaceCommand.AddOption(semanticIncludeRegion);
             surfaceCommand.AddOption(semanticIncludeInflections);
+
+            surfaceCommand.Handler = CommandHandler.Create<string, string?, string?, bool, bool, bool, bool>(HandleSurfaceArgs);
 
             var lemmaCommand = new Command("Lemma");
             var lemmaTextArgument = new Argument<string>(name: "text", description: "The text to lemmatize");
@@ -270,6 +274,30 @@ namespace oed
             }
         }
 
+        public static void HandleSurfaceArgs(string form, string? partOfSpeech, string? years, bool includeRegion, bool includeInflections, bool interactive, bool export)
+        {
+            Trace.WriteLine($"Surfaceforms sub command entered.");
+            Trace.WriteLine($"includeRegion {includeRegion}");
+            Trace.WriteLine($"includeInflections {includeInflections}");
+            Trace.WriteLine($"interactive {interactive}");
+            Trace.WriteLine($"export {export}");
+
+            CurrentQuery query = new();
+            // As SurfaceForms only has a "current in" style years mode
+            // When first set "current in" to true, then pass the years
+            bool currentIn = true;
+
+            proccessCommonOptions(obsoleteOnly: false, obsoleteExclude: false, partOfSpeech, years, currentIn, revised: false, revisedNot: false, interactive, export, query);
+            if (string.IsNullOrWhiteSpace(form))
+            {
+                Console.WriteLine("No form word entered.");
+                ConsoleUI.Start(query); // @TODO make sure this is the correct method to call
+            } else 
+            {
+                Trace.WriteLine($"Getting surfaceforms for {form}");
+            }
+
+        }
         // Also handling some global options
         public static void HandleLemmaArgs(string text, bool tokenizeOff, bool tokenizeCharacter, string? export = "all")
         {
@@ -362,7 +390,7 @@ namespace oed
                 query.CurrentQuoteOptions.UseNonIdEndpoint = true;
                 Console.WriteLine("Returning all quotes based on parameters.  If you want quotes for the past sense or word search...");
                 Console.WriteLine("...then please re-run the Quote command, and specify if you want quotes based on the previous word search or sense search.");
-                Console.WriteLine("-uw flag or -us flag");
+                Console.WriteLine("uw flag or us flag");
                 ConsoleUI.GetQuotes(query);
             }
 
