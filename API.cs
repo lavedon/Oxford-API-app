@@ -22,7 +22,7 @@ namespace oed
 		public static void GetSynonyms(CurrentQuery query, HttpClient client, Sense currentSense) {
 		}
  
-		private static void makeCLIQuoteRequest (CurrentQuery query, HttpClient client, string queryURL)
+		private static JsonElement makeCLIRequest (CurrentQuery query, HttpClient client, string queryURL)
 		{
 
 			Action<object> callQuotationsAPI = (Object obj) => 
@@ -44,7 +44,7 @@ namespace oed
 			Task getQuotes = new Task(callQuotationsAPI, "Call Quotations");
 			getQuotes.RunSynchronously();
 			JsonElement root = JSONResponse.RootElement;
-			displayQuotes(query, root);
+			return root;
 		}
 
 		public static void GetSurfaces(CurrentQuery query, HttpClient client)
@@ -76,6 +76,8 @@ namespace oed
 				}
 				return processURLDelimiters(queryURL);
 			}
+			makeCLIRequest(query, client, queryURL);
+			//@TODO display sense option
 
 
 
@@ -96,7 +98,8 @@ namespace oed
 					query.CurrentWordID = d.WordID;
 					queryURL = queryURL + d.WordID + "/quotations/";
 					queryURL = addQuoteOptions(query, queryURL);
-					makeCLIQuoteRequest(query, client, queryURL);
+					
+					displayQuotes(query, makeCLIRequest(query, client, queryURL));
 				}
 			}
 			if (query.CurrentQuoteOptions.UseSenses)
@@ -109,7 +112,7 @@ namespace oed
                     query.CurrentWordID = s.SenseID;
                     queryURL = queryURL + s.SenseID + "/quotations/";
 					queryURL = addQuoteOptions(query, queryURL);
-                    makeCLIQuoteRequest(query, client, queryURL);
+					displayQuotes(query, makeCLIRequest(query, client, queryURL));
 
                 }
             }
@@ -117,7 +120,7 @@ namespace oed
 			{
 				queryURL = "quotations/";
 				queryURL = addQuoteOptions(query, queryURL);
-				makeCLIQuoteRequest(query, client, queryURL);
+				displayQuotes(query, makeCLIRequest(query, client, queryURL));
 			}
 
             static string addQuoteOptions(CurrentQuery query, string queryURL)

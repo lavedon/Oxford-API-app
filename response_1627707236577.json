@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "total": 14,
+    "count": 14,
+    "offset": 0,
+    "limit": 100,
+    "provider": "Oxford University Press",
+    "cite": "Oxford English Dictionary API, Oxford University Press, 0.0.0.0/oed/api/v0.2/surfaceforms/?form=peas&offset=0&limit=100 . Accessed 31 July 2021"
+  },
+  "links": {
+    "self": "/oed/api/v0.2/surfaceforms/?form=peas&offset=0&limit=100",
+    "prev": null,
+    "next": null,
+    "first": "/oed/api/v0.2/surfaceforms/?form=peas&offset=0&limit=100",
+    "last": "/oed/api/v0.2/surfaceforms/?form=peas&offset=0&limit=100"
+  },
+  "data": [
+    {
+      "id": "pea_nn01-s002",
+      "band": 14,
+      "form": "peas",
+      "lemma": "pea",
+      "region": null,
+      "word_id": "pea_nn01",
+      "computed": false,
+      "daterange": {
+        "end": 1864,
+        "start": 925,
+        "obsolete": true,
+        "rangestring": "eOE—1864"
+      },
+      "irregular": false,
+      "normalized": "peas",
+      "part_of_speech": "NNS",
+      "standard_us_form": true,
+      "standard_british_form": true
+    },
+    {
+      "id": "pease_nn01-s016",
+      "band": 12,
+      "form": "peas",
+      "lemma": "pease",
+      "region": null,
+      "word_id": "pease_nn01",
+      "computed": false,
+      "daterange": {
+        "end": null,
+        "start": 1150,
+        "obsolete": false,
+        "rangestring": "1150—"
+      },
+      "irregular": false,
+      "normalized": "peases",
+      "part_of_speech": "NNS",
+      "standard_us_form": false,
+      "standard_british_form": false
+    },
+    {
+      "id": "peace_nn01-s014",
+      "band": 5,
+      "form": "peas",
+      "lemma": "peace",
+      "region": "Scotland",
+      "word_id": "peace_nn01",
+      "computed": false,
+      "daterange": {
+        "end": null,
+        "start": 1159,
+        "obsolete": false,
+        "rangestring": "1159—"
+      },
+      "irregular": false,
+      "normalized": "peace",
+      "part_of_speech": "NN",
+      "standard_us_form": false,
+      "standard_british_form": false
+    },
+    {
+      "id": "peace_jj01-s002",
+      "band": 14,
+      "form": "peas",
+      "lemma": "peace",
+      "region": null,
+      "word_id": "peace_jj01",
+      "computed": false,
+      "daterange": {
+        "end": 1499,
+        "start": 1400,
+        "obsolete": true,
+        "rangestring": "1400—1500"
+      },
+      "irregular": false,
+      "normalized": "peace",
+      "part_of_speech": "JJ",
+      "standard_us_form": false,
+      "standard_british_form": false
+    },
+    {
+      "id": "pease_vb01-s006",
+      "band": 12,
+      "form": "peas",
+      "lemma": "pease",
+      "region": null,
+      "word_id": "pease_vb01",
+      "computed": false,
+      "daterange": {
+        "end": 1599,
+        "start": 1500,
+        "obsolete": true,
+        "rangestring": "1500—1600"
+      },
+      "irregular": false,
+      "normalized": "pease",
+      "part_of_speech": "VB",
+      "standard_us_form": false,
+      "standard_british_form": false
+    },
+    {
+      "id": "piece_vb01-s033",
+      "band": 10,
+      "form": "peas",
+      "lemma": "piece",
+      "region": "Scotland",
+      "word_id": "piece_vb01",
+      "computed": true,
+      "daterange": {
+        "end": 1699,
+        "start": 1500,
+        "obsolete": true,
+        "rangestring": "1500—1700"
+      },
+      "irregular": false,
+      "normalized": "piece",
+      "part_of_speech": "VB",
+      "standard_us_form": false,
+      "standard_british_form": false
+    },
+    {
+      "id": "pease_nn01-s003",
+      "band": 12,
+      "form": "peas",
+      "lemma": "pease",
+      "region": null,
+      "word_id": "pease_nn01",
+      "computed": false,
+      "daterange": {
+        "end": 1699,
+        "start": 1500,
+        "obsolete": true,
+        "rangestring": "1500—1700"
+      },
+      "irregular": false,
+      "normalized": "pease",
+      "part_of_speech": "NN",
+      "standard_us_form": false,
+      "standard_british_form": false
+    },
+    {
+      "id": "peise_nn01-s028",
+      "band": 9,
+      "form": "peas",
+      "lemma": "peise",
+      "region": "Scotland",
+      "word_id": "peise_nn01",
+      "computed": false,
+      "daterange": {
+        "end": 1699,
+        "start": 1500,
+        "obsolete": true,
+        "rangestring": "1500—1700"
+      },
+      "irregular": false,
+      "normalized": "peise",
+      "part_of_speech": "NN",
+      "standard_us_form": false,
+      "standard_british_form": false
+    },
+    {
+      "id": "apiece_nn01-s025",
+      "band": 11,
+      "form": "a peas",
+      "lemma": "a piece",
+      "region": "Scotland",
+      "word_id": "apiece_nn01",
+      "computed": true,
+      "daterange": {
+        "end": 1699,
+        "start": 1500,
+        "obsolete": true,
+        "rangestring": "1500—1700"
+      },
+      "irregular": false,
+      "normalized": "a piece",
+      "part_of_speech": "NN",
+      "standard_us_form": false,
+      "standard_british_form": false
+    },
+    {
+      "id": "piece_nn01-s033",
+      "band": 4,
+      "form": "peas",
+      "lemma": "piece",
+      "region": "Scotland",
+      "word_id": "piece_nn01",
+      "computed": false,
+      "daterange": {
+        "end": 1699,
+        "start": 1500,
+        "obsolete": true,
+        "rangestring": "1500—1700"
+      },
+      "irregular": false,
+      "normalized": "piece",
+      "part_of_speech": "NN",
+      "standard_us_form": false,
+      "standard_british_form": false
+    },
+    {
+      "id": "pea_nn02-s010",
+      "band": 8,
+      "form": "peas",
+      "lemma": "pea",
+      "region": null,
+      "word_id": "pea_nn02",
+      "computed": false,
+      "daterange": {
+        "end": null,
+        "start": 1666,
+        "obsolete": false,
+        "rangestring": "1666—"
+      },
+      "irregular": false,
+      "normalized": "peas",
+      "part_of_speech": "NNS",
+      "standard_us_form": true,
+      "standard_british_form": true
+    },
+    {
+      "id": "pea_nn03-s003",
+      "band": 13,
+      "form": "peas",
+      "lemma": "pea",
+      "region": null,
+      "word_id": "pea_nn03",
+      "computed": false,
+      "daterange": {
+        "end": null,
+        "start": 1700,
+        "obsolete": false,
+        "rangestring": "1700—"
+      },
+      "irregular": false,
+      "normalized": "peas",
+      "part_of_speech": "NNS",
+      "standard_us_form": true,
+      "standard_british_form": true
+    },
+    {
+      "id": "pia_nn01a-s007",
+      "band": 12,
+      "form": "peas",
+      "lemma": "pia",
+      "region": null,
+      "word_id": "pia_nn01a",
+      "computed": false,
+      "daterange": {
+        "end": 1799,
+        "start": 1769,
+        "obsolete": true,
+        "rangestring": "1769—1800"
+      },
+      "irregular": false,
+      "normalized": "pias",
+      "part_of_speech": "NNS",
+      "standard_us_form": false,
+      "standard_british_form": false
+    },
+    {
+      "id": "pea_nn04-s003",
+      "band": 13,
+      "form": "peas",
+      "lemma": "pea",
+      "region": null,
+      "word_id": "pea_nn04",
+      "computed": false,
+      "daterange": {
+        "end": null,
+        "start": 1860,
+        "obsolete": false,
+        "rangestring": "1860—"
+      },
+      "irregular": false,
+      "normalized": "peas",
+      "part_of_speech": "NNS",
+      "standard_us_form": true,
+      "standard_british_form": true
+    }
+  ]
+}
