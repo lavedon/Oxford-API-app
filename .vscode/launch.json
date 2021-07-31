@@ -13,7 +13,7 @@
             // If you have changed target frameworks, make sure to update the program path.
             "program": "${workspaceFolder}/bin/Debug/net5.0/OxfordV2.dll",
             "args": [
-                "Quote", "-a", "'G. Orwell'","-m", "-st", "1984"
+                "Form", "peas", "y", "1500-1650", "ps", "NN", "i", "r"
             ],
             "cwd": "${workspaceFolder}",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console

@@ -47,6 +47,40 @@ namespace oed
 			displayQuotes(query, root);
 		}
 
+		public static void GetSurfaces(CurrentQuery query, HttpClient client)
+		{
+			Trace.WriteLine("Called get surfaces.");
+			string queryURL = "";
+			// queryURL = queryURL + query.CurrentSurfaceOptions
+			queryURL = addSurfaceOptions(query, queryURL);
+
+			static string addSurfaceOptions(CurrentQuery query, string queryURL)
+			{
+				queryURL = queryURL + "&form=" + query.CurrentSurfaceOptions.Form;
+
+				if (!string.IsNullOrEmpty(query.PartsOfSpeech))
+				{
+					queryURL = queryURL + "&part_of_speech=" + query.PartsOfSpeech;
+				}
+				if (query.DateRangeSet)
+				{
+					queryURL = queryURL + @"&current_in=" + query.StartYear + "-" + query.EndYear;
+				}
+				if (query.CurrentSurfaceOptions.IncludeRegion)
+				{
+					queryURL = queryURL + @"&include_regional=true";
+				}
+				if (query.CurrentSurfaceOptions.IncludeInflections)
+				{
+					queryURL = queryURL + @"&include_inflections=true";
+				}
+				return processURLDelimiters(queryURL);
+			}
+
+
+
+		}
+
 		public static void GetQuotations(CurrentQuery query, HttpClient client)
 		{
 			Trace.WriteLine("Called GetQuotations. Did not pass a sense.");
@@ -63,7 +97,6 @@ namespace oed
 					queryURL = queryURL + d.WordID + "/quotations/";
 					queryURL = addQuoteOptions(query, queryURL);
 					makeCLIQuoteRequest(query, client, queryURL);
-
 				}
 			}
 			if (query.CurrentQuoteOptions.UseSenses)
@@ -798,6 +831,11 @@ namespace oed
 				string export = Console.ReadLine();
 				Program.ParseExport(query, export);
 			}
+		}
+		else if (query.QueryMode == Modes.Surfaces)
+		{
+			GetSurfaces(query, client);
+			// @TODO Add export
 		}
 		else 
 		{

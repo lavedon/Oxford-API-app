@@ -286,20 +286,21 @@ namespace oed
             // As SurfaceForms only has a "current in" style years mode
             // When first set "current in" to true, then pass the years
             query.QueryMode = Modes.Surfaces;
-            query.CurrentSurfaceOptions = new SurfaceOptions(includeRegion, includeInflections);
+            query.CurrentSurfaceOptions = new SurfaceOptions(includeRegion, includeInflections, form, partOfSpeech!);
             bool currentIn = true;
 
             if (string.IsNullOrWhiteSpace(form))
             {
                 Console.WriteLine("No form word entered.");
-                ConsoleUI.Start(query); // @TODO make sure this is the correct method to call
+                Console.WriteLine("Please enter a form to look up with the Surfaceforms endpoint.");
+                query.CurrentSurfaceOptions.Form = Console.ReadLine()!;
             } else 
             {
                 Trace.WriteLine($"Getting surfaceforms for {form}");
             }
             proccessCommonOptions(obsoleteOnly: false, obsoleteExclude: false, partOfSpeech, years, currentIn, revised: false, revisedNot: false, interactive, export, query);
-            
-
+            query.QueryMode = Modes.Surfaces;
+   		         API.APICalls(query);
         }
         // Also handling some global options
         public static void HandleLemmaArgs(string text, bool tokenizeOff, bool tokenizeCharacter, string? export = "all")
@@ -482,8 +483,6 @@ namespace oed
             {
                 query.IncludeRevised = false;
             }
-
-
             if (interactive)
             {
                 query.InteractiveMode = true;
