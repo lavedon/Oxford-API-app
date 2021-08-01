@@ -35,7 +35,6 @@ namespace oed
 		public List<Definition> Definitions { get; set; }
 		public List<Quote> Quotes { get; set; }
 		public List<Sense> Senses { get; set; }
-		public List<Surface> Surfaces { get; set; }
 		public Lemmas Lemmas { get; set; }
 
 		public string EtymologySummary { get; set; }
@@ -66,6 +65,9 @@ namespace oed
 		public bool ExportAll { get; set;}
 		public string? CurrentWordID { get; set; }
 
+		public List<Datum> Surfaces { get; set; }
+		// public SurfaceFormDeJSON? SurfaceJson  { get; set;}
+
 		public CurrentQuery() {
 			this.HasLookedUpWord = false;
 			this.DateRangeSet = false;
@@ -93,6 +95,8 @@ namespace oed
 			this.CurrentQuoteOptions = null;
 			this.CurrentSurfaceOptions = null;
 			this.LemmaText = "";
+			// this.SurfaceJson = new();
+			this.Surfaces = new List<Datum>();
 			
 		} 
 		public string Source { get; set; }

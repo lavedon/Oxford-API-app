@@ -58,7 +58,7 @@ namespace oed
 
 			static string addSurfaceOptions(CurrentQuery query, string queryURL)
 			{
-				queryURL = queryURL + "&form=" + query.CurrentSurfaceOptions.Form;
+				queryURL = queryURL + "surfaceforms/" + "&form=" + query.CurrentSurfaceOptions.Form;
 
 				if (!string.IsNullOrEmpty(query.PartsOfSpeech))
 				{
@@ -79,17 +79,20 @@ namespace oed
 				return processURLDelimiters(queryURL);
 			}
 			//makeCLIRequest(query, client, queryURL);
-			makeSurfaceRequest(query, client, queryURL);
+			query = makeSurfaceRequest(query, client, queryURL);
 			//@TODO display sense option
 
-			SurfaceFormDeJSON makeSurfaceRequest(CurrentQuery query, HttpClient client, string queryURL)
+			CurrentQuery makeSurfaceRequest(CurrentQuery query, HttpClient client, string queryURL)
 			{
 				Action<object> callSurfaceAPI = (Object obj) =>
 				{
 					Uri requestURL = new Uri(baseURL + queryURL);
 				try {
 					Console.WriteLine(requestURL.AbsoluteUri);
-					var response = client.GetStreamAsync(requestURL).Result;
+					var response = client.GetStringAsync(requestURL).Result;
+					var json = JsonSerializer.Deserialize<SurfaceFormDeJSON>(response);
+					// query.SurfaceJson = json;
+					query.Surfaces = json.data.ToList();
 				}
 				catch(Exception ex)
 				{
@@ -101,16 +104,10 @@ namespace oed
 				resetHeaders(client);
 				Task getSurfaces = new Task(callSurfaceAPI, "Call Surfaces");
 				getSurfaces.RunSynchronously();
-				Console.WriteLine("What now?");
-				Console.ReadLine();
-				return null;
+				return query;
 			}
-
-
-
+		displaySurfaces(query);
 		}
-
-		
 
 		public static void GetQuotations(CurrentQuery query, HttpClient client)
 		{
@@ -311,7 +308,31 @@ namespace oed
             }
         }
 
-		private static void displaySurfaces(CurrentQuery query, JsonElement root) {}
+		private static void displaySurfaces(CurrentQuery query)
+		{
+			int i = 1;
+		 foreach (Datum surface in query.Surfaces)
+		 {
+			 Console.WriteLine($"SurfaceForm #{i}");
+			 Console.WriteLine($"Lemma: {surface.lemma}, Normalized: {surface.normalized}");
+			 Console.WriteLine($"Part of Speech: {surface.part_of_speech}");
+			 if (surface.region != null)
+			 {
+				 Console.WriteLine($"Region: {surface.region}    ");
+			 }
+			Console.WriteLine("Standard USA Form?: {0}", surface.standard_us_form ? "Yes" : "No");
+			Console.WriteLine("Standard British Form?: {0}", surface.standard_british_form ? "Yes" : "No");
+			Console.WriteLine($"This form is listed as active between: {surface.daterange.start}-{surface.daterange.end}");
+			 if (surface.daterange.obsolete) {
+				 Console.WriteLine("This form is listed as obsolete.");
+			 }
+			 Console.WriteLine("-----------------------");
+			 Console.WriteLine();
+			 i++;
+		 }
+
+
+		}
         private static void displayQuotes(CurrentQuery query, JsonElement root)
         {
             JsonElement quoteData = root.GetProperty("data");

@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 
 namespace oed {
-    public class SurfaceFormDeJSON {
         public class Meta
         {
             public int total { get; set; }
@@ -45,15 +44,14 @@ namespace oed {
             public string part_of_speech { get; set; }
             public bool standard_us_form { get; set; }
             public bool standard_british_form { get; set; }
+            
         }
 
-        public class Root
+        public class SurfaceFormDeJSON
         {
             public Meta meta { get; set; }
             public Links links { get; set; }
             public List<Datum> data { get; set; }
         }
 
-    } 
-
-}
+} 
