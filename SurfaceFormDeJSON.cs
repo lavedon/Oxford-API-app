@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 
 namespace oed {
-    public class SurfaceForm {
+    public class SurfaceFormDeJSON {
         public class Meta
         {
             public int total { get; set; }

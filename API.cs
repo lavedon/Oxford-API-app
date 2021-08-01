@@ -21,6 +21,8 @@ namespace oed
 
 		public static void GetSynonyms(CurrentQuery query, HttpClient client, Sense currentSense) {
 		}
+
+//		public static SurfaceFormDeJSON makeSerializerRequest(string surfaceForm, string language) {
  
 		private static JsonElement makeCLIRequest (CurrentQuery query, HttpClient client, string queryURL)
 		{
@@ -76,12 +78,39 @@ namespace oed
 				}
 				return processURLDelimiters(queryURL);
 			}
-			makeCLIRequest(query, client, queryURL);
+			//makeCLIRequest(query, client, queryURL);
+			makeSurfaceRequest(query, client, queryURL);
 			//@TODO display sense option
+
+			SurfaceFormDeJSON makeSurfaceRequest(CurrentQuery query, HttpClient client, string queryURL)
+			{
+				Action<object> callSurfaceAPI = (Object obj) =>
+				{
+					Uri requestURL = new Uri(baseURL + queryURL);
+				try {
+					Console.WriteLine(requestURL.AbsoluteUri);
+					var response = client.GetStreamAsync(requestURL).Result;
+				}
+				catch(Exception ex)
+				{
+					Trace.WriteLine("Exception");
+					Trace.WriteLine(ex.GetType());
+					Trace.WriteLine(ex.Message);
+				}
+				};
+				resetHeaders(client);
+				Task getSurfaces = new Task(callSurfaceAPI, "Call Surfaces");
+				getSurfaces.RunSynchronously();
+				Console.WriteLine("What now?");
+				Console.ReadLine();
+				return null;
+			}
 
 
 
 		}
+
+		
 
 		public static void GetQuotations(CurrentQuery query, HttpClient client)
 		{
@@ -282,6 +311,7 @@ namespace oed
             }
         }
 
+		private static void displaySurfaces(CurrentQuery query, JsonElement root) {}
         private static void displayQuotes(CurrentQuery query, JsonElement root)
         {
             JsonElement quoteData = root.GetProperty("data");
