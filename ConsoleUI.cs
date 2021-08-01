@@ -341,6 +341,15 @@ namespace oed
 					SavedQueries.QuotesForExport.Add(new Quote(query.Quotes[query.WhatToExport[i] - 1]));
 				}
 			}
+			else if (query.QueryMode == Modes.Surfaces)
+			{
+				SavedQueries.SurfacesForExport.Clear();
+				for(int i = 0;i < query.WhatToExport.Count; i++)
+				{
+					Console.WriteLine($"Trying to export surface #{i}");
+					// SavedQueries.SurfacesForExport.Add(new Datum(query.Surfaces[query.WhatToExport[i] - 1]));
+				}
+			}
 			SavedQueries.RenderXML();
 			
         }

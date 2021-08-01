@@ -107,6 +107,9 @@ namespace oed
 				return query;
 			}
 		displaySurfaces(query);
+		if (query.ExportAfterSearch){
+			//@TODO stuck in API.cs everyone else is calling this from ConsoleUI
+		}
 		}
 
 		public static void GetQuotations(CurrentQuery query, HttpClient client)
@@ -889,6 +892,10 @@ namespace oed
 		else if (query.QueryMode == Modes.Surfaces)
 		{
 			GetSurfaces(query, client);
+			if (query.ExportAfterSearch)
+			{
+
+			}
 			// @TODO Add export
 		}
 		else 
