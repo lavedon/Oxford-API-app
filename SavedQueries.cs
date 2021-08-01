@@ -83,25 +83,30 @@ namespace oed
 			}
 		}
 		public static void SaveSenseId(CurrentQuery query) {
-			string senseIDFile = Path.Combine(Environment.CurrentDirectory, "sense-id.txt");
+			string senseIDFile = Path.Combine(Environment.CurrentDirectory, "sense-id-all.txt");
+			string senseIDFileDistinct = Path.Combine(Environment.CurrentDirectory, "sense-id-distinct.txt");
 			File.Delete(senseIDFile);
-			using StreamWriter file = new(senseIDFile);
+			File.Delete(senseIDFileDistinct);
+			using StreamWriter fileAll = new(senseIDFile);
+
 
 			List<string> senseIds = new();
 			foreach (Sense s in query.Senses)
 			{
+				fileAll.WriteLine(s.SenseID);
 				senseIds.Add(s.SenseID);
 			}
 
+			using StreamWriter fileDistinct = new(senseIDFileDistinct);
 			IEnumerable<string> uniqueSenseIds = senseIds.Distinct();
 			foreach (var id in uniqueSenseIds)
 			{
-				file.WriteLine(id);
+				fileDistinct.WriteLine(id);
 			}
 		}
 
 		public static CurrentQuery LoadSenseIds(CurrentQuery query) {
-			string senseIDFile = Path.Combine(Environment.CurrentDirectory, "sense-id.txt");
+			string senseIDFile = Path.Combine(Environment.CurrentDirectory, "sense-id-distinct.txt");
 			string[] lines = System.IO.File.ReadAllLines(senseIDFile);
 			foreach (string line in lines) {
 				var blankSenseWithId = new Sense();
