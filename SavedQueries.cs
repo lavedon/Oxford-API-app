@@ -19,6 +19,9 @@ namespace oed
 	    public static List<Quote> QuotesForExport { get; set; }
 	    public static List<Sense> Senses { get; set; }
 	    public static List<Sense> SensesForExport { get; set; }
+
+		public static List<Datum> SurfaceForms { get; set; }
+		public static List<Datum> SurfaceFormsForExport { get; set; }
 		public static List<Definition> Definitions { get; set; }
 		public static List<Definition> DefinitionsForExport { get; set; }
 
@@ -128,7 +131,7 @@ namespace oed
 
 		    xml.WriteStartDocument();
 		    xml.WriteStartElement("SuperMemoCollection");
-		    int count = Quotes.Count + SensesForExport.Count + Lemmas.Count + DefinitionsForExport.Count;
+		    int count = Quotes.Count + SensesForExport.Count + Lemmas.Count + DefinitionsForExport.Count + SurfaceFormsForExport.Count;
 		    xml.WriteElementString("Count", $"{count}");
 		    // @TODO Add count number and ID number
 
@@ -283,10 +286,10 @@ namespace oed
 						}
 
 				}
-
-
 			}
-
+			if (SurfaceFormsForExport.Count > 0) {
+				Console.WriteLine("Exporting Surface Forms...");
+			}
 		try {
 	  		xml.WriteEndElement();
 		    xml.WriteEndDocument();
