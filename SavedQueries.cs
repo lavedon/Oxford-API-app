@@ -36,6 +36,8 @@ namespace oed
             QuotesForExport = new();
 		    Senses = new();
             SensesForExport = new();
+			Surfaces = new();
+			SurfacesForExport = new();
 			Definitions = new();
 			DefinitionsForExport = new();
 			Lemmas = new();
@@ -289,6 +291,48 @@ namespace oed
 			}
 			if (SurfacesForExport.Count > 0) {
 				Console.WriteLine("Exporting Surface Forms...");
+				for (int i = 0 ; i < SurfacesForExport.Count; i++) {
+					try {
+						xml.WriteStartElement("SuperMemoElement");
+						int ID = i + 1;
+						xml.WriteElementString("ID", $"{ID}");
+						xml.WriteElementString("Title", $"{SurfacesForExport[i].word_id}");
+						xml.WriteElementString("Type", "Topic");
+						xml.WriteStartElement("Content");
+						xml.WriteStartElement("Question");
+						xml.WriteString($"Surfaceform searched: \"{SurfacesForExport[i].form}\", Lemma: {SurfacesForExport[i].lemma}, Normalized: {SurfacesForExport[i].normalized} <BR>");
+						xml.WriteString($"Part of Speech: {SurfacesForExport[i].part_of_speech} <BR>");
+						if (SurfacesForExport[i].region != null) {
+							xml.WriteString($"Region: {SurfacesForExport[i].region} <BR>");
+						}
+						string yesNo = SurfacesForExport[i].standard_us_form ? "Yes" : "No";
+						string usaForm = "Standard USA Form?: " + yesNo; 
+						xml.WriteString(usaForm);
+						xml.WriteString("<BR>");
+						string britishYesNo = SurfacesForExport[i].standard_british_form ? "Yes" : "No";
+						string britishForm = "Standard USA Form?: " + yesNo; 
+						xml.WriteString(britishForm);
+						xml.WriteString("<BR>");
+						xml.WriteString($"This form is listed as in use for these years: {SurfacesForExport[i].daterange.start} - {SurfacesForExport[i].daterange.end} <BR>");
+						if (SurfacesForExport[i].daterange.obsolete) {
+							xml.WriteString("This form is listed as obsolete");
+						}
+						xml.WriteEndElement();
+						string encoded = WebUtility.HtmlEncode("<H5 dir=ltr align=left><Font size=\"1\" style=\"color: transparent\"> SuperMemo Reference:</font><br><FONT class=reference>Title:\"My Test Quote\" <br>Source: Oxford English Dictionary");
+						xml.WriteElementString("SuperMemoReference", encoded);
+						xml.WriteEndElement();
+						xml.WriteEndElement();
+					}
+					catch (AggregateException ae)
+					{
+						var ex = ae.Flatten().InnerExceptions;
+						Console.WriteLine("Error writing XML document:");
+						foreach (var exception in ex)
+						{
+							Console.WriteLine($"{ex.ToString()}");
+						}
+					}
+
 			}
 		try {
 	  		xml.WriteEndElement();
@@ -314,5 +358,6 @@ namespace oed
 				}
 			}
 		}
+	}
 	}
 }

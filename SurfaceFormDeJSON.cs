@@ -53,5 +53,4 @@ namespace oed {
             public Links links { get; set; }
             public List<Datum> data { get; set; }
         }
-
 } 

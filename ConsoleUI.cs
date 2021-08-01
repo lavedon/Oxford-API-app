@@ -301,6 +301,20 @@ namespace oed
 			}
         }
 
+		public static void GetSurfaces(CurrentQuery query)
+		{
+			Trace.WriteLine("Get surfaces selected.");
+            query.QueryMode = Modes.Surfaces;
+   		         API.APICalls(query);
+			// We do not save the sense ids of the returned surfaces
+			// Surfaces use sense-ids, not "surface ids" as they are senses
+			// @TODO change?
+			if (query.ExportAfterSearch)
+			{
+				exportQuery(query);
+			}
+		}
+
         private static void exportQuery()
 		{
             Trace.WriteLine("Export quotations.");
@@ -346,8 +360,8 @@ namespace oed
 				SavedQueries.SurfacesForExport.Clear();
 				for(int i = 0;i < query.WhatToExport.Count; i++)
 				{
-					Console.WriteLine($"Trying to export surface #{i}");
-					// SavedQueries.SurfacesForExport.Add(new Datum(query.Surfaces[query.WhatToExport[i] - 1]));
+					Trace.WriteLine($"Trying to export surface #{i}");
+					SavedQueries.SurfacesForExport.Add((query.Surfaces[query.WhatToExport[i] - 1]));
 				}
 			}
 			SavedQueries.RenderXML();

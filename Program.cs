@@ -299,8 +299,7 @@ namespace oed
                 Trace.WriteLine($"Getting surfaceforms for {form}");
             }
             proccessCommonOptions(obsoleteOnly: false, obsoleteExclude: false, partOfSpeech, years, currentIn, revised: false, revisedNot: false, interactive, export, query);
-            query.QueryMode = Modes.Surfaces;
-   		         API.APICalls(query);
+            ConsoleUI.GetSurfaces(query);
         }
         // Also handling some global options
         public static void HandleLemmaArgs(string text, bool tokenizeOff, bool tokenizeCharacter, string? export = "all")

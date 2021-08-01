@@ -894,7 +894,9 @@ namespace oed
 			GetSurfaces(query, client);
 			if (query.ExportAfterSearch)
 			{
-
+				Console.WriteLine("Select which returned surfaces to export:");
+				string export = Console.ReadLine();
+				Program.ParseExport(query, export);
 			}
 			// @TODO Add export
 		}
