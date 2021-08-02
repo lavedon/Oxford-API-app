@@ -147,7 +147,13 @@ namespace oed
             new Option<string?>(new[] {"--etymology-type", "et"}, description: "Restrict results only certain etymological types.  compound, derivative, conversion, blend, shortening, backformation, initialism, acronym, variant, arbitrary, imitative, borrowing, properName, unknown"),
             new Option<bool>(new[] {"--interactive", "i"}, description: "Open the interactive text menu features, where you can run follow-up queries, change options, and export queries. Has reduced features when compared to the command line."),
         };
-            // Global Options
+        // @TODO should this be a command?
+        var derivativesCommand = new Command("Derivatives");
+        derivativesCommand.AddAlias("d");
+        derivativesCommand.Description = "Get derivatives for selected words.  Select which words returned by your last search, you would like to look up derivatives for. Enter the # of the last returned word you want to look up.  Works with range syntax as well (i.e. 1-9,11,15).  Works with the /word/{id}/derivatives endpoint.";
+        rootCommand.AddCommand(derivativesCommand);
+        derivativesCommand.Handler = CommandHandler.Create<string, bool, bool, string?, string?, bool, bool, bool, string?, string?, bool, bool>(HandleDerivativesArgs);
+
             // new Option<string?>(new[] {"--part-of-speech", "-ps"}, description: "Only return results to words specific parts of speech"),
 
             rootCommand.AddGlobalOption(new Option<string?>(new[] {"--part-of-speech", "ps"}, description: "Only return results where the result relates to a specific part of speech (i.e. only nouns, only verbs)"));
@@ -161,7 +167,6 @@ namespace oed
                     {
                         IsRequired = false,
                         ArgumentHelpName = "What to export by number",
-                        
                     };
             exportOption.AddAlias("e");
             rootCommand.AddGlobalOption(exportOption);
@@ -272,6 +277,27 @@ namespace oed
                 query.HasLookedUpWord = true;
                 ConsoleUI.GetSenses(query);
             }
+        }
+        public static void HandleDerivativesArgs(string word, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, bool interactive, bool export)
+        {
+            Trace.WriteLine("Derivatives sub command entered.");
+            Trace.WriteLine($"CLI word entered was {word}");
+            Trace.WriteLine($"obsoleteOnlyOption: {obsoleteOnly}");
+            Trace.WriteLine($"excludeObsoleteOption: {obsoleteExclude}.");
+            Trace.WriteLine($"partOfSpeech: {partOfSpeech ?? "null"}");
+            Trace.WriteLine($"years: {years ?? "null"}");
+            Trace.WriteLine($"Current In: {currentIn}");
+            Trace.WriteLine($"Revised:? {revised}");
+            Trace.WriteLine($"Revised: Old editions only? {revisedNot}");
+            Trace.WriteLine($"etymologyLanguage: {etymologyLanguage}");
+            Trace.WriteLine($"etymologyType: {etymologyType}");
+            Trace.WriteLine($"interactive: {interactive}");
+            Trace.WriteLine($"export: {export}");
+
+            CurrentQuery query = new();
+            query.QueryMode = Modes.Derivatives;
+            proccessCommonOptions(obsoleteOnly, obsoleteExclude, partOfSpeech, years, currentIn, revised, revisedNot, interactive, export, query);
+
         }
 
         public static void HandleSurfaceArgs(string form, string? partOfSpeech, string? years, bool includeRegion, bool includeInflections, bool interactive, bool export)
@@ -433,7 +459,7 @@ namespace oed
             }
             else
             {
-                Console.WriteLine($"Entered CLI word is {word}");
+                Trace.WriteLine($"Entered CLI word is {word}");
                 var includeObsoleteProp = query.IncludeObsolete is null ? "null" : query.IncludeObsolete.Value.ToString();
                 Trace.WriteLine($"query.IncludeObsolete: {includeObsoleteProp}");
                 ConsoleUI.Start(word, query);

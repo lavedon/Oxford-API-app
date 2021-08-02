@@ -13,7 +13,8 @@ namespace oed
 		Lammatize,
 		Senses,
 		Quotations,
-		Surfaces
+		Surfaces,
+		Derivatives
 	}
 	public class CurrentQuery : IDisposable
 	{

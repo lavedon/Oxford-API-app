@@ -49,6 +49,13 @@ namespace oed
 			return root;
 		}
 
+		public static void GetDerivaties(CurrentQuery query, HttpClient client)
+		{
+			Trace.WriteLine("Called GetDerivatives() method.");
+			string queryURL = "derivatives";
+			queryURL = addDerivativesOptions(query, queryURL);
+		}
+
 		public static void GetSurfaces(CurrentQuery query, HttpClient client)
 		{
 			Trace.WriteLine("Called get surfaces.");
@@ -898,7 +905,17 @@ namespace oed
 				string export = Console.ReadLine();
 				Program.ParseExport(query, export);
 			}
-			// @TODO Add export
+		}
+		else if (query.QueryMode == Modes.Derivatives)
+		{
+			// @TODO Create GetDerivatives method
+			GetDerivatives(query, client);
+			if (query.ExportAfterSearch)
+			{
+				Console.WriteLine("Select which returned derivatives to export:");
+				string export = Console.ReadLine();
+				Program.ParseExport(query, export);
+			}
 		}
 		else 
 		{

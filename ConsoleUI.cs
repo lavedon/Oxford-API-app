@@ -315,6 +315,17 @@ namespace oed
 			}
 		}
 
+		public static void GetDerivaties(CurrentQuery query)
+		{
+			Trace.WriteLine("Get derivaties selected.");
+			query.QueryMode = Modes.Derivatives;
+				API.APICalls(query);
+			if (query.ExportAfterSearch)
+			{
+				exportQuery(query);
+			}
+		}
+
         private static void exportQuery()
 		{
             Trace.WriteLine("Export quotations.");
