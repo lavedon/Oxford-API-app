@@ -69,7 +69,7 @@ namespace oed
 
 		public List<Datum> Surfaces { get; set; }
 		// public SurfaceFormDeJSON? SurfaceJson  { get; set;}
-		public List <DerivativesRoot> Derivatives { get; set; }
+		public List <Derivatives> Derivatives { get; set; }
 
 		public CurrentQuery() {
 			this.HasLookedUpWord = false;
@@ -100,7 +100,7 @@ namespace oed
 			this.LemmaText = "";
 			// this.SurfaceJson = new();
 			this.Surfaces = new List<Datum>();
-			this.Derivatives = new List<DerivativesRoot>();
+			this.Derivatives = new List<Derivatives>();
 			// this.PreviousWordIds = new();
 			
 		} 

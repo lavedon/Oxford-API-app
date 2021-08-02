@@ -52,7 +52,7 @@ namespace oed
 		public static void GetDerivatives(CurrentQuery query, HttpClient client, string wordID)
 		{
 			Trace.WriteLine("Called GetDerivatives() method.");
-			string queryURL = "word/" + wordID + "/derivatives";
+			string queryURL = "word/" + wordID + "/derivatives/";
 			// queryURL = addDerivativesOptions(query, queryURL);
 			if (query.QueryMode == Modes.Derivatives)
 			{
@@ -80,7 +80,7 @@ namespace oed
 					Console.WriteLine(requestURL.AbsoluteUri);
 					var response = client.GetStringAsync(requestURL).Result;
 					var json = JsonSerializer.Deserialize<DerivativesRoot>(response);
-					query.Derivatives.Add(json);
+					query.Derivatives.Add(json.data[0]);
 				}
 				catch(Exception ex)
 				{
@@ -91,8 +91,8 @@ namespace oed
 				};
 
 				resetHeaders(client);
-				Task getSurfaces = new Task(callDerivativesAPI, "Call Derivatives");
-				getSurfaces.RunSynchronously();
+				Task getDerivatives = new Task(callDerivativesAPI, "Call Derivatives");
+				getDerivatives.RunSynchronously();
 				return query;
 				}
 			}
@@ -360,6 +360,19 @@ namespace oed
 
 		private static void displayDerivatives(CurrentQuery query)
 		{
+			Console.WriteLine("Derivatives: #");
+			foreach (var d in query.Derivatives) {
+				// Console.WriteLine(d.data[0].definition);
+				Console.WriteLine($"lemma: {d.lemma}");
+				Console.WriteLine("Definition:");
+				Console.WriteLine(d.definition);
+				Console.WriteLine($"First use: {d.first_use}");
+				Console.WriteLine("Parts of speech: ");
+				foreach (var p in d.parts_of_speech) {
+					Console.Write($"{p} ");
+				}
+				// @TODO loop through some of the lists like parts_of_speech
+			}
 
 		}
 
