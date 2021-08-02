@@ -49,14 +49,53 @@ namespace oed
 			return root;
 		}
 
-		public static void GetDerivaties(CurrentQuery query, HttpClient client)
+		public static void GetDerivatives(CurrentQuery query, HttpClient client, string wordID)
 		{
 			Trace.WriteLine("Called GetDerivatives() method.");
-			// string queryURL = "derivatives";
+			string queryURL = "word/" + wordID + "/derivatives";
 			// queryURL = addDerivativesOptions(query, queryURL);
+			if (query.QueryMode == Modes.Derivatives)
+			{
+			// @TODO Create GetDerivatives method
+			// GetDerivatives(query, client);
 
-		}
+				queryURL = coreQueryFeatures(query, queryURL);
+				// @TODO Create displayDrivatives method
+				displayDerivatives(makeDerivativesRequest(query, client, queryURL));
 
+			if (query.ExportAfterSearch)
+			{
+				Console.WriteLine("Select which returned derivatives to export:");
+				string export = Console.ReadLine();
+				Program.ParseExport(query, export);
+			}
+			}
+
+			CurrentQuery makeDerivativesRequest(CurrentQuery query, HttpClient client, string queryURL)
+			{
+				Action<object> callDerivativesAPI = (Object obj) => 
+				{
+					Uri requestURL = new Uri(baseURL + queryURL);
+				try {
+					Console.WriteLine(requestURL.AbsoluteUri);
+					var response = client.GetStringAsync(requestURL).Result;
+					var json = JsonSerializer.Deserialize<DerivativesRoot>(response);
+					query.Derivatives.Add(json);
+				}
+				catch(Exception ex)
+				{
+					Trace.WriteLine("Exception");
+					Trace.WriteLine(ex.GetType());
+					Trace.WriteLine(ex.Message);
+				}
+				};
+
+				resetHeaders(client);
+				Task getSurfaces = new Task(callDerivativesAPI, "Call Derivatives");
+				getSurfaces.RunSynchronously();
+				return query;
+				}
+			}
 		public static void GetSurfaces(CurrentQuery query, HttpClient client)
 		{
 			Trace.WriteLine("Called get surfaces.");
@@ -319,6 +358,11 @@ namespace oed
             }
         }
 
+		private static void displayDerivatives(CurrentQuery query)
+		{
+
+		}
+
 		private static void displaySurfaces(CurrentQuery query)
 		{
 			int i = 1;
@@ -436,6 +480,13 @@ namespace oed
 
 	}
 // @TODO refactor this whole insane mess.
+	public static void APICalls(CurrentQuery query, string wordID)
+	{
+		ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+		var client = new HttpClient();
+
+		GetDerivatives(query, client, wordID);
+	}
 	public static void APICalls(CurrentQuery query)
 	{
 		// Have CurrentQuery - QueryMode - tell 
@@ -568,13 +619,6 @@ namespace oed
 			Trace.WriteLine("Set JSONResponse to the response.");
 		};
 
-		Action<object> callDerivativesAPI = (Object obj) => 
-		{
-			Trace.WriteLine("Called callDerivativesAPI");
-			Uri requestURL = new Uri(baseURL + @"word/brain_nn01/derivatives/");
-			Trace.WriteLine("Making the request");
-			Trace.WriteLine(client.GetStringAsync(requestURL));
-		};
 
 		Action<object> callSurfaceformsAPI = (Object obj) => 
 		{
@@ -903,17 +947,6 @@ namespace oed
 			if (query.ExportAfterSearch)
 			{
 				Console.WriteLine("Select which returned surfaces to export:");
-				string export = Console.ReadLine();
-				Program.ParseExport(query, export);
-			}
-		}
-		else if (query.QueryMode == Modes.Derivatives)
-		{
-			// @TODO Create GetDerivatives method
-			// GetDerivatives(query, client);
-			if (query.ExportAfterSearch)
-			{
-				Console.WriteLine("Select which returned derivatives to export:");
 				string export = Console.ReadLine();
 				Program.ParseExport(query, export);
 			}

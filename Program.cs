@@ -298,21 +298,21 @@ namespace oed
             Trace.WriteLine($"export: {export}");
 
             CurrentQuery query = new();
+            string wordIDFile = Path.Combine(Environment.CurrentDirectory, "word-id.txt");
+            string[] wordIds = System.IO.File.ReadAllLines(wordIDFile);
             proccessCommonOptions(obsoleteOnly, obsoleteExclude, partOfSpeech, years, currentIn, revised, revisedNot, interactive, export, query);
 
             if (!string.IsNullOrWhiteSpace(selection))
             {
                 // Open the file containing the word IDs
-                Console.WriteLine("No CLI selection entered.");
                 List<int> parsedSelection = Program.ParseNumbers(selection);
-                Console.WriteLine("You want to get derivatives for these words (from your last search)");
+                Trace.WriteLine("You want to get derivatives for these words (from your last search)");
 
                 foreach (int id in parsedSelection)
-                {                        
-
+                {                                                
+                    ConsoleUI.GetDerivatives(query, wordIds[id]);
                 }
             }
-            ConsoleUI.GetDerivaties(query);
         }
 
         public static void HandleSurfaceArgs(string form, string? partOfSpeech, string? years, bool includeRegion, bool includeInflections, bool interactive, bool export)

@@ -65,10 +65,11 @@ namespace oed
 		public List<int> WhatToExport { get; set; }
 		public bool ExportAll { get; set;}
 		public string? CurrentWordID { get; set; }
-		public List<string> PreviousWordIds { get; set;}
+		// public List<string> PreviousWordIds { get; set;}
 
 		public List<Datum> Surfaces { get; set; }
 		// public SurfaceFormDeJSON? SurfaceJson  { get; set;}
+		public List <DerivativesRoot> Derivatives { get; set; }
 
 		public CurrentQuery() {
 			this.HasLookedUpWord = false;
@@ -99,7 +100,8 @@ namespace oed
 			this.LemmaText = "";
 			// this.SurfaceJson = new();
 			this.Surfaces = new List<Datum>();
-			this.PreviousWordIds = new();
+			this.Derivatives = new List<DerivativesRoot>();
+			// this.PreviousWordIds = new();
 			
 		} 
 		public string Source { get; set; }

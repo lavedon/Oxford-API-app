@@ -315,11 +315,11 @@ namespace oed
 			}
 		}
 
-		public static void GetDerivaties(CurrentQuery query)
+		public static void GetDerivatives(CurrentQuery query, string wordID)
 		{
 			Trace.WriteLine("Get derivaties selected.");
 			query.QueryMode = Modes.Derivatives;
-				API.APICalls(query);
+				API.APICalls(query, wordID);
 			if (query.ExportAfterSearch)
 			{
 				exportQuery(query);
