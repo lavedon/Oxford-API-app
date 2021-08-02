@@ -52,8 +52,9 @@ namespace oed
 		public static void GetDerivaties(CurrentQuery query, HttpClient client)
 		{
 			Trace.WriteLine("Called GetDerivatives() method.");
-			string queryURL = "derivatives";
-			queryURL = addDerivativesOptions(query, queryURL);
+			// string queryURL = "derivatives";
+			// queryURL = addDerivativesOptions(query, queryURL);
+
 		}
 
 		public static void GetSurfaces(CurrentQuery query, HttpClient client)
@@ -909,7 +910,7 @@ namespace oed
 		else if (query.QueryMode == Modes.Derivatives)
 		{
 			// @TODO Create GetDerivatives method
-			GetDerivatives(query, client);
+			// GetDerivatives(query, client);
 			if (query.ExportAfterSearch)
 			{
 				Console.WriteLine("Select which returned derivatives to export:");

@@ -65,6 +65,7 @@ namespace oed
 		public List<int> WhatToExport { get; set; }
 		public bool ExportAll { get; set;}
 		public string? CurrentWordID { get; set; }
+		public List<string> PreviousWordIds { get; set;}
 
 		public List<Datum> Surfaces { get; set; }
 		// public SurfaceFormDeJSON? SurfaceJson  { get; set;}
@@ -98,6 +99,7 @@ namespace oed
 			this.LemmaText = "";
 			// this.SurfaceJson = new();
 			this.Surfaces = new List<Datum>();
+			this.PreviousWordIds = new();
 			
 		} 
 		public string Source { get; set; }

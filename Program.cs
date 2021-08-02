@@ -150,7 +150,10 @@ namespace oed
         // @TODO should this be a command?
         var derivativesCommand = new Command("Derivatives");
         derivativesCommand.AddAlias("d");
+        derivativesCommand.TreatUnmatchedTokensAsErrors = false;
         derivativesCommand.Description = "Get derivatives for selected words.  Select which words returned by your last search, you would like to look up derivatives for. Enter the # of the last returned word you want to look up.  Works with range syntax as well (i.e. 1-9,11,15).  Works with the /word/{id}/derivatives endpoint.";
+        var derivativesSelection = new Argument<string>(name: "selection", getDefaultValue: () => "", description: "The selection of words to find derivatives for.");
+        derivativesCommand.AddArgument(derivativesSelection);
         rootCommand.AddCommand(derivativesCommand);
         derivativesCommand.Handler = CommandHandler.Create<string, bool, bool, string?, string?, bool, bool, bool, string?, string?, bool, bool>(HandleDerivativesArgs);
 
@@ -278,10 +281,10 @@ namespace oed
                 ConsoleUI.GetSenses(query);
             }
         }
-        public static void HandleDerivativesArgs(string word, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, bool interactive, bool export)
+        public static void HandleDerivativesArgs(string selection, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, bool interactive, bool export)
         {
             Trace.WriteLine("Derivatives sub command entered.");
-            Trace.WriteLine($"CLI word entered was {word}");
+            Trace.WriteLine($"CLI entered selection was {selection}");
             Trace.WriteLine($"obsoleteOnlyOption: {obsoleteOnly}");
             Trace.WriteLine($"excludeObsoleteOption: {obsoleteExclude}.");
             Trace.WriteLine($"partOfSpeech: {partOfSpeech ?? "null"}");
@@ -295,9 +298,21 @@ namespace oed
             Trace.WriteLine($"export: {export}");
 
             CurrentQuery query = new();
-            query.QueryMode = Modes.Derivatives;
             proccessCommonOptions(obsoleteOnly, obsoleteExclude, partOfSpeech, years, currentIn, revised, revisedNot, interactive, export, query);
 
+            if (!string.IsNullOrWhiteSpace(selection))
+            {
+                // Open the file containing the word IDs
+                Console.WriteLine("No CLI selection entered.");
+                List<int> parsedSelection = Program.ParseNumbers(selection);
+                Console.WriteLine("You want to get derivatives for these words (from your last search)");
+
+                foreach (int id in parsedSelection)
+                {                        
+
+                }
+            }
+            ConsoleUI.GetDerivaties(query);
         }
 
         public static void HandleSurfaceArgs(string form, string? partOfSpeech, string? years, bool includeRegion, bool includeInflections, bool interactive, bool export)
@@ -561,7 +576,13 @@ namespace oed
             Console.WriteLine("Will export all results");
         } 
 
-        List<int> parseNumbers(string export)
+
+            query.WhatToExport = ParseNumbers(export);
+
+            return query;
+        }
+    
+        public static List<int> ParseNumbers(string export)
         {
             List<int> nums = new();
             try {
@@ -573,7 +594,7 @@ namespace oed
                     Enumerable.Range(int.Parse(x.Split('-')[0]), 
                     int.Parse(x.Split('-')[1]) - int.Parse(x.Split('-')[0]) + 1) : new int[] { int.Parse(x) });
 
-            Trace.WriteLine("These are the numbers I am going to export.");
+            Trace.WriteLine("These are the numbers I parsed from the supplied selection.");
             foreach (var r in result)
             {
                 Trace.WriteLine(r);
@@ -586,13 +607,6 @@ namespace oed
                 Trace.WriteLine($"error parsing export numbers. {ex}");
             }
             return nums;
-
-
-        }
-
-            query.WhatToExport = parseNumbers(export);
-
-            return query;
         }
     }
 }
