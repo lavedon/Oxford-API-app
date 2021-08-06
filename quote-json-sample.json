@@ -1,0 +1,965 @@
+{
+  "meta": {
+    "total": 43,
+    "count": 43,
+    "offset": 0,
+    "limit": 10000,
+    "provider": "Oxford University Press",
+    "cite": "Oxford English Dictionary API, Oxford University Press, 0.0.0.0/oed/api/v0.2/word/orchestra_nn01/quotations/?offset=0&limit=10000 . Accessed 06 August 2021"
+  },
+  "links": {
+    "self": "/oed/api/v0.2/word/orchestra_nn01/quotations/?offset=0&limit=10000",
+    "prev": null,
+    "next": null,
+    "first": "/oed/api/v0.2/word/orchestra_nn01/quotations/?offset=0&limit=10000",
+    "last": "/oed/api/v0.2/word/orchestra_nn01/quotations/?offset=0&limit=10000"
+  },
+  "data": [
+    {
+      "id": "orchestra_nn01-33271657",
+      "text": {
+        "keyword": "Orchestra",
+        "full_text": "Orchestra, or a poeme of Dauncinge.",
+        "keyword_offset": 0
+      },
+      "year": 1596,
+      "lemma": "orchestra",
+      "source": {
+        "title": null,
+        "author": "J. Davies",
+        "gender": "male"
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33271657",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271653",
+      "datestring": "1596",
+      "first_in_word": true,
+      "oed_reference": "orchestra, n., sense 1",
+      "first_in_sense": true
+    },
+    {
+      "id": "orchestra_nn01-33271666",
+      "text": {
+        "keyword": "Orchestra",
+        "full_text": "Prayse but Orchestra, and the skipping art, You shall commaund him, faith you haue his hart Euen capring in your fist.",
+        "keyword_offset": 11
+      },
+      "year": 1598,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Scourge of Villanie",
+        "author": "J. Marston",
+        "gender": "male"
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33271666",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271653",
+      "datestring": "1598",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 1",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33271689",
+      "text": {
+        "keyword": "Orchestra",
+        "full_text": "He passed directly from the Stage by the Orchestra, to take up his place among the Knights.",
+        "keyword_offset": 41
+      },
+      "year": 1606,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Hist. Twelve Caesars",
+        "author": "P. Holland",
+        "gender": "male"
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33271689",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271676",
+      "datestring": "1606",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 2a",
+      "first_in_sense": true
+    },
+    {
+      "id": "orchestra_nn01-33271699",
+      "text": {
+        "keyword": "Orchestra",
+        "full_text": "It hath an Orchestra made in it according to the imitation of the Roman Orchestraes.",
+        "keyword_offset": 11
+      },
+      "year": 1611,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Crudities",
+        "author": "T. Coryate",
+        "gender": "male"
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33271699",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271676",
+      "datestring": "1611",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 2a",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33271719",
+      "text": {
+        "keyword": "Orchestra",
+        "full_text": "They may set in the Orchestra, and noblest Seats of Heaven.",
+        "keyword_offset": 20
+      },
+      "year": 1658,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Hydriotaphia: Urne-buriall",
+        "author": "Sir T. Browne",
+        "gender": "male"
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33271719",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271676",
+      "datestring": "1658",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 2a",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33271727",
+      "text": {
+        "keyword": "Orchestra",
+        "full_text": "At the foot of the Logeon upon the Orchestra was a row of Pillars.",
+        "keyword_offset": 35
+      },
+      "year": 1676,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Acct. Voy. Athens",
+        "author": null,
+        "gender": null
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33271727",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271676",
+      "datestring": "1676",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 2a",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33271984",
+      "text": {
+        "keyword": "orchestra",
+        "full_text": "But, hark! the full orchestra strike the strings.",
+        "keyword_offset": 20
+      },
+      "year": 1720,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Epist. W. Pulteney",
+        "author": "J. Gay",
+        "gender": "male"
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33271984",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271980",
+      "datestring": "1720",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 3a",
+      "first_in_sense": true
+    },
+    {
+      "id": "orchestra_nn01-33271814",
+      "text": {
+        "keyword": "Orchestra",
+        "full_text": "Orchestra, is that Part of the Theater, where the Musicians sit with their Instruments to perform.",
+        "keyword_offset": 0
+      },
+      "year": 1724,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Short Explic. Foreign Words Musick Bks.",
+        "author": null,
+        "gender": null
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33271814",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271800",
+      "datestring": "1724",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 2b",
+      "first_in_sense": true
+    },
+    {
+      "id": "orchestra_nn01-33271736",
+      "text": {
+        "keyword": "Orchestra",
+        "full_text": "The Orchestra, which amongst the Greeks was the place assigned for the pantomimes and dancers.",
+        "keyword_offset": 4
+      },
+      "year": 1735,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Anc. Hist.",
+        "author": null,
+        "gender": null
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33271736",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271676",
+      "datestring": "1735",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 2a",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33271992",
+      "text": {
+        "keyword": "Orchestra",
+        "full_text": "High Heaven's Orchestra chaunts Amen to Man.",
+        "keyword_offset": 14
+      },
+      "year": 1743,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Complaint: Night the Fourth",
+        "author": "E. Young",
+        "gender": "male"
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33271992",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271980",
+      "datestring": "1743",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 3a",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33272001",
+      "text": {
+        "keyword": "orchestra",
+        "full_text": "The orchestra consists of about 50 musicians.",
+        "keyword_offset": 4
+      },
+      "year": 1753,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Hist. Acct. Brit. Trade Caspian Sea",
+        "author": "J. Hanway",
+        "gender": "male"
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33272001",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271980",
+      "datestring": "1753",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 3a",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33271892",
+      "text": {
+        "keyword": "orchestra",
+        "full_text": "At the end of the orchestra..there is a small esplanade... Though you stand, as in the parterre, you pay the same price as in the orchestra.",
+        "keyword_offset": 18
+      },
+      "year": 1768,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Sentimental Journey",
+        "author": "L. Sterne",
+        "gender": "male"
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33271892",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271877",
+      "datestring": "1768",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 2c",
+      "first_in_sense": true
+    },
+    {
+      "id": "orchestra_nn01-33272095",
+      "text": {
+        "keyword": "Orchestra",
+        "full_text": "A Crash, or Clash, of all the Orchestra.",
+        "keyword_offset": 30
+      },
+      "year": 1770,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Court of Alexander",
+        "author": "G. A. Stevens",
+        "gender": "male"
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33272095",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33272092",
+      "datestring": "1770",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 3b",
+      "first_in_sense": true
+    },
+    {
+      "id": "orchestra_nn01-33271901",
+      "text": {
+        "keyword": "Orchestra",
+        "full_text": "The Pit is very large, and the Theatrum and Orchestra elegant and commodious.",
+        "keyword_offset": 44
+      },
+      "year": 1786,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Independent Jrnl. (N.Y.)",
+        "author": null,
+        "gender": null
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33271901",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271877",
+      "datestring": "1786",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 2c",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33271821",
+      "text": {
+        "keyword": "Orchestras",
+        "full_text": "Orchestras were erected in different parts, and the common people danced in the center, having the sky for a canopy.",
+        "keyword_offset": 0
+      },
+      "year": 1805,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Familiar Lett. Italy",
+        "author": "P. Beckford",
+        "gender": "male"
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33271821",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271800",
+      "datestring": "1805",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 2b",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33272012",
+      "text": {
+        "keyword": "orchestras",
+        "full_text": "The pert shopkeeper, whose throbbing ear Aches with orchestras which he pays to hear.",
+        "keyword_offset": 52
+      },
+      "year": 1811,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Hints from Horace",
+        "author": "Ld. Byron",
+        "gender": "male"
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33272012",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271980",
+      "datestring": "1811",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 3a",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33271830",
+      "text": {
+        "keyword": "orchestra",
+        "full_text": "The impatient sticks in the pit, and shrill catcalls in the gallery, had begun to contend with the music in the orchestra.",
+        "keyword_offset": 112
+      },
+      "year": 1817,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Harrington & Ormond",
+        "author": "M. Edgeworth",
+        "gender": "female"
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33271830",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271800",
+      "datestring": "1817",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 2b",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33271910",
+      "text": {
+        "keyword": "Orchestra",
+        "full_text": "Thirty-five seats in the Orchestra for sale nightly at Box price.",
+        "keyword_offset": 25
+      },
+      "year": 1822,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Sat. Evening Post (Philadelphia)",
+        "author": null,
+        "gender": null
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33271910",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271877",
+      "datestring": "1822",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 2c",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33272105",
+      "text": {
+        "keyword": "orchestra",
+        "full_text": "The sounds of an entire orchestra may be transmitted and reciprocated.",
+        "keyword_offset": 24
+      },
+      "year": 1835,
+      "lemma": "orchestra",
+      "source": {
+        "title": "On Connexion Physical Sci.",
+        "author": "M. Somerville",
+        "gender": "female"
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33272105",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33272092",
+      "datestring": "1835",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 3b",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33271838",
+      "text": {
+        "keyword": "orchestra",
+        "full_text": "It was for the concert in the orchestra.",
+        "keyword_offset": 30
+      },
+      "year": 1836,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Sketches by Boz",
+        "author": "C. Dickens",
+        "gender": "male"
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33271838",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271800",
+      "datestring": "1836",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 2b",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33271747",
+      "text": {
+        "keyword": "orchestra",
+        "full_text": "The semicircle of the orchestra.",
+        "keyword_offset": 22
+      },
+      "year": 1837,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Penny Cycl.",
+        "author": null,
+        "gender": null
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33271747",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271676",
+      "datestring": "1837",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 2a",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33271755",
+      "text": {
+        "keyword": "orchestra",
+        "full_text": "The chorus..enter the orchestra.",
+        "keyword_offset": 22
+      },
+      "year": 1855,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Trag.",
+        "author": "F. A. Paley",
+        "gender": "male"
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33271755",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271676",
+      "datestring": "1855",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 2a",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33271848",
+      "text": {
+        "keyword": "orchestra",
+        "full_text": "The Bellevue Tea Gardens,..ornamental orchestra and concert room.",
+        "keyword_offset": 38
+      },
+      "year": 1863,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Ticket-of-leave Man",
+        "author": "T. Taylor",
+        "gender": "male"
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33271848",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271800",
+      "datestring": "?1863",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 2b",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33271919",
+      "text": {
+        "keyword": "orchestra",
+        "full_text": "The interior will contain an orchestra and three circles.",
+        "keyword_offset": 29
+      },
+      "year": 1872,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Chicago Tribune",
+        "author": null,
+        "gender": null
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33271919",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271877",
+      "datestring": "1872",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 2c",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33272114",
+      "text": {
+        "keyword": "Orchestra",
+        "full_text": "The subordinate stringed instruments in an Orchestra are sometimes termed Ripieni.",
+        "keyword_offset": 43
+      },
+      "year": 1873,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Music",
+        "author": "H. C. Banister",
+        "gender": "male"
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33272114",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33272092",
+      "datestring": "1873",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 3b",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33271857",
+      "text": {
+        "keyword": "Orchestra",
+        "full_text": "In concert-rooms, the Orchestra is usually placed at one end of the apartment, at such a height above the general level of the floor that the full length figure of a Performer..may be visible to a seated audience.",
+        "keyword_offset": 22
+      },
+      "year": 1880,
+      "lemma": "orchestra",
+      "source": {
+        "title": null,
+        "author": "W. S. Rockstro",
+        "gender": null
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33271857",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271800",
+      "datestring": "1880",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 2b",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33272020",
+      "text": {
+        "keyword": "Orchestra",
+        "full_text": "The term Orchestra is also applied, collectively, to the body of Instrumental Performers officiating at a Theatre, in a Concert-room, or on a Stage or raised Platform in the open air.",
+        "keyword_offset": 9
+      },
+      "year": 1880,
+      "lemma": "orchestra",
+      "source": {
+        "title": null,
+        "author": "W. S. Rockstro",
+        "gender": null
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33272020",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271980",
+      "datestring": "1880",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 3a",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33272133",
+      "text": {
+        "keyword": "orchestra",
+        "full_text": "Hearing..the bewildering tones of an orchestra mingling with the hum of many voices.",
+        "keyword_offset": 37
+      },
+      "year": 1888,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Behind Closed Doors",
+        "author": "A. K. Green",
+        "gender": null
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33272133",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33272092",
+      "datestring": "1888",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 3b",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33271768",
+      "text": {
+        "keyword": "orchestra",
+        "full_text": "A huge semi-circle of seats, perhaps first made of wood, afterwards of stone, looked down upon a central portion, called the orchestra, and allotted to the chorus.",
+        "keyword_offset": 125
+      },
+      "year": 1900,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Idea of Trag.",
+        "author": "W. L. Courtney",
+        "gender": "male"
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33271768",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271676",
+      "datestring": "1900",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 2a",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33272040",
+      "text": {
+        "keyword": "orchestra",
+        "full_text": "The thrumming music of a balalaika orchestra coming up from the restaurant below.",
+        "keyword_offset": 35
+      },
+      "year": 1913,
+      "lemma": "orchestra",
+      "source": {
+        "title": "When William Came",
+        "author": "‘Saki’",
+        "gender": "male"
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33272040",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271980",
+      "datestring": "1913",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 3a",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33271776",
+      "text": {
+        "keyword": "orchestra",
+        "full_text": "Vitruvius describes the Roman theater, with its..blocks of seats in the orchestra for senators.",
+        "keyword_offset": 72
+      },
+      "year": 1915,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Classical Philol.",
+        "author": null,
+        "gender": null
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33271776",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271676",
+      "datestring": "1915",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 2a",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33272141",
+      "text": {
+        "keyword": "orchestra",
+        "full_text": "Their favorite motion-picture theater..had an orchestra of fifty pieces.",
+        "keyword_offset": 46
+      },
+      "year": 1922,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Babbitt",
+        "author": "S. Lewis",
+        "gender": "male"
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33272141",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33272092",
+      "datestring": "1922",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 3b",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33271936",
+      "text": {
+        "keyword": "orchestra",
+        "full_text": "A President..cannot sit in the orchestra or in the balcony.",
+        "keyword_offset": 31
+      },
+      "year": 1924,
+      "lemma": "orchestra",
+      "source": {
+        "title": "True Story Woodrow Wilson",
+        "author": "D. Lawrence",
+        "gender": null
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33271936",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271877",
+      "datestring": "1924",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 2c",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33272048",
+      "text": {
+        "keyword": "orchestra",
+        "full_text": "They have a magnificent country-club..with a jazz orchestra.",
+        "keyword_offset": 50
+      },
+      "year": 1925,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Let.",
+        "author": "H. L. Mencken",
+        "gender": "male"
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33272048",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271980",
+      "datestring": "1925",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 3a",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33272068",
+      "text": {
+        "keyword": "orchestra",
+        "full_text": "Writers using an orchestra of minds to tell their story for them were obliged to consider..the variety of language, as used by different minds.",
+        "keyword_offset": 17
+      },
+      "year": 1958,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Outlaws on Parnassus",
+        "author": "M. Kennedy",
+        "gender": "female"
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33272068",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271980",
+      "datestring": "1958",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 3a",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33271784",
+      "text": {
+        "keyword": "orchestra",
+        "full_text": "A stepped forestage that gives access to a semi-circular apron, placed, in the manner of a Greek orchestra, immediately before it.",
+        "keyword_offset": 97
+      },
+      "year": 1958,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Times",
+        "author": null,
+        "gender": null
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33271784",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271676",
+      "datestring": "1958",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 2a",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33271963",
+      "text": {
+        "keyword": "orchestra",
+        "full_text": "The music sounds better in the top terrace..than in the lower terraces and orchestra.",
+        "keyword_offset": 75
+      },
+      "year": 1963,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Guardian",
+        "author": null,
+        "gender": null
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33271963",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271877",
+      "datestring": "1963",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 2c",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33272076",
+      "text": {
+        "keyword": "orchestra",
+        "full_text": "The Yeats stage orchestra is more economical, reduced in fact to three players.",
+        "keyword_offset": 16
+      },
+      "year": 1974,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Moving into Aquarius",
+        "author": "M. Tippett",
+        "gender": "male"
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33272076",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271980",
+      "datestring": "1974",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 3a",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33271971",
+      "text": {
+        "keyword": "orchestra",
+        "full_text": "The vast upper reaches of the house were closed off, and only the orchestra, boxes, and first ring were used.",
+        "keyword_offset": 66
+      },
+      "year": 1988,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Shakespeare Q.",
+        "author": null,
+        "gender": null
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33271971",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271877",
+      "datestring": "1988",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 2c",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33272157",
+      "text": {
+        "keyword": "orchestra",
+        "full_text": "It sets up quarter-tone wavers over ostinato poundings in the orchestra's lowest and heaviest instruments.",
+        "keyword_offset": 62
+      },
+      "year": 1992,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Village Voice (N.Y.)",
+        "author": null,
+        "gender": null
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33272157",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33272092",
+      "datestring": "1992",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 3b",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33271792",
+      "text": {
+        "keyword": "orchestra",
+        "full_text": "In Roman times, the orchestra was used as a seating area reserved for VIPs.",
+        "keyword_offset": 20
+      },
+      "year": 1993,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Theatre: Bk. of Words",
+        "author": "M. Harrison",
+        "gender": null
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33271792",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271676",
+      "datestring": "1993",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 2a",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33271868",
+      "text": {
+        "keyword": "orchestra",
+        "full_text": "New York's Rockwell Group is designing the theater, a flexible construction..with a high-tech ‘media cockpit’ situated in the orchestra.",
+        "keyword_offset": 126
+      },
+      "year": 1998,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Archit. Rec.",
+        "author": null,
+        "gender": null
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33271868",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271800",
+      "datestring": "1998",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 2b",
+      "first_in_sense": false
+    },
+    {
+      "id": "orchestra_nn01-33272084",
+      "text": {
+        "keyword": "orchestra",
+        "full_text": "La Transfiguration is a gigantic work..requiring a huge orchestra, seven instrumental soloists and a substantial mixed choir.",
+        "keyword_offset": 56
+      },
+      "year": 2002,
+      "lemma": "orchestra",
+      "source": {
+        "title": "Guardian",
+        "author": null,
+        "gender": null
+      },
+      "oed_url": "https://www.oed.com/view/Entry/132287#eid33272084",
+      "word_id": "orchestra_nn01",
+      "sense_id": "orchestra_nn01-33271980",
+      "datestring": "2002",
+      "first_in_word": false,
+      "oed_reference": "orchestra, n., sense 3a",
+      "first_in_sense": false
+    }
+  ]
+}

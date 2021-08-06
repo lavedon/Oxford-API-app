@@ -398,7 +398,17 @@ namespace oed
             }
 
 			SavedQueries.SaveWordId(query);
-            showDefinitions(query);
+			if (!query.QuotesFromWord) {
+				showDefinitions(query);
+			} else {
+				// Trigger the normal Quote -uw option command
+                // ConsoleUI.GetQuotes(SavedQueries.LoadWordIds(query));
+				// Will this work?
+				// @TODO
+				// Save args in Query??????
+				// Program.Main()
+			}
+
 
         }
 

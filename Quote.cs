@@ -6,6 +6,7 @@ namespace oed
 		public string Text { get; set; }
 		public string Title { get; set; }
 		public string Author { get; set; }
+		public string WordID { get; set; }
 	
 
 		public Quote()
@@ -14,6 +15,7 @@ namespace oed
 			this.Text = "";
 			this.Title = "";
 			this.Author = "";
+			this.WordID = "";
 		}
 
 		public Quote(Quote other)
@@ -22,6 +24,7 @@ namespace oed
 			Text = other.Text;
 			Title = other.Title;
 			Author = other.Author;
+			WordID = other.WordID;
 		}
 	}
 }

@@ -11,9 +11,24 @@ namespace oed
 {
     class Program
     {
+        public static CurrentQuery globalQuery { get; set; }
+
+        public class State {
+
+            public string[] GlobalArgs { get; set; }
+            public Command? RootCommand { get; set; }
+
+            public State(string[] globalArgs, Command rootCommand)
+            {
+                this.GlobalArgs = globalArgs;
+                this.RootCommand = rootCommand;
+            }
+
+        }
 
         static void Main(string[] args)
         {
+            State programState = new State(globalArgs: args, rootCommand: null);
 			Trace.WriteLine($"args are: {args.ToString()}");
 			Trace.WriteLine($"args.Length: {args.Length}");
 
@@ -62,6 +77,10 @@ namespace oed
                 new[] {"--author-gender", "-ag"}, description: "Specificy the author's gender. Accepts male and female. For example, -ag male, will return only quotes by men."
             ){ IsRequired = false };
             */
+            var quoteByWord = new Option<bool>(
+                new[] {"--word", "w"}, 
+                description: "Find quotes for a word. Enter a word, all word Ids are gathered behind the scenes, then quotations for those word IDs are returned.  Identical to 'your word' w  option in the root command."
+            ){ IsRequired = false };
             var quoteMale = new Option<bool>(
                 new[] {"--male", "m"}, description: "Only retrieve quotes from male authors."
             ){ IsRequired = false };
@@ -87,7 +106,9 @@ namespace oed
                 new[] {"--use-senses", "us"}, description: "Use the saved list of looked up senses. Requires first using the Sense sub-command/verb.  Similar to --use-words."
             ){ IsRequired = false };
 
+
             // quoteCommand.AddOption(quoteAuthorGender);
+            quoteCommand.AddOption(quoteByWord);
             quoteCommand.AddOption(quoteMale);
             quoteCommand.AddOption(quoteFemale);
             quoteCommand.AddOption(quoteSourceTitle);
@@ -97,7 +118,7 @@ namespace oed
             quoteCommand.AddOption(quoteUseWords);
             quoteCommand.AddOption(quoteUseSenses);
 
-            quoteCommand.Handler = CommandHandler.Create<bool, bool, string, string, bool, bool, bool, bool, string?, bool, bool>(HandleQuoteArgs);
+            quoteCommand.Handler = CommandHandler.Create<bool, bool, bool, string, string, bool, bool, bool, bool, string?, bool, bool>(HandleQuoteArgs);
 
             var surfaceCommand = new Command("Form");
 
@@ -178,6 +199,15 @@ namespace oed
             rootCommand.AddGlobalOption(new Option<bool>(new[] {"--revised", "r"}, description: "Restrict words taken from new and revised OED entries (OED-3rd edition content)"));
             rootCommand.AddGlobalOption(new Option<bool>(new[] {"--revised-not", "rn"}, description: "Restrict to non revised sources only. (OED 2nd and 1rst edition)"));
 
+            var quotes = new Option<bool>("--quotes",
+                    description: "Return quotations based on the entered word.  Identcial to 'Quote w'"
+            )
+            {
+                IsRequired = false,
+            };
+            quotes.AddAlias("q");
+            rootCommand.AddOption(quotes);
+
             rootCommand.AddCommand(senseCommand);
             rootCommand.AddCommand(quoteCommand);
             rootCommand.AddCommand(surfaceCommand);
@@ -185,7 +215,7 @@ namespace oed
             rootCommand.AddCommand(lemmaCommand);
 
             rootCommand.Description = "An app which processes the Oxford English Dictionary Researcher API, and exports to SuperMemo.";
-            rootCommand.Handler = CommandHandler.Create<string, bool, bool, string?, string?, bool, bool, bool, string?, string?, bool, bool>(HandleArgs);
+            rootCommand.Handler = CommandHandler.Create<string, bool, bool, bool, string?, string?, bool, bool, bool, string?, string?, bool, bool>(HandleArgs);
 
 
             string directoryPath = string.Concat(Environment.CurrentDirectory, "\\logs");
@@ -228,6 +258,23 @@ namespace oed
             rootCommand.Invoke(args);
 
         Console.ReadKey();
+        }
+
+        public static CurrentQuery RunQuotesFromWordId(CurrentQuery query, Command rootCommand, string[] args)
+        {
+            if (query.QuotesFromWord)
+            {
+                Trace.WriteLine("Running rootCommand again to get quotes.");
+                Trace.WriteLine("Adding Quote uw to args.");
+                string[] quoteArgs = new string[] { "Quote", "uw" };
+                string[] newArgs = quoteArgs.Concat(args.Skip(2)).ToArray();
+                rootCommand.Invoke(newArgs);
+
+            }
+            else {
+                Trace.WriteLine("Not set to gather quotes from wordID. No point in being in this method.");
+            }
+                return query;
         }
 
         // public static void HandleArgs(string word, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, bool interactive, bool export)
@@ -365,7 +412,7 @@ namespace oed
                 SavedQueries.AddMember(query.Lemmas);
             }
         }
-        public static void HandleQuoteArgs(bool male, bool female, string sourceTitle, string author, bool firstWord, bool firstSense, bool useWords, bool useSenses, string? years, bool interactive, bool export)
+        public static void HandleQuoteArgs(bool word, bool male, bool female, string sourceTitle, string author, bool firstWord, bool firstSense, bool useWords, bool useSenses, string? years, bool interactive, bool export)
         {
             Trace.WriteLine($"Quote sub command entered.");
             Trace.WriteLine($"male: {male}");
@@ -439,9 +486,10 @@ namespace oed
             }
 
         }
-        public static void HandleArgs(string word, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, bool interactive, bool export)
+        public static void HandleArgs(string word, bool quotes, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, bool interactive, bool export)
         {
             Trace.WriteLine($"CLI word entered was {word}");
+            Trace.WriteLine($"Return quotes from word search {quotes}");
             Trace.WriteLine($"obsoleteOnlyOption: {obsoleteOnly}");
             Trace.WriteLine($"excludeObsoleteOption: {obsoleteExclude}.");
             Trace.WriteLine($"partOfSpeech: {partOfSpeech ?? "null"}");
@@ -457,6 +505,10 @@ namespace oed
             CurrentQuery query = new();
             proccessCommonOptions(obsoleteOnly, obsoleteExclude, partOfSpeech, years, currentIn, revised, revisedNot, interactive, export, query);
 
+            if (quotes)
+            {
+                query.QuotesFromWord = true;
+            }
             if (!string.IsNullOrWhiteSpace(etymologyLanguage))
             {
                 query.EtymologyLanguage = etymologyLanguage;
@@ -478,6 +530,12 @@ namespace oed
                 var includeObsoleteProp = query.IncludeObsolete is null ? "null" : query.IncludeObsolete.Value.ToString();
                 Trace.WriteLine($"query.IncludeObsolete: {includeObsoleteProp}");
                 ConsoleUI.Start(word, query);
+                if (query.QuotesFromWord)
+                {
+                   Program.globalQuery = query;
+                   // Use reflection to get the rootCommand of Program?!? Then run that?
+                  //  RunQuotesFromWordId(query, Program.programState.RootCommand, state.GlobalArgs); 
+                }
             }
         }
 
