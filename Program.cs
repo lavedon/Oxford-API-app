@@ -254,7 +254,26 @@ namespace oed
                 rootCommand.Invoke(UserArgs);
             }
 
-        Console.ReadKey();
+        bool interactiveMode = true;
+        while (interactiveMode)
+        {
+            Console.WriteLine("q to exit.");
+            Console.Write(">");
+            string? input = Console.ReadLine().Trim().ToLower();
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                Console.WriteLine("No arguments entered");
+                continue;
+            }
+            else if (input == "q") {
+                interactiveMode = false;
+                continue;
+            }
+            rootCommand.Invoke(input);
+        }
+
+
+
         }
 
         public static string[] GetNewArgs() {

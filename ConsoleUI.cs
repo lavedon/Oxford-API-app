@@ -9,6 +9,11 @@ namespace oed
 	{
 	    private static bool running { get; set; }
 
+		private static CurrentQuery SelectWhichDefinitionForQuotes(CurrentQuery query)
+		{
+			return null;
+
+		}
 		public static void Start(string word, CurrentQuery query)
 		{
 			Trace.WriteLine("Starting Main Menu with passed in word.");
@@ -32,10 +37,16 @@ namespace oed
 					break;
 				}
 
+			if (query.QuotesFromWord && query.QueryMode == Modes.Word) {
+					Console.WriteLine("Select which definitions to find quotes for: (enter for all)");
+					string selection = Console.ReadLine();
+					Program.ParseExport(query, selection);
+			} else {
 				Console.WriteLine("Select which returned definitions to export: (enter for all)");
 				string export = Console.ReadLine();
 				Program.ParseExport(query, export);
 				exportQuery(query);
+			}
 			}
 			if (query.InteractiveMode) {
 				while (running) {
@@ -397,9 +408,15 @@ namespace oed
                 Trace.WriteLine("Exception on automatic word look up");
                 Trace.WriteLine(ex);
             }
-
-			SavedQueries.SaveWordId(query);
 			showDefinitions(query);
+			if (query.QuotesFromWord) {
+					Console.WriteLine("Select which definitions to find quotes for: (enter for all)");
+					string selection = Console.ReadLine();
+					query = Program.ParseExport(query, selection);
+					SavedQueries.SaveWordId(query);
+			} else {
+				SavedQueries.SaveWordId(query);
+			}
 			if (query.QuotesFromWord) {
 				string[] newArgs = Program.GetNewArgs();
 				Program.UserArgs = newArgs;

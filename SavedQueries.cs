@@ -82,10 +82,16 @@ namespace oed
 			string wordIDFile = Path.Combine(Environment.CurrentDirectory, "word-id.txt");
 			File.Delete(wordIDFile);
 			using StreamWriter file = new(wordIDFile);
-
-			foreach (Definition d in query.Definitions)
-			{
-				file.WriteLine(d.WordID);
+			if (query.QuotesFromWord) {
+				for (int i = 0; i < query.WhatToExport.Count; i++) {
+					file.WriteLine(query.Definitions[query.WhatToExport[i]].WordID);
+				}
+			} 
+			else {
+				foreach (Definition d in query.Definitions)
+				{
+					file.WriteLine(d.WordID);
+				}
 			}
 		}
 		public static void SaveSenseId(CurrentQuery query) {
@@ -160,15 +166,13 @@ namespace oed
 		    // @TODO Add count number and ID number
 
 			// Export each category of saved stuff - one by one
-			if (BlendedExport) {
-				string wordId;
+		if (BlendedExport) {
 
-				int ID = 1;
-				foreach (Definition d in DefinitionsForExport) {
-					List<Quote> quotesForDefinition = new();
-					wordId = d.WordID;
+			int ID = 1;
+			foreach (Definition d in DefinitionsForExport) {
+				List<Quote> quotesForDefinition = new();
 				foreach (Quote q in QuotesForExport) {
-					if (q.WordID == wordId) {
+					if (q.WordID == d.WordID) {
 						quotesForDefinition.Add(q);
 					}
 				}
@@ -195,6 +199,7 @@ namespace oed
 				xml.WriteEndElement();
 				xml.WriteEndElement();
 
+				ID++;
 				}
 				catch (AggregateException ae)
 				{
@@ -207,9 +212,8 @@ namespace oed
 				}
 					
 				}
-
 			}
-		    if (QuotesForExport.Count > 0) {
+		    if (QuotesForExport.Count > 0 && !BlendedExport) {
 		    Console.WriteLine("Exporting Quotes...");
 		    for (int i = 0; i < QuotesForExport.Count; i++) {
 			try {
@@ -240,7 +244,7 @@ namespace oed
 		    }
 		    }
 
-			if (DefinitionsForExport.Count > 0)
+			if (DefinitionsForExport.Count > 0  && !BlendedExport)
 			{
 				Console.WriteLine("Exporting Definitions..");
 				for (int i = 0; i < DefinitionsForExport.Count; i++) {
@@ -270,7 +274,7 @@ namespace oed
 				}
 		    }
 			}
-		    if (SensesForExport.Count > 0) {
+		    if (SensesForExport.Count > 0 && !BlendedExport) {
 		    Console.WriteLine("Exporting Senses...");
 			    string obsoleteText = "";
 			    string mainUsageText = "";
@@ -321,7 +325,7 @@ namespace oed
 				}
 		    }
 		    }
-			if (Lemmas.Count > 0) {
+			if (Lemmas.Count > 0 && !BlendedExport) {
 				Console.WriteLine("Exporting Lemmas...");
 				if (Lemmas[0].ZippedLemmas.Count > 0)
 				{
@@ -360,7 +364,7 @@ namespace oed
 
 				}
 			}
-			if (SurfacesForExport.Count > 0) {
+			if (SurfacesForExport.Count > 0 && !BlendedExport) {
 				Console.WriteLine("Exporting Surface Forms...");
 				for (int i = 0 ; i < SurfacesForExport.Count; i++) {
 					try {

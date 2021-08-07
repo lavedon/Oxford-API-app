@@ -409,6 +409,7 @@ namespace oed
                 try
                 {
                     // Print the quote
+					JsonElement wordID = item.GetProperty("word_id");
                     JsonElement quoteInfoBlock = item.GetProperty("text");
                     JsonElement actualQuote = quoteInfoBlock.GetProperty("full_text");
 
@@ -433,6 +434,7 @@ namespace oed
                     currentQuote.Text = actualQuote.ToString();
                     currentQuote.Title = quoteTitle.ToString();
                     currentQuote.Author = quoteAuthor.ToString();
+					currentQuote.WordID = wordID.ToString();
 					Quote copyOfQuote = new Quote(currentQuote);
 					query.Quotes.Add(copyOfQuote);
 
