@@ -398,18 +398,11 @@ namespace oed
             }
 
 			SavedQueries.SaveWordId(query);
-			if (!query.QuotesFromWord) {
-				showDefinitions(query);
-			} else {
-				// Trigger the normal Quote -uw option command
-                // ConsoleUI.GetQuotes(SavedQueries.LoadWordIds(query));
-				// Will this work?
-				// @TODO
-				// Save args in Query??????
-				// Program.Main()
+			showDefinitions(query);
+			if (query.QuotesFromWord) {
+				string[] newArgs = Program.GetNewArgs();
+//				query = Program.RunQuotesFromWordId(query);
 			}
-
-
         }
 
 		public static void DisplayLemmas(CurrentQuery query)

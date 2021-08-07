@@ -11,24 +11,8 @@ namespace oed
 {
     class Program
     {
-        public static CurrentQuery globalQuery { get; set; }
-
-        public class State {
-
-            public string[] GlobalArgs { get; set; }
-            public Command? RootCommand { get; set; }
-
-            public State(string[] globalArgs, Command rootCommand)
-            {
-                this.GlobalArgs = globalArgs;
-                this.RootCommand = rootCommand;
-            }
-
-        }
-
         static void Main(string[] args)
         {
-            State programState = new State(globalArgs: args, rootCommand: null);
 			Trace.WriteLine($"args are: {args.ToString()}");
 			Trace.WriteLine($"args.Length: {args.Length}");
 
@@ -258,6 +242,15 @@ namespace oed
             rootCommand.Invoke(args);
 
         Console.ReadKey();
+        }
+
+        public static string[] GetNewArgs() {
+               // Need args. 
+               // @TODO Need args
+                string[] args = { "apple", "q", "o"};
+                string[] quoteArgs = new string[] { "Quote", "uw" };
+                string[] newArgs = quoteArgs.Concat(args.Skip(2)).ToArray();
+                return newArgs;
         }
 
         public static CurrentQuery RunQuotesFromWordId(CurrentQuery query, Command rootCommand, string[] args)
@@ -532,7 +525,6 @@ namespace oed
                 ConsoleUI.Start(word, query);
                 if (query.QuotesFromWord)
                 {
-                   Program.globalQuery = query;
                    // Use reflection to get the rootCommand of Program?!? Then run that?
                   //  RunQuotesFromWordId(query, Program.programState.RootCommand, state.GlobalArgs); 
                 }
