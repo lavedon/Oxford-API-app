@@ -11,8 +11,16 @@ namespace oed
 {
     class Program
     {
+        private static string[]? _userArgs;
+        public static string[] UserArgs { 
+            get => _userArgs!;
+            set => _userArgs = value ??= new string[1] { "" }; 
+        }
+        public static bool RunCLIAgain { get; set; }
         static void Main(string[] args)
         {
+            UserArgs = args!;
+            RunCLIAgain = false;
 			Trace.WriteLine($"args are: {args.ToString()}");
 			Trace.WriteLine($"args.Length: {args.Length}");
 
@@ -240,6 +248,10 @@ namespace oed
             // ConsoleUI.Start();
             // @TODO Make an overload of ConsoleUI.Start(which passes a word from the command line)
             rootCommand.Invoke(args);
+            if (RunCLIAgain)
+            {
+                rootCommand.Invoke(UserArgs);
+            }
 
         Console.ReadKey();
         }
@@ -247,9 +259,8 @@ namespace oed
         public static string[] GetNewArgs() {
                // Need args. 
                // @TODO Need args
-                string[] args = { "apple", "q", "o"};
                 string[] quoteArgs = new string[] { "Quote", "uw" };
-                string[] newArgs = quoteArgs.Concat(args.Skip(2)).ToArray();
+                string[] newArgs = quoteArgs.Concat(UserArgs.Skip(2)).ToArray();
                 return newArgs;
         }
 
@@ -525,6 +536,7 @@ namespace oed
                 ConsoleUI.Start(word, query);
                 if (query.QuotesFromWord)
                 {
+                    string[] newArgs = GetNewArgs();
                    // Use reflection to get the rootCommand of Program?!? Then run that?
                   //  RunQuotesFromWordId(query, Program.programState.RootCommand, state.GlobalArgs); 
                 }

@@ -401,6 +401,8 @@ namespace oed
 			showDefinitions(query);
 			if (query.QuotesFromWord) {
 				string[] newArgs = Program.GetNewArgs();
+				Program.UserArgs = newArgs;
+				Program.RunCLIAgain = true;
 //				query = Program.RunQuotesFromWordId(query);
 			}
         }
