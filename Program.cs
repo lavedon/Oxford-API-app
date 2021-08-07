@@ -1,4 +1,5 @@
 ﻿#nullable enable
+#nullable disable warnings
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -472,6 +473,8 @@ namespace oed
             {
                 // Cycle through word-id.txt
                 // Run /word/{id}/quotations/ endpoint
+                // @TODO - Only LoadWordIDs depending on what was selected 
+                // Previously with Definition export?
                 ConsoleUI.GetQuotes(SavedQueries.LoadWordIds(query));
 
             }
@@ -636,10 +639,41 @@ namespace oed
         {
             query.ExportAll = true;
             Console.WriteLine("Will export all results");
-        } 
+            switch (query.QueryMode)
+            {
+                case Modes.Word:
+                    for(int i = 0; i < query.Definitions.Count; i++)
+                    {
+                        query.WhatToExport.Add(i + 1);
+                    }
+                break;
+                case Modes.Root:
+                break;
+                case Modes.Lammatize:
+                break;
+                case Modes.Senses:
+                    for(int i = 0; i < query.Senses.Count; i++)
+                    {
+                        query.WhatToExport.Add(i + 1);
+                    }
+                break;
+                case Modes.Quotations:
+                    for(int i = 0; i < query.Quotes.Count; i++)
+                    {
+                        query.WhatToExport.Add(i + 1);
+                    }
+                break;
+                case Modes.Surfaces:
+                break;
+                case Modes.Derivatives:
+                break;
+                
 
-
+            }
+            
+        } else {
             query.WhatToExport = ParseNumbers(export);
+        }
 
             return query;
         }

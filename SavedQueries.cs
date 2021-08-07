@@ -12,9 +12,14 @@ namespace oed
 	public static class SavedQueries
 	{
 	    public static bool Instance { get; set; } = false;
+
+		public static bool BlendedExport { get; set; } = false;
+		public static bool FirstBlendOption { get; set; } = true;
 		public static bool DeleteOnExport { get; set; } = true;
 
 	    public static string WordID { get; set; }
+
+		public static string UserEnteredWord { get; set; }
 	    public static List<Quote> Quotes { get; set; }
 	    public static List<Quote> QuotesForExport { get; set; }
 	    public static List<Sense> Senses { get; set; }
@@ -41,6 +46,7 @@ namespace oed
 			Definitions = new();
 			DefinitionsForExport = new();
 			Lemmas = new();
+			BlendedExport = false;
 	    }
 
 
@@ -129,6 +135,10 @@ namespace oed
 		}
 
 	    public static void RenderXML() {
+				if (FirstBlendOption && BlendedExport) {
+					FirstBlendOption = !FirstBlendOption;
+					return;
+				}
 			    string xmlFile = Path.Combine(Environment.CurrentDirectory, ExportFileName);
 			    File.Delete(xmlFile);
 			    FileStream xmlFileStream = File.Create(xmlFile);
@@ -138,11 +148,67 @@ namespace oed
 
 		    xml.WriteStartDocument();
 		    xml.WriteStartElement("SuperMemoCollection");
-		    int count = Quotes.Count + SensesForExport.Count + Lemmas.Count + DefinitionsForExport.Count + SurfacesForExport.Count;
+			int count;
+			if (BlendedExport && !FirstBlendOption) { 
+				count = DefinitionsForExport.Count;
+			}
+			else {
+		    	count = Quotes.Count + SensesForExport.Count + Lemmas.Count + DefinitionsForExport.Count + SurfacesForExport.Count;
+			}
+
 		    xml.WriteElementString("Count", $"{count}");
 		    // @TODO Add count number and ID number
 
 			// Export each category of saved stuff - one by one
+			if (BlendedExport) {
+				string wordId;
+
+				int ID = 1;
+				foreach (Definition d in DefinitionsForExport) {
+					List<Quote> quotesForDefinition = new();
+					wordId = d.WordID;
+				foreach (Quote q in QuotesForExport) {
+					if (q.WordID == wordId) {
+						quotesForDefinition.Add(q);
+					}
+				}
+					// Render the XML
+			try {
+			    xml.WriteStartElement("SuperMemoElement");
+			    xml.WriteElementString("ID", $"{ID}");
+			    xml.WriteElementString("Title", $"{d.WordID}");
+			    xml.WriteElementString("Type", "Item");
+			    xml.WriteStartElement("Content");
+				xml.WriteElementString("Question", $"{d.WordDefinition}");
+				var answer = new System.Text.StringBuilder();
+				foreach (Quote quote in quotesForDefinition) {
+						string quoteText = 	$"{UserEnteredWord} <BR> <BR> \"{quote.Text}\" --{quote.Author}, {quote.Year}";
+						answer.Append(quoteText); 
+						answer.Append("<BR><BR>");
+				}
+
+			    xml.WriteElementString("Answer", $"{answer}");
+
+			    string encoded = WebUtility.HtmlEncode("<H5 dir=ltr align=left><Font size=\"1\" style=\"color: transparent\"> SuperMemo Reference:</font><br><FONT class=reference>Title:\"My Test Quote\" <br>Source: Oxford English Dictionary");
+			    xml.WriteElementString("SuperMemoReference", encoded);
+
+				xml.WriteEndElement();
+				xml.WriteEndElement();
+
+				}
+				catch (AggregateException ae)
+				{
+					var ex = ae.Flatten().InnerExceptions;
+					Console.WriteLine("Error writing XML document:");
+					foreach (var exception in ex)
+					{
+						Console.WriteLine($"{ex.ToString()}");
+					}
+				}
+					
+				}
+
+			}
 		    if (QuotesForExport.Count > 0) {
 		    Console.WriteLine("Exporting Quotes...");
 		    for (int i = 0; i < QuotesForExport.Count; i++) {

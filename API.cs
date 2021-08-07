@@ -65,7 +65,7 @@ namespace oed
 
 			if (query.ExportAfterSearch)
 			{
-				Console.WriteLine("Select which returned derivatives to export:");
+				Console.WriteLine("Select which returned derivatives to export: (enter for all)");
 				string export = Console.ReadLine();
 				Program.ParseExport(query, export);
 			}
@@ -938,7 +938,7 @@ namespace oed
 			}
 			if (query.ExportAfterSearch)
 			{
-				Console.WriteLine("Select which returned senses to export:");
+				Console.WriteLine("Select which returned senses to export: (enter for all)");
 				string export = Console.ReadLine();
 				Program.ParseExport(query, export);
 				
@@ -949,7 +949,7 @@ namespace oed
 			GetQuotations(query, client);
 			if (query.ExportAfterSearch)
 			{
-				Console.WriteLine("Select which returned quotes to export:");
+				Console.WriteLine("Select which returned quotes to export: (enter for all)");
 				string export = Console.ReadLine();
 				Program.ParseExport(query, export);
 			}
@@ -959,7 +959,7 @@ namespace oed
 			GetSurfaces(query, client);
 			if (query.ExportAfterSearch)
 			{
-				Console.WriteLine("Select which returned surfaces to export:");
+				Console.WriteLine("Select which returned surfaces to export: (enter for all)");
 				string export = Console.ReadLine();
 				Program.ParseExport(query, export);
 			}

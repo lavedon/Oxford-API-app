@@ -32,7 +32,7 @@ namespace oed
 					break;
 				}
 
-				Console.WriteLine("Select which returned definitions to export:");
+				Console.WriteLine("Select which returned definitions to export: (enter for all)");
 				string export = Console.ReadLine();
 				Program.ParseExport(query, export);
 				exportQuery(query);
@@ -381,6 +381,7 @@ namespace oed
 
         private static void getDefinition(CurrentQuery query, string userInput)
         {
+			SavedQueries.UserEnteredWord = query.UserEnteredWord;
 			// Remove this?
             // query.UserEnteredWord = processInput(query, userInput);
 			query.UserEnteredWord = userInput.Trim().ToLower();
@@ -403,7 +404,14 @@ namespace oed
 				string[] newArgs = Program.GetNewArgs();
 				Program.UserArgs = newArgs;
 				Program.RunCLIAgain = true;
-//				query = Program.RunQuotesFromWordId(query);
+				SavedQueries.BlendedExport = true;
+				/*
+				// Never need to call this as XML is only rendered after quotes are returned
+				if (query.ExportAfterSearch)
+				{
+					SavedQueries.RenderXML();
+				}
+				*/
 			}
         }
 

@@ -103,6 +103,7 @@ namespace oed
 			// this.SurfaceJson = new();
 			this.Surfaces = new List<Datum>();
 			this.Derivatives = new List<Derivatives>();
+			this.WhatToExport = new List<int>();
 			// this.PreviousWordIds = new();
 			
 		} 
