@@ -84,7 +84,7 @@ namespace oed
 			using StreamWriter file = new(wordIDFile);
 			if (query.QuotesFromWord) {
 				for (int i = 0; i < query.WhatToExport.Count; i++) {
-					file.WriteLine(query.Definitions[query.WhatToExport[i]].WordID);
+					file.WriteLine(query.Definitions[query.WhatToExport[i] - 1].WordID);
 				}
 			} 
 			else {
@@ -140,11 +140,14 @@ namespace oed
 			return query;
 		}
 
-	    public static void RenderXML() {
+	    public static void RenderXML() 
+		{
+			/*
 				if (FirstBlendOption && BlendedExport) {
 					FirstBlendOption = !FirstBlendOption;
 					return;
 				}
+			*/
 			    string xmlFile = Path.Combine(Environment.CurrentDirectory, ExportFileName);
 			    File.Delete(xmlFile);
 			    FileStream xmlFileStream = File.Create(xmlFile);
@@ -155,7 +158,7 @@ namespace oed
 		    xml.WriteStartDocument();
 		    xml.WriteStartElement("SuperMemoCollection");
 			int count;
-			if (BlendedExport && !FirstBlendOption) { 
+			if (BlendedExport) { 
 				count = DefinitionsForExport.Count;
 			}
 			else {
@@ -167,7 +170,6 @@ namespace oed
 
 			// Export each category of saved stuff - one by one
 		if (BlendedExport) {
-
 			int ID = 1;
 			foreach (Definition d in DefinitionsForExport) {
 				List<Quote> quotesForDefinition = new();
@@ -183,15 +185,16 @@ namespace oed
 			    xml.WriteElementString("Title", $"{d.WordID}");
 			    xml.WriteElementString("Type", "Item");
 			    xml.WriteStartElement("Content");
-				xml.WriteElementString("Question", $"{d.WordDefinition}");
-				var answer = new System.Text.StringBuilder();
+				// xml.WriteElementString("Question", $"{UserEnteredWord}<BR><BR>{d.WordDefinition}");
+				var questionText = new System.Text.StringBuilder();
 				foreach (Quote quote in quotesForDefinition) {
-						string quoteText = 	$"{UserEnteredWord} <BR> <BR> \"{quote.Text}\" --{quote.Author}, {quote.Year}";
-						answer.Append(quoteText); 
-						answer.Append("<BR><BR>");
+						string quoteText = 	$"<BR> <BR> \"{quote.Text}\" --{quote.Author}, {quote.Year}";
+						questionText.Append(quoteText); 
+						questionText.Append("<BR><BR>");
 				}
 
-			    xml.WriteElementString("Answer", $"{answer}");
+			    xml.WriteElementString("Question", $"{UserEnteredWord}<BR><BR>{questionText}");
+				xml.WriteElementString("Answer", $"{d.FormattedVerboseOutput}");
 
 			    string encoded = WebUtility.HtmlEncode("<H5 dir=ltr align=left><Font size=\"1\" style=\"color: transparent\"> SuperMemo Reference:</font><br><FONT class=reference>Title:\"My Test Quote\" <br>Source: Oxford English Dictionary");
 			    xml.WriteElementString("SuperMemoReference", encoded);
@@ -210,7 +213,6 @@ namespace oed
 						Console.WriteLine($"{ex.ToString()}");
 					}
 				}
-					
 				}
 			}
 		    if (QuotesForExport.Count > 0 && !BlendedExport) {
@@ -261,7 +263,6 @@ namespace oed
 
 				xml.WriteEndElement();
 				xml.WriteEndElement();
-
 				}
 				catch (AggregateException ae)
 				{
@@ -408,6 +409,7 @@ namespace oed
 						}
 					}
 
+				}
 			}
 		try {
 	  		xml.WriteEndElement();
@@ -422,7 +424,7 @@ namespace oed
 
 		    Trace.WriteLine("The contents of the exported XML file are:");
 		    Trace.WriteLine(File.ReadAllText(xmlFile));
-		}
+			}
 			catch (AggregateException ae)
 			{
 				var ex = ae.Flatten().InnerExceptions;
@@ -433,6 +435,5 @@ namespace oed
 				}
 			}
 		}
-	}
 	}
 }

@@ -270,10 +270,11 @@ namespace oed
                 continue;
             }
             rootCommand.Invoke(input);
-        }
-
-
-
+            if (RunCLIAgain)
+            {
+                rootCommand.Invoke(UserArgs);
+            }
+            }
         }
 
         public static string[] GetNewArgs() {

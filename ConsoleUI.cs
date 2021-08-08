@@ -37,24 +37,24 @@ namespace oed
 					break;
 				}
 
-			if (query.QuotesFromWord && query.QueryMode == Modes.Word) {
+				/*
 					Console.WriteLine("Select which definitions to find quotes for: (enter for all)");
 					string selection = Console.ReadLine();
 					Program.ParseExport(query, selection);
-			} else {
+				*/
+			if (!query.QuotesFromWord) {
 				Console.WriteLine("Select which returned definitions to export: (enter for all)");
 				string export = Console.ReadLine();
 				Program.ParseExport(query, export);
 				exportQuery(query);
-			}
-			}
+				}
+			exportQuery(query);
 			if (query.InteractiveMode) {
 				while (running) {
 					MainMenu(query);
 				}
 			}
-			
-
+			}
 		}
 	    public static void Start(CurrentQuery query)
 	    {
@@ -358,6 +358,9 @@ namespace oed
 					Trace.WriteLine($"Trying to export word definition #{i}");
 					SavedQueries.DefinitionsForExport.Add(query.Definitions[query.WhatToExport[i] - 1]);
 				}
+				if (query.QuotesFromWord) {
+					return;
+				}
 			}
 			else if (query.QueryMode == Modes.Senses)
 			{
@@ -386,16 +389,17 @@ namespace oed
 					SavedQueries.SurfacesForExport.Add((query.Surfaces[query.WhatToExport[i] - 1]));
 				}
 			}
+			
 			SavedQueries.RenderXML();
 			
         }
 
         private static void getDefinition(CurrentQuery query, string userInput)
         {
-			SavedQueries.UserEnteredWord = query.UserEnteredWord;
 			// Remove this?
             // query.UserEnteredWord = processInput(query, userInput);
 			query.UserEnteredWord = userInput.Trim().ToLower();
+			SavedQueries.UserEnteredWord = query.UserEnteredWord;
             try
             {
                 Trace.WriteLine("Automatically looking up user entered word:");
