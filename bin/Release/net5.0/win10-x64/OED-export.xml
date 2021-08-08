@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SuperMemoCollection>
+  <Count>1</Count>
+  <SuperMemoElement>
+    <ID>1</ID>
+    <Title>pear_nn01</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>pear&lt;BR&gt;&lt;BR&gt;&lt;BR&gt; &lt;BR&gt; "Medieval torturers devised a particularly gruesome tool known in English as the pear of confession." --J. Ayto, 1990&lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>pear: The fleshy edible fruit (a pome) of the tree Pyrus communis (see sense 2a), typically having a broad base and tapering or constricted towards the stalk. Also (usually with distinguishing word): the similar but round fruit of P. pyrifolia of eastern Asia (see nashi n.).Noun.  Listed as a main definition. The original source of this word is listed as Aelfric of Eynsham. This word was first recored in 1020</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+</SuperMemoCollection>
