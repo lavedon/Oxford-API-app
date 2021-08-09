@@ -177,9 +177,11 @@ namespace oed
 					// answerText.Append($"{sq.definition} <BR> <BR>");
 					// answerText.Append($"Sense #{sNum} <BR>");
 					answerText.Append($"{s.lemma} - {s.definition} <BR>");
+                    /*
 					answerText.Append($"First use: {s.first_use} <BR>");
 					answerText.Append($"Part of speech: {s.part_of_speech} <BR>");
 					answerText.Append($"{s.daterange.start} - {s.daterange.end} <BR>");
+                    */
 					if (s.main_current_sense)
 					{
 						answerText.Append($"This is the main current sense <BR>");

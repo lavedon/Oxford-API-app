@@ -1,1 +1,5 @@
-airplane_nn01
+duck_nn01
+duck_vb01
+duck_nn02
+duck_nn03
+duck_nn04

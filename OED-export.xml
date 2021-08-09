@@ -1,63 +1,663 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <SuperMemoCollection>
-  <Count>26</Count>
+  <Count>332</Count>
   <SuperMemoElement>
     <ID>1</ID>
-    <Title>airplane_nn01-1</Title>
+    <Title>duck_nn01-1</Title>
     <Type>Item</Type>
     <Content>
-      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;airplane&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1868 , Eng. Mechanic &amp; Mirror of Sci. &amp;#8220;We have yet to see the ‘aëroplane’ with buoyancy sufficient to sustain 150 lb., or with apparatus sufficiently light and portable to make headway on an ‘air plane’.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1874 , Belgravia &amp;#8220;Not all the rudders and flappers..can ever enable the aeronaut to navigate his machine horizontally—to one hand or the other of the air-plane on which he is sailing.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1891 , Amer. Naturalist &amp;#8220;Its weight is resolved into a normal and parallel component by the air plane of pressure beneath it.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
-      <Answer>airplane - In form air plane. A horizontal plane in the air on which an aircraft, bird, etc., is regarded as flying. Obsolete. &lt;BR&gt;First use: Eng. Mechanic &amp; Mirror of Sci. &lt;BR&gt;Part of speech: NN &lt;BR&gt;1868 - 1891 &lt;BR&gt;This sense is obsolete &lt;BR&gt;</Answer>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;967 Kemble, Cod. Dipl. &amp;#8220;Andlang Osrices pulle þaet hit cymþ on ducan seaþe; of ducan seaþe þaet hit cymþ on Rischale.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1362 W. Langland, Piers Plowman &amp;#8220;He schulde..Drinken bote with þe Doke and dyne but ones.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1362 ,  &amp;#8220;&amp;#8221; &lt;BR&gt;&lt;BR&gt;1377 W. Langland, Piers Plowman &amp;#8220;A-syde he gan hym drawe Dredfully..as duk doth fram þe faucoun.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1400 T. Wright, Anglo-Saxon &amp; Old Eng. Vocab. &amp;#8220;Anas, a doke.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1400 , Lanfranc's Cirurg. &amp;#8220;Hennes, goos, and dokis.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1440 , Promptorium Parvulorum &amp;#8220;Dooke, byrde (K. doke), anas.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1474 , Liber Cocorum &amp;#8220;Henne-ban sede &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;ys wylle kylle.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1483 , Cath. Angl. &amp;#8220;A Dukke, anas.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1486 , Bk. St. Albans &amp;#8220;Tame Dookes.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1486 , Bk. St. Albans &amp;#8220;A badelyng of Dokys.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1503 R. Arnold, Chron. &amp;#8220;Swannes gies or dowkis.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1512 W. Dunbar, Ballat Abbot of Tungland &amp;#8220;Thre dayis in dub amang the dukis.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1530 J. Palsgrave, Lesclarcissement &amp;#8220;Ducke a foule, canne. Duke of the ryver, cannette.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1550 , Complaynt Scotl. &amp;#8220;The dukis cryit quaik.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1564 J. Rastell, Confut. Serm. M. Iuell &amp;#8220;He is more neerer a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;e then a duke.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1615 W. Shakespeare, Tempest &amp;#8220;Though thou canst swim like a Ducke, thou art made like a Goose.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1630 R. Gordon, Geneal. Hist. Earldom Sutherland &amp;#8220;Duke, draig, widgeon, teale..and all other kinds of wildfowl.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1699 W. Dampier, Voy. &amp; Descr. &amp;#8220;Whistling Ducks are somewhat less than our Common Duck... In flying, their Wings make a pretty sort of loud whistling Noise.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1845 H. B. Hirst, Poems &amp;#8220;Brooding black-&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; from her nest of turf In the tall sedge.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1847 W. B. Carpenter, Zool.: Systematic Acct. &amp;#8220;The Eiders are the largest of all the Ducks, being as weighty as the average of Geese.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1858 Earl of Malmesbury, Mem. Ex-Minister &amp;#8220;It would do for firing into a flock of &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - A swimming bird of the genus Anas and kindred genera of the family Anatidae, of which species are found all over the world. &lt;BR&gt;This is the main current sense &lt;BR&gt;</Answer>
       <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
     </Content>
   </SuperMemoElement>
   <SuperMemoElement>
     <ID>2</ID>
-    <Title>airplane_nn01-2</Title>
+    <Title>duck_nn01-2</Title>
     <Type>Item</Type>
     <Content>
-      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;airplane&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1896 J. Challis, Invention &amp;#8220;The combined use of the screw and aeroplane (why not call it air plane) principles.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1907 , Washington Post &amp;#8220;My idea of the airship of the future. Somewhat on the order of a box-kite, with projecting air-planes on either side.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1911 , Times &amp;#8220;The rudders, &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;airplane&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s, &amp;c. are worked from the gondolas, where compasses and other navigating appliances are also arranged.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
-      <Answer>airplane - = aeroplane n. 1. Now rare. &lt;BR&gt;First use: J. Challis &lt;BR&gt;Part of speech: NN &lt;BR&gt;1896 -  &lt;BR&gt;</Answer>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1405 G. Chaucer, Miller's Tale &amp;#8220;Thanne shaltow swymme as murye..As dooth the white doke after his drake.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1475 , Sqr. lowe Degre &amp;#8220;The tele, the &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;e and the drake.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1523 J. Fitzherbert, Bk. Husbandry &amp;#8220;Take hede howe thy hennes, &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;es, and gees do ley.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1678 J. Ray, Ornithol. &amp;#8220;Between the Duck and the Drake there is this difference, that he hath growing on his Rump certain erect feathers..which she hath not.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1897 , N.E.D. &amp;#8220;Mod. A flock of &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s swimming behind their drake.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - spec. The female of this fowl: the male being the drake n.1 &lt;BR&gt;</Answer>
       <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
     </Content>
   </SuperMemoElement>
   <SuperMemoElement>
     <ID>3</ID>
-    <Title>airplane_nn01-3</Title>
+    <Title>duck_nn01-3</Title>
     <Type>Item</Type>
     <Content>
-      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;airplane&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1906 , Sci. Amer. &amp;#8220;Air-plane is a much better word than aeroplane. It is as good etymologically, and much better when it is spoken.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1907 , Westm. Gaz. &amp;#8220;It is this ease of going against the current, with no motive force in evidence, that is..the despair of the aeronauts with their air-planes.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1917 , N.A.C.A. (U.S.) Rep. Nomencl. Aeronaut. &amp;#8220;Airplane..This term is commonly used in a more restricted sense to refer to &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;airplane&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s fitted with landing gear suited to operation from the land. If the landing gear is suited to operation from the water, the term ‘Seaplane’ is used.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1933 E. A. Powell, Slanting Lines of Steel &amp;#8220;This was no &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;airplane&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; bomb, but a projectile from a super-cannon.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1978 D. B. Thurston, Design for Flying &amp;#8220;If the &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;airplane&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; is intended for the..private market, thin skin could be used and the weight saved converted to useful load.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1995 , Mail on Sunday &amp;#8220;No one with any sanity would fly in an &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;airplane&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; if they could walk.&amp;#8221; &lt;BR&gt;&lt;BR&gt;2005 , Chicago Sun-Times &amp;#8220;New rules that would allow travelers to bring items such as sharp knives and scissors onto &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;airplane&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s, rolling back post-9/11 prohibitions.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
-      <Answer>airplane - Chiefly North American = aeroplane n. 2. Also attributive. &lt;BR&gt;First use: Scientific American &lt;BR&gt;Part of speech: NN &lt;BR&gt;1906 -  &lt;BR&gt;This is the main current sense &lt;BR&gt;</Answer>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1600 W. Shakespeare, Midsummer Night's Dream &amp;#8220;O dainty &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;, o deare!&amp;#8221; &lt;BR&gt;&lt;BR&gt;1608 T. Middleton, Familie of Love &amp;#8220;And now sweete &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; know I haue beene for my cousin Gerardines Will.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1640 T. Heywood, Captives &amp;#8220;Ffor see you, not too women, daynty &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1841 C. Dickens, Old Curiosity Shop &amp;#8220;How is he now, my &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; of diamonds?&amp;#8221; &lt;BR&gt;&lt;BR&gt;1880 C. H. Spurgeon, Serm. &amp;#8220;Her child..was so much her ‘&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;’ that he grew up to be a goose.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - A term of endearment. &lt;BR&gt;</Answer>
       <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
     </Content>
   </SuperMemoElement>
   <SuperMemoElement>
     <ID>4</ID>
-    <Title>airplane_nn01-1</Title>
+    <Title>duck_nn01-4</Title>
     <Type>Item</Type>
     <Content>
-      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;airplane&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1868 , Eng. Mechanic &amp; Mirror of Sci. &amp;#8220;We have yet to see the ‘aëroplane’ with buoyancy sufficient to sustain 150 lb., or with apparatus sufficiently light and portable to make headway on an ‘air plane’.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1874 , Belgravia &amp;#8220;Not all the rudders and flappers..can ever enable the aeronaut to navigate his machine horizontally—to one hand or the other of the air-plane on which he is sailing.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1891 , Amer. Naturalist &amp;#8220;Its weight is resolved into a normal and parallel component by the air plane of pressure beneath it.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
-      <Answer>airplane - In form air plane. A horizontal plane in the air on which an aircraft, bird, etc., is regarded as flying. Obsolete. &lt;BR&gt;First use: Eng. Mechanic &amp; Mirror of Sci. &lt;BR&gt;Part of speech: NN &lt;BR&gt;1868 - 1891 &lt;BR&gt;This sense is obsolete &lt;BR&gt;</Answer>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1611 R. Cotgrave, Dict. French &amp; Eng. Tongues &amp;#8220;(An idle, vaine, or needlesse labour) we say, to teach his grandame to grope &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1655 R. Capel,  &amp;#8220;Money, which lying long in the bank, comes home at last with a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; in its mouth.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1786 ‘P. Pindar’, Lyric Odes for 1785 &amp;#8220;Gaping upon Tom's thumb, with me in wonder; The rabble rais'd its eyes—like &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s in thunder.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1802 C. Wilmot, Irish Peer on Continent &amp;#8220;On asking him what fault he had to find with her, he look'd ‘like a Duck in Thunder’, and made me instinctively wave the investigation.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1823 W. Scott, Peveril &amp;#8220;Closed her eyes like a dying fowl—turned them up like a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; in a thunder-storm.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1824 , Blackwood's Edinb. Mag. &amp;#8220;The thing passed off like water from a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;'s back.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1841 C. Dickens, Old Curiosity Shop &amp;#8220;Mr. Swiveller..observed that last week was a fine week for the &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s, and this week was a fine week for the dust.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1842 S. Lover, Handy Andy &amp;#8220;‘What do you say..will you dine with me?’ ‘Will a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; swim?’ chuckled out Jack Horan.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1863 C. Kingsley, Water-babies &amp;#8220;Then he..turned up his eyes like a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; in thunder.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1867 A. D. Richardson, Beyond Mississippi &amp;#8220;He takes to them as instinctively as a young &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; to water.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1871 C. Kingsley, Lett. &amp;#8220;All else is a ‘paralogism’ and runs off them like water off a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;'s back.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1880 J. Payn, Confidential Agent &amp;#8220;Look less like a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; in a thunderstorm.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1885 , Boy's Own Paper &amp;#8220;‘Perhaps you would not object to drinking the queen's health?’ Would a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; swim?&amp;#8221; &lt;BR&gt;&lt;BR&gt;1889 L. B. Walford, Stiff-necked Generation &amp;#8220;It had all passed off like water off a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;'s back.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1891 L. T. Meade, Sweet Girl Graduate &amp;#8220;‘Do you really think that Maggie Oliphant cares for Mr. Hammond?’..‘Cares for him!.. Does a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; swim? Does a baby like sweet things?’&amp;#8221; &lt;BR&gt;&lt;BR&gt;1893 , Scribner's Mag. &amp;#8220;She has taken to society as a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; takes to water.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1894 J. D. Astley, Fifty Years of my Life &amp;#8220;I always took to shooting like a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; to water.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1906 ‘O. Henry’, Four Million &amp;#8220;‘With you, Dempsey?’ she stammered. ‘Say—will a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; swim?’&amp;#8221; &lt;BR&gt;&lt;BR&gt;1917 J. C. Bridge, Cheshire Proverbs &amp;#8220;He winks and thinks like a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; i' thunner.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1933 A. Christie, Lord Edgware Dies &amp;#8220;You did look for all the world like a dying &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; in a thunderstorm.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1960 C. Day Lewis, Buried Day &amp;#8220;I had taken to vice like a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; to water, but it ran off me like water from a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;'s back.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1971 ‘A. Gilbert’, Tenant for Tomb &amp;#8220;The Bear Lady said brightly that it was a nice day for the &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - In phrases and proverbial sayings. duck's weather, fine day for ducks, etc., referring to wet weather; like a duck in thunder, like a (dying) duck in a thunderstorm: having a forlorn and hopeless appearance; like water off (or from) a duck's back, like (or as) a duck (takes) to water: easily, readily; does (or will, would) a duck swim?: a colloquial phrase of enthusiastic acceptance or confirmation. &lt;BR&gt;</Answer>
       <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
     </Content>
   </SuperMemoElement>
   <SuperMemoElement>
     <ID>5</ID>
-    <Title>airplane_nn01-2</Title>
+    <Title>duck_nn01-5</Title>
     <Type>Item</Type>
     <Content>
-      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;airplane&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1896 J. Challis, Invention &amp;#8220;The combined use of the screw and aeroplane (why not call it air plane) principles.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1907 , Washington Post &amp;#8220;My idea of the airship of the future. Somewhat on the order of a box-kite, with projecting air-planes on either side.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1911 , Times &amp;#8220;The rudders, &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;airplane&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s, &amp;c. are worked from the gondolas, where compasses and other navigating appliances are also arranged.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
-      <Answer>airplane - = aeroplane n. 1. Now rare. &lt;BR&gt;First use: J. Challis &lt;BR&gt;Part of speech: NN &lt;BR&gt;1896 -  &lt;BR&gt;</Answer>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1687 S. Sewall, Let. Bk. &amp;#8220;Six tone of shott, of which three ton Goose, two tone Duck, one pigeon.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1775 , Jrnls. Cont. Congr. &amp;#8220;Procure a quantity of &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; and powder.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1845 W. G. Simms, Wigwam &amp; Cabin &amp;#8220;Draw the loads, Scip, and put in some of the high &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - elliptical. Duck-shot. &lt;BR&gt;</Answer>
       <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
     </Content>
   </SuperMemoElement>
   <SuperMemoElement>
     <ID>6</ID>
-    <Title>airplane_nn01-3</Title>
+    <Title>duck_nn01-6</Title>
     <Type>Item</Type>
     <Content>
-      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;airplane&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1906 , Sci. Amer. &amp;#8220;Air-plane is a much better word than aeroplane. It is as good etymologically, and much better when it is spoken.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1907 , Westm. Gaz. &amp;#8220;It is this ease of going against the current, with no motive force in evidence, that is..the despair of the aeronauts with their air-planes.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1917 , N.A.C.A. (U.S.) Rep. Nomencl. Aeronaut. &amp;#8220;Airplane..This term is commonly used in a more restricted sense to refer to &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;airplane&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s fitted with landing gear suited to operation from the land. If the landing gear is suited to operation from the water, the term ‘Seaplane’ is used.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1933 E. A. Powell, Slanting Lines of Steel &amp;#8220;This was no &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;airplane&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; bomb, but a projectile from a super-cannon.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1978 D. B. Thurston, Design for Flying &amp;#8220;If the &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;airplane&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; is intended for the..private market, thin skin could be used and the weight saved converted to useful load.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1995 , Mail on Sunday &amp;#8220;No one with any sanity would fly in an &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;airplane&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; if they could walk.&amp;#8221; &lt;BR&gt;&lt;BR&gt;2005 , Chicago Sun-Times &amp;#8220;New rules that would allow travelers to bring items such as sharp knives and scissors onto &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;airplane&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s, rolling back post-9/11 prohibitions.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
-      <Answer>airplane - Chiefly North American = aeroplane n. 2. Also attributive. &lt;BR&gt;First use: Scientific American &lt;BR&gt;Part of speech: NN &lt;BR&gt;1906 -  &lt;BR&gt;This is the main current sense &lt;BR&gt;</Answer>
+      <Question>lame &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1761 H. Walpole, Lett. to H. Mann &amp;#8220;Do you know what a Bull, and a Bear, and a Lame Duck are?&amp;#8221; &lt;BR&gt;&lt;BR&gt;1771 D. Garrick,  &amp;#8220;Change-Alley bankrupts waddle out lame &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s!&amp;#8221; &lt;BR&gt;&lt;BR&gt;1806 J. Beresford, Miseries Human Life &amp;#8220;Attending at the Stock-exchange on settling-day amidst the quack of Ducks, the bellowings of Bulls, and the growls of Bears.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1832 T. B. Macaulay, Mirabeau &amp;#8220;Frauds of which a lame &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; on the Stock exchange would be ashamed.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1889 C. D. Warner, Little Journey World &amp;#8220;Do you think I have time to attend to every poor &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;?&amp;#8221; &lt;BR&gt;&lt;BR&gt;1929 W. J. Locke, Jorico &amp;#8220;She was something of a lame &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; of a craft.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>lame duck - lame duck: a disabled person or thing: spec. (Stock Market slang): one who cannot meet his financial engagements; a defaulter. Also in extended use and, short, duck. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>7</ID>
+    <Title>duck_nn01-7</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1774 O. Goldsmith, Hist. Earth &amp;#8220;Plutarch assures us, that Cato kept his whole family in health, by feeding them with &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; whenever they threatened to be out of order.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - The flesh of this fowl. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>8</ID>
+    <Title>duck_nn01-8</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1803 M. Elphinstone,  &amp;#8220;They have neither the comforts of a Bengal army, nor do they rough it, like the Ducks.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1879 C. R. Low, Afghan War &amp;#8220;The ‘Ducks’ (as the Bombay troops are called) enjoy it much.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - Anglo-Indian slang. A nickname for soldiers of the Bombay Presidency. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>9</ID>
+    <Title>duck_nn01-9</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1819 M. Wilmot, Let. &amp;#8220;I shall presently throw my letter into the long drawer at the top of my &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; of a secretaire.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1841 , Punch &amp;#8220;If our remarks were made with an affectionate eye to the young ladies of the satin-album-loving school, we should assuredly style this ‘a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; of a picture’.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1884 , Rede's Sixteen String Jack &amp;#8220;Oh, isn't he a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; of a fellow?&amp;#8221; &lt;BR&gt;&lt;BR&gt;1891 J. S. Farmer, Slang &amp;#8220;A &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; of a bonnet.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - Often a duck of a…; and applied to things as well as persons. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>10</ID>
+    <Title>duck_nn01-10</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1821 , Blackwood's Edinb. Mag. &amp;#8220;The &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; is a small stone placed on a larger, and attempted to be hit off by the players at the distance of a few paces.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1888 F. T. Elworthy, W. Somerset Word-bk. &amp;#8220;Duck, a game.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1893 , Cassell's Bk. Sports &amp; Pastimes &amp;#8220;The players then, standing at home, ‘pink for &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;’, that is, they throw their stones towards the block, and he whose stone remains farthest from the block is first &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - A boy's game, also called duckstone, duckiestone; also one of the stones used in this game, and sometimes a player. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>11</ID>
+    <Title>duck_nn01-11</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>Bombay &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1850 F. Mason, Nat. Productions Burmah &amp;#8220;A fish nearly related to the salmon is dried and exported in large quantities from Bombay, and has acquired the name of Bombay Ducks.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1879 F. S. Bridges, Round World in Six Months &amp;#8220;‘Bombay Ducks’ are always served with curry. These are small dried fish of a peculiar flavour, and are quite dry and crisp.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>Bombay duck - Bombay duck = bummalo n. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>12</ID>
+    <Title>duck_nn01-12</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1853 A. H. Layard, Discov. Nineveh &amp; Babylon &amp;#8220;The actual weight of the large &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s in the British Museum being 480 oz. troy.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - Historical. (More fully duck-weight n. at  compounds 2a.) A stone or clay figure of a duck used as a weight in ancient Assyria and Babylonia. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>13</ID>
+    <Title>duck_nn01-13</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1857 , Phoenix (Sacramento, Calif.) &amp;#8220;No such ‘&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;’ as this could nab the ‘Ubiquitous’.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1872 ‘M. Twain’, Roughing It &amp;#8220;Are you the &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; that runs the gospel-mill next door?&amp;#8221; &lt;BR&gt;&lt;BR&gt;1903 A. Adams, Log of Cowboy &amp;#8220;I can't quite make out this other &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;, but I reckon he's some big auger.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1904 W. H. Smith, Promoters &amp;#8220;As you said, Goldsby, Slosher's a slick &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - A fellow, ‘customer’. U.S. slang. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>14</ID>
+    <Title>duck_nn01-14</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1868 , St. Paul's Mag. &amp;#8220;You see..that his fear of a ‘&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;’—as by a pardonable contraction from &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;-egg a nought is called in cricket-play—outweighs all other earthly considerations.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1880 , Daily Tel. &amp;#8220;Life is very much like cricket: Some get scores and some ‘a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;’.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1885 , Daily Rev. (Edinb.) &amp;#8220;The former batter proved a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - Cricket slang. (Short for duck's egg n.). No score, nought; also, a player who fails to score. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>15</ID>
+    <Title>duck_nn01-15</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>Sydney &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1873 ‘J. Miller’, Life amongst Modocs &amp;#8220;There are some hard names given on the Pacific; but when you call a man a ‘Sydney &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;’ it is well understood that you mean blood.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>Sydney duck - Australian. Sydney duck: a convict. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>16</ID>
+    <Title>duck_nn01-16</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1874 , Hotten's Slang Dict. &amp;#8220;Duck, a bundle of bits of the ‘stickings’ of beef sold for food to the London poor. A faggot.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1876 C. C. Robinson, Gloss. Words Dial. Mid-Yorks. &amp;#8220;Duck, a faggot.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - dialect and slang. (See quots.) &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>17</ID>
+    <Title>duck_nn01-17</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1936 ‘J. Curtis’, Gilt Kid &amp;#8220;She crossed her legs. Her thighs were white and shapeless. ‘Got a fag, &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s?’&amp;#8221; &lt;BR&gt;&lt;BR&gt;1958 E. Hyams, Taking it Easy &amp;#8220;Talked like you 'e did, &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1958 , Times &amp;#8220;One is waited on; called ‘sir’, not ‘&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s’.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1963 , Times &amp;#8220;The comfortable northern friendliness of the expression ‘&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s’ as employed by comfortable northern females to all and sundry—to warm the heart towards the species.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - With hypocoristic suffix -s. Used as a familiar form of address. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>18</ID>
+    <Title>duck_nn01-18</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1938 , Amer. Speech &amp;#8220;Duck, a flying boat.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1942 E. Colby, Army Talk &amp;#8220;Ducks. Air Corps men..give the name to amphibian airplanes capable of landing on water or ground.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - (See quots.) U.S. slang. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>19</ID>
+    <Title>duck_nn01-19</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;</Question>
+      <Answer>duck - Short for lame duck at  sense 9. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>20</ID>
+    <Title>duck_vb01-1</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1299 , Cursor Mundi &amp;#8220;He that es duked ans dun.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1499 R. Henryson, Fables: Fox &amp; Wolf &amp;#8220;In the watter outher twyis or thryis He dowkit him.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1553 H. Willoughby,  &amp;#8220;Ducked at the yardes arme, and so discharged.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1598 J. Stow, Suruay of London &amp;#8220;Ouerthrowne and well &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;ed.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1600 , Hist. &amp; Life James VI &amp;#8220;They were dowkit in a deap loch over the heid thrie severall tymes.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1631 S. Rutherford, Lett. &amp;#8220;Howbeit, ye may be &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;ed, but ye cannot drown.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1751 W. Hone, Every-day Bk. &amp;#8220;A man and woman are to be publicly &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;ed at Tring.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1785 R. Burns, Poems &amp; Songs &amp;#8220;An' had in mony a well been douked.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1790 A. Wilson, Poems &amp;#8220;While I can douk in ink a quill.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1820 W. Scott, Abbot &amp;#8220;I say, &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; her in the loch, and then we will see whether she is witch or not.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - To plunge (a person or thing) momentarily in, into, or under water or other liquid. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>21</ID>
+    <Title>duck_vb01-2</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1399 , Cursor Mundi &amp;#8220;He þat doukeþ ones þer doun.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1399 , Alexander &amp;#8220;It was..bred full..Of dragons..&amp; doukand neddirs.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1481 W. Caxton, Hist. Reynard Fox &amp;#8220;They conne wel also duke in the water after lapwynches and dokys.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1552 R. Huloet, Abcedarium Anglico Latinum &amp;#8220;Ducke vnder the water, vide in dyue.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1581 J. Marbeck, Bk. Notes &amp; Common Places &amp;#8220;The outward sacrament of dipping or &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;ing in the water.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1625 P. Heylyn, Μικρόκοσμος &amp;#8220;Though to avoid their Darts he sometimes &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;ed, yet held he still his left hand aboue the water.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1855 F. K. Robinson, Gloss. Yorks. Words &amp;#8220;To Douk, to bathe or plunge under water, to &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1890 , Spectator &amp;#8220;It will be able ‘to &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;’ under the defensive nettings carried by men-of-war.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1897 , N.E.D. &amp;#8220;Mod. Sc. To dook for apples at Hallowe'en.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - To plunge or dive, or suddenly go down under water, and emerge again; to dip the head rapidly under water. &lt;BR&gt;This is the main current sense &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>22</ID>
+    <Title>duck_vb01-3</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1530 J. Palsgrave, Lesclarcissement &amp;#8220;I dowke, I stowpe lowe as a frere doth.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1535 , Bible (Coverdale) &amp;#8220;A wicked man can behaue himself humbly, and can douke with his heade.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1539 , Surrender of Monasteries &amp;#8220;Dokkyng, Nodding and Beckynge.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1599 T. Nashe, Lenten Stuffe &amp;#8220;Douking on all foure vnto him.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1608 S. Lennard, Of Wisdome &amp;#8220;To &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;e and stoop to all sorts of people.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1713 A. Pope, Guardian &amp;#8220;He never once Duck'd at the whizz of a Cannon Ball.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1869 R. Browning, Ring &amp; Bk. &amp;#8220;Law &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s to Gospel here.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1872 ‘G. Eliot’, Middlemarch &amp;#8220;Eat cold mutton, have to..‘&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; under’ in any sort of a way.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1887 W. Besant, World Went &amp;#8220;was comforted to see the men at the guns, none of them killed, and none of them &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;ing.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - To bend or stoop quickly so as to lower the body or head; to bob; to make a jerking bow; hence, figurative to cringe, yield; so, to duck under. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>23</ID>
+    <Title>duck_vb01-4</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1553 G. Douglas, Eneados &amp;#8220;Quhil al the wallis doukis to the ground Under the brayand quhelis, and assiltre.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1850 D. M. Moir, Snow &amp;#8220;Behold the trees Their fingery boughs stretch out..As they &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; and drive about.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1870 C. Dickens, Edwin Drood &amp;#8220;Receiving the foul fiend, when he &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s from its stage into the infernal regions.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - To make a sudden descent or dive, not under water. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>24</ID>
+    <Title>duck_vb01-5</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1598 E. Guilpin, Skialetheia &amp;#8220;But bring them to a charge, then..Though but a false fire, they theyr plumes wil &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1607 G. Markham, Cavelarice &amp;#8220;If..he haue taken a custome to &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; downe his head, when he standeth stil.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1730 J. Swift, To Doctor Delany &amp;#8220;When..first he hears The Bullets whistling round his Ears, Will &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; his Head.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1883 J. Gilmour, Among Mongols &amp;#8220;We..&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;ed our heads, and hurried into the tent.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - To lower (the head, etc.) suddenly and momentarily; to jerk down. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>25</ID>
+    <Title>duck_vb01-6</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; up&lt;BR&gt; &lt;BR&gt;1706 , Phillips's New World of Words &amp;#8220;‘Duck up the Clew-lines of those Sails’.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck up - duck up (Nautical): To raise with a jerk, haul up (a sail that obstructs the steersman's view). &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>26</ID>
+    <Title>duck_vb01-7</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1896 G. Ade, Artie &amp;#8220;He was with a lot o' them Prairie avenue boys, and purty soon he &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s 'em and comes over an' touches me for two cases.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1926 J. Black, You can't Win &amp;#8220;We'll get a passenger train out of Cheyenne, kid, if we can &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; Jeff Carr.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1928 , Daily Tel. &amp;#8220;Both sides, he says, have ‘&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;ed’ the problems of Labour and foreign policy.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1936 ‘R. Hyde’, Passport to Hell &amp;#8220;Soldiers who had &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;ed the church parades since the beginning of the War fell out of the lines to pray there.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1959 ‘M. M. Kaye’, House of Shade &amp;#8220;I should like to &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; the whole situation by getting roaring drunk.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1963 , Listener &amp;#8220;His peculiar play certainly &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;ed the questions of subjective and objective judgments that he chose to raise in Radio Times.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - transitive. To get away from, to avoid, dodge (a person or thing). colloquial (originally U.S.). &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>27</ID>
+    <Title>duck_vb01-8</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1896 G. Ade, Artie &amp;#8220;I think I'll have to &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; on that present.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1900 G. Ade, Fables in Slang &amp;#8220;Having delivered herself of these Helpful Remarks she would Duck.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1910 W. M. Raine, Bucky O'Connor &amp;#8220;Coming through the cañon Del Oro in the night, he &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;ed; I reckon he's in Mexico now.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1911 H. S. Harrison, Queed &amp;#8220;It's about over. And now I must pay for my fun—&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; back to the office.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1917 H. L. Wilson, Ruggles of Red Gap &amp;#8220;I &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; out every morning before she's up.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1919 P. G. Wodehouse, Damsel in Distress &amp;#8220;He saw me, too, and what do you think he did? Ducked down a side-street, if you please.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1968 , Globe &amp; Mail (Toronto) &amp;#8220;A wealthy bachelor, he &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;ed away from a question on the extent of his financial resources.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - To back out, withdraw; to make off, abscond; to default. colloquial (originally U.S.). &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>28</ID>
+    <Title>duck_vb01-9</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1905 R. F. Foster, Compl. Bridge &amp;#8220;Ducking..is refusing to part with the command of your own suit, and is usually resorted to in situations in which no finesse is possible.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1905 R. F. Foster, Compl. Bridge &amp;#8220;The dealer sees that it is impossible to catch the K, Q, 10 of spades, so he &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s the suit by leading a small card.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1905 R. F. Foster, Compl. Bridge &amp;#8220;As there is no card in dummy's hand but the club ace that will bring the suit into play, that card must be kept as a re-entry until the third round, and the first two rounds of the suit must be &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;ed.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1905 R. F. Foster, Compl. Bridge &amp;#8220;Ducking.—Refusing to win tricks when able to do so.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1928 , Daily Express &amp;#8220;You can frequently make the most of a suit by deliberately losing the first trick. This method of play, called ‘&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;ing’, is founded not only on the law of average probabilities but also on the expectation that the cards are normally distributed.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - transitive and intransitive. In the game of Bridge (see quots.). &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>29</ID>
+    <Title>duck_nn02-1</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1554 T. Sampson,  &amp;#8220;The fond nods, crosses, becks, and &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1637 J. Milton, Comus &amp;#8220;Without &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; or nod.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1651 R. Brome, New Acad. &amp;#8220;Be ready with your Napkin, and a lower douke maid.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1802 C. Lamb, John Woodvil &amp;#8220;The &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s, and nods Which weak minds pay to rank.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1879 S. St. John, Life Sir J. Brooke &amp;#8220;The ball rushing over our heads, caused a most undignified &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - An instantaneous lowering of head or body; a rapid jerky bow or obeisance. &lt;BR&gt;This is the main current sense &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>30</ID>
+    <Title>duck_nn02-2</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1836 C. J. Latrobe,  &amp;#8220;Two singular basins..not large enough for any monarch bigger than Oberon to take a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; in.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1876 , World &amp;#8220;The elder women content themselves with a few &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s as the waves break over them.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - A quick plunge, a dip. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>31</ID>
+    <Title>duck_nn03-1</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1640 , Tables Rates &amp; Duties &amp;#8220;Duck hinderlands, middle good headlock.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1660 , Act 12 Chas. II &amp;#8220;Drilling &amp; pack &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;e ye 100 ells cont. 6 score.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1780 T. Jefferson, Let. &amp;#8220;What is to be done for tents, I know not. I am assured that very little &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; can be got in this country.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1834 F. Marryat, Jacob Faithful &amp;#8220;A shirt of coarse &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1883 T. Hardy, Longman's Mag. &amp;#8220;The genuine white smock-frock of Russia &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; and the whity-brown one of drabbet, are rarely seen now afield.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - A strong untwilled linen (or later, cotton) fabric, lighter and finer than canvas; used for small sails and men's (esp. sailors') outer clothing. &lt;BR&gt;This is the main current sense &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>32</ID>
+    <Title>duck_nn03-2</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s&lt;BR&gt; &lt;BR&gt;1825 , Universal Songster &amp;#8220;T'other day I saw a goose in white &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1829 Miss Sheridan, Lett. etc. Dk. Somerset &amp;#8220;The boys were in white &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s, with lightish green jackets.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1849 W. M. Thackeray, Pendennis &amp;#8220;They must be young Pendennis's white &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>ducks - plural. Trousers of this material. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>33</ID>
+    <Title>duck_nn04-1</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1943 , War Illustr. &amp;#8220;‘Ducks’ they are called in soldier slang, and it is easy to see why. In the first place there is something &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;-like about these queer motor-barges-cum-trucks which are as much at home on the sea as on the land; and then their factory serial letters placed together spell ‘Dukws’.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1944 , Hansard Commons &amp;#8220;The marvellous American invention, the ‘Duck’, spelt D.U.K.W., is a heavy lorry which goes at between 40 and 50 miles per hour along the road, and can plunge into the water and swim out for miles to sea in quite choppy weather.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1945 , Manch. Guardian &amp;#8220;Officially known as ‘Dukws’—a combination of the factory serial letters D for boat, U for lorry body, and KW for lorry chassis—they quickly became known in the Army and Navy as ‘Ducks’.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1945 , Ann. Reg. 1944 &amp;#8220;‘Ducks’, amphibious lorries which were equally at home on land and in the water.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1958 , Observer &amp;#8220;Supply craft might stand offshore and disgorge their cargoes into &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s and other smaller craft.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - An amphibious vehicle (see quots.). &lt;BR&gt;This is the main current sense &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>34</ID>
+    <Title>duck_nn01-1</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;967 Kemble, Cod. Dipl. &amp;#8220;Andlang Osrices pulle þaet hit cymþ on ducan seaþe; of ducan seaþe þaet hit cymþ on Rischale.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1362 W. Langland, Piers Plowman &amp;#8220;He schulde..Drinken bote with þe Doke and dyne but ones.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1362 ,  &amp;#8220;&amp;#8221; &lt;BR&gt;&lt;BR&gt;1377 W. Langland, Piers Plowman &amp;#8220;A-syde he gan hym drawe Dredfully..as duk doth fram þe faucoun.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1400 T. Wright, Anglo-Saxon &amp; Old Eng. Vocab. &amp;#8220;Anas, a doke.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1400 , Lanfranc's Cirurg. &amp;#8220;Hennes, goos, and dokis.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1440 , Promptorium Parvulorum &amp;#8220;Dooke, byrde (K. doke), anas.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1474 , Liber Cocorum &amp;#8220;Henne-ban sede &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;ys wylle kylle.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1483 , Cath. Angl. &amp;#8220;A Dukke, anas.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1486 , Bk. St. Albans &amp;#8220;Tame Dookes.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1486 , Bk. St. Albans &amp;#8220;A badelyng of Dokys.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1503 R. Arnold, Chron. &amp;#8220;Swannes gies or dowkis.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1512 W. Dunbar, Ballat Abbot of Tungland &amp;#8220;Thre dayis in dub amang the dukis.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1530 J. Palsgrave, Lesclarcissement &amp;#8220;Ducke a foule, canne. Duke of the ryver, cannette.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1550 , Complaynt Scotl. &amp;#8220;The dukis cryit quaik.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1564 J. Rastell, Confut. Serm. M. Iuell &amp;#8220;He is more neerer a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;e then a duke.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1615 W. Shakespeare, Tempest &amp;#8220;Though thou canst swim like a Ducke, thou art made like a Goose.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1630 R. Gordon, Geneal. Hist. Earldom Sutherland &amp;#8220;Duke, draig, widgeon, teale..and all other kinds of wildfowl.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1699 W. Dampier, Voy. &amp; Descr. &amp;#8220;Whistling Ducks are somewhat less than our Common Duck... In flying, their Wings make a pretty sort of loud whistling Noise.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1845 H. B. Hirst, Poems &amp;#8220;Brooding black-&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; from her nest of turf In the tall sedge.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1847 W. B. Carpenter, Zool.: Systematic Acct. &amp;#8220;The Eiders are the largest of all the Ducks, being as weighty as the average of Geese.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1858 Earl of Malmesbury, Mem. Ex-Minister &amp;#8220;It would do for firing into a flock of &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - A swimming bird of the genus Anas and kindred genera of the family Anatidae, of which species are found all over the world. &lt;BR&gt;This is the main current sense &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>35</ID>
+    <Title>duck_nn01-2</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1405 G. Chaucer, Miller's Tale &amp;#8220;Thanne shaltow swymme as murye..As dooth the white doke after his drake.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1475 , Sqr. lowe Degre &amp;#8220;The tele, the &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;e and the drake.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1523 J. Fitzherbert, Bk. Husbandry &amp;#8220;Take hede howe thy hennes, &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;es, and gees do ley.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1678 J. Ray, Ornithol. &amp;#8220;Between the Duck and the Drake there is this difference, that he hath growing on his Rump certain erect feathers..which she hath not.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1897 , N.E.D. &amp;#8220;Mod. A flock of &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s swimming behind their drake.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - spec. The female of this fowl: the male being the drake n.1 &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>36</ID>
+    <Title>duck_nn01-3</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1600 W. Shakespeare, Midsummer Night's Dream &amp;#8220;O dainty &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;, o deare!&amp;#8221; &lt;BR&gt;&lt;BR&gt;1608 T. Middleton, Familie of Love &amp;#8220;And now sweete &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; know I haue beene for my cousin Gerardines Will.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1640 T. Heywood, Captives &amp;#8220;Ffor see you, not too women, daynty &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1841 C. Dickens, Old Curiosity Shop &amp;#8220;How is he now, my &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; of diamonds?&amp;#8221; &lt;BR&gt;&lt;BR&gt;1880 C. H. Spurgeon, Serm. &amp;#8220;Her child..was so much her ‘&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;’ that he grew up to be a goose.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - A term of endearment. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>37</ID>
+    <Title>duck_nn01-4</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1611 R. Cotgrave, Dict. French &amp; Eng. Tongues &amp;#8220;(An idle, vaine, or needlesse labour) we say, to teach his grandame to grope &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1655 R. Capel,  &amp;#8220;Money, which lying long in the bank, comes home at last with a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; in its mouth.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1786 ‘P. Pindar’, Lyric Odes for 1785 &amp;#8220;Gaping upon Tom's thumb, with me in wonder; The rabble rais'd its eyes—like &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s in thunder.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1802 C. Wilmot, Irish Peer on Continent &amp;#8220;On asking him what fault he had to find with her, he look'd ‘like a Duck in Thunder’, and made me instinctively wave the investigation.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1823 W. Scott, Peveril &amp;#8220;Closed her eyes like a dying fowl—turned them up like a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; in a thunder-storm.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1824 , Blackwood's Edinb. Mag. &amp;#8220;The thing passed off like water from a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;'s back.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1841 C. Dickens, Old Curiosity Shop &amp;#8220;Mr. Swiveller..observed that last week was a fine week for the &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s, and this week was a fine week for the dust.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1842 S. Lover, Handy Andy &amp;#8220;‘What do you say..will you dine with me?’ ‘Will a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; swim?’ chuckled out Jack Horan.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1863 C. Kingsley, Water-babies &amp;#8220;Then he..turned up his eyes like a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; in thunder.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1867 A. D. Richardson, Beyond Mississippi &amp;#8220;He takes to them as instinctively as a young &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; to water.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1871 C. Kingsley, Lett. &amp;#8220;All else is a ‘paralogism’ and runs off them like water off a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;'s back.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1880 J. Payn, Confidential Agent &amp;#8220;Look less like a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; in a thunderstorm.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1885 , Boy's Own Paper &amp;#8220;‘Perhaps you would not object to drinking the queen's health?’ Would a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; swim?&amp;#8221; &lt;BR&gt;&lt;BR&gt;1889 L. B. Walford, Stiff-necked Generation &amp;#8220;It had all passed off like water off a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;'s back.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1891 L. T. Meade, Sweet Girl Graduate &amp;#8220;‘Do you really think that Maggie Oliphant cares for Mr. Hammond?’..‘Cares for him!.. Does a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; swim? Does a baby like sweet things?’&amp;#8221; &lt;BR&gt;&lt;BR&gt;1893 , Scribner's Mag. &amp;#8220;She has taken to society as a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; takes to water.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1894 J. D. Astley, Fifty Years of my Life &amp;#8220;I always took to shooting like a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; to water.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1906 ‘O. Henry’, Four Million &amp;#8220;‘With you, Dempsey?’ she stammered. ‘Say—will a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; swim?’&amp;#8221; &lt;BR&gt;&lt;BR&gt;1917 J. C. Bridge, Cheshire Proverbs &amp;#8220;He winks and thinks like a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; i' thunner.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1933 A. Christie, Lord Edgware Dies &amp;#8220;You did look for all the world like a dying &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; in a thunderstorm.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1960 C. Day Lewis, Buried Day &amp;#8220;I had taken to vice like a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; to water, but it ran off me like water from a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;'s back.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1971 ‘A. Gilbert’, Tenant for Tomb &amp;#8220;The Bear Lady said brightly that it was a nice day for the &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - In phrases and proverbial sayings. duck's weather, fine day for ducks, etc., referring to wet weather; like a duck in thunder, like a (dying) duck in a thunderstorm: having a forlorn and hopeless appearance; like water off (or from) a duck's back, like (or as) a duck (takes) to water: easily, readily; does (or will, would) a duck swim?: a colloquial phrase of enthusiastic acceptance or confirmation. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>38</ID>
+    <Title>duck_nn01-5</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1687 S. Sewall, Let. Bk. &amp;#8220;Six tone of shott, of which three ton Goose, two tone Duck, one pigeon.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1775 , Jrnls. Cont. Congr. &amp;#8220;Procure a quantity of &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; and powder.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1845 W. G. Simms, Wigwam &amp; Cabin &amp;#8220;Draw the loads, Scip, and put in some of the high &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - elliptical. Duck-shot. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>39</ID>
+    <Title>duck_nn01-6</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>lame &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1761 H. Walpole, Lett. to H. Mann &amp;#8220;Do you know what a Bull, and a Bear, and a Lame Duck are?&amp;#8221; &lt;BR&gt;&lt;BR&gt;1771 D. Garrick,  &amp;#8220;Change-Alley bankrupts waddle out lame &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s!&amp;#8221; &lt;BR&gt;&lt;BR&gt;1806 J. Beresford, Miseries Human Life &amp;#8220;Attending at the Stock-exchange on settling-day amidst the quack of Ducks, the bellowings of Bulls, and the growls of Bears.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1832 T. B. Macaulay, Mirabeau &amp;#8220;Frauds of which a lame &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; on the Stock exchange would be ashamed.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1889 C. D. Warner, Little Journey World &amp;#8220;Do you think I have time to attend to every poor &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;?&amp;#8221; &lt;BR&gt;&lt;BR&gt;1929 W. J. Locke, Jorico &amp;#8220;She was something of a lame &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; of a craft.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>lame duck - lame duck: a disabled person or thing: spec. (Stock Market slang): one who cannot meet his financial engagements; a defaulter. Also in extended use and, short, duck. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>40</ID>
+    <Title>duck_nn01-7</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1774 O. Goldsmith, Hist. Earth &amp;#8220;Plutarch assures us, that Cato kept his whole family in health, by feeding them with &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; whenever they threatened to be out of order.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - The flesh of this fowl. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>41</ID>
+    <Title>duck_nn01-8</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1803 M. Elphinstone,  &amp;#8220;They have neither the comforts of a Bengal army, nor do they rough it, like the Ducks.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1879 C. R. Low, Afghan War &amp;#8220;The ‘Ducks’ (as the Bombay troops are called) enjoy it much.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - Anglo-Indian slang. A nickname for soldiers of the Bombay Presidency. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>42</ID>
+    <Title>duck_nn01-9</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1819 M. Wilmot, Let. &amp;#8220;I shall presently throw my letter into the long drawer at the top of my &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; of a secretaire.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1841 , Punch &amp;#8220;If our remarks were made with an affectionate eye to the young ladies of the satin-album-loving school, we should assuredly style this ‘a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; of a picture’.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1884 , Rede's Sixteen String Jack &amp;#8220;Oh, isn't he a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; of a fellow?&amp;#8221; &lt;BR&gt;&lt;BR&gt;1891 J. S. Farmer, Slang &amp;#8220;A &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; of a bonnet.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - Often a duck of a…; and applied to things as well as persons. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>43</ID>
+    <Title>duck_nn01-10</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1821 , Blackwood's Edinb. Mag. &amp;#8220;The &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; is a small stone placed on a larger, and attempted to be hit off by the players at the distance of a few paces.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1888 F. T. Elworthy, W. Somerset Word-bk. &amp;#8220;Duck, a game.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1893 , Cassell's Bk. Sports &amp; Pastimes &amp;#8220;The players then, standing at home, ‘pink for &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;’, that is, they throw their stones towards the block, and he whose stone remains farthest from the block is first &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - A boy's game, also called duckstone, duckiestone; also one of the stones used in this game, and sometimes a player. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>44</ID>
+    <Title>duck_nn01-11</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>Bombay &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1850 F. Mason, Nat. Productions Burmah &amp;#8220;A fish nearly related to the salmon is dried and exported in large quantities from Bombay, and has acquired the name of Bombay Ducks.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1879 F. S. Bridges, Round World in Six Months &amp;#8220;‘Bombay Ducks’ are always served with curry. These are small dried fish of a peculiar flavour, and are quite dry and crisp.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>Bombay duck - Bombay duck = bummalo n. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>45</ID>
+    <Title>duck_nn01-12</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1853 A. H. Layard, Discov. Nineveh &amp; Babylon &amp;#8220;The actual weight of the large &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s in the British Museum being 480 oz. troy.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - Historical. (More fully duck-weight n. at  compounds 2a.) A stone or clay figure of a duck used as a weight in ancient Assyria and Babylonia. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>46</ID>
+    <Title>duck_nn01-13</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1857 , Phoenix (Sacramento, Calif.) &amp;#8220;No such ‘&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;’ as this could nab the ‘Ubiquitous’.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1872 ‘M. Twain’, Roughing It &amp;#8220;Are you the &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; that runs the gospel-mill next door?&amp;#8221; &lt;BR&gt;&lt;BR&gt;1903 A. Adams, Log of Cowboy &amp;#8220;I can't quite make out this other &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;, but I reckon he's some big auger.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1904 W. H. Smith, Promoters &amp;#8220;As you said, Goldsby, Slosher's a slick &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - A fellow, ‘customer’. U.S. slang. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>47</ID>
+    <Title>duck_nn01-14</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1868 , St. Paul's Mag. &amp;#8220;You see..that his fear of a ‘&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;’—as by a pardonable contraction from &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;-egg a nought is called in cricket-play—outweighs all other earthly considerations.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1880 , Daily Tel. &amp;#8220;Life is very much like cricket: Some get scores and some ‘a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;’.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1885 , Daily Rev. (Edinb.) &amp;#8220;The former batter proved a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - Cricket slang. (Short for duck's egg n.). No score, nought; also, a player who fails to score. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>48</ID>
+    <Title>duck_nn01-15</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>Sydney &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1873 ‘J. Miller’, Life amongst Modocs &amp;#8220;There are some hard names given on the Pacific; but when you call a man a ‘Sydney &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;’ it is well understood that you mean blood.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>Sydney duck - Australian. Sydney duck: a convict. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>49</ID>
+    <Title>duck_nn01-16</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1874 , Hotten's Slang Dict. &amp;#8220;Duck, a bundle of bits of the ‘stickings’ of beef sold for food to the London poor. A faggot.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1876 C. C. Robinson, Gloss. Words Dial. Mid-Yorks. &amp;#8220;Duck, a faggot.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - dialect and slang. (See quots.) &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>50</ID>
+    <Title>duck_nn01-17</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1936 ‘J. Curtis’, Gilt Kid &amp;#8220;She crossed her legs. Her thighs were white and shapeless. ‘Got a fag, &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s?’&amp;#8221; &lt;BR&gt;&lt;BR&gt;1958 E. Hyams, Taking it Easy &amp;#8220;Talked like you 'e did, &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1958 , Times &amp;#8220;One is waited on; called ‘sir’, not ‘&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s’.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1963 , Times &amp;#8220;The comfortable northern friendliness of the expression ‘&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s’ as employed by comfortable northern females to all and sundry—to warm the heart towards the species.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - With hypocoristic suffix -s. Used as a familiar form of address. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>51</ID>
+    <Title>duck_nn01-18</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1938 , Amer. Speech &amp;#8220;Duck, a flying boat.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1942 E. Colby, Army Talk &amp;#8220;Ducks. Air Corps men..give the name to amphibian airplanes capable of landing on water or ground.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - (See quots.) U.S. slang. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>52</ID>
+    <Title>duck_nn01-19</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;</Question>
+      <Answer>duck - Short for lame duck at  sense 9. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>53</ID>
+    <Title>duck_vb01-1</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1299 , Cursor Mundi &amp;#8220;He that es duked ans dun.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1499 R. Henryson, Fables: Fox &amp; Wolf &amp;#8220;In the watter outher twyis or thryis He dowkit him.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1553 H. Willoughby,  &amp;#8220;Ducked at the yardes arme, and so discharged.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1598 J. Stow, Suruay of London &amp;#8220;Ouerthrowne and well &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;ed.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1600 , Hist. &amp; Life James VI &amp;#8220;They were dowkit in a deap loch over the heid thrie severall tymes.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1631 S. Rutherford, Lett. &amp;#8220;Howbeit, ye may be &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;ed, but ye cannot drown.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1751 W. Hone, Every-day Bk. &amp;#8220;A man and woman are to be publicly &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;ed at Tring.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1785 R. Burns, Poems &amp; Songs &amp;#8220;An' had in mony a well been douked.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1790 A. Wilson, Poems &amp;#8220;While I can douk in ink a quill.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1820 W. Scott, Abbot &amp;#8220;I say, &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; her in the loch, and then we will see whether she is witch or not.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - To plunge (a person or thing) momentarily in, into, or under water or other liquid. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>54</ID>
+    <Title>duck_vb01-2</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1399 , Cursor Mundi &amp;#8220;He þat doukeþ ones þer doun.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1399 , Alexander &amp;#8220;It was..bred full..Of dragons..&amp; doukand neddirs.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1481 W. Caxton, Hist. Reynard Fox &amp;#8220;They conne wel also duke in the water after lapwynches and dokys.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1552 R. Huloet, Abcedarium Anglico Latinum &amp;#8220;Ducke vnder the water, vide in dyue.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1581 J. Marbeck, Bk. Notes &amp; Common Places &amp;#8220;The outward sacrament of dipping or &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;ing in the water.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1625 P. Heylyn, Μικρόκοσμος &amp;#8220;Though to avoid their Darts he sometimes &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;ed, yet held he still his left hand aboue the water.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1855 F. K. Robinson, Gloss. Yorks. Words &amp;#8220;To Douk, to bathe or plunge under water, to &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1890 , Spectator &amp;#8220;It will be able ‘to &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;’ under the defensive nettings carried by men-of-war.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1897 , N.E.D. &amp;#8220;Mod. Sc. To dook for apples at Hallowe'en.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - To plunge or dive, or suddenly go down under water, and emerge again; to dip the head rapidly under water. &lt;BR&gt;This is the main current sense &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>55</ID>
+    <Title>duck_vb01-3</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1530 J. Palsgrave, Lesclarcissement &amp;#8220;I dowke, I stowpe lowe as a frere doth.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1535 , Bible (Coverdale) &amp;#8220;A wicked man can behaue himself humbly, and can douke with his heade.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1539 , Surrender of Monasteries &amp;#8220;Dokkyng, Nodding and Beckynge.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1599 T. Nashe, Lenten Stuffe &amp;#8220;Douking on all foure vnto him.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1608 S. Lennard, Of Wisdome &amp;#8220;To &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;e and stoop to all sorts of people.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1713 A. Pope, Guardian &amp;#8220;He never once Duck'd at the whizz of a Cannon Ball.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1869 R. Browning, Ring &amp; Bk. &amp;#8220;Law &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s to Gospel here.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1872 ‘G. Eliot’, Middlemarch &amp;#8220;Eat cold mutton, have to..‘&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; under’ in any sort of a way.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1887 W. Besant, World Went &amp;#8220;was comforted to see the men at the guns, none of them killed, and none of them &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;ing.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - To bend or stoop quickly so as to lower the body or head; to bob; to make a jerking bow; hence, figurative to cringe, yield; so, to duck under. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>56</ID>
+    <Title>duck_vb01-4</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1553 G. Douglas, Eneados &amp;#8220;Quhil al the wallis doukis to the ground Under the brayand quhelis, and assiltre.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1850 D. M. Moir, Snow &amp;#8220;Behold the trees Their fingery boughs stretch out..As they &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; and drive about.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1870 C. Dickens, Edwin Drood &amp;#8220;Receiving the foul fiend, when he &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s from its stage into the infernal regions.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - To make a sudden descent or dive, not under water. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>57</ID>
+    <Title>duck_vb01-5</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1598 E. Guilpin, Skialetheia &amp;#8220;But bring them to a charge, then..Though but a false fire, they theyr plumes wil &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1607 G. Markham, Cavelarice &amp;#8220;If..he haue taken a custome to &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; downe his head, when he standeth stil.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1730 J. Swift, To Doctor Delany &amp;#8220;When..first he hears The Bullets whistling round his Ears, Will &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; his Head.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1883 J. Gilmour, Among Mongols &amp;#8220;We..&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;ed our heads, and hurried into the tent.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - To lower (the head, etc.) suddenly and momentarily; to jerk down. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>58</ID>
+    <Title>duck_vb01-6</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; up&lt;BR&gt; &lt;BR&gt;1706 , Phillips's New World of Words &amp;#8220;‘Duck up the Clew-lines of those Sails’.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck up - duck up (Nautical): To raise with a jerk, haul up (a sail that obstructs the steersman's view). &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>59</ID>
+    <Title>duck_vb01-7</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1896 G. Ade, Artie &amp;#8220;He was with a lot o' them Prairie avenue boys, and purty soon he &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s 'em and comes over an' touches me for two cases.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1926 J. Black, You can't Win &amp;#8220;We'll get a passenger train out of Cheyenne, kid, if we can &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; Jeff Carr.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1928 , Daily Tel. &amp;#8220;Both sides, he says, have ‘&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;ed’ the problems of Labour and foreign policy.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1936 ‘R. Hyde’, Passport to Hell &amp;#8220;Soldiers who had &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;ed the church parades since the beginning of the War fell out of the lines to pray there.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1959 ‘M. M. Kaye’, House of Shade &amp;#8220;I should like to &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; the whole situation by getting roaring drunk.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1963 , Listener &amp;#8220;His peculiar play certainly &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;ed the questions of subjective and objective judgments that he chose to raise in Radio Times.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - transitive. To get away from, to avoid, dodge (a person or thing). colloquial (originally U.S.). &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>60</ID>
+    <Title>duck_vb01-8</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1896 G. Ade, Artie &amp;#8220;I think I'll have to &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; on that present.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1900 G. Ade, Fables in Slang &amp;#8220;Having delivered herself of these Helpful Remarks she would Duck.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1910 W. M. Raine, Bucky O'Connor &amp;#8220;Coming through the cañon Del Oro in the night, he &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;ed; I reckon he's in Mexico now.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1911 H. S. Harrison, Queed &amp;#8220;It's about over. And now I must pay for my fun—&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; back to the office.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1917 H. L. Wilson, Ruggles of Red Gap &amp;#8220;I &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; out every morning before she's up.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1919 P. G. Wodehouse, Damsel in Distress &amp;#8220;He saw me, too, and what do you think he did? Ducked down a side-street, if you please.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1968 , Globe &amp; Mail (Toronto) &amp;#8220;A wealthy bachelor, he &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;ed away from a question on the extent of his financial resources.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - To back out, withdraw; to make off, abscond; to default. colloquial (originally U.S.). &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>61</ID>
+    <Title>duck_vb01-9</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1905 R. F. Foster, Compl. Bridge &amp;#8220;Ducking..is refusing to part with the command of your own suit, and is usually resorted to in situations in which no finesse is possible.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1905 R. F. Foster, Compl. Bridge &amp;#8220;The dealer sees that it is impossible to catch the K, Q, 10 of spades, so he &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s the suit by leading a small card.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1905 R. F. Foster, Compl. Bridge &amp;#8220;As there is no card in dummy's hand but the club ace that will bring the suit into play, that card must be kept as a re-entry until the third round, and the first two rounds of the suit must be &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;ed.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1905 R. F. Foster, Compl. Bridge &amp;#8220;Ducking.—Refusing to win tricks when able to do so.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1928 , Daily Express &amp;#8220;You can frequently make the most of a suit by deliberately losing the first trick. This method of play, called ‘&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;ing’, is founded not only on the law of average probabilities but also on the expectation that the cards are normally distributed.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - transitive and intransitive. In the game of Bridge (see quots.). &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>62</ID>
+    <Title>duck_nn02-1</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1554 T. Sampson,  &amp;#8220;The fond nods, crosses, becks, and &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1637 J. Milton, Comus &amp;#8220;Without &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; or nod.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1651 R. Brome, New Acad. &amp;#8220;Be ready with your Napkin, and a lower douke maid.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1802 C. Lamb, John Woodvil &amp;#8220;The &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s, and nods Which weak minds pay to rank.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1879 S. St. John, Life Sir J. Brooke &amp;#8220;The ball rushing over our heads, caused a most undignified &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - An instantaneous lowering of head or body; a rapid jerky bow or obeisance. &lt;BR&gt;This is the main current sense &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>63</ID>
+    <Title>duck_nn02-2</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1836 C. J. Latrobe,  &amp;#8220;Two singular basins..not large enough for any monarch bigger than Oberon to take a &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; in.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1876 , World &amp;#8220;The elder women content themselves with a few &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s as the waves break over them.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - A quick plunge, a dip. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>64</ID>
+    <Title>duck_nn03-1</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1640 , Tables Rates &amp; Duties &amp;#8220;Duck hinderlands, middle good headlock.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1660 , Act 12 Chas. II &amp;#8220;Drilling &amp; pack &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;e ye 100 ells cont. 6 score.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1780 T. Jefferson, Let. &amp;#8220;What is to be done for tents, I know not. I am assured that very little &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; can be got in this country.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1834 F. Marryat, Jacob Faithful &amp;#8220;A shirt of coarse &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1883 T. Hardy, Longman's Mag. &amp;#8220;The genuine white smock-frock of Russia &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt; and the whity-brown one of drabbet, are rarely seen now afield.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - A strong untwilled linen (or later, cotton) fabric, lighter and finer than canvas; used for small sails and men's (esp. sailors') outer clothing. &lt;BR&gt;This is the main current sense &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>65</ID>
+    <Title>duck_nn03-2</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s&lt;BR&gt; &lt;BR&gt;1825 , Universal Songster &amp;#8220;T'other day I saw a goose in white &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1829 Miss Sheridan, Lett. etc. Dk. Somerset &amp;#8220;The boys were in white &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s, with lightish green jackets.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1849 W. M. Thackeray, Pendennis &amp;#8220;They must be young Pendennis's white &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>ducks - plural. Trousers of this material. &lt;BR&gt;</Answer>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>66</ID>
+    <Title>duck_nn04-1</Title>
+    <Type>Item</Type>
+    <Content>
+      <Question>&lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;BR&gt; &lt;BR&gt;1943 , War Illustr. &amp;#8220;‘Ducks’ they are called in soldier slang, and it is easy to see why. In the first place there is something &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;-like about these queer motor-barges-cum-trucks which are as much at home on the sea as on the land; and then their factory serial letters placed together spell ‘Dukws’.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1944 , Hansard Commons &amp;#8220;The marvellous American invention, the ‘Duck’, spelt D.U.K.W., is a heavy lorry which goes at between 40 and 50 miles per hour along the road, and can plunge into the water and swim out for miles to sea in quite choppy weather.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1945 , Manch. Guardian &amp;#8220;Officially known as ‘Dukws’—a combination of the factory serial letters D for boat, U for lorry body, and KW for lorry chassis—they quickly became known in the Army and Navy as ‘Ducks’.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1945 , Ann. Reg. 1944 &amp;#8220;‘Ducks’, amphibious lorries which were equally at home on land and in the water.&amp;#8221; &lt;BR&gt;&lt;BR&gt;1958 , Observer &amp;#8220;Supply craft might stand offshore and disgorge their cargoes into &lt;FONT color=#ff0000&gt;&lt;STRONG&gt;&lt;EM&gt;duck&lt;/EM&gt;&lt;/STRONG&gt;&lt;/FONT&gt;s and other smaller craft.&amp;#8221; &lt;BR&gt;&lt;BR&gt;</Question>
+      <Answer>duck - An amphibious vehicle (see quots.). &lt;BR&gt;This is the main current sense &lt;BR&gt;</Answer>
       <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
     </Content>
   </SuperMemoElement>
