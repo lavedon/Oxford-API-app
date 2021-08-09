@@ -61,6 +61,7 @@ namespace oed
 				// Add obsolete etc. options?
 				queryURL = coreQueryFeatures(query, queryURL);
 				query = makeQSRequest(query, client, queryURL);
+				displayQuotesAndSenses(query);
 				// displayQUotesAndSenses(makeQuotesAndSensesRequest(query, client, queryURL));
 			}
 
@@ -75,16 +76,14 @@ namespace oed
 				var response = client.GetStringAsync(requestURL).Result;
 				var options = new JsonSerializerOptions { IgnoreNullValues = true };
 				var json = JsonSerializer.Deserialize<SQ_Root>(response);
-
+				query.SQ_Data.Add(json.data);
 				// @TODO fix this
-				// query.SQ_Data.Add(json.data[0]);
 			}
 			catch(Exception ex)
 			{
-				Console.WriteLine("Exception");
-				Console.WriteLine(ex.GetType());
-				Console.WriteLine(ex.Message);
-				Console.ReadLine();
+				Trace.WriteLine("Exception");
+				Trace.WriteLine(ex.GetType());
+				Trace.WriteLine(ex.Message);
 			}
 			};
 
@@ -407,6 +406,46 @@ namespace oed
 		private static void displayQUotesAndSenses(CurrentQuery query)
 		{
 			Console.WriteLine("Code displaying Senses with quotes here.");
+		}
+
+		private static void displayQuotesAndSenses(CurrentQuery query)
+		{
+			foreach (var sq in query.SQ_Data)
+			{
+				Console.WriteLine("{0}", sq.definition);
+				int sNum = 1;
+				foreach (Sens s in sq.senses)
+				{
+					Console.WriteLine($"Sense #{sNum}");
+					Console.WriteLine(s.definition);
+					Console.WriteLine($"First use: {s.first_use}");
+					Console.WriteLine($"Part of speech: {s.part_of_speech}");
+					Console.WriteLine($"Listed daterange: {s.daterange.rangestring}");
+					Console.WriteLine($"{s.daterange.start} - {s.daterange.end}");
+					if (s.main_current_sense) {
+						Console.WriteLine("This sense is the main sense for the word.");
+					}
+					if (s.daterange.obsolete)
+					{
+						Console.WriteLine("This sense is obsolete.");
+					}
+					Console.WriteLine("Quotations: ");
+					Console.WriteLine("-----------------------");
+					int qNum = 1;
+					foreach (Quotation q in s.quotations)
+					{
+						Console.WriteLine($"Quotation #{qNum}");
+						Console.WriteLine(q.text.full_text);
+						Console.WriteLine($"{q.source.author}, {q.source.title}");
+						Console.WriteLine(q.year.ToString());
+						Console.WriteLine("--------------------");
+						Console.WriteLine();
+						qNum++;
+					}
+					sNum++;
+				}
+			}
+
 		}
 
 		private static void displayDerivatives(CurrentQuery query)
