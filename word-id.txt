@@ -1,2 +1,1 @@
-apple_nn01
-apple_vb01
+airplane_nn01

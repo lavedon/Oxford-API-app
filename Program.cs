@@ -528,6 +528,7 @@ namespace oed
         {
             Trace.WriteLine($"CLI word entered was {word}");
             Trace.WriteLine($"Return quotes from word search {quotes}");
+            Trace.WriteLine($"Return senses with quotes {quotesAndSenses}");
             Trace.WriteLine($"obsoleteOnlyOption: {obsoleteOnly}");
             Trace.WriteLine($"excludeObsoleteOption: {obsoleteExclude}.");
             Trace.WriteLine($"partOfSpeech: {partOfSpeech ?? "null"}");

@@ -175,7 +175,7 @@ namespace oed
 					var questionText = new System.Text.StringBuilder();
 					var answerText = new System.Text.StringBuilder();
 					// answerText.Append($"{sq.definition} <BR> <BR>");
-					answerText.Append($"Sense #{sNum} <BR>");
+					// answerText.Append($"Sense #{sNum} <BR>");
 					answerText.Append($"{s.lemma} - {s.definition} <BR>");
 					answerText.Append($"First use: {s.first_use} <BR>");
 					answerText.Append($"Part of speech: {s.part_of_speech} <BR>");
@@ -190,16 +190,18 @@ namespace oed
 					}
 					int qNum;
 					qNum = 1;
+					questionText.Append(s.lemma);
+						questionText.Append("<BR> <BR>");
 					foreach (Quotation q in s.quotations) 
 					{
-						questionText.Append($"Quotation #{qNum}: <BR>");
-						questionText.Append(q.text.full_text);
-						questionText.Append("<BR>");
-						questionText.Append($"{q.source.author}, {q.source.title} <BR>");
-						questionText.Append($"{q.year.ToString()} <BR> <BR>");
+						// questionText.Append($"Quotation #{qNum}: <BR>");
+						questionText.Append($"{q.year.ToString()} ");
+						questionText.Append($"{q.source.author}, {q.source.title} ");
+						questionText.Append($"&#8220;{q.text.full_text}&#8221; <BR><BR>");
 						qNum++;
 					}
-					xml.WriteElementString("Question", questionText.ToString());
+					
+					xml.WriteElementString("Question", questionText.ToString().Replace(sq.lemma, $"<FONT color=#ff0000><STRONG><EM>{sq.lemma}</EM></STRONG></FONT>"));
 					xml.WriteElementString("Answer", answerText.ToString());
 					string encoded = WebUtility.HtmlEncode("<H5 dir=ltr align=left><Font size=\"1\" style=\"color: transparent\"> SuperMemo Reference:</font><br><FONT class=reference>Title:\"My Test Quote\" <br>Source: Oxford English Dictionary");
 					xml.WriteElementString("SuperMemoReference", encoded);
