@@ -1,3 +1,5 @@
+#nullable enable
+#nullable disable warnings
 using System;
 using System.Collections.Generic;
 
@@ -83,7 +85,7 @@ namespace oed {
     {
         public string keyword { get; set; }
         public string full_text { get; set; }
-        public int keyword_offset { get; set; }
+        public object keyword_offset { get; set; }
     }
 
     public class Source
@@ -117,7 +119,7 @@ namespace oed {
         public List<string> notes { get; set; }
         public string oed_url { get; set; }
         public string word_id { get; set; }
-        public Daterange daterange { get; set; }
+        public Daterange? daterange { get; set; }
         public string first_use { get; set; }
         public Categories categories { get; set; }
         public string definition { get; set; }
@@ -136,7 +138,7 @@ namespace oed {
         public Meta meta { get; set; }
         public string lemma { get; set; }
         public string oed_url { get; set; }
-        public Daterange daterange { get; set; }
+        public Daterange? daterange { get; set; }
         public Etymology etymology { get; set; }
         public string first_use { get; set; }
         public List<List<double>> frequency { get; set; }

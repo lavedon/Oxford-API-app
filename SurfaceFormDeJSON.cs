@@ -1,3 +1,5 @@
+#nullable enable
+#nullable disable warnings
 using System;
 using System.Collections.Generic;
 
@@ -12,7 +14,7 @@ namespace oed {
             public string cite { get; set; }
             public int created { get; set; }
             public bool revised { get; set; }
-            public int updated { get; set; }
+            public object updated { get; set; }
             public string sense_group { get; set; }
             public int position_in_entry { get; set; }
         }

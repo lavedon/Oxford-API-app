@@ -14,7 +14,9 @@ namespace oed
 		Senses,
 		Quotations,
 		Surfaces,
-		Derivatives
+		Derivatives,
+		QuotesAndSenses
+		
 	}
 	public class CurrentQuery : IDisposable
 	{
@@ -72,6 +74,7 @@ namespace oed
 		public List<Datum> Surfaces { get; set; }
 		// public SurfaceFormDeJSON? SurfaceJson  { get; set;}
 		public List <Derivatives> Derivatives { get; set; }
+		public List <SQ_Data> SQ_Data { get; set; }
 
 		public CurrentQuery() {
 			this.HasLookedUpWord = false;
@@ -105,6 +108,7 @@ namespace oed
 			// this.SurfaceJson = new();
 			this.Surfaces = new List<Datum>();
 			this.Derivatives = new List<Derivatives>();
+			this.SQ_Data = new List<SQ_Data>();
 			this.WhatToExport = new List<int>();
 			// this.PreviousWordIds = new();
 			

@@ -49,6 +49,51 @@ namespace oed
 			return root;
 		}
 
+		public static void GetQuotesAndSenses(CurrentQuery query, HttpClient client)
+		{
+			// Get word IDs
+			query = SavedQueries.LoadWordIds(query);
+
+			foreach (Definition d in query.Definitions)
+			{
+				Trace.WriteLine("Called GetQuotesAndSenses() method.");
+				string queryURL = "word/" + d.WordID + "?include_senses=true&include_quotations=true";
+				// Add obsolete etc. options?
+				queryURL = coreQueryFeatures(query, queryURL);
+				query = makeQSRequest(query, client, queryURL);
+				// displayQUotesAndSenses(makeQuotesAndSensesRequest(query, client, queryURL));
+			}
+
+		}
+			static CurrentQuery makeQSRequest(CurrentQuery query, HttpClient client, string queryURL)
+			{
+			Action<object> callQuotesAndSensesAPI = (Object obj) => 
+			{
+				Uri requestURL = new Uri(baseURL + queryURL);
+			try {
+				Console.WriteLine(requestURL.AbsoluteUri);
+				var response = client.GetStringAsync(requestURL).Result;
+				var options = new JsonSerializerOptions { IgnoreNullValues = true };
+				var json = JsonSerializer.Deserialize<SQ_Root>(response);
+
+				// @TODO fix this
+				// query.SQ_Data.Add(json.data[0]);
+			}
+			catch(Exception ex)
+			{
+				Console.WriteLine("Exception");
+				Console.WriteLine(ex.GetType());
+				Console.WriteLine(ex.Message);
+				Console.ReadLine();
+			}
+			};
+
+			resetHeaders(client);
+			Task getDerivatives = new Task(callQuotesAndSensesAPI, "Call QuotesAndSenses");
+			getDerivatives.RunSynchronously();
+			return query;
+		}
+
 		public static void GetDerivatives(CurrentQuery query, HttpClient client, string wordID)
 		{
 			Trace.WriteLine("Called GetDerivatives() method.");
@@ -70,6 +115,7 @@ namespace oed
 				Program.ParseExport(query, export);
 			}
 			}
+
 
 			CurrentQuery makeDerivativesRequest(CurrentQuery query, HttpClient client, string queryURL)
 			{
@@ -358,6 +404,11 @@ namespace oed
             }
         }
 
+		private static void displayQUotesAndSenses(CurrentQuery query)
+		{
+			Console.WriteLine("Code displaying Senses with quotes here.");
+		}
+
 		private static void displayDerivatives(CurrentQuery query)
 		{
 			Console.WriteLine("Derivatives: #");
@@ -499,8 +550,9 @@ namespace oed
 	{
 		ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 		var client = new HttpClient();
-
-		GetDerivatives(query, client, wordID);
+		if (query.QueryMode == Modes.Derivatives) {
+			GetDerivatives(query, client, wordID);
+		}
 	}
 	public static void APICalls(CurrentQuery query)
 	{
@@ -508,6 +560,11 @@ namespace oed
 		// Which API to call next 
 		ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 		var client = new HttpClient();
+		if (query.QueryMode == Modes.QuotesAndSenses)
+		{
+			GetQuotesAndSenses(query, client);
+			return;
+		}
 
 		// @TODO make this one Action delegate - with a method that parses the query and responses
 		Action<object> callWordsAPI = (Object obj) =>

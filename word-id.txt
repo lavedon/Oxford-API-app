@@ -1,2 +1,4 @@
-apple_nn01
-apple_vb01
+orange_nn01
+orange_jj01
+orange_nn02
+orange_jj02

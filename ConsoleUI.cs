@@ -358,7 +358,7 @@ namespace oed
 					Trace.WriteLine($"Trying to export word definition #{i}");
 					SavedQueries.DefinitionsForExport.Add(query.Definitions[query.WhatToExport[i] - 1]);
 				}
-				if (query.QuotesFromWord | query.QuotesAndSenses) {
+				if (query.QuotesFromWord || query.QuotesAndSenses) {
 					return;
 				}
 			}
@@ -436,6 +436,10 @@ namespace oed
 					SavedQueries.RenderXML();
 				}
 				*/
+			// TODO call this from a place where we get the word_ids.
+			} else if (query.QuotesAndSenses) {
+				query.QueryMode = Modes.QuotesAndSenses;
+				API.APICalls(query);
 			}
         }
 
