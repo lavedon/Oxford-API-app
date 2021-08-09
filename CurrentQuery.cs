@@ -61,6 +61,7 @@ namespace oed
 		public int EndYear { get; set; }
 		public bool OpenEnd { get; set;}
 		public bool QuotesFromWord { get; set ; }
+		public bool QuotesAndSenses { get; set ; }
 		public bool InteractiveMode { get; set; }
 		public bool ExportAfterSearch { get; set; }
 		public List<int> WhatToExport { get; set; }
@@ -100,6 +101,7 @@ namespace oed
 			this.CurrentSurfaceOptions = null;
 			this.LemmaText = "";
 			this.QuotesFromWord = false;
+			this.QuotesAndSenses = false;
 			// this.SurfaceJson = new();
 			this.Surfaces = new List<Datum>();
 			this.Derivatives = new List<Derivatives>();

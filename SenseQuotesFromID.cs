@@ -154,6 +154,6 @@ namespace oed {
     {
         public Meta meta { get; set; }
         public Links links { get; set; }
-        public Data data { get; set; }
+        public SQ_Data data { get; set; }
     }
 }

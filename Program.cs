@@ -192,14 +192,25 @@ namespace oed
             rootCommand.AddGlobalOption(new Option<bool>(new[] {"--revised", "r"}, description: "Restrict words taken from new and revised OED entries (OED-3rd edition content)"));
             rootCommand.AddGlobalOption(new Option<bool>(new[] {"--revised-not", "rn"}, description: "Restrict to non revised sources only. (OED 2nd and 1rst edition)"));
 
+            // Other non-global root options for complex queries
             var quotes = new Option<bool>("--quotes",
-                    description: "Return quotations based on the entered word.  Identcial to 'Quote w'"
+                    description: "Return quotations for each word definition.  Use with export to make SuperMemo items where quotations are matched with their respective defintion."
             )
             {
-                IsRequired = false,
+                IsRequired = false
             };
             quotes.AddAlias("q");
             rootCommand.AddOption(quotes);
+
+
+            var quotesAndSenses = new Option<bool>("--quotes-and-senses",
+                    description: "Return quotations for each sense definition.  Senses, and the quotations for each sense, are automatically matched."
+            )
+            {
+                IsRequired = false
+            };
+            quotesAndSenses.AddAlias("qs");
+            rootCommand.AddOption(quotesAndSenses);
 
             rootCommand.AddCommand(senseCommand);
             rootCommand.AddCommand(quoteCommand);
@@ -208,7 +219,7 @@ namespace oed
             rootCommand.AddCommand(lemmaCommand);
 
             rootCommand.Description = "An app which processes the Oxford English Dictionary Researcher API, and exports to SuperMemo.";
-            rootCommand.Handler = CommandHandler.Create<string, bool, bool, bool, string?, string?, bool, bool, bool, string?, string?, bool, bool>(HandleArgs);
+            rootCommand.Handler = CommandHandler.Create<string, bool, bool, bool, bool, string?, string?, bool, bool, bool, string?, string?, bool, bool>(HandleArgs);
 
 
             string directoryPath = string.Concat(Environment.CurrentDirectory, "\\logs");
@@ -259,7 +270,7 @@ namespace oed
         {
             Console.WriteLine("q to exit.");
             Console.Write(">");
-            string? input = Console.ReadLine().Trim().ToLower();
+            string? input = Console.ReadLine();
             if (string.IsNullOrWhiteSpace(input))
             {
                 Console.WriteLine("No arguments entered");
@@ -513,7 +524,7 @@ namespace oed
             }
 
         }
-        public static void HandleArgs(string word, bool quotes, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, bool interactive, bool export)
+        public static void HandleArgs(string word, bool quotes, bool quotesAndSenses, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, bool interactive, bool export)
         {
             Trace.WriteLine($"CLI word entered was {word}");
             Trace.WriteLine($"Return quotes from word search {quotes}");
@@ -535,6 +546,11 @@ namespace oed
             if (quotes)
             {
                 query.QuotesFromWord = true;
+            }
+            if (quotesAndSenses)
+            {
+                query.QuotesFromWord = false;
+                query.QuotesAndSenses = true;
             }
             if (!string.IsNullOrWhiteSpace(etymologyLanguage))
             {

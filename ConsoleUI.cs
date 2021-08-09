@@ -358,7 +358,7 @@ namespace oed
 					Trace.WriteLine($"Trying to export word definition #{i}");
 					SavedQueries.DefinitionsForExport.Add(query.Definitions[query.WhatToExport[i] - 1]);
 				}
-				if (query.QuotesFromWord) {
+				if (query.QuotesFromWord | query.QuotesAndSenses) {
 					return;
 				}
 			}
@@ -421,6 +421,9 @@ namespace oed
 			} else {
 				SavedQueries.SaveWordId(query);
 			}
+			// @TODO Make a version of this to call
+			// https://oed-researcher-api.oxfordlanguages.com/oed/api/v0.2/word/{word_id}?include_senses=true&include_quotations=true
+			// Similar to calling the Sense ID API
 			if (query.QuotesFromWord) {
 				string[] newArgs = Program.GetNewArgs();
 				Program.UserArgs = newArgs;
