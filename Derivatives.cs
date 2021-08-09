@@ -63,7 +63,7 @@ namespace oed {
         public string lemma { get; set; }
         public string oed_url { get; set; }
         public Daterange daterange { get; set; }
-        public Etymology etymology { get; set; }
+        public DerivativeEtymology etymology { get; set; }
         public string first_use { get; set; }
         public List<List<double>> frequency { get; set; }
         public List<string> sense_ids { get; set; }

@@ -14,12 +14,15 @@ namespace oed {
         public string sense_group { get; set; }
         public int position_in_entry { get; set; }
     }
+    */
 
+/*
     public class Links
     {
         public string self { get; set; }
     }
-
+    */
+/*
     public class Daterange
     {
         public object end { get; set; }
@@ -35,8 +38,10 @@ namespace oed {
         public string target_id { get; set; }
         public string part_of_speech { get; set; }
     }
+    */
 
-    public class Etymology
+// 
+    public class SQ_Etymology
     {
         public List<Etymon> etymons { get; set; }
         public string etymology_type { get; set; }
@@ -52,12 +57,13 @@ namespace oed {
         public string region { get; set; }
         public List<Inflection> inflections { get; set; }
     }
-
+/*
     public class Pronunciation
     {
         public List<string> ipa { get; set; }
         public string region { get; set; }
     }
+    */
 
     public class Categories
     {
@@ -123,7 +129,7 @@ namespace oed {
         public List<Quotation> quotations { get; set; }
     }
 
-    public class Data
+    public class SQ_Data
     {
         public string id { get; set; }
         public int band { get; set; }
@@ -144,11 +150,10 @@ namespace oed {
         public List<Sens> senses { get; set; }
     }
 
-    public class Root
+    public class SQ_Root
     {
         public Meta meta { get; set; }
         public Links links { get; set; }
         public Data data { get; set; }
     }
-    */
 }
