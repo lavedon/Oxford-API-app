@@ -1,0 +1,642 @@
+{
+  "meta": {
+    "provider": "Oxford University Press",
+    "cite": "Oxford English Dictionary API, Oxford University Press, 0.0.0.0/oed/api/v0.2/word/apple_vb01?include_senses=true&include_quotations=true . Accessed 09 August 2021"
+  },
+  "links": {
+    "self": "/oed/api/v0.2/word/apple_vb01?include_senses=true&include_quotations=true"
+  },
+  "data": {
+    "id": "apple_vb01",
+    "band": 11,
+    "meta": {
+      "created": 1885,
+      "revised": true,
+      "updated": 2008
+    },
+    "lemma": "apple",
+    "oed_url": "https://www.oed.com/view/Entry/9679#eid345077",
+    "daterange": {
+      "end": null,
+      "start": 1601,
+      "obsolete": false,
+      "rangestring": "1601—"
+    },
+    "etymology": {
+      "etymons": [
+        {
+          "word": "apple",
+          "language": "English",
+          "target_id": "apple_nn01",
+          "part_of_speech": "NN"
+        }
+      ],
+      "etymology_type": "conversion",
+      "etymon_language": [
+        [
+          "English"
+        ]
+      ],
+      "source_language": [
+        [
+          "European languages",
+          "Germanic"
+        ]
+      ],
+      "etymology_summary": "Formed within English, by conversion."
+    },
+    "first_use": "Philemon Holland",
+    "frequency": [
+      [
+        1750,
+        0.031
+      ],
+      [
+        1760,
+        0.028
+      ],
+      [
+        1770,
+        0.027
+      ],
+      [
+        1780,
+        0.025
+      ],
+      [
+        1790,
+        0.023
+      ],
+      [
+        1800,
+        0.022
+      ],
+      [
+        1810,
+        0.019
+      ],
+      [
+        1820,
+        0.016
+      ],
+      [
+        1830,
+        0.016
+      ],
+      [
+        1840,
+        0.015
+      ],
+      [
+        1850,
+        0.015
+      ],
+      [
+        1860,
+        0.015
+      ],
+      [
+        1870,
+        0.016
+      ],
+      [
+        1880,
+        0.017
+      ],
+      [
+        1890,
+        0.018
+      ],
+      [
+        1900,
+        0.019
+      ],
+      [
+        1910,
+        0.02
+      ],
+      [
+        1920,
+        0.021
+      ],
+      [
+        1930,
+        0.021
+      ],
+      [
+        1940,
+        0.02
+      ],
+      [
+        1950,
+        0.019
+      ],
+      [
+        1960,
+        0.018
+      ],
+      [
+        1970,
+        0.018
+      ],
+      [
+        1980,
+        0.019
+      ],
+      [
+        1990,
+        0.019
+      ],
+      [
+        2000,
+        0.018
+      ],
+      [
+        2010,
+        0.017
+      ]
+    ],
+    "definition": "intransitive. Of vegetables, flower buds, and esp. (in later use) root crops: to swell into a globular shape; to become shaped like an apple.",
+    "main_entry": true,
+    "inflections": [
+      {
+        "region": "British",
+        "inflections": [
+          {
+            "form": "apple",
+            "part_of_speech": "VB"
+          },
+          {
+            "form": "apples",
+            "part_of_speech": "VBZ"
+          },
+          {
+            "form": "appling",
+            "part_of_speech": "VBG"
+          },
+          {
+            "form": "appled",
+            "part_of_speech": "VBD"
+          },
+          {
+            "form": "appled",
+            "part_of_speech": "VBN"
+          }
+        ]
+      },
+      {
+        "region": "US",
+        "inflections": [
+          {
+            "form": "apple",
+            "part_of_speech": "VB"
+          },
+          {
+            "form": "apples",
+            "part_of_speech": "VBZ"
+          },
+          {
+            "form": "appling",
+            "part_of_speech": "VBG"
+          },
+          {
+            "form": "appled",
+            "part_of_speech": "VBD"
+          },
+          {
+            "form": "appled",
+            "part_of_speech": "VBN"
+          }
+        ]
+      }
+    ],
+    "frequency_id": "apple_vb01-fq",
+    "oed_reference": "apple, v.",
+    "pronunciations": [
+      {
+        "ipa": [
+          "ˈapl"
+        ],
+        "region": "British"
+      },
+      {
+        "ipa": [
+          "ˈaep(ə)l"
+        ],
+        "region": "US"
+      }
+    ],
+    "parts_of_speech": [
+      "VB"
+    ],
+    "senses": [
+      {
+        "id": "apple_vb01-345079",
+        "meta": {
+          "created": 1885,
+          "revised": true,
+          "updated": 2008,
+          "sense_group": "apple_vb01-g01",
+          "position_in_entry": 1
+        },
+        "lemma": "apple",
+        "notes": [],
+        "oed_url": "https://www.oed.com/view/Entry/9679#eid345079",
+        "word_id": "apple_vb01",
+        "daterange": {
+          "end": null,
+          "start": 1601,
+          "obsolete": false,
+          "rangestring": "1601—"
+        },
+        "first_use": "Philemon Holland",
+        "categories": {
+          "topic": [
+            [
+              "Sciences",
+              "Life Sciences",
+              "Plants"
+            ]
+          ],
+          "usage": [
+            [
+              "regional"
+            ]
+          ],
+          "region": [
+            [
+              "Britain and Ireland",
+              "Britain",
+              "England"
+            ]
+          ]
+        },
+        "definition": "intransitive. Of vegetables, flower buds, and esp. (in later use) root crops: to swell into a globular shape; to become shaped like an apple.",
+        "transitivity": {
+          "reflexive": false,
+          "transitive": false,
+          "intransitive": true
+        },
+        "oed_reference": "apple, v., sense 1",
+        "part_of_speech": "VB",
+        "main_current_sense": true,
+        "semantic_class_ids": [
+          [
+            "1",
+            "20470",
+            "22501",
+            "23831",
+            "23838",
+            "23976",
+            "24117"
+          ],
+          [
+            "1",
+            "20470",
+            "22501",
+            "23831",
+            "23838",
+            "24183",
+            "24351",
+            "24352"
+          ]
+        ],
+        "quotations": [
+          {
+            "id": "apple_vb01-121199687",
+            "text": {
+              "keyword": "apple",
+              "full_text": "For all the sort of them during the Summer throughout, never rest and give over, but either they floure, or they apple, or els be readie to bring foorth fruit.",
+              "keyword_offset": 113
+            },
+            "year": 1601,
+            "lemma": "apple",
+            "source": {
+              "title": "Hist. World",
+              "author": "P. Holland",
+              "gender": "male"
+            },
+            "oed_url": "https://www.oed.com/view/Entry/9679#eid121199687",
+            "word_id": "apple_vb01",
+            "sense_id": "apple_vb01-345079",
+            "datestring": "1601",
+            "first_in_word": true,
+            "oed_reference": "apple, v., sense 1",
+            "first_in_sense": true
+          },
+          {
+            "id": "apple_vb01-121285347",
+            "text": {
+              "keyword": "Apple",
+              "full_text": "To Pome or Apple, is said of the Heads of Artichokes when they grow round, and full shaped as an Apple. It is said also of Lettuce, &c.",
+              "keyword_offset": 11
+            },
+            "year": 1693,
+            "lemma": "apple",
+            "source": {
+              "title": "Compl. Gard'ner",
+              "author": "J. Evelyn",
+              "gender": "male"
+            },
+            "oed_url": "https://www.oed.com/view/Entry/9679#eid121285347",
+            "word_id": "apple_vb01",
+            "sense_id": "apple_vb01-345079",
+            "datestring": "1693",
+            "first_in_word": false,
+            "oed_reference": "apple, v., sense 1",
+            "first_in_sense": false
+          },
+          {
+            "id": "apple_vb01-345108",
+            "text": {
+              "keyword": "apple",
+              "full_text": "Unless the Soil has some mixture of Sand the Turnips do not apple, as they call it: that is, do not bottom well.",
+              "keyword_offset": 60
+            },
+            "year": 1712,
+            "lemma": "apple",
+            "source": {
+              "title": "Nat. Hist. Northants.",
+              "author": "J. Morton",
+              "gender": "male"
+            },
+            "oed_url": "https://www.oed.com/view/Entry/9679#eid345108",
+            "word_id": "apple_vb01",
+            "sense_id": "apple_vb01-345079",
+            "datestring": "1712",
+            "first_in_word": false,
+            "oed_reference": "apple, v., sense 1",
+            "first_in_sense": false
+          },
+          {
+            "id": "apple_vb01-118478248",
+            "text": {
+              "keyword": "appled",
+              "full_text": "The Turneps grew 'till Christmas or longer, and appled well in gravelly or stony Grounds, because their Roots can't here enter so deep.",
+              "keyword_offset": 48
+            },
+            "year": 1750,
+            "lemma": "apple",
+            "source": {
+              "title": "Mod. Husbandman",
+              "author": "W. Ellis",
+              "gender": "male"
+            },
+            "oed_url": "https://www.oed.com/view/Entry/9679#eid118478248",
+            "word_id": "apple_vb01",
+            "sense_id": "apple_vb01-345079",
+            "datestring": "1750",
+            "first_in_word": false,
+            "oed_reference": "apple, v., sense 1",
+            "first_in_sense": false
+          },
+          {
+            "id": "apple_vb01-345126",
+            "text": {
+              "keyword": "apples",
+              "full_text": "The cabbage turnep is of two kinds; one apples above ground, and the other in it.",
+              "keyword_offset": 40
+            },
+            "year": 1798,
+            "lemma": "apple",
+            "source": {
+              "title": "Introd. Knowl. & Pract. Gardening",
+              "author": "C. Marshall",
+              "gender": "male"
+            },
+            "oed_url": "https://www.oed.com/view/Entry/9679#eid345126",
+            "word_id": "apple_vb01",
+            "sense_id": "apple_vb01-345079",
+            "datestring": "1798",
+            "first_in_word": false,
+            "oed_reference": "apple, v., sense 1",
+            "first_in_sense": false
+          },
+          {
+            "id": "apple_vb01-119842068",
+            "text": {
+              "keyword": "apple",
+              "full_text": "Apple, to bottom at the roots. Turnips apple well, when the roots well, and assume a bulbous form.",
+              "keyword_offset": 39
+            },
+            "year": 1854,
+            "lemma": "apple",
+            "source": {
+              "title": "Gloss. Northants. Words",
+              "author": "A. E. Baker",
+              "gender": "female"
+            },
+            "oed_url": "https://www.oed.com/view/Entry/9679#eid119842068",
+            "word_id": "apple_vb01",
+            "sense_id": "apple_vb01-345079",
+            "datestring": "1854",
+            "first_in_word": false,
+            "oed_reference": "apple, v., sense 1",
+            "first_in_sense": false
+          },
+          {
+            "id": "apple_vb01-119842085",
+            "text": {
+              "keyword": "apple",
+              "full_text": "The fine-leaved turnips that have escaped the fly, but have still to ‘apple’.",
+              "keyword_offset": 70
+            },
+            "year": 1895,
+            "lemma": "apple",
+            "source": {
+              "title": "Birds, Beasts, & Fishes Norfolk Broadland",
+              "author": "P. H. Emerson",
+              "gender": "male"
+            },
+            "oed_url": "https://www.oed.com/view/Entry/9679#eid119842085",
+            "word_id": "apple_vb01",
+            "sense_id": "apple_vb01-345079",
+            "datestring": "1895",
+            "first_in_word": false,
+            "oed_reference": "apple, v., sense 1",
+            "first_in_sense": false
+          },
+          {
+            "id": "apple_vb01-120016860",
+            "text": {
+              "keyword": "apple",
+              "full_text": "Potatoes and onions are said to apple when they develop properly. A dialect use.",
+              "keyword_offset": 32
+            },
+            "year": 1923,
+            "lemma": "apple",
+            "source": {
+              "title": "Essex Dial. Dict.",
+              "author": "E. Gepp",
+              "gender": null
+            },
+            "oed_url": "https://www.oed.com/view/Entry/9679#eid120016860",
+            "word_id": "apple_vb01",
+            "sense_id": "apple_vb01-345079",
+            "datestring": "1923",
+            "first_in_word": false,
+            "oed_reference": "apple, v., sense 1",
+            "first_in_sense": false
+          },
+          {
+            "id": "apple_vb01-120440309",
+            "text": {
+              "keyword": "applin'",
+              "full_text": "Me taters be n't applin' like they ed ough'ter.",
+              "keyword_offset": 17
+            },
+            "year": 1948,
+            "lemma": "apple",
+            "source": {
+              "title": "Herts. Heritage",
+              "author": "M. Carbery",
+              "gender": "female"
+            },
+            "oed_url": "https://www.oed.com/view/Entry/9679#eid120440309",
+            "word_id": "apple_vb01",
+            "sense_id": "apple_vb01-345079",
+            "datestring": "1948",
+            "first_in_word": false,
+            "oed_reference": "apple, v., sense 1",
+            "first_in_sense": false
+          },
+          {
+            "id": "apple_vb01-120445571",
+            "text": {
+              "keyword": "appled",
+              "full_text": "Them blubs (bulbs) what we put awaay int' spring's gone an' appled nicely.",
+              "keyword_offset": 60
+            },
+            "year": 1995,
+            "lemma": "apple",
+            "source": {
+              "title": "Wodds & Doggerybaw: Lincs. Dial. Dict.",
+              "author": "J. M. Sims-Kimbrey",
+              "gender": "female"
+            },
+            "oed_url": "https://www.oed.com/view/Entry/9679#eid120445571",
+            "word_id": "apple_vb01",
+            "sense_id": "apple_vb01-345079",
+            "datestring": "1995",
+            "first_in_word": false,
+            "oed_reference": "apple, v., sense 1",
+            "first_in_sense": false
+          }
+        ]
+      },
+      {
+        "id": "apple_vb01-345134",
+        "meta": {
+          "created": 1885,
+          "revised": true,
+          "updated": 2008,
+          "sense_group": "apple_vb01-g02",
+          "position_in_entry": 2
+        },
+        "lemma": "apple",
+        "notes": [
+          "Eng. Dial. Dict. (at cited word) records this sense as still in use in Worcestershire in 1896."
+        ],
+        "oed_url": "https://www.oed.com/view/Entry/9679#eid345134",
+        "word_id": "apple_vb01",
+        "daterange": {
+          "end": null,
+          "start": 1799,
+          "obsolete": false,
+          "rangestring": "1799—"
+        },
+        "first_use": "Arthur Young",
+        "categories": {
+          "topic": [
+            [
+              "Agriculture and Horticulture",
+              "Agriculture"
+            ]
+          ],
+          "usage": [
+            [
+              "rare"
+            ],
+            [
+              "regional"
+            ]
+          ],
+          "region": [
+            [
+              "Britain and Ireland",
+              "Britain",
+              "England"
+            ]
+          ]
+        },
+        "definition": "intransitive. To gather fir cones (see fir-apple n. at  fir n. compounds 2). rare.",
+        "transitivity": {
+          "reflexive": false,
+          "transitive": false,
+          "intransitive": true
+        },
+        "oed_reference": "apple, v., sense 2",
+        "part_of_speech": "VB",
+        "main_current_sense": false,
+        "semantic_class_ids": [
+          [
+            "1",
+            "45969",
+            "51923",
+            "52254",
+            "52632",
+            "52947",
+            "52998",
+            "53000"
+          ]
+        ],
+        "quotations": [
+          {
+            "id": "apple_vb01-345138",
+            "text": {
+              "keyword": "apples",
+              "full_text": "The poor people supply themselves with very good fuel by gathering the fir-apples and rotten wood; you will sometimes see twenty children in my plantations appleing, as they call it.",
+              "keyword_offset": 75
+            },
+            "year": 1799,
+            "lemma": "apple",
+            "source": {
+              "title": "Gen. View Agric. County Lincoln",
+              "author": "A. Young",
+              "gender": "male"
+            },
+            "oed_url": "https://www.oed.com/view/Entry/9679#eid345138",
+            "word_id": "apple_vb01",
+            "sense_id": "apple_vb01-345134",
+            "datestring": "1799",
+            "first_in_word": false,
+            "oed_reference": "apple, v., sense 2",
+            "first_in_sense": true
+          },
+          {
+            "id": "apple_vb01-120445976",
+            "text": {
+              "keyword": "appling",
+              "full_text": "Going out appling is going out into the woods to collect fir cones for burning.",
+              "keyword_offset": 10
+            },
+            "year": 1995,
+            "lemma": "apple",
+            "source": {
+              "title": "Wodds & Doggerybaw: Lincs. Dial. Dict.",
+              "author": "J. M. Sims-Kimbrey",
+              "gender": "female"
+            },
+            "oed_url": "https://www.oed.com/view/Entry/9679#eid120445976",
+            "word_id": "apple_vb01",
+            "sense_id": "apple_vb01-345134",
+            "datestring": "1995",
+            "first_in_word": false,
+            "oed_reference": "apple, v., sense 2",
+            "first_in_sense": false
+          }
+        ]
+      }
+    ]
+  }
+}
