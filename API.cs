@@ -62,7 +62,7 @@ namespace oed
 				queryURL = coreQueryFeatures(query, queryURL);
 				query = makeQSRequest(query, client, queryURL);
 				displayQuotesAndSenses(query);
-				// displayQUotesAndSenses(makeQuotesAndSensesRequest(query, client, queryURL));
+				SavedQueries.RenderXML(query);
 			}
 
 		}
@@ -416,11 +416,13 @@ namespace oed
 				int sNum = 1;
 				foreach (Sens s in sq.senses)
 				{
+					Console.WriteLine();
+					Console.WriteLine("---------------------");
 					Console.WriteLine($"Sense #{sNum}");
 					Console.WriteLine(s.definition);
 					Console.WriteLine($"First use: {s.first_use}");
 					Console.WriteLine($"Part of speech: {s.part_of_speech}");
-					Console.WriteLine($"Listed daterange: {s.daterange.rangestring}");
+					// Console.WriteLine($"Listed daterange: {s.daterange.rangestring}");
 					Console.WriteLine($"{s.daterange.start} - {s.daterange.end}");
 					if (s.main_current_sense) {
 						Console.WriteLine("This sense is the main sense for the word.");
@@ -429,8 +431,10 @@ namespace oed
 					{
 						Console.WriteLine("This sense is obsolete.");
 					}
+					Console.WriteLine();
 					Console.WriteLine("Quotations: ");
 					Console.WriteLine("-----------------------");
+					Console.WriteLine();
 					int qNum = 1;
 					foreach (Quotation q in s.quotations)
 					{
