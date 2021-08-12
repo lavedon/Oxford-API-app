@@ -73,9 +73,23 @@ namespace oed
 		{
 			if (query.IncludeObsolete.HasValue && query.IncludeObsolete.Value)
 			{
-				Console.WriteLine("Filtering out obsolete values.");
-				Console.ReadLine();
+				foreach (var sq in query.SQ_Data)
+				{
+					sq.senses.Where(q => q.daterange.obsolete);
+
+				}
 			}
+			if (query.IncludeObsolete.HasValue && !query.IncludeObsolete.Value)
+			{
+				foreach (var sq in query.SQ_Data)
+				{
+					sq.senses.RemoveAll(q => q.daterange.obsolete);
+				}
+			}
+			if (query.DateRangeSet) {
+				// @TODO LINQ query to remove all quotes whose int year is out of date range
+			}
+				// @TODO implement other global options etymology, etc.
 			return query;
 
 		}
