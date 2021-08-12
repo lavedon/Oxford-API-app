@@ -73,6 +73,7 @@ namespace oed
 		{
 			if (query.IncludeObsolete.HasValue && query.IncludeObsolete.Value)
 			{
+				// the 'o' option 
 				foreach (var sq in query.SQ_Data)
 				{
 					sq.senses.Where(q => q.daterange.obsolete);
@@ -81,13 +82,18 @@ namespace oed
 			}
 			if (query.IncludeObsolete.HasValue && !query.IncludeObsolete.Value)
 			{
+				// the 'oe' option 
 				foreach (var sq in query.SQ_Data)
 				{
-					sq.senses.RemoveAll(q => q.daterange.obsolete);
+					sq.senses.RemoveAll(s => s.daterange.obsolete);
 				}
 			}
 			if (query.DateRangeSet) {
 				// @TODO LINQ query to remove all quotes whose int year is out of date range
+				foreach (var sq in query.SQ_Data)
+				{
+					sq.senses.Select(s => s.quotations.Where(q => q.year >= query.StartYear && q.year <= query.EndYear));
+				}
 			}
 				// @TODO implement other global options etymology, etc.
 			return query;
