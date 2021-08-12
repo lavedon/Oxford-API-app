@@ -61,12 +61,25 @@ namespace oed
 				// Add obsolete etc. options?
 				queryURL = coreQueryFeatures(query, queryURL);
 				query = makeQSRequest(query, client, queryURL);
+				// @TODO a method to filter out all global options.
+				query = filterQuotesAndSenses(query);
 				displayQuotesAndSenses(query);
 				SavedQueries.RenderXML(query);
 			}
 
 		}
-			static CurrentQuery makeQSRequest(CurrentQuery query, HttpClient client, string queryURL)
+
+		private static CurrentQuery filterQuotesAndSenses(CurrentQuery query)
+		{
+			if (query.IncludeObsolete.HasValue && query.IncludeObsolete.Value)
+			{
+				Console.WriteLine("Filtering out obsolete values.");
+				Console.ReadLine();
+			}
+			return query;
+
+		}
+		static CurrentQuery makeQSRequest(CurrentQuery query, HttpClient client, string queryURL)
 			{
 			Action<object> callQuotesAndSensesAPI = (Object obj) => 
 			{
@@ -402,11 +415,6 @@ namespace oed
                 Console.WriteLine(query.Quote);
             }
         }
-
-		private static void displayQUotesAndSenses(CurrentQuery query)
-		{
-			Console.WriteLine("Code displaying Senses with quotes here.");
-		}
 
 		private static void displayQuotesAndSenses(CurrentQuery query)
 		{
