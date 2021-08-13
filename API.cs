@@ -241,7 +241,7 @@ namespace oed
 		{
 			Trace.WriteLine("Called GetQuotations. Did not pass a sense.");
 			string queryURL;
-			if (!string.IsNullOrEmpty(query.CurrentQuoteOptions.FromWord)){
+			if (!string.IsNullOrEmpty(query.CurrentQuoteOptions.FromDefinition)){
 				foreach (string id in query.CurrentQuoteOptions.WordIDsToUse) {
 					queryURL = "word/";
 					query.CurrentWordID = id;
@@ -249,7 +249,17 @@ namespace oed
 					queryURL = addQuoteOptions(query, queryURL);
 
 					displayQuotes(query, makeCLIRequest(query, client, queryURL));
+				}
 			}
+			if (!string.IsNullOrEmpty(query.CurrentQuoteOptions.FromSense)){ 
+				foreach (string id in query.CurrentQuoteOptions.SenseIDsToUse) {
+					queryURL = "sense/";
+					query.CurrentSenseID = id;
+					queryURL = queryURL + id + "/quotations/";
+					queryURL = addQuoteOptions(query, queryURL);
+
+					displayQuotes(query, makeCLIRequest(query, client, queryURL));
+				}
 			}
 			if (query.CurrentQuoteOptions.UseWords)
 			{

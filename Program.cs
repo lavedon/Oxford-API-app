@@ -81,7 +81,7 @@ namespace oed
                 new[] {"--female", "f"}, description: "Only retrieve quotes from female authors."
             ){ IsRequired = false };
             var quoteSourceTitle = new Option<string>(
-                new[] {"--source-title", "s"}, description: "Find quotations from a particular source, such as a book or periodical.  Example, -st Bleak House"
+                new[] {"--source-title", "st"}, description: "Find quotations from a particular source, such as a book or periodical.  Example, -st Bleak House"
             ){ IsRequired = false };
             var quoteAuthor = new Option<string>(
                 new[] {"--author", "a"}, description: "Find quotations from a particular author.  Authors listed by first initial and last name (usually)."
@@ -101,6 +101,9 @@ namespace oed
             var quoteUseSenses = new Option<bool>(
                 new[] {"--use-senses", "us"}, description: "Use the saved list of looked up senses. Requires first using the Sense sub-command/verb.  Similar to --use-words."
             ){ IsRequired = false };
+            var quoteFromSense = new Option<string>(
+                new[] {"--from-sense", "s"}, description: "Get quotes for one of the returned senses in the last search.  i.e. fs1 to get quotes for the first sense fs2-4 to gather quotes for senses 2 through 4."
+            ){ IsRequired = false };
 
 
             // quoteCommand.AddOption(quoteAuthorGender);
@@ -114,8 +117,9 @@ namespace oed
             quoteCommand.AddOption(quoteUseWords);
             quoteCommand.AddOption(quoteFromDefinition);
             quoteCommand.AddOption(quoteUseSenses);
+            quoteCommand.AddOption(quoteFromSense);
 
-            quoteCommand.Handler = CommandHandler.Create<bool, bool, bool, string, string, bool, bool, string, bool, bool, string?, bool, bool>(HandleQuoteArgs);
+            quoteCommand.Handler = CommandHandler.Create<bool, bool, bool, string, string, bool, bool, string, bool, bool, string, string?, bool, bool>(HandleQuoteArgs);
 
             var surfaceCommand = new Command("Form");
 
@@ -452,7 +456,7 @@ namespace oed
                 SavedQueries.AddMember(query.Lemmas);
             }
         }
-        public static void HandleQuoteArgs(bool word, bool male, bool female, string sourceTitle, string author, bool firstWord, bool firstSense, string fromDefinition, bool useWords, bool useSenses, string? years, bool interactive, bool export)
+        public static void HandleQuoteArgs(bool word, bool male, bool female, string sourceTitle, string author, bool firstWord, bool firstSense, string fromDefinition, bool useWords, bool useSenses, string fromSense, string? years, bool interactive, bool export)
         {
             Trace.WriteLine($"Quote sub command entered.");
             Trace.WriteLine($"male: {male}");
@@ -472,7 +476,7 @@ namespace oed
             CurrentQuery query = new();
             processCommonOptions(years, interactive, export, query);
 
-            query.CurrentQuoteOptions = new(male, female, sourceTitle, author, firstWord, firstSense, fromDefinition, useWords, useSenses);
+            query.CurrentQuoteOptions = new(male, female, sourceTitle, author, firstWord, firstSense, fromDefinition, fromSense, useWords, useSenses);
             /*
             if (!string.IsNullOrWhiteSpace(authorGender))
             {
@@ -523,6 +527,28 @@ namespace oed
                     Trace.WriteLine($"{ex}");
                 }
                 ConsoleUI.GetQuotes(query);
+            }
+            else if (!string.IsNullOrWhiteSpace(fromSense))
+            {
+                try {
+                    List<int> whatSenses = ParseNumbers(fromSense);
+                    string senseIDFile = Path.Combine(Environment.CurrentDirectory, "sense-id-all.txt");
+                    string[] senseIds = File.ReadAllLines(senseIDFile);
+                    foreach (int n in whatSenses)
+                    {
+                        Trace.WriteLine($"File line to look up: {n}");
+                        Trace.WriteLine($"Sense id to look up ${senseIds[n]}");
+                        query.CurrentQuoteOptions.SenseIDsToUse.Add(senseIds[n]);
+
+                    }
+                }
+                catch (Exception ex) {
+                    Trace.WriteLine("Could not get ids from sense-id-all.txt");
+                    Trace.WriteLine("Could not retrieve the requested sense Ids from the sense id file.");
+                    Trace.WriteLine(ex);
+                }
+                ConsoleUI.GetQuotes(query);
+
             }
             else if (useWords)
             {

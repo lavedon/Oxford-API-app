@@ -40,8 +40,11 @@ namespace oed
                 public bool FirstWord { get; set; } = false;
                 public bool FirstSense { get; set; } = false;
 
-                public string? FromWord { get; set; } = null;
+                public string? FromDefinition { get; set; } = null;
                 public List<string> WordIDsToUse { get; set; }
+
+                public string? FromSense { get; set; } = null;
+                public List<string> SenseIDsToUse { get; set; }
 
                 public bool UseWords { get; set; } = false;
                 public bool UseSenses { get; set; } = false;
@@ -66,7 +69,7 @@ namespace oed
                     }
                 }
                 */
-                public QuoteOptions(bool male, bool female, string? sourceTitle, string? author, bool firstWord, bool firstSense, string? fromWord, bool useWords, bool useSenses)
+                public QuoteOptions(bool male, bool female, string? sourceTitle, string? author, bool firstWord, bool firstSense, string? fromDefinition, string? fromSense, bool useWords, bool useSenses)
                 {
                     // this.AuthorGender = authorGender;
                     this.Male = male;
@@ -75,9 +78,12 @@ namespace oed
                     this.Author = author;
                     this.FirstWord = firstWord;
                     this.FirstSense = firstSense;
-                    this.FromWord = fromWord;
+                    this.FromDefinition = fromDefinition;
                     this.WordIDsToUse = new List<string>();
+                    this.FromSense = fromSense;
+                    this.SenseIDsToUse = new List<string>();
                     this.UseWords = useWords;
+
                     this.UseSenses = useSenses;
 
 
