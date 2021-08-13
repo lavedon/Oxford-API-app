@@ -334,7 +334,7 @@ namespace oed
 
             CurrentQuery query = new();
             query.CurrentSenseOptions = new(lemma, restrictRegion, restrictUsage, restrictMain, topic);
-            proccessCommonOptions(obsoleteOnly, obsoleteExclude, partOfSpeech, years, currentIn, revised, revisedNot, interactive, export, query);
+            processCommonOptions(obsoleteOnly, obsoleteExclude, partOfSpeech, years, currentIn, revised, revisedNot, interactive, export, query);
             // Implement the non common options (i.e. the options not in available in the Word endpoint)
             // region, main_current_sense, usage, topic
             if(!string.IsNullOrWhiteSpace(topic))
@@ -383,7 +383,7 @@ namespace oed
             CurrentQuery query = new();
             string wordIDFile = Path.Combine(Environment.CurrentDirectory, "word-id.txt");
             string[] wordIds = System.IO.File.ReadAllLines(wordIDFile);
-            proccessCommonOptions(obsoleteOnly, obsoleteExclude, partOfSpeech, years, currentIn, revised, revisedNot, interactive, export, query);
+            processCommonOptions(obsoleteOnly, obsoleteExclude, partOfSpeech, years, currentIn, revised, revisedNot, interactive, export, query);
 
             if (!string.IsNullOrWhiteSpace(selection))
             {
@@ -422,7 +422,7 @@ namespace oed
             {
                 Trace.WriteLine($"Getting surfaceforms for {form}");
             }
-            proccessCommonOptions(obsoleteOnly: false, obsoleteExclude: false, partOfSpeech, years, currentIn, revised: false, revisedNot: false, interactive, export, query);
+            processCommonOptions(obsoleteOnly: false, obsoleteExclude: false, partOfSpeech, years, currentIn, revised: false, revisedNot: false, interactive, export, query);
             ConsoleUI.GetSurfaces(query);
         }
         // Also handling some global options
@@ -465,7 +465,7 @@ namespace oed
             Trace.WriteLine($"years: {years ?? "null"}");
 
             CurrentQuery query = new();
-            proccessCommonOptions(years, interactive, export, query);
+            processCommonOptions(years, interactive, export, query);
 
             query.CurrentQuoteOptions = new(male, female, sourceTitle, author, firstWord, firstSense, useWords, useSenses);
             /*
@@ -542,7 +542,7 @@ namespace oed
             Trace.WriteLine($"export: {export}");
 
             CurrentQuery query = new();
-            proccessCommonOptions(obsoleteOnly, obsoleteExclude, partOfSpeech, years, currentIn, revised, revisedNot, interactive, export, query);
+            processCommonOptions(obsoleteOnly, obsoleteExclude, partOfSpeech, years, currentIn, revised, revisedNot, interactive, export, query);
 
             if (quotes)
             {
@@ -583,7 +583,7 @@ namespace oed
             }
         }
 
-        private static void proccessCommonOptions(string? years, bool interactive, bool export, CurrentQuery query)
+        private static void processCommonOptions(string? years, bool interactive, bool export, CurrentQuery query)
         {
             processYears(years, query);
             if (interactive)
@@ -598,7 +598,7 @@ namespace oed
             }
 
         }
-        private static void proccessCommonOptions(bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, bool interactive, bool export, CurrentQuery query)
+        private static void processCommonOptions(bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, bool interactive, bool export, CurrentQuery query)
         {
             processYears(years, query);
             if (currentIn)
@@ -639,30 +639,61 @@ namespace oed
 
         private static void processYears(string? years, CurrentQuery query)
         {
-            if (!string.IsNullOrWhiteSpace(years))
+            // @TODO improve this parser. No end year should be supported and 
+            // not throw an exception.
+            string cleanYears = years?.Trim().Replace("'", "").Replace("\"", "");
+            if (!string.IsNullOrWhiteSpace(cleanYears))
             {
-                string[] yearDates = years.Split('-');
+                if (cleanYears.Contains("-")) {
+                string[] yearDates = cleanYears.Split('-');
                 try
                 {
-
-                    query.StartYear = int.Parse(yearDates[0].Trim());
-                    Trace.WriteLine($"query.StartYear: {query.StartYear}");
-                    query.DateRangeSet = true;
+                    if (!string.IsNullOrWhiteSpace(yearDates[0])) {
+                        query.StartYear = int.Parse(yearDates[0].Trim());
+                        Trace.WriteLine($"query.StartYear: {query.StartYear}");
+                        query.DateRangeSet = true;
+                    } else {
+                        Trace.WriteLine("No start year entered. Open ended start.");
+                        query.OpenStart = true;
+                        query.DateRangeSet = true;
+                    }
                 }
-                catch
+                catch(Exception e)
                 {
+                    Trace.WriteLine($"{e.GetType()}: {e.Message}");
                     Trace.WriteLine("No start year.");
                 }
                 try
                 {
-                    query.EndYear = int.Parse(yearDates[1].Trim());
-                    Trace.WriteLine($"query.EndYear: {query.EndYear}");
-                    query.DateRangeSet = true;
+                    if (!string.IsNullOrWhiteSpace(yearDates[1])) {
+                        query.EndYear = int.Parse(yearDates[1].Trim());
+                        Trace.WriteLine($"query.EndYear: {query.EndYear}");
+                        query.OpenEnd = false;
+                        query.DateRangeSet = true;
+                    } else {
+                        Trace.WriteLine("No end year. Open ended first year");
+                        query.OpenEnd = true;
+                        query.DateRangeSet = true;
+                    }
                 }
-                catch
+                catch(Exception e)
                 {
+                    Trace.WriteLine($"{e.GetType()}: {e.Message}");
                     Trace.WriteLine("No end year.");
                 }
+            } else {
+                Trace.WriteLine("No end year. Only one year entered.");
+                try {
+                    query.StartYear = int.Parse(years);
+                    query.OpenEnd = false;
+                    query.DateRangeSet = true;
+                } 
+                catch(Exception e) 
+                {
+                    Trace.WriteLine("Error reading the only entered year.");
+                    Trace.WriteLine($"{e.GetType()}: {e.Message}");
+                }
+            }
 
             }
         }

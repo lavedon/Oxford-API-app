@@ -1,0 +1,5 @@
+mail_nn01
+mail_nn02
+mail_nn03
+mail_nn04
+mail_nn05

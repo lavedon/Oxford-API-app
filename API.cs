@@ -1105,35 +1105,45 @@ namespace oed
         {
             if (!string.IsNullOrWhiteSpace(query.PartsOfSpeech))
             {
-				if(!string.IsNullOrWhiteSpace(query.CurrentSenseOptions.Lemma)) {
+				try {
+				// @TODO Why was this here? Current sense options set to lemma should not be an issue?
+				// if(!string.IsNullOrWhiteSpace(query.CurrentSenseOptions.Lemma)) {
+				// }
 					queryURL = queryURL + @"&part_of_speech=" + query.PartsOfSpeech.ToUpper();
+				} catch (Exception e) {
+					Console.WriteLine("Setting part of speech failed.");
+					Console.WriteLine(e.Message);
 				}
             }
-            if (!query.CurrentIn)
-            {
-                if (query.StartYear != 0)
-                {
-                    queryURL = queryURL + @"&start_year=" + query.StartYear.ToString();
-                }
-                if (query.EndYear != 0)
-                {
-                    queryURL = queryURL + @"&end_year=" + query.EndYear.ToString();
-                }
-            }
-            else
-            {
-                if (query.StartYear != 0 && query.EndYear != 0)
-                {
-                    queryURL = queryURL + @"&current_in=" + query.StartYear.ToString() + "-" + query.EndYear.ToString();
-                }
-                else if (query.StartYear != 0 && query.EndYear == 0)
-                {
-                    queryURL = queryURL + @"&current_in=" + query.StartYear.ToString() + "-";
-                }
-                else
-                {
-                    queryURL = queryURL + @"&current_in=" + "-" + query.EndYear.ToString();
-                }
+			// if doing a 'qs' query, don't put years for the definition query.
+			// Filter them out of the quotes and senses?
+			if (query.QueryMode != Modes.Word || query.QueryMode == Modes.Word && !query.QuotesAndSenses) {
+				if (!query.CurrentIn)
+				{
+					if (query.StartYear != 0)
+					{
+						queryURL = queryURL + @"&start_year=" + query.StartYear.ToString();
+					}
+					if (query.EndYear != 0)
+					{
+						queryURL = queryURL + @"&end_year=" + query.EndYear.ToString();
+					}
+				}
+				else
+				{
+					if (query.StartYear != 0 && query.EndYear != 0)
+					{
+						queryURL = queryURL + @"&current_in=" + query.StartYear.ToString() + "-" + query.EndYear.ToString();
+					}
+					else if (query.StartYear != 0 && query.EndYear == 0)
+					{
+						queryURL = queryURL + @"&current_in=" + query.StartYear.ToString() + "-";
+					}
+					else
+					{
+						queryURL = queryURL + @"&current_in=" + "-" + query.EndYear.ToString();
+					}
+				}
             }
             if (query.IncludeRevised.HasValue)
             {
