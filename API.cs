@@ -241,6 +241,16 @@ namespace oed
 		{
 			Trace.WriteLine("Called GetQuotations. Did not pass a sense.");
 			string queryURL;
+			if (!string.IsNullOrEmpty(query.CurrentQuoteOptions.FromWord)){
+				foreach (string id in query.CurrentQuoteOptions.WordIDsToUse) {
+					queryURL = "word/";
+					query.CurrentWordID = id;
+					queryURL = queryURL + id + "/quotations/";
+					queryURL = addQuoteOptions(query, queryURL);
+
+					displayQuotes(query, makeCLIRequest(query, client, queryURL));
+			}
+			}
 			if (query.CurrentQuoteOptions.UseWords)
 			{
 				// will work on this endpoint.

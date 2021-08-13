@@ -95,6 +95,9 @@ namespace oed
             var quoteUseWords = new Option<bool>(
                 new[] {"--use-words", "uw"}, description: "Use the saved list of looked up words.  Required first using the main root command to look up a word.  Finds quotes for all words with wordIDs saved in word-id.txt.  This is also how Sense works if you do not supply it a word.  This option is not default with Quote (unlike Sense) to allow you to look up quotes by source."
             ){ IsRequired = false };
+            var quoteFromDefinition = new Option<string>(
+                new[] {"--from-definition", "d" }, description: "Get quotes for one of the returned definitions in the last search.  i.e. d1 to get quotes for the first definition d2-4 to gather quotes for definitions 2 through 4."
+            ){ IsRequired = false };
             var quoteUseSenses = new Option<bool>(
                 new[] {"--use-senses", "us"}, description: "Use the saved list of looked up senses. Requires first using the Sense sub-command/verb.  Similar to --use-words."
             ){ IsRequired = false };
@@ -109,9 +112,10 @@ namespace oed
             quoteCommand.AddOption(quoteFirstInWord);
             quoteCommand.AddOption(quoteFirstInSense);
             quoteCommand.AddOption(quoteUseWords);
+            quoteCommand.AddOption(quoteFromDefinition);
             quoteCommand.AddOption(quoteUseSenses);
 
-            quoteCommand.Handler = CommandHandler.Create<bool, bool, bool, string, string, bool, bool, bool, bool, string?, bool, bool>(HandleQuoteArgs);
+            quoteCommand.Handler = CommandHandler.Create<bool, bool, bool, string, string, bool, bool, string, bool, bool, string?, bool, bool>(HandleQuoteArgs);
 
             var surfaceCommand = new Command("Form");
 
@@ -448,7 +452,7 @@ namespace oed
                 SavedQueries.AddMember(query.Lemmas);
             }
         }
-        public static void HandleQuoteArgs(bool word, bool male, bool female, string sourceTitle, string author, bool firstWord, bool firstSense, bool useWords, bool useSenses, string? years, bool interactive, bool export)
+        public static void HandleQuoteArgs(bool word, bool male, bool female, string sourceTitle, string author, bool firstWord, bool firstSense, string fromDefinition, bool useWords, bool useSenses, string? years, bool interactive, bool export)
         {
             Trace.WriteLine($"Quote sub command entered.");
             Trace.WriteLine($"male: {male}");
@@ -458,6 +462,7 @@ namespace oed
             Trace.WriteLine($"sourceTitle: {sourceTitle}");
             Trace.WriteLine($"firstWord: {firstWord}");
             Trace.WriteLine($"firstSense: {firstSense}");
+            Trace.WriteLine($"From word: {fromDefinition}");
             Trace.WriteLine($"useWords: {useWords}");
             Trace.WriteLine($"useSenses: {useSenses}");
             Trace.WriteLine($"export: {export}");
@@ -467,7 +472,7 @@ namespace oed
             CurrentQuery query = new();
             processCommonOptions(years, interactive, export, query);
 
-            query.CurrentQuoteOptions = new(male, female, sourceTitle, author, firstWord, firstSense, useWords, useSenses);
+            query.CurrentQuoteOptions = new(male, female, sourceTitle, author, firstWord, firstSense, fromDefinition, useWords, useSenses);
             /*
             if (!string.IsNullOrWhiteSpace(authorGender))
             {
@@ -499,8 +504,27 @@ namespace oed
             {
                 query.CurrentQuoteOptions.FirstSense = true;
             }
-            
-            if (useWords)
+            if (!string.IsNullOrWhiteSpace(fromDefinition)) {
+                // @TODO reuse this for Senses and other sub-commands?
+                try {
+                List<int> whatWords = ParseNumbers(fromDefinition);
+                string wordIDFile = Path.Combine(Environment.CurrentDirectory, "word-id.txt");
+                // Where do I save the word-ids? 
+                // In query.QuoteOptions? 
+                string[] ids = File.ReadAllLines(wordIDFile);
+                foreach (int n in whatWords)
+                {
+                    Trace.WriteLine($"File line to look up: {n}");
+                    Trace.WriteLine($"Word id to look up ${ids[n]}");
+                    query.CurrentQuoteOptions.WordIDsToUse.Add(ids[n]);
+                }
+                } catch (Exception ex) {
+                    Trace.WriteLine("Could not get ids from word-id.txt");
+                    Trace.WriteLine($"{ex}");
+                }
+                ConsoleUI.GetQuotes(query);
+            }
+            else if (useWords)
             {
                 // Cycle through word-id.txt
                 // Run /word/{id}/quotations/ endpoint
