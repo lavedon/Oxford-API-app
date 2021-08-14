@@ -19,6 +19,10 @@ namespace oed
 			Trace.WriteLine("Starting Main Menu with passed in word.");
 			running = true;
 			// Call the definition method before main menu
+			if (word == "" && query.WordIDsToUse.Count > 0)
+			{
+				getDefinition(query);
+			}
 			getDefinition(query, word);
 			if (query.ExportAfterSearch) {
 				string mode = "";
@@ -394,6 +398,22 @@ namespace oed
 			SavedQueries.RenderXML();
 			
         }
+
+		private static void getDefinition(CurrentQuery query)
+		{
+			Trace.WriteLine("getDefinition called.");
+			try {
+                query.QueryMode = Modes.Word;
+                API.APICalls(query);
+			}
+			catch (Exception ex)
+			{
+				Trace.WriteLine("Exception on looking up words by id");
+				Trace.WriteLine(ex.Message);
+			}
+			showDefinitions(query);
+			SavedQueries.SaveWordId(query);
+		}
 
         private static void getDefinition(CurrentQuery query, string userInput)
         {

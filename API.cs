@@ -656,7 +656,6 @@ namespace oed
 			return;
 		}
 
-		// @TODO make this one Action delegate - with a method that parses the query and responses
 		Action<object> callWordsAPI = (Object obj) =>
         {
             Trace.WriteLine("Called callWordsAPI");
@@ -830,92 +829,25 @@ namespace oed
 		};
 		
 
-		if (query.QueryMode == Modes.Word) 
-		{
-			// @TODO put this repeated parsing in a method
-			// Use enums to select which option
-			Trace.WriteLine("Found that QueryMode is set to words.");
-			Trace.WriteLine("Looking up the word:" );
-			Trace.WriteLine(query.UserEnteredWord);
-			Trace.WriteLine("Now to call the words endpoint.");
-			resetHeaders(client);
-			Task getWords = new Task(callWordsAPI, "CallWords");
-			Trace.WriteLine("Calling the API");
-			getWords.RunSynchronously();
-			Trace.WriteLine("Left getWords task with the JSONResponse.");
-			Trace.WriteLine("Parsing JSON");
-			JsonElement apiData = JSONResponse.RootElement;
-			JsonElement data = apiData.GetProperty("data");
-			for (int i = 0; i < data.GetArrayLength(); i++)
-                {
-					Definition tempDefinition = new Definition();
-					tempDefinition.WordDefinition = data[i].GetProperty("definition").ToString();
-					tempDefinition.WordID = data[i].GetProperty("id").ToString();
-					tempDefinition.RecordedFirstUseSource = data[i].GetProperty("first_use").ToString();
-					tempDefinition.RecordedFirstUseYear = int.Parse(data[i].GetProperty("daterange").GetProperty("start").ToString());
-					var parts = data[i].GetProperty("parts_of_speech").EnumerateArray();
-					
-					while (parts.MoveNext())
-					{
-						var part = parts.Current;
-						tempDefinition.PartsOfSpeech.Add(part.GetString());
-					}
-
-					if (data[i].GetProperty("main_entry").ToString().ToLower() == "true")
-					{
-						tempDefinition.IsWordMainDefinition = true;
-					} else
-                    {
-						tempDefinition.IsWordMainDefinition = false;
-                    }
-					JsonElement etymologyObject = data[i].GetProperty("etymology");
-					var etymons = etymologyObject.GetProperty("etymons").EnumerateArray();
-
-					while (etymons.MoveNext())
-					{
-						var etymon = etymons.Current;
-						try {
-							tempDefinition.DefinitionEtymology.Etymons.Add(etymon.GetProperty("word").GetString());
-						} catch(Exception ex) 
-						{
-							Trace.WriteLine("Failed when trying to get etymons of word.");
-							Trace.WriteLine($"{ex.GetType()} says {ex.Message}");
-						}
-					}
-					tempDefinition.DefinitionEtymology.EtymologyType = 
-						etymologyObject.GetProperty("etymology_type").ToString();
-
-					var eLanguage = etymologyObject.GetProperty("etymon_language").EnumerateArray();
-					while (eLanguage.MoveNext())
-					{
-						var eLangCurrent = eLanguage.Current;
-						for (int ei = 0; ei < eLangCurrent.GetArrayLength(); ei++)
-						{
-							tempDefinition.DefinitionEtymology.EtymonLanguage.Add(eLangCurrent[ei].ToString());		
-						}
-					}
-					
-					var sourceLanguage = etymologyObject.GetProperty("source_language").EnumerateArray();
-					while (sourceLanguage.MoveNext())
-					{
-						var sourceLangCurrent = sourceLanguage.Current;
-						for (int ei = 0; ei < sourceLangCurrent.GetArrayLength(); ei++)
-						{
-							tempDefinition.DefinitionEtymology.SourceLanguage.Add(sourceLangCurrent[ei].ToString());
-
-						}
-					}
-
-					tempDefinition.DefinitionEtymology.EtymologySummary = etymologyObject.GetProperty("etymology_summary").ToString();
-					query.Definitions.Add(tempDefinition);
+		if (query.QueryMode == Modes.Word)
+            {
+                // @TODO put this repeated parsing in a method
+                // Use enums to select which option
+                Trace.WriteLine("Found that QueryMode is set to words.");
+                Trace.WriteLine("Looking up the word:");
+				if (query.WordIDsToUse.Count > 0)
+				{
+					resetHeaders(client);
 				}
-	
-			query.HasLookedUpWord = true;
+                Trace.WriteLine(query.UserEnteredWord);
+                Trace.WriteLine("Now to call the words endpoint.");
+                resetHeaders(client);
+                makeDefinitionRequest(query, callWordsAPI, client);
 
 
-				// Malformed JSON data is returned.  Only 1 element in "data" property
-				// Convert To String and RegEx the string
-				/*
+                // Malformed JSON data is returned.  Only 1 element in "data" property
+                // Convert To String and RegEx the string
+                /*
 				string apiDataString = apiData.ToString();
 				Trace.WriteLine("We now have the data as a string.");
 				Trace.WriteLine(apiDataString);
@@ -933,8 +865,8 @@ namespace oed
 				*/
 
 
-			}
-		else if (query.QueryMode == Modes.Root)
+            }
+            else if (query.QueryMode == Modes.Root)
 		{
 			Trace.WriteLine("Now to call the root endpoint.");
 			if (query.HasLookedUpWord == false) 
@@ -1126,7 +1058,106 @@ namespace oed
 			Console.WriteLine("Query mode not correctly set.");
 		}
 
-	}
+            static void makeDefinitionRequest(CurrentQuery query, Action<object> callWordsAPI, HttpClient client)
+            {
+				if (query.WordIDsToUse.Count == 0)
+                {
+                    Task getWords = new Task(callWordsAPI, "CallWords");
+                    Trace.WriteLine("Calling the API");
+                    getWords.RunSynchronously();
+                    Trace.WriteLine("Left getWords task with the JSONResponse.");
+                    Trace.WriteLine("Parsing JSON");
+                    displayDefinitions(query);
+
+                    query.HasLookedUpWord = true;
+                }
+                else {
+				string queryURL;
+				foreach (string wordID in query.WordIDsToUse)
+				{
+					queryURL = "word/";
+					query.CurrentWordID = wordID;
+					queryURL = queryURL + wordID;
+
+					makeCLIRequest(query, client, queryURL);
+					displayDefinitions(query);
+				}
+			}
+
+                static void displayDefinitions(CurrentQuery query)
+                {
+                    JsonElement apiData = JSONResponse.RootElement;
+                    JsonElement data = apiData.GetProperty("data");
+                    for (int i = 0; i < data.GetArrayLength(); i++)
+                    {
+                        Definition tempDefinition = new Definition();
+                        tempDefinition.WordDefinition = data[i].GetProperty("definition").ToString();
+                        tempDefinition.WordID = data[i].GetProperty("id").ToString();
+                        tempDefinition.RecordedFirstUseSource = data[i].GetProperty("first_use").ToString();
+                        tempDefinition.RecordedFirstUseYear = int.Parse(data[i].GetProperty("daterange").GetProperty("start").ToString());
+                        var parts = data[i].GetProperty("parts_of_speech").EnumerateArray();
+
+                        while (parts.MoveNext())
+                        {
+                            var part = parts.Current;
+                            tempDefinition.PartsOfSpeech.Add(part.GetString());
+                        }
+
+                        if (data[i].GetProperty("main_entry").ToString().ToLower() == "true")
+                        {
+                            tempDefinition.IsWordMainDefinition = true;
+                        }
+                        else
+                        {
+                            tempDefinition.IsWordMainDefinition = false;
+                        }
+                        JsonElement etymologyObject = data[i].GetProperty("etymology");
+                        var etymons = etymologyObject.GetProperty("etymons").EnumerateArray();
+
+                        while (etymons.MoveNext())
+                        {
+                            var etymon = etymons.Current;
+                            try
+                            {
+                                tempDefinition.DefinitionEtymology.Etymons.Add(etymon.GetProperty("word").GetString());
+                            }
+                            catch (Exception ex)
+                            {
+                                Trace.WriteLine("Failed when trying to get etymons of word.");
+                                Trace.WriteLine($"{ex.GetType()} says {ex.Message}");
+                            }
+                        }
+                        tempDefinition.DefinitionEtymology.EtymologyType =
+                            etymologyObject.GetProperty("etymology_type").ToString();
+
+                        var eLanguage = etymologyObject.GetProperty("etymon_language").EnumerateArray();
+                        while (eLanguage.MoveNext())
+                        {
+                            var eLangCurrent = eLanguage.Current;
+                            for (int ei = 0; ei < eLangCurrent.GetArrayLength(); ei++)
+                            {
+                                tempDefinition.DefinitionEtymology.EtymonLanguage.Add(eLangCurrent[ei].ToString());
+                            }
+                        }
+
+                        var sourceLanguage = etymologyObject.GetProperty("source_language").EnumerateArray();
+                        while (sourceLanguage.MoveNext())
+                        {
+                            var sourceLangCurrent = sourceLanguage.Current;
+                            for (int ei = 0; ei < sourceLangCurrent.GetArrayLength(); ei++)
+                            {
+                                tempDefinition.DefinitionEtymology.SourceLanguage.Add(sourceLangCurrent[ei].ToString());
+
+                            }
+                        }
+
+                        tempDefinition.DefinitionEtymology.EtymologySummary = etymologyObject.GetProperty("etymology_summary").ToString();
+                        query.Definitions.Add(tempDefinition);
+                    }
+                }
+            } // end if 
+
+        }
 
         private static string coreQueryFeatures(CurrentQuery query, string queryURL)
         {

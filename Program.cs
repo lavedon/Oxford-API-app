@@ -182,6 +182,14 @@ namespace oed
             new Option<string?>(new[] {"--etymology-language", "el"}, description: "Restrict results to words derived from a certain language.  Languages are grouped by continent and hierarchical.  i.e. European will automatically include German."),
             new Option<string?>(new[] {"--etymology-type", "et"}, description: "Restrict results only certain etymological types.  compound, derivative, conversion, blend, shortening, backformation, initialism, acronym, variant, arbitrary, imitative, borrowing, properName, unknown"),
             new Option<bool>(new[] {"--interactive", "i"}, description: "Open the interactive text menu features, where you can run follow-up queries, change options, and export queries. Has reduced features when compared to the command line."),
+            new Option<string>(new[] {"--from-quote", "fq"},
+                description: "Get definitions for one of the quotes returned in the last search.  i.e. q 1 to get definitions for the first quote q 2-4 to loop-up definitions for quotes 2 through 4."
+        ){ IsRequired = false },
+        /*
+            new Option<string>(new[] {"--from-sense", "s"}, 
+                description: "Get quotes for one of the senses returned in the last search.  i.e. s 1 to get quotes for the first sense s 2-4 to look up definitions for senses 2 through 4.")
+            { IsRequired = false },
+        */
         };
         // @TODO should this be a command?
         var derivativesCommand = new Command("Derivatives");
@@ -241,7 +249,7 @@ namespace oed
             rootCommand.AddCommand(lemmaCommand);
 
             rootCommand.Description = "An app which processes the Oxford English Dictionary Researcher API, and exports to SuperMemo.";
-            rootCommand.Handler = CommandHandler.Create<string, bool, bool, bool, bool, string?, string?, bool, bool, bool, string?, string?, bool, bool>(HandleArgs);
+            rootCommand.Handler = CommandHandler.Create<string, bool, bool, bool, bool, string?, string?, bool, bool, bool, string?, string?, string, bool, bool>(HandleArgs);
 
 
             string directoryPath = string.Concat(Environment.CurrentDirectory, "\\logs");
@@ -615,7 +623,7 @@ namespace oed
             return returnIds;
         }
 
-        public static void HandleArgs(string word, bool quotes, bool quotesAndSenses, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, bool interactive, bool export)
+        public static void HandleArgs(string word, bool quotes, bool quotesAndSenses, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, string fromQuote, bool interactive, bool export)
         {
             Trace.WriteLine($"CLI word entered was {word}");
             Trace.WriteLine($"Return quotes from word search {quotes}");
@@ -664,7 +672,14 @@ namespace oed
                 Trace.WriteLine($"Entered CLI word is {word}");
                 var includeObsoleteProp = query.IncludeObsolete is null ? "null" : query.IncludeObsolete.Value.ToString();
                 Trace.WriteLine($"query.IncludeObsolete: {includeObsoleteProp}");
-                ConsoleUI.Start(word, query);
+                if (!string.IsNullOrWhiteSpace(fromQuote))
+                {
+                    Trace.WriteLine("fromQuote complex query activated in RootCommand / Definitions.");
+                    query.WordIDsToUse = GetSelectWordIds(fromQuote);
+                    ConsoleUI.Start(word = "", query);
+                } else {
+                    ConsoleUI.Start(word, query);
+                }
                 if (query.QuotesFromWord)
                 {
                     string[] newArgs = GetNewArgs();

@@ -64,6 +64,11 @@ namespace oed
 		public bool OpenEnd { get; set;}
 		public bool QuotesFromWord { get; set ; }
 		public bool QuotesAndSenses { get; set ; }
+
+		// RootCommand if user wants to get definitions
+		// for past returned quote or past returned sense.
+		public string? FromSense { get; set; } = null;
+		public List<string> WordIDsToUse { get; set; }
 		public bool InteractiveMode { get; set; }
 		public bool ExportAfterSearch { get; set; }
 		public List<int> WhatToExport { get; set; }
@@ -110,6 +115,8 @@ namespace oed
 			this.Derivatives = new List<Derivatives>();
 			this.SQ_Data = new List<SQ_Data>();
 			this.WhatToExport = new List<int>();
+			this.FromSense = "";
+			this.WordIDsToUse = new List<string>();
 			// this.PreviousWordIds = new();
 			
 		} 
