@@ -287,7 +287,6 @@ namespace oed
                     queryURL = queryURL + s.SenseID + "/quotations/";
 					queryURL = addQuoteOptions(query, queryURL);
 					displayQuotes(query, makeCLIRequest(query, client, queryURL));
-
                 }
             }
 			if (query.CurrentQuoteOptions.UseNonIdEndpoint)
@@ -1069,14 +1068,22 @@ namespace oed
 		else if (query.QueryMode == Modes.Senses)
 		{
 			Trace.WriteLine("API.cs is starting senses mode.");
-			if (query.HasLookedUpWord == false && string.IsNullOrWhiteSpace(query.CurrentSenseOptions.Lemma))
+			if (!string.IsNullOrWhiteSpace(query.CurrentSenseOptions.FromDefinition) || !string.IsNullOrWhiteSpace(query.CurrentSenseOptions.FromQuotes))
 			{
-				// @TODO remove this. Have it auto-call up the first ID.
-				Console.WriteLine("You need to first ask for a definition.");
+				foreach (string id in query.CurrentSenseOptions.WordIDsToUse)
+				{
+					query.CurrentWordID = id;
+					makeSenseRequest(query, client, callSensesAPI);
+				}
 			}
 			else if (!string.IsNullOrWhiteSpace(query.CurrentSenseOptions.Lemma))
 			{
 				makeSenseRequest(query, client, callSensesAPI);
+			}
+			else if (query.HasLookedUpWord == false && string.IsNullOrWhiteSpace(query.CurrentSenseOptions.Lemma))
+			{
+				// @TODO remove this. Have it auto-call up the first ID.
+				Console.WriteLine("You need to first ask for a definition.");
 			}
 			else 
 			{

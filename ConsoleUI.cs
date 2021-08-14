@@ -295,6 +295,7 @@ namespace oed
             Trace.WriteLine("Get senses selected.");
             query.QueryMode = Modes.Quotations;
    		         API.APICalls(query);
+			SavedQueries.SaveWordId(query);
 			if (query.ExportAfterSearch)
 			{
 				exportQuery(query);

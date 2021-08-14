@@ -86,7 +86,11 @@ namespace oed
 				for (int i = 0; i < query.WhatToExport.Count; i++) {
 					file.WriteLine(query.Definitions[query.WhatToExport[i] - 1].WordID);
 				}
-			} 
+			} else if (query.QueryMode == Modes.Quotations) {
+                foreach (Quote q in query.Quotes) {
+                    file.WriteLine(q.WordID);
+                }
+            }
 			else {
 				foreach (Definition d in query.Definitions)
 				{

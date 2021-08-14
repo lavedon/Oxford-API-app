@@ -218,7 +218,7 @@ C:\my-coding-projects\oxford\bin\Release\net5.0\win10-x64\publish\dbgshim.dll
 C:\my-coding-projects\oxford\bin\Release\net5.0\win10-x64\publish\hostfxr.dll
 C:\my-coding-projects\oxford\bin\Release\net5.0\win10-x64\publish\hostpolicy.dll
 C:\my-coding-projects\oxford\bin\Release\net5.0\win10-x64\publish\mscordaccore.dll
-C:\my-coding-projects\oxford\bin\Release\net5.0\win10-x64\publish\mscordaccore_amd64_amd64_5.0.821.31504.dll
+C:\my-coding-projects\oxford\bin\Release\net5.0\win10-x64\publish\mscordaccore_amd64_amd64_5.0.921.35908.dll
 C:\my-coding-projects\oxford\bin\Release\net5.0\win10-x64\publish\mscordbi.dll
 C:\my-coding-projects\oxford\bin\Release\net5.0\win10-x64\publish\mscorrc.dll
 C:\my-coding-projects\oxford\bin\Release\net5.0\win10-x64\publish\ucrtbase.dll

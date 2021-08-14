@@ -46,13 +46,25 @@ namespace oed
             var senseMainOption = new Option<bool>(
                 new[] {"--restrict-main", "rm"}, description: "Return only the main sense only. Note: The OED does not currently list a main sense for every word."
             ){ IsRequired = false };
-
             var senseTopicOption = new Option<string>(
                 new[] {"--topic", "t"}, 
                 description: "Restrict results to senses relating to a particular topic or domain, e.g. 'Heraldry', 'Physics', 'Basketball'. (For the full set of available values, see the 'Subject' section at http://www.oed.com/browsecategory (paywalled)."
             ){
                 IsRequired = false
             };
+            var senseFromDefinition = new Option<string>(
+                new[] {"--from-definition", "d"},
+                description: "Look up senses for specific returned words.  i.e. d 4-9,15."
+            ){ 
+                IsRequired = false 
+            };
+            var senseFromQuote = new Option<string>(
+                new[] {"--from-quote", "q"},
+                description: "Look up senses from specific returned quotes.  i.e. q 4-9,15."
+            ){
+                IsRequired = false
+            };
+
             senseCommand.AddOption(senseLemmaArgument);
             // senseCommand.AddArgument(senseSynonymArgument);
             // senseCommand.AddArgument(senseSiblingsArgument);
@@ -60,8 +72,10 @@ namespace oed
             senseCommand.AddOption(senseUsageOption);
             senseCommand.AddOption(senseMainOption);
             senseCommand.AddOption(senseTopicOption);
+            senseCommand.AddOption(senseFromDefinition);
+            senseCommand.AddOption(senseFromQuote);
 
-            senseCommand.Handler = CommandHandler.Create<string?, bool, bool, string?, string?, bool, bool, bool, string?, bool, string?, string?, bool, bool>(HandleSenseArgs);
+            senseCommand.Handler = CommandHandler.Create<string?, bool, bool, string?, string?, bool, bool, bool, string?, bool, string?, string?, string, string, bool, bool>(HandleSenseArgs);
 
             var quoteCommand = new Command("Quote");
             /*
@@ -322,7 +336,7 @@ namespace oed
         }
 
         // public static void HandleArgs(string word, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, bool interactive, bool export)
-        public static void HandleSenseArgs(string? lemma, bool obsoleteOnly, bool obsoleteExclude, string? restrictRegion, string? years, bool currentIn, bool revised, bool revisedNot, string? restrictUsage, bool restrictMain, string? topic, string? partOfSpeech, bool interactive, bool export)
+        public static void HandleSenseArgs(string? lemma, bool obsoleteOnly, bool obsoleteExclude, string? restrictRegion, string? years, bool currentIn, bool revised, bool revisedNot, string? restrictUsage, bool restrictMain, string? topic, string? partOfSpeech, string fromDefinition, string fromQuote, bool interactive, bool export)
         {
             Trace.WriteLine($"Sense sub command entered.");
             Trace.WriteLine($"lemma: {lemma}");
@@ -337,11 +351,13 @@ namespace oed
             Trace.WriteLine($"years: {years ?? "null"}");
             Trace.WriteLine($"topic: {topic}");
             Trace.WriteLine($"Current In: {currentIn}");
+            Trace.WriteLine($"FromDefinition: {fromDefinition}");
+            Trace.WriteLine($"FromQuote: {fromQuote}");
             Trace.WriteLine($"interactive: {interactive}");
             Trace.WriteLine($"export: {export}");
 
             CurrentQuery query = new();
-            query.CurrentSenseOptions = new(lemma, restrictRegion, restrictUsage, restrictMain, topic);
+            query.CurrentSenseOptions = new(lemma, restrictRegion, restrictUsage, restrictMain, topic, fromDefinition, fromQuote);
             processCommonOptions(obsoleteOnly, obsoleteExclude, partOfSpeech, years, currentIn, revised, revisedNot, interactive, export, query);
             // Implement the non common options (i.e. the options not in available in the Word endpoint)
             // region, main_current_sense, usage, topic
@@ -361,7 +377,16 @@ namespace oed
             {
                 query.CurrentSenseOptions.RestrictUsage = restrictUsage;
             }
-            if (string.IsNullOrWhiteSpace(lemma))
+            
+            if (!string.IsNullOrWhiteSpace(fromDefinition) || !string.IsNullOrWhiteSpace(fromQuote))
+            {
+                string nums = string.IsNullOrWhiteSpace(fromDefinition) ? fromQuote :  fromDefinition;
+
+                query.CurrentSenseOptions.WordIDsToUse = GetSelectWordIds(nums);
+                ConsoleUI.GetSenses(query);
+
+            }
+            else if (string.IsNullOrWhiteSpace(lemma))
             {
                 Trace.WriteLine("Looking up word IDs from file");
                 ConsoleUI.GetSenses(SavedQueries.LoadWordIds(query));
@@ -508,28 +533,15 @@ namespace oed
             {
                 query.CurrentQuoteOptions.FirstSense = true;
             }
-            if (!string.IsNullOrWhiteSpace(fromDefinition)) {
+            if (!string.IsNullOrWhiteSpace(fromDefinition))
+            {
                 // @TODO reuse this for Senses and other sub-commands?
-                try {
-                List<int> whatWords = ParseNumbers(fromDefinition);
-                string wordIDFile = Path.Combine(Environment.CurrentDirectory, "word-id.txt");
-                // Where do I save the word-ids? 
-                // In query.QuoteOptions? 
-                string[] ids = File.ReadAllLines(wordIDFile);
-                foreach (int n in whatWords)
-                {
-                    Trace.WriteLine($"File line to look up: {n}");
-                    Trace.WriteLine($"Word id to look up ${ids[n]}");
-                    query.CurrentQuoteOptions.WordIDsToUse.Add(ids[n]);
-                }
-                } catch (Exception ex) {
-                    Trace.WriteLine("Could not get ids from word-id.txt");
-                    Trace.WriteLine($"{ex}");
-                }
+                query.CurrentQuoteOptions.WordIDsToUse = GetSelectWordIds(fromDefinition);
                 ConsoleUI.GetQuotes(query);
             }
             else if (!string.IsNullOrWhiteSpace(fromSense))
             {
+                // @TODO Merge this into GetSelectWordIds method?
                 try {
                     List<int> whatSenses = ParseNumbers(fromSense);
                     string senseIDFile = Path.Combine(Environment.CurrentDirectory, "sense-id-all.txt");
@@ -537,8 +549,8 @@ namespace oed
                     foreach (int n in whatSenses)
                     {
                         Trace.WriteLine($"File line to look up: {n}");
-                        Trace.WriteLine($"Sense id to look up ${senseIds[n]}");
-                        query.CurrentQuoteOptions.SenseIDsToUse.Add(senseIds[n]);
+                        Trace.WriteLine($"Sense id to look up ${senseIds[n - 1]}");
+                        query.CurrentQuoteOptions.SenseIDsToUse.Add(senseIds[n - 1]);
 
                     }
                 }
@@ -574,6 +586,35 @@ namespace oed
             }
 
         }
+
+        private static List<string> GetSelectWordIds(string numString)
+        {
+            // @TODO put in a bool to look up from senses or word-ids?
+            List<string> returnIds = new();
+            try
+            {
+                List<int> whatWords = ParseNumbers(numString);
+                string wordIDFile = Path.Combine(Environment.CurrentDirectory, "word-id.txt");
+                // Where do I save the word-ids? 
+                // In query.QuoteOptions? 
+                string[] ids = File.ReadAllLines(wordIDFile);
+                foreach (int n in whatWords)
+                {
+                    Trace.WriteLine($"File line to look up: {n}");
+                    Trace.WriteLine($"Word id to look up ${ids[n - 1]}");
+                    returnIds.Add(ids[n - 1]);
+                    returnIds.Distinct();
+                }
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine("Could not get ids from word-id.txt");
+                Trace.WriteLine($"{ex}");
+            }
+
+            return returnIds;
+        }
+
         public static void HandleArgs(string word, bool quotes, bool quotesAndSenses, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, bool interactive, bool export)
         {
             Trace.WriteLine($"CLI word entered was {word}");
