@@ -22,8 +22,9 @@ namespace oed
 			if (word == "" && query.WordIDsToUse.Count > 0)
 			{
 				getDefinition(query);
-			}
+			} else {
 			getDefinition(query, word);
+			}
 			if (query.ExportAfterSearch) {
 				string mode = "";
 				switch (query.QueryMode)

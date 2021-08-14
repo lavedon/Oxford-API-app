@@ -606,12 +606,19 @@ namespace oed
                 // Where do I save the word-ids? 
                 // In query.QuoteOptions? 
                 string[] ids = File.ReadAllLines(wordIDFile);
+                if (ids.Length == 0)
+                {
+                    Console.WriteLine("No word ids found in word-id.txt");
+                    return null;
+                } else {
                 foreach (int n in whatWords)
                 {
-                    Trace.WriteLine($"File line to look up: {n}");
-                    Trace.WriteLine($"Word id to look up ${ids[n - 1]}");
-                    returnIds.Add(ids[n - 1]);
+                    int y;
+                    y = n - 1;
+                    Trace.WriteLine($"File line to look up: {y}"); 
+                    returnIds.Add(ids[y]);
                     returnIds.Distinct();
+                }
                 }
             }
             catch (Exception ex)
@@ -619,7 +626,6 @@ namespace oed
                 Trace.WriteLine("Could not get ids from word-id.txt");
                 Trace.WriteLine($"{ex}");
             }
-
             return returnIds;
         }
 

@@ -1078,84 +1078,96 @@ namespace oed
 					queryURL = "word/";
 					query.CurrentWordID = wordID;
 					queryURL = queryURL + wordID;
-
-					makeCLIRequest(query, client, queryURL);
-					displayDefinitions(query);
+					query = makeQSRequest(query, client, queryURL);
+					// makeCLIRequest(query, client, queryURL);
+					// Don't use displayDefinition // use something else
+					Definition tempDefinition = new();
+					tempDefinition.WordDefinition = query.SQ_Data[0].definition;
+					tempDefinition.WordID = query.SQ_Data[0].id;
+					tempDefinition.RecordedFirstUseSource = query.SQ_Data[0].first_use;
+					tempDefinition.RecordedFirstUseYear = query.SQ_Data[0].daterange.start;
+					tempDefinition.PartsOfSpeech.AddRange(query.SQ_Data[0].parts_of_speech);
+					tempDefinition.IsWordMainDefinition = query.SQ_Data[0].main_entry;
+					query.Definitions.Add(tempDefinition);
 				}
+				query.QuotesFromWord = false;
+//				ConsoleUI.showDefinitions(query);	
+				SavedQueries.SaveWordId(query);
+				return; 
+			}
 			}
 
-                static void displayDefinitions(CurrentQuery query)
-                {
-                    JsonElement apiData = JSONResponse.RootElement;
-                    JsonElement data = apiData.GetProperty("data");
-                    for (int i = 0; i < data.GetArrayLength(); i++)
-                    {
-                        Definition tempDefinition = new Definition();
-                        tempDefinition.WordDefinition = data[i].GetProperty("definition").ToString();
-                        tempDefinition.WordID = data[i].GetProperty("id").ToString();
-                        tempDefinition.RecordedFirstUseSource = data[i].GetProperty("first_use").ToString();
-                        tempDefinition.RecordedFirstUseYear = int.Parse(data[i].GetProperty("daterange").GetProperty("start").ToString());
-                        var parts = data[i].GetProperty("parts_of_speech").EnumerateArray();
+			static void displayDefinitions(CurrentQuery query)
+			{
+				JsonElement apiData = JSONResponse.RootElement;
+				JsonElement data = apiData.GetProperty("data");
+				for (int i = 0; i < data.GetArrayLength(); i++)
+				{
+					Definition tempDefinition = new Definition();
+					tempDefinition.WordDefinition = data[i].GetProperty("definition").ToString();
+					tempDefinition.WordID = data[i].GetProperty("id").ToString();
+					tempDefinition.RecordedFirstUseSource = data[i].GetProperty("first_use").ToString();
+					tempDefinition.RecordedFirstUseYear = int.Parse(data[i].GetProperty("daterange").GetProperty("start").ToString());
+					var parts = data[i].GetProperty("parts_of_speech").EnumerateArray();
 
-                        while (parts.MoveNext())
-                        {
-                            var part = parts.Current;
-                            tempDefinition.PartsOfSpeech.Add(part.GetString());
-                        }
+					while (parts.MoveNext())
+					{
+						var part = parts.Current;
+						tempDefinition.PartsOfSpeech.Add(part.GetString());
+					}
 
-                        if (data[i].GetProperty("main_entry").ToString().ToLower() == "true")
-                        {
-                            tempDefinition.IsWordMainDefinition = true;
-                        }
-                        else
-                        {
-                            tempDefinition.IsWordMainDefinition = false;
-                        }
-                        JsonElement etymologyObject = data[i].GetProperty("etymology");
-                        var etymons = etymologyObject.GetProperty("etymons").EnumerateArray();
+					if (data[i].GetProperty("main_entry").ToString().ToLower() == "true")
+					{
+						tempDefinition.IsWordMainDefinition = true;
+					}
+					else
+					{
+						tempDefinition.IsWordMainDefinition = false;
+					}
+					JsonElement etymologyObject = data[i].GetProperty("etymology");
+					var etymons = etymologyObject.GetProperty("etymons").EnumerateArray();
 
-                        while (etymons.MoveNext())
-                        {
-                            var etymon = etymons.Current;
-                            try
-                            {
-                                tempDefinition.DefinitionEtymology.Etymons.Add(etymon.GetProperty("word").GetString());
-                            }
-                            catch (Exception ex)
-                            {
-                                Trace.WriteLine("Failed when trying to get etymons of word.");
-                                Trace.WriteLine($"{ex.GetType()} says {ex.Message}");
-                            }
-                        }
-                        tempDefinition.DefinitionEtymology.EtymologyType =
-                            etymologyObject.GetProperty("etymology_type").ToString();
+					while (etymons.MoveNext())
+					{
+						var etymon = etymons.Current;
+						try
+						{
+							tempDefinition.DefinitionEtymology.Etymons.Add(etymon.GetProperty("word").GetString());
+						}
+						catch (Exception ex)
+						{
+							Trace.WriteLine("Failed when trying to get etymons of word.");
+							Trace.WriteLine($"{ex.GetType()} says {ex.Message}");
+						}
+					}
+					tempDefinition.DefinitionEtymology.EtymologyType =
+						etymologyObject.GetProperty("etymology_type").ToString();
 
-                        var eLanguage = etymologyObject.GetProperty("etymon_language").EnumerateArray();
-                        while (eLanguage.MoveNext())
-                        {
-                            var eLangCurrent = eLanguage.Current;
-                            for (int ei = 0; ei < eLangCurrent.GetArrayLength(); ei++)
-                            {
-                                tempDefinition.DefinitionEtymology.EtymonLanguage.Add(eLangCurrent[ei].ToString());
-                            }
-                        }
+					var eLanguage = etymologyObject.GetProperty("etymon_language").EnumerateArray();
+					while (eLanguage.MoveNext())
+					{
+						var eLangCurrent = eLanguage.Current;
+						for (int ei = 0; ei < eLangCurrent.GetArrayLength(); ei++)
+						{
+							tempDefinition.DefinitionEtymology.EtymonLanguage.Add(eLangCurrent[ei].ToString());
+						}
+					}
 
-                        var sourceLanguage = etymologyObject.GetProperty("source_language").EnumerateArray();
-                        while (sourceLanguage.MoveNext())
-                        {
-                            var sourceLangCurrent = sourceLanguage.Current;
-                            for (int ei = 0; ei < sourceLangCurrent.GetArrayLength(); ei++)
-                            {
-                                tempDefinition.DefinitionEtymology.SourceLanguage.Add(sourceLangCurrent[ei].ToString());
+					var sourceLanguage = etymologyObject.GetProperty("source_language").EnumerateArray();
+					while (sourceLanguage.MoveNext())
+					{
+						var sourceLangCurrent = sourceLanguage.Current;
+						for (int ei = 0; ei < sourceLangCurrent.GetArrayLength(); ei++)
+						{
+							tempDefinition.DefinitionEtymology.SourceLanguage.Add(sourceLangCurrent[ei].ToString());
 
-                            }
-                        }
+						}
+					}
 
-                        tempDefinition.DefinitionEtymology.EtymologySummary = etymologyObject.GetProperty("etymology_summary").ToString();
-                        query.Definitions.Add(tempDefinition);
-                    }
+					tempDefinition.DefinitionEtymology.EtymologySummary = etymologyObject.GetProperty("etymology_summary").ToString();
+					query.Definitions.Add(tempDefinition);
+				}
                 }
-            } // end if 
 
         }
 
