@@ -310,6 +310,10 @@ namespace oed
                 interactiveMode = false;
                 continue;
             }
+            else if (input == "clr") {
+                Console.Clear();
+                continue;
+            }
             rootCommand.Invoke(input);
             if (RunCLIAgain)
             {
