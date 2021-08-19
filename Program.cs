@@ -207,6 +207,8 @@ namespace oed
 			rootCommand.AddGlobalOption(new Option<bool>(new[] {"--obsolete-only", "o"}, description: "Only return obsolete usages."));
 			rootCommand.AddGlobalOption(new Option<bool>(new[] {"--obsolete-exclude", "oe"}, description: "Only return NON-obsolete usages."));
             
+            // @TODO make this some kind of string where you can pass a string argument to the command
+            // By using the ArgumentAirty.ZeroOrOne 
             var exportOption = new Option<bool>("--export", 
                     description: "Export the results of this query.  Saved as XML for SuperMemo import. File will be saved as OED-export.xml",
                     ArgumentArity.ZeroOrOne

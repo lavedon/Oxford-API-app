@@ -579,7 +579,14 @@ namespace oed
         private static void createXML(out string xmlFile, out FileStream xmlFileStream, out XmlWriter xml)
         {
             xmlFile = Path.Combine(Environment.CurrentDirectory, ExportFileName);
-            File.Delete(xmlFile);
+	    // @TODO Change - if File exists read the Count # '
+	    // Then modify it.
+            if (File.Exists(xmlFile))
+            {
+                // @TODO heavily modify file to append stuff 
+            }
+            // @TODO delete the file only if the user specified to do so.
+            // File.Delete(xmlFile);
             xmlFileStream = File.Create(xmlFile);
             xml = XmlWriter.Create(xmlFileStream,
               new XmlWriterSettings { Indent = true });
