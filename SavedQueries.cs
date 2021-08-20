@@ -208,8 +208,9 @@ namespace oed
 						questionText.Append($"&#8220;{q.text.full_text}&#8221; <BR><BR>");
 						qNum++;
 					}
-					
-					xml.WriteElementString("Question", questionText.ToString().Replace(sq.lemma, $"<FONT color=#ff0000><STRONG><EM>{sq.lemma}</EM></STRONG></FONT>"));
+    
+                    // Removed <FONT color="#ff0000"> and </FONT> from the text
+					xml.WriteElementString("Question", questionText.ToString().Replace(sq.lemma, $"<STRONG><EM>{sq.lemma}</EM></STRONG>"));
 					xml.WriteElementString("Answer", answerText.ToString());
 					string encoded = WebUtility.HtmlEncode("<H5 dir=ltr align=left><Font size=\"1\" style=\"color: transparent\"> SuperMemo Reference:</font><br><FONT class=reference>Title:\"My Test Quote\" <br>Source: Oxford English Dictionary");
 					xml.WriteElementString("SuperMemoReference", encoded);
