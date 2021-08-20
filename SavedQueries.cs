@@ -150,11 +150,6 @@ namespace oed
             FileStream xmlFileStream;
             XmlWriter xml;
             createXML(out xmlFile, out xmlFileStream, out xml);
-            if (_appendXML)
-            {
-               AppendXML.Append(xmlFile);
-               return; 
-            }
 
 			if (query.QueryMode == Modes.QuotesAndSenses) {
 			try {
@@ -246,8 +241,8 @@ namespace oed
                 xml.Close();
                 xmlFileStream.Close();
 
-                Console.WriteLine("The XML file is saved here:");
-                Console.WriteLine(xmlFile);
+                Trace.WriteLine("A XML file is being saved here:");
+                Trace.WriteLine(xmlFile);
 
                 Trace.WriteLine("The contents of the exported XML file are:");
                 Trace.WriteLine(File.ReadAllText(xmlFile));
@@ -262,6 +257,11 @@ namespace oed
                 }
             }
 			}
+            if (_appendXML)
+            {
+               AppendXML.Append(xmlFile);
+               return; 
+            }
 		}
 
 	    public static void RenderXML()
@@ -276,11 +276,6 @@ namespace oed
             FileStream xmlFileStream;
             XmlWriter xml;
             createXML(out xmlFile, out xmlFileStream, out xml);
-            if (_appendXML)
-            {
-               AppendXML.Append(xmlFile);
-               return; 
-            }
             int count;
             if (BlendedExport)
             {
@@ -571,8 +566,8 @@ namespace oed
                 xml.Close();
                 xmlFileStream.Close();
 
-                Console.WriteLine("The XML file is saved here:");
-                Console.WriteLine(xmlFile);
+                Trace.WriteLine("An XML file is being saved here:");
+                Trace.WriteLine(xmlFile);
 
                 Trace.WriteLine("The contents of the exported XML file are:");
                 Trace.WriteLine(File.ReadAllText(xmlFile));
@@ -586,6 +581,11 @@ namespace oed
                     Console.WriteLine($"{ex.ToString()}");
                 }
             }
+            if (_appendXML)
+            {
+               AppendXML.Append(xmlFile);
+               return; 
+            }
         }
 
         private static void createXML(out string xmlFile, out FileStream xmlFileStream, out XmlWriter xml)
@@ -595,12 +595,9 @@ namespace oed
 	    // Then modify it.
             if (File.Exists(xmlFile))
             {
-                Trace.WriteLine("Appending to existing XML file");
+                Trace.WriteLine("Will append create a new XML file - which then gets appended.");
+                xmlFile = Path.Combine(Environment.CurrentDirectory, "append-me.xml");
                 _appendXML = true;
-                xmlFile = null;
-                xmlFileStream = null;
-                xml = null;
-                return;
             }
             // @TODO delete the file only if the user specified to do so.
             // File.Delete(xmlFile);

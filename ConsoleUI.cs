@@ -52,8 +52,9 @@ namespace oed
 				string export = Console.ReadLine();
 				Program.ParseExport(query, export);
 				exportQuery(query);
-				}
+				} else {
 			exportQuery(query);
+				}
 			if (query.InteractiveMode) {
 				while (running) {
 					MainMenu(query);
