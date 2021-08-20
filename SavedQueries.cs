@@ -152,6 +152,7 @@ namespace oed
             createXML(out xmlFile, out xmlFileStream, out xml);
             if (_appendXML)
             {
+               AppendXML.Append(xmlFile);
                return; 
             }
 
@@ -277,6 +278,7 @@ namespace oed
             createXML(out xmlFile, out xmlFileStream, out xml);
             if (_appendXML)
             {
+               AppendXML.Append(xmlFile);
                return; 
             }
             int count;
