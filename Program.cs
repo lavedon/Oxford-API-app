@@ -27,6 +27,7 @@ namespace oed
 
 
             var senseCommand = new Command("Sense");
+            senseCommand.AddAlias("sense");
             var senseLemmaArgument = new Option<string>(
                 new[] {"--lemma", "l"}, description: "the word to find senses for. If not specified use the word id from the last query."
             );
@@ -78,6 +79,7 @@ namespace oed
             senseCommand.Handler = CommandHandler.Create<string?, bool, bool, string?, string?, bool, bool, bool, string?, bool, string?, string?, string, string, bool, bool>(HandleSenseArgs);
 
             var quoteCommand = new Command("Quote");
+            quoteCommand.AddAlias("quote");
             /*
             // @TODO make this an enum with male and female
             var quoteAuthorGender = new Option<string>(
@@ -136,8 +138,11 @@ namespace oed
             quoteCommand.Handler = CommandHandler.Create<bool, bool, bool, string, string, bool, bool, string, bool, bool, string, string?, bool, bool>(HandleQuoteArgs);
 
             var surfaceCommand = new Command("Form");
+            surfaceCommand.AddAlias("form");
 
             var semanticClassCommand = new Command("Semantic");
+            semanticClassCommand.AddAlias("semantic");
+
             var semanticIncludeRegion = new Option<bool>(
                 new[] {"--include-region", "r"}, description: "If 'false', irregular and regionally-specific variant form are filtered out. Defaults to 'true' if omitted."
             );
@@ -152,6 +157,7 @@ namespace oed
             surfaceCommand.Handler = CommandHandler.Create<string, string?, string?, bool, bool, bool, bool>(HandleSurfaceArgs);
 
             var lemmaCommand = new Command("Lemma");
+            lemmaCommand.AddAlias("lemma");
             var lemmaTextArgument = new Argument<string>(name: "text", description: "The text to lemmatize");
             var lemmaTextPretokenized = new Option<bool>(
                 new[] {"--tokenize-off", "to"}, description: "Do not split the entered string into further tokens."
@@ -163,7 +169,7 @@ namespace oed
             lemmaCommand.AddOption(lemmaTextPretokenized);
             lemmaCommand.AddOption(lemmaTextTokenizeSeparator);
 
-            lemmaCommand.Handler = CommandHandler.Create<string, bool, bool, string?>(HandleLemmaArgs);
+            lemmaCommand.Handler = CommandHandler.Create<string, bool, bool, bool>(HandleLemmaArgs);
 
 
 
@@ -185,6 +191,7 @@ namespace oed
             new Option<string>(new[] {"--from-quote", "fq"},
                 description: "Get definitions for one of the quotes returned in the last search.  i.e. q 1 to get definitions for the first quote q 2-4 to loop-up definitions for quotes 2 through 4."
         ){ IsRequired = false },
+            new Option<bool>(new[] {"--clear-export-file", "cf"}, description: "Delete the current export file.  The next time you export - you will start with a brand new file instead of continuing to append to the current file.")
         /*
             new Option<string>(new[] {"--from-sense", "s"}, 
                 description: "Get quotes for one of the senses returned in the last search.  i.e. s 1 to get quotes for the first sense s 2-4 to look up definitions for senses 2 through 4.")
@@ -194,6 +201,7 @@ namespace oed
         // @TODO should this be a command?
         var derivativesCommand = new Command("Derivatives");
         derivativesCommand.AddAlias("d");
+        derivativesCommand.AddAlias("derivatives");
         derivativesCommand.TreatUnmatchedTokensAsErrors = false;
         derivativesCommand.Description = "Get derivatives for selected words.  Select which words returned by your last search, you would like to look up derivatives for. Enter the # of the last returned word you want to look up.  Works with range syntax as well (i.e. 1-9,11,15).  Works with the /word/{id}/derivatives endpoint.";
         var derivativesSelection = new Argument<string>(name: "selection", getDefaultValue: () => "", description: "The selection of words to find derivatives for.");
@@ -215,8 +223,8 @@ namespace oed
                     )
                     {
                         IsRequired = false,
-                        ArgumentHelpName = "What to export by number",
                     };
+
             exportOption.AddAlias("e");
             rootCommand.AddGlobalOption(exportOption);
             rootCommand.AddGlobalOption(new Option<string?>(new[] {"--years", "y"}, description: "Years.  Use format 900-1999 or -1999 or 900-.  Used for first recorded, last recorded, and current in."));
@@ -251,7 +259,7 @@ namespace oed
             rootCommand.AddCommand(lemmaCommand);
 
             rootCommand.Description = "An app which processes the Oxford English Dictionary Researcher API, and exports to SuperMemo.";
-            rootCommand.Handler = CommandHandler.Create<string, bool, bool, bool, bool, string?, string?, bool, bool, bool, string?, string?, string, bool, bool>(HandleArgs);
+            rootCommand.Handler = CommandHandler.Create<string, bool, bool, bool, bool, string?, string?, bool, bool, bool, string?, string?, string, bool, bool, bool>(HandleArgs);
 
 
             string directoryPath = string.Concat(Environment.CurrentDirectory, "\\logs");
@@ -314,6 +322,10 @@ namespace oed
             }
             else if (input == "clr") {
                 Console.Clear();
+                continue;
+            }
+            else if (input == "cf") {
+                deleteExportFile();
                 continue;
             }
             rootCommand.Invoke(input);
@@ -473,7 +485,7 @@ namespace oed
             ConsoleUI.GetSurfaces(query);
         }
         // Also handling some global options
-        public static void HandleLemmaArgs(string text, bool tokenizeOff, bool tokenizeCharacter, string? export = "all")
+        public static void HandleLemmaArgs(string text, bool tokenizeOff, bool tokenizeCharacter, bool export)
         {
             Trace.WriteLine($"Lemma sub command entered.");
             Trace.WriteLine($"Text to lemmatize was: {text}");
@@ -488,7 +500,7 @@ namespace oed
             query.QueryMode = Modes.Lammatize;
    		         API.APICalls(query);
 
-            if (export is not null)
+            if (export)
             {
                 // export Lemmas
                 Console.WriteLine("Starting export process");
@@ -635,7 +647,7 @@ namespace oed
             return returnIds;
         }
 
-        public static void HandleArgs(string word, bool quotes, bool quotesAndSenses, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, string fromQuote, bool interactive, bool export)
+        public static void HandleArgs(string word, bool quotes, bool quotesAndSenses, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, string fromQuote, bool interactive, bool export, bool clearExportFile)
         {
             Trace.WriteLine($"CLI word entered was {word}");
             Trace.WriteLine($"Return quotes from word search {quotes}");
@@ -651,8 +663,14 @@ namespace oed
             Trace.WriteLine($"etymologyType: {etymologyType}");
             Trace.WriteLine($"interactive: {interactive}");
             Trace.WriteLine($"export: {export}");
+            Trace.WriteLine($"clearExportFile: {clearExportFile}");
 
             CurrentQuery query = new();
+            if (clearExportFile)
+                {
+                    deleteExportFile();
+                }
+
             processCommonOptions(obsoleteOnly, obsoleteExclude, partOfSpeech, years, currentIn, revised, revisedNot, interactive, export, query);
 
             if (quotes)
@@ -712,7 +730,6 @@ namespace oed
             {
                 // SavedQueries.ExportFileName = export;
                 query.ExportAfterSearch = true;
-
             }
 
         }
@@ -751,8 +768,13 @@ namespace oed
             {
                 // SavedQueries.ExportFileName = export;
                 query.ExportAfterSearch = true;
-
             }
+        }
+
+        private static void deleteExportFile()
+        {
+            var filePath = Path.Combine(Environment.CurrentDirectory, SavedQueries.ExportFileName);
+            File.Delete(filePath);
         }
 
         private static void processYears(string? years, CurrentQuery query)
