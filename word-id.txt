@@ -1,7 +1,2 @@
-job_nn01
-job_vb01
-job_nn02
-job_nn04
-job_nn03
-job_vb02
-job_vb03
+castle_nn01
+castle_vb01

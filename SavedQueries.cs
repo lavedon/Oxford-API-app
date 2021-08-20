@@ -11,6 +11,7 @@ namespace oed
 {
 	public static class SavedQueries
 	{
+        private static bool _appendXML = false;
 	    public static bool Instance { get; set; } = false;
 
 		public static bool BlendedExport { get; set; } = false;
@@ -149,6 +150,11 @@ namespace oed
             FileStream xmlFileStream;
             XmlWriter xml;
             createXML(out xmlFile, out xmlFileStream, out xml);
+            if (_appendXML)
+            {
+               return; 
+            }
+
 			if (query.QueryMode == Modes.QuotesAndSenses) {
 			try {
             int totalCount;
@@ -269,6 +275,10 @@ namespace oed
             FileStream xmlFileStream;
             XmlWriter xml;
             createXML(out xmlFile, out xmlFileStream, out xml);
+            if (_appendXML)
+            {
+               return; 
+            }
             int count;
             if (BlendedExport)
             {
@@ -583,7 +593,12 @@ namespace oed
 	    // Then modify it.
             if (File.Exists(xmlFile))
             {
-                // @TODO heavily modify file to append stuff 
+                Trace.WriteLine("Appending to existing XML file");
+                _appendXML = true;
+                xmlFile = null;
+                xmlFileStream = null;
+                xml = null;
+                return;
             }
             // @TODO delete the file only if the user specified to do so.
             // File.Delete(xmlFile);
