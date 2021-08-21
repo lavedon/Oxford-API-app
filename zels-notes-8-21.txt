@@ -1,0 +1,29 @@
+
+Zelss — Today at 1:56 AM
+Hi Luke
+on dynamic export, its still a vague idea in my mind. Not sure about it how it will work or if it is needed
+I am going to test the file you sent yesterday
+Zelss — Today at 2:16 AM
+I need pronunciation cards too. They will work like this: IPA symbols on front ; the word on the back. There are two pronunciations American and British. We can have two tags A for American B for british.
+mail P  gets me both American and British
+mail  PB  gets me just British
+mail PA gets me  just American
+P Tag is for pronunciation. If you can think of other better tags we can add them instead of the ones i gave above
+Zelss — Today at 3:35 AM
+Excellent work on the incremental export feature. 
+I am still getting this error when filtering out obsolete senses with the Sense endpoint. You can try the word "clog" to test it.  It returns obsolete senses too. I think this is the problem with the Sense endpoint as if i run the same query with qs it does filter out obsolete senses
+
+for the next version prioritize these functions:
+1) qs feature for individual definition and  senses 
+2)separation of years parameters
+3)pronunciation cards
+Zelss — Today at 3:46 AM
+another improvement suggestion:  When we want to feed a previous definition to sense endpoint or a sense to quote endpoint we can just use numbers. For example, when i queried for the word 'clog' and wanted to get the senses of definition 2 i typed    sense d 2  . We can remove the parameter d and just add the number of the definition we want e.g. sense 2 in the above case to get all the senses of definition 2 of clog
+Zelss — Today at 4:27 AM
+Cf is a bit buggy.sometimes it dels the old xml when i just type cf but at others it doesnt
+also cf does not work with qs feature
+
+Zelss — Today at 4:35 AM
+somtimes cf throws out this error
+
+Everything is still being written to xml multiple times

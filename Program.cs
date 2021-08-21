@@ -773,8 +773,25 @@ namespace oed
 
         private static void deleteExportFile()
         {
-            var filePath = Path.Combine(Environment.CurrentDirectory, SavedQueries.ExportFileName);
-            File.Delete(filePath);
+            string filePath = "";
+            try {
+            filePath = Path.Combine(Environment.CurrentDirectory, SavedQueries.ExportFileName);
+            }
+            catch (Exception ex) {
+                Console.WriteLine("Trying to delete XML export file.");
+                Console.WriteLine("But could not find the file: " + ex.Message);
+                Console.WriteLine(ex.InnerException?.ToString());
+            }
+            try {
+                Console.WriteLine($"Deleting XML export file: {filePath}");
+                File.Delete(filePath);
+            }
+            catch (Exception ex) {
+                Console.WriteLine($"Error while deleting XML export file: {filePath}");
+                Console.WriteLine("Is the export file open in another program? in SuperMemo?");
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.InnerException?.ToString());
+            }
         }
 
         private static void processYears(string? years, CurrentQuery query)

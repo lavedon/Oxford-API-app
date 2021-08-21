@@ -9,10 +9,19 @@ namespace oed {
         
         public static void Append(string filePath)
         {
+            try {
             (XmlDocument appendDoc, FileStream fs) = getXmlDocument(filePath);
             appendDoc = updateMaster(appendDoc);
             fs.Close();
             File.Delete(filePath);
+            } catch (Exception e) {
+                Console.WriteLine("Error: appending to XML file.");
+                Console.WriteLine("Is your file opened by another process? Open in SuperMemo?");
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.InnerException.Message.ToString());
+                Console.ReadKey();
+            }
+
 
         }
 

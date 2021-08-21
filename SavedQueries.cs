@@ -608,5 +608,17 @@ namespace oed
             xml.WriteStartDocument();
             xml.WriteStartElement("SuperMemoCollection");
         }
+            /*
+            } catch (AggregateException ae)
+            {
+                Console.WriteLine("Error creating XML file.");
+                Console.WriteLine("Is the file open in another program? In SuperMemo?");
+                var flatExs = ae.Flatten().InnerExceptions;
+                foreach (var ex in flatExs)
+                {
+                    Console.WriteLine($"{ex.ToString()}");
+                }
+                Console.ReadKey();
+                */
     }
 }
