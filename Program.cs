@@ -76,6 +76,7 @@ namespace oed
             senseCommand.AddOption(senseFromDefinition);
             senseCommand.AddOption(senseFromQuote);
 
+            // Handle sense command - Too many arguments? Will 
             senseCommand.Handler = CommandHandler.Create<string?, bool, bool, string?, string?, bool, bool, bool, string?, bool, string?, string?, string, string, bool, bool>(HandleSenseArgs);
 
             var quoteCommand = new Command("Quote");
@@ -135,7 +136,7 @@ namespace oed
             quoteCommand.AddOption(quoteUseSenses);
             quoteCommand.AddOption(quoteFromSense);
 
-            quoteCommand.Handler = CommandHandler.Create<bool, bool, bool, string, string, bool, bool, string, bool, bool, string, string?, bool, bool>(HandleQuoteArgs);
+            quoteCommand.Handler = CommandHandler.Create<bool, bool, bool, string, string, bool, bool, string, bool, bool, string, string?, bool, bool, bool>(HandleQuoteArgs);
 
             var surfaceCommand = new Command("Form");
             surfaceCommand.AddAlias("form");
@@ -154,7 +155,7 @@ namespace oed
             surfaceCommand.AddOption(semanticIncludeRegion);
             surfaceCommand.AddOption(semanticIncludeInflections);
 
-            surfaceCommand.Handler = CommandHandler.Create<string, string?, string?, bool, bool, bool, bool>(HandleSurfaceArgs);
+            surfaceCommand.Handler = CommandHandler.Create<string, string?, string?, bool, bool, bool, bool, bool>(HandleSurfaceArgs);
 
             var lemmaCommand = new Command("Lemma");
             lemmaCommand.AddAlias("lemma");
@@ -169,7 +170,7 @@ namespace oed
             lemmaCommand.AddOption(lemmaTextPretokenized);
             lemmaCommand.AddOption(lemmaTextTokenizeSeparator);
 
-            lemmaCommand.Handler = CommandHandler.Create<string, bool, bool, bool>(HandleLemmaArgs);
+            lemmaCommand.Handler = CommandHandler.Create<string, bool, bool, bool, bool>(HandleLemmaArgs);
 
 
 
@@ -191,7 +192,6 @@ namespace oed
             new Option<string>(new[] {"--from-quote", "fq"},
                 description: "Get definitions for one of the quotes returned in the last search.  i.e. q 1 to get definitions for the first quote q 2-4 to loop-up definitions for quotes 2 through 4."
         ){ IsRequired = false },
-            new Option<bool>(new[] {"--clear-export-file", "cf"}, description: "Delete the current export file.  The next time you export - you will start with a brand new file instead of continuing to append to the current file.")
         /*
             new Option<string>(new[] {"--from-sense", "s"}, 
                 description: "Get quotes for one of the senses returned in the last search.  i.e. s 1 to get quotes for the first sense s 2-4 to look up definitions for senses 2 through 4.")
@@ -207,13 +207,14 @@ namespace oed
         var derivativesSelection = new Argument<string>(name: "selection", getDefaultValue: () => "", description: "The selection of words to find derivatives for.");
         derivativesCommand.AddArgument(derivativesSelection);
         rootCommand.AddCommand(derivativesCommand);
-        derivativesCommand.Handler = CommandHandler.Create<string, bool, bool, string?, string?, bool, bool, bool, string?, string?, bool, bool>(HandleDerivativesArgs);
+        derivativesCommand.Handler = CommandHandler.Create<string, bool, bool, string?, string?, bool, bool, bool, string?, string?, bool, bool, bool>(HandleDerivativesArgs);
 
             // new Option<string?>(new[] {"--part-of-speech", "-ps"}, description: "Only return results to words specific parts of speech"),
 
             rootCommand.AddGlobalOption(new Option<string?>(new[] {"--part-of-speech", "ps"}, description: "Only return results where the result relates to a specific part of speech (i.e. only nouns, only verbs)"));
 			rootCommand.AddGlobalOption(new Option<bool>(new[] {"--obsolete-only", "o"}, description: "Only return obsolete usages."));
 			rootCommand.AddGlobalOption(new Option<bool>(new[] {"--obsolete-exclude", "oe"}, description: "Only return NON-obsolete usages."));
+            rootCommand.AddGlobalOption(new Option<bool>(new[] {"--clear-export-file", "cf"}, description: "Delete the current export file.  The next time you export - you will start with a brand new file instead of continuing to append to the current file."));
             
             // @TODO make this some kind of string where you can pass a string argument to the command
             // By using the ArgumentAirty.ZeroOrOne 
@@ -361,7 +362,6 @@ namespace oed
                 return query;
         }
 
-        // public static void HandleArgs(string word, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, bool interactive, bool export)
         public static void HandleSenseArgs(string? lemma, bool obsoleteOnly, bool obsoleteExclude, string? restrictRegion, string? years, bool currentIn, bool revised, bool revisedNot, string? restrictUsage, bool restrictMain, string? topic, string? partOfSpeech, string fromDefinition, string fromQuote, bool interactive, bool export)
         {
             Trace.WriteLine($"Sense sub command entered.");
@@ -381,8 +381,16 @@ namespace oed
             Trace.WriteLine($"FromQuote: {fromQuote}");
             Trace.WriteLine($"interactive: {interactive}");
             Trace.WriteLine($"export: {export}");
+            // Trace.WriteLine($"clearExportFile: {clearExportFile}");
 
             CurrentQuery query = new();
+            /*
+            if (clearExportFile)
+                {
+                    deleteExportFile();
+                }
+            */
+
             query.CurrentSenseOptions = new(lemma, restrictRegion, restrictUsage, restrictMain, topic, fromDefinition, fromQuote);
             processCommonOptions(obsoleteOnly, obsoleteExclude, partOfSpeech, years, currentIn, revised, revisedNot, interactive, export, query);
             // Implement the non common options (i.e. the options not in available in the Word endpoint)
@@ -423,7 +431,7 @@ namespace oed
                 ConsoleUI.GetSenses(query);
             }
         }
-        public static void HandleDerivativesArgs(string selection, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, bool interactive, bool export)
+        public static void HandleDerivativesArgs(string selection, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, bool interactive, bool export, bool clearExportFile)
         {
             Trace.WriteLine("Derivatives sub command entered.");
             Trace.WriteLine($"CLI entered selection was {selection}");
@@ -440,6 +448,11 @@ namespace oed
             Trace.WriteLine($"export: {export}");
 
             CurrentQuery query = new();
+            if (clearExportFile)
+                {
+                    deleteExportFile();
+                }
+
             string wordIDFile = Path.Combine(Environment.CurrentDirectory, "word-id.txt");
             string[] wordIds = System.IO.File.ReadAllLines(wordIDFile);
             processCommonOptions(obsoleteOnly, obsoleteExclude, partOfSpeech, years, currentIn, revised, revisedNot, interactive, export, query);
@@ -457,7 +470,7 @@ namespace oed
             }
         }
 
-        public static void HandleSurfaceArgs(string form, string? partOfSpeech, string? years, bool includeRegion, bool includeInflections, bool interactive, bool export)
+        public static void HandleSurfaceArgs(string form, string? partOfSpeech, string? years, bool includeRegion, bool includeInflections, bool interactive, bool export, bool clearExportFile)
         {
             Trace.WriteLine($"Surfaceforms sub command entered.");
             Trace.WriteLine($"includeRegion {includeRegion}");
@@ -466,6 +479,11 @@ namespace oed
             Trace.WriteLine($"export {export}");
 
             CurrentQuery query = new();
+            if (clearExportFile)
+                {
+                    deleteExportFile();
+                }
+
             // As SurfaceForms only has a "current in" style years mode
             // When first set "current in" to true, then pass the years
             query.QueryMode = Modes.Surfaces;
@@ -485,13 +503,18 @@ namespace oed
             ConsoleUI.GetSurfaces(query);
         }
         // Also handling some global options
-        public static void HandleLemmaArgs(string text, bool tokenizeOff, bool tokenizeCharacter, bool export)
+        public static void HandleLemmaArgs(string text, bool tokenizeOff, bool tokenizeCharacter, bool export, bool clearExportFile)
         {
             Trace.WriteLine($"Lemma sub command entered.");
             Trace.WriteLine($"Text to lemmatize was: {text}");
             Trace.WriteLine($"tokenizeOff: {tokenizeOff}");
             Trace.WriteLine($"tokenizeCharacter: {tokenizeCharacter}");
             CurrentQuery query = new();
+            if (clearExportFile)
+                {
+                    deleteExportFile();
+                }
+
             try {
             query.LemmaText = text.Trim('\'');
             } catch (Exception ex) {
@@ -507,7 +530,7 @@ namespace oed
                 SavedQueries.AddMember(query.Lemmas);
             }
         }
-        public static void HandleQuoteArgs(bool word, bool male, bool female, string sourceTitle, string author, bool firstWord, bool firstSense, string fromDefinition, bool useWords, bool useSenses, string fromSense, string? years, bool interactive, bool export)
+        public static void HandleQuoteArgs(bool word, bool male, bool female, string sourceTitle, string author, bool firstWord, bool firstSense, string fromDefinition, bool useWords, bool useSenses, string fromSense, string? years, bool interactive, bool export, bool clearExportFile)
         {
             Trace.WriteLine($"Quote sub command entered.");
             Trace.WriteLine($"male: {male}");
@@ -525,6 +548,11 @@ namespace oed
             Trace.WriteLine($"years: {years ?? "null"}");
 
             CurrentQuery query = new();
+            if (clearExportFile)
+                {
+                    deleteExportFile();
+                }
+
             processCommonOptions(years, interactive, export, query);
 
             query.CurrentQuoteOptions = new(male, female, sourceTitle, author, firstWord, firstSense, fromDefinition, fromSense, useWords, useSenses);
@@ -666,6 +694,11 @@ namespace oed
             Trace.WriteLine($"clearExportFile: {clearExportFile}");
 
             CurrentQuery query = new();
+            if (clearExportFile)
+                {
+                    deleteExportFile();
+                }
+
             if (clearExportFile)
                 {
                     deleteExportFile();
