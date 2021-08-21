@@ -5,6 +5,7 @@ using System.IO;
 using System.Xml;
 using System.Net;
 using System.Linq;
+using System.Text;
 
 
 namespace oed
@@ -265,6 +266,234 @@ namespace oed
             }
 		}
 
+        public static void RenderTextFile()
+        {
+            string txtFile;
+            StreamWriter sw;
+            createTXT(out txtFile, out sw);
+            // int count = DefinitionsForExport.Count;
+
+            if (BlendedExport)
+            {
+                foreach (Definition d in DefinitionsForExport)
+                {
+                    List<Quote> quotesForDefinition = new();
+                    foreach (Quote q in QuotesForExport)
+                    {
+                        if (q.WordID == d.WordID)
+                        {
+                            quotesForDefinition.Add(q);
+                        }
+                    }
+                    // Render the XML
+                    try
+                    {
+                        var questionText = new System.Text.StringBuilder();
+                        foreach (Quote quote in quotesForDefinition)
+                        {
+                            string quoteText = $"\"{quote.Text}\" --{quote.Author}, {quote.Year}";
+                            questionText.Append(quoteText);
+                            questionText.Append("\r\n");
+                        }
+
+                        sw.WriteLine(UserEnteredWord);
+                        sw.WriteLine(questionText);
+                        sw.WriteLine(d.FormattedVerboseOutput);
+
+                    }
+                    catch (AggregateException ae)
+                    {
+                        var ex = ae.Flatten().InnerExceptions;
+                        Console.WriteLine("Error writing to Text file");
+                        foreach (var exception in ex)
+                        {
+                            Console.WriteLine($"{ex.ToString()}");
+                        }
+                    }
+                }
+            }
+            if (QuotesForExport.Count > 0 && !BlendedExport)
+            {
+                Console.WriteLine("Exporting Quotes...");
+                for (int i = 0; i < QuotesForExport.Count; i++)
+                {
+                    try
+                    {
+                        sw.WriteLine($"{QuotesForExport[i].Author} - {QuotesForExport[i].Year}");
+                        sw.WriteLine($"{QuotesForExport[i].Text}\" --{QuotesForExport[i].Author}, {QuotesForExport[i].Year}");
+                        sw.WriteLine();
+                    }
+                    catch (AggregateException ae)
+                    {
+                        var ex = ae.Flatten().InnerExceptions;
+                        Console.WriteLine("Error writing XML document:");
+                        foreach (var exception in ex)
+                        {
+                            Console.WriteLine($"{ex.ToString()}");
+                        }
+                    }
+                }
+            }
+
+            if (DefinitionsForExport.Count > 0 && !BlendedExport)
+            {
+                Console.WriteLine("Exporting Definitions..");
+                for (int i = 0; i < DefinitionsForExport.Count; i++)
+                {
+                    try
+                    {
+                        sw.WriteLine();
+                        sw.WriteLine(DefinitionsForExport[i].WordID);
+                        sw.WriteLine(DefinitionsForExport[i].FormattedVerboseOutput);
+                    }
+                    catch (AggregateException ae)
+                    {
+                        var ex = ae.Flatten().InnerExceptions;
+                        Console.WriteLine("Error writing XML document:");
+                        foreach (var exception in ex)
+                        {
+                            Console.WriteLine($"{ex.ToString()}");
+                        }
+                    }
+                }
+            }
+            if (SensesForExport.Count > 0 && !BlendedExport)
+            {
+                Console.WriteLine("Exporting Senses...");
+                string obsoleteText = "";
+                string mainUsageText = "";
+                for (int i = 0; i < SensesForExport.Count; i++)
+                {
+
+                    if (SensesForExport[i].IsObsolete)
+                    {
+                        obsoleteText = "This usage is obsolete.";
+                    }
+                    else
+                    {
+                        // obsoleteText = "This usage is NOT obsolete.";
+                        obsoleteText = "";
+                    }
+
+                    if (SensesForExport[i].IsMainUsage)
+                    {
+                        mainUsageText = "This sense is the main sense for this word.";
+                    }
+                    else
+                    {
+                        // mainUsageText = "This sense is NOT the main sense for this word.";
+                        mainUsageText = "";
+                    }
+
+
+
+                    try
+                    {
+                        sw.WriteLine(SensesForExport[i].OedReference);
+                        sw.WriteLine($"Sense: \"{SensesForExport[i].Definition}\" --This sense was first used in the year {SensesForExport[i].Start},  {obsoleteText}, {mainUsageText}, {SensesForExport[i].OedReference}");
+                        sw.WriteLine();
+                    }
+                    catch (AggregateException ae)
+                    {
+                        var ex = ae.Flatten().InnerExceptions;
+                        Console.WriteLine("Error writing XML document:");
+                        foreach (var exception in ex)
+                        {
+                            Console.WriteLine($"{ex.ToString()}");
+                        }
+                    }
+                }
+            }
+            if (Lemmas.Count > 0 && !BlendedExport)
+           {
+                Console.WriteLine("Exporting Lemmas...");
+                if (Lemmas[0].ZippedLemmas.Count > 0)
+                {
+                    try
+                    {
+                        sw.WriteLine("Token:            Lemma:");
+                        foreach (KeyValuePair<string, string> item in Lemmas[0].ZippedLemmas)
+                        {
+                            sw.WriteLine($"{item.Key}:          {item.Value}");
+                        }
+                        sw.WriteLine();
+                    }
+                    catch (AggregateException ae)
+                    {
+                        var ex = ae.Flatten().InnerExceptions;
+                        Console.WriteLine("Error writing XML document:");
+                        foreach (var exception in ex)
+                        {
+                            Console.WriteLine($"{ex.ToString()}");
+                        }
+                    }
+
+                }
+            }
+            if (SurfacesForExport.Count > 0 && !BlendedExport)
+            {
+                Console.WriteLine("Exporting Surface Forms...");
+                for (int i = 0; i < SurfacesForExport.Count; i++)
+                {
+                    try
+                    {
+                        sw.WriteLine(SurfacesForExport[i].word_id);
+                        sw.WriteLine($"Surfaceform searched: \"{SurfacesForExport[i].form}\", Lemma: {SurfacesForExport[i].lemma}, Normalized: {SurfacesForExport[i].normalized}");
+                        sw.WriteLine($"Part of Speech: {SurfacesForExport[i].part_of_speech}");
+                        if (SurfacesForExport[i].region != null)
+                        {
+                            sw.WriteLine($"Region: {SurfacesForExport[i].region}");
+                        }
+                        string yesNo = SurfacesForExport[i].standard_us_form ? "Yes" : "No";
+                        string usaForm = "Standard USA Form?: " + yesNo;
+                        sw.WriteLine(usaForm);
+                        string britishYesNo = SurfacesForExport[i].standard_british_form ? "Yes" : "No";
+                        string britishForm = "Standard USA Form?: " + yesNo;
+                        sw.WriteLine(britishForm);
+                        sw.WriteLine($"This form is listed as in use for these years: {SurfacesForExport[i].daterange.start} - {SurfacesForExport[i].daterange.end}");
+                        if (SurfacesForExport[i].daterange.obsolete)
+                        {
+                            sw.WriteLine("This form is listed as obsolete");
+                        }
+                    }
+                    catch (AggregateException ae)
+                    {
+                        var ex = ae.Flatten().InnerExceptions;
+                        Console.WriteLine("Error writing XML document:");
+                        foreach (var exception in ex)
+                        {
+                            Console.WriteLine($"{ex.ToString()}");
+                        }
+                    }
+
+                }
+            }
+            try
+            {
+
+                sw.Close();
+
+                Trace.WriteLine("A TXT file is being saved here:");
+                Trace.WriteLine(txtFile);
+            }
+            catch (AggregateException ae)
+            {
+                var ex = ae.Flatten().InnerExceptions;
+                Console.WriteLine("Error exporting XML document:");
+                foreach (var exception in ex)
+                {
+                    Console.WriteLine($"{ex.ToString()}");
+                }
+            }
+            /*
+            if (_appendXML)
+            {
+               AppendXML.Append(xmlFile);
+               return; 
+            }
+            */
+
+        }
 
 	    public static void RenderXML()
         {
@@ -590,6 +819,24 @@ namespace oed
             }
         }
 
+        private static void createTXT(out string txtFile, out StreamWriter sw)
+        {
+            txtFile = Path.Combine(Path.GetTempPath(), "OED-Export.txt");
+            if (File.Exists(txtFile))
+            {
+                Trace.WriteLine("Creating a new TXT file. This file will then get appended.");
+                txtFile = Path.Combine(Path.GetTempPath(), "OED-Export.txt");
+                _appendXML = true;
+            } else {
+                _appendXML = false;
+            }
+            sw = File.CreateText(txtFile);
+
+            
+
+
+        }
+
         private static void createXML(out string xmlFile, out FileStream xmlFileStream, out XmlWriter xml)
         {
             xmlFile = Path.Combine(Environment.CurrentDirectory, ExportFileName);
@@ -597,9 +844,11 @@ namespace oed
 	    // Then modify it.
             if (File.Exists(xmlFile))
             {
-                Trace.WriteLine("Will append create a new XML file - which then gets appended.");
+                Trace.WriteLine("Creating a new XML file.  This file will then get appended.");
                 xmlFile = Path.Combine(Environment.CurrentDirectory, "append-me.xml");
                 _appendXML = true;
+            } else {
+                _appendXML = false;
             }
             // @TODO delete the file only if the user specified to do so.
             // File.Delete(xmlFile);
