@@ -155,7 +155,7 @@ namespace oed
             surfaceCommand.AddOption(semanticIncludeRegion);
             surfaceCommand.AddOption(semanticIncludeInflections);
 
-            surfaceCommand.Handler = CommandHandler.Create<string, string?, string?, bool, bool, bool, bool, bool>(HandleSurfaceArgs);
+            surfaceCommand.Handler = CommandHandler.Create<string, string?, string?, bool, bool, bool, bool, bool, string?, string?>(HandleSurfaceArgs);
 
             var lemmaCommand = new Command("Lemma");
             lemmaCommand.AddAlias("lemma");
@@ -207,7 +207,7 @@ namespace oed
         var derivativesSelection = new Argument<string>(name: "selection", getDefaultValue: () => "", description: "The selection of words to find derivatives for.");
         derivativesCommand.AddArgument(derivativesSelection);
         rootCommand.AddCommand(derivativesCommand);
-        derivativesCommand.Handler = CommandHandler.Create<string, bool, bool, string?, string?, bool, bool, bool, string?, string?, bool, bool, bool>(HandleDerivativesArgs);
+        derivativesCommand.Handler = CommandHandler.Create<string, bool, bool, string?, string?, bool, bool, bool, string?, string?, bool, bool, bool, string?, string?>(HandleDerivativesArgs);
 
             // new Option<string?>(new[] {"--part-of-speech", "-ps"}, description: "Only return results to words specific parts of speech"),
 
@@ -215,6 +215,8 @@ namespace oed
 			rootCommand.AddGlobalOption(new Option<bool>(new[] {"--obsolete-only", "o"}, description: "Only return obsolete usages."));
 			rootCommand.AddGlobalOption(new Option<bool>(new[] {"--obsolete-exclude", "oe"}, description: "Only return NON-obsolete usages."));
             rootCommand.AddGlobalOption(new Option<bool>(new[] {"--clear-export-file", "cf"}, description: "Delete the current export file.  The next time you export - you will start with a brand new file instead of continuing to append to the current file."));
+            rootCommand.AddGlobalOption(new Option<string?>(new[] {"--start-year", "sy"}, description: "Specify a start year. You can enter a range for a start year '-' i.e. 500-900"));
+            rootCommand.AddGlobalOption(new Option<string?>(new[] {"--end-year", "ey"}, description: "Specify an end year. You can enter a range using a end year '-' i.e. 500-900"));
             
             // @TODO make this some kind of string where you can pass a string argument to the command
             // By using the ArgumentAirty.ZeroOrOne 
@@ -260,7 +262,8 @@ namespace oed
             rootCommand.AddCommand(lemmaCommand);
 
             rootCommand.Description = "An app which processes the Oxford English Dictionary Researcher API, and exports to SuperMemo.";
-            rootCommand.Handler = CommandHandler.Create<string, bool, bool, bool, bool, string?, string?, bool, bool, bool, string?, string?, string, bool, bool, bool>(HandleArgs);
+//            rootCommand.Handler = CommandHandler.Create<string, bool, bool, bool, bool, string?, string?, bool, bool, bool, string?, string?, string, bool, bool, bool, string?, string?>(HandleArgs);
+            rootCommand.Handler = CommandHandler.Create((HandleArgs handleArgs) => {});
 
 
             string directoryPath = string.Concat(Environment.CurrentDirectory, "\\logs");
@@ -382,9 +385,13 @@ namespace oed
             private bool _export;
             private bool _clearExportFile;
 
+            private string? _startYear;
+            private string? _endYear;
+
             public SenseCommand(string? lemma, bool obsoleteOnly, bool obsoleteExclude, string? restrictRegion, string? years, 
                 bool currentIn, bool revised, bool revisedNot, string? restrictUsage, bool restrictMain, string? topic, 
-                string? partOfSpeech, string fromDefinition, string fromQuote, bool interactive, bool export, bool clearExportFile)
+                string? partOfSpeech, string fromDefinition, string fromQuote, bool interactive, bool export, bool clearExportFile,
+                string? startYear, string? endYear)
             {
                 this._lemma = lemma;
                 this._obsoleteOnly = obsoleteOnly;
@@ -403,6 +410,8 @@ namespace oed
                 this._interactive = interactive;
                 this._export = export;
                 this._clearExportFile = clearExportFile;
+                this._startYear = startYear;
+                this._endYear = endYear;
 
                 Trace.WriteLine($"Sense sub command entered.");
                 Trace.WriteLine($"lemma: {lemma}");
@@ -422,6 +431,8 @@ namespace oed
                 Trace.WriteLine($"interactive: {interactive}");
                 Trace.WriteLine($"export: {export}");
                 Trace.WriteLine($"clearExportFile: {clearExportFile}");
+                Trace.WriteLine($"startYear: {startYear}");
+                Trace.WriteLine($"endYear: {endYear}");
                 processSenseArgs();
             }
 
@@ -435,7 +446,8 @@ namespace oed
                 }
 
                 query.CurrentSenseOptions = new(_lemma, _restrictRegion, _restrictUsage, _restrictMain, _topic, _fromDefinition, _fromQuote);
-                processCommonOptions(_obsoleteOnly, _obsoleteExclude, _partOfSpeech, _years, _currentIn, _revised, _revisedNot, _interactive, _export, query);
+                processCommonOptions(_obsoleteOnly, _obsoleteExclude, _partOfSpeech, _years, _currentIn, _revised, _revisedNot, 
+                    _interactive, _export, query, _startYear, _endYear);
                 // Implement the non common options (i.e. the options not in available in the Word endpoint)
                 // region, main_current_sense, usage, topic
                 if(!string.IsNullOrWhiteSpace(_topic))
@@ -477,7 +489,7 @@ namespace oed
             }
         }
 
-        public static void HandleDerivativesArgs(string selection, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, bool interactive, bool export, bool clearExportFile)
+        public static void HandleDerivativesArgs(string selection, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, bool interactive, bool export, bool clearExportFile, string? startYear, string? endYear)
         {
             Trace.WriteLine("Derivatives sub command entered.");
             Trace.WriteLine($"CLI entered selection was {selection}");
@@ -492,6 +504,8 @@ namespace oed
             Trace.WriteLine($"etymologyType: {etymologyType}");
             Trace.WriteLine($"interactive: {interactive}");
             Trace.WriteLine($"export: {export}");
+            Trace.WriteLine($"StartYear: {startYear}");
+            Trace.WriteLine($"EndYear: {endYear}");
 
             CurrentQuery query = new();
             if (clearExportFile)
@@ -501,7 +515,7 @@ namespace oed
 
             string wordIDFile = Path.Combine(Environment.CurrentDirectory, "word-id.txt");
             string[] wordIds = System.IO.File.ReadAllLines(wordIDFile);
-            processCommonOptions(obsoleteOnly, obsoleteExclude, partOfSpeech, years, currentIn, revised, revisedNot, interactive, export, query);
+            processCommonOptions(obsoleteOnly, obsoleteExclude, partOfSpeech, years, currentIn, revised, revisedNot, interactive, export, query, startYear, endYear);
 
             if (!string.IsNullOrWhiteSpace(selection))
             {
@@ -516,7 +530,9 @@ namespace oed
             }
         }
 
-        public static void HandleSurfaceArgs(string form, string? partOfSpeech, string? years, bool includeRegion, bool includeInflections, bool interactive, bool export, bool clearExportFile)
+        public static void HandleSurfaceArgs(string form, string? partOfSpeech, string? years, bool includeRegion, 
+            bool includeInflections, bool interactive, bool export, bool clearExportFile, 
+            string? startYear, string? endYear)
         {
             Trace.WriteLine($"Surfaceforms sub command entered.");
             Trace.WriteLine($"includeRegion {includeRegion}");
@@ -545,7 +561,7 @@ namespace oed
             {
                 Trace.WriteLine($"Getting surfaceforms for {form}");
             }
-            processCommonOptions(obsoleteOnly: false, obsoleteExclude: false, partOfSpeech, years, currentIn, revised: false, revisedNot: false, interactive, export, query);
+            processCommonOptions(obsoleteOnly: false, obsoleteExclude: false, partOfSpeech, years, currentIn, revised: false, revisedNot: false, interactive, export, query, startYear, endYear);
             ConsoleUI.GetSurfaces(query);
         }
         // Also handling some global options
@@ -599,7 +615,7 @@ namespace oed
                     deleteExportFile();
                 }
 
-            processCommonOptions(years, interactive, export, query);
+            processCommonOptions(years, interactive, export, query, startYear: null, endYear: null);
 
             query.CurrentQuoteOptions = new(male, female, sourceTitle, author, firstWord, firstSense, fromDefinition, fromSense, useWords, useSenses);
             /*
@@ -721,7 +737,29 @@ namespace oed
             return returnIds;
         }
 
-        public static void HandleArgs(string word, bool quotes, bool quotesAndSenses, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, string fromQuote, bool interactive, bool export, bool clearExportFile)
+        public class HandleArgs
+        {
+            private string? _word;
+            private bool _quotes;
+            private bool _quotesAndSenses;
+            private bool _obsoleteOnly;
+            private bool _obsoleteExclude;
+            private string? _partOfSpeech; 
+            private string? _years;
+            private bool _currentIn; 
+            private bool _revised; 
+            private bool _revisedNot; 
+            private string? _etymologyLanguage;
+            private string? _etymologyType;
+            private string _fromQuote; 
+            private bool _interactive; 
+            private bool _export; 
+            private bool _clearExportFile; 
+            private string? _startYear;
+            private string? _endYear;
+        public HandleArgs(string word, bool quotes, bool quotesAndSenses, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, 
+            string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, string fromQuote, 
+            bool interactive, bool export, bool clearExportFile, string? startYear, string? endYear)
         {
             Trace.WriteLine($"CLI word entered was {word}");
             Trace.WriteLine($"Return quotes from word search {quotes}");
@@ -738,40 +776,61 @@ namespace oed
             Trace.WriteLine($"interactive: {interactive}");
             Trace.WriteLine($"export: {export}");
             Trace.WriteLine($"clearExportFile: {clearExportFile}");
+            Trace.WriteLine($"startYear: {startYear}");
+            Trace.WriteLine($"endYear: {endYear}");
+
+            this._word = word;
+            this._quotes = quotes;
+            this._quotesAndSenses = quotesAndSenses;
+            this._obsoleteOnly = obsoleteOnly;
+            this._obsoleteExclude = obsoleteExclude;
+            this._partOfSpeech = partOfSpeech; 
+            this._years = years;
+            this._currentIn = currentIn; 
+            this._revised = revised; 
+            this._revisedNot = revisedNot; 
+            this._etymologyLanguage = etymologyLanguage;
+            this._etymologyType = etymologyType;
+            this._fromQuote = fromQuote; 
+            this._interactive = interactive; 
+            this._export = export; 
+            this._clearExportFile = clearExportFile; 
+            this._startYear = startYear;
+            this._endYear = endYear;
 
             CurrentQuery query = new();
-            if (clearExportFile)
+            if (_clearExportFile)
                 {
                     deleteExportFile();
                 }
 
-            if (clearExportFile)
+            if (_clearExportFile)
                 {
                     deleteExportFile();
                 }
 
-            processCommonOptions(obsoleteOnly, obsoleteExclude, partOfSpeech, years, currentIn, revised, revisedNot, interactive, export, query);
+            processCommonOptions(_obsoleteOnly, _obsoleteExclude, _partOfSpeech, _years, _currentIn, _revised, _revisedNot, _interactive, _export, query, _startYear, _endYear);
 
-            if (quotes)
+            if (_quotes)
             {
                 query.QuotesFromWord = true;
             }
-            if (quotesAndSenses)
+            if (_quotesAndSenses)
             {
                 query.QuotesFromWord = false;
                 query.QuotesAndSenses = true;
             }
-            if (!string.IsNullOrWhiteSpace(etymologyLanguage))
+            if (!string.IsNullOrWhiteSpace(_etymologyLanguage))
             {
-                query.EtymologyLanguage = etymologyLanguage;
+                query.EtymologyLanguage = _etymologyLanguage;
             }
 
-            if (!string.IsNullOrWhiteSpace(etymologyType))
+            if (!string.IsNullOrWhiteSpace(_etymologyType))
             {
-                query.EtymologyType = etymologyType;
+                query.EtymologyType = _etymologyType;
             }
 
-            if (string.IsNullOrWhiteSpace(word))
+            if (string.IsNullOrWhiteSpace(_word))
             {
                 Console.WriteLine("No CLI word entered.");
                 ConsoleUI.Start(query);
@@ -781,10 +840,10 @@ namespace oed
                 Trace.WriteLine($"Entered CLI word is {word}");
                 var includeObsoleteProp = query.IncludeObsolete is null ? "null" : query.IncludeObsolete.Value.ToString();
                 Trace.WriteLine($"query.IncludeObsolete: {includeObsoleteProp}");
-                if (!string.IsNullOrWhiteSpace(fromQuote))
+                if (!string.IsNullOrWhiteSpace(_fromQuote))
                 {
                     Trace.WriteLine("fromQuote complex query activated in RootCommand / Definitions.");
-                    query.WordIDsToUse = GetSelectWordIds(fromQuote);
+                    query.WordIDsToUse = GetSelectWordIds(_fromQuote);
                     ConsoleUI.Start(word = "", query);
                 } else {
                     ConsoleUI.Start(word, query);
@@ -796,11 +855,13 @@ namespace oed
                   //  RunQuotesFromWordId(query, Program.programState.RootCommand, state.GlobalArgs); 
                 }
             }
+            }
         }
 
-        private static void processCommonOptions(string? years, bool interactive, bool export, CurrentQuery query)
+        private static void processCommonOptions(string? years, bool interactive, bool export, CurrentQuery query, 
+            string? startYear, string? endYear)
         {
-            processYears(years, query);
+            processYears(years, query, startYear, endYear);
             if (interactive)
             {
                 query.InteractiveMode = true;
@@ -812,9 +873,11 @@ namespace oed
             }
 
         }
-        private static void processCommonOptions(bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, bool interactive, bool export, CurrentQuery query)
+        private static void processCommonOptions(bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, 
+            bool currentIn, bool revised, bool revisedNot, bool interactive, bool export, CurrentQuery query, 
+            string? startYear, string? endYear)
         {
-            processYears(years, query);
+            processYears(years, query, startYear, endYear);
             if (currentIn)
             {
                 query.CurrentIn = true;
@@ -884,10 +947,21 @@ namespace oed
             }
         }
 
-        private static void processYears(string? years, CurrentQuery query)
+        private static void processYears(string? years, CurrentQuery query, string? startYear, string? endYear)
         {
             // @TODO improve this parser. No end year should be supported and 
             // not throw an exception.
+            if (!string.IsNullOrWhiteSpace(years))
+            {
+                
+                query.StartYearString = startYear.Trim().ToLower().Replace(" ", "");
+
+            }
+            if (!string.IsNullOrWhiteSpace(endYear))
+            {
+                query.EndYearString = endYear.Trim().ToLower().Replace(" ", "");
+            }
+            
             string cleanYears = years?.Trim().Replace("'", "").Replace("\"", "");
             if (!string.IsNullOrWhiteSpace(cleanYears))
             {

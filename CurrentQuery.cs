@@ -58,9 +58,11 @@ namespace oed
 
 		public int NumberOfQuotes { get; set; }
 		public bool CurrentIn { get; set; }
+		public string? StartYearString { get; set; }
 		public int StartYear { get; set; }
 		public bool OpenStart { get; set;}
 		public int EndYear { get; set; }
+		public string? EndYearString { get; set; }
 		public bool OpenEnd { get; set;}
 		public bool QuotesFromWord { get; set ; }
 		public bool QuotesAndSenses { get; set ; }
