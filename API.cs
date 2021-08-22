@@ -194,6 +194,14 @@ namespace oed
 				{
 					queryURL = queryURL + @"&current_in=" + query.StartYear + "-" + query.EndYear;
 				}
+				// SurfaceForms does not seem to use start year and end year
+				/*
+
+				if (query.StartEndYearRanges)
+				{
+					queryURL = queryURL + @"&start_year=" + query.StartYearString + "&end_year=" + query.EndYearString;
+				}
+				*/
 				if (query.CurrentSurfaceOptions.IncludeRegion)
 				{
 					queryURL = queryURL + @"&include_regional=true";
@@ -1189,18 +1197,21 @@ namespace oed
 			// if doing a 'qs' query, don't put years for the definition query.
 			// Filter them out of the quotes and senses?
 			if (query.QueryMode != Modes.Word || query.QueryMode == Modes.Word && !query.QuotesAndSenses) {
-				if (!query.CurrentIn)
+				if (!query.CurrentIn && !query.StartEndYearRanges)
 				{
-					if (query.StartYear != 0)
+					if (!query.CurrentIn)
 					{
-						queryURL = queryURL + @"&start_year=" + query.StartYear.ToString();
-					}
-					if (query.EndYear != 0)
-					{
-						queryURL = queryURL + @"&end_year=" + query.EndYear.ToString();
+						if (query.StartYear != 0)
+						{
+							queryURL = queryURL + @"&start_year=" + query.StartYear.ToString();
+						}
+						if (query.EndYear != 0)
+						{
+							queryURL = queryURL + @"&end_year=" + query.EndYear.ToString();
+						}
 					}
 				}
-				else
+				if (query.CurrentIn)
 				{
 					if (query.StartYear != 0 && query.EndYear != 0)
 					{
@@ -1213,6 +1224,17 @@ namespace oed
 					else
 					{
 						queryURL = queryURL + @"&current_in=" + "-" + query.EndYear.ToString();
+					}
+				}
+				if (query.StartEndYearRanges)
+				{
+					if (!string.IsNullOrWhiteSpace(query.StartYearString))
+					{
+						queryURL = queryURL + @"&start_year=" + query.StartYearString;
+					}
+					if (!string.IsNullOrWhiteSpace(query.EndYearString))
+					{
+						queryURL = queryURL + @"&end_year=" + query.EndYearString;
 					}
 				}
             }

@@ -262,7 +262,6 @@ namespace oed
             rootCommand.AddCommand(lemmaCommand);
 
             rootCommand.Description = "An app which processes the Oxford English Dictionary Researcher API, and exports to SuperMemo.";
-//            rootCommand.Handler = CommandHandler.Create<string, bool, bool, bool, bool, string?, string?, bool, bool, bool, string?, string?, string, bool, bool, bool, string?, string?>(HandleArgs);
             rootCommand.Handler = CommandHandler.Create((HandleArgs handleArgs) => {});
 
 
@@ -952,15 +951,17 @@ namespace oed
         {
             // @TODO improve this parser. No end year should be supported and 
             // not throw an exception.
-            if (!string.IsNullOrWhiteSpace(years))
+            if (!string.IsNullOrWhiteSpace(startYear))
             {
                 
                 query.StartYearString = startYear.Trim().ToLower().Replace(" ", "");
+                query.StartEndYearRanges = true;
 
             }
             if (!string.IsNullOrWhiteSpace(endYear))
             {
                 query.EndYearString = endYear.Trim().ToLower().Replace(" ", "");
+                query.StartEndYearRanges = true;
             }
             
             string cleanYears = years?.Trim().Replace("'", "").Replace("\"", "");

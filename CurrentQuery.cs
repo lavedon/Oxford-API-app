@@ -63,6 +63,7 @@ namespace oed
 		public bool OpenStart { get; set;}
 		public int EndYear { get; set; }
 		public string? EndYearString { get; set; }
+		public bool StartEndYearRanges { get; set; }
 		public bool OpenEnd { get; set;}
 		public bool QuotesFromWord { get; set ; }
 		public bool QuotesAndSenses { get; set ; }
@@ -119,6 +120,7 @@ namespace oed
 			this.WhatToExport = new List<int>();
 			this.FromSense = "";
 			this.WordIDsToUse = new List<string>();
+			this.StartEndYearRanges = false;
 			// this.PreviousWordIds = new();
 			
 		} 

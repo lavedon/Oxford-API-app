@@ -1,10 +1,1 @@
-mail_nn01
-mail_vb01
-mail_nn02
-mail_nn03
-mail_vb02
-mail_nn04
-mail_vb03
-mail_nn05
-mail_vb04
-mail_vb05
+axe_nn01
