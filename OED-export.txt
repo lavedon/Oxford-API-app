@@ -1,18 +1,9 @@
-zebra_nn01
-zebra: Any of several horse-like African equids of the genus Equus, having a whitish coat striped with bars of black and an erect mane.Noun.  Listed as a main definition. The original source of this word is listed as Abraham Hartwell. This word was first recored in 1597
+cold_nn01
+cold: gen. Significant lowness of temperature; lack of heat in an object or a substance; coldness to the senses. Also (in early use): †that which is cold; (in plural) cold things (obsolete).Noun.  Listed as a main definition. The original source of this word is listed as Bede's Ecclesiastical History. This word was first recored in 925
 
-war, v.1, sense 1a
-Sense: "transitive. To make war upon. Obsolete." --This sense was first used in the year 1154,  This usage is obsolete., , war, v.1, sense 1a
+cold_jj01
+cold: The proper adjective expressing a well-known quality of the air or of other substances exciting one of the primary physical sensations, due to the abstraction of heat from the surface of the body: of a temperature sensibly lower than that of the living human body. Admitting degrees of intensity (colder, coldest). of the atmosphere, and meteoric conditions.Adjective.  Listed as a main definition. The original source of this word is listed as Lindisfarne Gospels. This word was first recored in 950
 
-war, n.1, sense 1a
-Sense: "Hostile contention by means of armed forces, carried on between nations, states, or rulers, or between parties in the same nation or state; the employment of armed forces against a foreign power, or against an opposing party in the state." --This sense was first used in the year 1154,  , This sense is the main sense for this word., war, n.1, sense 1a
-
-war, n.1, sense 1b
-Sense: "transferred and figurative. Applied poetically or rhetorically to any kind of active hostility or contention between living beings, or of conflict between opposing forces or principles. Also: a loud or confused demonstration." --This sense was first used in the year 1199,  , , war, n.1, sense 1b
-
-war, v.1, sense 3a
-Sense: "figurative. Of persons: To contend, fight with immaterial weapons; to carry on a metaphorical warfare. Of things, forces, principles: To be in strong opposition. with const. as in sense 2a." --This sense was first used in the year 1200,  , , war, v.1, sense 3a
-
-war, v.1, sense 1c
-Sense: "To harass, persecute. Obsolete." --This sense was first used in the year 1225,  This usage is obsolete., , war, v.1, sense 1c
+cold_vb01
+cold: intransitive. To become cold. (Also figurative.) Also, to be cold.Verb.  Listed as a main definition. The original source of this word is listed as Riming Poem. This word was first recored in 975
 

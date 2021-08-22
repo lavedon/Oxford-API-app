@@ -77,7 +77,6 @@ namespace oed
             senseCommand.AddOption(senseFromQuote);
 
             // Handle sense command - Too many arguments? Will 
-            // senseCommand.Handler = CommandHandler.Create<string?, bool, bool, string?, string?, bool, bool, bool, string?, bool, string?, string?, string, string, bool, bool>(HandleSenseArgs);
             senseCommand.Handler = CommandHandler.Create((SenseCommand sense) => {});
 
             var quoteCommand = new Command("Quote");
