@@ -1,93 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <SuperMemoCollection>
-  <Count>10</Count>
+  <Count>1</Count>
   <SuperMemoElement>
     <ID>1</ID>
-    <Title>mail_nn01</Title>
+    <Title>zebra_nn01</Title>
     <Type>Topic</Type>
     <Content>
-      <Question>mail: Payment, tax, tribute, rent. In O.E. also: †agreement, deal (obsolete). mails and duties: the rents of an estate. Cf. blackmail n.Noun.  Listed as a main definition. The original source of this word is listed as Anglo-Saxon Chronicle. This word was first recored in 1070</Question>
-      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
-    </Content>
-  </SuperMemoElement>
-  <SuperMemoElement>
-    <ID>2</ID>
-    <Title>mail_vb01</Title>
-    <Type>Topic</Type>
-    <Content>
-      <Question>mail: transitive. To tie or wrap up (goods, a parcel, etc.); to envelop. Also figurative and with up. Obsolete.Verb.  Listed as a main definition. The original source of this word is listed as N. S. B. Gras. This word was first recored in 1228</Question>
-      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
-    </Content>
-  </SuperMemoElement>
-  <SuperMemoElement>
-    <ID>3</ID>
-    <Title>mail_nn02</Title>
-    <Type>Topic</Type>
-    <Content>
-      <Question>mail: A person, vehicle, or train that carries the mail or postal matter; often short for mail coach, train, van, etc. Also (chiefly North American and Australian): the system of conveyance and delivery of letters, etc., by post (also in plural); the official organization responsible for this activity in a particular country; the post.Noun.  Listed as a main definition. The original source of this word is listed as Layamon. This word was first recored in 1275</Question>
-      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
-    </Content>
-  </SuperMemoElement>
-  <SuperMemoElement>
-    <ID>4</ID>
-    <Title>mail_nn03</Title>
-    <Type>Topic</Type>
-    <Content>
-      <Question>mail: Armour composed of interlaced rings or chain-work or of overlapping plates fastened upon a groundwork. coat of mail: see coat n. 5.Noun.  Listed as a main definition. The original source of this word is listed as Guy of Warwick. This word was first recored in 1330</Question>
-      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
-    </Content>
-  </SuperMemoElement>
-  <SuperMemoElement>
-    <ID>5</ID>
-    <Title>mail_vb02</Title>
-    <Type>Topic</Type>
-    <Content>
-      <Question>mail: transitive. To rent, pay rent for.Verb.  Listed as a main definition. The original source of this word is listed as Acts of Parliament of Scotland. This word was first recored in 1425</Question>
-      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
-    </Content>
-  </SuperMemoElement>
-  <SuperMemoElement>
-    <ID>6</ID>
-    <Title>mail_nn04</Title>
-    <Type>Topic</Type>
-    <Content>
-      <Question>mail: A small coin, normally a half denomination; (spec. in 14th-cent. England) a silver halfpenny. Also figurative.Noun.  Listed as a main definition. The original source of this word is listed as Osbern Bokenham. This word was first recored in 1447</Question>
-      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
-    </Content>
-  </SuperMemoElement>
-  <SuperMemoElement>
-    <ID>7</ID>
-    <Title>mail_vb03</Title>
-    <Type>Topic</Type>
-    <Content>
-      <Question>mail: transitive. To make (a piece of armour) out of mail. Obsolete.Verb.  Listed as a main definition. The original source of this word is listed as Archiv fur das Studium der Neueren Sprachen. This word was first recored in 1449</Question>
-      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
-    </Content>
-  </SuperMemoElement>
-  <SuperMemoElement>
-    <ID>8</ID>
-    <Title>mail_nn05</Title>
-    <Type>Topic</Type>
-    <Content>
-      <Question>mail: The game of pall-mall; a place where the game was played. Hence: a public promenade bordered by trees; the Mail: the Mall in St James's Park, London (see mall n.1).Noun.  Listed as a main definition. The original source of this word is listed as John Evelyn. This word was first recored in 1660</Question>
-      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
-    </Content>
-  </SuperMemoElement>
-  <SuperMemoElement>
-    <ID>9</ID>
-    <Title>mail_vb04</Title>
-    <Type>Topic</Type>
-    <Content>
-      <Question>mail: transitive. To spot, stain, discolour.Verb.  Listed as a main definition. The original source of this word is listed as William Nicolson. This word was first recored in 1677</Question>
-      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
-    </Content>
-  </SuperMemoElement>
-  <SuperMemoElement>
-    <ID>10</ID>
-    <Title>mail_vb05</Title>
-    <Type>Topic</Type>
-    <Content>
-      <Question>mail: transitive. Originally U.S. To send by post, to post. Also with in, off, out.Verb.  Listed as a main definition. The original source of this word is listed as Laws &amp; Regulations Post Office (U.S.). This word was first recored in 1827</Question>
+      <Question>zebra: Any of several horse-like African equids of the genus Equus, having a whitish coat striped with bars of black and an erect mane.Noun.  Listed as a main definition. The original source of this word is listed as Abraham Hartwell. This word was first recored in 1597</Question>
       <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
     </Content>
   </SuperMemoElement>

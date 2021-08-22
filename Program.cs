@@ -825,6 +825,17 @@ namespace oed
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.InnerException?.ToString());
             }
+            // Delete the text file also
+            try {
+                filePath = Path.Combine(Environment.CurrentDirectory, "OED-export.txt");
+                File.Delete(filePath);
+            } 
+            catch (Exception ex) {
+                Console.WriteLine("Trying to delete text export file.");
+                Console.WriteLine("But could not find the file: " + ex.Message);
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.InnerException?.ToString());
+            }
         }
 
         private static void processYears(string? years, CurrentQuery query)
