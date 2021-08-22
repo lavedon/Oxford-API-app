@@ -253,6 +253,16 @@ namespace oed
             quotesAndSenses.AddAlias("qs");
             rootCommand.AddOption(quotesAndSenses);
 
+            var testComplexCommand = new Command("TestComplex");
+            testComplexCommand.AddOption(new Option<string>("--Name", "Enter your name."));
+            testComplexCommand.AddOption(new Option<string>("--test-age", "Enter your age."));
+            testComplexCommand.Handler = CommandHandler.Create(
+                (TestComplexType testComplexArgs) => {
+                    Console.WriteLine($"testComplexArgs.Name {testComplexArgs.Name}");
+                    Console.WriteLine($"textComplexArgs.TestAge {testComplexArgs.TestAge}");
+            });
+            testComplexCommand.Description = "A command to test, complex, custom commands.";
+            rootCommand.AddCommand(testComplexCommand);
             rootCommand.AddCommand(senseCommand);
             rootCommand.AddCommand(quoteCommand);
             rootCommand.AddCommand(surfaceCommand);
@@ -973,5 +983,23 @@ namespace oed
             }
             return nums;
         }
+
+        public class TestComplexType 
+        {
+            public string Name { get; set; }
+            public int? TestAge { get; set; }
+
+            public TestComplexType(string name, int? testAge)
+            {
+                this.Name = name;
+                this.TestAge = testAge;
+
+                Console.WriteLine("Called TestComplexType constructor");
+                Console.WriteLine("Huzzah!!!!!!");
+                Console.WriteLine(this.Name);
+                Console.WriteLine(this.TestAge);
+
+            }
+        } 
     }
 }
