@@ -7,6 +7,20 @@ using System.Diagnostics;
 namespace oed {
     public static class AppendXML{
         
+        public static void AppendTxtFile(string filePath)
+        {
+            try {
+                using (Stream input = File.OpenRead(filePath))
+                using (Stream output = new FileStream("OED-Export.txt", FileMode.Append, FileAccess.Write, FileShare.None))
+                {
+                    input.CopyTo(output); 
+                }
+                File.Delete(filePath);
+            } catch (Exception e) {
+                Console.WriteLine("Error appending temporary file to OED-Export.txt");
+                Console.WriteLine(e.Message);
+            }
+        }
         public static void Append(string filePath)
         {
             try {

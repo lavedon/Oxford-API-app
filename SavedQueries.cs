@@ -265,6 +265,91 @@ namespace oed
                return; 
             }
 		}
+        public static void RenderTextFile(CurrentQuery query)
+        {
+            string txtFile;
+            StreamWriter sw;
+            createTXT(out txtFile, out sw);
+			if (query.QueryMode == Modes.QuotesAndSenses) {
+			try {
+			foreach (var sq in query.SQ_Data)
+			{
+				int sNum;
+				sNum = 1;
+				foreach (Sens s in sq.senses)
+				{
+					// answerText.Append($"{sq.definition} <BR> <BR>");
+					// answerText.Append($"Sense #{sNum} <BR>");
+					sw.WriteLine($"{s.lemma} - {s.definition}");
+                    /*
+					answerText.Append($"First use: {s.first_use} <BR>");
+					answerText.Append($"Part of speech: {s.part_of_speech} <BR>");
+					answerText.Append($"{s.daterange.start} - {s.daterange.end} <BR>");
+                    */
+					if (s.main_current_sense)
+					{
+						sw.WriteLine($"This is the main current sense");
+					}
+					if (s.daterange.obsolete)
+					{
+						sw.WriteLine($"This sense is obsolete");
+					}
+					int qNum;
+					qNum = 1;
+                    sw.WriteLine();
+					sw.WriteLine(s.lemma);
+
+					foreach (Quotation q in s.quotations) 
+					{
+						// questionText.Append($"Quotation #{qNum}: <BR>");
+						sw.WriteLine($"{q.year.ToString()} ");
+						sw.WriteLine($"{q.source.author}, {q.source.title} ");
+						sw.WriteLine($"{q.text.full_text}");
+						qNum++;
+					}
+    
+                    // Removed <FONT color="#ff0000"> and </FONT> from the text
+                    sw.WriteLine();
+                    sw.WriteLine();
+					sNum++;
+				}
+			}
+			} 
+			catch (AggregateException ae)
+			{
+				var ex = ae.Flatten().InnerExceptions;
+				Console.WriteLine("Error writing XML document:");
+				foreach (var exception in ex)
+				{
+					Console.WriteLine($"{ex.ToString()}");
+				}
+
+			}
+            try
+            {
+
+                sw.Close();
+
+                Trace.WriteLine("A Text file is being saved here:");
+                Trace.WriteLine(txtFile);
+
+            }
+            catch (AggregateException ae)
+            {
+                var ex = ae.Flatten().InnerExceptions;
+                Console.WriteLine("Error exporting text file:");
+                foreach (var exception in ex)
+                {
+                    Console.WriteLine($"{ex.ToString()}");
+                }
+            }
+			}
+            if (_appendXML)
+            {
+               AppendXML.AppendTxtFile(txtFile);
+               return; 
+            }
+        }
 
         public static void RenderTextFile()
         {
@@ -285,18 +370,17 @@ namespace oed
                             quotesForDefinition.Add(q);
                         }
                     }
-                    // Render the XML
                     try
                     {
                         var questionText = new System.Text.StringBuilder();
+                        sw.WriteLine(UserEnteredWord);
                         foreach (Quote quote in quotesForDefinition)
                         {
                             string quoteText = $"\"{quote.Text}\" --{quote.Author}, {quote.Year}";
-                            questionText.Append(quoteText);
-                            questionText.Append("\r\n");
+                            sw.WriteLine(quoteText);
+                            sw.WriteLine();
                         }
 
-                        sw.WriteLine(UserEnteredWord);
                         sw.WriteLine(questionText);
                         sw.WriteLine(d.FormattedVerboseOutput);
 
@@ -337,14 +421,14 @@ namespace oed
 
             if (DefinitionsForExport.Count > 0 && !BlendedExport)
             {
-                Console.WriteLine("Exporting Definitions..");
+                Console.WriteLine("Exporting Definitions to text file..");
                 for (int i = 0; i < DefinitionsForExport.Count; i++)
                 {
                     try
                     {
-                        sw.WriteLine();
                         sw.WriteLine(DefinitionsForExport[i].WordID);
                         sw.WriteLine(DefinitionsForExport[i].FormattedVerboseOutput);
+                        sw.WriteLine();
                     }
                     catch (AggregateException ae)
                     {
@@ -359,7 +443,7 @@ namespace oed
             }
             if (SensesForExport.Count > 0 && !BlendedExport)
             {
-                Console.WriteLine("Exporting Senses...");
+                Console.WriteLine("Exporting Senses to a text file...");
                 string obsoleteText = "";
                 string mainUsageText = "";
                 for (int i = 0; i < SensesForExport.Count; i++)
@@ -479,19 +563,17 @@ namespace oed
             catch (AggregateException ae)
             {
                 var ex = ae.Flatten().InnerExceptions;
-                Console.WriteLine("Error exporting XML document:");
+                Console.WriteLine("Error exporting text file:");
                 foreach (var exception in ex)
                 {
                     Console.WriteLine($"{ex.ToString()}");
                 }
             }
-            /*
             if (_appendXML)
             {
-               AppendXML.Append(xmlFile);
+               AppendXML.AppendTxtFile(txtFile);
                return; 
             }
-            */
 
         }
 
@@ -609,7 +691,7 @@ namespace oed
 
             if (DefinitionsForExport.Count > 0 && !BlendedExport)
             {
-                Console.WriteLine("Exporting Definitions..");
+                Console.WriteLine("Exporting Definitions for SuperMemo..");
                 for (int i = 0; i < DefinitionsForExport.Count; i++)
                 {
                     int ID = i + 1;
@@ -640,7 +722,7 @@ namespace oed
             }
             if (SensesForExport.Count > 0 && !BlendedExport)
             {
-                Console.WriteLine("Exporting Senses...");
+                Console.WriteLine("Exporting Senses for SuperMemo...");
                 string obsoleteText = "";
                 string mainUsageText = "";
                 for (int i = 0; i < SensesForExport.Count; i++)
@@ -739,7 +821,7 @@ namespace oed
             }
             if (SurfacesForExport.Count > 0 && !BlendedExport)
             {
-                Console.WriteLine("Exporting Surface Forms...");
+                Console.WriteLine("Exporting Surface Forms for SuperMemo...");
                 for (int i = 0; i < SurfacesForExport.Count; i++)
                 {
                     try
@@ -815,17 +897,17 @@ namespace oed
             if (_appendXML)
             {
                AppendXML.Append(xmlFile);
-               return; 
             }
+            RenderTextFile();
         }
 
         private static void createTXT(out string txtFile, out StreamWriter sw)
         {
-            txtFile = Path.Combine(Path.GetTempPath(), "OED-Export.txt");
+            txtFile = Path.Combine(Environment.CurrentDirectory, "OED-export.txt");
             if (File.Exists(txtFile))
             {
                 Trace.WriteLine("Creating a new TXT file. This file will then get appended.");
-                txtFile = Path.Combine(Path.GetTempPath(), "OED-Export.txt");
+                txtFile = Path.Combine(Path.GetTempPath(), "OED-export-append.txt");
                 _appendXML = true;
             } else {
                 _appendXML = false;

@@ -65,6 +65,7 @@ namespace oed
 				query = filterQuotesAndSenses(query);
 				displayQuotesAndSenses(query);
 				SavedQueries.RenderXML(query);
+				SavedQueries.RenderTextFile(query);
 			}
 
 		}
