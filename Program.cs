@@ -77,7 +77,8 @@ namespace oed
             senseCommand.AddOption(senseFromQuote);
 
             // Handle sense command - Too many arguments? Will 
-            senseCommand.Handler = CommandHandler.Create<string?, bool, bool, string?, string?, bool, bool, bool, string?, bool, string?, string?, string, string, bool, bool>(HandleSenseArgs);
+            // senseCommand.Handler = CommandHandler.Create<string?, bool, bool, string?, string?, bool, bool, bool, string?, bool, string?, string?, string, string, bool, bool>(HandleSenseArgs);
+            senseCommand.Handler = CommandHandler.Create((SenseCommand sense) => {});
 
             var quoteCommand = new Command("Quote");
             quoteCommand.AddAlias("quote");
@@ -253,16 +254,6 @@ namespace oed
             quotesAndSenses.AddAlias("qs");
             rootCommand.AddOption(quotesAndSenses);
 
-            var testComplexCommand = new Command("TestComplex");
-            testComplexCommand.AddOption(new Option<string>("--Name", "Enter your name."));
-            testComplexCommand.AddOption(new Option<string>("--test-age", "Enter your age."));
-            testComplexCommand.Handler = CommandHandler.Create(
-                (TestComplexType testComplexArgs) => {
-                    Console.WriteLine($"testComplexArgs.Name {testComplexArgs.Name}");
-                    Console.WriteLine($"textComplexArgs.TestAge {testComplexArgs.TestAge}");
-            });
-            testComplexCommand.Description = "A command to test, complex, custom commands.";
-            rootCommand.AddCommand(testComplexCommand);
             rootCommand.AddCommand(senseCommand);
             rootCommand.AddCommand(quoteCommand);
             rootCommand.AddCommand(surfaceCommand);
@@ -372,75 +363,121 @@ namespace oed
                 return query;
         }
 
-        public static void HandleSenseArgs(string? lemma, bool obsoleteOnly, bool obsoleteExclude, string? restrictRegion, string? years, bool currentIn, bool revised, bool revisedNot, string? restrictUsage, bool restrictMain, string? topic, string? partOfSpeech, string fromDefinition, string fromQuote, bool interactive, bool export)
+        public class SenseCommand 
         {
-            Trace.WriteLine($"Sense sub command entered.");
-            Trace.WriteLine($"lemma: {lemma}");
-      //    Trace.WriteLine($"synonyms: {synonyms}");
-      //    Trace.WriteLine($"siblings: {siblings}");
-            Trace.WriteLine($"restrictRegion: {restrictRegion}");
-            Trace.WriteLine($"restrictUsage: {restrictUsage}");
-            Trace.WriteLine($"restrictMain: {restrictMain}");
-            Trace.WriteLine($"obsoleteOnlyOption: {obsoleteOnly}");
-            Trace.WriteLine($"excludeObsoleteOption: {obsoleteExclude}.");
-            Trace.WriteLine($"partOfSpeech: {partOfSpeech ?? "null"}");
-            Trace.WriteLine($"years: {years ?? "null"}");
-            Trace.WriteLine($"topic: {topic}");
-            Trace.WriteLine($"Current In: {currentIn}");
-            Trace.WriteLine($"FromDefinition: {fromDefinition}");
-            Trace.WriteLine($"FromQuote: {fromQuote}");
-            Trace.WriteLine($"interactive: {interactive}");
-            Trace.WriteLine($"export: {export}");
-            // Trace.WriteLine($"clearExportFile: {clearExportFile}");
+            private string? _lemma;
+            private bool _obsoleteOnly;
+            private bool _obsoleteExclude;
+            private string? _restrictRegion;
+            private string? _years;
+            private bool _currentIn;
+            private bool _revised;
+            private bool _revisedNot;
+            private string? _restrictUsage;
+            private bool _restrictMain;
+            private string? _topic;
+            private string? _partOfSpeech;
+            private string _fromDefinition;
+            private string _fromQuote;
+            private bool _interactive;
+            private bool _export;
+            private bool _clearExportFile;
 
-            CurrentQuery query = new();
-            /*
-            if (clearExportFile)
+            public SenseCommand(string? lemma, bool obsoleteOnly, bool obsoleteExclude, string? restrictRegion, string? years, 
+                bool currentIn, bool revised, bool revisedNot, string? restrictUsage, bool restrictMain, string? topic, 
+                string? partOfSpeech, string fromDefinition, string fromQuote, bool interactive, bool export, bool clearExportFile)
+            {
+                this._lemma = lemma;
+                this._obsoleteOnly = obsoleteOnly;
+                this._obsoleteExclude = obsoleteExclude;
+                this._restrictRegion = restrictRegion;
+                this._years = years;
+                this._currentIn = currentIn;
+                this._revised = revised;
+                this._revisedNot = revisedNot;
+                this._restrictUsage = restrictUsage;
+                this._restrictMain = restrictMain;
+                this._topic = topic;
+                this._partOfSpeech = partOfSpeech;
+                this._fromDefinition = fromDefinition;
+                this._fromQuote = fromQuote;
+                this._interactive = interactive;
+                this._export = export;
+                this._clearExportFile = clearExportFile;
+
+                Trace.WriteLine($"Sense sub command entered.");
+                Trace.WriteLine($"lemma: {lemma}");
+            //  Trace.WriteLine($"synonyms: {synonyms}");
+        //      Trace.WriteLine($"siblings: {siblings}");
+                Trace.WriteLine($"restrictRegion: {restrictRegion}");
+                Trace.WriteLine($"restrictUsage: {restrictUsage}");
+                Trace.WriteLine($"restrictMain: {restrictMain}");
+                Trace.WriteLine($"obsoleteOnlyOption: {obsoleteOnly}");
+                Trace.WriteLine($"excludeObsoleteOption: {obsoleteExclude}.");
+                Trace.WriteLine($"partOfSpeech: {partOfSpeech ?? "null"}");
+                Trace.WriteLine($"years: {years ?? "null"}");
+                Trace.WriteLine($"topic: {topic}");
+                Trace.WriteLine($"Current In: {currentIn}");
+                Trace.WriteLine($"FromDefinition: {fromDefinition}");
+                Trace.WriteLine($"FromQuote: {fromQuote}");
+                Trace.WriteLine($"interactive: {interactive}");
+                Trace.WriteLine($"export: {export}");
+                Trace.WriteLine($"clearExportFile: {clearExportFile}");
+                processSenseArgs();
+            }
+
+            private void processSenseArgs()
+            {
+                Trace.WriteLine("Processing sense arguments.");
+                CurrentQuery query = new();
+                if (_clearExportFile)
                 {
                     deleteExportFile();
                 }
-            */
 
-            query.CurrentSenseOptions = new(lemma, restrictRegion, restrictUsage, restrictMain, topic, fromDefinition, fromQuote);
-            processCommonOptions(obsoleteOnly, obsoleteExclude, partOfSpeech, years, currentIn, revised, revisedNot, interactive, export, query);
-            // Implement the non common options (i.e. the options not in available in the Word endpoint)
-            // region, main_current_sense, usage, topic
-            if(!string.IsNullOrWhiteSpace(topic))
-            {
-                query.CurrentSenseOptions.Topic = topic;
-            }
-           if(!string.IsNullOrWhiteSpace(restrictRegion))
-            {
-               query.CurrentSenseOptions.RestrictRegion = restrictRegion; 
-            } 
-            if(restrictMain)
-            {
-                query.CurrentSenseOptions.RestrictMain = true;
-            }
-            if(!string.IsNullOrWhiteSpace(restrictUsage))
-            {
-                query.CurrentSenseOptions.RestrictUsage = restrictUsage;
-            }
-            
-            if (!string.IsNullOrWhiteSpace(fromDefinition) || !string.IsNullOrWhiteSpace(fromQuote))
-            {
-                string nums = string.IsNullOrWhiteSpace(fromDefinition) ? fromQuote :  fromDefinition;
+                query.CurrentSenseOptions = new(_lemma, _restrictRegion, _restrictUsage, _restrictMain, _topic, _fromDefinition, _fromQuote);
+                processCommonOptions(_obsoleteOnly, _obsoleteExclude, _partOfSpeech, _years, _currentIn, _revised, _revisedNot, _interactive, _export, query);
+                // Implement the non common options (i.e. the options not in available in the Word endpoint)
+                // region, main_current_sense, usage, topic
+                if(!string.IsNullOrWhiteSpace(_topic))
+                {
+                    query.CurrentSenseOptions.Topic = _topic;
+                }
+            if(!string.IsNullOrWhiteSpace(_restrictRegion))
+                {
+                query.CurrentSenseOptions.RestrictRegion = _restrictRegion; 
+                } 
+                if(_restrictMain)
+                {
+                    query.CurrentSenseOptions.RestrictMain = true;
+                }
+                if(!string.IsNullOrWhiteSpace(_restrictUsage))
+                {
+                    query.CurrentSenseOptions.RestrictUsage = _restrictUsage;
+                }
+                
+                if (!string.IsNullOrWhiteSpace(_fromDefinition) || !string.IsNullOrWhiteSpace(_fromQuote))
+                {
+                    string nums = string.IsNullOrWhiteSpace(_fromDefinition) ? _fromQuote :  _fromDefinition;
 
-                query.CurrentSenseOptions.WordIDsToUse = GetSelectWordIds(nums);
-                ConsoleUI.GetSenses(query);
+                    query.CurrentSenseOptions.WordIDsToUse = GetSelectWordIds(nums);
+                    ConsoleUI.GetSenses(query);
 
-            }
-            else if (string.IsNullOrWhiteSpace(lemma))
-            {
-                Trace.WriteLine("Looking up word IDs from file");
-                ConsoleUI.GetSenses(SavedQueries.LoadWordIds(query));
-            }
-            else
-            { 
-                query.HasLookedUpWord = true;
-                ConsoleUI.GetSenses(query);
+                }
+                else if (string.IsNullOrWhiteSpace(_lemma))
+                {
+                    Trace.WriteLine("Looking up word IDs from file");
+                    ConsoleUI.GetSenses(SavedQueries.LoadWordIds(query));
+                }
+                else
+                { 
+                    query.HasLookedUpWord = true;
+                    ConsoleUI.GetSenses(query);
+                }
+
             }
         }
+
         public static void HandleDerivativesArgs(string selection, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, bool interactive, bool export, bool clearExportFile)
         {
             Trace.WriteLine("Derivatives sub command entered.");
@@ -984,22 +1021,5 @@ namespace oed
             return nums;
         }
 
-        public class TestComplexType 
-        {
-            public string Name { get; set; }
-            public int? TestAge { get; set; }
-
-            public TestComplexType(string name, int? testAge)
-            {
-                this.Name = name;
-                this.TestAge = testAge;
-
-                Console.WriteLine("Called TestComplexType constructor");
-                Console.WriteLine("Huzzah!!!!!!");
-                Console.WriteLine(this.Name);
-                Console.WriteLine(this.TestAge);
-
-            }
-        } 
     }
 }

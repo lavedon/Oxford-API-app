@@ -1,12 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <SuperMemoCollection>
-  <Count>1</Count>
+  <Count>6</Count>
   <SuperMemoElement>
     <ID>1</ID>
     <Title>zebra_nn01</Title>
     <Type>Topic</Type>
     <Content>
       <Question>zebra: Any of several horse-like African equids of the genus Equus, having a whitish coat striped with bars of black and an erect mane.Noun.  Listed as a main definition. The original source of this word is listed as Abraham Hartwell. This word was first recored in 1597</Question>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>1</ID>
+    <Title>war, v.1, sense 1a</Title>
+    <Type>Topic</Type>
+    <Content>
+      <Question>Sense: "transitive. To make war upon. Obsolete." --This sense was first used in the year 1154,  This usage is obsolete., , war, v.1, sense 1a</Question>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>2</ID>
+    <Title>war, n.1, sense 1a</Title>
+    <Type>Topic</Type>
+    <Content>
+      <Question>Sense: "Hostile contention by means of armed forces, carried on between nations, states, or rulers, or between parties in the same nation or state; the employment of armed forces against a foreign power, or against an opposing party in the state." --This sense was first used in the year 1154,  , This sense is the main sense for this word., war, n.1, sense 1a</Question>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>3</ID>
+    <Title>war, n.1, sense 1b</Title>
+    <Type>Topic</Type>
+    <Content>
+      <Question>Sense: "transferred and figurative. Applied poetically or rhetorically to any kind of active hostility or contention between living beings, or of conflict between opposing forces or principles. Also: a loud or confused demonstration." --This sense was first used in the year 1199,  , , war, n.1, sense 1b</Question>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>4</ID>
+    <Title>war, v.1, sense 3a</Title>
+    <Type>Topic</Type>
+    <Content>
+      <Question>Sense: "figurative. Of persons: To contend, fight with immaterial weapons; to carry on a metaphorical warfare. Of things, forces, principles: To be in strong opposition. with const. as in sense 2a." --This sense was first used in the year 1200,  , , war, v.1, sense 3a</Question>
+      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
+    </Content>
+  </SuperMemoElement>
+  <SuperMemoElement>
+    <ID>5</ID>
+    <Title>war, v.1, sense 1c</Title>
+    <Type>Topic</Type>
+    <Content>
+      <Question>Sense: "To harass, persecute. Obsolete." --This sense was first used in the year 1225,  This usage is obsolete., , war, v.1, sense 1c</Question>
       <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
     </Content>
   </SuperMemoElement>
