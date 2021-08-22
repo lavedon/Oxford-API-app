@@ -1,9 +1,6 @@
-cold_nn01
-cold: gen. Significant lowness of temperature; lack of heat in an object or a substance; coldness to the senses. Also (in early use): †that which is cold; (in plural) cold things (obsolete).Noun.  Listed as a main definition. The original source of this word is listed as Bede's Ecclesiastical History. This word was first recored in 925
+castle_nn01
+castle: A large building or set of buildings fortified for defence against an enemy; a fortress, stronghold. Retained as a name for large mansions or country houses, which were formerly feudal castles, but not, like French château, transferred to this sense.Noun.  Listed as a main definition. The original source of this word is listed as West Saxon Gospels: Matt.. This word was first recored in 1000
 
-cold_jj01
-cold: The proper adjective expressing a well-known quality of the air or of other substances exciting one of the primary physical sensations, due to the abstraction of heat from the surface of the body: of a temperature sensibly lower than that of the living human body. Admitting degrees of intensity (colder, coldest). of the atmosphere, and meteoric conditions.Adjective.  Listed as a main definition. The original source of this word is listed as Lindisfarne Gospels. This word was first recored in 950
-
-cold_vb01
-cold: intransitive. To become cold. (Also figurative.) Also, to be cold.Verb.  Listed as a main definition. The original source of this word is listed as Riming Poem. This word was first recored in 975
+castle_vb01
+castle: transitive. To enclose or place in, or as in, a castle; also figurative. Also castle up, etc.Verb.  Listed as a main definition. The original source of this word is listed as Geoffrey Chaucer. This word was first recored in 1386
 

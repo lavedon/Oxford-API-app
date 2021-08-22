@@ -1,30 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <SuperMemoCollection>
-  <Count>3</Count>
+  <Count>2</Count>
   <SuperMemoElement>
     <ID>1</ID>
-    <Title>cold_nn01</Title>
+    <Title>castle_nn01</Title>
     <Type>Topic</Type>
     <Content>
-      <Question>cold: gen. Significant lowness of temperature; lack of heat in an object or a substance; coldness to the senses. Also (in early use): †that which is cold; (in plural) cold things (obsolete).Noun.  Listed as a main definition. The original source of this word is listed as Bede's Ecclesiastical History. This word was first recored in 925</Question>
+      <Question>castle: A large building or set of buildings fortified for defence against an enemy; a fortress, stronghold. Retained as a name for large mansions or country houses, which were formerly feudal castles, but not, like French château, transferred to this sense.Noun.  Listed as a main definition. The original source of this word is listed as West Saxon Gospels: Matt.. This word was first recored in 1000</Question>
       <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
     </Content>
   </SuperMemoElement>
   <SuperMemoElement>
     <ID>2</ID>
-    <Title>cold_jj01</Title>
+    <Title>castle_vb01</Title>
     <Type>Topic</Type>
     <Content>
-      <Question>cold: The proper adjective expressing a well-known quality of the air or of other substances exciting one of the primary physical sensations, due to the abstraction of heat from the surface of the body: of a temperature sensibly lower than that of the living human body. Admitting degrees of intensity (colder, coldest). of the atmosphere, and meteoric conditions.Adjective.  Listed as a main definition. The original source of this word is listed as Lindisfarne Gospels. This word was first recored in 950</Question>
-      <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
-    </Content>
-  </SuperMemoElement>
-  <SuperMemoElement>
-    <ID>3</ID>
-    <Title>cold_vb01</Title>
-    <Type>Topic</Type>
-    <Content>
-      <Question>cold: intransitive. To become cold. (Also figurative.) Also, to be cold.Verb.  Listed as a main definition. The original source of this word is listed as Riming Poem. This word was first recored in 975</Question>
+      <Question>castle: transitive. To enclose or place in, or as in, a castle; also figurative. Also castle up, etc.Verb.  Listed as a main definition. The original source of this word is listed as Geoffrey Chaucer. This word was first recored in 1386</Question>
       <SuperMemoReference>&amp;lt;H5 dir=ltr align=left&amp;gt;&amp;lt;Font size=&amp;quot;1&amp;quot; style=&amp;quot;color: transparent&amp;quot;&amp;gt; SuperMemo Reference:&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;&amp;lt;FONT class=reference&amp;gt;Title:&amp;quot;My Test Quote&amp;quot; &amp;lt;br&amp;gt;Source: Oxford English Dictionary</SuperMemoReference>
     </Content>
   </SuperMemoElement>

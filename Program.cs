@@ -937,6 +937,7 @@ namespace oed
             // Delete the text file also
             try {
                 filePath = Path.Combine(Environment.CurrentDirectory, "OED-export.txt");
+                Console.WriteLine($"Deleting TXT export file: {filePath}");
                 File.Delete(filePath);
             } 
             catch (Exception ex) {
