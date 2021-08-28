@@ -1303,7 +1303,7 @@ namespace oed
                     }
                     else
                     {
-                        // Console.WriteLine("This sense is not obsolete.");
+                        Console.WriteLine("This sense is not obsolete.");
                     }
                     if (currentSense.IsMainUsage)
                     {

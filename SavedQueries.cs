@@ -280,6 +280,7 @@ namespace oed
 				{
 					// answerText.Append($"{sq.definition} <BR> <BR>");
 					// answerText.Append($"Sense #{sNum} <BR>");
+                    sw.WriteLine($"Sense #{sNum}");
 					sw.WriteLine($"{s.lemma} - {s.definition}");
                     /*
 					answerText.Append($"First use: {s.first_use} <BR>");
@@ -301,10 +302,26 @@ namespace oed
 
 					foreach (Quotation q in s.quotations) 
 					{
+                        /*
+                            if (string.IsNullOrWhiteSpace(quote.Author))
+                            {
+                                quote.Author = "Unknown";
+                            }
+                            sw.WriteLine($"\"{quote.Text}\"");
+                            sw.WriteLine($"--{quote.Author}, {quote.Year}");
+                            sw.WriteLine();
+
+
+                        */
 						// questionText.Append($"Quotation #{qNum}: <BR>");
-						sw.WriteLine($"{q.year.ToString()} ");
-						sw.WriteLine($"{q.source.author}, {q.source.title} ");
+                        if (string.IsNullOrWhiteSpace(q.source.author))
+                        {
+                            q.source.author = "Unknown";
+                        }
+                        sw.WriteLine($"Quote #{qNum}");
 						sw.WriteLine($"{q.text.full_text}");
+						sw.WriteLine($"{q.source.author}, {q.year.ToString()}, {q.source.title} ");
+                        sw.WriteLine();
 						qNum++;
 					}
     
@@ -376,9 +393,18 @@ namespace oed
                         sw.WriteLine(UserEnteredWord);
                         foreach (Quote quote in quotesForDefinition)
                         {
+                            if (string.IsNullOrWhiteSpace(quote.Author))
+                            {
+                                quote.Author = "Unknown";
+                            }
+                            sw.WriteLine($"\"{quote.Text}\"");
+                            sw.WriteLine($"--{quote.Author}, {quote.Year}");
+                            sw.WriteLine();
+                            /*
                             string quoteText = $"\"{quote.Text}\" --{quote.Author}, {quote.Year}";
                             sw.WriteLine(quoteText);
                             sw.WriteLine();
+                            */
                         }
 
                         sw.WriteLine(questionText);
@@ -398,13 +424,18 @@ namespace oed
             }
             if (QuotesForExport.Count > 0 && !BlendedExport)
             {
-                Console.WriteLine("Exporting Quotes...");
+                Console.WriteLine("Exporting Quotes to text file...");
                 for (int i = 0; i < QuotesForExport.Count; i++)
                 {
                     try
                     {
-                        sw.WriteLine($"{QuotesForExport[i].Author} - {QuotesForExport[i].Year}");
-                        sw.WriteLine($"{QuotesForExport[i].Text}\" --{QuotesForExport[i].Author}, {QuotesForExport[i].Year}");
+                     // sw.WriteLine($"{QuotesForExport[i].Author} - {QuotesForExport[i].Year}");
+                        if (string.IsNullOrWhiteSpace(QuotesForExport[i].Author))
+                        {
+                            QuotesForExport[i].Author = "Unknown";
+                        }
+                        sw.WriteLine($"\"{QuotesForExport[i].Text}\"");
+                        sw.WriteLine($"--{QuotesForExport[i].Author}, {QuotesForExport[i].Year}");
                         sw.WriteLine();
                     }
                     catch (AggregateException ae)
@@ -657,7 +688,7 @@ namespace oed
             }
             if (QuotesForExport.Count > 0 && !BlendedExport)
             {
-                Console.WriteLine("Exporting Quotes...");
+                Console.WriteLine("Exporting Quotes to XML file...");
                 for (int i = 0; i < QuotesForExport.Count; i++)
                 {
                     try
