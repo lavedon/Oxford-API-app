@@ -137,6 +137,7 @@ namespace oed
 		public static CurrentQuery LoadWordIds(CurrentQuery query) {
 			string wordIDFile = Path.Combine(Environment.CurrentDirectory, "word-id.txt");
 			string[] lines = System.IO.File.ReadAllLines(wordIDFile);
+            query.Definitions.Clear();
 			foreach (string line in lines) {
 				var blankDefinitionWithId = new Definition();
 				blankDefinitionWithId.WordID = line;

@@ -803,11 +803,6 @@ namespace oed
                     deleteExportFile();
                 }
 
-            if (_clearExportFile)
-                {
-                    deleteExportFile();
-                }
-
             processCommonOptions(_obsoleteOnly, _obsoleteExclude, _partOfSpeech, _years, _currentIn, _revised, _revisedNot, _interactive, _export, query, _startYear, _endYear);
 
             if (_quotes)

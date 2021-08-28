@@ -62,11 +62,11 @@ namespace oed
 				queryURL = coreQueryFeatures(query, queryURL);
 				query = makeQSRequest(query, client, queryURL);
 				// @TODO a method to filter out all global options.
+			}
 				query = filterQuotesAndSenses(query);
 				displayQuotesAndSenses(query);
 				SavedQueries.RenderXML(query);
 				SavedQueries.RenderTextFile(query);
-			}
 
 		}
 
@@ -122,8 +122,8 @@ namespace oed
 			};
 
 			resetHeaders(client);
-			Task getDerivatives = new Task(callQuotesAndSensesAPI, "Call QuotesAndSenses");
-			getDerivatives.RunSynchronously();
+			Task getQuotesAndSenses = new Task(callQuotesAndSensesAPI, "Call QuotesAndSenses");
+			getQuotesAndSenses.RunSynchronously();
 			return query;
 		}
 

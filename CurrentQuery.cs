@@ -72,6 +72,7 @@ namespace oed
 		// for past returned quote or past returned sense.
 		public string? FromSense { get; set; } = null;
 		public List<string> WordIDsToUse { get; set; }
+		public List<string> BlankDefsWithIDs { get; set; }
 		public bool InteractiveMode { get; set; }
 		public bool ExportAfterSearch { get; set; }
 		public List<int> WhatToExport { get; set; }
@@ -120,6 +121,7 @@ namespace oed
 			this.WhatToExport = new List<int>();
 			this.FromSense = "";
 			this.WordIDsToUse = new List<string>();
+			this.BlankDefsWithIDs = new List<string>();
 			this.StartEndYearRanges = false;
 			// this.PreviousWordIds = new();
 			
