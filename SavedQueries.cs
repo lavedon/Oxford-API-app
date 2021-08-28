@@ -175,7 +175,7 @@ namespace oed
 				{
 					xml.WriteStartElement("SuperMemoElement");
 					xml.WriteElementString("ID", $"{ID}");
-					xml.WriteElementString("Title", $"{s.word_id}-{sNum}");
+					xml.WriteElementString("Title", $"{s.id}-{sNum}");
 					xml.WriteElementString("Type", "Item");
 					xml.WriteStartElement("Content");
 
@@ -204,6 +204,10 @@ namespace oed
 					foreach (Quotation q in s.quotations) 
 					{
 						// questionText.Append($"Quotation #{qNum}: <BR>");
+                        if (string.IsNullOrWhiteSpace(q.source.author))
+                        {
+                            q.source.author = "Unknown";
+                        }
 						questionText.Append($"{q.year.ToString()} ");
 						questionText.Append($"{q.source.author}, {q.source.title} ");
 						questionText.Append($"&#8220;{q.text.full_text}&#8221; <BR><BR>");
