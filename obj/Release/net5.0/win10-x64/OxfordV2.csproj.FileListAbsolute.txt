@@ -483,4 +483,4 @@ C:\my-coding-projects\oxford\obj\Release\net5.0\win10-x64\OxfordV2.dll
 C:\my-coding-projects\oxford\obj\Release\net5.0\win10-x64\ref\OxfordV2.dll
 C:\my-coding-projects\oxford\obj\Release\net5.0\win10-x64\OxfordV2.pdb
 C:\my-coding-projects\oxford\obj\Release\net5.0\win10-x64\OxfordV2.genruntimeconfig.cache
-C:\my-coding-projects\oxford\bin\Release\net5.0\win10-x64\mscordaccore_amd64_amd64_5.0.921.35908.dll
+C:\my-coding-projects\oxford\bin\Release\net5.0\win10-x64\mscordaccore_amd64_amd64_5.0.621.22011.dll

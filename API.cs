@@ -1261,9 +1261,31 @@ namespace oed
                     queryURL = queryURL + @"&obsolete=true";
                 }
             }
-
+			queryURL = cleanURLArgs(queryURL);
+			
+			// If the first match is a @ then replae it with ?
             return queryURL;
         }
+
+        private static string cleanURLArgs(string s)
+        {
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (s[i] == '?')
+                {
+                    return s;
+                }
+                if (s[i] == '&')
+                {
+                    char[] ch = s.ToCharArray();
+                    ch[i] = '?';
+                    string newstring = new string(ch);
+                    return newstring;
+                }
+            }
+            return s;
+        }
+
 
         private static void makeSenseRequest(CurrentQuery query, HttpClient client, Action<object> callSensesAPI)
         {
