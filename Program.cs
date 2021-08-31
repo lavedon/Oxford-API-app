@@ -245,16 +245,27 @@ namespace oed
             quotes.AddAlias("q");
             rootCommand.AddOption(quotes);
 
-
-            var quotesAndSenses = new Option<bool>("--quotes-and-senses",
-                    description: "Return quotations for each sense definition.  Senses, and the quotations for each sense, are automatically matched."
-            )
+            /*
+            var serverOption = new Option<int?>("--server", _ => 123, false, "server port")
             {
-                IsRequired = false
+            IsRequired = false,
+            ArgumentHelpName = "PortNumber",
+            Arity = ArgumentArity.ZeroOrOne
             };
-            quotesAndSenses.AddAlias("qs");
-            rootCommand.AddOption(quotesAndSenses);
+            */
 
+            var quotesAndSenses = new Option<string?>(
+                "--quotes-and-senses", _ => "xxxx", true, 
+                "Return quotations for each sense definition.  Senses, and the quotations for each sense, are automatically matched.  Enter a selection as d1-3,15 or s1,3 etc. to get qs for a specific sense or definition."
+            ){
+                IsRequired = false,
+                ArgumentHelpName = "Selection",
+                Arity = ArgumentArity.ZeroOrOne
+            };
+
+            quotesAndSenses.AddAlias("qs");
+            // @TODO fix this:
+            rootCommand.AddOption(quotesAndSenses);
             rootCommand.AddCommand(senseCommand);
             rootCommand.AddCommand(quoteCommand);
             rootCommand.AddCommand(surfaceCommand);
@@ -809,6 +820,7 @@ namespace oed
             {
                 query.QuotesFromWord = true;
             }
+            // Check for default value "xxxx" which means the user only entered the option
             if (_quotesAndSenses)
             {
                 query.QuotesFromWord = false;

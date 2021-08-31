@@ -74,80 +74,6 @@
           "lib/netcoreapp2.1/_._": {}
         }
       }
-    },
-    "net5.0/win10-x64": {
-      "Microsoft.CSharp/4.4.1": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/_._": {}
-        }
-      },
-      "System.CommandLine/2.0.0-beta1.21216.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.CSharp": "4.4.1",
-          "system.memory": "4.5.4"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.CommandLine.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.CommandLine.dll": {}
-        },
-        "resource": {
-          "lib/netstandard2.0/cs/System.CommandLine.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/netstandard2.0/de/System.CommandLine.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard2.0/es/System.CommandLine.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard2.0/fr/System.CommandLine.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard2.0/it/System.CommandLine.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard2.0/ja/System.CommandLine.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard2.0/ko/System.CommandLine.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard2.0/pl/System.CommandLine.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/netstandard2.0/pt-BR/System.CommandLine.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/netstandard2.0/ru/System.CommandLine.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard2.0/tr/System.CommandLine.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/netstandard2.0/zh-Hans/System.CommandLine.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard2.0/zh-Hant/System.CommandLine.resources.dll": {
-            "locale": "zh-Hant"
-          }
-        }
-      },
-      "System.Memory/4.5.4": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.1/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/_._": {}
-        }
-      }
     }
   },
   "libraries": {
@@ -332,31 +258,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-            "version": "[5.0.6, 5.0.6]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Runtime.win-x64",
-            "version": "[5.0.6, 5.0.6]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-            "version": "[5.0.6, 5.0.6]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
-      }
-    },
-    "runtimes": {
-      "win10-x64": {
-        "#import": []
       }
     }
   }
