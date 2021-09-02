@@ -106,6 +106,7 @@ namespace oed
 
 		private static CurrentQuery filterQuotesAndSenses(CurrentQuery query)
 		{
+			// @TODO: Add filtering to filter out SQID 
 			if (query.IncludeObsolete.HasValue && query.IncludeObsolete.Value)
 			{
 				// the 'o' option 
@@ -114,6 +115,14 @@ namespace oed
 					sq.senses.Where(q => q.daterange.obsolete);
 
 				}
+				foreach (var sq in query.SQID_Data)
+				{
+					if (!sq.daterange.obsolete)
+					{
+						query.SQID_Data.Remove(sq);
+					}
+				}
+				
 			}
 			if (query.IncludeObsolete.HasValue && !query.IncludeObsolete.Value)
 			{
@@ -122,14 +131,25 @@ namespace oed
 				{
 					sq.senses.RemoveAll(s => s.daterange.obsolete);
 				}
-			}
-			if (query.DateRangeSet) {
-				// @TODO LINQ query to remove all quotes whose int year is out of date range
-				foreach (var sq in query.SQ_Data)
+				foreach (var sq in query.SQID_Data)
 				{
-					sq.senses.Select(s => s.quotations.Where(q => q.year >= query.StartYear && q.year <= query.EndYear));
+					if (sq.daterange.obsolete)
+					{
+						query.SQID_Data.Remove(sq);
+					}
 				}
 			}
+				// @TODO put in a greater check
+				if ((query.StartYear !=0) && (query.EndYear != 0)) {
+					foreach (var sq in query.SQ_Data)
+					{
+						sq.senses.Select(s => s.quotations.Where(q => q.year >= query.StartYear && q.year <= query.EndYear));
+					}
+					foreach (var sq in query.SQID_Data)
+					{
+						sq.quotations.RemoveAll(q => q.year < query.StartYear || q.year > query.EndYear);
+					}
+				}
 				// @TODO implement other global options etymology, etc.
 			return query;
 
@@ -146,13 +166,13 @@ namespace oed
 				var options = new JsonSerializerOptions { IgnoreNullValues = true };
 				var json = JsonSerializer.Deserialize<SQID_Root>(response);
 				query.SQID_Data.Add(json.data);
-				}
-				catch(Exception ex)
-				{
-					Trace.WriteLine("Exception");
-					Trace.WriteLine(ex.GetType());
-					Trace.WriteLine(ex.Message);
-				}
+			}
+			catch(Exception ex)
+			{
+				Trace.WriteLine("Exception");
+				Trace.WriteLine(ex.GetType());
+				Trace.WriteLine(ex.Message);
+			}
 			};
 
 			Action<object> callQuotesAndSensesAPI = (Object obj) => 
@@ -525,6 +545,7 @@ namespace oed
 
 		private static void displayQuotesAndSenses(CurrentQuery query)
 		{
+			if (query.QSFromDefinitions) {
 			foreach (var sq in query.SQ_Data)
 			{
 				Console.WriteLine("{0}", sq.definition);
@@ -566,7 +587,44 @@ namespace oed
 					sNum++;
 				} // end foreach sq in sense
 			}
+			}
+			if (query.QSFromSenses) {
+			foreach (var sq in query.SQID_Data)
+			{
+			// /senses/{id} does not return a list of senses, but a single sense in .definition
+				Console.WriteLine();
+				Console.WriteLine("Sense:");
+				Console.WriteLine("Sense ID: {0}", sq.id);
+				Console.WriteLine(sq.definition);
+				Console.WriteLine($"First use: {sq.first_use}");
+				Console.WriteLine($"Part of speech: {sq.part_of_speech}");
+				// Console.WriteLine($"Listed daterange: {s.daterange.rangestring}");
+				Console.WriteLine($"{sq.daterange.start} - {sq.daterange.end}");
+				if (sq.main_current_sense) {
+					Console.WriteLine("This sense is the main sense for the word.");
+				}
+				if (sq.daterange.obsolete)
+				{
+					Console.WriteLine("This sense is obsolete.");
+				}
+				Console.WriteLine();
+				Console.WriteLine("Quotations: ");
+				Console.WriteLine("-----------------------");
+				Console.WriteLine();
+				int qNum = 1;
+				foreach (Quotation q in sq.quotations)
+				{
+					Console.WriteLine($"Quotation #{qNum}");
+					Console.WriteLine(q.text.full_text);
+					Console.WriteLine($"{q.source.author}, {q.source.title}");
+					Console.WriteLine(q.year.ToString());
+					Console.WriteLine("--------------------");
+					Console.WriteLine();
+					qNum++;
+				}
 
+			} // foreach (var sq in query.SQID_Data)
+			}
 		}
 
 		private static void displayDerivatives(CurrentQuery query)

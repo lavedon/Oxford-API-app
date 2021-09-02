@@ -42,7 +42,6 @@ namespace oed {
     }
     */
 
-// 
     public class SQ_Etymology
     {
         public List<Etymon> etymons { get; set; }

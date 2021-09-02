@@ -431,7 +431,7 @@ namespace oed
                 Trace.WriteLine($"Sense sub command entered.");
                 Trace.WriteLine($"lemma: {lemma}");
             //  Trace.WriteLine($"synonyms: {synonyms}");
-        //      Trace.WriteLine($"siblings: {siblings}");
+            //  Trace.WriteLine($"siblings: {siblings}");
                 Trace.WriteLine($"restrictRegion: {restrictRegion}");
                 Trace.WriteLine($"restrictUsage: {restrictUsage}");
                 Trace.WriteLine($"restrictMain: {restrictMain}");
@@ -613,7 +613,7 @@ namespace oed
             Trace.WriteLine($"male: {male}");
             Trace.WriteLine($"female: {female}");
             Trace.WriteLine($"author: {author}");
-            // Trace.WriteLine($"authorGender: {authorGender}");
+         // Trace.WriteLine($"authorGender: {authorGender}");
             Trace.WriteLine($"sourceTitle: {sourceTitle}");
             Trace.WriteLine($"firstWord: {firstWord}");
             Trace.WriteLine($"firstSense: {firstSense}");
