@@ -102,14 +102,6 @@ namespace oed
 				SavedQueries.RenderXML(query);
 				SavedQueries.RenderTextFile(query);
 
-			if (query.QSFromSenses) {
-				Console.WriteLine("Getting QS from sense ids");
-				Console.WriteLine("Not yet implemented...");
-				Console.WriteLine("Press any key to continue.");
-				Console.ReadKey();
-				return;
-			}
-
 		}
 
 		private static CurrentQuery filterQuotesAndSenses(CurrentQuery query)
@@ -144,6 +136,25 @@ namespace oed
 		}
 		static CurrentQuery makeQSRequest(CurrentQuery query, HttpClient client, string queryURL)
 			{
+			// sense/{SENSE-ID}?include_quotations=true
+			Action<object> callSenseIDWithQuotes = (object obj) =>
+			{
+				Uri requestURL = new Uri(baseURL + queryURL);
+			try {
+				Console.WriteLine(requestURL.AbsoluteUri);
+				var response = client.GetStringAsync(requestURL).Result;
+				var options = new JsonSerializerOptions { IgnoreNullValues = true };
+				var json = JsonSerializer.Deserialize<SQID_Root>(response);
+				query.SQID_Data.Add(json.data);
+				}
+				catch(Exception ex)
+				{
+					Trace.WriteLine("Exception");
+					Trace.WriteLine(ex.GetType());
+					Trace.WriteLine(ex.Message);
+				}
+			};
+
 			Action<object> callQuotesAndSensesAPI = (Object obj) => 
 			{
 				Uri requestURL = new Uri(baseURL + queryURL);
@@ -152,8 +163,8 @@ namespace oed
 				var response = client.GetStringAsync(requestURL).Result;
 				var options = new JsonSerializerOptions { IgnoreNullValues = true };
 				var json = JsonSerializer.Deserialize<SQ_Root>(response);
+				Console.ReadKey();
 				query.SQ_Data.Add(json.data);
-				// @TODO fix this
 			}
 			catch(Exception ex)
 			{
@@ -164,8 +175,14 @@ namespace oed
 			};
 
 			resetHeaders(client);
-			Task getQuotesAndSenses = new Task(callQuotesAndSensesAPI, "Call QuotesAndSenses");
-			getQuotesAndSenses.RunSynchronously();
+			if (query.QSFromDefinitions) {
+				Task getQuotesAndSenses = new Task(callQuotesAndSensesAPI, "Call QuotesAndSenses");
+				getQuotesAndSenses.RunSynchronously();
+			} 
+			if (query.QSFromSenses) {
+				Task getSenseIDWithQuotes = new Task(callSenseIDWithQuotes, "Call SenseIDWithQuotes");
+				getSenseIDWithQuotes.RunSynchronously();
+			}
 			return query;
 		}
 

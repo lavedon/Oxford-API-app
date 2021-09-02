@@ -74,7 +74,7 @@ namespace oed {
         public string id { get; set; }
         public Meta meta { get; set; }
         public string lemma { get; set; }
-        public List<string> notes { get; set; }
+        public List<object> notes { get; set; }
         public string oed_url { get; set; }
         public string word_id { get; set; }
         public Daterange daterange { get; set; }
@@ -85,6 +85,7 @@ namespace oed {
         public string oed_reference { get; set; }
         public string part_of_speech { get; set; }
         public bool main_current_sense { get; set; }
+
         public List<List<string>> semantic_class_ids { get; set; }
         public List<Quotation> quotations { get; set; }
     }
@@ -93,7 +94,6 @@ namespace oed {
     {
         public Meta meta { get; set; }
         public Links links { get; set; }
-        public List<SQID_Data> data { get; set; }
-
+        public SQID_Data data { get; set; }
     }
 }

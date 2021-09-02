@@ -93,7 +93,9 @@ namespace oed
 		public List <SQ_Data> SQ_Data { get; set; }
 
 		// Data from the sense/{id}/?include=quotations
-		public List <SQID_Data> SWQ_Data { get; set; }
+		public List <SQID_Data> SQID_Data { get; set; }
+
+		public SQID_Root SQID_Root { get; set; }
 
 		public CurrentQuery() {
 			this.HasLookedUpWord = false;
@@ -133,6 +135,7 @@ namespace oed
 			this.Surfaces = new List<Datum>();
 			this.Derivatives = new List<Derivatives>();
 			this.SQ_Data = new List<SQ_Data>();
+			this.SQID_Data = new List<SQID_Data>();
 			this.WhatToExport = new List<int>();
 			this.FromSense = "";
 			this.WordIDsToUse = new List<string>();
