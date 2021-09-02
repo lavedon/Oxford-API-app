@@ -77,11 +77,31 @@ namespace oed
 			}
 			if (query.QSFromSenses) {
 				query = SavedQueries.LoadSenseIds(query);
-			}
+				var selectSenses = new List<Sense>();
+				if (query.QSSenseSelection.Count != 0) {
+					foreach (int s in query.QSSenseSelection)
+					{
+						Trace.WriteLine($"Going to run QS on this Sense {query.Senses[s - 1].SenseID}");
+						selectSenses.Add(query.Senses[s - 1]);
+					}
+					}
+					else {
+						selectSenses = query.Senses;
+					}
+
+					foreach (Sense s in selectSenses)
+					{
+						Trace.WriteLine("Calling GetQuotesAndSenses() method - but passing a Sense ID and using the Sense\\{ID} end point and not word.");
+						string queryURL = "sense/" + s.SenseID + "?include_quotations=true";
+						queryURL = coreQueryFeatures(query, queryURL);
+						query = makeQSRequest(query, client, queryURL);
+					}
+				}
 				query = filterQuotesAndSenses(query);
 				displayQuotesAndSenses(query);
 				SavedQueries.RenderXML(query);
 				SavedQueries.RenderTextFile(query);
+
 			if (query.QSFromSenses) {
 				Console.WriteLine("Getting QS from sense ids");
 				Console.WriteLine("Not yet implemented...");
@@ -168,7 +188,7 @@ namespace oed
 				Console.WriteLine("Select which returned derivatives to export: (enter for all)");
 				string export = Console.ReadLine();
 				Program.ParseExport(query, export);
-			}
+				}
 			}
 
 
@@ -492,6 +512,8 @@ namespace oed
 			{
 				Console.WriteLine("{0}", sq.definition);
 				int sNum = 1;
+				// word/{id} and /senses/{id} return data in a slightly different format
+				// /senses/{id} does not return a list of senses, but a single sense in .definition
 				foreach (Sens s in sq.senses)
 				{
 					Console.WriteLine();
@@ -525,7 +547,7 @@ namespace oed
 						qNum++;
 					}
 					sNum++;
-				}
+				} // end foreach sq in sense
 			}
 
 		}

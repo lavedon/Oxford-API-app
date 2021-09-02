@@ -87,7 +87,13 @@ namespace oed
 		public List<Datum> Surfaces { get; set; }
 		// public SurfaceFormDeJSON? SurfaceJson  { get; set;}
 		public List <Derivatives> Derivatives { get; set; }
+		// SQ_Data is Data taken from the word/{id}/?include=quotes&include=senses endpoint
+		// Data is displayed differently than it is from the sense/{id}/ endpoint
+		// Most notably, sense/{id}/ includes a list of quotations which SQ_Data does not.
 		public List <SQ_Data> SQ_Data { get; set; }
+
+		// Data from the sense/{id}/?include=quotations
+		public List <SQID_Data> SWQ_Data { get; set; }
 
 		public CurrentQuery() {
 			this.HasLookedUpWord = false;

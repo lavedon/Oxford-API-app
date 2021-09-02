@@ -848,9 +848,11 @@ namespace oed
                         {
                             Console.WriteLine("QS from a specific definition");
                             query.QSFromDefinitions = true;
+                            query.QSFromSenses = true;
                         } else if (trimedQS.Contains("s") && !trimedQS.Contains("d"))
                         {
                             query.QSFromSenses = true;
+                            query.QSFromDefinitions = false;
                             Console.WriteLine("QS from a specific sense.");
                         } else {
                             query.QSFromDefinitions = true;
@@ -858,15 +860,15 @@ namespace oed
                         string cleanSelection = Regex.Replace(_quotesAndSenses, "[A-Za-z]", ""); 
                         List<int> result = ParseNumbers(cleanSelection);
                         if (query.QSFromSenses) {
-                            Trace.WriteLine("You want me to run qs on these senses:");
+                            Console.WriteLine("You want me to run qs on these senses:");
                             query.QSSenseSelection = result;
                         } else {
-                            Trace.WriteLine("You want me to run qs on these definitions:");
+                            Console.WriteLine("You want me to run qs on these definitions:");
                             query.QSDefSelection = result;
                         }
                         foreach (int n in result)
                         {
-                            Trace.WriteLine($"{n}");
+                            Console.WriteLine($"{n}");
                         }
                 } // if _quotesAndSenses has text
             } // if qsExists
