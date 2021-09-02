@@ -9,7 +9,7 @@
     ".NETCoreApp,Version=v5.0/win10-x64": {
       "OxfordV2/1.0.0": {
         "dependencies": {
-          "System.CommandLine": "2.0.0-beta1.21216.1",
+          "System.CommandLine": "2.0.0-beta1.21308.1",
           "runtimepack.Microsoft.NETCore.App.Runtime.win-x64": "5.0.6"
         },
         "runtime": {
@@ -844,7 +844,7 @@
         }
       },
       "Microsoft.CSharp/4.4.1": {},
-      "System.CommandLine/2.0.0-beta1.21216.1": {
+      "System.CommandLine/2.0.0-beta1.21308.1": {
         "dependencies": {
           "Microsoft.CSharp": "4.4.1",
           "System.Memory": "4.5.4"
@@ -852,7 +852,7 @@
         "runtime": {
           "lib/netstandard2.0/System.CommandLine.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.21.21601"
+            "fileVersion": "2.0.21.30801"
           }
         },
         "resources": {
@@ -918,12 +918,12 @@
       "path": "microsoft.csharp/4.4.1",
       "hashPath": "microsoft.csharp.4.4.1.nupkg.sha512"
     },
-    "System.CommandLine/2.0.0-beta1.21216.1": {
+    "System.CommandLine/2.0.0-beta1.21308.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Nbv/tW8sbOKN5T+4SSVBMdk4ADSIpJpY4UHMsj3VkcNtOckIT4iyzagjF+W5FEh2YBRvmvVQijOTIZbUJ1+1aA==",
-      "path": "system.commandline/2.0.0-beta1.21216.1",
-      "hashPath": "system.commandline.2.0.0-beta1.21216.1.nupkg.sha512"
+      "sha512": "sha512-X8qLygjyktfmcNMNFekMkumyaTblJmkH3BBbKiQlk4FvJfp613gkMKrA0CNqLUT9tEfLcm3XMzAbsiYFwM8zbQ==",
+      "path": "system.commandline/2.0.0-beta1.21308.1",
+      "hashPath": "system.commandline.2.0.0-beta1.21308.1.nupkg.sha512"
     },
     "System.Memory/4.5.4": {
       "type": "package",

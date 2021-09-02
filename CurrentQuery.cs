@@ -67,6 +67,10 @@ namespace oed
 		public bool OpenEnd { get; set;}
 		public bool QuotesFromWord { get; set ; }
 		public bool QuotesAndSenses { get; set ; }
+		public List<int> QSDefSelection { get; set; }
+		public List<int> QSSenseSelection { get; set; }
+		public bool QSFromSenses { get; set; }
+		public bool QSFromDefinitions { get; set; }
 
 		// RootCommand if user wants to get definitions
 		// for past returned quote or past returned sense.
@@ -114,6 +118,11 @@ namespace oed
 			this.LemmaText = "";
 			this.QuotesFromWord = false;
 			this.QuotesAndSenses = false;
+			this.QSFromSenses = false;
+			this.QSFromDefinitions = false;
+			this.QSDefSelection = new List<int>();
+			this.QSSenseSelection = new List<int>();
+
 			// this.SurfaceJson = new();
 			this.Surfaces = new List<Datum>();
 			this.Derivatives = new List<Derivatives>();

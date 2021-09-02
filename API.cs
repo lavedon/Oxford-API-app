@@ -51,22 +51,44 @@ namespace oed
 
 		public static void GetQuotesAndSenses(CurrentQuery query, HttpClient client)
 		{
-			// Get word IDs
-			query = SavedQueries.LoadWordIds(query);
+			// Get word IDs if set to definition
+			if (query.QSFromDefinitions) {
+				query = SavedQueries.LoadWordIds(query);
+				var selectDefs = new List<Definition>();
+				if (query.QSDefSelection.Count != 0) {
+					foreach (int s in query.QSDefSelection)
+					{
+						Trace.WriteLine($"Going to run QS on this Definition {query.Definitions[s - 1].WordID}");
+						selectDefs.Add(query.Definitions[s - 1]);
+					}
+				} else {
+					selectDefs = query.Definitions;
+				}
 
-			foreach (Definition d in query.Definitions)
-			{
-				Trace.WriteLine("Called GetQuotesAndSenses() method.");
-				string queryURL = "word/" + d.WordID + "?include_senses=true&include_quotations=true";
-				// Add obsolete etc. options?
-				queryURL = coreQueryFeatures(query, queryURL);
-				query = makeQSRequest(query, client, queryURL);
-				// @TODO a method to filter out all global options.
+				foreach (Definition d in selectDefs)
+				{
+					Trace.WriteLine("Called GetQuotesAndSenses() method.");
+					string queryURL = "word/" + d.WordID + "?include_senses=true&include_quotations=true";
+					// Add obsolete etc. options?
+					queryURL = coreQueryFeatures(query, queryURL);
+					query = makeQSRequest(query, client, queryURL);
+					// @TODO a method to filter out all global options.
+				}
+			}
+			if (query.QSFromSenses) {
+				query = SavedQueries.LoadSenseIds(query);
 			}
 				query = filterQuotesAndSenses(query);
 				displayQuotesAndSenses(query);
 				SavedQueries.RenderXML(query);
 				SavedQueries.RenderTextFile(query);
+			if (query.QSFromSenses) {
+				Console.WriteLine("Getting QS from sense ids");
+				Console.WriteLine("Not yet implemented...");
+				Console.WriteLine("Press any key to continue.");
+				Console.ReadKey();
+				return;
+			}
 
 		}
 
@@ -670,6 +692,7 @@ namespace oed
             Trace.WriteLine("Called callWordsAPI");
             // I am removing the limit of 1 definition -- going to return all at once
             // Uri requestURL = new Uri(baseURL + "words/?lemma=" + query.UserEnteredWord + "&limit=1");
+			Program.UserEnteredWord = query.UserEnteredWord;
             string queryURL = @"words/?lemma=" + query.UserEnteredWord;
             queryURL = coreQueryFeatures(query, queryURL);
 

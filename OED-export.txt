@@ -1,4 +1,71 @@
 Sense #1
+car - Left, esp. in car-hand, car-handed; (also) left-handed. Sometimes with implication of awkwardness or wrongness (cf. sinister, adj.). Also occasionally (e.g. in quot. 1440) as n.: †the left hand (obsolete).
+This is the main current sense
+
+car
+Quote #1
+Thom. Kerhand.
+W. Page, 1279, Three Early Assize Rolls Northumberland 
+
+Quote #2
+Henrico dicto kerhand.
+J. Stuart, 1327, Exchequer Rolls Scotl. 
+
+Quote #3
+With a caste of þe care, in kautelle he strykes.
+Unknown, 1440, Awntyrs Arthure 
+
+Quote #4
+The visdome of the wisman is in his rycht hand and the foly of the ful in his kere hand.
+Unknown, 1499, Wisdom of Solomon 
+
+Quote #5
+He resauit the vryting in his kar hand.
+Unknown, 1550, Complaynt Scotl. 
+
+Quote #6
+Vpon the ker and wrang side, was placed the thrid Idole, Frigga.
+J. Skene, 1597, De Verborum Significatione 
+
+Quote #7
+mutilat him in the ker hand of tua fingeris.
+D. Masson, 1600, Reg. Privy Council Scotl. 
+
+Quote #8
+You'll go the Car Gate yet.
+J. Kelly, 1721, Compl. Coll. Scotish Prov. 
+
+Quote #9
+It has a meikle maun blue pouch hingin' at the carr side o'd, fou o' mullens and chucky-stanes.
+Unknown, 1743, Scots Mag. 
+
+Quote #10
+Car-hand, the left hand.
+F. Grose, 1787, Provinc. Gloss. 
+
+Quote #11
+If you meet a car-handit, i.e. a left-handed person, or one who has flat soles.
+J. Jamieson, 1825, Etymol. Dict. Sc. Lang. 
+
+Quote #12
+Pillan's compliments..is a' car-pawed.
+‘G. Setoun’, 1895, Sunshine & Haar 
+
+Quote #13
+He's aye glaikin' wi' weemen, but naebody can say he's ker-handit wi' a coo.
+J. Carruthers, 1928, Man Beset 
+
+Quote #14
+Car, left-handed.
+W. A. D. Riach, 1988, Galloway Gloss. 
+
+Quote #15
+On yer ker haund, is ee gan doon the hill end yonner, is ae wheen auld treis up on the brae face.
+M. Rodger, 2005, Borth'ick Waitter 
+
+
+
+Sense #1
 mail - Payment, tax, tribute, rent. In O.E. also: †agreement, deal (obsolete). mails and duties: the rents of an estate. Cf. blackmail, n.
 This is the main current sense
 
@@ -286,89 +353,6 @@ R. Arnold, 1503, Chron.
 
 
 Sense #5
-mail - A person, vehicle, or train that carries the mail or postal matter; often short for mail coach, train, van, etc. Also (chiefly North American and Australian): the system of conveyance and delivery of letters, etc., by post (also in plural); the official organization responsible for this activity in a particular country; the post.
-This is the main current sense
-
-mail
-Quote #1
-The said John Manley..shall..safely and faithfully carry all..Letters and Dispatches..and that by the Common, Ordinary Male or other speedy and safe passage.
-Unknown, 1654, Ord. Office Postage Lett. 
-
-Quote #2
-One letter by the last mail sayes, the king intended to fight the enemy Satturday 7 night last.
-N. Luttrell, 1692, Diary 
-
-Quote #3
-The Bristol Mail was robbed.
-Unknown, 1720, London Gaz. 
-
-Quote #4
-Four or five sheets of paper, written to you by the last mail, were destroyed when the vessel was taken.
-A. Adams, 1778,  
-
-Quote #5
-I..sent them off by the mail directed to Mrs. Southey.
-S. T. Coleridge, 1794, Lett. 
-
-Quote #6
-When it is permitted in England for the mails to take parcels on the road.
-Unknown, 1831, Parl. Papers 
-
-Quote #7
-I fear That we shall miss the mail.
-Ld. Tennyson, 1842, Walking to Mail 
-
-Quote #8
-The mails were..made so strong as to be the heaviest of all carriages.
-T. De Quincey, 1856, Confessions Eng. Opium-eater 
-
-Quote #9
-Useful information in regard to all matters connected with the Mails, Post Offices, etc.
-Unknown, 1861, Amer. Agriculturist 
-
-Quote #10
-Locomotives and Tenders. 494 First Class Mails.
-Unknown, 1862, Building News 
-
-Quote #11
-Tender and brittle, and hardly bears its journey through the mail.
-Unknown, 1880, Printing Trades Jrnl. 
-
-Quote #12
-Why didn't he send his poem by mail?
-Unknown, 1888, Amer. Humorist 
-
-Quote #13
-Sixty-four additional direct Parcel Mails between London and other places have been established in the year.
-Unknown, 1891, 37th Rept. Postm.-General 
-
-Quote #14
-When intended for despatch by a particular mail they should..be presented for registration half an hour before the closing of the letter-box for that mail.
-Unknown, 1900, Post Office Guide 
-
-Quote #15
-The manifest freight Pulled out on the stem behind the mail.
-Unknown, 1912, Railroad Man's Mag. 
-
-Quote #16
-The U.S. Circuit Court of appeals ruled that physicians might send contraceptives by mail.
-Unknown, 1938, Time 
-
-Quote #17
-The Postoffice smellers are vigilant for violations of the federal act forbidding the use of the mails to promote them.
-H. L. Mencken, 1944, Diary 
-
-Quote #18
-PC makers that sell through the mail via toll-free numbers.
-Unknown, 1992, Sun (Baltimore) 
-
-Quote #19
-The Royal Mail has turned its die-printing on its side to produce a horizontal ordinary first-class stamp.
-Unknown, 1994, Guardian 
-
-
-
-Sense #6
 mail - A bag or packet of letters or dispatches for conveyance by post (more fully †mail of letters). In later use chiefly: the postal matter (or a quantity of letters, packages, etc.) conveyed in this manner; all that is conveyed by post on one occasion. With definite article or without article. Also (chiefly in North American usage) in plural, and (chiefly South Asian) with indefinite article.
 
 mail
@@ -451,6 +435,89 @@ When Mother asked him if he were really going to post the letter.., he swore tha
 Quote #20
 The mail closes tomorrow.
 ‘J. Hackston’, 1966, Father clears Out 
+
+
+
+Sense #6
+mail - A person, vehicle, or train that carries the mail or postal matter; often short for mail coach, train, van, etc. Also (chiefly North American and Australian): the system of conveyance and delivery of letters, etc., by post (also in plural); the official organization responsible for this activity in a particular country; the post.
+This is the main current sense
+
+mail
+Quote #1
+The said John Manley..shall..safely and faithfully carry all..Letters and Dispatches..and that by the Common, Ordinary Male or other speedy and safe passage.
+Unknown, 1654, Ord. Office Postage Lett. 
+
+Quote #2
+One letter by the last mail sayes, the king intended to fight the enemy Satturday 7 night last.
+N. Luttrell, 1692, Diary 
+
+Quote #3
+The Bristol Mail was robbed.
+Unknown, 1720, London Gaz. 
+
+Quote #4
+Four or five sheets of paper, written to you by the last mail, were destroyed when the vessel was taken.
+A. Adams, 1778,  
+
+Quote #5
+I..sent them off by the mail directed to Mrs. Southey.
+S. T. Coleridge, 1794, Lett. 
+
+Quote #6
+When it is permitted in England for the mails to take parcels on the road.
+Unknown, 1831, Parl. Papers 
+
+Quote #7
+I fear That we shall miss the mail.
+Ld. Tennyson, 1842, Walking to Mail 
+
+Quote #8
+The mails were..made so strong as to be the heaviest of all carriages.
+T. De Quincey, 1856, Confessions Eng. Opium-eater 
+
+Quote #9
+Useful information in regard to all matters connected with the Mails, Post Offices, etc.
+Unknown, 1861, Amer. Agriculturist 
+
+Quote #10
+Locomotives and Tenders. 494 First Class Mails.
+Unknown, 1862, Building News 
+
+Quote #11
+Tender and brittle, and hardly bears its journey through the mail.
+Unknown, 1880, Printing Trades Jrnl. 
+
+Quote #12
+Why didn't he send his poem by mail?
+Unknown, 1888, Amer. Humorist 
+
+Quote #13
+Sixty-four additional direct Parcel Mails between London and other places have been established in the year.
+Unknown, 1891, 37th Rept. Postm.-General 
+
+Quote #14
+When intended for despatch by a particular mail they should..be presented for registration half an hour before the closing of the letter-box for that mail.
+Unknown, 1900, Post Office Guide 
+
+Quote #15
+The manifest freight Pulled out on the stem behind the mail.
+Unknown, 1912, Railroad Man's Mag. 
+
+Quote #16
+The U.S. Circuit Court of appeals ruled that physicians might send contraceptives by mail.
+Unknown, 1938, Time 
+
+Quote #17
+The Postoffice smellers are vigilant for violations of the federal act forbidding the use of the mails to promote them.
+H. L. Mencken, 1944, Diary 
+
+Quote #18
+PC makers that sell through the mail via toll-free numbers.
+Unknown, 1992, Sun (Baltimore) 
+
+Quote #19
+The Royal Mail has turned its die-printing on its side to produce a horizontal ordinary first-class stamp.
+Unknown, 1994, Guardian 
 
 
 

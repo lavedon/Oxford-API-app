@@ -11,7 +11,7 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
-      "System.CommandLine/2.0.0-beta1.21216.1": {
+      "System.CommandLine/2.0.0-beta1.21308.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.4.1",
@@ -143,10 +143,10 @@
         "version.txt"
       ]
     },
-    "System.CommandLine/2.0.0-beta1.21216.1": {
-      "sha512": "Nbv/tW8sbOKN5T+4SSVBMdk4ADSIpJpY4UHMsj3VkcNtOckIT4iyzagjF+W5FEh2YBRvmvVQijOTIZbUJ1+1aA==",
+    "System.CommandLine/2.0.0-beta1.21308.1": {
+      "sha512": "X8qLygjyktfmcNMNFekMkumyaTblJmkH3BBbKiQlk4FvJfp613gkMKrA0CNqLUT9tEfLcm3XMzAbsiYFwM8zbQ==",
       "type": "package",
-      "path": "system.commandline/2.0.0-beta1.21216.1",
+      "path": "system.commandline/2.0.0-beta1.21308.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -166,7 +166,7 @@
         "lib/netstandard2.0/tr/System.CommandLine.resources.dll",
         "lib/netstandard2.0/zh-Hans/System.CommandLine.resources.dll",
         "lib/netstandard2.0/zh-Hant/System.CommandLine.resources.dll",
-        "system.commandline.2.0.0-beta1.21216.1.nupkg.sha512",
+        "system.commandline.2.0.0-beta1.21308.1.nupkg.sha512",
         "system.commandline.nuspec"
       ]
     },
@@ -196,7 +196,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "System.CommandLine >= 2.0.0-beta1.21216.1"
+      "System.CommandLine >= 2.0.0-beta1.21308.1"
     ]
   },
   "packageFolders": {
@@ -245,7 +245,7 @@
         "dependencies": {
           "System.CommandLine": {
             "target": "Package",
-            "version": "[2.0.0-beta1.21216.1, )"
+            "version": "[2.0.0-beta1.21308.1, )"
           }
         },
         "imports": [

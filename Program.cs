@@ -7,11 +7,15 @@ using System.CommandLine;
 using System.CommandLine.Invocation;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace oed
 {
     class Program
     {
+
+        public static bool qsExists = false;
+        public static string UserEnteredWord = "";
         private static string[]? _userArgs;
         public static string[] UserArgs { 
             get => _userArgs!;
@@ -221,8 +225,7 @@ namespace oed
             // @TODO make this some kind of string where you can pass a string argument to the command
             // By using the ArgumentAirty.ZeroOrOne 
             var exportOption = new Option<bool>("--export", 
-                    description: "Export the results of this query.  Saved as XML for SuperMemo import. File will be saved as OED-export.xml",
-                    ArgumentArity.ZeroOrOne
+                    description: "Export the results of this query.  Saved as XML for SuperMemo import. File will be saved as OED-export.xml"
                     )
                     {
                         IsRequired = false,
@@ -245,23 +248,16 @@ namespace oed
             quotes.AddAlias("q");
             rootCommand.AddOption(quotes);
 
-            /*
-            var serverOption = new Option<int?>("--server", _ => 123, false, "server port")
-            {
-            IsRequired = false,
-            ArgumentHelpName = "PortNumber",
-            Arity = ArgumentArity.ZeroOrOne
-            };
-            */
-
+// _ => "xxxx", true,
             var quotesAndSenses = new Option<string?>(
-                "--quotes-and-senses", _ => "xxxx", true, 
+                "--quotes-and-senses",  
                 "Return quotations for each sense definition.  Senses, and the quotations for each sense, are automatically matched.  Enter a selection as d1-3,15 or s1,3 etc. to get qs for a specific sense or definition."
             ){
                 IsRequired = false,
                 ArgumentHelpName = "Selection",
                 Arity = ArgumentArity.ZeroOrOne
             };
+            
 
             quotesAndSenses.AddAlias("qs");
             // @TODO fix this:
@@ -313,6 +309,7 @@ namespace oed
             Trace.Flush();
             // ConsoleUI.Start();
             // @TODO Make an overload of ConsoleUI.Start(which passes a word from the command line)
+            qsExists = rootCommand.Parse(args).CommandResult.FindResultFor(quotesAndSenses) is { };
             rootCommand.Invoke(args);
             if (RunCLIAgain)
             {
@@ -322,6 +319,7 @@ namespace oed
         bool interactiveMode = true;
         while (interactiveMode)
         {
+            qsExists = false;
             Console.WriteLine("q to exit.");
             Console.Write(">");
             string? input = Console.ReadLine();
@@ -341,6 +339,13 @@ namespace oed
             else if (input == "cf") {
                 deleteExportFile();
                 continue;
+            }
+            qsExists = rootCommand.Parse(input).CommandResult.FindResultFor(quotesAndSenses) is { };
+            if (qsExists)
+            {
+                Char[] inchars = input.Trim().ToCharArray();
+                if (inchars[0] == 'q')
+                input = UserEnteredWord + " " + input;
             }
             rootCommand.Invoke(input);
             if (RunCLIAgain)
@@ -751,7 +756,7 @@ namespace oed
         {
             private string? _word;
             private bool _quotes;
-            private bool _quotesAndSenses;
+            private string? _quotesAndSenses;
             private bool _obsoleteOnly;
             private bool _obsoleteExclude;
             private string? _partOfSpeech; 
@@ -767,7 +772,7 @@ namespace oed
             private bool _clearExportFile; 
             private string? _startYear;
             private string? _endYear;
-        public HandleArgs(string word, bool quotes, bool quotesAndSenses, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, 
+        public HandleArgs(string word, bool quotes, string? quotesAndSenses, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, 
             string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, string fromQuote, 
             bool interactive, bool export, bool clearExportFile, string? startYear, string? endYear)
         {
@@ -821,11 +826,51 @@ namespace oed
                 query.QuotesFromWord = true;
             }
             // Check for default value "xxxx" which means the user only entered the option
-            if (_quotesAndSenses)
-            {
+            if (qsExists) {
                 query.QuotesFromWord = false;
                 query.QuotesAndSenses = true;
-            }
+                query.QSFromDefinitions = true;
+                if (!string.IsNullOrWhiteSpace(_quotesAndSenses))
+                {
+                    // check if sense selected
+                        Trace.WriteLine("Quote and Senses turned on with a sense selection");
+                        // remove all non integers
+
+                        string trimedQS = _quotesAndSenses.Replace(" ", "").ToLower().Trim();
+                        // @TODO sepearate both a sense and a d selection and find a selection for each
+                        if (trimedQS.Contains("d") && trimedQS.Contains("s"))
+                        {
+                            string senseSelection = Regex.Match(trimedQS, @"(?<=s)(.*?)(?=[a-zA-z])").Value;
+                            Console.WriteLine("QS for a selection of both definitions and senses not yet implemented.");
+                            Console.WriteLine("Press any key to continue...");
+                            Console.ReadKey();
+                        } else if (trimedQS.Contains("d") && !trimedQS.Contains("s"))
+                        {
+                            Console.WriteLine("QS from a specific definition");
+                            query.QSFromDefinitions = true;
+                        } else if (trimedQS.Contains("s") && !trimedQS.Contains("d"))
+                        {
+                            query.QSFromSenses = true;
+                            Console.WriteLine("QS from a specific sense.");
+                        } else {
+                            query.QSFromDefinitions = true;
+                        }
+                        string cleanSelection = Regex.Replace(_quotesAndSenses, "[A-Za-z]", ""); 
+                        List<int> result = ParseNumbers(cleanSelection);
+                        if (query.QSFromSenses) {
+                            Trace.WriteLine("You want me to run qs on these senses:");
+                            query.QSSenseSelection = result;
+                        } else {
+                            Trace.WriteLine("You want me to run qs on these definitions:");
+                            query.QSDefSelection = result;
+                        }
+                        foreach (int n in result)
+                        {
+                            Trace.WriteLine($"{n}");
+                        }
+                } // if _quotesAndSenses has text
+            } // if qsExists
+            
             if (!string.IsNullOrWhiteSpace(_etymologyLanguage))
             {
                 query.EtymologyLanguage = _etymologyLanguage;
@@ -1072,7 +1117,6 @@ namespace oed
         } else {
             query.WhatToExport = ParseNumbers(export);
         }
-
             return query;
         }
     
