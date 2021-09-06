@@ -1,10 +1,5 @@
-mail_nn01
-mail_vb01
-mail_nn02
-mail_nn03
-mail_vb02
-mail_nn04
-mail_vb03
-mail_nn05
-mail_vb04
-mail_vb05
+one_jj01
+one_pr01
+one_vb01
+one_nn01
+one_su01

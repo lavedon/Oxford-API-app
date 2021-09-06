@@ -47,7 +47,7 @@ namespace oed
 					string selection = Console.ReadLine();
 					Program.ParseExport(query, selection);
 				*/
-			if (!query.QuotesFromWord) {
+			if (!query.QuotesFromWord && query.QueryMode != Modes.QuotesAndSenses) {
 				Console.WriteLine("Select which returned definitions to export: (enter for all)");
 				string export = Console.ReadLine();
 				Program.ParseExport(query, export);

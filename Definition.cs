@@ -20,6 +20,9 @@ namespace oed
 
         public Etymology DefinitionEtymology { get; set; }
 
+        public string BritishIPA { get; set; }
+        public string USIPA { get; set; }
+
     public Definition() {
         this.PartsOfSpeech = new List<string>();
         this.FormattedPartsOfSpeech = new List<string>();

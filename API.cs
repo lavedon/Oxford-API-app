@@ -222,7 +222,10 @@ namespace oed
 
 			if (query.ExportAfterSearch)
 			{
-				Console.WriteLine("Select which returned derivatives to export: (enter for all)");
+				if (query.QueryMode != Modes.QuotesAndSenses)
+				{
+					Console.WriteLine("Select which returned derivatives to export: (enter for all)");
+				}
 				string export = Console.ReadLine();
 				Program.ParseExport(query, export);
 				}
@@ -1252,6 +1255,25 @@ namespace oed
 					else
 					{
 						tempDefinition.IsWordMainDefinition = false;
+					}
+					JsonElement pronunciationObject = data[i].GetProperty("pronunciations");
+					var IPAs = pronunciationObject.EnumerateArray();
+					while (IPAs.MoveNext())
+					{
+						var IPA = IPAs.Current;
+						try
+						{
+							if (IPA.GetProperty("region").ToString() == "British") {
+							tempDefinition.BritishIPA = IPA.GetProperty("ipa")[0].ToString();
+							}
+							if (IPA.GetProperty("region").ToString() == "US") {
+								tempDefinition.USIPA = IPA.GetProperty("ipa")[0].ToString();
+							}
+						}
+						catch (Exception ex) {
+							Console.WriteLine("No IPA found for this word.");
+							Console.WriteLine(ex.Message);
+						}
 					}
 					JsonElement etymologyObject = data[i].GetProperty("etymology");
 					var etymons = etymologyObject.GetProperty("etymons").EnumerateArray();
