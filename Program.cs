@@ -221,6 +221,10 @@ namespace oed
             rootCommand.AddGlobalOption(new Option<bool>(new[] {"--clear-export-file", "cf"}, description: "Delete the current export file.  The next time you export - you will start with a brand new file instead of continuing to append to the current file."));
             rootCommand.AddGlobalOption(new Option<string?>(new[] {"--start-year", "sy"}, description: "Specify a start year. You can enter a range for a start year '-' i.e. 500-900"));
             rootCommand.AddGlobalOption(new Option<string?>(new[] {"--end-year", "ey"}, description: "Specify an end year. You can enter a range using a end year '-' i.e. 500-900"));
+            rootCommand.AddGlobalOption(new Option<bool>(new[] {"--pronunciation", "p"}, description: "Include IPA pronunciation with returned words. Both American and British.}"));
+            rootCommand.AddGlobalOption(new Option<bool>(new[] {"--pronunciation-usa", "pa"}, description: "Include American/USA IPA pronunciation with returned words."));
+            rootCommand.AddGlobalOption(new Option<bool>(new[] {"--pronunciation-british", "pb"}, description: "Include British IPA pronunciation with returned words."));
+
             
             // @TODO make this some kind of string where you can pass a string argument to the command
             // By using the ArgumentAirty.ZeroOrOne 

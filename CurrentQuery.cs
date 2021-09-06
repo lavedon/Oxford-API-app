@@ -18,6 +18,14 @@ namespace oed
 		QuotesAndSenses
 		
 	}
+
+	public enum IPAOptions 
+	{
+		None,
+		Both,
+		British,
+		USA
+	}
 	public class CurrentQuery : IDisposable
 	{
 		// Create the object the same time the user looks up a word
@@ -49,6 +57,7 @@ namespace oed
 
 
 		public Modes QueryMode { get; set; }
+		public IPAOptions IPAMode { get; set; }
 
 		public bool HasLookedUpWord { get; set; }
 		public bool OptionsMenuVerboseMode { get; set;}
@@ -142,6 +151,7 @@ namespace oed
 			this.BlankDefsWithIDs = new List<string>();
 			this.StartEndYearRanges = false;
 			// this.PreviousWordIds = new();
+			this.IPAMode = IPAOptions.None;
 			
 		} 
 		public string Source { get; set; }

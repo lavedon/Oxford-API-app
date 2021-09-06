@@ -463,6 +463,39 @@ namespace oed
             StreamWriter sw;
             createTXT(out txtFile, out sw);
             // int count = DefinitionsForExport.Count;
+            // @TODO replace this with query.MakePronunciationCards enum if (DefinitionsForExport.Where(x => string.IsNullOrWhiteSpace(x.BritishIPA) || string.IsNullOrWhiteSpace(x.USIPA)).Count() > 0)
+            // @TODO only add this to RenderTextFile which is passed a query object? 
+            // Or have SavedQueries save a static enum of the current query export IPAOptions enum?
+            if (Queryable.
+            {
+                // Similar to definition export
+                Console.WriteLine("Exporting pronunciation cards to text file...");
+                for (int i = 0; i < DefinitionsForExport.Count; i++)
+                {
+                    try
+                    {
+                        if (!string.IsNullOrWhiteSpace(DefinitionsForExport[i].BritishIPA))
+                        {
+                            sw.WriteLine($"{DefinitionsForExport[i].BritishIPA}");
+                        }
+                        if (!string.IsNullOrWhiteSpace(DefinitionsForExport[i].USIPA))
+                        {
+                            sw.WriteLine($"{DefinitionsForExport[i].USIPA}");
+                        }
+                            sw.WriteLine(DefinitionsForExport[i].WordID);
+                            sw.WriteLine(DefinitionsForExport[i].FormattedVerboseOutput);
+                            sw.WriteLine();
+                    } catch (AggregateException ae) 
+                    {
+                        var ex = ae.Flatten().InnerExceptions;
+                        Console.WriteLine("Error writing Pronunciation cards to Text file:");
+                        foreach (var exception in ex) 
+                        {
+                            Console.WriteLine($"{ex.ToString()}");
+                        }
+                    }
+                }
+            }
 
             if (BlendedExport)
             {
