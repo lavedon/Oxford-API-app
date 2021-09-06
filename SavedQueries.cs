@@ -164,8 +164,55 @@ namespace oed
 					totalCount = totalCount + s.quotations.Count;
 				}
 			}
+            totalCount = totalCount + query.SQID_Data.Count;
+            foreach (var sq in query.SQID_Data)
+            {
+                totalCount = totalCount + sq.quotations.Count;
+            }
 
 			xml.WriteElementString($"Count", $"{totalCount}");
+			int sqID;
+			sqID = 1;
+            int sqsSenseNum;
+            sqsSenseNum = 1;
+			foreach (var sqs in query.SQID_Data)
+            {
+                    xml.WriteStartElement("SuperMemoElement");
+                    xml.WriteElementString("ID", $"{sqID}");
+                    xml.WriteElementString("Title", $"{sqs.id}");
+                    xml.WriteElementString("Type", "Item");
+                    xml.WriteStartElement("Content");
+                    var sqsQuestionText = new System.Text.StringBuilder();
+                    var sqsAnswerText = new System.Text.StringBuilder();
+                    // Add sense #?
+                    sqsAnswerText.Append($"{sqs.lemma} - {sqs.definition} <BR>");
+                    if (sqs.main_current_sense)
+                    {
+                        sqsAnswerText.Append($"This is the main current sense <BR>");
+                    }
+                    if (sqs.daterange.obsolete)
+                    {
+                        sqsAnswerText.Append($"This sense is obsolete <BR>");
+                    }
+
+                int sqsQNum;
+                sqsQNum = 1;
+                sqsQuestionText.Append($"{sqs.lemma} <BR> <BR>");
+                foreach (Quotation q in sqs.quotations)
+                {
+                    sqsQuestionText = writeXMLQuote(sqsQuestionText, sqsQNum, q);
+                }
+                    xml.WriteElementString("Question", sqsQuestionText.ToString().Replace(sqs.lemma, $"<STRONG>{sqs.lemma}</STRONG>"));
+					xml.WriteElementString("Answer", sqsAnswerText.ToString());
+					string encoded = WebUtility.HtmlEncode("<H5 dir=ltr align=left><Font size=\"1\" style=\"color: transparent\"> SuperMemo Reference:</font><br><FONT class=reference>Title:\"My Test Quote\" <br>Source: Oxford English Dictionary");
+					xml.WriteElementString("SuperMemoReference", encoded);
+
+					xml.WriteEndElement();
+					xml.WriteEndElement();
+                    sqID++;
+                    sqsSenseNum++;
+
+            }
 			int ID;
 			ID = 1;
 			foreach (var sq in query.SQ_Data)
@@ -202,21 +249,14 @@ namespace oed
 					qNum = 1;
 					questionText.Append(s.lemma);
 						questionText.Append("<BR> <BR>");
-					foreach (Quotation q in s.quotations) 
-					{
-						// questionText.Append($"Quotation #{qNum}: <BR>");
-                        if (string.IsNullOrWhiteSpace(q.source.author))
-                        {
-                            q.source.author = "Unknown";
-                        }
-						questionText.Append($"{q.year.ToString()} ");
-						questionText.Append($"{q.source.author}, {q.source.title} ");
-						questionText.Append($"&#8220;{q.text.full_text}&#8221; <BR><BR>");
-						qNum++;
-					}
-    
-                    // Removed <FONT color="#ff0000"> and </FONT> from the text
-					xml.WriteElementString("Question", questionText.ToString().Replace(sq.lemma, $"<STRONG><EM>{sq.lemma}</EM></STRONG>"));
+					foreach (Quotation q in s.quotations)
+                            {
+                                // questionText.Append($"Quotation #{qNum}: <BR>");
+                                questionText = writeXMLQuote(questionText, qNum, q);
+                            }
+
+                            // Removed <FONT color="#ff0000"> and </FONT> from the text
+                            xml.WriteElementString("Question", questionText.ToString().Replace(sq.lemma, $"<STRONG>{sq.lemma}</STRONG>"));
 					xml.WriteElementString("Answer", answerText.ToString());
 					string encoded = WebUtility.HtmlEncode("<H5 dir=ltr align=left><Font size=\"1\" style=\"color: transparent\"> SuperMemo Reference:</font><br><FONT class=reference>Title:\"My Test Quote\" <br>Source: Oxford English Dictionary");
 					xml.WriteElementString("SuperMemoReference", encoded);
@@ -269,18 +309,62 @@ namespace oed
                AppendXML.Append(xmlFile);
                return; 
             }
-		}
+
+            static StringBuilder writeXMLQuote(StringBuilder questionText, int qNum, Quotation q)
+            {
+                if (string.IsNullOrWhiteSpace(q.source.author))
+                {
+                    q.source.author = "Unknown";
+                }
+                questionText.Append($"{q.year.ToString()} ");
+                questionText.Append($"{q.source.author}, {q.source.title} ");
+                questionText.Append($"&#8220;{q.text.full_text}&#8221; <BR><BR>");
+                qNum++;
+                return questionText;
+            }
+        }
         public static void RenderTextFile(CurrentQuery query)
         {
             string txtFile;
             StreamWriter sw;
             createTXT(out txtFile, out sw);
+
 			if (query.QueryMode == Modes.QuotesAndSenses) {
 			try {
+            // sq s1,5 type query from sense/{id}/ end point 
+                int senseNum;
+                senseNum = 1;
+            foreach (var qs in query.SQID_Data) {
+                sw.WriteLine($"Sense #{senseNum}");
+                sw.WriteLine($"{qs.lemma} - {qs.definition}");
+                if (qs.main_current_sense) 
+                {
+                    sw.WriteLine($"This is the main current sense");
+                }
+                if (qs.daterange.obsolete)
+                {
+                    sw.WriteLine($"This sense is obsolete");
+                }
+                sw.WriteLine();
+                int qNum;
+                qNum = 1;
+                foreach (var q in qs.quotations) {
+                    if (string.IsNullOrWhiteSpace(q.source.author))
+                    {
+                        q.source.author = "Unknown";
+                    }
+                    sw.WriteLine($"Quote #{qNum}");
+                    sw.WriteLine($"{q.text.full_text}");
+                    sw.WriteLine($"{q.source.author}, {q.year.ToString()}, {q.source.title} ");
+                    sw.WriteLine();
+                    qNum++;
+                }
+            senseNum++;
+            }
+            int sNum;
+            sNum = 1;
 			foreach (var sq in query.SQ_Data)
 			{
-				int sNum;
-				sNum = 1;
 				foreach (Sens s in sq.senses)
 				{
 					// answerText.Append($"{sq.definition} <BR> <BR>");
