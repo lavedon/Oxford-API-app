@@ -1,5 +1,7 @@
-one_jj01
-one_pr01
-one_vb01
-one_nn01
-one_su01
+cow_nn01
+cow_nn03
+cow_vb02
+cow_nn02
+cow_vb01
+cow_nn04
+cow_nn05

@@ -1,0 +1,741 @@
+{
+  "meta": {
+    "total": 4,
+    "count": 4,
+    "offset": 0,
+    "limit": 100,
+    "provider": "Oxford University Press",
+    "cite": "Oxford English Dictionary API, Oxford University Press, 0.0.0.0/oed/api/v0.2/words/?lemma=plant&offset=0&limit=100 . Accessed 07 September 2021"
+  },
+  "links": {
+    "self": "/oed/api/v0.2/words/?lemma=plant&offset=0&limit=100",
+    "prev": null,
+    "next": null,
+    "first": "/oed/api/v0.2/words/?lemma=plant&offset=0&limit=100",
+    "last": "/oed/api/v0.2/words/?lemma=plant&offset=0&limit=100"
+  },
+  "data": [
+    {
+      "id": "plant_nn01",
+      "band": 6,
+      "meta": {
+        "created": 1907,
+        "revised": true,
+        "updated": 2006
+      },
+      "lemma": "plant",
+      "oed_url": "https://www.oed.com/view/Entry/145153#eid30000715",
+      "daterange": {
+        "end": null,
+        "start": 850,
+        "obsolete": false,
+        "rangestring": "eOE—"
+      },
+      "etymology": {
+        "etymons": [
+          {
+            "word": "planta",
+            "language": "Latin"
+          },
+          {
+            "word": "plante",
+            "language": "French"
+          },
+          {
+            "word": "plaunte",
+            "language": "French"
+          },
+          {
+            "word": "plante",
+            "language": "French"
+          },
+          {
+            "word": "plaunte",
+            "language": "French"
+          },
+          {
+            "word": "plente",
+            "language": "French"
+          },
+          {
+            "word": "plant",
+            "language": "English",
+            "target_id": "plant_vb01",
+            "part_of_speech": "VB"
+          }
+        ],
+        "etymology_type": "borrowing",
+        "etymon_language": [
+          [
+            "Indo-European",
+            "Italic",
+            "Romance",
+            "Italo-Western",
+            "Gallo-Romance",
+            "French"
+          ],
+          [
+            "Indo-European",
+            "Italic",
+            "Latin"
+          ],
+          [
+            "English"
+          ]
+        ],
+        "source_language": [
+          [
+            "Indo-European",
+            "Germanic"
+          ]
+        ],
+        "etymology_summary": "A borrowing from Latin."
+      },
+      "first_use": "Vespasian Psalter",
+      "frequency": [
+        [
+          1750,
+          86
+        ],
+        [
+          1760,
+          86
+        ],
+        [
+          1770,
+          90
+        ],
+        [
+          1780,
+          88
+        ],
+        [
+          1790,
+          93
+        ],
+        [
+          1800,
+          94
+        ],
+        [
+          1810,
+          88
+        ],
+        [
+          1820,
+          89
+        ],
+        [
+          1830,
+          91
+        ],
+        [
+          1840,
+          89
+        ],
+        [
+          1850,
+          91
+        ],
+        [
+          1860,
+          96
+        ],
+        [
+          1870,
+          100
+        ],
+        [
+          1880,
+          110
+        ],
+        [
+          1890,
+          130
+        ],
+        [
+          1900,
+          140
+        ],
+        [
+          1910,
+          150
+        ],
+        [
+          1920,
+          170
+        ],
+        [
+          1930,
+          180
+        ],
+        [
+          1940,
+          180
+        ],
+        [
+          1950,
+          180
+        ],
+        [
+          1960,
+          170
+        ],
+        [
+          1970,
+          160
+        ],
+        [
+          1980,
+          150
+        ],
+        [
+          1990,
+          140
+        ],
+        [
+          2000,
+          130
+        ],
+        [
+          2010,
+          120
+        ]
+      ],
+      "sense_ids": [
+        "plant_nn01-30000720",
+        "plant_nn01-30000864",
+        "plant_nn01-30000968",
+        "plant_nn01-30001046",
+        "plant_nn01-30001292",
+        "plant_nn01-30001374",
+        "plant_nn01-30001391",
+        "plant_nn01-30001422",
+        "plant_nn01-30001472",
+        "plant_nn01-30001535",
+        "plant_nn01-30001639",
+        "plant_nn01-30002119",
+        "plant_nn01-30001693",
+        "plant_nn01-30001766",
+        "plant_nn01-30001922",
+        "plant_nn01-30001950",
+        "plant_nn01-30002020",
+        "plant_nn01-30002082",
+        "plant_nn01-30002214",
+        "plant_nn01-30002254"
+      ],
+      "definition": "gen. and Biology. A living organism other than an animal, able to subsist wholly on inorganic substances, typically fixed to a substrate and moving chiefly by means of growth, and lacking specialized sensory and digestive organs; spec. (more fully green plant) such an organism belonging to a group (the kingdom Plantae) which comprises multicellular forms having cellulose cell walls and capable of photosynthesis by means of chlorophyll, including trees, shrubs, herbs, grasses, and ferns (the…",
+      "main_entry": true,
+      "inflections": [
+        {
+          "region": "British",
+          "inflections": [
+            {
+              "form": "plant",
+              "part_of_speech": "NN"
+            },
+            {
+              "form": "plants",
+              "part_of_speech": "NNS"
+            }
+          ]
+        },
+        {
+          "region": "US",
+          "inflections": [
+            {
+              "form": "plant",
+              "part_of_speech": "NN"
+            },
+            {
+              "form": "plants",
+              "part_of_speech": "NNS"
+            }
+          ]
+        }
+      ],
+      "frequency_id": "plant_nn01-fq",
+      "oed_reference": "plant, n.1",
+      "pronunciations": [
+        {
+          "ipa": [
+            "plɑːnt",
+            "plant"
+          ],
+          "region": "British"
+        },
+        {
+          "ipa": [
+            "plaent"
+          ],
+          "region": "US"
+        }
+      ],
+      "parts_of_speech": [
+        "NN"
+      ],
+      "primary_sense_id": "plant_nn01-30001046"
+    },
+    {
+      "id": "plant_vb01",
+      "band": 5,
+      "meta": {
+        "created": 1907,
+        "revised": true,
+        "updated": 2006
+      },
+      "lemma": "plant",
+      "oed_url": "https://www.oed.com/view/Entry/145156#eid30005838",
+      "daterange": {
+        "end": null,
+        "start": 850,
+        "obsolete": false,
+        "rangestring": "eOE—"
+      },
+      "etymology": {
+        "etymons": [
+          {
+            "word": "plantāre",
+            "language": "Latin"
+          },
+          {
+            "word": "plaunter",
+            "language": "French"
+          },
+          {
+            "word": "planter",
+            "language": "French"
+          }
+        ],
+        "etymology_type": "borrowing",
+        "etymon_language": [
+          [
+            "Indo-European",
+            "Italic",
+            "Romance",
+            "Italo-Western",
+            "Gallo-Romance",
+            "French"
+          ],
+          [
+            "Indo-European",
+            "Italic",
+            "Latin"
+          ]
+        ],
+        "source_language": [
+          [
+            "Indo-European",
+            "Germanic"
+          ]
+        ],
+        "etymology_summary": "A borrowing from Latin."
+      },
+      "first_use": "Vespasian Psalter",
+      "frequency": [
+        [
+          1750,
+          45
+        ],
+        [
+          1760,
+          43
+        ],
+        [
+          1770,
+          42
+        ],
+        [
+          1780,
+          40
+        ],
+        [
+          1790,
+          39
+        ],
+        [
+          1800,
+          38
+        ],
+        [
+          1810,
+          32
+        ],
+        [
+          1820,
+          32
+        ],
+        [
+          1830,
+          31
+        ],
+        [
+          1840,
+          29
+        ],
+        [
+          1850,
+          29
+        ],
+        [
+          1860,
+          29
+        ],
+        [
+          1870,
+          29
+        ],
+        [
+          1880,
+          29
+        ],
+        [
+          1890,
+          29
+        ],
+        [
+          1900,
+          29
+        ],
+        [
+          1910,
+          29
+        ],
+        [
+          1920,
+          29
+        ],
+        [
+          1930,
+          29
+        ],
+        [
+          1940,
+          26
+        ],
+        [
+          1950,
+          25
+        ],
+        [
+          1960,
+          22
+        ],
+        [
+          1970,
+          20
+        ],
+        [
+          1980,
+          19
+        ],
+        [
+          1990,
+          19
+        ],
+        [
+          2000,
+          18
+        ],
+        [
+          2010,
+          18
+        ]
+      ],
+      "sense_ids": [
+        "plant_vb01-30005841",
+        "plant_vb01-30006083",
+        "plant_vb01-30006176",
+        "plant_vb01-30006275",
+        "plant_vb01-30006301",
+        "plant_vb01-30006436",
+        "plant_vb01-30006580",
+        "plant_vb01-30006638",
+        "plant_vb01-30006698",
+        "plant_vb01-30006830",
+        "plant_vb01-30006914",
+        "plant_vb01-30006951",
+        "plant_vb01-30007054",
+        "plant_vb01-30007278",
+        "plant_vb01-30007387",
+        "plant_vb01-30007488",
+        "plant_vb01-30007614",
+        "plant_vb01-30008753",
+        "plant_vb01-76009166",
+        "plant_vb01-30007809",
+        "plant_vb01-30007860",
+        "plant_vb01-30007936",
+        "plant_vb01-30008028",
+        "plant_vb01-30008103",
+        "plant_vb01-30008252",
+        "plant_vb01-30008338",
+        "plant_vb01-30008484",
+        "plant_vb01-30008571",
+        "plant_vb01-30008656"
+      ],
+      "definition": "transitive. To set or place (a seed, bulb, or growing thing) in the ground so that it may take root and grow; to establish (a garden, orchard, etc.) by doing this. Also intransitive.",
+      "main_entry": true,
+      "inflections": [
+        {
+          "region": "British",
+          "inflections": [
+            {
+              "form": "plant",
+              "part_of_speech": "VB"
+            },
+            {
+              "form": "plants",
+              "part_of_speech": "VBZ"
+            },
+            {
+              "form": "planting",
+              "part_of_speech": "VBG"
+            },
+            {
+              "form": "planted",
+              "part_of_speech": "VBD"
+            },
+            {
+              "form": "planted",
+              "part_of_speech": "VBN"
+            }
+          ]
+        },
+        {
+          "region": "US",
+          "inflections": [
+            {
+              "form": "plant",
+              "part_of_speech": "VB"
+            },
+            {
+              "form": "plants",
+              "part_of_speech": "VBZ"
+            },
+            {
+              "form": "planting",
+              "part_of_speech": "VBG"
+            },
+            {
+              "form": "planted",
+              "part_of_speech": "VBD"
+            },
+            {
+              "form": "planted",
+              "part_of_speech": "VBN"
+            }
+          ]
+        }
+      ],
+      "frequency_id": "plant_vb01-fq",
+      "oed_reference": "plant, v.",
+      "pronunciations": [
+        {
+          "ipa": [
+            "plɑːnt",
+            "plant"
+          ],
+          "region": "British"
+        },
+        {
+          "ipa": [
+            "plaent"
+          ],
+          "region": "US"
+        }
+      ],
+      "parts_of_speech": [
+        "VB"
+      ],
+      "primary_sense_id": "plant_vb01-30005841"
+    },
+    {
+      "id": "plant_nn02",
+      "band": 14,
+      "meta": {
+        "created": 1907,
+        "revised": true,
+        "updated": 2006
+      },
+      "lemma": "plant",
+      "oed_url": "https://www.oed.com/view/Entry/145154#eid30005476",
+      "daterange": {
+        "end": 1798,
+        "start": 1381,
+        "obsolete": true,
+        "rangestring": "a1382—1798"
+      },
+      "etymology": {
+        "etymons": [
+          {
+            "word": "plante",
+            "language": "French"
+          },
+          {
+            "word": "plaunte",
+            "language": "French"
+          },
+          {
+            "word": "planta",
+            "language": "Latin"
+          }
+        ],
+        "etymology_type": "borrowing",
+        "etymon_language": [
+          [
+            "Indo-European",
+            "Italic",
+            "Romance",
+            "Italo-Western",
+            "Gallo-Romance",
+            "French"
+          ],
+          [
+            "Indo-European",
+            "Italic",
+            "Latin"
+          ]
+        ],
+        "source_language": [
+          [
+            "Indo-European",
+            "Italic",
+            "Latin"
+          ]
+        ],
+        "etymology_summary": "A borrowing from French."
+      },
+      "first_use": "Bible (Wycliffite, E.V.)",
+      "frequency": null,
+      "sense_ids": [
+        "plant_nn02-30005478"
+      ],
+      "definition": "The sole of the foot.",
+      "main_entry": true,
+      "inflections": [
+        {
+          "region": "British",
+          "inflections": [
+            {
+              "form": "plant",
+              "part_of_speech": "NN"
+            },
+            {
+              "form": "plants",
+              "part_of_speech": "NNS"
+            }
+          ]
+        },
+        {
+          "region": "US",
+          "inflections": [
+            {
+              "form": "plant",
+              "part_of_speech": "NN"
+            },
+            {
+              "form": "plants",
+              "part_of_speech": "NNS"
+            }
+          ]
+        }
+      ],
+      "frequency_id": null,
+      "oed_reference": "plant, n.2",
+      "pronunciations": [],
+      "parts_of_speech": [
+        "NN"
+      ],
+      "primary_sense_id": "plant_nn02-30005478"
+    },
+    {
+      "id": "plant_nn03",
+      "band": 14,
+      "meta": {
+        "created": 1907,
+        "revised": true,
+        "updated": 2006
+      },
+      "lemma": "plant",
+      "oed_url": "https://www.oed.com/view/Entry/145155#eid30005596",
+      "daterange": {
+        "end": 1665,
+        "start": 1624,
+        "obsolete": true,
+        "rangestring": "1624—65"
+      },
+      "etymology": {
+        "etymons": [
+          {
+            "word": "plant",
+            "language": "French"
+          }
+        ],
+        "etymology_type": "borrowing",
+        "etymon_language": [
+          [
+            "Indo-European",
+            "Italic",
+            "Romance",
+            "Italo-Western",
+            "Gallo-Romance",
+            "French"
+          ]
+        ],
+        "source_language": [
+          [
+            "Indo-European",
+            "Italic",
+            "Romance",
+            "Italo-Western",
+            "Gallo-Romance",
+            "French"
+          ]
+        ],
+        "etymology_summary": "A borrowing from French."
+      },
+      "first_use": "Henry Wotton",
+      "frequency": null,
+      "sense_ids": [
+        "plant_nn03-30005598"
+      ],
+      "definition": "A ground plan.",
+      "main_entry": true,
+      "inflections": [
+        {
+          "region": "British",
+          "inflections": [
+            {
+              "form": "plant",
+              "part_of_speech": "NN"
+            },
+            {
+              "form": "plants",
+              "part_of_speech": "NNS"
+            }
+          ]
+        },
+        {
+          "region": "US",
+          "inflections": [
+            {
+              "form": "plant",
+              "part_of_speech": "NN"
+            },
+            {
+              "form": "plants",
+              "part_of_speech": "NNS"
+            }
+          ]
+        }
+      ],
+      "frequency_id": null,
+      "oed_reference": "plant, n.3",
+      "pronunciations": [],
+      "parts_of_speech": [
+        "NN"
+      ],
+      "primary_sense_id": "plant_nn03-30005598"
+    }
+  ]
+}

@@ -1264,7 +1264,7 @@ namespace oed
 						try
 						{
 							if (IPA.GetProperty("region").ToString() == "British") {
-							tempDefinition.BritishIPA = IPA.GetProperty("ipa")[0].ToString();
+								tempDefinition.BritishIPA = IPA.GetProperty("ipa")[0].ToString();
 							}
 							if (IPA.GetProperty("region").ToString() == "US") {
 								tempDefinition.USIPA = IPA.GetProperty("ipa")[0].ToString();
@@ -1460,14 +1460,14 @@ namespace oed
 					// Display which Sense #
 					Console.WriteLine($"Sense #{query.Senses.Count + 1}:");
                     Console.WriteLine(currentSense.Definition);
-                    Console.WriteLine("Sense first used: {0}", currentSense.Start);
+                    Console.WriteLine("Sense first used: {0}. {1} ", currentSense.Start, currentSense.OedReference);
                     if (currentSense.IsObsolete)
                     {
                         Console.WriteLine("This usage is obsolete.");
                     }
                     else
                     {
-                        Console.WriteLine("This sense is not obsolete.");
+                        // Console.WriteLine("This sense is not obsolete.");
                     }
                     if (currentSense.IsMainUsage)
                     {
@@ -1477,7 +1477,7 @@ namespace oed
                     {
                         // Console.WriteLine("Not the main sense for the word.");
                     }
-                    Console.WriteLine(currentSense.OedReference);
+//                    Console.WriteLine(currentSense.OedReference);
 
 					Sense savedSense = new Sense(currentSense);
                     query.Senses.Add(savedSense);

@@ -1,0 +1,10 @@
+cow_nn01
+cow: The female of any bovine animal (as the ox, bison, or buffalo); most commonly applied to the female of the domestic species (Bos Taurus).Noun.  Listed as a main definition. The original source of this word is listed as Corpus Glossary. This word was first recored in 799
+IPA USA: kaʊ
+IPA British: kaʊ
+
+cow_nn03
+cow: ‘A hob-goblin; a scare-crow, bugbear’ (Jamieson); cf. worricow, n.Noun.  Listed as a main definition. The original source of this word is listed as Roull's Cursing. This word was first recored in 1500
+IPA USA: kaʊ
+IPA British: kaʊ
+

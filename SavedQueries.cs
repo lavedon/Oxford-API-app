@@ -15,6 +15,8 @@ namespace oed
         private static bool _appendXML = false;
 	    public static bool Instance { get; set; } = false;
 
+        public static IPAOptions IPA { get; set; } = new IPAOptions();
+
 		public static bool BlendedExport { get; set; } = false;
 		public static bool FirstBlendOption { get; set; } = true;
 		public static bool DeleteOnExport { get; set; } = true;
@@ -328,6 +330,101 @@ namespace oed
             string txtFile;
             StreamWriter sw;
             createTXT(out txtFile, out sw);
+            if (query.IPAMode != IPAOptions.None)
+            {
+                // Similar to definition export
+                Console.WriteLine("Exporting pronunciation cards to text file...");
+                for (int i = 0; i < DefinitionsForExport.Count; i++)
+                {
+                    switch (query.IPAMode) 
+                    {
+                        case IPAOptions.British:
+                            sw.WriteLine("IPA British: " + query.Definitions[i].BritishIPA);
+                            break;
+                        case IPAOptions.USA:
+                            sw.WriteLine("IPA USA: " + query.Definitions[i].USIPA);
+                            break;
+                        case IPAOptions.Both:
+                            sw.WriteLine("IPA USA: " + query.Definitions[i].USIPA);
+                            sw.WriteLine("IPA British: " + query.Definitions[i].BritishIPA);
+                            break;
+                        default:
+                            break;
+                    }
+                    try
+                    {
+                        /*
+                        if (!string.IsNullOrWhiteSpace(DefinitionsForExport[i].BritishIPA))
+                        {
+                            sw.WriteLine($"{DefinitionsForExport[i].BritishIPA}");
+                        }
+                        if (!string.IsNullOrWhiteSpace(DefinitionsForExport[i].USIPA))
+                        {
+                            sw.WriteLine($"{DefinitionsForExport[i].USIPA}");
+                        }
+                        */
+                            sw.WriteLine(DefinitionsForExport[i].WordID);
+                            sw.WriteLine(DefinitionsForExport[i].FormattedVerboseOutput);
+                            sw.WriteLine();
+                    } catch (AggregateException ae) 
+                    {
+                        var ex = ae.Flatten().InnerExceptions;
+                        Console.WriteLine("Error writing Pronunciation cards to Text file:");
+                        foreach (var exception in ex) 
+                        {
+                            Console.WriteLine($"{ex.ToString()}");
+                        }
+                    }
+                }
+            }
+
+            if (BlendedExport)
+            {
+                foreach (Definition d in DefinitionsForExport)
+                {
+                    List<Quote> quotesForDefinition = new();
+                    foreach (Quote q in QuotesForExport)
+                    {
+                        if (q.WordID == d.WordID)
+                        {
+                            quotesForDefinition.Add(q);
+                        }
+                    }
+                    try
+                    {
+                        var questionText = new System.Text.StringBuilder();
+                        sw.WriteLine(UserEnteredWord);
+                        foreach (Quote quote in quotesForDefinition)
+                        {
+                            if (string.IsNullOrWhiteSpace(quote.Author))
+                            {
+                                quote.Author = "Unknown";
+                            }
+                            sw.WriteLine($"\"{quote.Text}\"");
+                            sw.WriteLine($"--{quote.Author}, {quote.Year}");
+                            sw.WriteLine();
+                            /*
+                            string quoteText = $"\"{quote.Text}\" --{quote.Author}, {quote.Year}";
+                            sw.WriteLine(quoteText);
+                            sw.WriteLine();
+                            */
+                        }
+
+                        sw.WriteLine(questionText);
+                        sw.WriteLine(d.FormattedVerboseOutput);
+
+                    }
+                    catch (AggregateException ae)
+                    {
+                        var ex = ae.Flatten().InnerExceptions;
+                        Console.WriteLine("Error writing to Text file");
+                        foreach (var exception in ex)
+                        {
+                            Console.WriteLine($"{ex.ToString()}");
+                        }
+                    }
+                }
+            }
 
 			if (query.QueryMode == Modes.QuotesAndSenses) {
 			try {
@@ -462,88 +559,6 @@ namespace oed
             string txtFile;
             StreamWriter sw;
             createTXT(out txtFile, out sw);
-            // int count = DefinitionsForExport.Count;
-            // @TODO replace this with query.MakePronunciationCards enum if (DefinitionsForExport.Where(x => string.IsNullOrWhiteSpace(x.BritishIPA) || string.IsNullOrWhiteSpace(x.USIPA)).Count() > 0)
-            // @TODO only add this to RenderTextFile which is passed a query object? 
-            // Or have SavedQueries save a static enum of the current query export IPAOptions enum?
-            if (Queryable.
-            {
-                // Similar to definition export
-                Console.WriteLine("Exporting pronunciation cards to text file...");
-                for (int i = 0; i < DefinitionsForExport.Count; i++)
-                {
-                    try
-                    {
-                        if (!string.IsNullOrWhiteSpace(DefinitionsForExport[i].BritishIPA))
-                        {
-                            sw.WriteLine($"{DefinitionsForExport[i].BritishIPA}");
-                        }
-                        if (!string.IsNullOrWhiteSpace(DefinitionsForExport[i].USIPA))
-                        {
-                            sw.WriteLine($"{DefinitionsForExport[i].USIPA}");
-                        }
-                            sw.WriteLine(DefinitionsForExport[i].WordID);
-                            sw.WriteLine(DefinitionsForExport[i].FormattedVerboseOutput);
-                            sw.WriteLine();
-                    } catch (AggregateException ae) 
-                    {
-                        var ex = ae.Flatten().InnerExceptions;
-                        Console.WriteLine("Error writing Pronunciation cards to Text file:");
-                        foreach (var exception in ex) 
-                        {
-                            Console.WriteLine($"{ex.ToString()}");
-                        }
-                    }
-                }
-            }
-
-            if (BlendedExport)
-            {
-                foreach (Definition d in DefinitionsForExport)
-                {
-                    List<Quote> quotesForDefinition = new();
-                    foreach (Quote q in QuotesForExport)
-                    {
-                        if (q.WordID == d.WordID)
-                        {
-                            quotesForDefinition.Add(q);
-                        }
-                    }
-                    try
-                    {
-                        var questionText = new System.Text.StringBuilder();
-                        sw.WriteLine(UserEnteredWord);
-                        foreach (Quote quote in quotesForDefinition)
-                        {
-                            if (string.IsNullOrWhiteSpace(quote.Author))
-                            {
-                                quote.Author = "Unknown";
-                            }
-                            sw.WriteLine($"\"{quote.Text}\"");
-                            sw.WriteLine($"--{quote.Author}, {quote.Year}");
-                            sw.WriteLine();
-                            /*
-                            string quoteText = $"\"{quote.Text}\" --{quote.Author}, {quote.Year}";
-                            sw.WriteLine(quoteText);
-                            sw.WriteLine();
-                            */
-                        }
-
-                        sw.WriteLine(questionText);
-                        sw.WriteLine(d.FormattedVerboseOutput);
-
-                    }
-                    catch (AggregateException ae)
-                    {
-                        var ex = ae.Flatten().InnerExceptions;
-                        Console.WriteLine("Error writing to Text file");
-                        foreach (var exception in ex)
-                        {
-                            Console.WriteLine($"{ex.ToString()}");
-                        }
-                    }
-                }
-            }
             if (QuotesForExport.Count > 0 && !BlendedExport)
             {
                 Console.WriteLine("Exporting Quotes to text file...");
@@ -581,6 +596,24 @@ namespace oed
                     {
                         sw.WriteLine(DefinitionsForExport[i].WordID);
                         sw.WriteLine(DefinitionsForExport[i].FormattedVerboseOutput);
+                        if (SavedQueries.IPA != IPAOptions.None)
+                        {
+                            switch (SavedQueries.IPA) 
+                            {
+                                case IPAOptions.British:
+                                    sw.WriteLine("IPA British: " + DefinitionsForExport[i].BritishIPA);
+                                    break;
+                                case IPAOptions.USA:
+                                    sw.WriteLine("IPA USA: " + DefinitionsForExport[i].USIPA);
+                                    break;
+                                case IPAOptions.Both:
+                                    sw.WriteLine("IPA USA: " + DefinitionsForExport[i].USIPA);
+                                    sw.WriteLine("IPA British: " + DefinitionsForExport[i].BritishIPA);
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
                         sw.WriteLine();
                     }
                     catch (AggregateException ae)
@@ -592,8 +625,8 @@ namespace oed
                             Console.WriteLine($"{ex.ToString()}");
                         }
                     }
-                }
-            }
+                } // end for loop of Definitions
+            } // end if Definitions and not BlendedExport
             if (SensesForExport.Count > 0 && !BlendedExport)
             {
                 Console.WriteLine("Exporting Senses to a text file...");
@@ -746,6 +779,9 @@ namespace oed
             if (BlendedExport)
             {
                 count = DefinitionsForExport.Count;
+            } else if (IPA != IPAOptions.None)
+            {
+                count = Quotes.Count + SensesForExport.Count + Lemmas.Count + (DefinitionsForExport.Count * 2) + SurfacesForExport.Count;
             }
             else
             {
@@ -844,23 +880,54 @@ namespace oed
 
             if (DefinitionsForExport.Count > 0 && !BlendedExport)
             {
+                int ID;
+                StringBuilder IPAString = new(); 
                 Console.WriteLine("Exporting Definitions for SuperMemo..");
+                ID = 1;
                 for (int i = 0; i < DefinitionsForExport.Count; i++)
                 {
-                    int ID = i + 1;
                     try
                     {
                         xml.WriteStartElement("SuperMemoElement");
                         xml.WriteElementString("ID", $"{ID}");
-                        xml.WriteElementString("Title", $"{DefinitionsForExport[i].WordID}");
-                        xml.WriteElementString("Type", "Topic");
-                        xml.WriteStartElement("Content");
-                        xml.WriteElementString("Question", $"{DefinitionsForExport[i].FormattedVerboseOutput}");
+                        // Make IPA Cards if using 'p' mode
+                        // Make the inverse card also with ID + 1
+                        if (SavedQueries.IPA != IPAOptions.None)
+                        {
+                            xml.WriteElementString("Title", $"{DefinitionsForExport[i].WordID}");
+                            xml.WriteElementString("Type", "Item");
+                            xml.WriteStartElement("Content");
+                            xml.WriteElementString("Question", $"{UserEnteredWord}: {DefinitionsForExport[i].WordDefinition}");
+                            switch (SavedQueries.IPA)
+                            {
+                                case IPAOptions.Both:
+                                IPAString.Append("US IPA: " + DefinitionsForExport[i].USIPA + "<BR>" + "British IPA: " + DefinitionsForExport[i].BritishIPA);
+                                break;
+                                case IPAOptions.British:
+                                IPAString.Append("British IPA: " + DefinitionsForExport[i].BritishIPA);
+                                break;
+                                case IPAOptions.USA:
+                                IPAString.Append("American IPA: " + DefinitionsForExport[i].USIPA);
+                                break;
+                            }
+                            xml.WriteElementString("Answer", IPAString.ToString());
+                        } else {
+                            xml.WriteElementString("Title", $"{DefinitionsForExport[i].WordID}");
+                            xml.WriteElementString("Type", "Topic");
+                            xml.WriteStartElement("Content");
+                            xml.WriteElementString("Question", $"{DefinitionsForExport[i].FormattedVerboseOutput}");
+                        }
                         string encoded = WebUtility.HtmlEncode("<H5 dir=ltr align=left><Font size=\"1\" style=\"color: transparent\"> SuperMemo Reference:</font><br><FONT class=reference>Title:\"My Test Quote\" <br>Source: Oxford English Dictionary");
                         xml.WriteElementString("SuperMemoReference", encoded);
 
-                        xml.WriteEndElement();
-                        xml.WriteEndElement();
+                        xml.WriteEndElement(); // Content
+                        xml.WriteEndElement(); // SuperMemoElement
+                        // Write the inverse item
+                        if (SavedQueries.IPA != IPAOptions.None)
+                        {
+                        (xml, ID) = createInverseItem(xml, IPAString, DefinitionsForExport[i], ID, encoded);
+                        }
+
                     }
                     catch (AggregateException ae)
                     {
@@ -871,8 +938,9 @@ namespace oed
                             Console.WriteLine($"{ex.ToString()}");
                         }
                     }
-                }
-            }
+                    ID++;
+                } // end for loop of Definitions
+            } // end if 
             if (SensesForExport.Count > 0 && !BlendedExport)
             {
                 Console.WriteLine("Exporting Senses for SuperMemo...");
@@ -1093,6 +1161,26 @@ namespace oed
             xml.WriteStartDocument();
             xml.WriteStartElement("SuperMemoCollection");
         }
+        private static (XmlWriter, int) createInverseItem(XmlWriter xml, StringBuilder IPAString, Definition definitionToExport, int ID,
+            string superMemoRefernce)
+        {
+                ID += 1;
+                Trace.WriteLine($"Writing the reverse IPA item for {definitionToExport.WordID}");
+                xml.WriteStartElement("SuperMemoElement");
+                xml.WriteElementString("ID", $"{ID}");
+                xml.WriteElementString("Type", "Item");
+                xml.WriteElementString("Title", $"{definitionToExport.WordID}-Inverse");
+                xml.WriteStartElement("Content");
+                xml.WriteElementString("Question", IPAString.ToString());
+                string answerText = UserEnteredWord + ": " + definitionToExport.WordDefinition;
+                xml.WriteElementString("Answer", answerText);
+                xml.WriteElementString("SuperMemoReference", superMemoRefernce);
+                xml.WriteEndElement(); // Content
+                xml.WriteEndElement(); // SuperMemoElement
+                IPAString.Clear();
+            return (xml, ID);
+        }
+
             /*
             } catch (AggregateException ae)
             {

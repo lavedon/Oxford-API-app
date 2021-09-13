@@ -24,6 +24,7 @@ namespace oed
         public static bool RunCLIAgain { get; set; }
         static void Main(string[] args)
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
             UserArgs = args!;
             RunCLIAgain = false;
 			Trace.WriteLine($"args are: {args.ToString()}");
@@ -776,9 +777,14 @@ namespace oed
             private bool _clearExportFile; 
             private string? _startYear;
             private string? _endYear;
+
+            private bool _pronunciation;
+            private bool _pronunciationUSA;
+            private bool _pronunciationBritish;
         public HandleArgs(string word, bool quotes, string? quotesAndSenses, bool obsoleteOnly, bool obsoleteExclude, string? partOfSpeech, 
             string? years, bool currentIn, bool revised, bool revisedNot, string? etymologyLanguage, string? etymologyType, string fromQuote, 
-            bool interactive, bool export, bool clearExportFile, string? startYear, string? endYear)
+            bool interactive, bool export, bool clearExportFile, string? startYear, string? endYear, bool pronunciation, 
+            bool pronunciationUSA, bool pronunciationBritish)
         {
             Trace.WriteLine($"CLI word entered was {word}");
             Trace.WriteLine($"Return quotes from word search {quotes}");
@@ -797,6 +803,9 @@ namespace oed
             Trace.WriteLine($"clearExportFile: {clearExportFile}");
             Trace.WriteLine($"startYear: {startYear}");
             Trace.WriteLine($"endYear: {endYear}");
+            Trace.WriteLine($"Prounciation {pronunciation}");
+            Trace.WriteLine($"Pronunciation {pronunciationUSA}");
+            Trace.WriteLine($"Prouniciation {pronunciationBritish}");
 
             this._word = word;
             this._quotes = quotes;
@@ -816,6 +825,9 @@ namespace oed
             this._clearExportFile = clearExportFile; 
             this._startYear = startYear;
             this._endYear = endYear;
+            this._pronunciation = pronunciation;
+            this._pronunciationUSA = pronunciationUSA;
+            this._pronunciationBritish = pronunciationBritish;
 
             CurrentQuery query = new();
             if (_clearExportFile)
@@ -824,6 +836,15 @@ namespace oed
                 }
 
             processCommonOptions(_obsoleteOnly, _obsoleteExclude, _partOfSpeech, _years, _currentIn, _revised, _revisedNot, _interactive, _export, query, _startYear, _endYear);
+            if (_pronunciation) {
+                query.IPAMode = IPAOptions.Both;
+            }
+            if (_pronunciationBritish) {
+                query.IPAMode = IPAOptions.British;
+            }
+            if (_pronunciationUSA) {
+                query.IPAMode = IPAOptions.USA;
+            }
 
             if (_quotes)
             {

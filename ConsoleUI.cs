@@ -2,6 +2,7 @@ using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Collections.Generic;
+using System.Text;
 
 namespace oed
 {
@@ -137,6 +138,7 @@ namespace oed
 
 		public static void showDefinitions(CurrentQuery query)
 		{
+			Console.OutputEncoding = Encoding.UTF8;
 			
 			for (int i = 0; i < query.Definitions.Count; i++)
 			{
@@ -144,6 +146,21 @@ namespace oed
 				Console.WriteLine("Definition #{0}:", dNum);
 				Console.WriteLine();
 				Console.WriteLine(query.Definitions[i].WordDefinition.ToString());
+				switch (query.IPAMode) 
+				{
+					case IPAOptions.British:
+						Console.WriteLine("IPA British: " + query.Definitions[i].BritishIPA);
+						break;
+					case IPAOptions.USA:
+						Console.WriteLine("IPA USA: " + query.Definitions[i].USIPA);
+						break;
+					case IPAOptions.Both:
+						Console.WriteLine("IPA USA: " + query.Definitions[i].USIPA);
+						Console.WriteLine("IPA British: " + query.Definitions[i].BritishIPA);
+						break;
+					default:
+						break;
+				}
 				Console.WriteLine();
 
 				if (query.OptionsMenuVerboseMode) {
@@ -357,6 +374,7 @@ namespace oed
 		}
         private static void exportQuery(CurrentQuery query)
         {
+			SavedQueries.IPA = query.IPAMode;
 			if (query.QueryMode == Modes.Word)
 			{
 				SavedQueries.DefinitionsForExport.Clear();
