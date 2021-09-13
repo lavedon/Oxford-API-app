@@ -44,12 +44,12 @@ namespace oed
 				}
 
 				/*
-					Console.WriteLine("Select which definitions to find quotes for: (enter for all)");
+					xConsole.WriteLine("Select which definitions to find quotes for: (enter for all)");
 					string selection = Console.ReadLine();
 					Program.ParseExport(query, selection);
 				*/
 			if (!query.QuotesFromWord && query.QueryMode != Modes.QuotesAndSenses) {
-				Console.WriteLine("Select which returned definitions to export: (enter for all)");
+				xConsole.WriteLine("Select which returned definitions to export: (enter for all)");
 				string export = Console.ReadLine();
 				Program.ParseExport(query, export);
 				exportQuery(query);
@@ -105,33 +105,33 @@ namespace oed
 			for (int i = 0; i < query.Definitions.Count; i++)
 			{
 				int dNum = i + 1;
-				Console.WriteLine($"Etymology for Definition #{dNum}: {query.Definitions[i].WordDefinition}");
-				Console.WriteLine();
-				Console.WriteLine(query.Definitions[i].DefinitionEtymology.EtymologySummary);
-				  Console.WriteLine($"Etymology type: {query.Definitions[i].DefinitionEtymology.EtymologyType}.");
-				  Console.WriteLine($"Etymology language: ");
+				xConsole.WriteLine($"Etymology for Definition #{dNum}: {query.Definitions[i].WordDefinition}");
+				xConsole.WriteLine();
+				xConsole.WriteLine(query.Definitions[i].DefinitionEtymology.EtymologySummary);
+				  xConsole.WriteLine($"Etymology type: {query.Definitions[i].DefinitionEtymology.EtymologyType}.");
+				  xConsole.WriteLine($"Etymology language: ");
 				 foreach (var eLang in query.Definitions[i].DefinitionEtymology.EtymonLanguage)
 				 {
 				   Console.Write(eLang +" ");
 				 }
-				 Console.WriteLine();
+				 xConsole.WriteLine();
 
 				  if (query.Definitions[i].DefinitionEtymology.Etymons.Count == 0)  
 				  {
-					 Console.WriteLine("No etymons are listed."); 
+					 xConsole.WriteLine("No etymons are listed."); 
 				  } else {
-					  Console.WriteLine("Etymons: ");
+					  xConsole.WriteLine("Etymons: ");
 					  foreach (var etymon in query.Definitions[i].DefinitionEtymology.Etymons)
 					     Console.Write(etymon + " ");
 				  }
-				  Console.WriteLine();
-				  Console.WriteLine("Source languages:");
+				  xConsole.WriteLine();
+				  xConsole.WriteLine("Source languages:");
 				  foreach (var s in query.Definitions[i].DefinitionEtymology.SourceLanguage)
 				  {
 					  Console.Write(s + " ");
 				  }
-				  Console.WriteLine();
-				  Console.WriteLine();
+				  xConsole.WriteLine();
+				  xConsole.WriteLine();
 
 			}
 		}
@@ -143,25 +143,25 @@ namespace oed
 			for (int i = 0; i < query.Definitions.Count; i++)
 			{
 				int dNum = i + 1;
-				Console.WriteLine("Definition #{0}:", dNum);
-				Console.WriteLine();
-				Console.WriteLine(query.Definitions[i].WordDefinition.ToString());
+				xConsole.WriteLine("Definition #{0}:", dNum);
+				xConsole.WriteLine();
+				xConsole.WriteLine(query.Definitions[i].WordDefinition.ToString());
 				switch (query.IPAMode) 
 				{
 					case IPAOptions.British:
-						Console.WriteLine("IPA British: " + query.Definitions[i].BritishIPA);
+						xConsole.WriteLine("IPA British: " + query.Definitions[i].BritishIPA);
 						break;
 					case IPAOptions.USA:
-						Console.WriteLine("IPA USA: " + query.Definitions[i].USIPA);
+						xConsole.WriteLine("IPA USA: " + query.Definitions[i].USIPA);
 						break;
 					case IPAOptions.Both:
-						Console.WriteLine("IPA USA: " + query.Definitions[i].USIPA);
-						Console.WriteLine("IPA British: " + query.Definitions[i].BritishIPA);
+						xConsole.WriteLine("IPA USA: " + query.Definitions[i].USIPA);
+						xConsole.WriteLine("IPA British: " + query.Definitions[i].BritishIPA);
 						break;
 					default:
 						break;
 				}
-				Console.WriteLine();
+				xConsole.WriteLine();
 
 				if (query.OptionsMenuVerboseMode) {
 					string outputPartsOfSpeech = "";
@@ -200,8 +200,8 @@ namespace oed
 					string output = string.Concat(outputPartsOfSpeech +  isObsolete + " " + mainDefinition + 
 						string.Format(" The original source of this word is listed as {0}. This word was first recored in {1}", 
 						firstUseSource, firstUseYear));
-					Console.WriteLine(output);
-					Console.WriteLine();
+					xConsole.WriteLine(output);
+					xConsole.WriteLine();
 					query.Definitions[i].FormattedVerboseOutput = string.Concat(query.UserEnteredWord + ": " + query.Definitions[i].WordDefinition.ToString() + output);
 				}
 				
@@ -214,25 +214,25 @@ namespace oed
 		    Trace.WriteLine("In MainMenu()");
 		    if (! query.HasLookedUpWord)
             {
-                Console.WriteLine("Please Enter a word");
+                xConsole.WriteLine("Please Enter a word");
                 string userInput = Console.ReadLine().ToLower().Trim();
                 getDefinition(query, userInput);
             }
-            Console.WriteLine();
-		    Console.WriteLine("-------------------------");
-		    Console.WriteLine("Options:");
-		    Console.WriteLine("Definition            - D");
-		    Console.WriteLine("Etymology             - E");
-		    Console.WriteLine("Lammatize             - L"); 
-		    Console.WriteLine("Root                  - R");
-		    Console.WriteLine("Senses                - S");
-		    Console.WriteLine("Quotations            - Q");
-		    Console.WriteLine("-------------------------");
-		    Console.WriteLine("New Word (start over) - N");
-		    Console.WriteLine("Options               - O");
-		    Console.WriteLine("Export Results        - E");
-		    Console.WriteLine("Exit                  - X");
-		    Console.WriteLine("Please make a selection and press enter");
+            xConsole.WriteLine();
+		    xConsole.WriteLine("-------------------------");
+		    xConsole.WriteLine("Options:");
+		    xConsole.WriteLine("Definition            - D");
+		    xConsole.WriteLine("Etymology             - E");
+		    xConsole.WriteLine("Lammatize             - L"); 
+		    xConsole.WriteLine("Root                  - R");
+		    xConsole.WriteLine("Senses                - S");
+		    xConsole.WriteLine("Quotations            - Q");
+		    xConsole.WriteLine("-------------------------");
+		    xConsole.WriteLine("New Word (start over) - N");
+		    xConsole.WriteLine("Options               - O");
+		    xConsole.WriteLine("Export Results        - E");
+		    xConsole.WriteLine("Exit                  - X");
+		    xConsole.WriteLine("Please make a selection and press enter");
 		    string selection = (Console.ReadLine()).ToLower().Trim();
 		    Trace.WriteLine("The user's input was read as:");
 		    Trace.WriteLine(selection);
@@ -308,7 +308,7 @@ namespace oed
 			    break;
 
 			    default: 
-			    Console.WriteLine("No selection made.");
+			    xConsole.WriteLine("No selection made.");
 			    break;
 		    }
 	    }
@@ -369,7 +369,7 @@ namespace oed
                 SavedQueries.RenderXML();
             else
             {
-                Console.WriteLine("You have not yet saved anything for export.");
+                xConsole.WriteLine("You have not yet saved anything for export.");
             }
 		}
         private static void exportQuery(CurrentQuery query)
@@ -455,7 +455,7 @@ namespace oed
             }
 			showDefinitions(query);
 			if (query.QuotesFromWord) {
-					Console.WriteLine("Select which definitions to find quotes for: (enter for all)");
+					xConsole.WriteLine("Select which definitions to find quotes for: (enter for all)");
 					string selection = Console.ReadLine();
 					query = Program.ParseExport(query, selection);
 					SavedQueries.SaveWordId(query);
@@ -486,10 +486,10 @@ namespace oed
 
 		public static void DisplayLemmas(CurrentQuery query)
 		{
-			Console.WriteLine("{0,-20} {1,5}\n", "Token", "Lemma");
+			xConsole.WriteLine("{0,-20} {1,5}\n", "Token", "Lemma");
 			foreach(KeyValuePair<string, string> tokenLemma in query.Lemmas.ZippedLemmas)
 			{
-				Console.WriteLine("{0,-20} {1,5:N1}", tokenLemma.Key, tokenLemma.Value);
+				xConsole.WriteLine("{0,-20} {1,5:N1}", tokenLemma.Key, tokenLemma.Value);
 			}
 		}
     }

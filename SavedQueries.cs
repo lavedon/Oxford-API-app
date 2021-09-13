@@ -67,18 +67,18 @@ namespace oed
 		public static void AddMember(Quote quote) {
 			Quotes.Add(quote);
 			if (Quotes.Count == 1) {
-				Console.WriteLine($"{Quotes.Count} quote saved for export.");
+				xConsole.WriteLine($"{Quotes.Count} quote saved for export.");
 			}
 			else {
-				Console.WriteLine($"{Quotes.Count} quotes saved for export.");
+				xConsole.WriteLine($"{Quotes.Count} quotes saved for export.");
 			}
 		}
 
 		public static void AddMember(Lemmas lemma)
 		{
 			Lemmas.Add(lemma!);
-			Console.WriteLine("Lemmas saved for export.");
-			Console.WriteLine("Creating XML file of all saved material...");
+			xConsole.WriteLine("Lemmas saved for export.");
+			xConsole.WriteLine("Creating XML file of all saved material...");
 			RenderXML();
 		}
 
@@ -274,10 +274,10 @@ namespace oed
 			catch (AggregateException ae)
 			{
 				var ex = ae.Flatten().InnerExceptions;
-				Console.WriteLine("Error writing XML document:");
+				xConsole.WriteLine("Error writing XML document:");
 				foreach (var exception in ex)
 				{
-					Console.WriteLine($"{ex.ToString()}");
+					xConsole.WriteLine($"{ex.ToString()}");
 				}
 
 			}
@@ -299,10 +299,10 @@ namespace oed
             catch (AggregateException ae)
             {
                 var ex = ae.Flatten().InnerExceptions;
-                Console.WriteLine("Error exporting XML document:");
+                xConsole.WriteLine("Error exporting XML document:");
                 foreach (var exception in ex)
                 {
-                    Console.WriteLine($"{ex.ToString()}");
+                    xConsole.WriteLine($"{ex.ToString()}");
                 }
             }
 			}
@@ -333,7 +333,7 @@ namespace oed
             if (query.IPAMode != IPAOptions.None)
             {
                 // Similar to definition export
-                Console.WriteLine("Exporting pronunciation cards to text file...");
+                xConsole.WriteLine("Exporting pronunciation cards to text file...");
                 for (int i = 0; i < DefinitionsForExport.Count; i++)
                 {
                     switch (query.IPAMode) 
@@ -369,10 +369,10 @@ namespace oed
                     } catch (AggregateException ae) 
                     {
                         var ex = ae.Flatten().InnerExceptions;
-                        Console.WriteLine("Error writing Pronunciation cards to Text file:");
+                        xConsole.WriteLine("Error writing Pronunciation cards to Text file:");
                         foreach (var exception in ex) 
                         {
-                            Console.WriteLine($"{ex.ToString()}");
+                            xConsole.WriteLine($"{ex.ToString()}");
                         }
                     }
                 }
@@ -417,10 +417,10 @@ namespace oed
                     catch (AggregateException ae)
                     {
                         var ex = ae.Flatten().InnerExceptions;
-                        Console.WriteLine("Error writing to Text file");
+                        xConsole.WriteLine("Error writing to Text file");
                         foreach (var exception in ex)
                         {
-                            Console.WriteLine($"{ex.ToString()}");
+                            xConsole.WriteLine($"{ex.ToString()}");
                         }
                     }
                 }
@@ -521,10 +521,10 @@ namespace oed
 			catch (AggregateException ae)
 			{
 				var ex = ae.Flatten().InnerExceptions;
-				Console.WriteLine("Error writing XML document:");
+				xConsole.WriteLine("Error writing XML document:");
 				foreach (var exception in ex)
 				{
-					Console.WriteLine($"{ex.ToString()}");
+					xConsole.WriteLine($"{ex.ToString()}");
 				}
 
 			}
@@ -540,10 +540,10 @@ namespace oed
             catch (AggregateException ae)
             {
                 var ex = ae.Flatten().InnerExceptions;
-                Console.WriteLine("Error exporting text file:");
+                xConsole.WriteLine("Error exporting text file:");
                 foreach (var exception in ex)
                 {
-                    Console.WriteLine($"{ex.ToString()}");
+                    xConsole.WriteLine($"{ex.ToString()}");
                 }
             }
 			}
@@ -561,7 +561,7 @@ namespace oed
             createTXT(out txtFile, out sw);
             if (QuotesForExport.Count > 0 && !BlendedExport)
             {
-                Console.WriteLine("Exporting Quotes to text file...");
+                xConsole.WriteLine("Exporting Quotes to text file...");
                 for (int i = 0; i < QuotesForExport.Count; i++)
                 {
                     try
@@ -578,10 +578,10 @@ namespace oed
                     catch (AggregateException ae)
                     {
                         var ex = ae.Flatten().InnerExceptions;
-                        Console.WriteLine("Error writing XML document:");
+                        xConsole.WriteLine("Error writing XML document:");
                         foreach (var exception in ex)
                         {
-                            Console.WriteLine($"{ex.ToString()}");
+                            xConsole.WriteLine($"{ex.ToString()}");
                         }
                     }
                 }
@@ -589,7 +589,7 @@ namespace oed
 
             if (DefinitionsForExport.Count > 0 && !BlendedExport)
             {
-                Console.WriteLine("Exporting Definitions to text file..");
+                xConsole.WriteLine("Exporting Definitions to text file..");
                 for (int i = 0; i < DefinitionsForExport.Count; i++)
                 {
                     try
@@ -619,17 +619,17 @@ namespace oed
                     catch (AggregateException ae)
                     {
                         var ex = ae.Flatten().InnerExceptions;
-                        Console.WriteLine("Error writing XML document:");
+                        xConsole.WriteLine("Error writing XML document:");
                         foreach (var exception in ex)
                         {
-                            Console.WriteLine($"{ex.ToString()}");
+                            xConsole.WriteLine($"{ex.ToString()}");
                         }
                     }
                 } // end for loop of Definitions
             } // end if Definitions and not BlendedExport
             if (SensesForExport.Count > 0 && !BlendedExport)
             {
-                Console.WriteLine("Exporting Senses to a text file...");
+                xConsole.WriteLine("Exporting Senses to a text file...");
                 string obsoleteText = "";
                 string mainUsageText = "";
                 for (int i = 0; i < SensesForExport.Count; i++)
@@ -666,17 +666,17 @@ namespace oed
                     catch (AggregateException ae)
                     {
                         var ex = ae.Flatten().InnerExceptions;
-                        Console.WriteLine("Error writing XML document:");
+                        xConsole.WriteLine("Error writing XML document:");
                         foreach (var exception in ex)
                         {
-                            Console.WriteLine($"{ex.ToString()}");
+                            xConsole.WriteLine($"{ex.ToString()}");
                         }
                     }
                 }
             }
             if (Lemmas.Count > 0 && !BlendedExport)
            {
-                Console.WriteLine("Exporting Lemmas...");
+                xConsole.WriteLine("Exporting Lemmas...");
                 if (Lemmas[0].ZippedLemmas.Count > 0)
                 {
                     try
@@ -691,10 +691,10 @@ namespace oed
                     catch (AggregateException ae)
                     {
                         var ex = ae.Flatten().InnerExceptions;
-                        Console.WriteLine("Error writing XML document:");
+                        xConsole.WriteLine("Error writing XML document:");
                         foreach (var exception in ex)
                         {
-                            Console.WriteLine($"{ex.ToString()}");
+                            xConsole.WriteLine($"{ex.ToString()}");
                         }
                     }
 
@@ -702,7 +702,7 @@ namespace oed
             }
             if (SurfacesForExport.Count > 0 && !BlendedExport)
             {
-                Console.WriteLine("Exporting Surface Forms...");
+                xConsole.WriteLine("Exporting Surface Forms...");
                 for (int i = 0; i < SurfacesForExport.Count; i++)
                 {
                     try
@@ -729,10 +729,10 @@ namespace oed
                     catch (AggregateException ae)
                     {
                         var ex = ae.Flatten().InnerExceptions;
-                        Console.WriteLine("Error writing XML document:");
+                        xConsole.WriteLine("Error writing XML document:");
                         foreach (var exception in ex)
                         {
-                            Console.WriteLine($"{ex.ToString()}");
+                            xConsole.WriteLine($"{ex.ToString()}");
                         }
                     }
 
@@ -749,10 +749,10 @@ namespace oed
             catch (AggregateException ae)
             {
                 var ex = ae.Flatten().InnerExceptions;
-                Console.WriteLine("Error exporting text file:");
+                xConsole.WriteLine("Error exporting text file:");
                 foreach (var exception in ex)
                 {
-                    Console.WriteLine($"{ex.ToString()}");
+                    xConsole.WriteLine($"{ex.ToString()}");
                 }
             }
             if (_appendXML)
@@ -836,17 +836,17 @@ namespace oed
                     catch (AggregateException ae)
                     {
                         var ex = ae.Flatten().InnerExceptions;
-                        Console.WriteLine("Error writing XML document:");
+                        xConsole.WriteLine("Error writing XML document:");
                         foreach (var exception in ex)
                         {
-                            Console.WriteLine($"{ex.ToString()}");
+                            xConsole.WriteLine($"{ex.ToString()}");
                         }
                     }
                 }
             }
             if (QuotesForExport.Count > 0 && !BlendedExport)
             {
-                Console.WriteLine("Exporting Quotes to XML file...");
+                xConsole.WriteLine("Exporting Quotes to XML file...");
                 for (int i = 0; i < QuotesForExport.Count; i++)
                 {
                     try
@@ -869,10 +869,10 @@ namespace oed
                     catch (AggregateException ae)
                     {
                         var ex = ae.Flatten().InnerExceptions;
-                        Console.WriteLine("Error writing XML document:");
+                        xConsole.WriteLine("Error writing XML document:");
                         foreach (var exception in ex)
                         {
-                            Console.WriteLine($"{ex.ToString()}");
+                            xConsole.WriteLine($"{ex.ToString()}");
                         }
                     }
                 }
@@ -882,7 +882,7 @@ namespace oed
             {
                 int ID;
                 StringBuilder IPAString = new(); 
-                Console.WriteLine("Exporting Definitions for SuperMemo..");
+                xConsole.WriteLine("Exporting Definitions for SuperMemo..");
                 ID = 1;
                 for (int i = 0; i < DefinitionsForExport.Count; i++)
                 {
@@ -932,10 +932,10 @@ namespace oed
                     catch (AggregateException ae)
                     {
                         var ex = ae.Flatten().InnerExceptions;
-                        Console.WriteLine("Error writing XML document:");
+                        xConsole.WriteLine("Error writing XML document:");
                         foreach (var exception in ex)
                         {
-                            Console.WriteLine($"{ex.ToString()}");
+                            xConsole.WriteLine($"{ex.ToString()}");
                         }
                     }
                     ID++;
@@ -943,7 +943,7 @@ namespace oed
             } // end if 
             if (SensesForExport.Count > 0 && !BlendedExport)
             {
-                Console.WriteLine("Exporting Senses for SuperMemo...");
+                xConsole.WriteLine("Exporting Senses for SuperMemo...");
                 string obsoleteText = "";
                 string mainUsageText = "";
                 for (int i = 0; i < SensesForExport.Count; i++)
@@ -991,17 +991,17 @@ namespace oed
                     catch (AggregateException ae)
                     {
                         var ex = ae.Flatten().InnerExceptions;
-                        Console.WriteLine("Error writing XML document:");
+                        xConsole.WriteLine("Error writing XML document:");
                         foreach (var exception in ex)
                         {
-                            Console.WriteLine($"{ex.ToString()}");
+                            xConsole.WriteLine($"{ex.ToString()}");
                         }
                     }
                 }
             }
             if (Lemmas.Count > 0 && !BlendedExport)
            {
-                Console.WriteLine("Exporting Lemmas...");
+                xConsole.WriteLine("Exporting Lemmas...");
                 if (Lemmas[0].ZippedLemmas.Count > 0)
                 {
                     try
@@ -1031,10 +1031,10 @@ namespace oed
                     catch (AggregateException ae)
                     {
                         var ex = ae.Flatten().InnerExceptions;
-                        Console.WriteLine("Error writing XML document:");
+                        xConsole.WriteLine("Error writing XML document:");
                         foreach (var exception in ex)
                         {
-                            Console.WriteLine($"{ex.ToString()}");
+                            xConsole.WriteLine($"{ex.ToString()}");
                         }
                     }
 
@@ -1042,7 +1042,7 @@ namespace oed
             }
             if (SurfacesForExport.Count > 0 && !BlendedExport)
             {
-                Console.WriteLine("Exporting Surface Forms for SuperMemo...");
+                xConsole.WriteLine("Exporting Surface Forms for SuperMemo...");
                 for (int i = 0; i < SurfacesForExport.Count; i++)
                 {
                     try
@@ -1082,10 +1082,10 @@ namespace oed
                     catch (AggregateException ae)
                     {
                         var ex = ae.Flatten().InnerExceptions;
-                        Console.WriteLine("Error writing XML document:");
+                        xConsole.WriteLine("Error writing XML document:");
                         foreach (var exception in ex)
                         {
-                            Console.WriteLine($"{ex.ToString()}");
+                            xConsole.WriteLine($"{ex.ToString()}");
                         }
                     }
 
@@ -1109,10 +1109,10 @@ namespace oed
             catch (AggregateException ae)
             {
                 var ex = ae.Flatten().InnerExceptions;
-                Console.WriteLine("Error exporting XML document:");
+                xConsole.WriteLine("Error exporting XML document:");
                 foreach (var exception in ex)
                 {
-                    Console.WriteLine($"{ex.ToString()}");
+                    xConsole.WriteLine($"{ex.ToString()}");
                 }
             }
             if (_appendXML)
@@ -1184,12 +1184,12 @@ namespace oed
             /*
             } catch (AggregateException ae)
             {
-                Console.WriteLine("Error creating XML file.");
-                Console.WriteLine("Is the file open in another program? In SuperMemo?");
+                xConsole.WriteLine("Error creating XML file.");
+                xConsole.WriteLine("Is the file open in another program? In SuperMemo?");
                 var flatExs = ae.Flatten().InnerExceptions;
                 foreach (var ex in flatExs)
                 {
-                    Console.WriteLine($"{ex.ToString()}");
+                    xConsole.WriteLine($"{ex.ToString()}");
                 }
                 Console.ReadKey();
                 */

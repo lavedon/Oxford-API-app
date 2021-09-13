@@ -83,8 +83,8 @@ namespace oed
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("Error while enumerating lemmas");
-                        Console.WriteLine(ex);
+                        xConsole.WriteLine("Error while enumerating lemmas");
+                        xConsole.WriteLine(ex);
                     }
                 }
             var result = zipLemmas(tokenList, lemmaWords);
@@ -92,7 +92,7 @@ namespace oed
             /*
             foreach(var r in result)
             {
-                Console.WriteLine(r);
+                xConsole.WriteLine(r);
             }
             */
             query.Lemmas.ZippedLemmas = result;

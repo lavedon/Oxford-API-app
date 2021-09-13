@@ -306,7 +306,7 @@ namespace oed
 
             catch (Exception e)
             {
-                Console.WriteLine("The process failed: {0}", e.ToString());
+                xConsole.WriteLine($"The process failed: {e.ToString()}");
             }
             finally { }
 
@@ -325,12 +325,12 @@ namespace oed
         while (interactiveMode)
         {
             qsExists = false;
-            Console.WriteLine("q to exit.");
+            xConsole.WriteLine("q to exit.");
             Console.Write(">");
             string? input = Console.ReadLine();
             if (string.IsNullOrWhiteSpace(input))
             {
-                Console.WriteLine("No arguments entered");
+                xConsole.WriteLine("No arguments entered");
                 continue;
             }
             else if (input == "q") {
@@ -574,8 +574,8 @@ namespace oed
 
             if (string.IsNullOrWhiteSpace(form))
             {
-                Console.WriteLine("No form word entered.");
-                Console.WriteLine("Please enter a form to look up with the Surfaceforms endpoint.");
+                xConsole.WriteLine("No form word entered.");
+                xConsole.WriteLine("Please enter a form to look up with the Surfaceforms endpoint.");
                 query.CurrentSurfaceOptions.Form = Console.ReadLine()!;
             } else 
             {
@@ -608,7 +608,7 @@ namespace oed
             if (export)
             {
                 // export Lemmas
-                Console.WriteLine("Starting export process");
+                xConsole.WriteLine("Starting export process");
                 SavedQueries.AddMember(query.Lemmas);
             }
         }
@@ -715,9 +715,9 @@ namespace oed
             }
             else {
                 query.CurrentQuoteOptions.UseNonIdEndpoint = true;
-                Console.WriteLine("Returning all quotes based on parameters.  If you want quotes for the past sense or word search...");
-                Console.WriteLine("...then please re-run the Quote command, and specify if you want quotes based on the previous word search or sense search.");
-                Console.WriteLine("uw flag or us flag");
+                xConsole.WriteLine("Returning all quotes based on parameters.  If you want quotes for the past sense or word search...");
+                xConsole.WriteLine("...then please re-run the Quote command, and specify if you want quotes based on the previous word search or sense search.");
+                xConsole.WriteLine("uw flag or us flag");
                 ConsoleUI.GetQuotes(query);
             }
 
@@ -736,7 +736,7 @@ namespace oed
                 string[] ids = File.ReadAllLines(wordIDFile);
                 if (ids.Length == 0)
                 {
-                    Console.WriteLine("No word ids found in word-id.txt");
+                    xConsole.WriteLine("No word ids found in word-id.txt");
                     return null;
                 } else {
                 foreach (int n in whatWords)
@@ -866,34 +866,34 @@ namespace oed
                         if (trimedQS.Contains("d") && trimedQS.Contains("s"))
                         {
                             string senseSelection = Regex.Match(trimedQS, @"(?<=s)(.*?)(?=[a-zA-z])").Value;
-                            Console.WriteLine("QS for a selection of both definitions and senses not yet implemented.");
-                            Console.WriteLine("Press any key to continue...");
+                            xConsole.WriteLine("QS for a selection of both definitions and senses not yet implemented.");
+                            xConsole.WriteLine("Press any key to continue...");
                             Console.ReadKey();
                         } else if (trimedQS.Contains("d") && !trimedQS.Contains("s"))
                         {
-                            Console.WriteLine("QS from a specific definition");
+                            xConsole.WriteLine("QS from a specific definition");
                             query.QSFromDefinitions = true;
                             query.QSFromSenses = true;
                         } else if (trimedQS.Contains("s") && !trimedQS.Contains("d"))
                         {
                             query.QSFromSenses = true;
                             query.QSFromDefinitions = false;
-                            Console.WriteLine("QS from a specific sense.");
+                            xConsole.WriteLine("QS from a specific sense.");
                         } else {
                             query.QSFromDefinitions = true;
                         }
                         string cleanSelection = Regex.Replace(_quotesAndSenses, "[A-Za-z]", ""); 
                         List<int> result = ParseNumbers(cleanSelection);
                         if (query.QSFromSenses) {
-                            Console.WriteLine("You want me to run qs on these senses:");
+                            xConsole.WriteLine("You want me to run qs on these senses:");
                             query.QSSenseSelection = result;
                         } else {
-                            Console.WriteLine("You want me to run qs on these definitions:");
+                            xConsole.WriteLine("You want me to run qs on these definitions:");
                             query.QSDefSelection = result;
                         }
                         foreach (int n in result)
                         {
-                            Console.WriteLine($"{n}");
+                            xConsole.WriteLine($"{n}");
                         }
                 } // if _quotesAndSenses has text
             } // if qsExists
@@ -910,7 +910,7 @@ namespace oed
 
             if (string.IsNullOrWhiteSpace(_word))
             {
-                Console.WriteLine("No CLI word entered.");
+                xConsole.WriteLine("No CLI word entered.");
                 ConsoleUI.Start(query);
             }
             else
@@ -998,31 +998,31 @@ namespace oed
             filePath = Path.Combine(Environment.CurrentDirectory, SavedQueries.ExportFileName);
             }
             catch (Exception ex) {
-                Console.WriteLine("Trying to delete XML export file.");
-                Console.WriteLine("But could not find the file: " + ex.Message);
-                Console.WriteLine(ex.InnerException?.ToString());
+                xConsole.WriteLine("Trying to delete XML export file.");
+                xConsole.WriteLine("But could not find the file: " + ex.Message);
+                xConsole.WriteLine(ex.InnerException?.ToString());
             }
             try {
-                Console.WriteLine($"Deleting XML export file: {filePath}");
+                xConsole.WriteLine($"Deleting XML export file: {filePath}");
                 File.Delete(filePath);
             }
             catch (Exception ex) {
-                Console.WriteLine($"Error while deleting XML export file: {filePath}");
-                Console.WriteLine("Is the export file open in another program? in SuperMemo?");
-                Console.WriteLine(ex.Message);
-                Console.WriteLine(ex.InnerException?.ToString());
+                xConsole.WriteLine($"Error while deleting XML export file: {filePath}");
+                xConsole.WriteLine("Is the export file open in another program? in SuperMemo?");
+                xConsole.WriteLine(ex.Message);
+                xConsole.WriteLine(ex.InnerException?.ToString());
             }
             // Delete the text file also
             try {
                 filePath = Path.Combine(Environment.CurrentDirectory, "OED-export.txt");
-                Console.WriteLine($"Deleting TXT export file: {filePath}");
+                xConsole.WriteLine($"Deleting TXT export file: {filePath}");
                 File.Delete(filePath);
             } 
             catch (Exception ex) {
-                Console.WriteLine("Trying to delete text export file.");
-                Console.WriteLine("But could not find the file: " + ex.Message);
-                Console.WriteLine(ex.Message);
-                Console.WriteLine(ex.InnerException?.ToString());
+                xConsole.WriteLine("Trying to delete text export file.");
+                xConsole.WriteLine("But could not find the file: " + ex.Message);
+                xConsole.WriteLine(ex.Message);
+                xConsole.WriteLine(ex.InnerException?.ToString());
             }
         }
 
@@ -1108,7 +1108,7 @@ namespace oed
         if (export.Length == 0)
         {
             query.ExportAll = true;
-            Console.WriteLine("Will export all results");
+            xConsole.WriteLine("Will export all results");
             switch (query.QueryMode)
             {
                 case Modes.Word:
@@ -1167,8 +1167,8 @@ namespace oed
             }
             } catch(Exception ex)
             {
-                Console.WriteLine("Number selection entered in incorrect format.");
-                Console.WriteLine("Did you use a space to seperate values instead of a comma?");
+                xConsole.WriteLine("Number selection entered in incorrect format.");
+                xConsole.WriteLine("Did you use a space to seperate values instead of a comma?");
                 Trace.WriteLine($"error parsing export numbers. {ex}");
             }
             return nums;

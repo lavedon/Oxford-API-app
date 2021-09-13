@@ -63,7 +63,7 @@ namespace oed
                     }
                     else 
                     {
-                        Console.WriteLine("Invalid gender entered");
+                        xConsole.WriteLine("Invalid gender entered");
                         Console.ReadLine();
                         return (false, "");
                     }

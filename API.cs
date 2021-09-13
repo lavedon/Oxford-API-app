@@ -31,7 +31,7 @@ namespace oed
 			{
 				Uri requestURL = new Uri(baseURL + queryURL);
 			try {
-				Console.WriteLine(requestURL.AbsoluteUri);
+				xConsole.WriteLine(requestURL.AbsoluteUri);
 				var response = client.GetStreamAsync(requestURL).Result;
 				JSONResponse = JsonDocument.Parse(response);
 			}
@@ -161,7 +161,7 @@ namespace oed
 			{
 				Uri requestURL = new Uri(baseURL + queryURL);
 			try {
-				Console.WriteLine(requestURL.AbsoluteUri);
+				xConsole.WriteLine(requestURL.AbsoluteUri);
 				var response = client.GetStringAsync(requestURL).Result;
 				var options = new JsonSerializerOptions { IgnoreNullValues = true };
 				var json = JsonSerializer.Deserialize<SQID_Root>(response);
@@ -179,7 +179,7 @@ namespace oed
 			{
 				Uri requestURL = new Uri(baseURL + queryURL);
 			try {
-				Console.WriteLine(requestURL.AbsoluteUri);
+				xConsole.WriteLine(requestURL.AbsoluteUri);
 				var response = client.GetStringAsync(requestURL).Result;
 				var options = new JsonSerializerOptions { IgnoreNullValues = true };
 				var json = JsonSerializer.Deserialize<SQ_Root>(response);
@@ -224,7 +224,7 @@ namespace oed
 			{
 				if (query.QueryMode != Modes.QuotesAndSenses)
 				{
-					Console.WriteLine("Select which returned derivatives to export: (enter for all)");
+					xConsole.WriteLine("Select which returned derivatives to export: (enter for all)");
 				}
 				string export = Console.ReadLine();
 				Program.ParseExport(query, export);
@@ -238,7 +238,7 @@ namespace oed
 				{
 					Uri requestURL = new Uri(baseURL + queryURL);
 				try {
-					Console.WriteLine(requestURL.AbsoluteUri);
+					xConsole.WriteLine(requestURL.AbsoluteUri);
 					var response = client.GetStringAsync(requestURL).Result;
 					var json = JsonSerializer.Deserialize<DerivativesRoot>(response);
 					query.Derivatives.Add(json.data[0]);
@@ -304,7 +304,7 @@ namespace oed
 				{
 					Uri requestURL = new Uri(baseURL + queryURL);
 				try {
-					Console.WriteLine(requestURL.AbsoluteUri);
+					xConsole.WriteLine(requestURL.AbsoluteUri);
 					var response = client.GetStringAsync(requestURL).Result;
 					var json = JsonSerializer.Deserialize<SurfaceFormDeJSON>(response);
 					// query.SurfaceJson = json;
@@ -422,7 +422,7 @@ namespace oed
 				{
 					if (query.CurrentQuoteOptions.Male)
 					{
-						Console.WriteLine($"Error: only male or female -- but not both - may be specified.");
+						xConsole.WriteLine($"Error: only male or female -- but not both - may be specified.");
 					}
 					else {
 						queryURL = queryURL + @"?author_gender=female";
@@ -511,8 +511,8 @@ namespace oed
 		Trace.WriteLine("API.cs is starting quotations mode.");
 		if (query.HasLookedUpWord == false)
 		{
-			Console.WriteLine("Quotations you need to ask for a definition.");
-			Console.WriteLine("first.");
+			xConsole.WriteLine("Quotations you need to ask for a definition.");
+			xConsole.WriteLine("first.");
 		}
 		else
             {
@@ -530,19 +530,19 @@ namespace oed
                 var quotesRegex = new Regex("(?<=\"full_text\":\\s\")(.*?)(?=\",)");
                 query.NumberOfQuotes = quotesRegex.Matches(quotesDataString).Count;
                 // query.Quotes = quotesRegex.Matches(quotesDataString);
-                Console.WriteLine("{0} quotes found.", query.NumberOfQuotes);
+                xConsole.WriteLine("{0} quotes found.", query.NumberOfQuotes);
                 // query.Quote = quotesRegex.Match(quotesDataString).ToString();
                 foreach (Match match in Regex.Matches(quotesDataString, quotesRegex.ToString()))
                 {
                     string input = "";
-                    Console.WriteLine("\"{0}\"", match.Value);
+                    xConsole.WriteLine("\"{0}\"", match.Value);
                 }
                 */
 
                 Trace.WriteLine("First quote grabbed as:");
                 Trace.WriteLine(query.Quote);
 
-                Console.WriteLine(query.Quote);
+                xConsole.WriteLine(query.Quote);
             }
         }
 
@@ -551,40 +551,40 @@ namespace oed
 			if (query.QSFromDefinitions) {
 			foreach (var sq in query.SQ_Data)
 			{
-				Console.WriteLine("{0}", sq.definition);
+				xConsole.WriteLine("{0}", sq.definition);
 				int sNum = 1;
 				// word/{id} and /senses/{id} return data in a slightly different format
 				// /senses/{id} does not return a list of senses, but a single sense in .definition
 				foreach (Sens s in sq.senses)
 				{
-					Console.WriteLine();
-					Console.WriteLine("---------------------");
-					Console.WriteLine($"Sense #{sNum}");
-					Console.WriteLine(s.definition);
-					Console.WriteLine($"First use: {s.first_use}");
-					Console.WriteLine($"Part of speech: {s.part_of_speech}");
-					// Console.WriteLine($"Listed daterange: {s.daterange.rangestring}");
-					Console.WriteLine($"{s.daterange.start} - {s.daterange.end}");
+					xConsole.WriteLine();
+					xConsole.WriteLine("---------------------");
+					xConsole.WriteLine($"Sense #{sNum}");
+					xConsole.WriteLine(s.definition);
+					xConsole.WriteLine($"First use: {s.first_use}");
+					xConsole.WriteLine($"Part of speech: {s.part_of_speech}");
+					// xConsole.WriteLine($"Listed daterange: {s.daterange.rangestring}");
+					xConsole.WriteLine($"{s.daterange.start} - {s.daterange.end}");
 					if (s.main_current_sense) {
-						Console.WriteLine("This sense is the main sense for the word.");
+						xConsole.WriteLine("This sense is the main sense for the word.");
 					}
 					if (s.daterange.obsolete)
 					{
-						Console.WriteLine("This sense is obsolete.");
+						xConsole.WriteLine("This sense is obsolete.");
 					}
-					Console.WriteLine();
-					Console.WriteLine("Quotations: ");
-					Console.WriteLine("-----------------------");
-					Console.WriteLine();
+					xConsole.WriteLine();
+					xConsole.WriteLine("Quotations: ");
+					xConsole.WriteLine("-----------------------");
+					xConsole.WriteLine();
 					int qNum = 1;
 					foreach (Quotation q in s.quotations)
 					{
-						Console.WriteLine($"Quotation #{qNum}");
-						Console.WriteLine(q.text.full_text);
-						Console.WriteLine($"{q.source.author}, {q.source.title}");
-						Console.WriteLine(q.year.ToString());
-						Console.WriteLine("--------------------");
-						Console.WriteLine();
+						xConsole.WriteLine($"Quotation #{qNum}");
+						xConsole.WriteLine(q.text.full_text);
+						xConsole.WriteLine($"{q.source.author}, {q.source.title}");
+						xConsole.WriteLine(q.year.ToString());
+						xConsole.WriteLine("--------------------");
+						xConsole.WriteLine();
 						qNum++;
 					}
 					sNum++;
@@ -595,34 +595,34 @@ namespace oed
 			foreach (var sq in query.SQID_Data)
 			{
 			// /senses/{id} does not return a list of senses, but a single sense in .definition
-				Console.WriteLine();
-				Console.WriteLine("Sense:");
-				Console.WriteLine("Sense ID: {0}", sq.id);
-				Console.WriteLine(sq.definition);
-				Console.WriteLine($"First use: {sq.first_use}");
-				Console.WriteLine($"Part of speech: {sq.part_of_speech}");
-				// Console.WriteLine($"Listed daterange: {s.daterange.rangestring}");
-				Console.WriteLine($"{sq.daterange.start} - {sq.daterange.end}");
+				xConsole.WriteLine();
+				xConsole.WriteLine("Sense:");
+				xConsole.WriteLine("Sense ID: {0}", sq.id);
+				xConsole.WriteLine(sq.definition);
+				xConsole.WriteLine($"First use: {sq.first_use}");
+				xConsole.WriteLine($"Part of speech: {sq.part_of_speech}");
+				// xConsole.WriteLine($"Listed daterange: {s.daterange.rangestring}");
+				xConsole.WriteLine($"{sq.daterange.start} - {sq.daterange.end}");
 				if (sq.main_current_sense) {
-					Console.WriteLine("This sense is the main sense for the word.");
+					xConsole.WriteLine("This sense is the main sense for the word.");
 				}
 				if (sq.daterange.obsolete)
 				{
-					Console.WriteLine("This sense is obsolete.");
+					xConsole.WriteLine("This sense is obsolete.");
 				}
-				Console.WriteLine();
-				Console.WriteLine("Quotations: ");
-				Console.WriteLine("-----------------------");
-				Console.WriteLine();
+				xConsole.WriteLine();
+				xConsole.WriteLine("Quotations: ");
+				xConsole.WriteLine("-----------------------");
+				xConsole.WriteLine();
 				int qNum = 1;
 				foreach (Quotation q in sq.quotations)
 				{
-					Console.WriteLine($"Quotation #{qNum}");
-					Console.WriteLine(q.text.full_text);
-					Console.WriteLine($"{q.source.author}, {q.source.title}");
-					Console.WriteLine(q.year.ToString());
-					Console.WriteLine("--------------------");
-					Console.WriteLine();
+					xConsole.WriteLine($"Quotation #{qNum}");
+					xConsole.WriteLine(q.text.full_text);
+					xConsole.WriteLine($"{q.source.author}, {q.source.title}");
+					xConsole.WriteLine(q.year.ToString());
+					xConsole.WriteLine("--------------------");
+					xConsole.WriteLine();
 					qNum++;
 				}
 
@@ -632,14 +632,14 @@ namespace oed
 
 		private static void displayDerivatives(CurrentQuery query)
 		{
-			Console.WriteLine("Derivatives: #");
+			xConsole.WriteLine("Derivatives: #");
 			foreach (var d in query.Derivatives) {
-				// Console.WriteLine(d.data[0].definition);
-				Console.WriteLine($"lemma: {d.lemma}");
-				Console.WriteLine("Definition:");
-				Console.WriteLine(d.definition);
-				Console.WriteLine($"First use: {d.first_use}");
-				Console.WriteLine("Parts of speech: ");
+				// xConsole.WriteLine(d.data[0].definition);
+				xConsole.WriteLine($"lemma: {d.lemma}");
+				xConsole.WriteLine("Definition:");
+				xConsole.WriteLine(d.definition);
+				xConsole.WriteLine($"First use: {d.first_use}");
+				xConsole.WriteLine("Parts of speech: ");
 				foreach (var p in d.parts_of_speech) {
 					Console.Write($"{p} ");
 				}
@@ -653,21 +653,21 @@ namespace oed
 			int i = 1;
 		 foreach (Datum surface in query.Surfaces)
 		 {
-			 Console.WriteLine($"SurfaceForm #{i}");
-			 Console.WriteLine($"Lemma: {surface.lemma}, Normalized: {surface.normalized}");
-			 Console.WriteLine($"Part of Speech: {surface.part_of_speech}");
+			 xConsole.WriteLine($"SurfaceForm #{i}");
+			 xConsole.WriteLine($"Lemma: {surface.lemma}, Normalized: {surface.normalized}");
+			 xConsole.WriteLine($"Part of Speech: {surface.part_of_speech}");
 			 if (surface.region != null)
 			 {
-				 Console.WriteLine($"Region: {surface.region}    ");
+				 xConsole.WriteLine($"Region: {surface.region}    ");
 			 }
-			Console.WriteLine("Standard USA Form?: {0}", surface.standard_us_form ? "Yes" : "No");
-			Console.WriteLine("Standard British Form?: {0}", surface.standard_british_form ? "Yes" : "No");
-			Console.WriteLine($"This form is listed as active between: {surface.daterange.start}-{surface.daterange.end}");
+			xConsole.WriteLine("Standard USA Form?: {0}", surface.standard_us_form ? "Yes" : "No");
+			xConsole.WriteLine("Standard British Form?: {0}", surface.standard_british_form ? "Yes" : "No");
+			xConsole.WriteLine($"This form is listed as active between: {surface.daterange.start}-{surface.daterange.end}");
 			 if (surface.daterange.obsolete) {
-				 Console.WriteLine("This form is listed as obsolete.");
+				 xConsole.WriteLine("This form is listed as obsolete.");
 			 }
-			 Console.WriteLine("-----------------------");
-			 Console.WriteLine();
+			 xConsole.WriteLine("-----------------------");
+			 xConsole.WriteLine();
 			 i++;
 		 }
 
@@ -696,9 +696,9 @@ namespace oed
 
                     // Get what year the quote is from
                     JsonElement quoteYear = item.GetProperty("year");
-					Console.WriteLine();
-					Console.WriteLine($"Quote #{query.Quotes.Count + 1}");
-                    Console.WriteLine("\"{0}\", Year: {1}, Author: {2}, Source: {3}",
+					xConsole.WriteLine();
+					xConsole.WriteLine($"Quote #{query.Quotes.Count + 1}");
+                    xConsole.WriteLine("\"{0}\", Year: {1}, Author: {2}, Source: {3}",
                         actualQuote.ToString(), quoteYear.ToString(), quoteAuthor.ToString(),
                         quoteTitle.ToString());
                     Quote currentQuote = new();
@@ -712,12 +712,12 @@ namespace oed
 
 					if (query.InteractiveMode) {
                     query.Quotes.Add(currentQuote);
-                    Console.WriteLine();
-                    Console.WriteLine("---- S to Save - X to exit - Enter for more----");
+                    xConsole.WriteLine();
+                    xConsole.WriteLine("---- S to Save - X to exit - Enter for more----");
                     string input = Console.ReadLine().Trim().ToLower();
                     if (input == "s")
                     {
-                        Console.WriteLine("Quote saved.");
+                        xConsole.WriteLine("Quote saved.");
 						Quote intCopyOfQuote = new Quote(currentQuote);
                         SavedQueries.AddMember(intCopyOfQuote);
                     }
@@ -727,7 +727,7 @@ namespace oed
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex);
+                    xConsole.WriteLine(ex);
                 }
 
             }
@@ -808,7 +808,7 @@ namespace oed
 
 
             Uri requestURL = new Uri(baseURL + queryURL);
-            Console.WriteLine($"requestURL: {requestURL.ToString()}");
+            xConsole.WriteLine($"requestURL: {requestURL.ToString()}");
             Trace.WriteLine("Making the request");
 
             var response = client.GetStreamAsync(requestURL).Result;
@@ -855,7 +855,7 @@ namespace oed
 
 			Uri requestURL = new Uri(baseURL + queryURL);
 			Trace.WriteLine("Making the request");
-			Console.WriteLine(requestURL.ToString());
+			xConsole.WriteLine(requestURL.ToString());
 			try {
 				// Below was causing errors on some repeated requests.
 //				client.Timeout = TimeSpan.FromMinutes(10);
@@ -866,17 +866,17 @@ namespace oed
 			}
 			catch (AggregateException ae)
 			{
-				Console.WriteLine("Caught aggregate exception-Task.Wait behavior");
+				xConsole.WriteLine("Caught aggregate exception-Task.Wait behavior");
 				var flatExs = ae.Flatten().InnerExceptions;
 				foreach (var ex in flatExs)
 				{
-					Console.WriteLine($"{ex}");
+					xConsole.WriteLine($"{ex}");
 				}
 				ae.Handle( (x) => 
 				{
 					if (x is UnauthorizedAccessException) // This we know how to handle.
 					{
-						Console.WriteLine("You do not have access.");
+						xConsole.WriteLine("You do not have access.");
 						return true;
 					}
 					return false; // Let anything else stop the application.
@@ -891,9 +891,9 @@ namespace oed
 			}
 			catch(Exception ex)
 			{
-				Console.WriteLine("Exception");
-				Console.WriteLine(ex.GetType());
-				Console.WriteLine(ex.Message);
+				xConsole.WriteLine("Exception");
+				xConsole.WriteLine(ex.GetType());
+				xConsole.WriteLine(ex.Message);
 			}
 
 		};
@@ -937,13 +937,13 @@ namespace oed
 			// Uri requestURL = new Uri(baseURL + @"lemmatize/?form=" + queryURL);
 			Uri requestURL = new Uri(baseURL + queryURL);
 			/*
-			Console.WriteLine("Analyzing root options...");
-			Console.WriteLine(typeof(Program).GetMethod("HandleArgs"));
+			xConsole.WriteLine("Analyzing root options...");
+			xConsole.WriteLine(typeof(Program).GetMethod("HandleArgs"));
 			var flags = BindingFlags.NonPublic | BindingFlags.Static;
 			*/
 
 			Trace.WriteLine("Making the request");
-			Console.WriteLine(requestURL);
+			xConsole.WriteLine(requestURL);
 			Trace.WriteLine(client.GetStringAsync(requestURL).Result);
 
 			try {
@@ -986,7 +986,7 @@ namespace oed
 				var definitionRegEx = new Regex("(?<=definition\":\\s)(.*?)(?=\",\\s\"main_entry\")");
 				query.Definition = definitionRegEx.Match(apiDataString).ToString();
 				Trace.WriteLine("Extracted definition.");
-				Console.WriteLine(query.Definition);
+				xConsole.WriteLine(query.Definition);
 				Trace.WriteLine("Set definition to query object.");
 				Trace.WriteLine("Now to get and set the word ID.");
 				var wordIdRegex = new Regex("(?<=\"id\":\\s\")(.*?)(?=\",)");
@@ -1003,7 +1003,7 @@ namespace oed
 			Trace.WriteLine("Now to call the root endpoint.");
 			if (query.HasLookedUpWord == false) 
 			{
-				Console.WriteLine("You need to first ask for a definition, sorry..."); 
+				xConsole.WriteLine("You need to first ask for a definition, sorry..."); 
 			}
 			else 
 			{
@@ -1018,34 +1018,34 @@ namespace oed
 				Trace.WriteLine("Ran roots synchronously.");
 				// JsonElement apiData = JSONResponse.RootElement.GetProperty("data");
 				string rootDataString = JSONResponse.RootElement.GetProperty("data").ToString();
-				Console.WriteLine();
+				xConsole.WriteLine();
 				// Etymology_summary
 				// (?<="etymology_summary":\s")(.*?)(?="},)
 				// Should this still be REGEX?
 				var etymologySummaryRegEx = new Regex("(?<=\"etymology_summary\":\\s\")(.*?)(?=\"},)");
 				query.EtymologySummary = etymologySummaryRegEx.Match(rootDataString).ToString();
-				Console.WriteLine("Where the word \"{0}\" came from:", query.UserEnteredWord);
-				Console.WriteLine(query.EtymologySummary);
-				Console.WriteLine();
+				xConsole.WriteLine("Where the word \"{0}\" came from:", query.UserEnteredWord);
+				xConsole.WriteLine(query.EtymologySummary);
+				xConsole.WriteLine();
 
 
 				// first_use 
 				// (?<="first_use":\s")(.*?)(?=",) 
 				var firstUseRegEx = new Regex("(?<=\"first_use\":\\s\")(.*?)(?=\",)");
 				query.FirstUse = firstUseRegEx.Match(rootDataString).ToString();
-				Console.WriteLine("First Recorded Use:");
-				Console.WriteLine(query.FirstUse);
-				Console.WriteLine();
+				xConsole.WriteLine("First Recorded Use:");
+				xConsole.WriteLine(query.FirstUse);
+				xConsole.WriteLine();
 				
 
 				// Source Language
 				// (?<="source_language":\s\[\["European languages",)(.*?)(?=\])
 				var sourceLanguageRegEx = new Regex("(?<=\"source_language\":\\s\\[\\[\"European languages\",)(.*?)(?=\\])");
 				query.SourceLanguage = sourceLanguageRegEx.Match(rootDataString).ToString();
-				Console.WriteLine("The word \"{0}\" has origins in these European languages: ", query.UserEnteredWord);
-				Console.WriteLine(query.SourceLanguage);
-				Console.WriteLine("-----------");
-				Console.WriteLine("Please Press Enter...");
+				xConsole.WriteLine("The word \"{0}\" has origins in these European languages: ", query.UserEnteredWord);
+				xConsole.WriteLine(query.SourceLanguage);
+				xConsole.WriteLine("-----------");
+				xConsole.WriteLine("Please Press Enter...");
 				Console.ReadLine();
 
 
@@ -1093,12 +1093,12 @@ namespace oed
 						else {
 							lemmaWord = token;
 						}
-						Console.WriteLine($"token: {token} lemma: {lemmaWord}");
+						xConsole.WriteLine($"token: {token} lemma: {lemmaWord}");
 			}
 			else {
 				var token = node.GetProperty("token").GetString();
 				lemmaWord = token;
-				Console.WriteLine($"token: {token} lemma: {lemmaWord}");
+				xConsole.WriteLine($"token: {token} lemma: {lemmaWord}");
 			}
 		}
 
@@ -1108,7 +1108,7 @@ namespace oed
 			foreach (var t in tokens)
 			{
 				Console.ReadLine();
-				Console.WriteLine(t);
+				xConsole.WriteLine(t);
 			}
 			*/
 
@@ -1120,12 +1120,12 @@ namespace oed
 		/*
 		foreach (object item in firstWord.EnumerateObject())
 		{
-			Console.WriteLine(item);
+			xConsole.WriteLine(item);
 			Console.ReadLine();
 		}
 		string lemma = firstWord.GetProperty("lemma").GetString();
-		Console.WriteLine($"The lemma of {query.UserEnteredWord} is {lemma}");
-//				Console.WriteLine(lemma.ToString());
+		xConsole.WriteLine($"The lemma of {query.UserEnteredWord} is {lemma}");
+//				xConsole.WriteLine(lemma.ToString());
 		*/
 		
 		}
@@ -1147,7 +1147,7 @@ namespace oed
 			else if (query.HasLookedUpWord == false && string.IsNullOrWhiteSpace(query.CurrentSenseOptions.Lemma))
 			{
 				// @TODO remove this. Have it auto-call up the first ID.
-				Console.WriteLine("You need to first ask for a definition.");
+				xConsole.WriteLine("You need to first ask for a definition.");
 			}
 			else 
 			{
@@ -1159,7 +1159,7 @@ namespace oed
 			}
 			if (query.ExportAfterSearch)
 			{
-				Console.WriteLine("Select which returned senses to export: (enter for all)");
+				xConsole.WriteLine("Select which returned senses to export: (enter for all)");
 				string export = Console.ReadLine();
 				Program.ParseExport(query, export);
 				
@@ -1170,7 +1170,7 @@ namespace oed
 			GetQuotations(query, client);
 			if (query.ExportAfterSearch)
 			{
-				Console.WriteLine("Select which returned quotes to export: (enter for all)");
+				xConsole.WriteLine("Select which returned quotes to export: (enter for all)");
 				string export = Console.ReadLine();
 				Program.ParseExport(query, export);
 			}
@@ -1180,14 +1180,14 @@ namespace oed
 			GetSurfaces(query, client);
 			if (query.ExportAfterSearch)
 			{
-				Console.WriteLine("Select which returned surfaces to export: (enter for all)");
+				xConsole.WriteLine("Select which returned surfaces to export: (enter for all)");
 				string export = Console.ReadLine();
 				Program.ParseExport(query, export);
 			}
 		}
 		else 
 		{
-			Console.WriteLine("Query mode not correctly set.");
+			xConsole.WriteLine("Query mode not correctly set.");
 		}
 
             static void makeDefinitionRequest(CurrentQuery query, Action<object> callWordsAPI, HttpClient client)
@@ -1271,8 +1271,8 @@ namespace oed
 							}
 						}
 						catch (Exception ex) {
-							Console.WriteLine("No IPA found for this word.");
-							Console.WriteLine(ex.Message);
+							xConsole.WriteLine("No IPA found for this word.");
+							xConsole.WriteLine(ex.Message);
 						}
 					}
 					JsonElement etymologyObject = data[i].GetProperty("etymology");
@@ -1332,8 +1332,8 @@ namespace oed
 				// }
 					queryURL = queryURL + @"&part_of_speech=" + query.PartsOfSpeech.ToUpper();
 				} catch (Exception e) {
-					Console.WriteLine("Setting part of speech failed.");
-					Console.WriteLine(e.Message);
+					xConsole.WriteLine("Setting part of speech failed.");
+					xConsole.WriteLine(e.Message);
 				}
             }
 			// if doing a 'qs' query, don't put years for the definition query.
@@ -1458,35 +1458,35 @@ namespace oed
                     // Get the sense ID 
                     currentSense.SenseID = item.GetPropertyExt("id")?.ToString();
 					// Display which Sense #
-					Console.WriteLine($"Sense #{query.Senses.Count + 1}:");
-                    Console.WriteLine(currentSense.Definition);
-                    Console.WriteLine("Sense first used: {0}. {1} ", currentSense.Start, currentSense.OedReference);
+					xConsole.WriteLine($"Sense #{query.Senses.Count + 1}:");
+                    xConsole.WriteLine(currentSense.Definition);
+                    xConsole.WriteLine("Sense first used: {0}. {1} ", currentSense.Start, currentSense.OedReference);
                     if (currentSense.IsObsolete)
                     {
-                        Console.WriteLine("This usage is obsolete.");
+                        xConsole.WriteLine("This usage is obsolete.");
                     }
                     else
                     {
-                        // Console.WriteLine("This sense is not obsolete.");
+                        // xConsole.WriteLine("This sense is not obsolete.");
                     }
                     if (currentSense.IsMainUsage)
                     {
-                        Console.WriteLine("This sense is the main sense for the word.");
+                        xConsole.WriteLine("This sense is the main sense for the word.");
                     }
                     else
                     {
-                        // Console.WriteLine("Not the main sense for the word.");
+                        // xConsole.WriteLine("Not the main sense for the word.");
                     }
-//                    Console.WriteLine(currentSense.OedReference);
+//                    xConsole.WriteLine(currentSense.OedReference);
 
 					Sense savedSense = new Sense(currentSense);
                     query.Senses.Add(savedSense);
-                    Console.WriteLine();
+                    xConsole.WriteLine();
 
                     if (query.InteractiveMode == true)
                     {
-                        Console.WriteLine("---- S to Save - X to exit - O for other options");
-                        Console.WriteLine("Or just press Enter for more senses----");
+                        xConsole.WriteLine("---- S to Save - X to exit - O for other options");
+                        xConsole.WriteLine("Or just press Enter for more senses----");
                         string input = Console.ReadLine().Trim().ToLower();
                         if (input == "s")
                         {
@@ -1501,17 +1501,17 @@ namespace oed
                             bool otherOptionsMenu = true;
                             while (otherOptionsMenu)
                             {
-                                Console.WriteLine("Q - Get Quotations using this sense.");
-                                Console.WriteLine("S - Get Synonyms for this sense.");
-                                Console.WriteLine("B - Get Siblings for this sense.");
-                                Console.WriteLine("X - Exit this menu.");
-                                Console.WriteLine("-----------------------------------");
+                                xConsole.WriteLine("Q - Get Quotations using this sense.");
+                                xConsole.WriteLine("S - Get Synonyms for this sense.");
+                                xConsole.WriteLine("B - Get Siblings for this sense.");
+                                xConsole.WriteLine("X - Exit this menu.");
+                                xConsole.WriteLine("-----------------------------------");
                                 var response = Console.ReadLine().Trim().ToLower();
                                 switch (response)
                                 {
                                     case ("q" or "quotation" or "quotations"):
                                         {
-                                            Console.WriteLine("First, save the above definition for export? Y/N");
+                                            xConsole.WriteLine("First, save the above definition for export? Y/N");
                                             var saveResponse = Console.ReadLine().Trim().ToLower();
                                             if (saveResponse == "y")
                                             {
@@ -1524,7 +1524,7 @@ namespace oed
                                         }
 
                                     case ("s" or "synonyms" or "syn"):
-                                        Console.WriteLine("Get Synonyms");
+                                        xConsole.WriteLine("Get Synonyms");
                                         GetSynonyms(query, client, currentSense);
                                         otherOptionsMenu = false;
 
@@ -1532,7 +1532,7 @@ namespace oed
 
                                     case ("b" or "siblings" or "sibling" or "sib"):
                                         // GetSiblings(query, client, currentSense);
-                                        Console.WriteLine("Get Siblings");
+                                        xConsole.WriteLine("Get Siblings");
                                         otherOptionsMenu = false;
                                         break;
 
@@ -1541,7 +1541,7 @@ namespace oed
                                         break;
 
                                     default:
-                                        Console.WriteLine("No selection made.");
+                                        xConsole.WriteLine("No selection made.");
                                         break;
                                 }
 

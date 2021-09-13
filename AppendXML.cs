@@ -17,8 +17,8 @@ namespace oed {
                 }
                 File.Delete(filePath);
             } catch (Exception e) {
-                Console.WriteLine("Error appending temporary file to OED-Export.txt");
-                Console.WriteLine(e.Message);
+                xConsole.WriteLine("Error appending temporary file to OED-Export.txt");
+                xConsole.WriteLine(e.Message);
             }
         }
         public static void Append(string filePath)
@@ -29,10 +29,10 @@ namespace oed {
             fs.Close();
             File.Delete(filePath);
             } catch (Exception e) {
-                Console.WriteLine("Error: appending to XML file.");
-                Console.WriteLine("Is your file opened by another process? Open in SuperMemo?");
-                Console.WriteLine(e.Message);
-                Console.WriteLine(e.InnerException.Message.ToString());
+                xConsole.WriteLine("Error: appending to XML file.");
+                xConsole.WriteLine("Is your file opened by another process? Open in SuperMemo?");
+                xConsole.WriteLine(e.Message);
+                xConsole.WriteLine(e.InnerException.Message.ToString());
                 Console.ReadKey();
             }
 
@@ -69,8 +69,8 @@ namespace oed {
 
         private static (XmlDocument, FileStream) getXmlDocument(string filePath) {
             if (!File.Exists(filePath)) {
-                Console.WriteLine($"ERROR: Trying append what is in {filePath}.");
-                Console.WriteLine($"But {filePath} does not exist.");
+                xConsole.WriteLine($"ERROR: Trying append what is in {filePath}.");
+                xConsole.WriteLine($"But {filePath} does not exist.");
             } else {
                 Trace.WriteLine($"Appending {filePath} to {SavedQueries.ExportFileName}.");
             }

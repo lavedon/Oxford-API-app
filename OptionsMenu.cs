@@ -20,9 +20,9 @@ namespace oed
 	    public static void ShowOptionsMenu(CurrentQuery query)
 	    {
 
-		Console.WriteLine("-------------------------");
-		Console.WriteLine("Options Menu:");
-		Console.WriteLine("-------------------------");
+		xConsole.WriteLine("-------------------------");
+		xConsole.WriteLine("Options Menu:");
+		xConsole.WriteLine("-------------------------");
 		if (SavedQueries.DeleteOnExport)
 		{
 			yesNo = "Yes";
@@ -30,7 +30,7 @@ namespace oed
 		else {
 			yesNo = "No";
 		}
-		Console.WriteLine($"Delete old XML file and saved quotations on export?: {yesNo}");
+		xConsole.WriteLine($"Delete old XML file and saved quotations on export?: {yesNo}");
 		
 		if (query.IncludeObsolete == true)
 		{
@@ -39,7 +39,7 @@ namespace oed
 		else {
 			yesNo = "No";
 		}
-		Console.WriteLine($"Include obsolete usage?: {yesNo}");
+		xConsole.WriteLine($"Include obsolete usage?: {yesNo}");
 		if (query.DateRangeSet)
 		{
 			yesNo = "Yes";
@@ -48,7 +48,7 @@ namespace oed
 			yesNo = "No";
 		}
 
-		Console.WriteLine($"Is a date range set?: {yesNo}");
+		xConsole.WriteLine($"Is a date range set?: {yesNo}");
 		if (query.OptionsMenuVerboseMode)
 		{
 			yesNo = "On";
@@ -56,7 +56,7 @@ namespace oed
 		else {
 			yesNo = "Off";
 		}
-		Console.WriteLine($"Verbose mode: {yesNo}");
+		xConsole.WriteLine($"Verbose mode: {yesNo}");
 
 
 		if (query.DateRangeSet)
@@ -73,20 +73,20 @@ namespace oed
 
 			}
 
-		   Console.WriteLine($"Year Range: {printStart} - {printEnd}");
+		   xConsole.WriteLine($"Year Range: {printStart} - {printEnd}");
 		}
 	
-		Console.WriteLine("----------------------------");
-		Console.WriteLine("Toggle obsolete usage    - O");
-		Console.WriteLine("Toggle verbose mode      - V");
-		Console.WriteLine("Delete old XML on Export - E");
-		Console.WriteLine("Set date range:          - D");
-		Console.WriteLine("Exit to main menu        - X");
+		xConsole.WriteLine("----------------------------");
+		xConsole.WriteLine("Toggle obsolete usage    - O");
+		xConsole.WriteLine("Toggle verbose mode      - V");
+		xConsole.WriteLine("Delete old XML on Export - E");
+		xConsole.WriteLine("Set date range:          - D");
+		xConsole.WriteLine("Exit to main menu        - X");
 		var input = Console.ReadLine().Trim().ToLower();
 		switch (input)
 		{
 			case ("o" or "obsolete" or "ob"):
-				Console.WriteLine("Toggle Obsolete");
+				xConsole.WriteLine("Toggle Obsolete");
 				query.HasLookedUpWord = false;
 				query.Definitions.Clear();
 				query.IncludeObsolete = !query.IncludeObsolete;
@@ -94,7 +94,7 @@ namespace oed
 				break;
 
 			case ("v" or "verbose"):
-				Console.WriteLine("Toggle Verbose Mode");
+				xConsole.WriteLine("Toggle Verbose Mode");
 				query.OptionsMenuVerboseMode = !query.OptionsMenuVerboseMode;
 				break;
 
@@ -103,16 +103,16 @@ namespace oed
 				break;
 
 			case ("d" or "date" or "date range"):
-				Console.WriteLine("Enter Date Range");
+				xConsole.WriteLine("Enter Date Range");
 				(query.StartYear, query.EndYear) = SetYears(query);
 				break;
 			case ("x" or "e" or "exit"):
-				Console.WriteLine("Exiting back to main menu.");
+				xConsole.WriteLine("Exiting back to main menu.");
 				running = false;
 				break;
 
 			default:
-				Console.WriteLine("Did not recognize input");
+				xConsole.WriteLine("Did not recognize input");
 			break;
 		}
 
@@ -125,7 +125,7 @@ namespace oed
 		while (setYearsRunning)
 		{
 			if (query.DateRangeSet) {
-				Console.WriteLine("Turn off date range? Y/N");
+				xConsole.WriteLine("Turn off date range? Y/N");
 				string result = Console.ReadLine().ToLower().Trim();
 					if (result == "y" || result == "yes")
 					{
@@ -134,15 +134,15 @@ namespace oed
 						break;
 					}
 				}
-			Console.WriteLine("Only get results within this date range:");
-			Console.WriteLine("Starting Year: ");
-			Console.WriteLine("(or Press Enter for open ended start)");
+			xConsole.WriteLine("Only get results within this date range:");
+			xConsole.WriteLine("Starting Year: ");
+			xConsole.WriteLine("(or Press Enter for open ended start)");
 		 	string startYear = Console.ReadLine().Trim().ToLower();
 
 			if (string.IsNullOrWhiteSpace(startYear)) {
 				query.OpenStart = true;
 				startYearInt = 0;
-				Console.WriteLine("Set to open ended start year.");
+				xConsole.WriteLine("Set to open ended start year.");
 			} 
 			else if (validate(startYear)) {
 				query.OpenStart = false;
@@ -150,20 +150,20 @@ namespace oed
 			} else {
 			    break;
 			}
-			Console.WriteLine("Ending Year:");
-			Console.WriteLine("(or Press Enter for open ended end)");
+			xConsole.WriteLine("Ending Year:");
+			xConsole.WriteLine("(or Press Enter for open ended end)");
 			string endYear = Console.ReadLine().Trim().ToLower();
 			if (string.IsNullOrWhiteSpace(endYear)) {
 				if (query.OpenStart) {
-					Console.WriteLine("You can not have both an open start and an open end date.");
+					xConsole.WriteLine("You can not have both an open start and an open end date.");
 					query.DateRangeSet = false;
-					Console.WriteLine("Please start over.");
+					xConsole.WriteLine("Please start over.");
 					Console.ReadLine();
 					break;
 				}
 				query.OpenEnd = true;
 				endYearInt = 0;
-				Console.WriteLine("Set to open ended end year.");
+				xConsole.WriteLine("Set to open ended end year.");
 				query.DateRangeSet = true;
 				setYearsRunning = false;
 				break;
@@ -182,8 +182,8 @@ namespace oed
 			if (year.Length <= 4 || year.All(char.IsDigit)) {
 				return true;
 			} else {
-				Console.WriteLine("Invalid Year.");
-				Console.WriteLine("Please enter a 3 digit or 4 digit year.");
+				xConsole.WriteLine("Invalid Year.");
+				xConsole.WriteLine("Please enter a 3 digit or 4 digit year.");
 				return false;
 				}
 			}

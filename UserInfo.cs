@@ -35,7 +35,7 @@ namespace oed
 			}
 			catch
 			{
-				Console.WriteLine("keys.txt file is empty");
+				xConsole.WriteLine("keys.txt file is empty");
 			}
 			finally
 			{
