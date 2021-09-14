@@ -1,10 +1,63 @@
-cow_nn01
-cow: The female of any bovine animal (as the ox, bison, or buffalo); most commonly applied to the female of the domestic species (Bos Taurus).Noun.  Listed as a main definition. The original source of this word is listed as Corpus Glossary. This word was first recored in 799
-IPA USA: kaʊ
-IPA British: kaʊ
+apple, n., sense I.1
+Sense: "The round firm fruit (a pome) of any of various wild and cultivated trees of the genus Malus (see sense 4a), occurring in a wide variety of forms, colours, and flavours; esp. any of numerous cultivated kinds produced throughout the temperate zones of both hemispheres, typically having crisp white flesh and green, yellow, or red skin." --This sense was first used in the year 950,  , This sense is the main sense for this word., apple, n., sense I.1
 
-cow_nn03
-cow: ‘A hob-goblin; a scare-crow, bugbear’ (Jamieson); cf. worricow, n.Noun.  Listed as a main definition. The original source of this word is listed as Roull's Cursing. This word was first recored in 1500
-IPA USA: kaʊ
-IPA British: kaʊ
+apple, n., sense I.2a
+Sense: "Frequently with distinguishing word: any of various fruits (and vegetables), esp. those thought to resemble the apple (sense 1) in some way; any of the plants producing such a fruit (or vegetable)." --This sense was first used in the year 935,  , , apple, n., sense I.2a
+
+apple, n., sense I.2b
+Sense: "Botany. Any fruit having the structure of the apple; a pome. Obsolete." --This sense was first used in the year 1577,  This usage is obsolete., , apple, n., sense I.2b
+
+apple, n., sense I.2c
+Sense: "Chiefly with distinguishing word: a gall on the stem or leaf of a plant." --This sense was first used in the year 1668,  , , apple, n., sense I.2c
+
+apple, n., sense I.3
+Sense: "According to post-biblical Christian tradition: the fruit of the tree of knowledge of good and evil eaten by Adam and Eve in the Garden of Eden in defiance of God's commandment; the forbidden fruit. Also used allusively." --This sense was first used in the year 1000,  , , apple, n., sense I.3
+
+apple, n., sense I.4a
+Sense: "Any tree of the genus Malus (family Rosaceae); esp. any of the numerous varieties cultivated for their fruit, probably of hybrid origin and usually classified as M. domestica, having alternate serrated leaves and white blossom appearing in the spring, followed by fruit in late summer or autumn. Cf. apple tree, n." --This sense was first used in the year 1499,  , , apple, n., sense I.4a
+
+apple, n., sense I.4b
+Sense: "The wood of any of these trees, esp. used in woodworking. Cf. apple-wood n. at  compounds 1a(a)." --This sense was first used in the year 1815,  , , apple, n., sense I.4b
+
+apple, n., sense II.10
+Sense: "slang (chiefly Australian and New Zealand). Used to indicate a state of affairs regarded as good or satisfactory (or occasionally ironic the reverse). Chiefly in she's (also it's) apples and variants: everything is all right; things will be fine (see she, pron.1 2a(e))." --This sense was first used in the year 1943,  , , apple, n., sense II.10
+
+apple, n., sense II.5a
+Sense: "Any of various things resembling an apple in form or colour; spec. = pome, n.1 2." --This sense was first used in the year 935,  , , apple, n., sense II.5a
+
+apple, n., sense II.5b
+Sense: "= Adam's apple, n. 3." --This sense was first used in the year 1895,  , , apple, n., sense II.5b
+
+apple, n., sense II.5c
+Sense: "U.S. colloquial. A baseball. Also more fully old apple." --This sense was first used in the year 1902,  , , apple, n., sense II.5c
+
+apple, n., sense II.5d
+Sense: "A shade of green resembling the colour of a green apple. Cf. apple green n. adj. at  compounds 2." --This sense was first used in the year 1923,  , , apple, n., sense II.5d
+
+apple, n., sense II.5e
+Sense: "Also with capital initial. A round, apple-shaped bowl on a tobacco pipe (also more fully apple bowl); a tobacco pipe with such a bowl." --This sense was first used in the year 1926,  , , apple, n., sense II.5e
+
+apple, n., sense II.6a
+Sense: "More fully apple of the eye. The pupil of the eye, originally thought to be a solid, spherical body. Occasionally also: the iris and pupil, or the whole eyeball. Now historical." --This sense was first used in the year 895,  , , apple, n., sense II.6a
+
+apple, n., sense II.6b
+Sense: "More fully apple of the eye. figurative and in extended use. Originally: the type of something precious. In later use chiefly the apple of a person's eye: the particular object of a person's affection or regard; a greatly cherished person or occasionally thing." --This sense was first used in the year 950,  , , apple, n., sense II.6b
+
+apple, n., sense II.7
+Sense: "In full apple(s) and pears. Stairs." --This sense was first used in the year 1857,  , , apple, n., sense II.7
+
+apple, n., sense II.8b
+Sense: "colloquial (chiefly U.S.). A person; a fellow, a guy. Usually with preceding adjective." --This sense was first used in the year 1928,  , , apple, n., sense II.8b
+
+apple, n., sense II.8c
+Sense: "U.S. slang (derogatory). In North American Indian usage: a North American Indian regarded as espousing or adopting the values of white society or culture (see quot. 2001). Cf. Oreo, n.1 2." --This sense was first used in the year 1970,  , , apple, n., sense II.8c
+
+apple, n., sense II.9
+Sense: "U.S. slang (originally Jazz). Usually with capital initial. With the. Originally: Harlem. Hence later: New York City. Cf. Big Apple, n. 4." --This sense was first used in the year 1939,  , , apple, n., sense II.9
+
+apple, v., sense 1
+Sense: "intransitive. Of vegetables, flower buds, and esp. (in later use) root crops: to swell into a globular shape; to become shaped like an apple." --This sense was first used in the year 1601,  , This sense is the main sense for this word., apple, v., sense 1
+
+apple, v., sense 2
+Sense: "intransitive. To gather fir cones (see fir-apple n. at  fir, n. compounds 2). rare." --This sense was first used in the year 1799,  , , apple, v., sense 2
 

@@ -1457,31 +1457,10 @@ namespace oed
                     // currentSense.Usage = item.GetProperty("")
                     // Get the sense ID 
                     currentSense.SenseID = item.GetPropertyExt("id")?.ToString();
-					// Display which Sense #
-					xConsole.WriteLine($"Sense #{query.Senses.Count + 1}:");
-                    xConsole.WriteLine(currentSense.Definition);
-                    xConsole.WriteLine("Sense first used: {0}. {1} ", currentSense.Start, currentSense.OedReference);
-                    if (currentSense.IsObsolete)
-                    {
-                        xConsole.WriteLine("This usage is obsolete.");
-                    }
-                    else
-                    {
-                        // xConsole.WriteLine("This sense is not obsolete.");
-                    }
-                    if (currentSense.IsMainUsage)
-                    {
-                        xConsole.WriteLine("This sense is the main sense for the word.");
-                    }
-                    else
-                    {
-                        // xConsole.WriteLine("Not the main sense for the word.");
-                    }
-//                    xConsole.WriteLine(currentSense.OedReference);
+                    // Display which Sense #
 
-					Sense savedSense = new Sense(currentSense);
+                    Sense savedSense = new Sense(currentSense);
                     query.Senses.Add(savedSense);
-                    xConsole.WriteLine();
 
                     if (query.InteractiveMode == true)
                     {
@@ -1551,7 +1530,7 @@ namespace oed
                     else
                     {
                         // SavedQueries.AddMember(currentSense); // This would save all senses for export when not in 
-						// interactive mode
+                        // interactive mode
                     }
                 }
                 catch (Exception ex)
@@ -1559,7 +1538,38 @@ namespace oed
                     Trace.WriteLine(ex);
                 }
 
-            }
+            } // end foreach JSSON Parsing
+			displaySenses(query);
+        }
+
+        private static void displaySenses(CurrentQuery query)
+        {
+			// Sort senses by OED reference
+			query.Senses = query.Senses.OrderBy(x => x.OedReference).ToList();
+			for (int i = 0; i < query.Senses.Count; i++)
+			{	
+				xConsole.WriteLine($"Sense #{i + 1}:");
+				xConsole.WriteLine(query.Senses[i].Definition);
+				xConsole.WriteLine("Sense first used: {0}. {1} ", query.Senses[i].Start, query.Senses[i].OedReference);
+				if (query.Senses[i].IsObsolete)
+				{
+					xConsole.WriteLine("This usage is obsolete.");
+				}
+				else
+				{
+					// xConsole.WriteLine("This sense is not obsolete.");
+				}
+				if (query.Senses[i].IsMainUsage)
+				{
+					xConsole.WriteLine("This sense is the main sense for the word.");
+				}
+				else
+				{
+					// xConsole.WriteLine("Not the main sense for the word.");
+				}
+				//                    xConsole.WriteLine(currentSense.OedReference);
+				xConsole.WriteLine();
+			}
         }
     }
 }

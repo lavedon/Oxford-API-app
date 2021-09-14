@@ -138,7 +138,6 @@ namespace oed
 
 		public static void showDefinitions(CurrentQuery query)
 		{
-			Console.OutputEncoding = Encoding.UTF8;
 			
 			for (int i = 0; i < query.Definitions.Count; i++)
 			{

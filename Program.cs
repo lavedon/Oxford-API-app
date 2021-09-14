@@ -339,6 +339,8 @@ namespace oed
             }
             else if (input == "clr") {
                 Console.Clear();
+                xConsole.LinesWritten = 0;
+                xConsole.PageBreak = Console.WindowHeight - 2;
                 continue;
             }
             else if (input == "cf") {
