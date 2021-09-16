@@ -881,22 +881,26 @@ namespace oed
                             query.QSFromSenses = true;
                             query.QSFromDefinitions = false;
                             xConsole.WriteLine("QS from a specific sense.");
+                        } else if (!trimedQS.Contains("d") && trimedQS.Contains("s") && trimedQS.Contains("q")) {
+                            Trace.WriteLine("QS for a quote from a specific sense.");
+                            query.QSFromDefinitions = false;
+                            query.QSFromSenses = false;
+                            query.QSFromSpecificQuotesInSense = true;
                         } else {
                             query.QSFromDefinitions = true;
                         }
+                        if (query.QSFromSpecificQuotesInSense)
+                        {
+                            query = getQSSpecificQuote(query, _quotesAndSenses);
+                        } else {
                         string cleanSelection = Regex.Replace(_quotesAndSenses, "[A-Za-z]", ""); 
                         List<int> result = ParseNumbers(cleanSelection);
                         if (query.QSFromSenses) {
-                            xConsole.WriteLine("You want me to run qs on these senses:");
                             query.QSSenseSelection = result;
                         } else {
-                            xConsole.WriteLine("You want me to run qs on these definitions:");
                             query.QSDefSelection = result;
                         }
-                        foreach (int n in result)
-                        {
-                            xConsole.WriteLine($"{n}");
-                        }
+                        } // end of else if QSFromSpecificQuotesInSense
                 } // if _quotesAndSenses has text
             } // if qsExists
             
@@ -936,6 +940,10 @@ namespace oed
                 }
             }
             }
+        }
+        private static CurrentQuery getQSSpecificQuote(CurrentQuery query, string _quotesAndSenses)
+        {
+            return null;
         }
 
         private static void processCommonOptions(string? years, bool interactive, bool export, CurrentQuery query, 
@@ -1174,7 +1182,6 @@ namespace oed
                 Trace.WriteLine($"error parsing export numbers. {ex}");
             }
             return nums;
-        }
-
-    }
-}
+        } // end ParseNumbers
+    } // end namespace
+} // End ???

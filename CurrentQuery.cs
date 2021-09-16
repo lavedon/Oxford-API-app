@@ -81,6 +81,8 @@ namespace oed
 		public bool QSFromSenses { get; set; }
 		public bool QSFromDefinitions { get; set; }
 
+		public bool QSFromSpecificQuotesInSense { get; set; }
+
 		// RootCommand if user wants to get definitions
 		// for past returned quote or past returned sense.
 		public string? FromSense { get; set; } = null;
