@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Diagnostics;
 
 namespace oed
 {
@@ -79,13 +80,13 @@ namespace oed
         {
             if (qsString[0] == 'q') 
             {
-                Console.WriteLine("Invalid: QS selection.");
-                Console.WriteLine("Can not start with a quote # or quote range.");
+                xConsole.WriteLine("Invalid: QS selection.");
+                xConsole.WriteLine("Can not start with a quote # or quote range.");
                 return;
 
             }
             string[] qsStrings = qsString.Split('s').Skip(1).ToArray();
-            Console.WriteLine("There are {0} separate commands.", qsStrings.Length);
+            Trace.WriteLine($"There are {qsStrings.Length} separate commands.");
             // Below code will remove the ability to enter a range of senses.
             // Quotes will only be specified for each individual sense.
             /*
@@ -109,7 +110,7 @@ namespace oed
                     // Check if quoteArgs contains an extra sense command i.e. s1q2-5s5-9
                     if (quoteArg.Contains("s"))
                     {
-                        Console.WriteLine("You entered an extra s command without specified quotes");
+                        xConsole.WriteLine("You entered an extra s command without specified quotes");
                         return;
                         // @TODO Actually process this command, iterate through and set 
                         // each ense to all quotes.
@@ -146,26 +147,25 @@ namespace oed
                         List<int> quotesList = Program.ParseNumbers(quoteArg);
                         currentSelection = new(int.Parse(senseArg), quotesList);
                     } // end if/else sense is a range
-                    Console.WriteLine("Sense to get: #{0}", qsCount);
-                    Console.WriteLine("The sense number is: #{0}", currentSelection.SenseNum);
-                    Console.WriteLine("The quotes to get from Sense #{0} are:", currentSelection.SenseNum);
+                    Trace.WriteLine($"Sense to get: #{qsCount}");
+                    Trace.WriteLine($"The sense number is: #{currentSelection.SenseNum}");
+                    Trace.WriteLine($"The quotes to get from Sense #{currentSelection.SenseNum} are:");
                     foreach (int quote in currentSelection.QuotesToGet)
                     {
-                        Console.Write(" {0},", quote);
+                        Trace.Write(quote + " ");
                     }
-                } else if (qs.Contains("-") || qs.Contains(",")) {
+                } // end if qs.Contains('q') 
+                else if (qs.Contains("-") || qs.Contains(",")) {
                     List<int> sensesWithAllQuotes = Program.ParseNumbers(qs);
                     currentSelection = new(sensesToGetAllQuotes: sensesWithAllQuotes);
                     currentQuery.SenseQuoteObjects.Add(currentSelection);
                     continue;
-                } else {
+                } else { // single s command 
                     currentSelection = new(senseNum: int.Parse(qs), true);
-                    Console.WriteLine("Sense to get #{0}", qsCount);
-                    Console.WriteLine("This is the sense number {0}", currentSelection.SenseNum);
-                    Console.WriteLine("I will get ALL quotes from Sense #{0} are:", currentSelection.SenseNum);
+                    Trace.WriteLine("Sense to get #" + qsCount);
+                    Trace.WriteLine("This is the sense number " + currentSelection.SenseNum);
+                    Trace.WriteLine($"I will get ALL quotes from Sense #{currentSelection.SenseNum} are:");
                 } // end if/else arg contains a quote selection
-                Console.ReadLine();
-                Console.WriteLine();
                 currentQuery.SenseQuoteObjects.Add(currentSelection); 
             } // end foreach qs in qsStrings
             return;
@@ -186,6 +186,7 @@ namespace oed
                         return;
                     }
                 }
+                // if there is no Q argument
                 string[] splitArgs = qsString.Split('q');
                 // Process sense arg
                 string senseArg = splitArgs[0].Trim().Remove(0, 1);
@@ -202,8 +203,21 @@ namespace oed
                     }
                 }
                 } // end if qsString.Contains("s") && qsString.Contains("q")
-                // No need to return a crazy object? 
-                // Use like the normal Senses command.
+                else if (qsString.Contains("s") && !qsString.Contains("q"))
+                {
+                    string senseArg = qsString.Trim().Remove(0, 1);
+                    if (!qsString.Contains("-"))
+                    {
+                        currentQuery.SenseQuoteObjects.Add(new SenseQSSelection(senseNum: int.Parse(senseArg), allQuotesFlag: true));
+                    } else {
+                        List<int> sensesToGet = Program.ParseNumbers(senseArg);
+                        foreach (int sense in sensesToGet)
+                        {
+                            currentQuery.SenseQuoteObjects.Add(new SenseQSSelection(senseNum: sense, allQuotesFlag: true));
+                        }
+
+                    }
+                } // end else if qsString.Contains("s") && !qsString.Contains("q")
             } // end ParseSingleQS
     } // end class Program
 

@@ -91,64 +91,87 @@ namespace oed
 					}
 
 					foreach (Sense s in selectSenses)
-                {
-                    query = getAllQuotesforSense(query, client, s.SenseID);
-                }
+					{
+						query = getAllQuotesforSense(query, client, s.SenseID);
+					}
             } // end if QSSenseSelection.Count != 0
 				if (query.SenseQuoteObjects.Count != 0) {
 					query = SavedQueries.LoadSenseIds(query);
-					foreach (SenseQSSelection s in query.SenseQuoteObjects)
+
+//					foreach (SenseQSSelection s in query.SenseQuoteObjects)
+					for (int si = 0; si < query.SenseQuoteObjects.Count; si++)	
 					{
 						// @TODO call QS for this sense and all its quotes.
-						if (s.SensesToGetAllQuotes is not null) {
-							if (s.SensesToGetAllQuotes.Count != 0) {
+						if (query.SenseQuoteObjects[si].SensesToGetAllQuotes is not null) {
+							if (query.SenseQuoteObjects[si].SensesToGetAllQuotes.Count != 0) {
 
-								foreach (int sID in s.SensesToGetAllQuotes) {
+								foreach (int sID in query.SenseQuoteObjects[si].SensesToGetAllQuotes) {
 								xConsole.WriteLine("Going to get all quotes for these sensesNum {0}", sID);
+								string allQsenseID = query.Senses[sID - 1].SenseID;
+								query = getAllQuotesforSense(query, client, allQsenseID);
 								}
-
 							}
-
-						}
-						// @TODO call QS for this senseNum with all quotes
-						// may be able to call the normal QS function
-						if (s.AllQuotesFlag) {
-							xConsole.WriteLine("Going to get all quotes for this senseNum {0}", s.SenseNum);
-						}
-						if (s.QuotesToGet.Count != 0) {
-							foreach (var q in s.QuotesToGet) {
-								xConsole.WriteLine("Implement getting quote #{0} for sense #{1}", q, s.SenseNum);
-								int id = (int) s.SenseNum;
-								string senseID = query.Senses[id - 1].SenseID;
-								query = getAllQuotesforSense(query, client, senseID);
-								// @TODO implement special filter for only the asked for quotes
-
+						} else {
+							if (query.SenseQuoteObjects[si].AllQuotesFlag) {
+							xConsole.WriteLine("Going to get all quotes for this senseNum {0}", query.SenseQuoteObjects[si].SenseNum);
 							}
-						}
+						int id = (int) query.SenseQuoteObjects[si].SenseNum;
+						string senseID = query.Senses[id - 1].SenseID;
+						query = getAllQuotesforSense(query, client, senseID);
+						} // end if/else sensesToGetAllQuotes List
+						} // end for si < query.SenseQuoteObjects.Count
 
-						// @TODO work with all options
-						xConsole.WriteLine($"Advanced QS not yet implemented...");
-						Console.ReadLine();
-					}
-				}
+
+					for (int si = 0; si < query.SenseQuoteObjects.Count; si++)	
+					{
+						if (!query.SenseQuoteObjects[si].AllQuotesFlag) {
+						if (query.SenseQuoteObjects[si].QuotesToGet is not null && query.SenseQuoteObjects[si].QuotesToGet.Count != 0) {
+							List<Quotation> filteredQuotes = new();
+							for (int q = 0; q < query.SenseQuoteObjects[si].QuotesToGet.Count; q++) {
+								Trace.WriteLine($"Filtering: Getting quote #{q} for sense #{query.SenseQuoteObjects[si].SenseNum}.");
+								Trace.WriteLine($"This is SenseQuoteObject #{si}");
+								try {
+								filteredQuotes.Add(query.SQID_Data[si].quotations.Select(x => x).Skip(query.SenseQuoteObjects[si].QuotesToGet[q] - 1).First());
+								} catch (Exception e) {
+									Trace.WriteLine($"Sense #{si} did not have a quote #{query.SenseQuoteObjects[si].QuotesToGet[q]}");
+									Trace.WriteLine($"Exception: {e.Message}");
+								}
+							}
+								query.SQID_Data[si].quotations.Clear();
+								query.SQID_Data[si].quotations.AddRange(filteredQuotes);
+							} // end if s.QuotesToGet.Count != 0
+						} // end if !s.AllQuotesFlag
+					} // end for si < query.SenseQuoteObjects.Count
 				query = filterQuotesAndSenses(query);
 				displayQuotesAndSenses(query);
 				SavedQueries.RenderXML(query);
 				SavedQueries.RenderTextFile(query);
+			} // end if query.SenseQuoteObjects.Count != 0)
+		}
 
-            static CurrentQuery getAllQuotesforSense(CurrentQuery query, HttpClient client, string senseID)
+         private static CurrentQuery getAllQuotesforSense(CurrentQuery query, HttpClient client, string senseID)
             {
                 Trace.WriteLine("Calling GetQuotesAndSenses() method - but passing a Sense ID and using the Sense\\{ID} end point and not word.");
                 string queryURL = "sense/" + senseID + "?include_quotations=true";
                 queryURL = coreQueryFeatures(query, queryURL);
+				query.QSFromSenses = true;
                 query = makeQSRequest(query, client, queryURL);
                 return query;
             }
-        }
 
 		private static CurrentQuery filterQuotesAndSenses(CurrentQuery query)
 		{
 			// @!TODO: filter based on query.SenseQuoteObjects.
+			if (query.SenseQuoteObjects.Count != 0) {
+				foreach (var sq in query.SQ_Data)
+				{
+					foreach (SenseQSSelection s in query.SenseQuoteObjects)
+					{
+						int senseNumber = (int) s.SenseNum;
+						sq.senses.RemoveAt(senseNumber - 1);
+					}
+				}
+			}
 			// @TODO: Add filtering to filter out SQID 
 			if (query.IncludeObsolete.HasValue && query.IncludeObsolete.Value)
 			{
@@ -635,12 +658,14 @@ namespace oed
 			}
 			}
 			if (query.QSFromSenses) {
+				// @TODO foreach through SQ_Data?
+				// why is SQID_Data Count 1?
 			foreach (var sq in query.SQID_Data)
 			{
 			// /senses/{id} does not return a list of senses, but a single sense in .definition
 				xConsole.WriteLine();
 				xConsole.WriteLine("Sense:");
-				xConsole.WriteLine("Sense ID: {0}", sq.id);
+				xConsole.WriteLine($"Sense ID: {sq.id}");
 				xConsole.WriteLine(sq.definition);
 				xConsole.WriteLine($"First use: {sq.first_use}");
 				xConsole.WriteLine($"Part of speech: {sq.part_of_speech}");

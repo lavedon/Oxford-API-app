@@ -878,22 +878,20 @@ namespace oed
                             query.QSFromSenses = true;
                         } else if (trimedQS.Contains("s") && !trimedQS.Contains("d") && !trimedQS.Contains("q"))
                         {
+                            Trace.WriteLine("QS from a specific sense.");
                             query.QSFromSenses = true;
                             query.QSFromDefinitions = false;
-                            xConsole.WriteLine("QS from a specific sense.");
+                            query.QueryMode = Modes.QuotesAndSenses;
+                            query = parseSelect(query, trimedQS);
+                            API.APICalls(query);
+                            return;
                         } else if (!trimedQS.Contains("d") && (trimedQS.Contains("q") && trimedQS.Contains("s")))
-                                                {
+                        {
                             query.QSFromDefinitions = false;
                             query.QSFromSenses = false;
                             query.QSFromSpecificQuotesInSense = true;
                             query.QueryMode = Modes.QuotesAndSenses;
-                            if (trimedQS.Count(x => (x == 's')) > 1)
-                            {
-                                QsParser.ParseMultiQS(trimedQS, ref query);
-                            } else 
-                            {
-                                QsParser.ParseSingleQS(trimedQS, ref query);
-                            }
+                            query = parseSelect(query, trimedQS);
                             // else if - qs is complex query - s with specified quotes or double s query
                             // 
                         }
@@ -904,6 +902,7 @@ namespace oed
                         if (query.QSFromSpecificQuotesInSense)
                         {
                             API.APICalls(query);
+                            return;
                         } else {
                         string cleanSelection = Regex.Replace(_quotesAndSenses, "[A-Za-z]", ""); 
                         List<int> result = ParseNumbers(cleanSelection);
@@ -951,6 +950,20 @@ namespace oed
                   //  RunQuotesFromWordId(query, Program.programState.RootCommand, state.GlobalArgs); 
                 }
             }
+
+                static CurrentQuery parseSelect(CurrentQuery query, string trimedQS)
+                {
+                    if (trimedQS.Count(x => (x == 's')) > 1)
+                    {
+                        QsParser.ParseMultiQS(trimedQS, ref query);
+                    }
+                    else
+                    {
+                        QsParser.ParseSingleQS(trimedQS, ref query);
+                    }
+
+                    return query;
+                }
             }
         }
         private static CurrentQuery getQSSpecificQuote(CurrentQuery query, string _quotesAndSenses)
