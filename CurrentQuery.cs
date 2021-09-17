@@ -46,6 +46,9 @@ namespace oed
 		public List<Definition> Definitions { get; set; }
 		public List<Quote> Quotes { get; set; }
 		public List<Sense> Senses { get; set; }
+
+//           public List<SenseQSSelection> SenseQuoteObjects { get; set; }
+		public List<SenseQSSelection> SenseQuoteObjects { get; set; }
 		public Lemmas Lemmas { get; set; }
 
 		public string EtymologySummary { get; set; }

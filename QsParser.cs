@@ -5,11 +5,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace qs_parsing
+namespace oed
 {
-    class Program
+    public static class QsParser 
     {
-        static void Main(string[] args)
+        /*
+        static void TestMain(string[] args)
         {
             bool running = true;
             while (running) {
@@ -72,8 +73,9 @@ namespace qs_parsing
                 }
             }
         }
+        */
 
-        static void ParseMultiQS(string qsString, ref CurrentQuery currentQuery)
+        public static void ParseMultiQS(string qsString, ref CurrentQuery currentQuery)
         {
             if (qsString[0] == 'q') 
             {
@@ -115,10 +117,10 @@ namespace qs_parsing
                     string senseArg = qs.Split('q')[0];
                     if (senseArg.Contains("-") || senseArg.Contains(","))
                     {
-                        List<int> multiSenseSelection = ParseNumbers(senseArg);
+                        List<int> multiSenseSelection = Program.ParseNumbers(senseArg);
                         if (quoteArg.Contains("-") || quoteArg.Contains(",")) 
                         {
-                            List<int> quotesForEach = ParseNumbers(quoteArg);
+                            List<int> quotesForEach = Program.ParseNumbers(quoteArg);
                             foreach (int sense in multiSenseSelection)
                             {
                                 currentSelection = new SenseQSSelection(senseNum: sense, quotesToGet: quotesForEach);
@@ -141,7 +143,7 @@ namespace qs_parsing
                         */
                     continue;
                     } else {
-                        List<int> quotesList = ParseNumbers(quoteArg);
+                        List<int> quotesList = Program.ParseNumbers(quoteArg);
                         currentSelection = new(int.Parse(senseArg), quotesList);
                     } // end if/else sense is a range
                     Console.WriteLine("Sense to get: #{0}", qsCount);
@@ -152,7 +154,7 @@ namespace qs_parsing
                         Console.Write(" {0},", quote);
                     }
                 } else if (qs.Contains("-") || qs.Contains(",")) {
-                    List<int> sensesWithAllQuotes = ParseNumbers(qs);
+                    List<int> sensesWithAllQuotes = Program.ParseNumbers(qs);
                     currentSelection = new(sensesToGetAllQuotes: sensesWithAllQuotes);
                     currentQuery.SenseQuoteObjects.Add(currentSelection);
                     continue;
@@ -168,7 +170,7 @@ namespace qs_parsing
             } // end foreach qs in qsStrings
             return;
         } // end ParseMultiQS
-        static void ParseSingleQS(string qsString)
+        public static void ParseSingleQS(string qsString)
         {
             Console.WriteLine(qsString);
             if (qsString.Contains("s") && qsString.Contains("q"))
@@ -194,8 +196,8 @@ namespace qs_parsing
                 string senseArg = splitArgs[0].Trim().Remove(0, 1);
                 string quoteArg = splitArgs[1].Trim();
                 Console.WriteLine("Quote arg:");
-                List<int> sensesToGet = ParseNumbers(senseArg);
-                List<int> quotesToGet = ParseNumbers(quoteArg);
+                List<int> sensesToGet = Program.ParseNumbers(senseArg);
+                List<int> quotesToGet = Program.ParseNumbers(quoteArg);
                 Console.WriteLine("Here are the senses To get:");
                 foreach (int i in sensesToGet)
                 {
@@ -213,81 +215,6 @@ namespace qs_parsing
                 // No need to return a crazy object? 
                 // Use like the normal Senses command.
         }
-        public static List<int> ParseNumbers(string export)
-        {
-            List<int> nums = new();
-            try {
-            export = export.Trim().ToLower();
-            export = export.Replace(" ", string.Empty);
-            Console.WriteLine("Linq splitting the ',' and '-'");
-            IEnumerable<int> result = export.Split(',')
-                    .SelectMany(x => x.Contains('-') ? 
-                    Enumerable.Range(int.Parse(x.Split('-')[0]), 
-                    int.Parse(x.Split('-')[1]) - int.Parse(x.Split('-')[0]) + 1) : new int[] { int.Parse(x) });
-
-            Console.WriteLine("These are the numbers I parsed from the supplied selection.");
-            foreach (var r in result)
-            {
-                Console.WriteLine(r);
-                nums.Add(r);
-            }
-            } catch(Exception ex)
-            {
-                Console.WriteLine("Number selection entered in incorrect format.");
-                Console.WriteLine("Did you use a space to seperate values instead of a comma?");
-                Console.WriteLine($"error parsing export numbers. {ex}");
-            }
-            return nums;
-        } // end Parse Numbers
     } // end class Program
 
-    public class SenseQSSelection
-    {
-        public int? SenseNum { get; set; }
-        public List<int>? QuotesToGet { get; set; }
-        public List<int>? SensesToGetAllQuotes { get; set;}
-        public bool AllQuotesFlag { get; set; } = false;
-
-
-
-        public SenseQSSelection(int senseNum)
-        {
-            this.SenseNum = senseNum;
-            this.QuotesToGet = new();
-        }
-
-        public SenseQSSelection(List<int> sensesToGetAllQuotes)
-        {
-            this.SensesToGetAllQuotes = sensesToGetAllQuotes;
-            this.AllQuotesFlag = true;
-            this.SenseNum = null;
-        }
-
-        public SenseQSSelection(int senseNum, List<int> quotesToGet)
-        {
-            this.SenseNum = senseNum;
-            this.QuotesToGet = quotesToGet;
-        }
-
-        public SenseQSSelection()
-        {
-
-        }
-
-        public SenseQSSelection(int senseNum, bool allQuotesFlag)
-        {
-            this.SenseNum = senseNum;
-            this.AllQuotesFlag = allQuotesFlag;
-            this.QuotesToGet = null;
-        }
-
-    } // end QS Selection class
-        public class CurrentQuery {
-            public List<SenseQSSelection> SenseQuoteObjects { get; set; }
-
-            public CurrentQuery()
-            {
-                this.SenseQuoteObjects = new(); 
-            }
-        } // end CurrentQuery class
 } // end namespace qs_parsing

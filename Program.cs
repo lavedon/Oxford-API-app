@@ -886,7 +886,13 @@ namespace oed
                             query.QSFromDefinitions = false;
                             query.QSFromSenses = false;
                             query.QSFromSpecificQuotesInSense = true;
-                        } else {
+                            // else if - qs is complex query - s with specified quotes or double s query
+                        } else if ((trimedQS.Contains("q") && trimedQS.Contains("s")) || trimedQS.Count(x => (x == 's')) > 1) {
+                            // call complex qs query parser
+                            QsParser.ParseMultiQS(trimedQS, ref query);
+                        }
+                            // 
+                        else {
                             query.QSFromDefinitions = true;
                         }
                         if (query.QSFromSpecificQuotesInSense)
