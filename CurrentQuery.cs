@@ -144,6 +144,7 @@ namespace oed
 			this.QSFromDefinitions = false;
 			this.QSDefSelection = new List<int>();
 			this.QSSenseSelection = new List<int>();
+			this.SenseQuoteObjects = new List<SenseQSSelection>();
 
 			// this.SurfaceJson = new();
 			this.Surfaces = new List<Datum>();
@@ -157,6 +158,7 @@ namespace oed
 			this.StartEndYearRanges = false;
 			// this.PreviousWordIds = new();
 			this.IPAMode = IPAOptions.None;
+
 			
 		} 
 		public string Source { get; set; }

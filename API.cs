@@ -64,6 +64,7 @@ namespace oed
 				} else {
 					selectDefs = query.Definitions;
 				}
+				// skip this or insert a check that you are using definitions?
 
 				foreach (Definition d in selectDefs)
 				{
@@ -75,7 +76,7 @@ namespace oed
 					// @TODO a method to filter out all global options.
 				}
 			}
-			if (query.QSFromSenses) {
+			if (query.QSFromSenses && query.SenseQuoteObjects.Count == 0) {
 				query = SavedQueries.LoadSenseIds(query);
 				var selectSenses = new List<Sense>();
 				if (query.QSSenseSelection.Count != 0) {
@@ -90,11 +91,44 @@ namespace oed
 					}
 
 					foreach (Sense s in selectSenses)
+                {
+                    query = getAllQuotesforSense(query, client, s.SenseID);
+                }
+            } // end if QSSenseSelection.Count != 0
+				if (query.SenseQuoteObjects.Count != 0) {
+					query = SavedQueries.LoadSenseIds(query);
+					foreach (SenseQSSelection s in query.SenseQuoteObjects)
 					{
-						Trace.WriteLine("Calling GetQuotesAndSenses() method - but passing a Sense ID and using the Sense\\{ID} end point and not word.");
-						string queryURL = "sense/" + s.SenseID + "?include_quotations=true";
-						queryURL = coreQueryFeatures(query, queryURL);
-						query = makeQSRequest(query, client, queryURL);
+						// @TODO call QS for this sense and all its quotes.
+						if (s.SensesToGetAllQuotes is not null) {
+							if (s.SensesToGetAllQuotes.Count != 0) {
+
+								foreach (int sID in s.SensesToGetAllQuotes) {
+								xConsole.WriteLine("Going to get all quotes for these sensesNum {0}", sID);
+								}
+
+							}
+
+						}
+						// @TODO call QS for this senseNum with all quotes
+						// may be able to call the normal QS function
+						if (s.AllQuotesFlag) {
+							xConsole.WriteLine("Going to get all quotes for this senseNum {0}", s.SenseNum);
+						}
+						if (s.QuotesToGet.Count != 0) {
+							foreach (var q in s.QuotesToGet) {
+								xConsole.WriteLine("Implement getting quote #{0} for sense #{1}", q, s.SenseNum);
+								int id = (int) s.SenseNum;
+								string senseID = query.Senses[id - 1].SenseID;
+								query = getAllQuotesforSense(query, client, senseID);
+								// @TODO implement special filter for only the asked for quotes
+
+							}
+						}
+
+						// @TODO work with all options
+						xConsole.WriteLine($"Advanced QS not yet implemented...");
+						Console.ReadLine();
 					}
 				}
 				query = filterQuotesAndSenses(query);
@@ -102,10 +136,19 @@ namespace oed
 				SavedQueries.RenderXML(query);
 				SavedQueries.RenderTextFile(query);
 
-		}
+            static CurrentQuery getAllQuotesforSense(CurrentQuery query, HttpClient client, string senseID)
+            {
+                Trace.WriteLine("Calling GetQuotesAndSenses() method - but passing a Sense ID and using the Sense\\{ID} end point and not word.");
+                string queryURL = "sense/" + senseID + "?include_quotations=true";
+                queryURL = coreQueryFeatures(query, queryURL);
+                query = makeQSRequest(query, client, queryURL);
+                return query;
+            }
+        }
 
 		private static CurrentQuery filterQuotesAndSenses(CurrentQuery query)
 		{
+			// @!TODO: filter based on query.SenseQuoteObjects.
 			// @TODO: Add filtering to filter out SQID 
 			if (query.IncludeObsolete.HasValue && query.IncludeObsolete.Value)
 			{
@@ -785,7 +828,9 @@ namespace oed
 		{
 			GetQuotesAndSenses(query, client);
 			return;
-		}
+		} 
+
+
 
 		Action<object> callWordsAPI = (Object obj) =>
         {

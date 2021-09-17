@@ -170,8 +170,8 @@ namespace oed
             } // end foreach qs in qsStrings
             return;
         } // end ParseMultiQS
-        public static void ParseSingleQS(string qsString)
-        {
+            public static void ParseSingleQS(string qsString, ref CurrentQuery currentQuery)
+            {
             Console.WriteLine(qsString);
             if (qsString.Contains("s") && qsString.Contains("q"))
             {
@@ -181,40 +181,30 @@ namespace oed
                         break;
                     if (c == 'q')
                     {
-                        Console.WriteLine("Invalid format!");
-                        Console.WriteLine("q found before s!");
+                        xConsole.WriteLine("Invalid format!");
+                        xConsole.WriteLine("q found before s!");
                         return;
                     }
                 }
-                Console.WriteLine("Valid format!");
                 string[] splitArgs = qsString.Split('q');
-                Console.WriteLine("Sense arg:");
-                Console.WriteLine(splitArgs[0]);
-                Console.WriteLine("Quote arg:");
-                Console.WriteLine(splitArgs[1]);
                 // Process sense arg
                 string senseArg = splitArgs[0].Trim().Remove(0, 1);
                 string quoteArg = splitArgs[1].Trim();
-                Console.WriteLine("Quote arg:");
                 List<int> sensesToGet = Program.ParseNumbers(senseArg);
                 List<int> quotesToGet = Program.ParseNumbers(quoteArg);
                 Console.WriteLine("Here are the senses To get:");
-                foreach (int i in sensesToGet)
+                if (sensesToGet.Count == 1)
                 {
-                    Console.WriteLine(i);
+                    currentQuery.SenseQuoteObjects.Add(new SenseQSSelection(senseNum: sensesToGet[0],quotesToGet: quotesToGet));
+                } else {
+                    foreach (int sense in sensesToGet) {
+                        currentQuery.SenseQuoteObjects.Add(new SenseQSSelection(senseNum: sense,quotesToGet: quotesToGet));
+                    }
                 }
-                Console.ReadLine();
-                Console.WriteLine("Here are the quotes to get:");
-                foreach (int i in quotesToGet)
-                {
-                    Console.WriteLine(i);
-                }
-                Console.ReadLine();
                 } // end if qsString.Contains("s") && qsString.Contains("q")
-                Console.WriteLine("No q or s command entered.");
                 // No need to return a crazy object? 
                 // Use like the normal Senses command.
-        }
+            } // end ParseSingleQS
     } // end class Program
 
 } // end namespace qs_parsing

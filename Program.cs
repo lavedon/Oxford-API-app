@@ -876,28 +876,34 @@ namespace oed
                             xConsole.WriteLine("QS from a specific definition");
                             query.QSFromDefinitions = true;
                             query.QSFromSenses = true;
-                        } else if (trimedQS.Contains("s") && !trimedQS.Contains("d"))
+                        } else if (trimedQS.Contains("s") && !trimedQS.Contains("d") && !trimedQS.Contains("q"))
                         {
                             query.QSFromSenses = true;
                             query.QSFromDefinitions = false;
                             xConsole.WriteLine("QS from a specific sense.");
-                        } else if (!trimedQS.Contains("d") && trimedQS.Contains("s") && trimedQS.Contains("q")) {
-                            Trace.WriteLine("QS for a quote from a specific sense.");
+                        } else if (!trimedQS.Contains("d") && (trimedQS.Contains("q") && trimedQS.Contains("s")))
+                                                {
                             query.QSFromDefinitions = false;
                             query.QSFromSenses = false;
                             query.QSFromSpecificQuotesInSense = true;
+                            query.QueryMode = Modes.QuotesAndSenses;
+                            if (trimedQS.Count(x => (x == 's')) > 1)
+                            {
+                                QsParser.ParseMultiQS(trimedQS, ref query);
+                            } else 
+                            {
+                                QsParser.ParseSingleQS(trimedQS, ref query);
+                            }
                             // else if - qs is complex query - s with specified quotes or double s query
-                        } else if ((trimedQS.Contains("q") && trimedQS.Contains("s")) || trimedQS.Count(x => (x == 's')) > 1) {
-                            // call complex qs query parser
-                            QsParser.ParseMultiQS(trimedQS, ref query);
-                        }
                             // 
-                        else {
+                        }
+                        else 
+                        {
                             query.QSFromDefinitions = true;
                         }
                         if (query.QSFromSpecificQuotesInSense)
                         {
-                            query = getQSSpecificQuote(query, _quotesAndSenses);
+                            API.APICalls(query);
                         } else {
                         string cleanSelection = Regex.Replace(_quotesAndSenses, "[A-Za-z]", ""); 
                         List<int> result = ParseNumbers(cleanSelection);
@@ -949,6 +955,7 @@ namespace oed
         }
         private static CurrentQuery getQSSpecificQuote(CurrentQuery query, string _quotesAndSenses)
         {
+            // What is the purpose of this!?
             return null;
         }
 
