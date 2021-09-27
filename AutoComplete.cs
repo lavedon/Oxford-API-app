@@ -15,7 +15,7 @@ namespace oed
             Console.Write(new string(' ', Console.WindowWidth));
             Console.SetCursorPosition(0, currentLine);
         }
-        private static void HandleTabInput(StringBuilder builder, IEnumerable<string> data)
+        public static void HandleTabInput(StringBuilder builder, IEnumerable<string> data)
         {
             var currentInput = builder.ToString();
             var match = data.FirstOrDefault(item => item != currentInput && item.StartsWith(currentInput, true, CultureInfo.InvariantCulture));
@@ -44,7 +44,7 @@ namespace oed
             builder.Append(match);
         }
 
-        private static void HandleKeyInput(StringBuilder builder, IEnumerable<string> data, ConsoleKeyInfo input)
+        public static void HandleKeyInput(StringBuilder builder, IEnumerable<string> data, ConsoleKeyInfo input)
         {
             var currentInput = builder.ToString();
             if (input.Key == ConsoleKey.Backspace && currentInput.Length > 0)

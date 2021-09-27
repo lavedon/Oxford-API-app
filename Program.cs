@@ -8,6 +8,7 @@ using System.CommandLine.Invocation;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Text;
 
 namespace oed
 {
@@ -322,11 +323,38 @@ namespace oed
             }
 
         bool interactiveMode = true;
+
         while (interactiveMode)
         {
             qsExists = false;
             xConsole.WriteLine("q to exit.");
             Console.Write(">");
+            var builder = new StringBuilder();
+            var keyPress = Console.ReadKey(intercept: true);
+            // Auto-complete while loop
+            /*
+
+            */
+            while (keyPress.Key != ConsoleKey.Enter)
+            {
+                if (keyPress.Key == ConsoleKey.Tab)
+                {
+                    AutoComplete.HandleTabInput(builder, CompletionData.Data);
+                }
+                else
+                {
+                    AutoComplete.HandleKeyInput(builder, CompletionData.Data, keyPress);
+                }
+
+                keyPress = Console.ReadKey(intercept:true);
+            }
+            Console.Write(keyPress.KeyChar);
+
+
+
+
+
+
             string? input = Console.ReadLine();
             if (string.IsNullOrWhiteSpace(input))
             {

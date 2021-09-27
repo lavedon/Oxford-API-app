@@ -8,7 +8,7 @@ namespace oed
 {
     public static class CompletionData
     {
-     static string[] data = new[]
+     public static string[] Data = new[]
             {
 "el Abenaki",
 "el Afrikaans",
