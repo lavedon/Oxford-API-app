@@ -13,38 +13,77 @@ namespace oed
             var currentLine = Console.CursorTop;
             Console.SetCursorPosition(0, Console.CursorTop);
             Console.Write(new string(' ', Console.WindowWidth));
-            Console.SetCursorPosition(0, currentLine);
+            Console.Write('>');
+            Console.SetCursorPosition(1, currentLine);
         }
-        public static void HandleTabInput(StringBuilder builder, IEnumerable<string> data)
+        public static StringBuilder HandleTabInput(StringBuilder builder)
         {
             var currentInput = builder.ToString();
-            var match = data.FirstOrDefault(item => item != currentInput && item.StartsWith(currentInput, true, CultureInfo.InvariantCulture));
-            if (data.Contains(currentInput.Trim()))
+            if (string.IsNullOrWhiteSpace(currentInput))
             {
-                var nextMatch = data.SkipWhile(item => item != currentInput).Skip(1).FirstOrDefault();
+                return builder;
+            }
+            // @TODO: trim the input string to only auto-complete relevant sections
+            string match;
+            if (currentInput.Contains("el "))
+            {
+                return parseCompletion(ref builder, currentInput, out match, token: "el", CompletionData.ELanguageData);
+            } else if (currentInput.Contains("ps ")) 
+            {
+                return parseCompletion(ref builder, currentInput, out match, token: "ps", CompletionData.PartsOfSpeech);
+            }
+            return builder;
+
+        } // end contains El
+
+        private static StringBuilder parseCompletion(ref StringBuilder builder, string currentInput, out string match, 
+            string token, string[] completionList)
+        {
+            string relevantInput = currentInput.Substring(currentInput.IndexOf(token) + 3);
+            if (string.IsNullOrWhiteSpace(relevantInput))
+            {
+                match = completionList.FirstOrDefault();
+                builder = displayMatch(builder, match, token);
+                return builder;
+            }
+            else if (completionList.Contains(relevantInput.Trim()))
+            {
+                var nextMatch = completionList.SkipWhile(item => item != relevantInput).Skip(1).FirstOrDefault();
                 if (string.IsNullOrWhiteSpace(nextMatch))
                 {
-                    nextMatch = data.FirstOrDefault();
+                    nextMatch = completionList.FirstOrDefault();
+                    builder = displayMatch(builder, nextMatch, token);
+                    match = nextMatch;
+                    return builder;
+
                 }
-                ClearCurrentLine();
-                builder.Clear();
-                Console.Write(nextMatch);
-                builder.Append(nextMatch);
+                builder = displayMatch(builder, nextMatch, token);
+                match = nextMatch;
+                return builder;
             }
-            if (string.IsNullOrEmpty(match))
+            else
             {
-                return;
+                match = completionList.FirstOrDefault(item => item != relevantInput && item.StartsWith(relevantInput, true, CultureInfo.InvariantCulture));
+                builder = displayMatch(builder, match, token);
+                return builder;
             }
-            // if currentInput equals a match, then move to the next match
-
-            ClearCurrentLine();
-            builder.Clear();
-
-            Console.Write(match);
-            builder.Append(match);
         }
 
-        public static void HandleKeyInput(StringBuilder builder, IEnumerable<string> data, ConsoleKeyInfo input)
+        public static StringBuilder displayMatch(StringBuilder builder, string match, string token)
+        {
+            // TODO fix backspace
+            // @TODO fix next match
+            ClearCurrentLine();
+            token = token + " ";
+            string cleanedInput = builder.ToString().Substring(0, builder.ToString().IndexOf(token) + 3);
+            builder.Clear();
+            Console.Write(cleanedInput + match);
+            builder.Append(cleanedInput + match);
+            return builder;
+
+        }
+
+        public static StringBuilder HandleKeyInput(StringBuilder builder, ConsoleKeyInfo input)
         {
             var currentInput = builder.ToString();
             if (input.Key == ConsoleKey.Backspace && currentInput.Length > 0)
@@ -54,12 +93,14 @@ namespace oed
 
                 currentInput = currentInput.Remove(currentInput.Length - 1);
                 Console.Write(currentInput);
+                return builder;
             }
             else
             {
                 var key = input.KeyChar;
                 builder.Append(key);
                 Console.Write(key);
+                return builder;
             }
         }
 

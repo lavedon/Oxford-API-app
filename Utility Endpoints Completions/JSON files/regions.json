@@ -1,0 +1,530 @@
+{
+  "meta": {
+    "total": 43,
+    "count": 43,
+    "offset": 0,
+    "limit": 1000,
+    "provider": "Oxford University Press",
+    "cite": "Oxford English Dictionary API, Oxford University Press, 0.0.0.0/oed/api/v0.2/regions/?offset=0&limit=1000 . Accessed 28 September 2021"
+  },
+  "links": {
+    "self": "/oed/api/v0.2/regions/?offset=0&limit=1000",
+    "prev": null,
+    "next": null,
+    "first": "/oed/api/v0.2/regions/?offset=0&limit=1000",
+    "last": "/oed/api/v0.2/regions/?offset=0&limit=1000"
+  },
+  "data": [
+    {
+      "path": [
+        "Australasia",
+        "New Zealand"
+      ],
+      "type": "region",
+      "value": "New Zealand",
+      "parent": "Australasia",
+      "breadcrumb": "Australasia » New Zealand",
+      "description": "Senses regional to New Zealand"
+    },
+    {
+      "path": [
+        "Britain and Ireland"
+      ],
+      "type": "region",
+      "value": "Britain and Ireland",
+      "parent": null,
+      "breadcrumb": "Britain and Ireland",
+      "description": "Senses regional to Britain and Ireland"
+    },
+    {
+      "path": [
+        "Britain and Ireland",
+        "Britain"
+      ],
+      "type": "region",
+      "value": "Britain",
+      "parent": "Britain and Ireland",
+      "breadcrumb": "Britain and Ireland » Britain",
+      "description": "Senses regional to Britain"
+    },
+    {
+      "path": [
+        "Britain and Ireland",
+        "Britain",
+        "England"
+      ],
+      "type": "region",
+      "value": "England",
+      "parent": "Britain",
+      "breadcrumb": "Britain and Ireland » Britain » England",
+      "description": "Senses regional to England"
+    },
+    {
+      "path": [
+        "Africa"
+      ],
+      "type": "region",
+      "value": "Africa",
+      "parent": null,
+      "breadcrumb": "Africa",
+      "description": "Senses regional to Africa"
+    },
+    {
+      "path": [
+        "Africa",
+        "East Africa"
+      ],
+      "type": "region",
+      "value": "East Africa",
+      "parent": "Africa",
+      "breadcrumb": "Africa » East Africa",
+      "description": "Senses regional to East Africa"
+    },
+    {
+      "path": [
+        "Africa",
+        "South Africa"
+      ],
+      "type": "region",
+      "value": "South Africa",
+      "parent": "Africa",
+      "breadcrumb": "Africa » South Africa",
+      "description": "Senses regional to South Africa"
+    },
+    {
+      "path": [
+        "Africa",
+        "West Africa"
+      ],
+      "type": "region",
+      "value": "West Africa",
+      "parent": "Africa",
+      "breadcrumb": "Africa » West Africa",
+      "description": "Senses regional to West Africa"
+    },
+    {
+      "path": [
+        "Australasia"
+      ],
+      "type": "region",
+      "value": "Australasia",
+      "parent": null,
+      "breadcrumb": "Australasia",
+      "description": "Senses regional to Australasia"
+    },
+    {
+      "path": [
+        "Australasia",
+        "Australia"
+      ],
+      "type": "region",
+      "value": "Australia",
+      "parent": "Australasia",
+      "breadcrumb": "Australasia » Australia",
+      "description": "Senses regional to Australia"
+    },
+    {
+      "path": [
+        "Britain and Ireland",
+        "Britain",
+        "England",
+        "Northern England"
+      ],
+      "type": "region",
+      "value": "Northern England",
+      "parent": "England",
+      "breadcrumb": "Britain and Ireland » Britain » England » Northern England",
+      "description": "Senses regional to Northern England"
+    },
+    {
+      "path": [
+        "Britain and Ireland",
+        "Britain",
+        "England",
+        "Northern England",
+        "North-West England"
+      ],
+      "type": "region",
+      "value": "North-West England",
+      "parent": "Northern England",
+      "breadcrumb": "Britain and Ireland » Britain » England » Northern England » North-West England",
+      "description": "Senses regional to North-West England"
+    },
+    {
+      "path": [
+        "Britain and Ireland",
+        "Britain",
+        "England",
+        "Northern England",
+        "North-East England"
+      ],
+      "type": "region",
+      "value": "North-East England",
+      "parent": "Northern England",
+      "breadcrumb": "Britain and Ireland » Britain » England » Northern England » North-East England",
+      "description": "Senses regional to North-East England"
+    },
+    {
+      "path": [
+        "Britain and Ireland",
+        "Britain",
+        "England",
+        "Northern England",
+        "Yorkshire"
+      ],
+      "type": "region",
+      "value": "Yorkshire",
+      "parent": "Northern England",
+      "breadcrumb": "Britain and Ireland » Britain » England » Northern England » Yorkshire",
+      "description": "Senses regional to Yorkshire"
+    },
+    {
+      "path": [
+        "Britain and Ireland",
+        "Britain",
+        "England",
+        "Southern England"
+      ],
+      "type": "region",
+      "value": "Southern England",
+      "parent": "England",
+      "breadcrumb": "Britain and Ireland » Britain » England » Southern England",
+      "description": "Senses regional to Southern England"
+    },
+    {
+      "path": [
+        "Britain and Ireland",
+        "Britain",
+        "England",
+        "Southern England",
+        "South-East England"
+      ],
+      "type": "region",
+      "value": "South-East England",
+      "parent": "Southern England",
+      "breadcrumb": "Britain and Ireland » Britain » England » Southern England » South-East England",
+      "description": "Senses regional to South-East England"
+    },
+    {
+      "path": [
+        "Britain and Ireland",
+        "Britain",
+        "England",
+        "Southern England",
+        "South-West England"
+      ],
+      "type": "region",
+      "value": "South-West England",
+      "parent": "Southern England",
+      "breadcrumb": "Britain and Ireland » Britain » England » Southern England » South-West England",
+      "description": "Senses regional to South-West England"
+    },
+    {
+      "path": [
+        "Britain and Ireland",
+        "Britain",
+        "England",
+        "Southern England",
+        "London"
+      ],
+      "type": "region",
+      "value": "London",
+      "parent": "Southern England",
+      "breadcrumb": "Britain and Ireland » Britain » England » Southern England » London",
+      "description": "Senses regional to London"
+    },
+    {
+      "path": [
+        "Britain and Ireland",
+        "Britain",
+        "England",
+        "Eastern England"
+      ],
+      "type": "region",
+      "value": "Eastern England",
+      "parent": "England",
+      "breadcrumb": "Britain and Ireland » Britain » England » Eastern England",
+      "description": "Senses regional to Eastern England"
+    },
+    {
+      "path": [
+        "Britain and Ireland",
+        "Britain",
+        "England",
+        "English Midlands"
+      ],
+      "type": "region",
+      "value": "English Midlands",
+      "parent": "England",
+      "breadcrumb": "Britain and Ireland » Britain » England » English Midlands",
+      "description": "Senses regional to English Midlands"
+    },
+    {
+      "path": [
+        "Britain and Ireland",
+        "Britain",
+        "Scotland"
+      ],
+      "type": "region",
+      "value": "Scotland",
+      "parent": "Britain",
+      "breadcrumb": "Britain and Ireland » Britain » Scotland",
+      "description": "Senses regional to Scotland"
+    },
+    {
+      "path": [
+        "Britain and Ireland",
+        "Britain",
+        "Scotland",
+        "Northern Scotland"
+      ],
+      "type": "region",
+      "value": "Northern Scotland",
+      "parent": "Scotland",
+      "breadcrumb": "Britain and Ireland » Britain » Scotland » Northern Scotland",
+      "description": "Senses regional to Northern Scotland"
+    },
+    {
+      "path": [
+        "Britain and Ireland",
+        "Britain",
+        "Scotland",
+        "Southern Scotland"
+      ],
+      "type": "region",
+      "value": "Southern Scotland",
+      "parent": "Scotland",
+      "breadcrumb": "Britain and Ireland » Britain » Scotland » Southern Scotland",
+      "description": "Senses regional to Southern Scotland"
+    },
+    {
+      "path": [
+        "Britain and Ireland",
+        "Britain",
+        "Scotland",
+        "Shetland"
+      ],
+      "type": "region",
+      "value": "Shetland",
+      "parent": "Scotland",
+      "breadcrumb": "Britain and Ireland » Britain » Scotland » Shetland",
+      "description": "Senses regional to Shetland"
+    },
+    {
+      "path": [
+        "Britain and Ireland",
+        "Britain",
+        "Scotland",
+        "Orkney"
+      ],
+      "type": "region",
+      "value": "Orkney",
+      "parent": "Scotland",
+      "breadcrumb": "Britain and Ireland » Britain » Scotland » Orkney",
+      "description": "Senses regional to Orkney"
+    },
+    {
+      "path": [
+        "Britain and Ireland",
+        "Britain",
+        "Wales"
+      ],
+      "type": "region",
+      "value": "Wales",
+      "parent": "Britain",
+      "breadcrumb": "Britain and Ireland » Britain » Wales",
+      "description": "Senses regional to Wales"
+    },
+    {
+      "path": [
+        "Britain and Ireland",
+        "Britain",
+        "Isle of Man"
+      ],
+      "type": "region",
+      "value": "Isle of Man",
+      "parent": "Britain",
+      "breadcrumb": "Britain and Ireland » Britain » Isle of Man",
+      "description": "Senses regional to Isle of Man"
+    },
+    {
+      "path": [
+        "Britain and Ireland",
+        "Ireland"
+      ],
+      "type": "region",
+      "value": "Ireland",
+      "parent": "Britain and Ireland",
+      "breadcrumb": "Britain and Ireland » Ireland",
+      "description": "Senses regional to Ireland"
+    },
+    {
+      "path": [
+        "Britain and Ireland",
+        "Ireland",
+        "Northern Ireland"
+      ],
+      "type": "region",
+      "value": "Northern Ireland",
+      "parent": "Ireland",
+      "breadcrumb": "Britain and Ireland » Ireland » Northern Ireland",
+      "description": "Senses regional to Northern Ireland"
+    },
+    {
+      "path": [
+        "Caribbean"
+      ],
+      "type": "region",
+      "value": "Caribbean",
+      "parent": null,
+      "breadcrumb": "Caribbean",
+      "description": "Senses regional to Caribbean"
+    },
+    {
+      "path": [
+        "Caribbean",
+        "Jamaica"
+      ],
+      "type": "region",
+      "value": "Jamaica",
+      "parent": "Caribbean",
+      "breadcrumb": "Caribbean » Jamaica",
+      "description": "Senses regional to Jamaica"
+    },
+    {
+      "path": [
+        "India"
+      ],
+      "type": "region",
+      "value": "India",
+      "parent": null,
+      "breadcrumb": "India",
+      "description": "Senses regional to India"
+    },
+    {
+      "path": [
+        "North America"
+      ],
+      "type": "region",
+      "value": "North America",
+      "parent": null,
+      "breadcrumb": "North America",
+      "description": "Senses regional to North America"
+    },
+    {
+      "path": [
+        "North America",
+        "United States"
+      ],
+      "type": "region",
+      "value": "United States",
+      "parent": "North America",
+      "breadcrumb": "North America » United States",
+      "description": "Senses regional to United States"
+    },
+    {
+      "path": [
+        "North America",
+        "United States",
+        "Northern United States"
+      ],
+      "type": "region",
+      "value": "Northern United States",
+      "parent": "United States",
+      "breadcrumb": "North America » United States » Northern United States",
+      "description": "Senses regional to Northern United States"
+    },
+    {
+      "path": [
+        "North America",
+        "United States",
+        "Southern United States"
+      ],
+      "type": "region",
+      "value": "Southern United States",
+      "parent": "United States",
+      "breadcrumb": "North America » United States » Southern United States",
+      "description": "Senses regional to Southern United States"
+    },
+    {
+      "path": [
+        "North America",
+        "United States",
+        "Eastern United States"
+      ],
+      "type": "region",
+      "value": "Eastern United States",
+      "parent": "United States",
+      "breadcrumb": "North America » United States » Eastern United States",
+      "description": "Senses regional to Eastern United States"
+    },
+    {
+      "path": [
+        "North America",
+        "United States",
+        "Western United States"
+      ],
+      "type": "region",
+      "value": "Western United States",
+      "parent": "United States",
+      "breadcrumb": "North America » United States » Western United States",
+      "description": "Senses regional to Western United States"
+    },
+    {
+      "path": [
+        "North America",
+        "United States",
+        "United States Midland"
+      ],
+      "type": "region",
+      "value": "United States Midland",
+      "parent": "United States",
+      "breadcrumb": "North America » United States » United States Midland",
+      "description": "Senses regional to United States Midland"
+    },
+    {
+      "path": [
+        "North America",
+        "United States",
+        "African-American"
+      ],
+      "type": "region",
+      "value": "African-American",
+      "parent": "United States",
+      "breadcrumb": "North America » United States » African-American",
+      "description": "Senses regional to African-American"
+    },
+    {
+      "path": [
+        "North America",
+        "Canada"
+      ],
+      "type": "region",
+      "value": "Canada",
+      "parent": "North America",
+      "breadcrumb": "North America » Canada",
+      "description": "Senses regional to Canada"
+    },
+    {
+      "path": [
+        "North America",
+        "Hawaii"
+      ],
+      "type": "region",
+      "value": "Hawaii",
+      "parent": "North America",
+      "breadcrumb": "North America » Hawaii",
+      "description": "Senses regional to Hawaii"
+    },
+    {
+      "path": [
+        "South-East Asia"
+      ],
+      "type": "region",
+      "value": "South-East Asia",
+      "parent": null,
+      "breadcrumb": "South-East Asia",
+      "description": "Senses regional to South-East Asia"
+    }
+  ]
+}

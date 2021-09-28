@@ -323,39 +323,32 @@ namespace oed
             }
 
         bool interactiveMode = true;
+        var builder = new StringBuilder();
 
         while (interactiveMode)
         {
             qsExists = false;
             xConsole.WriteLine("q to exit.");
             Console.Write(">");
-            var builder = new StringBuilder();
             var keyPress = Console.ReadKey(intercept: true);
             // Auto-complete while loop
-            /*
 
-            */
             while (keyPress.Key != ConsoleKey.Enter)
             {
                 if (keyPress.Key == ConsoleKey.Tab)
                 {
-                    AutoComplete.HandleTabInput(builder, CompletionData.Data);
+                    builder = AutoComplete.HandleTabInput(builder);
                 }
                 else
                 {
-                    AutoComplete.HandleKeyInput(builder, CompletionData.Data, keyPress);
+                    builder = AutoComplete.HandleKeyInput(builder, keyPress);
                 }
 
                 keyPress = Console.ReadKey(intercept:true);
             }
             Console.Write(keyPress.KeyChar);
-
-
-
-
-
-
-            string? input = Console.ReadLine();
+            // string? input = Console.ReadLine();
+            string input = builder.ToString();
             if (string.IsNullOrWhiteSpace(input))
             {
                 xConsole.WriteLine("No arguments entered");
@@ -367,13 +360,19 @@ namespace oed
             }
             else if (input == "clr") {
                 Console.Clear();
+                builder.Clear();
                 xConsole.LinesWritten = 0;
                 xConsole.PageBreak = Console.WindowHeight - 2;
                 continue;
             }
             else if (input == "cf") {
                 deleteExportFile();
+                builder.Clear();
                 continue;
+            }
+            if (keyPress.Key == ConsoleKey.Enter)
+            {
+                builder.Clear();
             }
             qsExists = rootCommand.Parse(input).CommandResult.FindResultFor(quotesAndSenses) is { };
             if (qsExists)

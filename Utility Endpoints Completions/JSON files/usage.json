@@ -1,0 +1,204 @@
+{
+  "meta": {
+    "total": 18,
+    "count": 18,
+    "offset": 0,
+    "limit": 1000,
+    "provider": "Oxford University Press",
+    "cite": "Oxford English Dictionary API, Oxford University Press, 0.0.0.0/oed/api/v0.2/usage/?offset=0&limit=1000 . Accessed 28 September 2021"
+  },
+  "links": {
+    "self": "/oed/api/v0.2/usage/?offset=0&limit=1000",
+    "prev": null,
+    "next": null,
+    "first": "/oed/api/v0.2/usage/?offset=0&limit=1000",
+    "last": "/oed/api/v0.2/usage/?offset=0&limit=1000"
+  },
+  "data": [
+    {
+      "path": [
+        "archaic"
+      ],
+      "type": "usage",
+      "value": "archaic",
+      "parent": null,
+      "breadcrumb": "archaic",
+      "description": "Senses with the register \"archaic\""
+    },
+    {
+      "path": [
+        "allusive"
+      ],
+      "type": "usage",
+      "value": "allusive",
+      "parent": null,
+      "breadcrumb": "allusive",
+      "description": "Senses with the register \"allusive\""
+    },
+    {
+      "path": [
+        "colloquial and slang"
+      ],
+      "type": "usage",
+      "value": "colloquial and slang",
+      "parent": null,
+      "breadcrumb": "colloquial and slang",
+      "description": "Senses with the register \"colloquial and slang\""
+    },
+    {
+      "path": [
+        "colloquial and slang",
+        "coarse slang"
+      ],
+      "type": "usage",
+      "value": "coarse slang",
+      "parent": "colloquial and slang",
+      "breadcrumb": "colloquial and slang » coarse slang",
+      "description": "Senses with the register \"coarse slang\""
+    },
+    {
+      "path": [
+        "colloquial and slang",
+        "cant"
+      ],
+      "type": "usage",
+      "value": "cant",
+      "parent": "colloquial and slang",
+      "breadcrumb": "colloquial and slang » cant",
+      "description": "Senses with the register \"cant\""
+    },
+    {
+      "path": [
+        "colloquial and slang",
+        "rhyming slang"
+      ],
+      "type": "usage",
+      "value": "rhyming slang",
+      "parent": "colloquial and slang",
+      "breadcrumb": "colloquial and slang » rhyming slang",
+      "description": "Senses with the register \"rhyming slang\""
+    },
+    {
+      "path": [
+        "colloquial and slang",
+        "school slang"
+      ],
+      "type": "usage",
+      "value": "school slang",
+      "parent": "colloquial and slang",
+      "breadcrumb": "colloquial and slang » school slang",
+      "description": "Senses with the register \"school slang\""
+    },
+    {
+      "path": [
+        "colloquial and slang",
+        "university slang"
+      ],
+      "type": "usage",
+      "value": "university slang",
+      "parent": "colloquial and slang",
+      "breadcrumb": "colloquial and slang » university slang",
+      "description": "Senses with the register \"university slang\""
+    },
+    {
+      "path": [
+        "derogatory"
+      ],
+      "type": "usage",
+      "value": "derogatory",
+      "parent": null,
+      "breadcrumb": "derogatory",
+      "description": "Senses with the register \"derogatory\""
+    },
+    {
+      "path": [
+        "disused"
+      ],
+      "type": "usage",
+      "value": "disused",
+      "parent": null,
+      "breadcrumb": "disused",
+      "description": "Senses with the register \"disused\""
+    },
+    {
+      "path": [
+        "euphemistic"
+      ],
+      "type": "usage",
+      "value": "euphemistic",
+      "parent": null,
+      "breadcrumb": "euphemistic",
+      "description": "Senses with the register \"euphemistic\""
+    },
+    {
+      "path": [
+        "historical"
+      ],
+      "type": "usage",
+      "value": "historical",
+      "parent": null,
+      "breadcrumb": "historical",
+      "description": "Senses with the register \"historical\""
+    },
+    {
+      "path": [
+        "humorous"
+      ],
+      "type": "usage",
+      "value": "humorous",
+      "parent": null,
+      "breadcrumb": "humorous",
+      "description": "Senses with the register \"humorous\""
+    },
+    {
+      "path": [
+        "ironic"
+      ],
+      "type": "usage",
+      "value": "ironic",
+      "parent": null,
+      "breadcrumb": "ironic",
+      "description": "Senses with the register \"ironic\""
+    },
+    {
+      "path": [
+        "irregular"
+      ],
+      "type": "usage",
+      "value": "irregular",
+      "parent": null,
+      "breadcrumb": "irregular",
+      "description": "Senses with the register \"irregular\""
+    },
+    {
+      "path": [
+        "poetic and literary"
+      ],
+      "type": "usage",
+      "value": "poetic and literary",
+      "parent": null,
+      "breadcrumb": "poetic and literary",
+      "description": "Senses with the register \"poetic and literary\""
+    },
+    {
+      "path": [
+        "rare"
+      ],
+      "type": "usage",
+      "value": "rare",
+      "parent": null,
+      "breadcrumb": "rare",
+      "description": "Senses with the register \"rare\""
+    },
+    {
+      "path": [
+        "regional"
+      ],
+      "type": "usage",
+      "value": "regional",
+      "parent": null,
+      "breadcrumb": "regional",
+      "description": "Senses with the register \"regional\""
+    }
+  ]
+}

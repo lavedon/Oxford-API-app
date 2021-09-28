@@ -1,0 +1,199 @@
+{
+  "meta": {
+    "total": 18,
+    "count": 18,
+    "offset": 0,
+    "limit": 1000,
+    "provider": "Oxford University Press",
+    "cite": "Oxford English Dictionary API, Oxford University Press, 0.0.0.0/oed/api/v0.2/etymology_types/?offset=0&limit=1000 . Accessed 28 September 2021"
+  },
+  "links": {
+    "self": "/oed/api/v0.2/etymology_types/?offset=0&limit=1000",
+    "prev": null,
+    "next": null,
+    "first": "/oed/api/v0.2/etymology_types/?offset=0&limit=1000",
+    "last": "/oed/api/v0.2/etymology_types/?offset=0&limit=1000"
+  },
+  "data": [
+    {
+      "path": [
+        "compound"
+      ],
+      "type": "etymology_type",
+      "value": "compound",
+      "parent": null,
+      "breadcrumb": "compound",
+      "description": "formed within English, by compounding"
+    },
+    {
+      "path": [
+        "derivative"
+      ],
+      "type": "etymology_type",
+      "value": "derivative",
+      "parent": null,
+      "breadcrumb": "derivative",
+      "description": "formed within English, by derivation"
+    },
+    {
+      "path": [
+        "conversion"
+      ],
+      "type": "etymology_type",
+      "value": "conversion",
+      "parent": null,
+      "breadcrumb": "conversion",
+      "description": "formed within English, by conversion"
+    },
+    {
+      "path": [
+        "blend"
+      ],
+      "type": "etymology_type",
+      "value": "blend",
+      "parent": null,
+      "breadcrumb": "blend",
+      "description": "formed within English, by blending"
+    },
+    {
+      "path": [
+        "shortening"
+      ],
+      "type": "etymology_type",
+      "value": "shortening",
+      "parent": null,
+      "breadcrumb": "shortening",
+      "description": "formed within English, by clipping or shortening"
+    },
+    {
+      "path": [
+        "backformation"
+      ],
+      "type": "etymology_type",
+      "value": "backformation",
+      "parent": null,
+      "breadcrumb": "backformation",
+      "description": "formed within English, by back-formation"
+    },
+    {
+      "path": [
+        "initialism"
+      ],
+      "type": "etymology_type",
+      "value": "initialism",
+      "parent": null,
+      "breadcrumb": "initialism",
+      "description": "formed within English, as an initialism"
+    },
+    {
+      "path": [
+        "acronym"
+      ],
+      "type": "etymology_type",
+      "value": "acronym",
+      "parent": null,
+      "breadcrumb": "acronym",
+      "description": "formed within English, as an acronym"
+    },
+    {
+      "path": [
+        "variant"
+      ],
+      "type": "etymology_type",
+      "value": "variant",
+      "parent": null,
+      "breadcrumb": "variant",
+      "description": "a variant or alteration of another lexical item"
+    },
+    {
+      "path": [
+        "arbitrary"
+      ],
+      "type": "etymology_type",
+      "value": "arbitrary",
+      "parent": null,
+      "breadcrumb": "arbitrary",
+      "description": "an arbitrary formation"
+    },
+    {
+      "path": [
+        "imitative"
+      ],
+      "type": "etymology_type",
+      "value": "imitative",
+      "parent": null,
+      "breadcrumb": "imitative",
+      "description": "an imitative or expressive formation"
+    },
+    {
+      "path": [
+        "borrowing"
+      ],
+      "type": "etymology_type",
+      "value": "borrowing",
+      "parent": null,
+      "breadcrumb": "borrowing",
+      "description": "a borrowing from another language"
+    },
+    {
+      "path": [
+        "borrowingHybrid"
+      ],
+      "type": "etymology_type",
+      "value": "borrowingHybrid",
+      "parent": null,
+      "breadcrumb": "borrowingHybrid",
+      "description": "a borrowing from another language, combined with an English element"
+    },
+    {
+      "path": [
+        "inherited"
+      ],
+      "type": "etymology_type",
+      "value": "inherited",
+      "parent": null,
+      "breadcrumb": "inherited",
+      "description": "a word inherited from Germanic"
+    },
+    {
+      "path": [
+        "properName"
+      ],
+      "type": "etymology_type",
+      "value": "properName",
+      "parent": null,
+      "breadcrumb": "properName",
+      "description": "from a proper name"
+    },
+    {
+      "path": [
+        "properNameHybrid"
+      ],
+      "type": "etymology_type",
+      "value": "properNameHybrid",
+      "parent": null,
+      "breadcrumb": "properNameHybrid",
+      "description": "from a proper name, combined with an English element"
+    },
+    {
+      "path": [
+        "unknown"
+      ],
+      "type": "etymology_type",
+      "value": "unknown",
+      "parent": null,
+      "breadcrumb": "unknown",
+      "description": "of unknown origin"
+    },
+    {
+      "path": [
+        "uncertain"
+      ],
+      "type": "etymology_type",
+      "value": "uncertain",
+      "parent": null,
+      "breadcrumb": "uncertain",
+      "description": "of uncertain origin"
+    }
+  ]
+}

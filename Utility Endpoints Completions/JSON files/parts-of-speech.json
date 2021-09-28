@@ -1,0 +1,349 @@
+{
+  "meta": {
+    "total": 33,
+    "count": 33,
+    "offset": 0,
+    "limit": 1000,
+    "provider": "Oxford University Press",
+    "cite": "Oxford English Dictionary API, Oxford University Press, 0.0.0.0/oed/api/v0.2/parts_of_speech/?offset=0&limit=1000 . Accessed 28 September 2021"
+  },
+  "links": {
+    "self": "/oed/api/v0.2/parts_of_speech/?offset=0&limit=1000",
+    "prev": null,
+    "next": null,
+    "first": "/oed/api/v0.2/parts_of_speech/?offset=0&limit=1000",
+    "last": "/oed/api/v0.2/parts_of_speech/?offset=0&limit=1000"
+  },
+  "data": [
+    {
+      "path": [
+        "CD"
+      ],
+      "type": "part_of_speech",
+      "value": "CD",
+      "parent": null,
+      "breadcrumb": "CD",
+      "description": "cardinal number"
+    },
+    {
+      "path": [
+        "DT"
+      ],
+      "type": "part_of_speech",
+      "value": "DT",
+      "parent": null,
+      "breadcrumb": "DT",
+      "description": "determiner"
+    },
+    {
+      "path": [
+        "EX"
+      ],
+      "type": "part_of_speech",
+      "value": "EX",
+      "parent": null,
+      "breadcrumb": "EX",
+      "description": "existential there"
+    },
+    {
+      "path": [
+        "UH"
+      ],
+      "type": "part_of_speech",
+      "value": "UH",
+      "parent": null,
+      "breadcrumb": "UH",
+      "description": "interjection"
+    },
+    {
+      "path": [
+        "NNP"
+      ],
+      "type": "part_of_speech",
+      "value": "NNP",
+      "parent": null,
+      "breadcrumb": "NNP",
+      "description": "proper noun"
+    },
+    {
+      "path": [
+        "NN"
+      ],
+      "type": "part_of_speech",
+      "value": "NN",
+      "parent": null,
+      "breadcrumb": "NN",
+      "description": "noun"
+    },
+    {
+      "path": [
+        "NNS"
+      ],
+      "type": "part_of_speech",
+      "value": "NNS",
+      "parent": null,
+      "breadcrumb": "NNS",
+      "description": "plural noun"
+    },
+    {
+      "path": [
+        "PRP"
+      ],
+      "type": "part_of_speech",
+      "value": "PRP",
+      "parent": null,
+      "breadcrumb": "PRP",
+      "description": "personal pronoun"
+    },
+    {
+      "path": [
+        "PRP$"
+      ],
+      "type": "part_of_speech",
+      "value": "PRP$",
+      "parent": null,
+      "breadcrumb": "PRP$",
+      "description": "possessive pronoun"
+    },
+    {
+      "path": [
+        "WP"
+      ],
+      "type": "part_of_speech",
+      "value": "WP",
+      "parent": null,
+      "breadcrumb": "WP",
+      "description": "wh-pronoun"
+    },
+    {
+      "path": [
+        "WP$"
+      ],
+      "type": "part_of_speech",
+      "value": "WP$",
+      "parent": null,
+      "breadcrumb": "WP$",
+      "description": "possessive wh-pronoun"
+    },
+    {
+      "path": [
+        "JJ"
+      ],
+      "type": "part_of_speech",
+      "value": "JJ",
+      "parent": null,
+      "breadcrumb": "JJ",
+      "description": "adjective"
+    },
+    {
+      "path": [
+        "JJR"
+      ],
+      "type": "part_of_speech",
+      "value": "JJR",
+      "parent": null,
+      "breadcrumb": "JJR",
+      "description": "comparative adjective"
+    },
+    {
+      "path": [
+        "JJS"
+      ],
+      "type": "part_of_speech",
+      "value": "JJS",
+      "parent": null,
+      "breadcrumb": "JJS",
+      "description": "superlative adjective"
+    },
+    {
+      "path": [
+        "MD"
+      ],
+      "type": "part_of_speech",
+      "value": "MD",
+      "parent": null,
+      "breadcrumb": "MD",
+      "description": "modal"
+    },
+    {
+      "path": [
+        "VB"
+      ],
+      "type": "part_of_speech",
+      "value": "VB",
+      "parent": null,
+      "breadcrumb": "VB",
+      "description": "verb"
+    },
+    {
+      "path": [
+        "VBD"
+      ],
+      "type": "part_of_speech",
+      "value": "VBD",
+      "parent": null,
+      "breadcrumb": "VBD",
+      "description": "verb, past tense"
+    },
+    {
+      "path": [
+        "VBG"
+      ],
+      "type": "part_of_speech",
+      "value": "VBG",
+      "parent": null,
+      "breadcrumb": "VBG",
+      "description": "verb, present participle"
+    },
+    {
+      "path": [
+        "VBN"
+      ],
+      "type": "part_of_speech",
+      "value": "VBN",
+      "parent": null,
+      "breadcrumb": "VBN",
+      "description": "verb, past participle"
+    },
+    {
+      "path": [
+        "VBZ"
+      ],
+      "type": "part_of_speech",
+      "value": "VBZ",
+      "parent": null,
+      "breadcrumb": "VBZ",
+      "description": "verb, 3rd person singular present"
+    },
+    {
+      "path": [
+        "RB"
+      ],
+      "type": "part_of_speech",
+      "value": "RB",
+      "parent": null,
+      "breadcrumb": "RB",
+      "description": "adverb"
+    },
+    {
+      "path": [
+        "RBR"
+      ],
+      "type": "part_of_speech",
+      "value": "RBR",
+      "parent": null,
+      "breadcrumb": "RBR",
+      "description": "comparative adverb"
+    },
+    {
+      "path": [
+        "RBS"
+      ],
+      "type": "part_of_speech",
+      "value": "RBS",
+      "parent": null,
+      "breadcrumb": "RBS",
+      "description": "superlative adverb"
+    },
+    {
+      "path": [
+        "WRB"
+      ],
+      "type": "part_of_speech",
+      "value": "WRB",
+      "parent": null,
+      "breadcrumb": "WRB",
+      "description": "wh-adverb"
+    },
+    {
+      "path": [
+        "IN"
+      ],
+      "type": "part_of_speech",
+      "value": "IN",
+      "parent": null,
+      "breadcrumb": "IN",
+      "description": "preposition"
+    },
+    {
+      "path": [
+        "CC"
+      ],
+      "type": "part_of_speech",
+      "value": "CC",
+      "parent": null,
+      "breadcrumb": "CC",
+      "description": "coordinating conjunction"
+    },
+    {
+      "path": [
+        "PDT"
+      ],
+      "type": "part_of_speech",
+      "value": "PDT",
+      "parent": null,
+      "breadcrumb": "PDT",
+      "description": "predeterminer"
+    },
+    {
+      "path": [
+        "WDT"
+      ],
+      "type": "part_of_speech",
+      "value": "WDT",
+      "parent": null,
+      "breadcrumb": "WDT",
+      "description": "wh-determiner"
+    },
+    {
+      "path": [
+        "FW"
+      ],
+      "type": "part_of_speech",
+      "value": "FW",
+      "parent": null,
+      "breadcrumb": "FW",
+      "description": "foreign word"
+    },
+    {
+      "path": [
+        "POS"
+      ],
+      "type": "part_of_speech",
+      "value": "POS",
+      "parent": null,
+      "breadcrumb": "POS",
+      "description": "possessive ending"
+    },
+    {
+      "path": [
+        "RP"
+      ],
+      "type": "part_of_speech",
+      "value": "RP",
+      "parent": null,
+      "breadcrumb": "RP",
+      "description": "particle"
+    },
+    {
+      "path": [
+        "SYM"
+      ],
+      "type": "part_of_speech",
+      "value": "SYM",
+      "parent": null,
+      "breadcrumb": "SYM",
+      "description": "symbol"
+    },
+    {
+      "path": [
+        "TO"
+      ],
+      "type": "part_of_speech",
+      "value": "TO",
+      "parent": null,
+      "breadcrumb": "TO",
+      "description": "infinitive to"
+    }
+  ]
+}

@@ -1,0 +1,4557 @@
+{
+  "meta": {
+    "total": 382,
+    "count": 382,
+    "offset": 0,
+    "limit": 1000,
+    "provider": "Oxford University Press",
+    "cite": "Oxford English Dictionary API, Oxford University Press, 0.0.0.0/oed/api/v0.2/topics/?offset=0&limit=1000 . Accessed 28 September 2021"
+  },
+  "links": {
+    "self": "/oed/api/v0.2/topics/?offset=0&limit=1000",
+    "prev": null,
+    "next": null,
+    "first": "/oed/api/v0.2/topics/?offset=0&limit=1000",
+    "last": "/oed/api/v0.2/topics/?offset=0&limit=1000"
+  },
+  "data": [
+    {
+      "path": [
+        "Heraldry"
+      ],
+      "type": "topic",
+      "value": "Heraldry",
+      "parent": null,
+      "breadcrumb": "Heraldry",
+      "description": "Senses belonging to the domain \"Heraldry\""
+    },
+    {
+      "path": [
+        "History"
+      ],
+      "type": "topic",
+      "value": "History",
+      "parent": null,
+      "breadcrumb": "History",
+      "description": "Senses belonging to the domain \"History\""
+    },
+    {
+      "path": [
+        "Agriculture and Horticulture"
+      ],
+      "type": "topic",
+      "value": "Agriculture and Horticulture",
+      "parent": null,
+      "breadcrumb": "Agriculture and Horticulture",
+      "description": "Senses belonging to the domain \"Agriculture and Horticulture\""
+    },
+    {
+      "path": [
+        "Agriculture and Horticulture",
+        "Agriculture"
+      ],
+      "type": "topic",
+      "value": "Agriculture",
+      "parent": "Agriculture and Horticulture",
+      "breadcrumb": "Agriculture and Horticulture » Agriculture",
+      "description": "Senses belonging to the domain \"Agriculture\""
+    },
+    {
+      "path": [
+        "Agriculture and Horticulture",
+        "Agriculture",
+        "Sheep-shearing"
+      ],
+      "type": "topic",
+      "value": "Sheep-shearing",
+      "parent": "Agriculture",
+      "breadcrumb": "Agriculture and Horticulture » Agriculture » Sheep-shearing",
+      "description": "Senses belonging to the domain \"Sheep-shearing\""
+    },
+    {
+      "path": [
+        "Agriculture and Horticulture",
+        "Agriculture",
+        "Hop-growing"
+      ],
+      "type": "topic",
+      "value": "Hop-growing",
+      "parent": "Agriculture",
+      "breadcrumb": "Agriculture and Horticulture » Agriculture » Hop-growing",
+      "description": "Senses belonging to the domain \"Hop-growing\""
+    },
+    {
+      "path": [
+        "Agriculture and Horticulture",
+        "Forestry"
+      ],
+      "type": "topic",
+      "value": "Forestry",
+      "parent": "Agriculture and Horticulture",
+      "breadcrumb": "Agriculture and Horticulture » Forestry",
+      "description": "Senses belonging to the domain \"Forestry\""
+    },
+    {
+      "path": [
+        "Agriculture and Horticulture",
+        "Horticulture"
+      ],
+      "type": "topic",
+      "value": "Horticulture",
+      "parent": "Agriculture and Horticulture",
+      "breadcrumb": "Agriculture and Horticulture » Horticulture",
+      "description": "Senses belonging to the domain \"Horticulture\""
+    },
+    {
+      "path": [
+        "Agriculture and Horticulture",
+        "Bee-keeping"
+      ],
+      "type": "topic",
+      "value": "Bee-keeping",
+      "parent": "Agriculture and Horticulture",
+      "breadcrumb": "Agriculture and Horticulture » Bee-keeping",
+      "description": "Senses belonging to the domain \"Bee-keeping\""
+    },
+    {
+      "path": [
+        "Arts"
+      ],
+      "type": "topic",
+      "value": "Arts",
+      "parent": null,
+      "breadcrumb": "Arts",
+      "description": "Senses belonging to the domain \"Arts\""
+    },
+    {
+      "path": [
+        "Arts",
+        "Visual Arts"
+      ],
+      "type": "topic",
+      "value": "Visual Arts",
+      "parent": "Arts",
+      "breadcrumb": "Arts » Visual Arts",
+      "description": "Senses belonging to the domain \"Visual Arts\""
+    },
+    {
+      "path": [
+        "Arts",
+        "Visual Arts",
+        "Painting and Drawing"
+      ],
+      "type": "topic",
+      "value": "Painting and Drawing",
+      "parent": "Visual Arts",
+      "breadcrumb": "Arts » Visual Arts » Painting and Drawing",
+      "description": "Senses belonging to the domain \"Painting and Drawing\""
+    },
+    {
+      "path": [
+        "Arts",
+        "Visual Arts",
+        "Painting and Drawing",
+        "Painting"
+      ],
+      "type": "topic",
+      "value": "Painting",
+      "parent": "Painting and Drawing",
+      "breadcrumb": "Arts » Visual Arts » Painting and Drawing » Painting",
+      "description": "Senses belonging to the domain \"Painting\""
+    },
+    {
+      "path": [
+        "Arts",
+        "Visual Arts",
+        "Painting and Drawing",
+        "Drawing"
+      ],
+      "type": "topic",
+      "value": "Drawing",
+      "parent": "Painting and Drawing",
+      "breadcrumb": "Arts » Visual Arts » Painting and Drawing » Drawing",
+      "description": "Senses belonging to the domain \"Drawing\""
+    },
+    {
+      "path": [
+        "Arts",
+        "Visual Arts",
+        "Sculpture"
+      ],
+      "type": "topic",
+      "value": "Sculpture",
+      "parent": "Visual Arts",
+      "breadcrumb": "Arts » Visual Arts » Sculpture",
+      "description": "Senses belonging to the domain \"Sculpture\""
+    },
+    {
+      "path": [
+        "Arts",
+        "Visual Arts",
+        "Printmaking"
+      ],
+      "type": "topic",
+      "value": "Printmaking",
+      "parent": "Visual Arts",
+      "breadcrumb": "Arts » Visual Arts » Printmaking",
+      "description": "Senses belonging to the domain \"Printmaking\""
+    },
+    {
+      "path": [
+        "Arts",
+        "Visual Arts",
+        "Engraving and Etching"
+      ],
+      "type": "topic",
+      "value": "Engraving and Etching",
+      "parent": "Visual Arts",
+      "breadcrumb": "Arts » Visual Arts » Engraving and Etching",
+      "description": "Senses belonging to the domain \"Engraving and Etching\""
+    },
+    {
+      "path": [
+        "Arts",
+        "Literature"
+      ],
+      "type": "topic",
+      "value": "Literature",
+      "parent": "Arts",
+      "breadcrumb": "Arts » Literature",
+      "description": "Senses belonging to the domain \"Literature\""
+    },
+    {
+      "path": [
+        "Arts",
+        "Literature",
+        "Prosody"
+      ],
+      "type": "topic",
+      "value": "Prosody",
+      "parent": "Literature",
+      "breadcrumb": "Arts » Literature » Prosody",
+      "description": "Senses belonging to the domain \"Prosody\""
+    },
+    {
+      "path": [
+        "Arts",
+        "Literature",
+        "Rhetoric"
+      ],
+      "type": "topic",
+      "value": "Rhetoric",
+      "parent": "Literature",
+      "breadcrumb": "Arts » Literature » Rhetoric",
+      "description": "Senses belonging to the domain \"Rhetoric\""
+    },
+    {
+      "path": [
+        "Arts",
+        "Literature",
+        "Literary and Textual Criticism"
+      ],
+      "type": "topic",
+      "value": "Literary and Textual Criticism",
+      "parent": "Literature",
+      "breadcrumb": "Arts » Literature » Literary and Textual Criticism",
+      "description": "Senses belonging to the domain \"Literary and Textual Criticism\""
+    },
+    {
+      "path": [
+        "Arts",
+        "Literature",
+        "Science Fiction"
+      ],
+      "type": "topic",
+      "value": "Science Fiction",
+      "parent": "Literature",
+      "breadcrumb": "Arts » Literature » Science Fiction",
+      "description": "Senses belonging to the domain \"Science Fiction\""
+    },
+    {
+      "path": [
+        "Arts",
+        "Performing Arts"
+      ],
+      "type": "topic",
+      "value": "Performing Arts",
+      "parent": "Arts",
+      "breadcrumb": "Arts » Performing Arts",
+      "description": "Senses belonging to the domain \"Performing Arts\""
+    },
+    {
+      "path": [
+        "Arts",
+        "Performing Arts",
+        "Music"
+      ],
+      "type": "topic",
+      "value": "Music",
+      "parent": "Performing Arts",
+      "breadcrumb": "Arts » Performing Arts » Music",
+      "description": "Senses belonging to the domain \"Music\""
+    },
+    {
+      "path": [
+        "Arts",
+        "Performing Arts",
+        "Music",
+        "Popular Music"
+      ],
+      "type": "topic",
+      "value": "Popular Music",
+      "parent": "Music",
+      "breadcrumb": "Arts » Performing Arts » Music » Popular Music",
+      "description": "Senses belonging to the domain \"Popular Music\""
+    },
+    {
+      "path": [
+        "Arts",
+        "Performing Arts",
+        "Music",
+        "Jazz"
+      ],
+      "type": "topic",
+      "value": "Jazz",
+      "parent": "Music",
+      "breadcrumb": "Arts » Performing Arts » Music » Jazz",
+      "description": "Senses belonging to the domain \"Jazz\""
+    },
+    {
+      "path": [
+        "Arts",
+        "Performing Arts",
+        "Music",
+        "World Music"
+      ],
+      "type": "topic",
+      "value": "World Music",
+      "parent": "Music",
+      "breadcrumb": "Arts » Performing Arts » Music » World Music",
+      "description": "Senses belonging to the domain \"World Music\""
+    },
+    {
+      "path": [
+        "Arts",
+        "Performing Arts",
+        "Music",
+        "Organ-playing"
+      ],
+      "type": "topic",
+      "value": "Organ-playing",
+      "parent": "Music",
+      "breadcrumb": "Arts » Performing Arts » Music » Organ-playing",
+      "description": "Senses belonging to the domain \"Organ-playing\""
+    },
+    {
+      "path": [
+        "Arts",
+        "Performing Arts",
+        "Music",
+        "Bell-ringing"
+      ],
+      "type": "topic",
+      "value": "Bell-ringing",
+      "parent": "Music",
+      "breadcrumb": "Arts » Performing Arts » Music » Bell-ringing",
+      "description": "Senses belonging to the domain \"Bell-ringing\""
+    },
+    {
+      "path": [
+        "Arts",
+        "Performing Arts",
+        "Theatre"
+      ],
+      "type": "topic",
+      "value": "Theatre",
+      "parent": "Performing Arts",
+      "breadcrumb": "Arts » Performing Arts » Theatre",
+      "description": "Senses belonging to the domain \"Theatre\""
+    },
+    {
+      "path": [
+        "Arts",
+        "Performing Arts",
+        "Dance"
+      ],
+      "type": "topic",
+      "value": "Dance",
+      "parent": "Performing Arts",
+      "breadcrumb": "Arts » Performing Arts » Dance",
+      "description": "Senses belonging to the domain \"Dance\""
+    },
+    {
+      "path": [
+        "Arts",
+        "Performing Arts",
+        "Ballet"
+      ],
+      "type": "topic",
+      "value": "Ballet",
+      "parent": "Performing Arts",
+      "breadcrumb": "Arts » Performing Arts » Ballet",
+      "description": "Senses belonging to the domain \"Ballet\""
+    },
+    {
+      "path": [
+        "Arts",
+        "Performing Arts",
+        "Conjuring"
+      ],
+      "type": "topic",
+      "value": "Conjuring",
+      "parent": "Performing Arts",
+      "breadcrumb": "Arts » Performing Arts » Conjuring",
+      "description": "Senses belonging to the domain \"Conjuring\""
+    },
+    {
+      "path": [
+        "Arts",
+        "Film"
+      ],
+      "type": "topic",
+      "value": "Film",
+      "parent": "Arts",
+      "breadcrumb": "Arts » Film",
+      "description": "Senses belonging to the domain \"Film\""
+    },
+    {
+      "path": [
+        "Arts",
+        "Decorative Arts"
+      ],
+      "type": "topic",
+      "value": "Decorative Arts",
+      "parent": "Arts",
+      "breadcrumb": "Arts » Decorative Arts",
+      "description": "Senses belonging to the domain \"Decorative Arts\""
+    },
+    {
+      "path": [
+        "Arts",
+        "Decorative Arts",
+        "Enamelling"
+      ],
+      "type": "topic",
+      "value": "Enamelling",
+      "parent": "Decorative Arts",
+      "breadcrumb": "Arts » Decorative Arts » Enamelling",
+      "description": "Senses belonging to the domain \"Enamelling\""
+    },
+    {
+      "path": [
+        "Arts",
+        "Decorative Arts",
+        "Gilding"
+      ],
+      "type": "topic",
+      "value": "Gilding",
+      "parent": "Decorative Arts",
+      "breadcrumb": "Arts » Decorative Arts » Gilding",
+      "description": "Senses belonging to the domain \"Gilding\""
+    },
+    {
+      "path": [
+        "Arts",
+        "Decorative Arts",
+        "Handwriting and Calligraphy"
+      ],
+      "type": "topic",
+      "value": "Handwriting and Calligraphy",
+      "parent": "Decorative Arts",
+      "breadcrumb": "Arts » Decorative Arts » Handwriting and Calligraphy",
+      "description": "Senses belonging to the domain \"Handwriting and Calligraphy\""
+    },
+    {
+      "path": [
+        "Consumables"
+      ],
+      "type": "topic",
+      "value": "Consumables",
+      "parent": null,
+      "breadcrumb": "Consumables",
+      "description": "Senses belonging to the domain \"Consumables\""
+    },
+    {
+      "path": [
+        "Consumables",
+        "Food and Cooking"
+      ],
+      "type": "topic",
+      "value": "Food and Cooking",
+      "parent": "Consumables",
+      "breadcrumb": "Consumables » Food and Cooking",
+      "description": "Senses belonging to the domain \"Food and Cooking\""
+    },
+    {
+      "path": [
+        "Consumables",
+        "Food and Cooking",
+        "Baking"
+      ],
+      "type": "topic",
+      "value": "Baking",
+      "parent": "Food and Cooking",
+      "breadcrumb": "Consumables » Food and Cooking » Baking",
+      "description": "Senses belonging to the domain \"Baking\""
+    },
+    {
+      "path": [
+        "Consumables",
+        "Food and Cooking",
+        "Cheese"
+      ],
+      "type": "topic",
+      "value": "Cheese",
+      "parent": "Food and Cooking",
+      "breadcrumb": "Consumables » Food and Cooking » Cheese",
+      "description": "Senses belonging to the domain \"Cheese\""
+    },
+    {
+      "path": [
+        "Consumables",
+        "Drink"
+      ],
+      "type": "topic",
+      "value": "Drink",
+      "parent": "Consumables",
+      "breadcrumb": "Consumables » Drink",
+      "description": "Senses belonging to the domain \"Drink\""
+    },
+    {
+      "path": [
+        "Consumables",
+        "Drink",
+        "Wine"
+      ],
+      "type": "topic",
+      "value": "Wine",
+      "parent": "Drink",
+      "breadcrumb": "Consumables » Drink » Wine",
+      "description": "Senses belonging to the domain \"Wine\""
+    },
+    {
+      "path": [
+        "Consumables",
+        "Drink",
+        "Beer"
+      ],
+      "type": "topic",
+      "value": "Beer",
+      "parent": "Drink",
+      "breadcrumb": "Consumables » Drink » Beer",
+      "description": "Senses belonging to the domain \"Beer\""
+    },
+    {
+      "path": [
+        "Consumables",
+        "Drink",
+        "Cider"
+      ],
+      "type": "topic",
+      "value": "Cider",
+      "parent": "Drink",
+      "breadcrumb": "Consumables » Drink » Cider",
+      "description": "Senses belonging to the domain \"Cider\""
+    },
+    {
+      "path": [
+        "Consumables",
+        "Drink",
+        "Distilling"
+      ],
+      "type": "topic",
+      "value": "Distilling",
+      "parent": "Drink",
+      "breadcrumb": "Consumables » Drink » Distilling",
+      "description": "Senses belonging to the domain \"Distilling\""
+    },
+    {
+      "path": [
+        "Consumables",
+        "Drink",
+        "Malting"
+      ],
+      "type": "topic",
+      "value": "Malting",
+      "parent": "Drink",
+      "breadcrumb": "Consumables » Drink » Malting",
+      "description": "Senses belonging to the domain \"Malting\""
+    },
+    {
+      "path": [
+        "Consumables",
+        "Tobacco"
+      ],
+      "type": "topic",
+      "value": "Tobacco",
+      "parent": "Consumables",
+      "breadcrumb": "Consumables » Tobacco",
+      "description": "Senses belonging to the domain \"Tobacco\""
+    },
+    {
+      "path": [
+        "Crafts and Trades"
+      ],
+      "type": "topic",
+      "value": "Crafts and Trades",
+      "parent": null,
+      "breadcrumb": "Crafts and Trades",
+      "description": "Senses belonging to the domain \"Crafts and Trades\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Woodworking"
+      ],
+      "type": "topic",
+      "value": "Woodworking",
+      "parent": "Crafts and Trades",
+      "breadcrumb": "Crafts and Trades » Woodworking",
+      "description": "Senses belonging to the domain \"Woodworking\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Textiles"
+      ],
+      "type": "topic",
+      "value": "Textiles",
+      "parent": "Crafts and Trades",
+      "breadcrumb": "Crafts and Trades » Textiles",
+      "description": "Senses belonging to the domain \"Textiles\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Textiles",
+        "Weaving"
+      ],
+      "type": "topic",
+      "value": "Weaving",
+      "parent": "Textiles",
+      "breadcrumb": "Crafts and Trades » Textiles » Weaving",
+      "description": "Senses belonging to the domain \"Weaving\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Textiles",
+        "Spinning"
+      ],
+      "type": "topic",
+      "value": "Spinning",
+      "parent": "Textiles",
+      "breadcrumb": "Crafts and Trades » Textiles » Spinning",
+      "description": "Senses belonging to the domain \"Spinning\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Textiles",
+        "Knitting"
+      ],
+      "type": "topic",
+      "value": "Knitting",
+      "parent": "Textiles",
+      "breadcrumb": "Crafts and Trades » Textiles » Knitting",
+      "description": "Senses belonging to the domain \"Knitting\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Textiles",
+        "Needlework"
+      ],
+      "type": "topic",
+      "value": "Needlework",
+      "parent": "Textiles",
+      "breadcrumb": "Crafts and Trades » Textiles » Needlework",
+      "description": "Senses belonging to the domain \"Needlework\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Textiles",
+        "Lace"
+      ],
+      "type": "topic",
+      "value": "Lace",
+      "parent": "Textiles",
+      "breadcrumb": "Crafts and Trades » Textiles » Lace",
+      "description": "Senses belonging to the domain \"Lace\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Textiles",
+        "Silk"
+      ],
+      "type": "topic",
+      "value": "Silk",
+      "parent": "Textiles",
+      "breadcrumb": "Crafts and Trades » Textiles » Silk",
+      "description": "Senses belonging to the domain \"Silk\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Textiles",
+        "Wool"
+      ],
+      "type": "topic",
+      "value": "Wool",
+      "parent": "Textiles",
+      "breadcrumb": "Crafts and Trades » Textiles » Wool",
+      "description": "Senses belonging to the domain \"Wool\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Textiles",
+        "Calico-printing"
+      ],
+      "type": "topic",
+      "value": "Calico-printing",
+      "parent": "Textiles",
+      "breadcrumb": "Crafts and Trades » Textiles » Calico-printing",
+      "description": "Senses belonging to the domain \"Calico-printing\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Printing and Typography"
+      ],
+      "type": "topic",
+      "value": "Printing and Typography",
+      "parent": "Crafts and Trades",
+      "breadcrumb": "Crafts and Trades » Printing and Typography",
+      "description": "Senses belonging to the domain \"Printing and Typography\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Bookbinding"
+      ],
+      "type": "topic",
+      "value": "Bookbinding",
+      "parent": "Crafts and Trades",
+      "breadcrumb": "Crafts and Trades » Bookbinding",
+      "description": "Senses belonging to the domain \"Bookbinding\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Clocks and Watches"
+      ],
+      "type": "topic",
+      "value": "Clocks and Watches",
+      "parent": "Crafts and Trades",
+      "breadcrumb": "Crafts and Trades » Clocks and Watches",
+      "description": "Senses belonging to the domain \"Clocks and Watches\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Coins and Banknotes"
+      ],
+      "type": "topic",
+      "value": "Coins and Banknotes",
+      "parent": "Crafts and Trades",
+      "breadcrumb": "Crafts and Trades » Coins and Banknotes",
+      "description": "Senses belonging to the domain \"Coins and Banknotes\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Postage Stamps"
+      ],
+      "type": "topic",
+      "value": "Postage Stamps",
+      "parent": "Crafts and Trades",
+      "breadcrumb": "Crafts and Trades » Postage Stamps",
+      "description": "Senses belonging to the domain \"Postage Stamps\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Leather-making"
+      ],
+      "type": "topic",
+      "value": "Leather-making",
+      "parent": "Crafts and Trades",
+      "breadcrumb": "Crafts and Trades » Leather-making",
+      "description": "Senses belonging to the domain \"Leather-making\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Costume"
+      ],
+      "type": "topic",
+      "value": "Costume",
+      "parent": "Crafts and Trades",
+      "breadcrumb": "Crafts and Trades » Costume",
+      "description": "Senses belonging to the domain \"Costume\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Costume",
+        "Tailoring"
+      ],
+      "type": "topic",
+      "value": "Tailoring",
+      "parent": "Costume",
+      "breadcrumb": "Crafts and Trades » Costume » Tailoring",
+      "description": "Senses belonging to the domain \"Tailoring\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Costume",
+        "Dressmaking"
+      ],
+      "type": "topic",
+      "value": "Dressmaking",
+      "parent": "Costume",
+      "breadcrumb": "Crafts and Trades » Costume » Dressmaking",
+      "description": "Senses belonging to the domain \"Dressmaking\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Costume",
+        "Hats"
+      ],
+      "type": "topic",
+      "value": "Hats",
+      "parent": "Costume",
+      "breadcrumb": "Crafts and Trades » Costume » Hats",
+      "description": "Senses belonging to the domain \"Hats\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Costume",
+        "Gloves"
+      ],
+      "type": "topic",
+      "value": "Gloves",
+      "parent": "Costume",
+      "breadcrumb": "Crafts and Trades » Costume » Gloves",
+      "description": "Senses belonging to the domain \"Gloves\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Costume",
+        "Shoes"
+      ],
+      "type": "topic",
+      "value": "Shoes",
+      "parent": "Costume",
+      "breadcrumb": "Crafts and Trades » Costume » Shoes",
+      "description": "Senses belonging to the domain \"Shoes\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Costume",
+        "Jewellery"
+      ],
+      "type": "topic",
+      "value": "Jewellery",
+      "parent": "Costume",
+      "breadcrumb": "Crafts and Trades » Costume » Jewellery",
+      "description": "Senses belonging to the domain \"Jewellery\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Costume",
+        "Cosmetics"
+      ],
+      "type": "topic",
+      "value": "Cosmetics",
+      "parent": "Costume",
+      "breadcrumb": "Crafts and Trades » Costume » Cosmetics",
+      "description": "Senses belonging to the domain \"Cosmetics\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Costume",
+        "Cosmetics",
+        "Perfumery"
+      ],
+      "type": "topic",
+      "value": "Perfumery",
+      "parent": "Cosmetics",
+      "breadcrumb": "Crafts and Trades » Costume » Cosmetics » Perfumery",
+      "description": "Senses belonging to the domain \"Perfumery\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Rope-making"
+      ],
+      "type": "topic",
+      "value": "Rope-making",
+      "parent": "Crafts and Trades",
+      "breadcrumb": "Crafts and Trades » Rope-making",
+      "description": "Senses belonging to the domain \"Rope-making\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Soap-making"
+      ],
+      "type": "topic",
+      "value": "Soap-making",
+      "parent": "Crafts and Trades",
+      "breadcrumb": "Crafts and Trades » Soap-making",
+      "description": "Senses belonging to the domain \"Soap-making\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Dyeing"
+      ],
+      "type": "topic",
+      "value": "Dyeing",
+      "parent": "Crafts and Trades",
+      "breadcrumb": "Crafts and Trades » Dyeing",
+      "description": "Senses belonging to the domain \"Dyeing\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Carriage-building"
+      ],
+      "type": "topic",
+      "value": "Carriage-building",
+      "parent": "Crafts and Trades",
+      "breadcrumb": "Crafts and Trades » Carriage-building",
+      "description": "Senses belonging to the domain \"Carriage-building\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Fireworks"
+      ],
+      "type": "topic",
+      "value": "Fireworks",
+      "parent": "Crafts and Trades",
+      "breadcrumb": "Crafts and Trades » Fireworks",
+      "description": "Senses belonging to the domain \"Fireworks\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Metalwork"
+      ],
+      "type": "topic",
+      "value": "Metalwork",
+      "parent": "Crafts and Trades",
+      "breadcrumb": "Crafts and Trades » Metalwork",
+      "description": "Senses belonging to the domain \"Metalwork\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Coopering"
+      ],
+      "type": "topic",
+      "value": "Coopering",
+      "parent": "Crafts and Trades",
+      "breadcrumb": "Crafts and Trades » Coopering",
+      "description": "Senses belonging to the domain \"Coopering\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Gem-cutting"
+      ],
+      "type": "topic",
+      "value": "Gem-cutting",
+      "parent": "Crafts and Trades",
+      "breadcrumb": "Crafts and Trades » Gem-cutting",
+      "description": "Senses belonging to the domain \"Gem-cutting\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Locksmithing"
+      ],
+      "type": "topic",
+      "value": "Locksmithing",
+      "parent": "Crafts and Trades",
+      "breadcrumb": "Crafts and Trades » Locksmithing",
+      "description": "Senses belonging to the domain \"Locksmithing\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Ceramics"
+      ],
+      "type": "topic",
+      "value": "Ceramics",
+      "parent": "Crafts and Trades",
+      "breadcrumb": "Crafts and Trades » Ceramics",
+      "description": "Senses belonging to the domain \"Ceramics\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Basket-making"
+      ],
+      "type": "topic",
+      "value": "Basket-making",
+      "parent": "Crafts and Trades",
+      "breadcrumb": "Crafts and Trades » Basket-making",
+      "description": "Senses belonging to the domain \"Basket-making\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Fur Trade"
+      ],
+      "type": "topic",
+      "value": "Fur Trade",
+      "parent": "Crafts and Trades",
+      "breadcrumb": "Crafts and Trades » Fur Trade",
+      "description": "Senses belonging to the domain \"Fur Trade\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Bleaching"
+      ],
+      "type": "topic",
+      "value": "Bleaching",
+      "parent": "Crafts and Trades",
+      "breadcrumb": "Crafts and Trades » Bleaching",
+      "description": "Senses belonging to the domain \"Bleaching\""
+    },
+    {
+      "path": [
+        "Crafts and Trades",
+        "Hairdressing"
+      ],
+      "type": "topic",
+      "value": "Hairdressing",
+      "parent": "Crafts and Trades",
+      "breadcrumb": "Crafts and Trades » Hairdressing",
+      "description": "Senses belonging to the domain \"Hairdressing\""
+    },
+    {
+      "path": [
+        "Drug use"
+      ],
+      "type": "topic",
+      "value": "Drug use",
+      "parent": null,
+      "breadcrumb": "Drug use",
+      "description": "Senses belonging to the domain \"Drug use\""
+    },
+    {
+      "path": [
+        "Economics and Commerce"
+      ],
+      "type": "topic",
+      "value": "Economics and Commerce",
+      "parent": null,
+      "breadcrumb": "Economics and Commerce",
+      "description": "Senses belonging to the domain \"Economics and Commerce\""
+    },
+    {
+      "path": [
+        "Economics and Commerce",
+        "Economics"
+      ],
+      "type": "topic",
+      "value": "Economics",
+      "parent": "Economics and Commerce",
+      "breadcrumb": "Economics and Commerce » Economics",
+      "description": "Senses belonging to the domain \"Economics\""
+    },
+    {
+      "path": [
+        "Economics and Commerce",
+        "Finance"
+      ],
+      "type": "topic",
+      "value": "Finance",
+      "parent": "Economics and Commerce",
+      "breadcrumb": "Economics and Commerce » Finance",
+      "description": "Senses belonging to the domain \"Finance\""
+    },
+    {
+      "path": [
+        "Economics and Commerce",
+        "Finance",
+        "Banking"
+      ],
+      "type": "topic",
+      "value": "Banking",
+      "parent": "Finance",
+      "breadcrumb": "Economics and Commerce » Finance » Banking",
+      "description": "Senses belonging to the domain \"Banking\""
+    },
+    {
+      "path": [
+        "Economics and Commerce",
+        "Finance",
+        "Stock Market"
+      ],
+      "type": "topic",
+      "value": "Stock Market",
+      "parent": "Finance",
+      "breadcrumb": "Economics and Commerce » Finance » Stock Market",
+      "description": "Senses belonging to the domain \"Stock Market\""
+    },
+    {
+      "path": [
+        "Economics and Commerce",
+        "Finance",
+        "Insurance"
+      ],
+      "type": "topic",
+      "value": "Insurance",
+      "parent": "Finance",
+      "breadcrumb": "Economics and Commerce » Finance » Insurance",
+      "description": "Senses belonging to the domain \"Insurance\""
+    },
+    {
+      "path": [
+        "Economics and Commerce",
+        "Accounting"
+      ],
+      "type": "topic",
+      "value": "Accounting",
+      "parent": "Economics and Commerce",
+      "breadcrumb": "Economics and Commerce » Accounting",
+      "description": "Senses belonging to the domain \"Accounting\""
+    },
+    {
+      "path": [
+        "Education"
+      ],
+      "type": "topic",
+      "value": "Education",
+      "parent": null,
+      "breadcrumb": "Education",
+      "description": "Senses belonging to the domain \"Education\""
+    },
+    {
+      "path": [
+        "Education",
+        "University"
+      ],
+      "type": "topic",
+      "value": "University",
+      "parent": "Education",
+      "breadcrumb": "Education » University",
+      "description": "Senses belonging to the domain \"University\""
+    },
+    {
+      "path": [
+        "Education",
+        "University",
+        "Oxford University"
+      ],
+      "type": "topic",
+      "value": "Oxford University",
+      "parent": "University",
+      "breadcrumb": "Education » University » Oxford University",
+      "description": "Senses belonging to the domain \"Oxford University\""
+    },
+    {
+      "path": [
+        "Education",
+        "University",
+        "Cambridge University"
+      ],
+      "type": "topic",
+      "value": "Cambridge University",
+      "parent": "University",
+      "breadcrumb": "Education » University » Cambridge University",
+      "description": "Senses belonging to the domain \"Cambridge University\""
+    },
+    {
+      "path": [
+        "History",
+        "Archaeology"
+      ],
+      "type": "topic",
+      "value": "Archaeology",
+      "parent": "History",
+      "breadcrumb": "History » Archaeology",
+      "description": "Senses belonging to the domain \"Archaeology\""
+    },
+    {
+      "path": [
+        "History",
+        "Palaeography"
+      ],
+      "type": "topic",
+      "value": "Palaeography",
+      "parent": "History",
+      "breadcrumb": "History » Palaeography",
+      "description": "Senses belonging to the domain \"Palaeography\""
+    },
+    {
+      "path": [
+        "History",
+        "Ancient History"
+      ],
+      "type": "topic",
+      "value": "Ancient History",
+      "parent": "History",
+      "breadcrumb": "History » Ancient History",
+      "description": "Senses belonging to the domain \"Ancient History\""
+    },
+    {
+      "path": [
+        "History",
+        "Ancient History",
+        "Classical History"
+      ],
+      "type": "topic",
+      "value": "Classical History",
+      "parent": "Ancient History",
+      "breadcrumb": "History » Ancient History » Classical History",
+      "description": "Senses belonging to the domain \"Classical History\""
+    },
+    {
+      "path": [
+        "History",
+        "Ancient History",
+        "Classical History",
+        "Roman History"
+      ],
+      "type": "topic",
+      "value": "Roman History",
+      "parent": "Classical History",
+      "breadcrumb": "History » Ancient History » Classical History » Roman History",
+      "description": "Senses belonging to the domain \"Roman History\""
+    },
+    {
+      "path": [
+        "History",
+        "Ancient History",
+        "Classical History",
+        "Ancient Greek History"
+      ],
+      "type": "topic",
+      "value": "Ancient Greek History",
+      "parent": "Classical History",
+      "breadcrumb": "History » Ancient History » Classical History » Ancient Greek History",
+      "description": "Senses belonging to the domain \"Ancient Greek History\""
+    },
+    {
+      "path": [
+        "History",
+        "Ancient History",
+        "Ancient Egyptian History"
+      ],
+      "type": "topic",
+      "value": "Ancient Egyptian History",
+      "parent": "Ancient History",
+      "breadcrumb": "History » Ancient History » Ancient Egyptian History",
+      "description": "Senses belonging to the domain \"Ancient Egyptian History\""
+    },
+    {
+      "path": [
+        "History",
+        "Medieval History"
+      ],
+      "type": "topic",
+      "value": "Medieval History",
+      "parent": "History",
+      "breadcrumb": "History » Medieval History",
+      "description": "Senses belonging to the domain \"Medieval History\""
+    },
+    {
+      "path": [
+        "Language"
+      ],
+      "type": "topic",
+      "value": "Language",
+      "parent": null,
+      "breadcrumb": "Language",
+      "description": "Senses belonging to the domain \"Language\""
+    },
+    {
+      "path": [
+        "Language",
+        "Linguistics"
+      ],
+      "type": "topic",
+      "value": "Linguistics",
+      "parent": "Language",
+      "breadcrumb": "Language » Linguistics",
+      "description": "Senses belonging to the domain \"Linguistics\""
+    },
+    {
+      "path": [
+        "Language",
+        "Linguistics",
+        "Grammar"
+      ],
+      "type": "topic",
+      "value": "Grammar",
+      "parent": "Linguistics",
+      "breadcrumb": "Language » Linguistics » Grammar",
+      "description": "Senses belonging to the domain \"Grammar\""
+    },
+    {
+      "path": [
+        "Language",
+        "Linguistics",
+        "Phonetics"
+      ],
+      "type": "topic",
+      "value": "Phonetics",
+      "parent": "Linguistics",
+      "breadcrumb": "Language » Linguistics » Phonetics",
+      "description": "Senses belonging to the domain \"Phonetics\""
+    },
+    {
+      "path": [
+        "Language",
+        "Linguistics",
+        "Philology"
+      ],
+      "type": "topic",
+      "value": "Philology",
+      "parent": "Linguistics",
+      "breadcrumb": "Language » Linguistics » Philology",
+      "description": "Senses belonging to the domain \"Philology\""
+    },
+    {
+      "path": [
+        "Language",
+        "Cryptography"
+      ],
+      "type": "topic",
+      "value": "Cryptography",
+      "parent": "Language",
+      "breadcrumb": "Language » Cryptography",
+      "description": "Senses belonging to the domain \"Cryptography\""
+    },
+    {
+      "path": [
+        "Law"
+      ],
+      "type": "topic",
+      "value": "Law",
+      "parent": null,
+      "breadcrumb": "Law",
+      "description": "Senses belonging to the domain \"Law\""
+    },
+    {
+      "path": [
+        "Law",
+        "British Law"
+      ],
+      "type": "topic",
+      "value": "British Law",
+      "parent": "Law",
+      "breadcrumb": "Law » British Law",
+      "description": "Senses belonging to the domain \"British Law\""
+    },
+    {
+      "path": [
+        "Law",
+        "British Law",
+        "English Law"
+      ],
+      "type": "topic",
+      "value": "English Law",
+      "parent": "British Law",
+      "breadcrumb": "Law » British Law » English Law",
+      "description": "Senses belonging to the domain \"English Law\""
+    },
+    {
+      "path": [
+        "Law",
+        "British Law",
+        "Scottish Law"
+      ],
+      "type": "topic",
+      "value": "Scottish Law",
+      "parent": "British Law",
+      "breadcrumb": "Law » British Law » Scottish Law",
+      "description": "Senses belonging to the domain \"Scottish Law\""
+    },
+    {
+      "path": [
+        "Law",
+        "North American Law"
+      ],
+      "type": "topic",
+      "value": "North American Law",
+      "parent": "Law",
+      "breadcrumb": "Law » North American Law",
+      "description": "Senses belonging to the domain \"North American Law\""
+    },
+    {
+      "path": [
+        "Law",
+        "North American Law",
+        "United States Law"
+      ],
+      "type": "topic",
+      "value": "United States Law",
+      "parent": "North American Law",
+      "breadcrumb": "Law » North American Law » United States Law",
+      "description": "Senses belonging to the domain \"United States Law\""
+    },
+    {
+      "path": [
+        "Law",
+        "Ecclesiastical Law"
+      ],
+      "type": "topic",
+      "value": "Ecclesiastical Law",
+      "parent": "Law",
+      "breadcrumb": "Law » Ecclesiastical Law",
+      "description": "Senses belonging to the domain \"Ecclesiastical Law\""
+    },
+    {
+      "path": [
+        "Law",
+        "Medieval Law"
+      ],
+      "type": "topic",
+      "value": "Medieval Law",
+      "parent": "Law",
+      "breadcrumb": "Law » Medieval Law",
+      "description": "Senses belonging to the domain \"Medieval Law\""
+    },
+    {
+      "path": [
+        "Law",
+        "Roman Law"
+      ],
+      "type": "topic",
+      "value": "Roman Law",
+      "parent": "Law",
+      "breadcrumb": "Law » Roman Law",
+      "description": "Senses belonging to the domain \"Roman Law\""
+    },
+    {
+      "path": [
+        "Manufacturing and Industry"
+      ],
+      "type": "topic",
+      "value": "Manufacturing and Industry",
+      "parent": null,
+      "breadcrumb": "Manufacturing and Industry",
+      "description": "Senses belonging to the domain \"Manufacturing and Industry\""
+    },
+    {
+      "path": [
+        "Manufacturing and Industry",
+        "Manufacturing"
+      ],
+      "type": "topic",
+      "value": "Manufacturing",
+      "parent": "Manufacturing and Industry",
+      "breadcrumb": "Manufacturing and Industry » Manufacturing",
+      "description": "Senses belonging to the domain \"Manufacturing\""
+    },
+    {
+      "path": [
+        "Manufacturing and Industry",
+        "Manufacturing",
+        "Metal Industry"
+      ],
+      "type": "topic",
+      "value": "Metal Industry",
+      "parent": "Manufacturing",
+      "breadcrumb": "Manufacturing and Industry » Manufacturing » Metal Industry",
+      "description": "Senses belonging to the domain \"Metal Industry\""
+    },
+    {
+      "path": [
+        "Manufacturing and Industry",
+        "Manufacturing",
+        "Papermaking"
+      ],
+      "type": "topic",
+      "value": "Papermaking",
+      "parent": "Manufacturing",
+      "breadcrumb": "Manufacturing and Industry » Manufacturing » Papermaking",
+      "description": "Senses belonging to the domain \"Papermaking\""
+    },
+    {
+      "path": [
+        "Manufacturing and Industry",
+        "Manufacturing",
+        "Glass-making"
+      ],
+      "type": "topic",
+      "value": "Glass-making",
+      "parent": "Manufacturing",
+      "breadcrumb": "Manufacturing and Industry » Manufacturing » Glass-making",
+      "description": "Senses belonging to the domain \"Glass-making\""
+    },
+    {
+      "path": [
+        "Manufacturing and Industry",
+        "Oil and Gas Industry"
+      ],
+      "type": "topic",
+      "value": "Oil and Gas Industry",
+      "parent": "Manufacturing and Industry",
+      "breadcrumb": "Manufacturing and Industry » Oil and Gas Industry",
+      "description": "Senses belonging to the domain \"Oil and Gas Industry\""
+    },
+    {
+      "path": [
+        "Manufacturing and Industry",
+        "Mining"
+      ],
+      "type": "topic",
+      "value": "Mining",
+      "parent": "Manufacturing and Industry",
+      "breadcrumb": "Manufacturing and Industry » Mining",
+      "description": "Senses belonging to the domain \"Mining\""
+    },
+    {
+      "path": [
+        "Manufacturing and Industry",
+        "Mining",
+        "Coal Mining"
+      ],
+      "type": "topic",
+      "value": "Coal Mining",
+      "parent": "Mining",
+      "breadcrumb": "Manufacturing and Industry » Mining » Coal Mining",
+      "description": "Senses belonging to the domain \"Coal Mining\""
+    },
+    {
+      "path": [
+        "Manufacturing and Industry",
+        "Mining",
+        "Gold-mining"
+      ],
+      "type": "topic",
+      "value": "Gold-mining",
+      "parent": "Mining",
+      "breadcrumb": "Manufacturing and Industry » Mining » Gold-mining",
+      "description": "Senses belonging to the domain \"Gold-mining\""
+    },
+    {
+      "path": [
+        "Manufacturing and Industry",
+        "Mining",
+        "Quarrying"
+      ],
+      "type": "topic",
+      "value": "Quarrying",
+      "parent": "Mining",
+      "breadcrumb": "Manufacturing and Industry » Mining » Quarrying",
+      "description": "Senses belonging to the domain \"Quarrying\""
+    },
+    {
+      "path": [
+        "Manufacturing and Industry",
+        "Commercial Fishing"
+      ],
+      "type": "topic",
+      "value": "Commercial Fishing",
+      "parent": "Manufacturing and Industry",
+      "breadcrumb": "Manufacturing and Industry » Commercial Fishing",
+      "description": "Senses belonging to the domain \"Commercial Fishing\""
+    },
+    {
+      "path": [
+        "Manufacturing and Industry",
+        "Commercial Fishing",
+        "Whaling"
+      ],
+      "type": "topic",
+      "value": "Whaling",
+      "parent": "Commercial Fishing",
+      "breadcrumb": "Manufacturing and Industry » Commercial Fishing » Whaling",
+      "description": "Senses belonging to the domain \"Whaling\""
+    },
+    {
+      "path": [
+        "Manufacturing and Industry",
+        "Civil Engineering"
+      ],
+      "type": "topic",
+      "value": "Civil Engineering",
+      "parent": "Manufacturing and Industry",
+      "breadcrumb": "Manufacturing and Industry » Civil Engineering",
+      "description": "Senses belonging to the domain \"Civil Engineering\""
+    },
+    {
+      "path": [
+        "Manufacturing and Industry",
+        "Building"
+      ],
+      "type": "topic",
+      "value": "Building",
+      "parent": "Manufacturing and Industry",
+      "breadcrumb": "Manufacturing and Industry » Building",
+      "description": "Senses belonging to the domain \"Building\""
+    },
+    {
+      "path": [
+        "Manufacturing and Industry",
+        "Building",
+        "Architecture"
+      ],
+      "type": "topic",
+      "value": "Architecture",
+      "parent": "Building",
+      "breadcrumb": "Manufacturing and Industry » Building » Architecture",
+      "description": "Senses belonging to the domain \"Architecture\""
+    },
+    {
+      "path": [
+        "Manufacturing and Industry",
+        "Building",
+        "Architecture",
+        "Church Architecture"
+      ],
+      "type": "topic",
+      "value": "Church Architecture",
+      "parent": "Architecture",
+      "breadcrumb": "Manufacturing and Industry » Building » Architecture » Church Architecture",
+      "description": "Senses belonging to the domain \"Church Architecture\""
+    },
+    {
+      "path": [
+        "Manufacturing and Industry",
+        "Building",
+        "Plastering"
+      ],
+      "type": "topic",
+      "value": "Plastering",
+      "parent": "Building",
+      "breadcrumb": "Manufacturing and Industry » Building » Plastering",
+      "description": "Senses belonging to the domain \"Plastering\""
+    },
+    {
+      "path": [
+        "Manufacturing and Industry",
+        "Building",
+        "Plumbing"
+      ],
+      "type": "topic",
+      "value": "Plumbing",
+      "parent": "Building",
+      "breadcrumb": "Manufacturing and Industry » Building » Plumbing",
+      "description": "Senses belonging to the domain \"Plumbing\""
+    },
+    {
+      "path": [
+        "Manufacturing and Industry",
+        "Building",
+        "Masonry"
+      ],
+      "type": "topic",
+      "value": "Masonry",
+      "parent": "Building",
+      "breadcrumb": "Manufacturing and Industry » Building » Masonry",
+      "description": "Senses belonging to the domain \"Masonry\""
+    },
+    {
+      "path": [
+        "Manufacturing and Industry",
+        "Building",
+        "Brickmaking"
+      ],
+      "type": "topic",
+      "value": "Brickmaking",
+      "parent": "Building",
+      "breadcrumb": "Manufacturing and Industry » Building » Brickmaking",
+      "description": "Senses belonging to the domain \"Brickmaking\""
+    },
+    {
+      "path": [
+        "Manufacturing and Industry",
+        "Building",
+        "Bricklaying"
+      ],
+      "type": "topic",
+      "value": "Bricklaying",
+      "parent": "Building",
+      "breadcrumb": "Manufacturing and Industry » Building » Bricklaying",
+      "description": "Senses belonging to the domain \"Bricklaying\""
+    },
+    {
+      "path": [
+        "Manufacturing and Industry",
+        "Building",
+        "Glazing"
+      ],
+      "type": "topic",
+      "value": "Glazing",
+      "parent": "Building",
+      "breadcrumb": "Manufacturing and Industry » Building » Glazing",
+      "description": "Senses belonging to the domain \"Glazing\""
+    },
+    {
+      "path": [
+        "Manufacturing and Industry",
+        "Building",
+        "Roofing"
+      ],
+      "type": "topic",
+      "value": "Roofing",
+      "parent": "Building",
+      "breadcrumb": "Manufacturing and Industry » Building » Roofing",
+      "description": "Senses belonging to the domain \"Roofing\""
+    },
+    {
+      "path": [
+        "Manufacturing and Industry",
+        "Building",
+        "Roofing",
+        "Thatching"
+      ],
+      "type": "topic",
+      "value": "Thatching",
+      "parent": "Roofing",
+      "breadcrumb": "Manufacturing and Industry » Building » Roofing » Thatching",
+      "description": "Senses belonging to the domain \"Thatching\""
+    },
+    {
+      "path": [
+        "Manufacturing and Industry",
+        "Salt-making"
+      ],
+      "type": "topic",
+      "value": "Salt-making",
+      "parent": "Manufacturing and Industry",
+      "breadcrumb": "Manufacturing and Industry » Salt-making",
+      "description": "Senses belonging to the domain \"Salt-making\""
+    },
+    {
+      "path": [
+        "Manufacturing and Industry",
+        "Sugar Industry"
+      ],
+      "type": "topic",
+      "value": "Sugar Industry",
+      "parent": "Manufacturing and Industry",
+      "breadcrumb": "Manufacturing and Industry » Sugar Industry",
+      "description": "Senses belonging to the domain \"Sugar Industry\""
+    },
+    {
+      "path": [
+        "Manufacturing and Industry",
+        "Publishing and the Book Trade"
+      ],
+      "type": "topic",
+      "value": "Publishing and the Book Trade",
+      "parent": "Manufacturing and Industry",
+      "breadcrumb": "Manufacturing and Industry » Publishing and the Book Trade",
+      "description": "Senses belonging to the domain \"Publishing and the Book Trade\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Life Sciences",
+        "Animals",
+        "Fish"
+      ],
+      "type": "topic",
+      "value": "Fish",
+      "parent": "Animals",
+      "breadcrumb": "Sciences » Life Sciences » Animals » Fish",
+      "description": "Senses belonging to the domain \"Fish\""
+    },
+    {
+      "path": [
+        "Manufacturing and Industry",
+        "Publishing and the Book Trade",
+        "Publishing"
+      ],
+      "type": "topic",
+      "value": "Publishing",
+      "parent": "Publishing and the Book Trade",
+      "breadcrumb": "Manufacturing and Industry » Publishing and the Book Trade » Publishing",
+      "description": "Senses belonging to the domain \"Publishing\""
+    },
+    {
+      "path": [
+        "Manufacturing and Industry",
+        "Publishing and the Book Trade",
+        "Journalism"
+      ],
+      "type": "topic",
+      "value": "Journalism",
+      "parent": "Publishing and the Book Trade",
+      "breadcrumb": "Manufacturing and Industry » Publishing and the Book Trade » Journalism",
+      "description": "Senses belonging to the domain \"Journalism\""
+    },
+    {
+      "path": [
+        "Manufacturing and Industry",
+        "Logging"
+      ],
+      "type": "topic",
+      "value": "Logging",
+      "parent": "Manufacturing and Industry",
+      "breadcrumb": "Manufacturing and Industry » Logging",
+      "description": "Senses belonging to the domain \"Logging\""
+    },
+    {
+      "path": [
+        "Military"
+      ],
+      "type": "topic",
+      "value": "Military",
+      "parent": null,
+      "breadcrumb": "Military",
+      "description": "Senses belonging to the domain \"Military\""
+    },
+    {
+      "path": [
+        "Military",
+        "Fortification"
+      ],
+      "type": "topic",
+      "value": "Fortification",
+      "parent": "Military",
+      "breadcrumb": "Military » Fortification",
+      "description": "Senses belonging to the domain \"Fortification\""
+    },
+    {
+      "path": [
+        "Military",
+        "Air Force"
+      ],
+      "type": "topic",
+      "value": "Air Force",
+      "parent": "Military",
+      "breadcrumb": "Military » Air Force",
+      "description": "Senses belonging to the domain \"Air Force\""
+    },
+    {
+      "path": [
+        "Military",
+        "Weaponry"
+      ],
+      "type": "topic",
+      "value": "Weaponry",
+      "parent": "Military",
+      "breadcrumb": "Military » Weaponry",
+      "description": "Senses belonging to the domain \"Weaponry\""
+    },
+    {
+      "path": [
+        "Military",
+        "Weaponry",
+        "Gunnery and Firearms"
+      ],
+      "type": "topic",
+      "value": "Gunnery and Firearms",
+      "parent": "Weaponry",
+      "breadcrumb": "Military » Weaponry » Gunnery and Firearms",
+      "description": "Senses belonging to the domain \"Gunnery and Firearms\""
+    },
+    {
+      "path": [
+        "Military",
+        "Armour"
+      ],
+      "type": "topic",
+      "value": "Armour",
+      "parent": "Military",
+      "breadcrumb": "Military » Armour",
+      "description": "Senses belonging to the domain \"Armour\""
+    },
+    {
+      "path": [
+        "Military",
+        "Espionage"
+      ],
+      "type": "topic",
+      "value": "Espionage",
+      "parent": "Military",
+      "breadcrumb": "Military » Espionage",
+      "description": "Senses belonging to the domain \"Espionage\""
+    },
+    {
+      "path": [
+        "Organizations"
+      ],
+      "type": "topic",
+      "value": "Organizations",
+      "parent": null,
+      "breadcrumb": "Organizations",
+      "description": "Senses belonging to the domain \"Organizations\""
+    },
+    {
+      "path": [
+        "Organizations",
+        "Scouting and Guiding"
+      ],
+      "type": "topic",
+      "value": "Scouting and Guiding",
+      "parent": "Organizations",
+      "breadcrumb": "Organizations » Scouting and Guiding",
+      "description": "Senses belonging to the domain \"Scouting and Guiding\""
+    },
+    {
+      "path": [
+        "Organizations",
+        "Freemasonry"
+      ],
+      "type": "topic",
+      "value": "Freemasonry",
+      "parent": "Organizations",
+      "breadcrumb": "Organizations » Freemasonry",
+      "description": "Senses belonging to the domain \"Freemasonry\""
+    },
+    {
+      "path": [
+        "Philosophy"
+      ],
+      "type": "topic",
+      "value": "Philosophy",
+      "parent": null,
+      "breadcrumb": "Philosophy",
+      "description": "Senses belonging to the domain \"Philosophy\""
+    },
+    {
+      "path": [
+        "Philosophy",
+        "Logic"
+      ],
+      "type": "topic",
+      "value": "Logic",
+      "parent": "Philosophy",
+      "breadcrumb": "Philosophy » Logic",
+      "description": "Senses belonging to the domain \"Logic\""
+    },
+    {
+      "path": [
+        "Politics"
+      ],
+      "type": "topic",
+      "value": "Politics",
+      "parent": null,
+      "breadcrumb": "Politics",
+      "description": "Senses belonging to the domain \"Politics\""
+    },
+    {
+      "path": [
+        "Politics",
+        "United States Politics"
+      ],
+      "type": "topic",
+      "value": "United States Politics",
+      "parent": "Politics",
+      "breadcrumb": "Politics » United States Politics",
+      "description": "Senses belonging to the domain \"United States Politics\""
+    },
+    {
+      "path": [
+        "Politics",
+        "British Politics"
+      ],
+      "type": "topic",
+      "value": "British Politics",
+      "parent": "Politics",
+      "breadcrumb": "Politics » British Politics",
+      "description": "Senses belonging to the domain \"British Politics\""
+    },
+    {
+      "path": [
+        "Politics",
+        "Parliament"
+      ],
+      "type": "topic",
+      "value": "Parliament",
+      "parent": "Politics",
+      "breadcrumb": "Politics » Parliament",
+      "description": "Senses belonging to the domain \"Parliament\""
+    },
+    {
+      "path": [
+        "Religion and Belief"
+      ],
+      "type": "topic",
+      "value": "Religion and Belief",
+      "parent": null,
+      "breadcrumb": "Religion and Belief",
+      "description": "Senses belonging to the domain \"Religion and Belief\""
+    },
+    {
+      "path": [
+        "Religion and Belief",
+        "Religion"
+      ],
+      "type": "topic",
+      "value": "Religion",
+      "parent": "Religion and Belief",
+      "breadcrumb": "Religion and Belief » Religion",
+      "description": "Senses belonging to the domain \"Religion\""
+    },
+    {
+      "path": [
+        "Religion and Belief",
+        "Religion",
+        "Christianity"
+      ],
+      "type": "topic",
+      "value": "Christianity",
+      "parent": "Religion",
+      "breadcrumb": "Religion and Belief » Religion » Christianity",
+      "description": "Senses belonging to the domain \"Christianity\""
+    },
+    {
+      "path": [
+        "Religion and Belief",
+        "Religion",
+        "Christianity",
+        "Liturgical"
+      ],
+      "type": "topic",
+      "value": "Liturgical",
+      "parent": "Christianity",
+      "breadcrumb": "Religion and Belief » Religion » Christianity » Liturgical",
+      "description": "Senses belonging to the domain \"Liturgical\""
+    },
+    {
+      "path": [
+        "Religion and Belief",
+        "Religion",
+        "Christianity",
+        "Ecclesiastical"
+      ],
+      "type": "topic",
+      "value": "Ecclesiastical",
+      "parent": "Christianity",
+      "breadcrumb": "Religion and Belief » Religion » Christianity » Ecclesiastical",
+      "description": "Senses belonging to the domain \"Ecclesiastical\""
+    },
+    {
+      "path": [
+        "Religion and Belief",
+        "Religion",
+        "Christianity",
+        "Anglican Church"
+      ],
+      "type": "topic",
+      "value": "Anglican Church",
+      "parent": "Christianity",
+      "breadcrumb": "Religion and Belief » Religion » Christianity » Anglican Church",
+      "description": "Senses belonging to the domain \"Anglican Church\""
+    },
+    {
+      "path": [
+        "Religion and Belief",
+        "Religion",
+        "Christianity",
+        "Scottish Church"
+      ],
+      "type": "topic",
+      "value": "Scottish Church",
+      "parent": "Christianity",
+      "breadcrumb": "Religion and Belief » Religion » Christianity » Scottish Church",
+      "description": "Senses belonging to the domain \"Scottish Church\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Physical Sciences",
+        "Physics",
+        "Magnetism"
+      ],
+      "type": "topic",
+      "value": "Magnetism",
+      "parent": "Physics",
+      "breadcrumb": "Sciences » Physical Sciences » Physics » Magnetism",
+      "description": "Senses belonging to the domain \"Magnetism\""
+    },
+    {
+      "path": [
+        "Religion and Belief",
+        "Religion",
+        "Christianity",
+        "Roman Catholic Church"
+      ],
+      "type": "topic",
+      "value": "Roman Catholic Church",
+      "parent": "Christianity",
+      "breadcrumb": "Religion and Belief » Religion » Christianity » Roman Catholic Church",
+      "description": "Senses belonging to the domain \"Roman Catholic Church\""
+    },
+    {
+      "path": [
+        "Religion and Belief",
+        "Religion",
+        "Christianity",
+        "Orthodox Church"
+      ],
+      "type": "topic",
+      "value": "Orthodox Church",
+      "parent": "Christianity",
+      "breadcrumb": "Religion and Belief » Religion » Christianity » Orthodox Church",
+      "description": "Senses belonging to the domain \"Orthodox Church\""
+    },
+    {
+      "path": [
+        "Religion and Belief",
+        "Religion",
+        "Christianity",
+        "Quakerism"
+      ],
+      "type": "topic",
+      "value": "Quakerism",
+      "parent": "Christianity",
+      "breadcrumb": "Religion and Belief » Religion » Christianity » Quakerism",
+      "description": "Senses belonging to the domain \"Quakerism\""
+    },
+    {
+      "path": [
+        "Religion and Belief",
+        "Religion",
+        "Christianity",
+        "Methodism"
+      ],
+      "type": "topic",
+      "value": "Methodism",
+      "parent": "Christianity",
+      "breadcrumb": "Religion and Belief » Religion » Christianity » Methodism",
+      "description": "Senses belonging to the domain \"Methodism\""
+    },
+    {
+      "path": [
+        "Religion and Belief",
+        "Religion",
+        "Buddhism"
+      ],
+      "type": "topic",
+      "value": "Buddhism",
+      "parent": "Religion",
+      "breadcrumb": "Religion and Belief » Religion » Buddhism",
+      "description": "Senses belonging to the domain \"Buddhism\""
+    },
+    {
+      "path": [
+        "Religion and Belief",
+        "Religion",
+        "Sikhism"
+      ],
+      "type": "topic",
+      "value": "Sikhism",
+      "parent": "Religion",
+      "breadcrumb": "Religion and Belief » Religion » Sikhism",
+      "description": "Senses belonging to the domain \"Sikhism\""
+    },
+    {
+      "path": [
+        "Religion and Belief",
+        "Religion",
+        "Jainism"
+      ],
+      "type": "topic",
+      "value": "Jainism",
+      "parent": "Religion",
+      "breadcrumb": "Religion and Belief » Religion » Jainism",
+      "description": "Senses belonging to the domain \"Jainism\""
+    },
+    {
+      "path": [
+        "Religion and Belief",
+        "Religion",
+        "Hinduism"
+      ],
+      "type": "topic",
+      "value": "Hinduism",
+      "parent": "Religion",
+      "breadcrumb": "Religion and Belief » Religion » Hinduism",
+      "description": "Senses belonging to the domain \"Hinduism\""
+    },
+    {
+      "path": [
+        "Religion and Belief",
+        "Religion",
+        "Islam"
+      ],
+      "type": "topic",
+      "value": "Islam",
+      "parent": "Religion",
+      "breadcrumb": "Religion and Belief » Religion » Islam",
+      "description": "Senses belonging to the domain \"Islam\""
+    },
+    {
+      "path": [
+        "Religion and Belief",
+        "Religion",
+        "Judaism"
+      ],
+      "type": "topic",
+      "value": "Judaism",
+      "parent": "Religion",
+      "breadcrumb": "Religion and Belief » Religion » Judaism",
+      "description": "Senses belonging to the domain \"Judaism\""
+    },
+    {
+      "path": [
+        "Religion and Belief",
+        "Religion",
+        "Shinto"
+      ],
+      "type": "topic",
+      "value": "Shinto",
+      "parent": "Religion",
+      "breadcrumb": "Religion and Belief » Religion » Shinto",
+      "description": "Senses belonging to the domain \"Shinto\""
+    },
+    {
+      "path": [
+        "Religion and Belief",
+        "Belief systems and practices"
+      ],
+      "type": "topic",
+      "value": "Belief systems and practices",
+      "parent": "Religion and Belief",
+      "breadcrumb": "Religion and Belief » Belief systems and practices",
+      "description": "Senses belonging to the domain \"Belief systems and practices\""
+    },
+    {
+      "path": [
+        "Religion and Belief",
+        "Belief systems and practices",
+        "Spiritualism"
+      ],
+      "type": "topic",
+      "value": "Spiritualism",
+      "parent": "Belief systems and practices",
+      "breadcrumb": "Religion and Belief » Belief systems and practices » Spiritualism",
+      "description": "Senses belonging to the domain \"Spiritualism\""
+    },
+    {
+      "path": [
+        "Religion and Belief",
+        "Belief systems and practices",
+        "Yoga"
+      ],
+      "type": "topic",
+      "value": "Yoga",
+      "parent": "Belief systems and practices",
+      "breadcrumb": "Religion and Belief » Belief systems and practices » Yoga",
+      "description": "Senses belonging to the domain \"Yoga\""
+    },
+    {
+      "path": [
+        "Religion and Belief",
+        "Belief systems and practices",
+        "Astrology"
+      ],
+      "type": "topic",
+      "value": "Astrology",
+      "parent": "Belief systems and practices",
+      "breadcrumb": "Religion and Belief » Belief systems and practices » Astrology",
+      "description": "Senses belonging to the domain \"Astrology\""
+    },
+    {
+      "path": [
+        "Religion and Belief",
+        "Belief systems and practices",
+        "Palmistry"
+      ],
+      "type": "topic",
+      "value": "Palmistry",
+      "parent": "Belief systems and practices",
+      "breadcrumb": "Religion and Belief » Belief systems and practices » Palmistry",
+      "description": "Senses belonging to the domain \"Palmistry\""
+    },
+    {
+      "path": [
+        "Religion and Belief",
+        "Belief systems and practices",
+        "Parapsychology"
+      ],
+      "type": "topic",
+      "value": "Parapsychology",
+      "parent": "Belief systems and practices",
+      "breadcrumb": "Religion and Belief » Belief systems and practices » Parapsychology",
+      "description": "Senses belonging to the domain \"Parapsychology\""
+    },
+    {
+      "path": [
+        "Religion and Belief",
+        "Belief systems and practices",
+        "Occult"
+      ],
+      "type": "topic",
+      "value": "Occult",
+      "parent": "Belief systems and practices",
+      "breadcrumb": "Religion and Belief » Belief systems and practices » Occult",
+      "description": "Senses belonging to the domain \"Occult\""
+    },
+    {
+      "path": [
+        "Religion and Belief",
+        "Mythology"
+      ],
+      "type": "topic",
+      "value": "Mythology",
+      "parent": "Religion and Belief",
+      "breadcrumb": "Religion and Belief » Mythology",
+      "description": "Senses belonging to the domain \"Mythology\""
+    },
+    {
+      "path": [
+        "Religion and Belief",
+        "Mythology",
+        "Classical Mythology"
+      ],
+      "type": "topic",
+      "value": "Classical Mythology",
+      "parent": "Mythology",
+      "breadcrumb": "Religion and Belief » Mythology » Classical Mythology",
+      "description": "Senses belonging to the domain \"Classical Mythology\""
+    },
+    {
+      "path": [
+        "Sciences"
+      ],
+      "type": "topic",
+      "value": "Sciences",
+      "parent": null,
+      "breadcrumb": "Sciences",
+      "description": "Senses belonging to the domain \"Sciences\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Life Sciences"
+      ],
+      "type": "topic",
+      "value": "Life Sciences",
+      "parent": "Sciences",
+      "breadcrumb": "Sciences » Life Sciences",
+      "description": "Senses belonging to the domain \"Life Sciences\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Life Sciences",
+        "Animals"
+      ],
+      "type": "topic",
+      "value": "Animals",
+      "parent": "Life Sciences",
+      "breadcrumb": "Sciences » Life Sciences » Animals",
+      "description": "Senses belonging to the domain \"Animals\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Life Sciences",
+        "Animals",
+        "Birds"
+      ],
+      "type": "topic",
+      "value": "Birds",
+      "parent": "Animals",
+      "breadcrumb": "Sciences » Life Sciences » Animals » Birds",
+      "description": "Senses belonging to the domain \"Birds\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Life Sciences",
+        "Animals",
+        "Invertebrates"
+      ],
+      "type": "topic",
+      "value": "Invertebrates",
+      "parent": "Animals",
+      "breadcrumb": "Sciences » Life Sciences » Animals » Invertebrates",
+      "description": "Senses belonging to the domain \"Invertebrates\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Life Sciences",
+        "Animals",
+        "Invertebrates",
+        "Insects"
+      ],
+      "type": "topic",
+      "value": "Insects",
+      "parent": "Invertebrates",
+      "breadcrumb": "Sciences » Life Sciences » Animals » Invertebrates » Insects",
+      "description": "Senses belonging to the domain \"Insects\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Life Sciences",
+        "Animals",
+        "Invertebrates",
+        "Shells and Shellfish"
+      ],
+      "type": "topic",
+      "value": "Shells and Shellfish",
+      "parent": "Invertebrates",
+      "breadcrumb": "Sciences » Life Sciences » Animals » Invertebrates » Shells and Shellfish",
+      "description": "Senses belonging to the domain \"Shells and Shellfish\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Life Sciences",
+        "Plants"
+      ],
+      "type": "topic",
+      "value": "Plants",
+      "parent": "Life Sciences",
+      "breadcrumb": "Sciences » Life Sciences » Plants",
+      "description": "Senses belonging to the domain \"Plants\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Life Sciences",
+        "Plants",
+        "Fungi"
+      ],
+      "type": "topic",
+      "value": "Fungi",
+      "parent": "Plants",
+      "breadcrumb": "Sciences » Life Sciences » Plants » Fungi",
+      "description": "Senses belonging to the domain \"Fungi\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Life Sciences",
+        "Plants",
+        "Plant Pathology"
+      ],
+      "type": "topic",
+      "value": "Plant Pathology",
+      "parent": "Plants",
+      "breadcrumb": "Sciences » Life Sciences » Plants » Plant Pathology",
+      "description": "Senses belonging to the domain \"Plant Pathology\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Life Sciences",
+        "Plants",
+        "Plant Physiology"
+      ],
+      "type": "topic",
+      "value": "Plant Physiology",
+      "parent": "Plants",
+      "breadcrumb": "Sciences » Life Sciences » Plants » Plant Physiology",
+      "description": "Senses belonging to the domain \"Plant Physiology\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Life Sciences",
+        "Palaeontology"
+      ],
+      "type": "topic",
+      "value": "Palaeontology",
+      "parent": "Life Sciences",
+      "breadcrumb": "Sciences » Life Sciences » Palaeontology",
+      "description": "Senses belonging to the domain \"Palaeontology\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Life Sciences",
+        "Microbiology"
+      ],
+      "type": "topic",
+      "value": "Microbiology",
+      "parent": "Life Sciences",
+      "breadcrumb": "Sciences » Life Sciences » Microbiology",
+      "description": "Senses belonging to the domain \"Microbiology\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Life Sciences",
+        "Microbiology",
+        "Bacteria"
+      ],
+      "type": "topic",
+      "value": "Bacteria",
+      "parent": "Microbiology",
+      "breadcrumb": "Sciences » Life Sciences » Microbiology » Bacteria",
+      "description": "Senses belonging to the domain \"Bacteria\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Life Sciences",
+        "Microbiology",
+        "Viruses"
+      ],
+      "type": "topic",
+      "value": "Viruses",
+      "parent": "Microbiology",
+      "breadcrumb": "Sciences » Life Sciences » Microbiology » Viruses",
+      "description": "Senses belonging to the domain \"Viruses\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Life Sciences",
+        "Ecology"
+      ],
+      "type": "topic",
+      "value": "Ecology",
+      "parent": "Life Sciences",
+      "breadcrumb": "Sciences » Life Sciences » Ecology",
+      "description": "Senses belonging to the domain \"Ecology\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Life Sciences",
+        "Genetics"
+      ],
+      "type": "topic",
+      "value": "Genetics",
+      "parent": "Life Sciences",
+      "breadcrumb": "Sciences » Life Sciences » Genetics",
+      "description": "Senses belonging to the domain \"Genetics\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Life Sciences",
+        "Cell Biology"
+      ],
+      "type": "topic",
+      "value": "Cell Biology",
+      "parent": "Life Sciences",
+      "breadcrumb": "Sciences » Life Sciences » Cell Biology",
+      "description": "Senses belonging to the domain \"Cell Biology\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Life Sciences",
+        "Taxonomy"
+      ],
+      "type": "topic",
+      "value": "Taxonomy",
+      "parent": "Life Sciences",
+      "breadcrumb": "Sciences » Life Sciences » Taxonomy",
+      "description": "Senses belonging to the domain \"Taxonomy\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Physical Sciences"
+      ],
+      "type": "topic",
+      "value": "Physical Sciences",
+      "parent": "Sciences",
+      "breadcrumb": "Sciences » Physical Sciences",
+      "description": "Senses belonging to the domain \"Physical Sciences\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Physical Sciences",
+        "Chemistry"
+      ],
+      "type": "topic",
+      "value": "Chemistry",
+      "parent": "Physical Sciences",
+      "breadcrumb": "Sciences » Physical Sciences » Chemistry",
+      "description": "Senses belonging to the domain \"Chemistry\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Physical Sciences",
+        "Chemistry",
+        "Organic Chemistry"
+      ],
+      "type": "topic",
+      "value": "Organic Chemistry",
+      "parent": "Chemistry",
+      "breadcrumb": "Sciences » Physical Sciences » Chemistry » Organic Chemistry",
+      "description": "Senses belonging to the domain \"Organic Chemistry\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Physical Sciences",
+        "Chemistry",
+        "Crystals"
+      ],
+      "type": "topic",
+      "value": "Crystals",
+      "parent": "Chemistry",
+      "breadcrumb": "Sciences » Physical Sciences » Chemistry » Crystals",
+      "description": "Senses belonging to the domain \"Crystals\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Physical Sciences",
+        "Chemistry",
+        "Metals"
+      ],
+      "type": "topic",
+      "value": "Metals",
+      "parent": "Chemistry",
+      "breadcrumb": "Sciences » Physical Sciences » Chemistry » Metals",
+      "description": "Senses belonging to the domain \"Metals\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Physical Sciences",
+        "Chemistry",
+        "Alchemy"
+      ],
+      "type": "topic",
+      "value": "Alchemy",
+      "parent": "Chemistry",
+      "breadcrumb": "Sciences » Physical Sciences » Chemistry » Alchemy",
+      "description": "Senses belonging to the domain \"Alchemy\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Physical Sciences",
+        "Physics"
+      ],
+      "type": "topic",
+      "value": "Physics",
+      "parent": "Physical Sciences",
+      "breadcrumb": "Sciences » Physical Sciences » Physics",
+      "description": "Senses belonging to the domain \"Physics\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Physical Sciences",
+        "Physics",
+        "Particle Physics"
+      ],
+      "type": "topic",
+      "value": "Particle Physics",
+      "parent": "Physics",
+      "breadcrumb": "Sciences » Physical Sciences » Physics » Particle Physics",
+      "description": "Senses belonging to the domain \"Particle Physics\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Physical Sciences",
+        "Physics",
+        "Particle Physics",
+        "Nuclear Physics"
+      ],
+      "type": "topic",
+      "value": "Nuclear Physics",
+      "parent": "Particle Physics",
+      "breadcrumb": "Sciences » Physical Sciences » Physics » Particle Physics » Nuclear Physics",
+      "description": "Senses belonging to the domain \"Nuclear Physics\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Physical Sciences",
+        "Physics",
+        "Optics"
+      ],
+      "type": "topic",
+      "value": "Optics",
+      "parent": "Physics",
+      "breadcrumb": "Sciences » Physical Sciences » Physics » Optics",
+      "description": "Senses belonging to the domain \"Optics\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Physical Sciences",
+        "Physics",
+        "Dynamics"
+      ],
+      "type": "topic",
+      "value": "Dynamics",
+      "parent": "Physics",
+      "breadcrumb": "Sciences » Physical Sciences » Physics » Dynamics",
+      "description": "Senses belonging to the domain \"Dynamics\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Physical Sciences",
+        "Physics",
+        "Spectroscopy"
+      ],
+      "type": "topic",
+      "value": "Spectroscopy",
+      "parent": "Physics",
+      "breadcrumb": "Sciences » Physical Sciences » Physics » Spectroscopy",
+      "description": "Senses belonging to the domain \"Spectroscopy\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Physical Sciences",
+        "Physics",
+        "Acoustics"
+      ],
+      "type": "topic",
+      "value": "Acoustics",
+      "parent": "Physics",
+      "breadcrumb": "Sciences » Physical Sciences » Physics » Acoustics",
+      "description": "Senses belonging to the domain \"Acoustics\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Physical Sciences",
+        "Earth Sciences"
+      ],
+      "type": "topic",
+      "value": "Earth Sciences",
+      "parent": "Physical Sciences",
+      "breadcrumb": "Sciences » Physical Sciences » Earth Sciences",
+      "description": "Senses belonging to the domain \"Earth Sciences\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Physical Sciences",
+        "Earth Sciences",
+        "Minerals"
+      ],
+      "type": "topic",
+      "value": "Minerals",
+      "parent": "Earth Sciences",
+      "breadcrumb": "Sciences » Physical Sciences » Earth Sciences » Minerals",
+      "description": "Senses belonging to the domain \"Minerals\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Physical Sciences",
+        "Earth Sciences",
+        "Geology"
+      ],
+      "type": "topic",
+      "value": "Geology",
+      "parent": "Earth Sciences",
+      "breadcrumb": "Sciences » Physical Sciences » Earth Sciences » Geology",
+      "description": "Senses belonging to the domain \"Geology\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Physical Sciences",
+        "Earth Sciences",
+        "Soil Science"
+      ],
+      "type": "topic",
+      "value": "Soil Science",
+      "parent": "Earth Sciences",
+      "breadcrumb": "Sciences » Physical Sciences » Earth Sciences » Soil Science",
+      "description": "Senses belonging to the domain \"Soil Science\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Physical Sciences",
+        "Earth Sciences",
+        "Geography"
+      ],
+      "type": "topic",
+      "value": "Geography",
+      "parent": "Earth Sciences",
+      "breadcrumb": "Sciences » Physical Sciences » Earth Sciences » Geography",
+      "description": "Senses belonging to the domain \"Geography\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Physical Sciences",
+        "Earth Sciences",
+        "Geography",
+        "Physical Geography"
+      ],
+      "type": "topic",
+      "value": "Physical Geography",
+      "parent": "Geography",
+      "breadcrumb": "Sciences » Physical Sciences » Earth Sciences » Geography » Physical Geography",
+      "description": "Senses belonging to the domain \"Physical Geography\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Physical Sciences",
+        "Earth Sciences",
+        "Geography",
+        "Oceanography"
+      ],
+      "type": "topic",
+      "value": "Oceanography",
+      "parent": "Geography",
+      "breadcrumb": "Sciences » Physical Sciences » Earth Sciences » Geography » Oceanography",
+      "description": "Senses belonging to the domain \"Oceanography\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Physical Sciences",
+        "Earth Sciences",
+        "Geography",
+        "Weather"
+      ],
+      "type": "topic",
+      "value": "Weather",
+      "parent": "Geography",
+      "breadcrumb": "Sciences » Physical Sciences » Earth Sciences » Geography » Weather",
+      "description": "Senses belonging to the domain \"Weather\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Physical Sciences",
+        "Earth Sciences",
+        "Geography",
+        "Cartography"
+      ],
+      "type": "topic",
+      "value": "Cartography",
+      "parent": "Geography",
+      "breadcrumb": "Sciences » Physical Sciences » Earth Sciences » Geography » Cartography",
+      "description": "Senses belonging to the domain \"Cartography\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Physical Sciences",
+        "Earth Sciences",
+        "Geography",
+        "Cartography",
+        "Surveying"
+      ],
+      "type": "topic",
+      "value": "Surveying",
+      "parent": "Cartography",
+      "breadcrumb": "Sciences » Physical Sciences » Earth Sciences » Geography » Cartography » Surveying",
+      "description": "Senses belonging to the domain \"Surveying\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Physical Sciences",
+        "Astronomy"
+      ],
+      "type": "topic",
+      "value": "Astronomy",
+      "parent": "Physical Sciences",
+      "breadcrumb": "Sciences » Physical Sciences » Astronomy",
+      "description": "Senses belonging to the domain \"Astronomy\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Mathematics"
+      ],
+      "type": "topic",
+      "value": "Mathematics",
+      "parent": "Sciences",
+      "breadcrumb": "Sciences » Mathematics",
+      "description": "Senses belonging to the domain \"Mathematics\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Mathematics",
+        "Geometry"
+      ],
+      "type": "topic",
+      "value": "Geometry",
+      "parent": "Mathematics",
+      "breadcrumb": "Sciences » Mathematics » Geometry",
+      "description": "Senses belonging to the domain \"Geometry\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Mathematics",
+        "Statistics"
+      ],
+      "type": "topic",
+      "value": "Statistics",
+      "parent": "Mathematics",
+      "breadcrumb": "Sciences » Mathematics » Statistics",
+      "description": "Senses belonging to the domain \"Statistics\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Medicine"
+      ],
+      "type": "topic",
+      "value": "Medicine",
+      "parent": "Sciences",
+      "breadcrumb": "Sciences » Medicine",
+      "description": "Senses belonging to the domain \"Medicine\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Medicine",
+        "Anatomy"
+      ],
+      "type": "topic",
+      "value": "Anatomy",
+      "parent": "Medicine",
+      "breadcrumb": "Sciences » Medicine » Anatomy",
+      "description": "Senses belonging to the domain \"Anatomy\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Medicine",
+        "Physiology"
+      ],
+      "type": "topic",
+      "value": "Physiology",
+      "parent": "Medicine",
+      "breadcrumb": "Sciences » Medicine » Physiology",
+      "description": "Senses belonging to the domain \"Physiology\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Medicine",
+        "Pathology"
+      ],
+      "type": "topic",
+      "value": "Pathology",
+      "parent": "Medicine",
+      "breadcrumb": "Sciences » Medicine » Pathology",
+      "description": "Senses belonging to the domain \"Pathology\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Medicine",
+        "Pharmacology"
+      ],
+      "type": "topic",
+      "value": "Pharmacology",
+      "parent": "Medicine",
+      "breadcrumb": "Sciences » Medicine » Pharmacology",
+      "description": "Senses belonging to the domain \"Pharmacology\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Medicine",
+        "Surgery"
+      ],
+      "type": "topic",
+      "value": "Surgery",
+      "parent": "Medicine",
+      "breadcrumb": "Sciences » Medicine » Surgery",
+      "description": "Senses belonging to the domain \"Surgery\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Medicine",
+        "Immunology"
+      ],
+      "type": "topic",
+      "value": "Immunology",
+      "parent": "Medicine",
+      "breadcrumb": "Sciences » Medicine » Immunology",
+      "description": "Senses belonging to the domain \"Immunology\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Medicine",
+        "Ophthalmology"
+      ],
+      "type": "topic",
+      "value": "Ophthalmology",
+      "parent": "Medicine",
+      "breadcrumb": "Sciences » Medicine » Ophthalmology",
+      "description": "Senses belonging to the domain \"Ophthalmology\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Medicine",
+        "Dentistry"
+      ],
+      "type": "topic",
+      "value": "Dentistry",
+      "parent": "Medicine",
+      "breadcrumb": "Sciences » Medicine » Dentistry",
+      "description": "Senses belonging to the domain \"Dentistry\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Medicine",
+        "Obstetrics"
+      ],
+      "type": "topic",
+      "value": "Obstetrics",
+      "parent": "Medicine",
+      "breadcrumb": "Sciences » Medicine » Obstetrics",
+      "description": "Senses belonging to the domain \"Obstetrics\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Medicine",
+        "Embryology"
+      ],
+      "type": "topic",
+      "value": "Embryology",
+      "parent": "Medicine",
+      "breadcrumb": "Sciences » Medicine » Embryology",
+      "description": "Senses belonging to the domain \"Embryology\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Medicine",
+        "Neurology"
+      ],
+      "type": "topic",
+      "value": "Neurology",
+      "parent": "Medicine",
+      "breadcrumb": "Sciences » Medicine » Neurology",
+      "description": "Senses belonging to the domain \"Neurology\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Medicine",
+        "Radiology"
+      ],
+      "type": "topic",
+      "value": "Radiology",
+      "parent": "Medicine",
+      "breadcrumb": "Sciences » Medicine » Radiology",
+      "description": "Senses belonging to the domain \"Radiology\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Medicine",
+        "Massage"
+      ],
+      "type": "topic",
+      "value": "Massage",
+      "parent": "Medicine",
+      "breadcrumb": "Sciences » Medicine » Massage",
+      "description": "Senses belonging to the domain \"Massage\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Medicine",
+        "Phrenology"
+      ],
+      "type": "topic",
+      "value": "Phrenology",
+      "parent": "Medicine",
+      "breadcrumb": "Sciences » Medicine » Phrenology",
+      "description": "Senses belonging to the domain \"Phrenology\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Medicine",
+        "Psychology"
+      ],
+      "type": "topic",
+      "value": "Psychology",
+      "parent": "Medicine",
+      "breadcrumb": "Sciences » Medicine » Psychology",
+      "description": "Senses belonging to the domain \"Psychology\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Medicine",
+        "Psychology",
+        "Psychiatry"
+      ],
+      "type": "topic",
+      "value": "Psychiatry",
+      "parent": "Psychology",
+      "breadcrumb": "Sciences » Medicine » Psychology » Psychiatry",
+      "description": "Senses belonging to the domain \"Psychiatry\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Medicine",
+        "Psychology",
+        "Psychiatry",
+        "Psychoanalysis"
+      ],
+      "type": "topic",
+      "value": "Psychoanalysis",
+      "parent": "Psychiatry",
+      "breadcrumb": "Sciences » Medicine » Psychology » Psychiatry » Psychoanalysis",
+      "description": "Senses belonging to the domain \"Psychoanalysis\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Medicine",
+        "Alternative Medicine"
+      ],
+      "type": "topic",
+      "value": "Alternative Medicine",
+      "parent": "Medicine",
+      "breadcrumb": "Sciences » Medicine » Alternative Medicine",
+      "description": "Senses belonging to the domain \"Alternative Medicine\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Medicine",
+        "Alternative Medicine",
+        "Herbalism"
+      ],
+      "type": "topic",
+      "value": "Herbalism",
+      "parent": "Alternative Medicine",
+      "breadcrumb": "Sciences » Medicine » Alternative Medicine » Herbalism",
+      "description": "Senses belonging to the domain \"Herbalism\""
+    },
+    {
+      "path": [
+        "Sciences",
+        "Veterinary Medicine"
+      ],
+      "type": "topic",
+      "value": "Veterinary Medicine",
+      "parent": "Sciences",
+      "breadcrumb": "Sciences » Veterinary Medicine",
+      "description": "Senses belonging to the domain \"Veterinary Medicine\""
+    },
+    {
+      "path": [
+        "Social Sciences"
+      ],
+      "type": "topic",
+      "value": "Social Sciences",
+      "parent": null,
+      "breadcrumb": "Social Sciences",
+      "description": "Senses belonging to the domain \"Social Sciences\""
+    },
+    {
+      "path": [
+        "Social Sciences",
+        "Sociology"
+      ],
+      "type": "topic",
+      "value": "Sociology",
+      "parent": "Social Sciences",
+      "breadcrumb": "Social Sciences » Sociology",
+      "description": "Senses belonging to the domain \"Sociology\""
+    },
+    {
+      "path": [
+        "Social Sciences",
+        "Cultural Anthropology"
+      ],
+      "type": "topic",
+      "value": "Cultural Anthropology",
+      "parent": "Social Sciences",
+      "breadcrumb": "Social Sciences » Cultural Anthropology",
+      "description": "Senses belonging to the domain \"Cultural Anthropology\""
+    },
+    {
+      "path": [
+        "Sport and Leisure"
+      ],
+      "type": "topic",
+      "value": "Sport and Leisure",
+      "parent": null,
+      "breadcrumb": "Sport and Leisure",
+      "description": "Senses belonging to the domain \"Sport and Leisure\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport"
+      ],
+      "type": "topic",
+      "value": "Sport",
+      "parent": "Sport and Leisure",
+      "breadcrumb": "Sport and Leisure » Sport",
+      "description": "Senses belonging to the domain \"Sport\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Football"
+      ],
+      "type": "topic",
+      "value": "Football",
+      "parent": "Sport",
+      "breadcrumb": "Sport and Leisure » Sport » Football",
+      "description": "Senses belonging to the domain \"Football\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Football",
+        "American Football"
+      ],
+      "type": "topic",
+      "value": "American Football",
+      "parent": "Football",
+      "breadcrumb": "Sport and Leisure » Sport » Football » American Football",
+      "description": "Senses belonging to the domain \"American Football\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Football",
+        "Rugby Football"
+      ],
+      "type": "topic",
+      "value": "Rugby Football",
+      "parent": "Football",
+      "breadcrumb": "Sport and Leisure » Sport » Football » Rugby Football",
+      "description": "Senses belonging to the domain \"Rugby Football\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Football",
+        "Association Football"
+      ],
+      "type": "topic",
+      "value": "Association Football",
+      "parent": "Football",
+      "breadcrumb": "Sport and Leisure » Sport » Football » Association Football",
+      "description": "Senses belonging to the domain \"Association Football\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Football",
+        "Australian Rules Football"
+      ],
+      "type": "topic",
+      "value": "Australian Rules Football",
+      "parent": "Football",
+      "breadcrumb": "Sport and Leisure » Sport » Football » Australian Rules Football",
+      "description": "Senses belonging to the domain \"Australian Rules Football\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Cricket"
+      ],
+      "type": "topic",
+      "value": "Cricket",
+      "parent": "Sport",
+      "breadcrumb": "Sport and Leisure » Sport » Cricket",
+      "description": "Senses belonging to the domain \"Cricket\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Baseball"
+      ],
+      "type": "topic",
+      "value": "Baseball",
+      "parent": "Sport",
+      "breadcrumb": "Sport and Leisure » Sport » Baseball",
+      "description": "Senses belonging to the domain \"Baseball\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Golf"
+      ],
+      "type": "topic",
+      "value": "Golf",
+      "parent": "Sport",
+      "breadcrumb": "Sport and Leisure » Sport » Golf",
+      "description": "Senses belonging to the domain \"Golf\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Basketball"
+      ],
+      "type": "topic",
+      "value": "Basketball",
+      "parent": "Sport",
+      "breadcrumb": "Sport and Leisure » Sport » Basketball",
+      "description": "Senses belonging to the domain \"Basketball\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Hockey"
+      ],
+      "type": "topic",
+      "value": "Hockey",
+      "parent": "Sport",
+      "breadcrumb": "Sport and Leisure » Sport » Hockey",
+      "description": "Senses belonging to the domain \"Hockey\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Racket Sports"
+      ],
+      "type": "topic",
+      "value": "Racket Sports",
+      "parent": "Sport",
+      "breadcrumb": "Sport and Leisure » Sport » Racket Sports",
+      "description": "Senses belonging to the domain \"Racket Sports\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Racket Sports",
+        "Real Tennis"
+      ],
+      "type": "topic",
+      "value": "Real Tennis",
+      "parent": "Racket Sports",
+      "breadcrumb": "Sport and Leisure » Sport » Racket Sports » Real Tennis",
+      "description": "Senses belonging to the domain \"Real Tennis\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Racket Sports",
+        "Tennis"
+      ],
+      "type": "topic",
+      "value": "Tennis",
+      "parent": "Racket Sports",
+      "breadcrumb": "Sport and Leisure » Sport » Racket Sports » Tennis",
+      "description": "Senses belonging to the domain \"Tennis\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Racket Sports",
+        "Badminton"
+      ],
+      "type": "topic",
+      "value": "Badminton",
+      "parent": "Racket Sports",
+      "breadcrumb": "Sport and Leisure » Sport » Racket Sports » Badminton",
+      "description": "Senses belonging to the domain \"Badminton\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Racket Sports",
+        "Squash"
+      ],
+      "type": "topic",
+      "value": "Squash",
+      "parent": "Racket Sports",
+      "breadcrumb": "Sport and Leisure » Sport » Racket Sports » Squash",
+      "description": "Senses belonging to the domain \"Squash\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Lacrosse"
+      ],
+      "type": "topic",
+      "value": "Lacrosse",
+      "parent": "Sport",
+      "breadcrumb": "Sport and Leisure » Sport » Lacrosse",
+      "description": "Senses belonging to the domain \"Lacrosse\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Bowls"
+      ],
+      "type": "topic",
+      "value": "Bowls",
+      "parent": "Sport",
+      "breadcrumb": "Sport and Leisure » Sport » Bowls",
+      "description": "Senses belonging to the domain \"Bowls\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Bowling"
+      ],
+      "type": "topic",
+      "value": "Bowling",
+      "parent": "Sport",
+      "breadcrumb": "Sport and Leisure » Sport » Bowling",
+      "description": "Senses belonging to the domain \"Bowling\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Athletics"
+      ],
+      "type": "topic",
+      "value": "Athletics",
+      "parent": "Sport",
+      "breadcrumb": "Sport and Leisure » Sport » Athletics",
+      "description": "Senses belonging to the domain \"Athletics\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Gymnastics"
+      ],
+      "type": "topic",
+      "value": "Gymnastics",
+      "parent": "Sport",
+      "breadcrumb": "Sport and Leisure » Sport » Gymnastics",
+      "description": "Senses belonging to the domain \"Gymnastics\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Motor Racing"
+      ],
+      "type": "topic",
+      "value": "Motor Racing",
+      "parent": "Sport",
+      "breadcrumb": "Sport and Leisure » Sport » Motor Racing",
+      "description": "Senses belonging to the domain \"Motor Racing\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Billiards, Pool, and Snooker"
+      ],
+      "type": "topic",
+      "value": "Billiards, Pool, and Snooker",
+      "parent": "Sport",
+      "breadcrumb": "Sport and Leisure » Sport » Billiards, Pool, and Snooker",
+      "description": "Senses belonging to the domain \"Billiards, Pool, and Snooker\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Winter Sports"
+      ],
+      "type": "topic",
+      "value": "Winter Sports",
+      "parent": "Sport",
+      "breadcrumb": "Sport and Leisure » Sport » Winter Sports",
+      "description": "Senses belonging to the domain \"Winter Sports\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Winter Sports",
+        "Skiing"
+      ],
+      "type": "topic",
+      "value": "Skiing",
+      "parent": "Winter Sports",
+      "breadcrumb": "Sport and Leisure » Sport » Winter Sports » Skiing",
+      "description": "Senses belonging to the domain \"Skiing\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Winter Sports",
+        "Skating"
+      ],
+      "type": "topic",
+      "value": "Skating",
+      "parent": "Winter Sports",
+      "breadcrumb": "Sport and Leisure » Sport » Winter Sports » Skating",
+      "description": "Senses belonging to the domain \"Skating\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Winter Sports",
+        "Ice Hockey"
+      ],
+      "type": "topic",
+      "value": "Ice Hockey",
+      "parent": "Winter Sports",
+      "breadcrumb": "Sport and Leisure » Sport » Winter Sports » Ice Hockey",
+      "description": "Senses belonging to the domain \"Ice Hockey\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Winter Sports",
+        "Curling"
+      ],
+      "type": "topic",
+      "value": "Curling",
+      "parent": "Winter Sports",
+      "breadcrumb": "Sport and Leisure » Sport » Winter Sports » Curling",
+      "description": "Senses belonging to the domain \"Curling\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Cycling"
+      ],
+      "type": "topic",
+      "value": "Cycling",
+      "parent": "Sport",
+      "breadcrumb": "Sport and Leisure » Sport » Cycling",
+      "description": "Senses belonging to the domain \"Cycling\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Boxing"
+      ],
+      "type": "topic",
+      "value": "Boxing",
+      "parent": "Sport",
+      "breadcrumb": "Sport and Leisure » Sport » Boxing",
+      "description": "Senses belonging to the domain \"Boxing\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Wrestling"
+      ],
+      "type": "topic",
+      "value": "Wrestling",
+      "parent": "Sport",
+      "breadcrumb": "Sport and Leisure » Sport » Wrestling",
+      "description": "Senses belonging to the domain \"Wrestling\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Martial Arts"
+      ],
+      "type": "topic",
+      "value": "Martial Arts",
+      "parent": "Sport",
+      "breadcrumb": "Sport and Leisure » Sport » Martial Arts",
+      "description": "Senses belonging to the domain \"Martial Arts\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Sumo"
+      ],
+      "type": "topic",
+      "value": "Sumo",
+      "parent": "Sport",
+      "breadcrumb": "Sport and Leisure » Sport » Sumo",
+      "description": "Senses belonging to the domain \"Sumo\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Fencing"
+      ],
+      "type": "topic",
+      "value": "Fencing",
+      "parent": "Sport",
+      "breadcrumb": "Sport and Leisure » Sport » Fencing",
+      "description": "Senses belonging to the domain \"Fencing\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Swimming"
+      ],
+      "type": "topic",
+      "value": "Swimming",
+      "parent": "Sport",
+      "breadcrumb": "Sport and Leisure » Sport » Swimming",
+      "description": "Senses belonging to the domain \"Swimming\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Swimming",
+        "Diving"
+      ],
+      "type": "topic",
+      "value": "Diving",
+      "parent": "Swimming",
+      "breadcrumb": "Sport and Leisure » Sport » Swimming » Diving",
+      "description": "Senses belonging to the domain \"Diving\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Archery"
+      ],
+      "type": "topic",
+      "value": "Archery",
+      "parent": "Sport",
+      "breadcrumb": "Sport and Leisure » Sport » Archery",
+      "description": "Senses belonging to the domain \"Archery\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Climbing"
+      ],
+      "type": "topic",
+      "value": "Climbing",
+      "parent": "Sport",
+      "breadcrumb": "Sport and Leisure » Sport » Climbing",
+      "description": "Senses belonging to the domain \"Climbing\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Caving"
+      ],
+      "type": "topic",
+      "value": "Caving",
+      "parent": "Sport",
+      "breadcrumb": "Sport and Leisure » Sport » Caving",
+      "description": "Senses belonging to the domain \"Caving\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Skateboarding"
+      ],
+      "type": "topic",
+      "value": "Skateboarding",
+      "parent": "Sport",
+      "breadcrumb": "Sport and Leisure » Sport » Skateboarding",
+      "description": "Senses belonging to the domain \"Skateboarding\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Weightlifting"
+      ],
+      "type": "topic",
+      "value": "Weightlifting",
+      "parent": "Sport",
+      "breadcrumb": "Sport and Leisure » Sport » Weightlifting",
+      "description": "Senses belonging to the domain \"Weightlifting\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Parachuting"
+      ],
+      "type": "topic",
+      "value": "Parachuting",
+      "parent": "Sport",
+      "breadcrumb": "Sport and Leisure » Sport » Parachuting",
+      "description": "Senses belonging to the domain \"Parachuting\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Water Sports"
+      ],
+      "type": "topic",
+      "value": "Water Sports",
+      "parent": "Sport",
+      "breadcrumb": "Sport and Leisure » Sport » Water Sports",
+      "description": "Senses belonging to the domain \"Water Sports\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Water Sports",
+        "Rowing"
+      ],
+      "type": "topic",
+      "value": "Rowing",
+      "parent": "Water Sports",
+      "breadcrumb": "Sport and Leisure » Sport » Water Sports » Rowing",
+      "description": "Senses belonging to the domain \"Rowing\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Water Sports",
+        "Surfing"
+      ],
+      "type": "topic",
+      "value": "Surfing",
+      "parent": "Water Sports",
+      "breadcrumb": "Sport and Leisure » Sport » Water Sports » Surfing",
+      "description": "Senses belonging to the domain \"Surfing\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Blood Sports"
+      ],
+      "type": "topic",
+      "value": "Blood Sports",
+      "parent": "Sport",
+      "breadcrumb": "Sport and Leisure » Sport » Blood Sports",
+      "description": "Senses belonging to the domain \"Blood Sports\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Blood Sports",
+        "Bullfighting"
+      ],
+      "type": "topic",
+      "value": "Bullfighting",
+      "parent": "Blood Sports",
+      "breadcrumb": "Sport and Leisure » Sport » Blood Sports » Bullfighting",
+      "description": "Senses belonging to the domain \"Bullfighting\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Sport",
+        "Blood Sports",
+        "Cockfighting"
+      ],
+      "type": "topic",
+      "value": "Cockfighting",
+      "parent": "Blood Sports",
+      "breadcrumb": "Sport and Leisure » Sport » Blood Sports » Cockfighting",
+      "description": "Senses belonging to the domain \"Cockfighting\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Horses and Riding"
+      ],
+      "type": "topic",
+      "value": "Horses and Riding",
+      "parent": "Sport and Leisure",
+      "breadcrumb": "Sport and Leisure » Horses and Riding",
+      "description": "Senses belonging to the domain \"Horses and Riding\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Horses and Riding",
+        "Horse Racing"
+      ],
+      "type": "topic",
+      "value": "Horse Racing",
+      "parent": "Horses and Riding",
+      "breadcrumb": "Sport and Leisure » Horses and Riding » Horse Racing",
+      "description": "Senses belonging to the domain \"Horse Racing\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Horses and Riding",
+        "Polo"
+      ],
+      "type": "topic",
+      "value": "Polo",
+      "parent": "Horses and Riding",
+      "breadcrumb": "Sport and Leisure » Horses and Riding » Polo",
+      "description": "Senses belonging to the domain \"Polo\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Horses and Riding",
+        "Farriery"
+      ],
+      "type": "topic",
+      "value": "Farriery",
+      "parent": "Horses and Riding",
+      "breadcrumb": "Sport and Leisure » Horses and Riding » Farriery",
+      "description": "Senses belonging to the domain \"Farriery\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Horses and Riding",
+        "Saddles and Harness"
+      ],
+      "type": "topic",
+      "value": "Saddles and Harness",
+      "parent": "Horses and Riding",
+      "breadcrumb": "Sport and Leisure » Horses and Riding » Saddles and Harness",
+      "description": "Senses belonging to the domain \"Saddles and Harness\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Hunting, Fishing, and Shooting"
+      ],
+      "type": "topic",
+      "value": "Hunting, Fishing, and Shooting",
+      "parent": "Sport and Leisure",
+      "breadcrumb": "Sport and Leisure » Hunting, Fishing, and Shooting",
+      "description": "Senses belonging to the domain \"Hunting, Fishing, and Shooting\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Hunting, Fishing, and Shooting",
+        "Angling"
+      ],
+      "type": "topic",
+      "value": "Angling",
+      "parent": "Hunting, Fishing, and Shooting",
+      "breadcrumb": "Sport and Leisure » Hunting, Fishing, and Shooting » Angling",
+      "description": "Senses belonging to the domain \"Angling\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Hunting, Fishing, and Shooting",
+        "Hunting"
+      ],
+      "type": "topic",
+      "value": "Hunting",
+      "parent": "Hunting, Fishing, and Shooting",
+      "breadcrumb": "Sport and Leisure » Hunting, Fishing, and Shooting » Hunting",
+      "description": "Senses belonging to the domain \"Hunting\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Hunting, Fishing, and Shooting",
+        "Shooting"
+      ],
+      "type": "topic",
+      "value": "Shooting",
+      "parent": "Hunting, Fishing, and Shooting",
+      "breadcrumb": "Sport and Leisure » Hunting, Fishing, and Shooting » Shooting",
+      "description": "Senses belonging to the domain \"Shooting\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Hunting, Fishing, and Shooting",
+        "Hawking and Falconry"
+      ],
+      "type": "topic",
+      "value": "Hawking and Falconry",
+      "parent": "Hunting, Fishing, and Shooting",
+      "breadcrumb": "Sport and Leisure » Hunting, Fishing, and Shooting » Hawking and Falconry",
+      "description": "Senses belonging to the domain \"Hawking and Falconry\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Games"
+      ],
+      "type": "topic",
+      "value": "Games",
+      "parent": "Sport and Leisure",
+      "breadcrumb": "Sport and Leisure » Games",
+      "description": "Senses belonging to the domain \"Games\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Games",
+        "Board Games"
+      ],
+      "type": "topic",
+      "value": "Board Games",
+      "parent": "Games",
+      "breadcrumb": "Sport and Leisure » Games » Board Games",
+      "description": "Senses belonging to the domain \"Board Games\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Games",
+        "Board Games",
+        "Chess"
+      ],
+      "type": "topic",
+      "value": "Chess",
+      "parent": "Board Games",
+      "breadcrumb": "Sport and Leisure » Games » Board Games » Chess",
+      "description": "Senses belonging to the domain \"Chess\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Games",
+        "Board Games",
+        "Backgammon"
+      ],
+      "type": "topic",
+      "value": "Backgammon",
+      "parent": "Board Games",
+      "breadcrumb": "Sport and Leisure » Games » Board Games » Backgammon",
+      "description": "Senses belonging to the domain \"Backgammon\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Games",
+        "Board Games",
+        "Draughts"
+      ],
+      "type": "topic",
+      "value": "Draughts",
+      "parent": "Board Games",
+      "breadcrumb": "Sport and Leisure » Games » Board Games » Draughts",
+      "description": "Senses belonging to the domain \"Draughts\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Games",
+        "Board Games",
+        "Mah-jong"
+      ],
+      "type": "topic",
+      "value": "Mah-jong",
+      "parent": "Board Games",
+      "breadcrumb": "Sport and Leisure » Games » Board Games » Mah-jong",
+      "description": "Senses belonging to the domain \"Mah-jong\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Games",
+        "Cards"
+      ],
+      "type": "topic",
+      "value": "Cards",
+      "parent": "Games",
+      "breadcrumb": "Sport and Leisure » Games » Cards",
+      "description": "Senses belonging to the domain \"Cards\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Games",
+        "Cards",
+        "Bridge"
+      ],
+      "type": "topic",
+      "value": "Bridge",
+      "parent": "Cards",
+      "breadcrumb": "Sport and Leisure » Games » Cards » Bridge",
+      "description": "Senses belonging to the domain \"Bridge\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Games",
+        "Cards",
+        "Whist"
+      ],
+      "type": "topic",
+      "value": "Whist",
+      "parent": "Cards",
+      "breadcrumb": "Sport and Leisure » Games » Cards » Whist",
+      "description": "Senses belonging to the domain \"Whist\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Games",
+        "Cards",
+        "Poker"
+      ],
+      "type": "topic",
+      "value": "Poker",
+      "parent": "Cards",
+      "breadcrumb": "Sport and Leisure » Games » Cards » Poker",
+      "description": "Senses belonging to the domain \"Poker\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Games",
+        "Cards",
+        "Euchre"
+      ],
+      "type": "topic",
+      "value": "Euchre",
+      "parent": "Cards",
+      "breadcrumb": "Sport and Leisure » Games » Cards » Euchre",
+      "description": "Senses belonging to the domain \"Euchre\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Games",
+        "Cards",
+        "Faro"
+      ],
+      "type": "topic",
+      "value": "Faro",
+      "parent": "Cards",
+      "breadcrumb": "Sport and Leisure » Games » Cards » Faro",
+      "description": "Senses belonging to the domain \"Faro\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Games",
+        "Cards",
+        "Cribbage"
+      ],
+      "type": "topic",
+      "value": "Cribbage",
+      "parent": "Cards",
+      "breadcrumb": "Sport and Leisure » Games » Cards » Cribbage",
+      "description": "Senses belonging to the domain \"Cribbage\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Games",
+        "Cards",
+        "Piquet"
+      ],
+      "type": "topic",
+      "value": "Piquet",
+      "parent": "Cards",
+      "breadcrumb": "Sport and Leisure » Games » Cards » Piquet",
+      "description": "Senses belonging to the domain \"Piquet\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Games",
+        "Croquet"
+      ],
+      "type": "topic",
+      "value": "Croquet",
+      "parent": "Games",
+      "breadcrumb": "Sport and Leisure » Games » Croquet",
+      "description": "Senses belonging to the domain \"Croquet\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Games",
+        "Dominoes"
+      ],
+      "type": "topic",
+      "value": "Dominoes",
+      "parent": "Games",
+      "breadcrumb": "Sport and Leisure » Games » Dominoes",
+      "description": "Senses belonging to the domain \"Dominoes\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Games",
+        "Darts"
+      ],
+      "type": "topic",
+      "value": "Darts",
+      "parent": "Games",
+      "breadcrumb": "Sport and Leisure » Games » Darts",
+      "description": "Senses belonging to the domain \"Darts\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Games",
+        "Quoits"
+      ],
+      "type": "topic",
+      "value": "Quoits",
+      "parent": "Games",
+      "breadcrumb": "Sport and Leisure » Games » Quoits",
+      "description": "Senses belonging to the domain \"Quoits\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Games",
+        "Gambling"
+      ],
+      "type": "topic",
+      "value": "Gambling",
+      "parent": "Games",
+      "breadcrumb": "Sport and Leisure » Games » Gambling",
+      "description": "Senses belonging to the domain \"Gambling\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Games",
+        "Gambling",
+        "Dice"
+      ],
+      "type": "topic",
+      "value": "Dice",
+      "parent": "Gambling",
+      "breadcrumb": "Sport and Leisure » Games » Gambling » Dice",
+      "description": "Senses belonging to the domain \"Dice\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Games",
+        "Gambling",
+        "Betting"
+      ],
+      "type": "topic",
+      "value": "Betting",
+      "parent": "Gambling",
+      "breadcrumb": "Sport and Leisure » Games » Gambling » Betting",
+      "description": "Senses belonging to the domain \"Betting\""
+    },
+    {
+      "path": [
+        "Sport and Leisure",
+        "Games",
+        "Gambling",
+        "Roulette"
+      ],
+      "type": "topic",
+      "value": "Roulette",
+      "parent": "Gambling",
+      "breadcrumb": "Sport and Leisure » Games » Gambling » Roulette",
+      "description": "Senses belonging to the domain \"Roulette\""
+    },
+    {
+      "path": [
+        "Technology"
+      ],
+      "type": "topic",
+      "value": "Technology",
+      "parent": null,
+      "breadcrumb": "Technology",
+      "description": "Senses belonging to the domain \"Technology\""
+    },
+    {
+      "path": [
+        "Technology",
+        "Electrical"
+      ],
+      "type": "topic",
+      "value": "Electrical",
+      "parent": "Technology",
+      "breadcrumb": "Technology » Electrical",
+      "description": "Senses belonging to the domain \"Electrical\""
+    },
+    {
+      "path": [
+        "Technology",
+        "Electrical",
+        "Electrical Engineering"
+      ],
+      "type": "topic",
+      "value": "Electrical Engineering",
+      "parent": "Electrical",
+      "breadcrumb": "Technology » Electrical » Electrical Engineering",
+      "description": "Senses belonging to the domain \"Electrical Engineering\""
+    },
+    {
+      "path": [
+        "Technology",
+        "Electrical",
+        "Electronics"
+      ],
+      "type": "topic",
+      "value": "Electronics",
+      "parent": "Electrical",
+      "breadcrumb": "Technology » Electrical » Electronics",
+      "description": "Senses belonging to the domain \"Electronics\""
+    },
+    {
+      "path": [
+        "Technology",
+        "Engineering"
+      ],
+      "type": "topic",
+      "value": "Engineering",
+      "parent": "Technology",
+      "breadcrumb": "Technology » Engineering",
+      "description": "Senses belonging to the domain \"Engineering\""
+    },
+    {
+      "path": [
+        "Technology",
+        "Engineering",
+        "Mechanics"
+      ],
+      "type": "topic",
+      "value": "Mechanics",
+      "parent": "Engineering",
+      "breadcrumb": "Technology » Engineering » Mechanics",
+      "description": "Senses belonging to the domain \"Mechanics\""
+    },
+    {
+      "path": [
+        "Technology",
+        "Engineering",
+        "Mechanics",
+        "Steam Engines"
+      ],
+      "type": "topic",
+      "value": "Steam Engines",
+      "parent": "Mechanics",
+      "breadcrumb": "Technology » Engineering » Mechanics » Steam Engines",
+      "description": "Senses belonging to the domain \"Steam Engines\""
+    },
+    {
+      "path": [
+        "Technology",
+        "Engineering",
+        "Hydraulics"
+      ],
+      "type": "topic",
+      "value": "Hydraulics",
+      "parent": "Engineering",
+      "breadcrumb": "Technology » Engineering » Hydraulics",
+      "description": "Senses belonging to the domain \"Hydraulics\""
+    },
+    {
+      "path": [
+        "Technology",
+        "Telecommunications"
+      ],
+      "type": "topic",
+      "value": "Telecommunications",
+      "parent": "Technology",
+      "breadcrumb": "Technology » Telecommunications",
+      "description": "Senses belonging to the domain \"Telecommunications\""
+    },
+    {
+      "path": [
+        "Technology",
+        "Telecommunications",
+        "Broadcasting"
+      ],
+      "type": "topic",
+      "value": "Broadcasting",
+      "parent": "Telecommunications",
+      "breadcrumb": "Technology » Telecommunications » Broadcasting",
+      "description": "Senses belonging to the domain \"Broadcasting\""
+    },
+    {
+      "path": [
+        "Technology",
+        "Telecommunications",
+        "Broadcasting",
+        "Television"
+      ],
+      "type": "topic",
+      "value": "Television",
+      "parent": "Broadcasting",
+      "breadcrumb": "Technology » Telecommunications » Broadcasting » Television",
+      "description": "Senses belonging to the domain \"Television\""
+    },
+    {
+      "path": [
+        "Technology",
+        "Telecommunications",
+        "Broadcasting",
+        "Radio"
+      ],
+      "type": "topic",
+      "value": "Radio",
+      "parent": "Broadcasting",
+      "breadcrumb": "Technology » Telecommunications » Broadcasting » Radio",
+      "description": "Senses belonging to the domain \"Radio\""
+    },
+    {
+      "path": [
+        "Technology",
+        "Telecommunications",
+        "Telephony"
+      ],
+      "type": "topic",
+      "value": "Telephony",
+      "parent": "Telecommunications",
+      "breadcrumb": "Technology » Telecommunications » Telephony",
+      "description": "Senses belonging to the domain \"Telephony\""
+    },
+    {
+      "path": [
+        "Technology",
+        "Telecommunications",
+        "Telegraphy"
+      ],
+      "type": "topic",
+      "value": "Telegraphy",
+      "parent": "Telecommunications",
+      "breadcrumb": "Technology » Telecommunications » Telegraphy",
+      "description": "Senses belonging to the domain \"Telegraphy\""
+    },
+    {
+      "path": [
+        "Technology",
+        "Recording"
+      ],
+      "type": "topic",
+      "value": "Recording",
+      "parent": "Technology",
+      "breadcrumb": "Technology » Recording",
+      "description": "Senses belonging to the domain \"Recording\""
+    },
+    {
+      "path": [
+        "Technology",
+        "Recording",
+        "Sound Recording"
+      ],
+      "type": "topic",
+      "value": "Sound Recording",
+      "parent": "Recording",
+      "breadcrumb": "Technology » Recording » Sound Recording",
+      "description": "Senses belonging to the domain \"Sound Recording\""
+    },
+    {
+      "path": [
+        "Technology",
+        "Recording",
+        "Video Recording"
+      ],
+      "type": "topic",
+      "value": "Video Recording",
+      "parent": "Recording",
+      "breadcrumb": "Technology » Recording » Video Recording",
+      "description": "Senses belonging to the domain \"Video Recording\""
+    },
+    {
+      "path": [
+        "Technology",
+        "Photography"
+      ],
+      "type": "topic",
+      "value": "Photography",
+      "parent": "Technology",
+      "breadcrumb": "Technology » Photography",
+      "description": "Senses belonging to the domain \"Photography\""
+    },
+    {
+      "path": [
+        "Technology",
+        "Radar"
+      ],
+      "type": "topic",
+      "value": "Radar",
+      "parent": "Technology",
+      "breadcrumb": "Technology » Radar",
+      "description": "Senses belonging to the domain \"Radar\""
+    },
+    {
+      "path": [
+        "Technology",
+        "Computing"
+      ],
+      "type": "topic",
+      "value": "Computing",
+      "parent": "Technology",
+      "breadcrumb": "Technology » Computing",
+      "description": "Senses belonging to the domain \"Computing\""
+    },
+    {
+      "path": [
+        "Technology",
+        "Measurement"
+      ],
+      "type": "topic",
+      "value": "Measurement",
+      "parent": "Technology",
+      "breadcrumb": "Technology » Measurement",
+      "description": "Senses belonging to the domain \"Measurement\""
+    },
+    {
+      "path": [
+        "Transport"
+      ],
+      "type": "topic",
+      "value": "Transport",
+      "parent": null,
+      "breadcrumb": "Transport",
+      "description": "Senses belonging to the domain \"Transport\""
+    },
+    {
+      "path": [
+        "Transport",
+        "Nautical"
+      ],
+      "type": "topic",
+      "value": "Nautical",
+      "parent": "Transport",
+      "breadcrumb": "Transport » Nautical",
+      "description": "Senses belonging to the domain \"Nautical\""
+    },
+    {
+      "path": [
+        "Transport",
+        "Nautical",
+        "Shipbuilding"
+      ],
+      "type": "topic",
+      "value": "Shipbuilding",
+      "parent": "Nautical",
+      "breadcrumb": "Transport » Nautical » Shipbuilding",
+      "description": "Senses belonging to the domain \"Shipbuilding\""
+    },
+    {
+      "path": [
+        "Transport",
+        "Nautical",
+        "Navy"
+      ],
+      "type": "topic",
+      "value": "Navy",
+      "parent": "Nautical",
+      "breadcrumb": "Transport » Nautical » Navy",
+      "description": "Senses belonging to the domain \"Navy\""
+    },
+    {
+      "path": [
+        "Transport",
+        "Nautical",
+        "Sailing"
+      ],
+      "type": "topic",
+      "value": "Sailing",
+      "parent": "Nautical",
+      "breadcrumb": "Transport » Nautical » Sailing",
+      "description": "Senses belonging to the domain \"Sailing\""
+    },
+    {
+      "path": [
+        "Transport",
+        "Aviation"
+      ],
+      "type": "topic",
+      "value": "Aviation",
+      "parent": "Transport",
+      "breadcrumb": "Transport » Aviation",
+      "description": "Senses belonging to the domain \"Aviation\""
+    },
+    {
+      "path": [
+        "Transport",
+        "Motoring"
+      ],
+      "type": "topic",
+      "value": "Motoring",
+      "parent": "Transport",
+      "breadcrumb": "Transport » Motoring",
+      "description": "Senses belonging to the domain \"Motoring\""
+    },
+    {
+      "path": [
+        "Transport",
+        "Motoring",
+        "Motorcycling"
+      ],
+      "type": "topic",
+      "value": "Motorcycling",
+      "parent": "Motoring",
+      "breadcrumb": "Transport » Motoring » Motorcycling",
+      "description": "Senses belonging to the domain \"Motorcycling\""
+    },
+    {
+      "path": [
+        "Transport",
+        "Astronautics"
+      ],
+      "type": "topic",
+      "value": "Astronautics",
+      "parent": "Transport",
+      "breadcrumb": "Transport » Astronautics",
+      "description": "Senses belonging to the domain \"Astronautics\""
+    },
+    {
+      "path": [
+        "Transport",
+        "Railways"
+      ],
+      "type": "topic",
+      "value": "Railways",
+      "parent": "Transport",
+      "breadcrumb": "Transport » Railways",
+      "description": "Senses belonging to the domain \"Railways\""
+    },
+    {
+      "path": [
+        "Transport",
+        "Inland Waterways"
+      ],
+      "type": "topic",
+      "value": "Inland Waterways",
+      "parent": "Transport",
+      "breadcrumb": "Transport » Inland Waterways",
+      "description": "Senses belonging to the domain \"Inland Waterways\""
+    }
+  ]
+}
