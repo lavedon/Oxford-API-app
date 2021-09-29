@@ -12,7 +12,7 @@ namespace oed
         {
             var currentLine = Console.CursorTop;
             Console.SetCursorPosition(0, Console.CursorTop);
-            Console.Write(new string(' ', Console.WindowWidth));
+            Console.Write(new string(' ', Console.WindowWidth - 1));
             Console.Write('>');
             Console.SetCursorPosition(1, currentLine);
         }
@@ -40,6 +40,11 @@ namespace oed
                         var relevantInput = inputTokens.SkipWhile(t => t != "t");
                         string renderedInput = string.Join(" ", relevantInput);
                         return parseCompletion(ref builder, currentInput, out match, token: "t", CompletionData.Topics, offset: 2);
+                    }
+                    // prevent index out of range error
+                    if (i == 0)
+                    {
+                        break;
                     }
                 }
             }
