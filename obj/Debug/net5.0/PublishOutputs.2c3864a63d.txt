@@ -1,0 +1,17 @@
+C:\my-coding-projects\oxfordGUI\OxfordV2.dll
+C:\my-coding-projects\oxfordGUI\OxfordV2.deps.json
+C:\my-coding-projects\oxfordGUI\OxfordV2.pdb
+C:\my-coding-projects\oxfordGUI\System.CommandLine.dll
+C:\my-coding-projects\oxfordGUI\cs\System.CommandLine.resources.dll
+C:\my-coding-projects\oxfordGUI\de\System.CommandLine.resources.dll
+C:\my-coding-projects\oxfordGUI\es\System.CommandLine.resources.dll
+C:\my-coding-projects\oxfordGUI\fr\System.CommandLine.resources.dll
+C:\my-coding-projects\oxfordGUI\it\System.CommandLine.resources.dll
+C:\my-coding-projects\oxfordGUI\ja\System.CommandLine.resources.dll
+C:\my-coding-projects\oxfordGUI\ko\System.CommandLine.resources.dll
+C:\my-coding-projects\oxfordGUI\pl\System.CommandLine.resources.dll
+C:\my-coding-projects\oxfordGUI\pt-BR\System.CommandLine.resources.dll
+C:\my-coding-projects\oxfordGUI\ru\System.CommandLine.resources.dll
+C:\my-coding-projects\oxfordGUI\tr\System.CommandLine.resources.dll
+C:\my-coding-projects\oxfordGUI\zh-Hans\System.CommandLine.resources.dll
+C:\my-coding-projects\oxfordGUI\zh-Hant\System.CommandLine.resources.dll

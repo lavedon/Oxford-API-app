@@ -1,8 +1,8 @@
-C:\my-coding-projects\oxford\bin\Release\net5.0\linux-x64\publish\oed
-C:\my-coding-projects\oxford\bin\Release\net5.0\linux-x64\publish\oed.dll
-C:\my-coding-projects\oxford\bin\Release\net5.0\linux-x64\publish\oed.deps.json
-C:\my-coding-projects\oxford\bin\Release\net5.0\linux-x64\publish\oed.runtimeconfig.json
-C:\my-coding-projects\oxford\bin\Release\net5.0\linux-x64\publish\oed.pdb
+C:\my-coding-projects\oxford\bin\Release\net5.0\linux-x64\publish\OxfordV2
+C:\my-coding-projects\oxford\bin\Release\net5.0\linux-x64\publish\OxfordV2.dll
+C:\my-coding-projects\oxford\bin\Release\net5.0\linux-x64\publish\OxfordV2.deps.json
+C:\my-coding-projects\oxford\bin\Release\net5.0\linux-x64\publish\OxfordV2.runtimeconfig.json
+C:\my-coding-projects\oxford\bin\Release\net5.0\linux-x64\publish\OxfordV2.pdb
 C:\my-coding-projects\oxford\bin\Release\net5.0\linux-x64\publish\Microsoft.CSharp.dll
 C:\my-coding-projects\oxford\bin\Release\net5.0\linux-x64\publish\Microsoft.VisualBasic.Core.dll
 C:\my-coding-projects\oxford\bin\Release\net5.0\linux-x64\publish\Microsoft.VisualBasic.dll

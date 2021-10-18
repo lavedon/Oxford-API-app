@@ -1,15 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "hnvqiPF3MiePKS3HssG8d1LQ5YcTXlsa9QvbxZLZMWLHfsaRZS9NQKbbzBRdNkfYi7BGktdl40WBPavwTGYq3w==",
+  "dgSpecHash": "ZhIECyQptV7c8VxVDurgWMjAxthstqq+GgKkXFdrPLp0nESBJd/vqZRG4J2dM3lh9K90cYj/sX5NN5GIJ2WMMw==",
   "success": true,
   "projectFilePath": "C:\\my-coding-projects\\oxford\\OxfordV2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\microsoft.csharp\\4.4.1\\microsoft.csharp.4.4.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\system.commandline\\2.0.0-beta1.21308.1\\system.commandline.2.0.0-beta1.21308.1.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\5.0.6\\microsoft.netcore.app.runtime.win-x64.5.0.6.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\5.0.6\\microsoft.windowsdesktop.app.runtime.win-x64.5.0.6.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\5.0.6\\microsoft.aspnetcore.app.runtime.win-x64.5.0.6.nupkg.sha512"
+    "C:\\Users\\User\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512"
   ],
   "logs": []
 }
