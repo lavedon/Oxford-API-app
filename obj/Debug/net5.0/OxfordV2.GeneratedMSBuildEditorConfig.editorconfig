@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = OxfordV2
-build_property.ProjectDir = C:\my-coding-projects\oxford\
+build_property.ProjectDir = c:\my-coding-projects\OxfordConsoleAndGUI\oxford\

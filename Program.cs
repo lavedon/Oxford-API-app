@@ -278,6 +278,8 @@ namespace oed
             rootCommand.Handler = CommandHandler.Create((HandleArgs handleArgs) => {});
 
 
+// Logging disabled for mac osx
+            /*
             string directoryPath = string.Concat(Environment.CurrentDirectory, "\\logs");
 
             try
@@ -299,7 +301,6 @@ namespace oed
                 /*
                 TextWriterTraceListener tr1 = new TextWriterTraceListener(System.Console.Out);
                 Trace.Listeners.Add(tr1);
-                */
 
                 TextWriterTraceListener tr2 = new TextWriterTraceListener(System.IO.File.CreateText(fullPath));
                 Trace.Listeners.Add(tr2);
@@ -313,6 +314,7 @@ namespace oed
 
             Trace.WriteLine("Leaving Main method.");
             Trace.Flush();
+            */
             // ConsoleUI.Start();
             // @TODO Make an overload of ConsoleUI.Start(which passes a word from the command line)
             qsExists = rootCommand.Parse(args).CommandResult.FindResultFor(quotesAndSenses) is { };

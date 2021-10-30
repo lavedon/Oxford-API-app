@@ -24,7 +24,9 @@ namespace oed
         }
 		public static void GetKeys()
 		{
-			StreamReader reader = new StreamReader(".\\keys.txt");
+            var keysFilePath = Path.Combine(Environment.CurrentDirectory, "keys.txt");
+//			StreamReader reader = new StreamReader(".\\keys.txt");
+			StreamReader reader = new StreamReader(keysFilePath);
 			try
 			{
 				{

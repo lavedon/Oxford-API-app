@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\my-coding-projects\\oxford\\OxfordV2.csproj": {}
+    "C:\\my-coding-projects\\OxfordConsoleAndGUI\\oxford\\OxfordV2.csproj": {}
   },
   "projects": {
-    "C:\\my-coding-projects\\oxford\\OxfordV2.csproj": {
+    "C:\\my-coding-projects\\OxfordConsoleAndGUI\\oxford\\OxfordV2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\my-coding-projects\\oxford\\OxfordV2.csproj",
+        "projectUniqueName": "C:\\my-coding-projects\\OxfordConsoleAndGUI\\oxford\\OxfordV2.csproj",
         "projectName": "OxfordV2",
-        "projectPath": "C:\\my-coding-projects\\oxford\\OxfordV2.csproj",
+        "projectPath": "C:\\my-coding-projects\\OxfordConsoleAndGUI\\oxford\\OxfordV2.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\my-coding-projects\\oxford\\obj\\",
+        "outputPath": "C:\\my-coding-projects\\OxfordConsoleAndGUI\\oxford\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -59,12 +59,31 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.osx-x64",
+              "version": "[5.0.10, 5.0.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-x64",
+              "version": "[5.0.10, 5.0.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.osx-x64",
+              "version": "[5.0.10, 5.0.10]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "osx-x64": {
+          "#import": []
         }
       }
     }
