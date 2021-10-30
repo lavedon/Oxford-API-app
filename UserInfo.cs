@@ -24,7 +24,10 @@ namespace oed
         }
 		public static void GetKeys()
 		{
+			xConsole.WriteLine("Loading Keys...");
             var keysFilePath = Path.Combine(Environment.CurrentDirectory, "keys.txt");
+			xConsole.WriteLine("From...");
+			xConsole.WriteLine(keysFilePath);
 //			StreamReader reader = new StreamReader(".\\keys.txt");
 			StreamReader reader = new StreamReader(keysFilePath);
 			try
