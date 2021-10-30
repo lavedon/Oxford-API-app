@@ -277,8 +277,10 @@ namespace oed
             rootCommand.Description = "An app which processes the Oxford English Dictionary Researcher API, and exports to SuperMemo.";
             rootCommand.Handler = CommandHandler.Create((HandleArgs handleArgs) => {});
             // For Mac debugging put Trace to console output
+            /*
             TextWriterTraceListener tr1 = new TextWriterTraceListener(System.Console.Out);
             Trace.Listeners.Add(tr1);
+            */
 
 
 // Logging disabled for mac osx
